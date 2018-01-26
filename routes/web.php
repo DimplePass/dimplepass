@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/new', function () {
-    return view('index');
+Route::get('/destination', function () {
+    return view('destination');
 });
