@@ -1,10 +1,10 @@
   <head>
     <meta charset="utf-8">
-    <title>Adventure Pass</title>
+    <title>Dimple Pass</title>
     <!-- SEO Meta Tags-->
-    <meta name="description" content="Adventure Pass - National Park Discounts">
+    <meta name="description" content="Dimple Pass - National Park Discounts">
     <meta name="keywords" content="">
-    <meta name="author" content="Adventure Pass">
+    <meta name="author" content="Dimple Pass">
     <!-- Mobile Specific Meta Tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 

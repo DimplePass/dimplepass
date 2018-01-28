@@ -10,7 +10,7 @@
   <meta property="og:title" content="OG Title Here"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="OG Image URL Here."/>
-  <meta property="og:site_name" content="Adventure Pass"/>
+  <meta property="og:site_name" content="Dimple Pass"/>
   <meta property="og:description" content="OG Description Here."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -28,14 +28,15 @@ Logo Tag Here
   <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg1.jpg);">
     {{-- <div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }"> --}}
       <div class="item">
-        <div class="container padding-top-9x">
+        <div class="container padding-top-8x">
           <div class="row justify-content-center align-items-center">
             <div class="col-md-12 padding-bottom-2x text-md-left text-center">
               <div class="from-bottom">
 								{{-- <img class="d-inline-block w-150 mb-4" src="img/hero-slider/logo02.png" alt="Puma"> --}}
-                <div class="h1 mb-2 pt-1"><strong class="ap-white">Adventure Pass / Yellowstone</strong></div>
-                <div class="h2 mb-4 pb-1">only <span class="text-bold">$26</span> saves you $384</div>
-              </div><a class="btn btn-primary scale-up delay-1" href="shop-grid-ls.html">View the Savings</a>
+                <div class="h1 mb-2 pt-1"><strong class="ap-white">The Dimple Pass</strong></div>
+                <div class="h2 mb-0 pb-1">Save Money. Don't miss a thing!</div>
+                <div class="h4 mt-0 mb-4" style="color:#fff;">simple. happy. outdoor travel.</div>
+              </div><a class="btn btn-primary scale-up delay-1" href="shop-grid-ls.html">How it works</a>
             </div>
             {{-- <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="img/destinations/yellowstone-300x300.jpg" alt="Puma Backpack"></div> --}}
           </div>
@@ -71,7 +72,7 @@ Logo Tag Here
   </section>
   <!-- Top Categories-->
   <section class="container padding-top-3x">
-    <h3 class="text-center mb-30">Top Destinations</h3>
+    <h3 class="text-center mb-30">Top National Parks</h3>
     <div class="row">
       <div class="col-md-4 col-sm-6">
         <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
@@ -110,7 +111,7 @@ Logo Tag Here
         </div>
       </div>
     </div>
-    <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="shop-categories.html">View All Destinations</a></div>
+    <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="shop-categories.html">View All Dimple National Parks</a></div>
   </section>
   <!-- Promo #1-->
   <section class="container-fluid padding-top-3x">
@@ -134,7 +135,7 @@ Logo Tag Here
               <div class="item">
                 <div class="seconds">00</div><span class="seconds_ref">Secs</span>
               </div>
-            </div><br><a class="btn btn-primary margin-bottom-none" href="#">View Pass</a>
+            </div><br><a class="btn btn-primary margin-bottom-none" href="#">View the <strong>$26</strong> Pass</a>
           </div>
         </div>
       </div>
