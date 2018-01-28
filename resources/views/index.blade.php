@@ -264,13 +264,13 @@ Logo Tag Here
               <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
             </ul>
-            <p><a class="navi-link-light" href="#">support@unishop.com</a></p><a class="social-button shape-circle sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a><a class="social-button shape-circle sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a><a class="social-button shape-circle sb-instagram sb-light-skin" href="#"><i class="socicon-instagram"></i></a><a class="social-button shape-circle sb-google-plus sb-light-skin" href="#"><i class="socicon-googleplus"></i></a>
+            <p><a class="navi-link-light" href="#">info@dimplepass.com</a></p><a class="social-button shape-circle sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a><a class="social-button shape-circle sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a><a class="social-button shape-circle sb-instagram sb-light-skin" href="#"><i class="socicon-instagram"></i></a><a class="social-button shape-circle sb-google-plus sb-light-skin" href="#"><i class="socicon-googleplus"></i></a>
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
           <!-- Mobile App Buttons-->
           <section class="widget widget-light-skin">
-            <h3 class="widget-title">Our Mobile App</h3><a class="market-button apple-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">App Store</span></a><a class="market-button google-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Google Play</span></a><a class="market-button windows-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Windows Store</span></a>
+            <h3 class="widget-title">Our Mobile App</h3><a class="market-button apple-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">App Store</span></a><a class="market-button google-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Google Play</span></a>
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -321,12 +321,12 @@ Logo Tag Here
                 <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
               </div>
               <button class="btn btn-primary" type="submit"><i class="icon-check"></i></button>
-            </div><span class="form-text text-sm text-white opacity-50">Subscribe to our Newsletter to receive early discount offers, latest news, sales and promo information.</span>
+            </div><span class="form-text text-sm text-white opacity-50">Subscribe to receive new Dimple Pass offers and the latest news.</span>
           </form>
         </div>
       </div>
       <!-- Copyright-->
-      <p class="footer-copyright">© All rights reserved. Made with &nbsp;<i class="icon-heart text-danger"></i> &nbsp;by riverECHO.</p>
+      <p class="footer-copyright">© All rights reserved. Made with &nbsp;<i class="icon-heart text-danger"></i> &nbsp;by The Dimple Foundation.</p>
     </div>
   </footer>
 </div>
