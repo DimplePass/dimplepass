@@ -2,14 +2,17 @@
 //Import Google Fonts (Maven Pro)
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
 
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-// @TODO-BJ - Not sure where this is being used - it might be the font and not the package I installed here.
-// @import "../../../resources/assets/vendor/css/feather.min.css";
-@import "../../../node_modules/featherjs/dist/css/feather.min.css";
+// Import Vendors
+@import "../../../node_modules/feather-icon/css/feather.css";
 @import "../../../node_modules/izitoast/dist/css/iziToast.min.css";
 @import "../../../node_modules/pe7-icon/dist/dist/pe-icon-7-stroke.min.css";
 @import "../../../node_modules/photoswipe/dist/default-skin/default-skin.css";
 @import "../../../node_modules/socicon/css/socicon.css";
+
+// Import Bootstrap
+// @TODO-BJ - Pull from node_modules.  This didn't work when we first set this up.
+// It looks like the version the template included was edited.
+@import "../../../resources/assets/vendor/bootstrap/bootstrap.scss";
 
 // Helpers: Variables, Mixins and Placeholders
 @import 'helpers/variables';
@@ -56,3 +59,6 @@
 @import 'modules/account';
 @import 'modules/shop';
 @import 'modules/blog';
+
+// Custom
+@import "custom";
