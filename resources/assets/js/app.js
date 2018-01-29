@@ -6,8 +6,20 @@
  */
 
 require('./bootstrap');
+require('../../../resources/assets/vendor/js/jquery.min.js');
+require('../../../resources/assets/vendor/js/downCount.min.js');
+require('../../../resources/assets/vendor/js/gmap3.min.js');
+require('../../../resources/assets/vendor/js/imagesloaded.pkgd.min.js');
+require('../../../resources/assets/vendor/js/isotope.pkgd.min.js');
+require('../../../resources/assets/vendor/js/iziToast.min.js');
+require('../../../resources/assets/vendor/js/nouislider.min.js');
+require('../../../resources/assets/vendor/js/owl.carousel.min.js');
+require('../../../resources/assets/vendor/js/photoswipe-ui-default.min.js');
+require('../../../resources/assets/vendor/js/photoswipe.min.js');
+require('../../../resources/assets/vendor/js/popper.min.js');
+require('../../../resources/assets/vendor/js/velocity.min.js');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +27,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });

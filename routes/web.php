@@ -11,10 +11,14 @@
 |
 */
 
+// Coming Soon splash page with newsletter signup.
 Route::get('/', function () {
-    return view('index');
+		return view('index');
+		// return view('maintenance');
+    // return view('comingsoon');
 });
 
+// Destination Page
 Route::get('/destination', function () {
     return view('destination');
 });

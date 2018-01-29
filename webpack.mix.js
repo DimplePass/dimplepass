@@ -12,4 +12,11 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+	.version();
+
+mix.sass('resources/assets/sass/app.scss', 'public/css')
+	.version();
+
+// Copy assets into public directory.
+mix.copy('resources/assets/img/', 'public/img/');
+mix.copy('resources/assets/fonts/', 'public/fonts/');

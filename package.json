@@ -17,5 +17,12 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "featherjs": "^0.1.0",
+        "izitoast": "^1.2.0",
+        "pe7-icon": "^1.0.4",
+        "photoswipe": "^4.1.2",
+        "socicon": "^3.0.5"
     }
 }
