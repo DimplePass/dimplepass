@@ -22,11 +22,11 @@ Route::get('/', function () {
 ///// National Parks
 // All Parks
 Route::get('/parks', function () {
-    return view('parks');
+    return view('parks.index');
 });
 // Specific Park
 Route::get('/parks/yellowstone', function () {
-    return view('park');
+    return view('parks.park');
 });
 
 ///// Purchase

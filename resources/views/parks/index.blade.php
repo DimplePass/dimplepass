@@ -24,7 +24,7 @@ The National Parks
 {{-- Main Slider --}}
 <section class="hero-slider" style="background-image: url(/img/hero-slider/main-bg1.jpg);">
     <div class="item">
-      <div class="container padding-top-9x">
+      <div class="container padding-top-7x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">

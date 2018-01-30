@@ -433,9 +433,8 @@
               </li>
             </ul>
           </li>
-          <li><a href="/how"><span>How it works?</span></a></li>
+          <li><a href="/how"><span>How does it work?</span></a></li>
           <li><a href="/foundation"><span>The Foundation</span></a></li>
-          <li><a href="/contact"><span>Contact</span></a></li>
         </ul>
       </nav>
       <!-- Toolbar-->

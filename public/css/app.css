@@ -9844,7 +9844,6 @@ h6 small,
 .h4 small,
 .h5 small,
 .h6 small {
-  display: block;
   padding-top: 3px;
   color: #9da9b9;
 }
@@ -13512,7 +13511,7 @@ a.list-group-item {
 
 .hero-slider {
   width: 100%;
-  min-height: 580px;
+  min-height: 480px;
   background-position: center;
   background-color: #f5f5f5;
   background-repeat: no-repeat;
@@ -13521,7 +13520,7 @@ a.list-group-item {
 }
 
 .hero-slider > .owl-carousel {
-  min-height: 580px;
+  min-height: 480px;
 }
 
 .hero-slider > .owl-carousel.dots-inside .owl-dots {
@@ -13567,11 +13566,11 @@ a.list-group-item {
 
 @media (max-width: 1100px) {
   .hero-slider {
-    min-height: 430px;
+    min-height: 330px;
   }
 
   .hero-slider > .owl-carousel {
-    min-height: 430px;
+    min-height: 330px;
   }
 }
 

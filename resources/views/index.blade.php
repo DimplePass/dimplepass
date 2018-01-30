@@ -25,90 +25,61 @@ Logo Tag Here
 <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg1.jpg);">
   {{-- <div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }"> --}}
     <div class="item">
-      <div class="container padding-top-9x">
+      <div class="container padding-top-7x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-							{{-- <img class="d-inline-block w-150 mb-4" src="/img/hero-slider/logo02.png" alt="Puma"> --}}
               <div class="h1 mb-2 pt-1"><strong class="dp-white">National Park Travel Discounts</strong></div>
-              <div class="h2 mb-0 pb-1 gray-lighter">Save Money. Don't miss a thing!</div>
+              <div class="h2 mb-0 pb-1 gray-lighter"><strong class="dp-warning">Save Money.</strong> Don't miss a thing!</div>
               <div class="h4 mt-0 mb-4 gray-lighter">discounted. simple. happy.</div>
-            </div><a class="btn btn-primary btn-lg scale-up delay-1" href="shop-grid-ls.html">How it works</a>
+            </div><a class="btn btn-primary btn-lg scale-up delay-1" href="/how">How it works</a>
           </div>
-          {{-- <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="/img/destinations/yellowstone-300x300.jpg" alt="Puma Backpack"></div> --}}
         </div>
       </div>
     </div>
-{{--       <div class="item">
-      <div class="container padding-top-3x">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-lg-5 col-md-6 padding-bottom-2x text-md-left text-center">
-            <div class="from-bottom"><img class="d-inline-block w-200 mb-4" src="/img/hero-slider/logo01.png" alt="Converse">
-              <div class="h2 text-body text-normal mb-2 pt-1">Chuck Taylor All Star II</div>
-              <div class="h2 text-body text-normal mb-4 pb-1">for only <span class="text-bold">$59.99</span></div>
-            </div><a class="btn btn-primary scale-up delay-1" href="shop-single.html">Shop Now</a>
-          </div>
-          <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="/img/hero-slider/01.png" alt="Chuck Taylor All Star II"></div>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="container padding-top-3x">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-lg-5 col-md-6 padding-bottom-2x text-md-left text-center">
-            <div class="from-bottom"><img class="d-inline-block mb-4" src="/img/hero-slider/logo03.png" style="width: 125px;" alt="Motorola">
-              <div class="h2 text-body text-normal mb-2 pt-1">Smart Watch Moto 360 2nd</div>
-              <div class="h2 text-body text-normal mb-4 pb-1">for only <span class="text-bold">$299.99</span></div>
-            </div><a class="btn btn-primary scale-up delay-1" href="shop-single.html">Shop Now</a>
-          </div>
-          <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="/img/hero-slider/03.png" alt="Moto 360"></div>
-        </div>
-      </div>
-    </div> --}}
-  {{-- </div> --}}
 </section>
 {{-- Top Categories --}}
 <section class="container padding-top-3x">
-  <h3 class="text-center mb-30">Top National Parks</h3>
+  {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
             <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <p class="text-muted">$324 total savings</p><a class="btn btn-outline-primary btn-sm" href="">View the <strong>$26</strong> Pass</a>
+          <p class="text-muted">$289 total savings</p><a class="btn btn-primary" href="/parks/yellowstone">View the <strong>$26</strong> Pass</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <p class="text-muted">$289 total savings</p><a class="btn btn-outline-primary btn-sm" href="">View the <strong>$26</strong> Pass</a>
+          <p class="text-muted">$324 total savings</p><a class="btn btn-primary" href="/parks/yellowstone">View the <strong>$26</strong> Pass</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
-          <p class="text-muted">$245 total savings</p><a class="btn btn-outline-primary btn-sm" href="">View the <strong>$26</strong> Pass</a>
+          <p class="text-muted">$245 total savings</p><a class="btn btn-primary" href="/parks/yellowstone">View the <strong>$26</strong> Pass</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="shop-categories.html">View All Dimple National Parks</a></div>
+  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/parks">View All Dimple National Parks</a></div>
 </section>
 {{-- Promo #1 --}}
 <section class="container-fluid padding-top-3x">
