@@ -11,7 +11,12 @@
               <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
             </ul>
-            <p><a class="navi-link-light" href="#">info@dimplepass.com</a></p><a class="social-button shape-circle sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a><a class="social-button shape-circle sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a><a class="social-button shape-circle sb-instagram sb-light-skin" href="#"><i class="socicon-instagram"></i></a><a class="social-button shape-circle sb-google-plus sb-light-skin" href="#"><i class="socicon-googleplus"></i></a>
+            <p>
+              <a class="navi-link-light" href="#">info@dimplepass.com</a>
+            </p>
+            <a class="social-button shape-circle sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a>
+            <a class="social-button shape-circle sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a>
+            <a class="social-button shape-circle sb-instagram sb-light-skin" href="#"><i class="socicon-instagram"></i></a>
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -25,9 +30,13 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">About Us</h3>
             <ul>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">The Foundation</a></li>
-              <li><a href="#">Our Blog</a></li>
+              <li><a href="/about">Our Story</a></li>
+              <li><a href="/foundation">The Foundation</a></li>
+            </ul>
+            <h3 class="widget-title mt-4">For Vendors</h3>
+            <ul>
+              <li><a href="/vendor/">Become a Vendor</a></li>
+              <li><a href="/vendor/promise">The Vendor Promise</a></li>
             </ul>
           </section>
         </div>
@@ -36,9 +45,9 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Account Info</h3>
             <ul>
-              <li><a href="#">My Profile</a></li>
-              <li><a href="#">My Passes</a></li>
-              <li><a href="#">Refunds</a></li>
+              <li><a href="/member">My Profile</a></li>
+              <li><a href="/member/passes">My Passes</a></li>
+              <li><a href="/member/refunds">Refunds</a></li>
             </ul>
           </section>
         </div>
@@ -47,13 +56,13 @@
       <div class="row">
         <div class="col-md-7 padding-bottom-1x">
           {{-- Payment Methods --}}
-          <div class="margin-bottom-1x" style="max-width: 615px;"><img src="img/payment_methods.png" alt="Payment Methods">
+          <div class="margin-bottom-1x" style="max-width: 615px;"><img src="/img/payment_methods.png" alt="Payment Methods">
           </div>
         </div>
         <div class="col-md-5 padding-bottom-1x">
           <div class="margin-top-1x hidden-md-up"></div>
           {{-- Subscription --}}
-          <form class="subscribe-form" action="//rokaux.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;amp;id=1194bb7544" method="post" target="_blank" novalidate>
+          <form class="subscribe-form" action="" method="post" target="_blank" novalidate>
             <div class="clearfix">
               <div class="input-group input-light">
                 <input class="form-control" type="email" name="EMAIL" placeholder="Your e-mail"><span class="input-group-addon"><i class="icon-mail"></i></span>

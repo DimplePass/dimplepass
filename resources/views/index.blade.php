@@ -25,17 +25,17 @@ Logo Tag Here
 <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg1.jpg);">
   {{-- <div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }"> --}}
     <div class="item">
-      <div class="container padding-top-8x">
+      <div class="container padding-top-9x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-							{{-- <img class="d-inline-block w-150 mb-4" src="img/hero-slider/logo02.png" alt="Puma"> --}}
-              <div class="h1 mb-2 pt-1"><strong class="ap-white">National Park Travel Discounts</strong></div>
-              <div class="h2 mb-0 pb-1">Save Money. Don't miss a thing!</div>
-              <div class="h4 mt-0 mb-4" style="color:#fff;">discounted. simple. happy.</div>
-            </div><a class="btn btn-primary scale-up delay-1" href="shop-grid-ls.html">How it works</a>
+							{{-- <img class="d-inline-block w-150 mb-4" src="/img/hero-slider/logo02.png" alt="Puma"> --}}
+              <div class="h1 mb-2 pt-1"><strong class="dp-white">National Park Travel Discounts</strong></div>
+              <div class="h2 mb-0 pb-1 gray-lighter">Save Money. Don't miss a thing!</div>
+              <div class="h4 mt-0 mb-4 gray-lighter">discounted. simple. happy.</div>
+            </div><a class="btn btn-primary btn-lg scale-up delay-1" href="shop-grid-ls.html">How it works</a>
           </div>
-          {{-- <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="img/destinations/yellowstone-300x300.jpg" alt="Puma Backpack"></div> --}}
+          {{-- <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="/img/destinations/yellowstone-300x300.jpg" alt="Puma Backpack"></div> --}}
         </div>
       </div>
     </div>
@@ -43,12 +43,12 @@ Logo Tag Here
       <div class="container padding-top-3x">
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-5 col-md-6 padding-bottom-2x text-md-left text-center">
-            <div class="from-bottom"><img class="d-inline-block w-200 mb-4" src="img/hero-slider/logo01.png" alt="Converse">
+            <div class="from-bottom"><img class="d-inline-block w-200 mb-4" src="/img/hero-slider/logo01.png" alt="Converse">
               <div class="h2 text-body text-normal mb-2 pt-1">Chuck Taylor All Star II</div>
               <div class="h2 text-body text-normal mb-4 pb-1">for only <span class="text-bold">$59.99</span></div>
             </div><a class="btn btn-primary scale-up delay-1" href="shop-single.html">Shop Now</a>
           </div>
-          <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="img/hero-slider/01.png" alt="Chuck Taylor All Star II"></div>
+          <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="/img/hero-slider/01.png" alt="Chuck Taylor All Star II"></div>
         </div>
       </div>
     </div>
@@ -56,12 +56,12 @@ Logo Tag Here
       <div class="container padding-top-3x">
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-5 col-md-6 padding-bottom-2x text-md-left text-center">
-            <div class="from-bottom"><img class="d-inline-block mb-4" src="img/hero-slider/logo03.png" style="width: 125px;" alt="Motorola">
+            <div class="from-bottom"><img class="d-inline-block mb-4" src="/img/hero-slider/logo03.png" style="width: 125px;" alt="Motorola">
               <div class="h2 text-body text-normal mb-2 pt-1">Smart Watch Moto 360 2nd</div>
               <div class="h2 text-body text-normal mb-4 pb-1">for only <span class="text-bold">$299.99</span></div>
             </div><a class="btn btn-primary scale-up delay-1" href="shop-single.html">Shop Now</a>
           </div>
-          <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="img/hero-slider/03.png" alt="Moto 360"></div>
+          <div class="col-md-6 padding-bottom-2x mb-3"><img class="d-block mx-auto" src="/img/hero-slider/03.png" alt="Moto 360"></div>
         </div>
       </div>
     </div> --}}
@@ -74,8 +74,8 @@ Logo Tag Here
     <div class="col-md-4 col-sm-6">
       <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
           <div class="inner">
-            <div class="main-img"><img src="img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
-            <div class="thumblist"><img src="img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
+            <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
+            <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
@@ -86,8 +86,8 @@ Logo Tag Here
     <div class="col-md-4 col-sm-6">
       <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
           <div class="inner">
-            <div class="main-img"><img src="img/destinations/yosemite-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
+            <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
@@ -98,8 +98,8 @@ Logo Tag Here
     <div class="col-md-4 col-sm-6">
       <div class="card mb-30"><a class="card-img-tiles" href="shop-grid-ls.html">
           <div class="inner">
-            <div class="main-img"><img src="img/destinations/glacier-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
+            <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
@@ -148,7 +148,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/1.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/1.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -159,7 +159,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/2.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/2.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -170,7 +170,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/3.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/3.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -181,7 +181,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/4.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/4.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -192,7 +192,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/2.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/2.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -203,7 +203,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/3.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/3.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -214,7 +214,7 @@ Logo Tag Here
     {{-- Story --}}
     <div class="grid-item">
       <div class="product-card">
-        <a class="product-thumb" href="shop-single.html"><img src="img/stories/4.jpg" alt="Yosemite - Visitor Story"></a>
+        <a class="product-thumb" href="shop-single.html"><img src="/img/stories/4.jpg" alt="Yosemite - Visitor Story"></a>
         <h3 class="product-title"><a href="shop-single.html">Happy Golucky</a></h3>
         <h4 class="product-price">Yosemite</h4>
         <div class="product-buttons">
@@ -229,19 +229,19 @@ Logo Tag Here
   <div class="container">
     <h3 class="text-center mb-30 pb-2">Our Promise to You</h3>
     <div class="row">
-      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/01.png" alt="Shipping">
+      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/services/01.png" alt="Shipping">
         <h6>Free Worldwide Shipping</h6>
         <p class="text-muted margin-bottom-none">Free shipping for all orders over $100</p>
       </div>
-      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/02.png" alt="Money Back">
+      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/services/02.png" alt="Money Back">
         <h6>Money Back Guarantee</h6>
         <p class="text-muted margin-bottom-none">We return money within 30 days</p>
       </div>
-      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/03.png" alt="Support">
+      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/services/03.png" alt="Support">
         <h6>24/7 Customer Support</h6>
         <p class="text-muted margin-bottom-none">Friendly 24/7 customer support</p>
       </div>
-      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="img/services/04.png" alt="Payment">
+      <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/services/04.png" alt="Payment">
         <h6>Secure Online Payment</h6>
         <p class="text-muted margin-bottom-none">We posess SSL / Secure Certificate</p>
       </div>

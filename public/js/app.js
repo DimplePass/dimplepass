@@ -43184,9 +43184,9 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 /*
- * Unishop | Universal E-Commerce Template
- * Copyright 2018 rokaux
- * Theme Custom Scripts
+ * Dimple Pass
+ * Copyright 2018
+ * Custom Scripts
  */
 
 /*global jQuery, iziToast, noUiSlider*/

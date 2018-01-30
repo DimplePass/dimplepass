@@ -101,7 +101,7 @@
     </div>
     <!-- Off-Canvas Mobile Menu-->
     <div class="offcanvas-container" id="mobile-menu"><a class="account-link" href="account-orders.html">
-        <div class="user-ava"><img src="img/account/user-ava-md.jpg" alt="Daniel Adams">
+        <div class="user-ava"><img src="/img/account/user-ava-md.jpg" alt="Daniel Adams">
         </div>
         <div class="user-info">
           <h6 class="user-name">Daniel Adams</h6><span class="text-sm text-white opacity-60">290 Reward points</span>
@@ -281,7 +281,7 @@
         <div class="col-md-6 fh-section" style="background-image: url(img/coming-soon-bg.jpg);"><span class="overlay" style="background-color: #374250; opacity: .85;"></span>
           <div class="d-flex flex-column fh-section py-5 px-3 justify-content-between">
             <div class="w-100 text-center">
-              <div class="d-inline-block mb-5" style="width: 129px;"><img class="d-block" src="img/logo/logo-dimple.png" alt="Dimple Pass"></div>
+              <div class="d-inline-block mb-5" style="width: 129px;"><img class="d-block" src="/img/logo/logo-dimple.png" alt="Dimple Pass"></div>
 							<h1 class="text-white text-normal mt-3 mb-2">Exclusive National Park Travel Coupons</h1>
               <h3 class="text-white text-normal mb-2">discounted. simple. happy</h1>
               <h5 class="text-white text-normal opacity-80 mt-4 mb-4">Live on April 1st, 2018</h5>
