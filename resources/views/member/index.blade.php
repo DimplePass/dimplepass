@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Yellowstone National Park with the Dimple Pass</title>
+  <title>The Dimple Pass | Save Money on National Park Travel</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Checkout
+Account : First Name Last Name
 @stop
 
 @section('content')
@@ -25,32 +25,86 @@ Checkout
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>Page Title</h1>
+      <h1>My Account</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="/">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
-        <li>Page Title</li>
+        <li>My Account</li>
       </ul>
     </div>
   </div>
 </div>
 <!-- Page Content-->
-<div class="container padding-bottom-2x mb-2">
-  <div class="row align-items-center padding-bottom-2x">
-    <div class="col-md-5">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+<div class="container padding-bottom-3x mb-2">
+  <div class="row">
+    <div class="col-lg-4">
+      <aside class="user-info-wrapper">
+        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
+          <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>
+        </div>
+        <div class="user-info">
+          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+          <div class="user-data">
+            <h4>Happy GoLucky</h4>
+            <span>Joined February 06, 2017</span>
+          </div>
+        </div>
+      </aside>
+      <nav class="list-group">
+        <a class="list-group-item" href="/member/profile"><i class="icon-head"></i>My Profile</a>
+        <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+      </nav>
     </div>
-    <div class="col-md-7 text-md-left text-center">
-      <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
-      <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
-      <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <a class="btn btn-primary" href="/">Head on Home <i class="icon-arrow-right"></i></a>
+    <div class="col-lg-8">
+      <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+      <div class="table-responsive">
+        <table class="table table-hover margin-bottom-none">
+          <thead>
+            <tr>
+              <th>Park</th>
+              <th>Status</th>
+              <th>Date Purchased</th>
+              <th>Redeem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Yellowstone</strong></td>
+              <td><span class="text-success">Active</span></td>
+              <td>March 08, 2017</td>
+              <td><a href="#"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Glacier</strong></td>
+              <td><span class="text-success">Active</span></td>
+              <td>Feburary 21, 2018</td>
+              <td><a href="#"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Yosemite</strong></td>
+              <td><span class="text-warning">Expired</span></td>
+              <td>June 15, 2017</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Zion</strong></td>
+              <td><span class="text-warning">Expired</span></td>
+              <td>May 17, 2016</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Grand Canyon</strong></td>
+              <td><span class="text-warning">Expired</span></td>
+              <td>April 10, 2015</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr>
     </div>
   </div>
 </div>

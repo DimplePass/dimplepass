@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Logo Tag Here
+Stop Planning. Start Playing. Save Money.
 @stop
 
 @section('content')

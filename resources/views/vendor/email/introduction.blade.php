@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Yellowstone National Park with the Dimple Pass</title>
+  <title>The Dimple Pass | Save Money on National Park Travel</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Checkout
+Page Title
 @stop
 
 @section('content')
@@ -39,7 +39,7 @@ Checkout
 </div>
 <!-- Page Content-->
 <div class="container padding-bottom-2x mb-2">
-  <div class="row align-items-center padding-bottom-2x">
+  <div class="row padding-bottom-2x">
     <div class="col-md-5">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>

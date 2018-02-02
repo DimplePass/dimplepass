@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Yellowstone National Park with the Dimple Pass</title>
+  <title>The Dimple Pass | Save Money on National Park Travel</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -16,41 +16,137 @@
 @stop
 
 @section('logo-tag')
-Checkout
+Page Title
 @stop
 
 @section('content')
 
-<!-- Page Title-->
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>Page Title</h1>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>Page Title</li>
-      </ul>
-    </div>
-  </div>
-</div>
 <!-- Page Content-->
-<div class="container padding-bottom-2x mb-2">
-  <div class="row align-items-center padding-bottom-2x">
-    <div class="col-md-5">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+<div class="container padding-bottom-3x mb-2">
+  <div class="row mt-5">
+    <!-- Checkout Adress-->
+    <div class="col-xl-9 col-lg-8">
+      <div class="checkout-steps">
+        <a href="/checkout/review">3. Review</a>
+        <a href="/checkout/payment">2. Payment</a>
+        <a class="active" href="/checkout"><span class="angle"></span>1. Billing Address</a>
+      </div>
+
+      <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+      <h4>Billing Address</h4>
+      <hr class="padding-bottom-1x">
+
+      {{-- Start Form --}}
+      <form class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="account-fn">First Name <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
+            <input class="form-control" type="text" id="account-fn" value="Happy" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="account-ln">Last Name <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
+            <input class="form-control" type="text" id="account-ln" value="GoLucky" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="account-email">E-mail Address <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
+            <input class="form-control" type="email" id="account-email" value="happy@golucky.com" disabled>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="account-phone">Phone Number</label>
+            <input class="form-control" type="text" id="account-phone" value="(307) 690-9788" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="checkout-address1">Address 1 <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
+            <input class="form-control" type="text" id="checkout-address1">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="checkout-address2">Address 2</label>
+            <input class="form-control" type="text" id="checkout-address2">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="checkout-city">City <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
+            <select class="form-control" id="checkout-city">
+              <option>Choose city</option>
+              <option>Amsterdam</option>
+              <option>Berlin</option>
+              <option>Geneve</option>
+              <option>New York</option>
+              <option>Paris</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="checkout-zip">ZIP Code <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
+            <input class="form-control" type="text" id="checkout-zip">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="checkout-country">Country</label>
+            <select class="form-control" id="checkout-country">
+              <option>Choose country</option>
+              <option>Australia</option>
+              <option>Canada</option>
+              <option>France</option>
+              <option>Germany</option>
+              <option>Switzerland</option>
+              <option>USA</option>
+            </select>
+          </div>
+        </div>
+      </form>
+  
+      <div class="checkout-footer margin-top-1x">
+        <div class="column">{{-- <a class="btn btn-outline-secondary" href="checkout-shipping.html"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back</span></a> --}}</div>
+        <div class="column"><a class="btn btn-primary" href="/checkout/payment"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
+      </div>
     </div>
-    <div class="col-md-7 text-md-left text-center">
-      <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
-      <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
-      <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <a class="btn btn-primary" href="/">Head on Home <i class="icon-arrow-right"></i></a>
+    <!-- Sidebar          -->
+    <div class="col-xl-3 col-lg-4">
+      <aside class="sidebar">
+        <div class="padding-top-2x hidden-lg-up"></div>
+        <!-- Order Summary Widget-->
+        <section class="widget widget-order-summary">
+          <h3 class="widget-title">Order Summary</h3>
+          <table class="table">
+            <tr>
+              <td>Glacier</td>
+              <td class="text-medium">$26.00</td>
+            </tr>
+            <tr>
+              <td>Yellowstone</td>
+              <td class="text-medium">$26.00</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="donate4">
+                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
+                  <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
+                </div>
+              </td>     
+              <td  class="text-medium">$0</td>   
+            </tr>       
+            <tr>
+              <td></td>
+              <td class="text-lg text-medium">$52.00</td>
+            </tr>
+          </table>
+        </section>
+      </aside>
     </div>
   </div>
 </div>

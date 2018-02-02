@@ -31,6 +31,7 @@
             <ul>
               <li><a href="/about">Our Story</a></li>
               <li><a href="/foundation">The Foundation</a></li>
+              <li><a href="/faqs">FAQs</a></li>
             </ul>
             <h3 class="widget-title mt-4">For Vendors</h3>
             <ul>
@@ -44,9 +45,8 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Account Info</h3>
             <ul>
-              <li><a href="/member">My Profile</a></li>
-              <li><a href="/member/passes">My Passes</a></li>
-              <li><a href="/member/refunds">Refunds</a></li>
+              <li><a href="/member/profile">My Profile</a></li>
+              <li><a href="/member">My Passes</a></li>
             </ul>
           </section>
         </div>

@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Yellowstone National Park with the Dimple Pass</title>
+  <title>The Dimple Pass | Save Money on National Park Travel</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Checkout
+100% Profits to Kids Outdoors
 @stop
 
 @section('content')
@@ -25,21 +25,21 @@ Checkout
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>Page Title</h1>
+      <h1>100% of the Profits get Kids Outdoors</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="/">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
-        <li>Page Title</li>
+        <li>100% of the Profits get Kids Outdoors</li>
       </ul>
     </div>
   </div>
 </div>
 <!-- Page Content-->
 <div class="container padding-bottom-2x mb-2">
-  <div class="row align-items-center padding-bottom-2x">
+  <div class="row padding-bottom-2x">
     <div class="col-md-5">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>

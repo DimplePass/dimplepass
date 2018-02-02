@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 	function stickyHeader() {
 		var $body = $('body');
 		var $navbar = $('.navbar-sticky');
-		var $topbarH = $('.topbar').outerHeight();
+		var $topbarH = $('.navbar').outerHeight();
 		var $navbarH = $navbar.outerHeight();
 		if($navbar.length) {
 			$(window).on('scroll', function() {

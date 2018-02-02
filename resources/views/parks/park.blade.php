@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Yellowstone National Park with the Dimple Pass</title>
+  <title>The Dimple Pass | Save Money on National Park Travel</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 

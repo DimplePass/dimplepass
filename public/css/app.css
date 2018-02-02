@@ -16918,3 +16918,11 @@ video {
   color: #b00003;
 }
 
+.checkout-steps > a {
+  width: 33%;
+}
+
+.checkout-steps > a:first-child {
+  width: 34%;
+}
+

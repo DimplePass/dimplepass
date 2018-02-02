@@ -30,9 +30,17 @@ Route::get('/parks/yellowstone', function () {
 });
 
 ///// Purchase
-// Checkout
+// Profile
 Route::get('/checkout', function () {
     return view('checkout.index');
+});
+// Payment
+Route::get('/checkout/payment', function () {
+    return view('checkout.payment');
+});
+// Review
+Route::get('/checkout/review', function () {
+    return view('checkout.review');
 });
 // Confirmation
 Route::get('/checkout/thanks', function () {
@@ -62,21 +70,13 @@ Route::get('/contact', function () {
 });
 
 ///// Account Pages
-// Become a Vendor
+// Member Overview
 Route::get('/member', function () {
     return view('member.index');
 });
 // Member Passes
-Route::get('/member/passes', function () {
-    return view('member.passes');
-});
-// Member Coupons
-Route::get('/member/coupons', function () {
-    return view('member.coupons');
-});
-// Member Refunds
-Route::get('/member/refunds', function () {
-    return view('member.refunds');
+Route::get('/member/profile', function () {
+    return view('member.profile');
 });
 
 ///// Vendor Pages
