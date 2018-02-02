@@ -11,101 +11,40 @@
 |
 */
 
-///// Homepage
-// Also has under maintenance and coming soon pages.
-Route::get('/', function () {
-		return view('index');
-		// return view('maintenance');
-    // return view('comingsoon');
-});
+// Robots.txt
+Route::get('robots.txt', 'UtilityController@robots');
 
-///// National Parks
-// All Parks
-Route::get('/parks', function () {
-    return view('parks.index');
-});
-// Specific Park
-Route::get('/parks/yellowstone', function () {
-    return view('parks.park');
-});
+///// Home
+Route::get('/', 'UtilityController@home');
 
-///// Purchase
-// Profile
-Route::get('/checkout', function () {
-    return view('checkout.index');
-});
-// Payment
-Route::get('/checkout/payment', function () {
-    return view('checkout.payment');
-});
-// Review
-Route::get('/checkout/review', function () {
-    return view('checkout.review');
-});
-// Confirmation
-Route::get('/checkout/thanks', function () {
-    return view('checkout.thanks');
-});
-// Email Confirmation
-Route::get('/checkout/email/confirmation', function () {
-    return view('checkout.email.confirmation');
-});
+///// Parks
+Route::get('/parks', 'ParkController@parks');
+Route::get('/parks/yellowstone', 'ParkController@park');
 
-///// Supporting Pages
-// How it Works
-Route::get('/how', function () {
-    return view('how');
-});
-// About
-Route::get('/about', function () {
-    return view('about');
-});
-// FAQs
-Route::get('/faqs', function () {
-    return view('faqs');
-});
-// Contact
-Route::get('/contact', function () {
-    return view('contact');
-});
+///// Checkout
+Route::get('/checkout', 'checkoutController@checkout');
+Route::get('/checkout/payment', 'CheckoutController@checkoutPayment');
+Route::get('/checkout/review', 'CheckoutController@checkoutReview');
+Route::get('/checkout/thanks', 'CheckoutController@checkoutThanks');
+Route::get('/checkout/email/confirmation', 'CheckoutController@checkoutEmailConfirmation');
 
-///// Account Pages
-// Member Overview
-Route::get('/member', function () {
-    return view('member.index');
-});
-// Member Passes
-Route::get('/member/profile', function () {
-    return view('member.profile');
-});
+///// Members
+Route::get('/member', 'MemberController@index');
+Route::get('/member/edit', 'MemberController@edit');
+Route::get('/member/pass', 'MemberController@pass');
 
-///// Vendor Pages
-// Become a Vendor
-Route::get('/vendor', function () {
-    return view('vendor.index');
-});
-// Promise
-Route::get('/vendor/promise', function () {
-    return view('vendor.promise');
-});
-// Signup
-Route::get('/vendor/signup', function () {
-    return view('vendor.signup');
-});
-// FAQs
-Route::get('/vendor/confirmation', function () {
-    return view('vendor.confirmation');
-});
-// Contact
-Route::get('/vendor/email/introduction', function () {
-    return view('vendor.email.introduction');
-});
+///// Vendors
+Route::get('/vendor', 'VendorController@index');
+Route::get('/vendor/promise', 'VendorController@promise');
+Route::get('/vendor/signup', 'VendorController@signup');
+Route::get('/vendor/confirmation', 'VendorController@signupConfirmation');
+Route::get('/vendor/email/confirmation', 'VendorController@emailSignupConfirmation');
 
-///// Foundation Pages
-// About the Foundation
-Route::get('/foundation', function () {
-    return view('foundation.index');
-});
+///// 100% for Kids
+Route::get('/foundation', 'UtilityController@foundation');
 
-
-
+///// Supporting
+Route::get('/how', 'UtilityController@how');
+Route::get('/about', 'UtilityController@about');
+Route::get('/faqs', 'UtilityController@faqs');
+Route::get('/contact', 'UtilityController@contact');

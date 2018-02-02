@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Account : First Name Last Name
+Account : Happy GoLucky
 @stop
 
 @section('content')
@@ -54,7 +54,7 @@ Account : First Name Last Name
         </div>
       </aside>
       <nav class="list-group">
-        <a class="list-group-item" href="/member/profile"><i class="icon-head"></i>My Profile</a>
+        <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
         <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
       </nav>
     </div>
@@ -75,13 +75,13 @@ Account : First Name Last Name
               <td><strong>Yellowstone</strong></td>
               <td><span class="text-success">Active</span></td>
               <td>March 08, 2017</td>
-              <td><a href="#"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
+              <td><a href="/member/pass"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
             </tr>
             <tr>
               <td><strong>Glacier</strong></td>
               <td><span class="text-success">Active</span></td>
               <td>Feburary 21, 2018</td>
-              <td><a href="#"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
+              <td><a href="/member/pass"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
             </tr>
             <tr>
               <td><strong>Yosemite</strong></td>

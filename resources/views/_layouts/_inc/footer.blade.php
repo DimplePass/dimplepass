@@ -19,21 +19,20 @@
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
-          {{-- Mobile App Buttons --}}
-          <section class="widget widget-light-skin">
-            <h3 class="widget-title">Our Mobile App</h3><a class="market-button apple-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">App Store</span></a><a class="market-button google-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Google Play</span></a>
-          </section>
-        </div>
-        <div class="col-lg-3 col-md-6">
           {{-- About Us --}}
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">About Us</h3>
             <ul>
               <li><a href="/about">Our Story</a></li>
-              <li><a href="/foundation">The Foundation</a></li>
+              <li><a href="/foundation">100% for Kids</a></li>
               <li><a href="/faqs">FAQs</a></li>
             </ul>
-            <h3 class="widget-title mt-4">For Vendors</h3>
+          </section>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          {{-- For Vendors --}}
+          <section class="widget widget-links widget-light-skin">
+            <h3 class="widget-title">For Vendors</h3>
             <ul>
               <li><a href="/vendor/">Become a Vendor</a></li>
               <li><a href="/vendor/promise">The Vendor Promise</a></li>
@@ -45,7 +44,7 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Account Info</h3>
             <ul>
-              <li><a href="/member/profile">My Profile</a></li>
+              <li><a href="/member/edit">My Profile</a></li>
               <li><a href="/member">My Passes</a></li>
             </ul>
           </section>

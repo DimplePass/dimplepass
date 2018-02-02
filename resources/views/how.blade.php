@@ -74,7 +74,7 @@ How does it work?
         </div>
       </div>
       <div class="mt-30 hidden-md-up"></div>
-      <h2 class="dp-warning">Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami.</h2>
+      <h2 class="dp-warning">You save money on items that should already be on your hit list.</h2>
       <div class="mb-4 mt-4"><hr></div>
       <h2>Purchase the Dimple Pass</h2>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>

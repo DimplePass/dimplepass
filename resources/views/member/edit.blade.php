@@ -16,23 +16,23 @@
 @stop
 
 @section('logo-tag')
-Page Title
+Happy GoLucky
 @stop
 
 @section('content')
 
-<!-- Page Title-->
+<!-- Happy GoLucky-->
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>Page Title</h1>
+      <h1>Happy GoLucky</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="/">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
-        <li>Page Title</li>
+        <li>Happy GoLucky</li>
       </ul>
     </div>
   </div>
@@ -54,7 +54,7 @@ Page Title
         </div>
       </aside>
       <nav class="list-group">
-        <a class="list-group-item active" href="/member/profile"><i class="icon-head"></i>My Profile</a>
+        <a class="list-group-item active" href="/member/edit"><i class="icon-head"></i>My Profile</a>
         <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
       </nav>
     </div>
