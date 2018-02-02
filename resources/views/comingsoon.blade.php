@@ -45,7 +45,7 @@
             <div class="w-100 text-center">
               {{-- <div class="d-inline-block mb-5" style="width: 129px;"><img class="d-block" src="/img/logo/logo-dimple.png" alt="Dimple Pass"></div> --}}
               <h1 class="text-white mt-5"><strong>The Dimple Pass</strong></h1>
-							<h1 class="text-white text-normal mt-3 mb-2">Exclusive National Park Travel Coupons</h1>
+							<h1 class="text-white text-normal mt-3 mb-2">Exclusive National Park Travel Discounts</h1>
               <h3 class="text-white text-normal mb-2">discounted. simple. happy</h1>
               <div class="col-md-6 offset-md-3 my-5"><hr></div>
               <h5 class="text-white text-normal opacity-80 mt-5 mb-4">Introducing Yellowstone on March 17th, 2018</h5>
