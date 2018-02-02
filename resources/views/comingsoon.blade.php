@@ -40,7 +40,7 @@
       {{-- Page Content --}}
       <div class="row no-gutters">
         <div class="col-md-8 fh-section" style="background-image: url(img/coming-soon-bg.jpg);">
-          <span class="overlay" style="background-color: #374250; opacity: .75;"></span>
+          <span class="overlay" style="background-color: #504537; opacity: .75;"></span>
           <div class="d-flex flex-column fh-section py-5 px-3 justify-content-between">
             <div class="w-100 text-center">
               {{-- <div class="d-inline-block mb-5" style="width: 129px;"><img class="d-block" src="/img/logo/logo-dimple.png" alt="Dimple Pass"></div> --}}
