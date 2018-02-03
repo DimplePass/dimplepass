@@ -59,9 +59,9 @@
       <div class="topbar-column">
         <a class="hidden-md-down" href="mailto:info@dimplepass.com"><i class="icon-mail"></i>&nbsp; info@dimplepass.com</a>
         <a class="hidden-md-down" href="tel:8005551212"><i class="icon-bell"></i>&nbsp; (800) 555-1212</a>
-        <a class="social-button sb-facebook shape-none sb-dark" href="#" target="_blank"><i class="socicon-facebook"></i></a>
-        <a class="social-button sb-twitter shape-none sb-dark" href="#" target="_blank"><i class="socicon-twitter"></i></a>
-        <a class="social-button sb-instagram shape-none sb-dark" href="#" target="_blank"><i class="socicon-instagram"></i></a>
+        <a class="social-button shape-none sb-facebook sb-dark" href="https://www.facebook.com/dimplepass/" target="_blank"><i class="socicon-facebook"></i></a>
+        <a class="social-button shape-none sb-twitter sb-dark" href="https://twitter.com/dimplepass" target="_blank"><i class="socicon-twitter"></i></a>
+        <a class="social-button shape-none sb-instagram sb-dark" href="https://www.instagram.com/dimplepass/" target="_blank"><i class="socicon-instagram"></i></a>
       </div>
       <div class="topbar-column">
         <a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; Get mobile app</a>

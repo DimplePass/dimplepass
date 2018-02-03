@@ -13,9 +13,9 @@
             </ul>
             <p><a class="navi-link-light" href="#">info@dimplepass.com</a></p>
             <p><a class="navi-link-light" href="/contact">Contact Form</a></p>
-            <a class="social-button shape-circle sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a>
-            <a class="social-button shape-circle sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a>
-            <a class="social-button shape-circle sb-instagram sb-light-skin" href="#"><i class="socicon-instagram"></i></a>
+            <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/dimplepass/" target="_blank"><i class="socicon-facebook"></i></a>
+            <a class="social-button shape-circle sb-twitter sb-light-skin" href="https://twitter.com/dimplepass" target="_blank"><i class="socicon-twitter"></i></a>
+            <a class="social-button shape-circle sb-instagram sb-light-skin" href="https://www.instagram.com/dimplepass/" target="_blank"><i class="socicon-instagram"></i></a>
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
