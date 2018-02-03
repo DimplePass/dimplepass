@@ -31,9 +31,9 @@ class UtilityController extends Controller
 	// Homepage
 	public function home()
 	{
-		return view('index');
+		// return view('index');
 		// return view('maintenance');
-    // return view('comingsoon');
+    return view('comingsoon');
 	}
 
 	// About
