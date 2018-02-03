@@ -54,32 +54,6 @@
         </ul>
       </nav>
     </div>
-    {{-- Topbar --}}
-    <div class="topbar">
-      <div class="topbar-column">
-        <a class="hidden-md-down" href="mailto:info@dimplepass.com"><i class="icon-mail"></i>&nbsp; info@dimplepass.com</a>
-        <a class="hidden-md-down" href="tel:8005551212"><i class="icon-bell"></i>&nbsp; (800) 555-1212</a>
-        <a class="social-button shape-none sb-facebook sb-dark" href="https://www.facebook.com/dimplepass/" target="_blank"><i class="socicon-facebook"></i></a>
-        <a class="social-button shape-none sb-twitter sb-dark" href="https://twitter.com/dimplepass" target="_blank"><i class="socicon-twitter"></i></a>
-        <a class="social-button shape-none sb-instagram sb-dark" href="https://www.instagram.com/dimplepass/" target="_blank"><i class="socicon-instagram"></i></a>
-      </div>
-      <div class="topbar-column">
-        <a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; Get mobile app</a>
-        <div class="lang-currency-switcher-wrap">
-          <div class="lang-currency-switcher dropdown-toggle"><span class="language"><img alt="English" src="/img/flags/GB.png"></span><span class="currency">$ USD</span></div>
-          <div class="dropdown-menu">
-            <div class="currency-select">
-              <select class="form-control form-control-rounded form-control-sm">
-                <option value="usd">$ USD</option>
-                <option value="usd">€ EUR</option>
-                <option value="usd">£ UKP</option>
-                <option value="usd">¥ JPY</option>
-              </select>
-            </div><a class="dropdown-item" href="#"><img src="/img/flags/FR.png" alt="Français">Français</a><a class="dropdown-item" href="#"><img src="/img/flags/DE.png" alt="Deutsch">Deutsch</a><a class="dropdown-item" href="#"><img src="/img/flags/IT.png" alt="Italiano">Italiano</a>
-          </div>
-        </div>
-      </div>
-    </div>
     {{-- Navbar --}}
     {{-- Remove "navbar-sticky" class to make navigation bar scrollable with the page. --}}
     <header class="navbar navbar-sticky">
