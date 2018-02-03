@@ -16,23 +16,23 @@
 @stop
 
 @section('logo-tag')
-Page Title
+My Yellowstone Park Pass
 @stop
 
 @section('content')
 
-<!-- Page Title-->
+<!-- My Passes -->
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>Page Title</h1>
+      <h1>My Yellowstone Park Pass</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="/">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
-        <li>Page Title</li>
+        <li>My Yellowstone Park Pass</li>
       </ul>
     </div>
   </div>
@@ -45,12 +45,11 @@ Page Title
     </div>
     <div class="col-md-7 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
+      <h2>Details of a currently active pass.</h2>
       <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
       <div class="mb-4 mt-4"><hr></div>
       <h3>Some more important stuff.</h3>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <a class="btn btn-primary" href="/">Head on Home <i class="icon-arrow-right"></i></a>
     </div>
   </div>
 </div>

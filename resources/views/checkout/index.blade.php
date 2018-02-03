@@ -124,11 +124,11 @@ Page Title
           <table class="table">
             <tr>
               <td>Glacier</td>
-              <td class="text-medium">$26.00</td>
+              <td class="text-medium">$<span class="passFee">26.00</span></td>
             </tr>
             <tr>
               <td>Yellowstone</td>
-              <td class="text-medium">$26.00</td>
+              <td class="text-medium">$<span class="passFee">26.00</span></td>
             </tr>
             <tr>
               <td>
@@ -138,11 +138,11 @@ Page Title
                   <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
                 </div>
               </td>     
-              <td  class="text-medium">$0</td>   
+              <td  class="text-medium">$<span id="donateAmount">0</span></td>   
             </tr>       
             <tr>
               <td></td>
-              <td class="text-lg text-medium">$52.00</td>
+              <td class="text-lg text-medium">$<span id="totalDue"></span></td>
             </tr>
           </table>
         </section>
@@ -155,6 +155,73 @@ Page Title
 
 @section('scripts')
 <script>
+
+//////////
+/// On Page Load
+//////////
+
+$(function() {
+
+  /// Add total of all passes.
+  addTotalDue();
+
+});
+
+//////////
+/// Add direct donation to total on checkbox click.
+//////////
+
+$('#donate4').on('click', function() {
+  addDonation();
+});
+
+//////////
+/// Add direct donation to total
+//////////
+
+function addDonation() {
+  if ($('#donate4').is(':checked')) {
+    var donateAmount = 4;
+  } else {
+    var donateAmount = 0;
+  }
+  $('#donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  var total = totalPasses + donateAmount;
+  $('#totalDue').text(addCommas(roundTo(total, 0)));
+}
+
+//////////
+/// Add total due and display
+//////////
+
+function addTotalDue() {
+  totalPasses = 0;
+  $('.passFee').each(function(){
+      totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
+  });
+  $('#totalDue').text(addCommas(roundTo(totalPasses, 0)));
+}
+
+//////////
+/// Adds Number Commas and decimal point.
+//////////
+
+function addCommas(nStr) {
+  nStr += '';
+  x = nStr.split('.');
+  x1 = x[0];
+  x2 = x.length > 1 ? '.' + x[1] : '';
+  var rgx = /(\d+)(\d{3})/;
+  while (rgx.test(x1)) {
+    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+  }
+  return x1 + x2;
+}
+
+function roundTo(num, places) {
+  var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
+  return calc.toFixed(2);
+}
 
 </script>
 @stop
