@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5be679612b55d149df75dbbbfd7f48ff",
-    "content-hash": "c87235e89d1990d488165f9b426a9d7b",
+    "hash": "0a405ed38d9d617d8a5c29da273cf4d5",
+    "content-hash": "37b2bee29fb4c268c16c3610fbc99515",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -217,6 +217,42 @@
                 "validator"
             ],
             "time": "2017-11-15 23:40:40"
+        },
+        {
+            "name": "elic-dev/laravel-site-protection",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elic-dev/laravel-site-protection.git",
+                "reference": "4e99315d3c0fa957534fed3b77ff936ab94cb42e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elic-dev/laravel-site-protection/zipball/4e99315d3c0fa957534fed3b77ff936ab94cb42e",
+                "reference": "4e99315d3c0fa957534fed3b77ff936ab94cb42e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ElicDev\\SiteProtection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Lill",
+                    "email": "m.lill@gmx.de"
+                }
+            ],
+            "description": "Protect your site with a simple password form",
+            "time": "2017-06-04 17:40:09"
         },
         {
             "name": "ellisthedev/laravel-5-robots",

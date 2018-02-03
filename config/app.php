@@ -163,11 +163,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        'EllisTheDev\Robots\RobotsServiceProvider',
 
         /*
          * Package Service Providers...
          */
+        'EllisTheDev\Robots\RobotsServiceProvider',
+        ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
 
         /*
          * Application Service Providers...

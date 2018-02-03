@@ -160,17 +160,26 @@ Page Title
 /// On Page Load
 //////////
 
-/// Add total of all passes.
 $(function() {
-    totalPasses = 0;
-    $('.passFee').each(function(){
-        totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
-    });
-    $('#totalDue').text(addCommas(roundTo(totalPasses, 0)));
+
+  /// Add total of all passes.
+  addTotalDue();
+
 });
 
-/// Add direct donation to total.
+//////////
+/// Add direct donation to total on checkbox click.
+//////////
+
 $('#donate4').on('click', function() {
+  addDonation();
+});
+
+//////////
+/// Add direct donation to total
+//////////
+
+function addDonation() {
   if ($('#donate4').is(':checked')) {
     var donateAmount = 4;
   } else {
@@ -178,8 +187,20 @@ $('#donate4').on('click', function() {
   }
   $('#donateAmount').text(addCommas(roundTo(donateAmount, 0)));
   var total = totalPasses + donateAmount;
-  $('#totalDue').text(addCommas(roundTo(total, 0))); 
-});
+  $('#totalDue').text(addCommas(roundTo(total, 0)));
+}
+
+//////////
+/// Add total due and display
+//////////
+
+function addTotalDue() {
+  totalPasses = 0;
+  $('.passFee').each(function(){
+      totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
+  });
+  $('#totalDue').text(addCommas(roundTo(totalPasses, 0)));
+}
 
 //////////
 /// Adds Number Commas and decimal point.
