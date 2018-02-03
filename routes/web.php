@@ -22,7 +22,7 @@ Route::get('/parks', 'ParkController@parks');
 Route::get('/parks/yellowstone', 'ParkController@park');
 
 ///// Checkout
-Route::get('/checkout', 'checkoutController@checkout');
+Route::get('/checkout', 'CheckoutController@checkout');
 Route::get('/checkout/payment', 'CheckoutController@checkoutPayment');
 Route::get('/checkout/review', 'CheckoutController@checkoutReview');
 Route::get('/checkout/thanks', 'CheckoutController@checkoutThanks');
