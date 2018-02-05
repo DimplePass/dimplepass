@@ -26,6 +26,6 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css" media="screen">
 
     <!-- Modernizr-->
-    <script src="js/modernizr.min.js"></script>
+    <script src="/js/modernizr.min.js"></script>
 
   </head>
