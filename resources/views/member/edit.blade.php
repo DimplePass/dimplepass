@@ -54,8 +54,8 @@ Happy GoLucky
         </div>
       </aside>
       <nav class="list-group">
-        <a class="list-group-item active" href="/member/edit"><i class="icon-head"></i>My Profile</a>
         <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+        <a class="list-group-item active" href="/member/edit"><i class="icon-head"></i>My Profile</a>
       </nav>
     </div>
     <div class="col-lg-8">

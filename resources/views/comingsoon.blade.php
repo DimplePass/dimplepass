@@ -22,7 +22,7 @@
     <!-- Main Template Styles-->
     <link id="mainStyles" rel="stylesheet" media="screen" href="css/styles.min.css">
     <!-- Modernizr-->
-    <script src="js/modernizr.min.js"></script>
+    <script src="/js/modernizr.min.js"></script>
   </head>
   <!-- Body-->
   <body>

@@ -137,8 +137,8 @@
                     <h6 class="user-name">Happy Golucky</h6><span class="text-xs text-muted">290 Reward points</span>
                   </div>
                 </li>
-                  <li><a href="/member/edit">My Profile</a></li>
                   <li><a href="/member">My Passes</a></li>
+                  <li><a href="/member/edit">My Profile</a></li>
                 <li class="sub-menu-separator"></li>
                 <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>
               </ul>
