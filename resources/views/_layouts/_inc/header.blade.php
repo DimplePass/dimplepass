@@ -70,8 +70,8 @@
       {{-- Main Navigation --}}
       <nav class="site-menu">
         <ul>
-          <li class="active"><a href="/"><span>Home</span></a></li>
-          <li class="has-megamenu"><a href="/parks"><span>Destinations</span></a>
+          <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><span>Home</span></a></li>
+          <li class="has-megamenu {{ Request::is('parks*') ? 'active' : '' }}"><a href="/parks"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
@@ -117,8 +117,8 @@
               </li>
             </ul>
           </li>
-          <li><a href="/how"><span>How does it work?</span></a></li>
-          <li><a href="/foundation"><span>100% For Kids</span></a></li>
+          <li class="{{ Request::is('how*') ? 'active' : '' }}"><a href="/how"><span>How does it work?</span></a></li>
+          <li class="{{ Request::is('foundation*') ? 'active' : '' }}"><a href="/foundation"><span>100% For Kids</span></a></li>
         </ul>
       </nav>
       {{-- Toolbar --}}
