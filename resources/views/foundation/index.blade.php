@@ -42,7 +42,6 @@
   <div class="row padding-bottom-2x">
     <div class="col-md-5">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
-      <h2>Stick here</h2>
     </div>
     <div class="col-md-7 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>

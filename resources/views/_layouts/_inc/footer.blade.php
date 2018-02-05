@@ -24,7 +24,7 @@
             <h3 class="widget-title">About Us</h3>
             <ul>
               <li><a href="/about">Our Story</a></li>
-              <li><a href="/foundation">100% for Kids</a></li>
+              <li><a href="/foundation">100% to Kids</a></li>
               <li><a href="/faqs">FAQs</a></li>
             </ul>
           </section>

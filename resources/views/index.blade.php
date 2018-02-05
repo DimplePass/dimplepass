@@ -55,26 +55,26 @@ Stop Planning. Start Playing. Save Money.
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yosemite">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <p class="text-muted">$324 total savings</p><a class="btn btn-primary" href="/parks/yellowstone">View the <strong>$26</strong> Pass</a>
+          <p class="text-muted">$324 total savings</p><a class="btn btn-primary" href="/parks/yosemite">View the <strong>$26</strong> Pass</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/glacier">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
-          <p class="text-muted">$245 total savings</p><a class="btn btn-primary" href="/parks/yellowstone">View the <strong>$26</strong> Pass</a>
+          <p class="text-muted">$245 total savings</p><a class="btn btn-primary" href="/parks/glacier">View the <strong>$26</strong> Pass</a>
         </div>
       </div>
     </div>

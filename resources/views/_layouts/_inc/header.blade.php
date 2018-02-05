@@ -20,7 +20,7 @@
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
-          <li><span><a href="/foundation">100% for Kids</a></span></li>
+          <li><span><a href="/foundation">100% to Kids</a></span></li>
           <li><span><a href="/faqs">FAQs</a></span></li>
         </ul>
       </nav>
@@ -47,7 +47,7 @@
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
-          <li><span><a href="/foundation">100% for Kids</a></span></li>
+          <li><span><a href="/foundation">100% to Kids</a></span></li>
           <li><span><a href="/faqs">FAQs</a></span></li>
         </ul>
       </nav>
@@ -118,7 +118,7 @@
             </ul>
           </li>
           <li class="{{ Request::is('how*') ? 'active' : '' }}"><a href="/how"><span>How does it work?</span></a></li>
-          <li class="{{ Request::is('foundation*') ? 'active' : '' }}"><a href="/foundation"><span>100% For Kids</span></a></li>
+          <li class="{{ Request::is('foundation*') ? 'active' : '' }}"><a href="/foundation"><span>100% to Kids</span></a></li>
         </ul>
       </nav>
       {{-- Toolbar --}}

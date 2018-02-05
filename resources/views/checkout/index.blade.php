@@ -218,6 +218,10 @@ function addCommas(nStr) {
   return x1 + x2;
 }
 
+//////////
+/// Rounds current calculations.
+//////////
+
 function roundTo(num, places) {
   var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
   return calc.toFixed(2);
