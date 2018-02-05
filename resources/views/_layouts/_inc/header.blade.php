@@ -12,12 +12,11 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="/parks"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="/parks/yellowstone">Glacier</a></li>
-              <li><a href="/parks/yellowstone">Grand Canyon</a></li>
-              <li><a href="/parks/yellowstone">Smoky Mountain</a></li>
+              <li><a href="/parks/glacier">Glacier</a></li>
+              <li><a href="/parks/comingsoon">Grand Teton</a></li>
+              <li><a href="/parks/comingsoon">Great Smoky Mountains</a></li>
               <li><a href="/parks/yellowstone">Yellowstone</a></li>
-              <li><a href="/parks/yellowstone">Yosemite</a></li>
-              <li><a href="/parks/yellowstone">Zion</a></li>
+              <li><a href="/parks/yosemite">Yosemite</a></li>
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -40,12 +39,11 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="#"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="/parks/yellowstone">Glacier</a></li>
-              <li><a href="/parks/yellowstone">Grand Canyon</a></li>
-              <li><a href="/parks/yellowstone">Smoky Mountain</a></li>
+              <li><a href="/parks/glacier">Glacier</a></li>
+              <li><a href="/parks/comingsoon">Grand Teton</a></li>
+              <li><a href="/parks/comingsoon">Great Smoky Mountains</a></li>
               <li><a href="/parks/yellowstone">Yellowstone</a></li>
-              <li><a href="/parks/yellowstone">Yosemite</a></li>
-              <li><a href="/parks/yellowstone">Zion</a></li>
+              <li><a href="/parks/yosemite">Yosemite</a></li>
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -76,23 +74,23 @@
           <li class="has-megamenu"><a href="/parks"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
-                <section class="promo-box" style="background-image: url(/img/destinations/yosemite-300x300.jpg);">
+                <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">save up to $346</h4>
-                    <a class="btn btn-sm btn-primary" href="/parks/yellowstone">
-                      <h3 class="text-bold text-light text-shadow">Yosemite</h3>
+                    <a class="btn btn-sm btn-primary" href="/parks/glacier">
+                      <h3 class="text-bold text-light text-shadow">Glacier</h3>
                     </a>
                   </div>
                 </section>
               </li>
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
-                  <li><a href="/parks/yellowstone">Glacier</a></li>
-                  <li><a href="/parks/yellowstone">Grand Teton</a></li>
-                  <li><a href="/parks/yellowstone">Great Smoky Mountains</a></li>
+                  <li><a href="/parks/glacier">Glacier</a></li>
+                  <li><a href="/parks/comingsoon">Grand Teton</a></li>
+                  <li><a href="/parks/comingsoon">Great Smoky Mountains</a></li>
                   <li><a href="/parks/yellowstone">Yellowstone</a></li>
-                  <li><a href="/parks/yellowstone">Yosemite</a></li>
+                  <li><a href="/parks/yosemite">Yosemite</a></li>
                   <li><a href="/parks"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
@@ -110,8 +108,8 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/yosemite-300x300.jpg);">
                   {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">save up to $346</h4>
-                    <a class="btn btn-sm btn-primary" href="/parks/yellowstone">
+                    <h4 class="text-light text-thin text-shadow">save up to $294</h4>
+                    <a class="btn btn-sm btn-primary" href="/parks/yosemite">
                       <h3 class="text-bold text-light text-shadow">Yosemite</h3>
                     </a>
                   </div>

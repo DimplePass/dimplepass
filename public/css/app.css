@@ -13511,7 +13511,7 @@ a.list-group-item {
 
 .hero-slider {
   width: 100%;
-  min-height: 480px;
+  min-height: 540px;
   background-position: center;
   background-color: #f5f5f5;
   background-repeat: no-repeat;
@@ -13520,7 +13520,7 @@ a.list-group-item {
 }
 
 .hero-slider > .owl-carousel {
-  min-height: 480px;
+  min-height: 540px;
 }
 
 .hero-slider > .owl-carousel.dots-inside .owl-dots {
@@ -13566,11 +13566,11 @@ a.list-group-item {
 
 @media (max-width: 1100px) {
   .hero-slider {
-    min-height: 330px;
+    min-height: 390px;
   }
 
   .hero-slider > .owl-carousel {
-    min-height: 330px;
+    min-height: 390px;
   }
 }
 
@@ -16928,5 +16928,11 @@ video {
 
 .commitmentFooter i {
   font-size: 2.4rem;
+}
+
+.stickyBuy {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
 }
 

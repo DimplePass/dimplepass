@@ -19,7 +19,12 @@ Route::get('/', 'UtilityController@home');
 
 ///// Parks
 Route::get('/parks', 'ParkController@parks');
-Route::get('/parks/yellowstone', 'ParkController@park');
+Route::get('/parks/park', 'ParkController@park');
+// Demo Parks
+Route::get('/parks/glacier', 'ParkController@glacier');
+Route::get('/parks/yosemite', 'ParkController@yosemite');
+Route::get('/parks/yellowstone', 'ParkController@yellowstone');
+Route::get('/parks/comingsoon', 'ParkController@comingsoon');
 
 ///// Checkout
 Route::get('/checkout', 'CheckoutController@checkout');
