@@ -10,7 +10,7 @@
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
-          <li class="has-children"><span><a href="#"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="/parks"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               <li><a href="/parks/yellowstone">Glacier</a></li>
               <li><a href="/parks/yellowstone">Grand Canyon</a></li>
