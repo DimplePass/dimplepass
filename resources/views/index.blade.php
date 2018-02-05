@@ -86,20 +86,34 @@ Stop Planning. Start Playing. Save Money.
   <div class="container">
     <h3 class="text-center mb-30 pb-2">Our Commitment to Your Vacation</h3>
     <div class="row commitmentFooter">
-      <div class="col-md-3 col-sm-6 text-center mb-30"><i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-camera"></i>
+      <div class="col-md-3 col-sm-6 text-center mb-30">
+        <a href="/thebest">
+          <i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-camera"></i>
+        </a>
         <h6>The Best Attractions</h6>
         <p class="text-muted margin-bottom-none">We strive to include only the best vendors available.</p>
+         <p><a href="/thebest">Learn More</a></p>
       </div>
-      <div class="col-md-3 col-sm-6 text-center mb-30"><i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-id"></i>
+      <div class="col-md-3 col-sm-6 text-center mb-30">
+        <a href="/vendor/promise">
+          <i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-id"></i>
+        </a>
         <h6>Hassle Free Redemption</h6>
         <p class="text-muted margin-bottom-none">We work with vendors to ensure redeeming your pass is hassle-free.</p>
         <p><a href="/vendor/promise">Learn More</a></p>
       </div>
-      <div class="col-md-3 col-sm-6 text-center mb-30"><i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-umbrella"></i>
+      <div class="col-md-3 col-sm-6 text-center mb-30">
+        <a href="/guarantee">
+          <i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-umbrella"></i>
+        </a>
         <h6>Money Back Guarantee</h6>
         <p class="text-muted margin-bottom-none">Not satisfied? We'll return money within 30 days of travel.</p>
+         <p><a href="/guarantee">Learn More</a></p>
       </div>
-      <div class="col-md-3 col-sm-6 text-center mb-30"><i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-sun"></i>
+      <div class="col-md-3 col-sm-6 text-center mb-30">
+        <a href="/foundation">
+          <i class="w-90 dp-warning img-thumbnail mx-auto mb-3 pe-7s-sun"></i>
+        </a>
         <h6>100% to get Kids Outdoors</h6>
         <p class="text-muted margin-bottom-none">100% of our profits go to programs that get kids outdoors.</p>
          <p><a href="/foundation">Learn More</a></p>

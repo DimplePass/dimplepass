@@ -60,10 +60,22 @@ class UtilityController extends Controller
 		return view('foundation.index');
 	}
 
+	// Guarantee
+	public function guarantee()
+	{
+		return view('guarantee');
+	}
+
 	// How it Works
 	public function how()
 	{
 		return view('how');
+	}
+
+	// Only the Best Attractions
+	public function thebest()
+	{
+		return view('thebest');
 	}
 
 }

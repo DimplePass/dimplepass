@@ -44,7 +44,9 @@ Route::get('/vendor/email/confirmation', 'VendorController@emailSignupConfirmati
 Route::get('/foundation', 'UtilityController@foundation');
 
 ///// Supporting
-Route::get('/how', 'UtilityController@how');
 Route::get('/about', 'UtilityController@about');
-Route::get('/faqs', 'UtilityController@faqs');
 Route::get('/contact', 'UtilityController@contact');
+Route::get('/faqs', 'UtilityController@faqs');
+Route::get('/guarantee', 'UtilityController@guarantee');
+Route::get('/how', 'UtilityController@how');
+Route::get('/thebest', 'UtilityController@thebest');
