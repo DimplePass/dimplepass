@@ -78,7 +78,7 @@ Page Title
       </div>
       <div class="shopping-cart-footer">
         <div class="column"></div>
-        <div class="column text-lg">Subtotal: <span class="text-medium">$52.00</span></div>
+        <div class="column text-lg">Subtotal: <span class="text-medium">$<span class="totalDue">0</span></span></div>
       </div>
 			<div class="text-right">
         <h5>Payment method</h5>
@@ -115,11 +115,11 @@ Page Title
                   <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
                 </div>
               </td>     
-              <td  class="text-medium">$<span id="donateAmount">0</span></td>   
+              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
             </tr>       
             <tr>
               <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue"></span></td>
+              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
             </tr>
           </table>
         </section>
@@ -162,9 +162,9 @@ function addDonation() {
   } else {
     var donateAmount = 0;
   }
-  $('#donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
   var total = totalPasses + donateAmount;
-  $('#totalDue').text(addCommas(roundTo(total, 0)));
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
 //////////
@@ -176,7 +176,7 @@ function addTotalDue() {
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
-  $('#totalDue').text(addCommas(roundTo(totalPasses, 0)));
+  $('.totalDue').text(addCommas(roundTo(totalPasses, 0)));
 }
 
 //////////

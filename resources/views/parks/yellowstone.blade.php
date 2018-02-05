@@ -56,11 +56,88 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/jhmr-tram-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Jackson Hole Mountain Resort <small>Teton Village, WY</small>
+          </h3>
+          {{-- <h4 class="product-price">
+            <del>$99.99</del>$49.99
+          </h4> --}}
+          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> $5 Off Tram Ride <small>(up to 4)</small></h4>
+            <h6 class="dp-warning">$20 possible savings</h6>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 20 - October 8</li>
+              <li><span class="opacity-50">Daily:</span> 9.00 am - 5.00 pm</li>
+              <li><a href="#">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Vendor Listing -->
+      <div class="product-card product-list">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/gwdc-bears-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Grizzy and Wolf Discovery Center <small>West Yellowstone, MT</small>
+          </h3>
+          {{-- <h4 class="product-price">
+            <del>$99.99</del>$49.99
+          </h4> --}}
+          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(up to 4)</small></h4>
+            <h6 class="dp-warning">$8 possible savings</h6>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
+              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li><a href="#">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Vendor Listing -->
+      <div class="product-card product-list">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/imax-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Yellowstone Giant Screen - IMAX <small>West Yellowstone, MT</small>
+          </h3>
+          {{-- <h4 class="product-price">
+            <del>$99.99</del>$49.99
+          </h4> --}}
+          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(up to 4)</small></h4>
+            <h6 class="dp-warning">$20 possible savings</h6>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
+              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li><a href="#">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Vendor Listing -->
+      <div class="product-card product-list">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/sk-chairlift-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Snow King Scenic Chairlift <small>Jackson, WY</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
@@ -82,11 +159,11 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/sk-cowboycoaster-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Snow King Cowboy Coaster <small>Jackson, WY</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
@@ -108,11 +185,11 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/bb-museum-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Buffalo Bill Center of the West <small>Cody, WY</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
@@ -134,11 +211,11 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/gt-chairlift-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Grand Targhee Scenic Chairlift <small>Alta, WY</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
@@ -160,11 +237,11 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/jh-rodeo-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Jackson Hole Rodeo <small>Jackson, WY</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
@@ -186,11 +263,11 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/cdy-niterodeo-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Cody Night Rodeo <small>Cody, WY</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
@@ -212,18 +289,18 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/mtw-zipline-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Montana Whitewater Zipline <small>Gallatin, MT</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
+            <h4><i class="icon-tag dp-success"></i> $10 Off Entry <small>(up to 4)</small></h4>
             <h6 class="dp-warning">$20 possible savings</h6>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
@@ -238,18 +315,18 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/mtw-rafting-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            Montana Whitewater Rafting <small>Gallatin, MT</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
+            <h4><i class="icon-tag dp-success"></i> $12 Off 1/2 Day Whitewater Trip <small>(up to 4)</small></h4>
             <h6 class="dp-warning">$20 possible savings</h6>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
@@ -264,45 +341,19 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
+          <img src="/img/vendors/ynp/dp-horseback-450x290.jpg" alt="">
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Vendor Name Goes Here
+            The Diamond P Ranch <small>West Yellowstone, MT</small>
           </h3>
           {{-- <h4 class="product-price">
             <del>$99.99</del>$49.99
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
-            <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
-              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
-              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
-              <li><a href="#">Visit Website</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Vendor Listing -->
-      <div class="product-card product-list">
-        <a class="product-thumb" href="#">
-          {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yellowstone Discounts">
-        </a>
-        <div class="product-info">
-          <h3 class="product-title">
-            Vendor Name Goes Here
-          </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
-          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
-          <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> $12 Off Horseback Ride <small>(up to 4)</small></h4>
+            <h6 class="dp-warning">$48 possible savings</h6>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>

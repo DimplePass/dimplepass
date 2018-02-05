@@ -110,11 +110,11 @@ Page Title
                   <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
                 </div>
               </td>     
-              <td  class="text-medium">$<span id="donateAmount">0</span></td>   
+              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
             </tr>       
             <tr>
               <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue"></span></td>
+              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
             </tr>
           </table>
         </section>
@@ -157,9 +157,9 @@ function addDonation() {
   } else {
     var donateAmount = 0;
   }
-  $('#donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
   var total = totalPasses + donateAmount;
-  $('#totalDue').text(addCommas(roundTo(total, 0)));
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
 //////////
@@ -171,7 +171,7 @@ function addTotalDue() {
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
-  $('#totalDue').text(addCommas(roundTo(totalPasses, 0)));
+  $('.totalDue').text(addCommas(roundTo(totalPasses, 0)));
 }
 
 //////////

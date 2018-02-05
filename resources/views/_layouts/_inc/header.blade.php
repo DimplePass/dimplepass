@@ -145,7 +145,7 @@
               <a href="/checkout"></a>
               <i class="icon-bag"></i>
               <span class="count">2</span>
-              <span class="subtotal">$52</span>
+              <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
                 <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/checkout"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
                   <div class="dropdown-product-info"><a class="dropdown-product-title" href="/checkout">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
