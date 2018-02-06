@@ -16936,3 +16936,14 @@ video {
   top: 120px;
 }
 
+.stickyOrderSummary {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 140px;
+}
+
+.destinationMap {
+  width: 100%;
+  height: 600px;
+}
+

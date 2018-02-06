@@ -23,7 +23,6 @@ Stop Planning. Start Playing. Save Money.
 
 {{-- Main Slider --}}
 <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg1.jpg);">
-  {{-- <div class="owl-carousel large-controls dots-inside" data-owl-carousel="{ &quot;nav&quot;: true, &quot;dots&quot;: true, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 7000 }"> --}}
     <div class="item">
       <div class="container padding-top-8x">
         <div class="row justify-content-center align-items-center">

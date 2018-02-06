@@ -88,7 +88,7 @@ Page Title
     </div>
     <!-- Sidebar          -->
     <div class="col-xl-3 col-lg-4">
-      <aside class="sidebar">
+      <aside class="sidebar stickyOrderSummary">
         <div class="padding-top-2x hidden-lg-up"></div>
         <!-- Order Summary Widget-->
         <section class="widget widget-order-summary">

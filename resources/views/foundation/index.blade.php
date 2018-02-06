@@ -21,6 +21,21 @@
 
 @section('content')
 
+{{-- Main Slider --}}
+<section class="hero-slider" style="background-image: url(/img/hero-slider/main-bg1.jpg);">
+    <div class="item">
+      <div class="container padding-top-9x">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-12 padding-bottom-2x text-md-left text-center">
+            <div class="from-bottom">
+              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <div class="h4 mt-0 mb-4 gray-lighter">Our Commitment to the future of the Outdoors.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
 <!-- Page Title-->
 <div class="page-title">
   <div class="container">
@@ -37,30 +52,58 @@
     </div>
   </div>
 </div>
+
 <!-- Page Content-->
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
-    <div class="col-md-5">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+    <div class="col-md-5 text-center">
+      <aside class="stickyBuy">
+        <img class="d-block w-270 mx-auto rounded mb-3 my-5" src="/img/foundation/everykidinapark.png" alt="">
+        <h2><a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank" class="btn btn-primary btn-lg">Learn More About It <i class="icon-arrow-right"></i></a></h2>
+      </aside> 
     </div>
     <div class="col-md-7 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
-      <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
-      <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
 
+      <h2>Dimple Pass commits 100% of our profits to get kids outdoors.</h2>
+      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Dimple Pass.  There is nothing like seeing a child smile while discovering themselves as a part of their natural environment.  We've teamed up with the National Park Foundation and the Open Outdoors for Kids program in order to create more dimples out there.</p>
+      
+      <blockquote class="my-5">
+        Open OutDoors for Kids creates pathways for kids to enjoy, understand and connect with nature in exciting ways by facilitating outdoor activity, experiential learning, and cultural heritage exercises.
+      </blockquote>
 
+      <p>Open OutDoors for Kids is an initiative from the National Park Foundation to connect more kids to their national parks through fun and engaging activities. Children today are more disconnected from their natural and cultural heritage than ever before. Open OutDoors for Kids is changing that—building on a child’s innate wonder and curiosity about the natural world.</p>
+      <p>National parks are gateways to self-discovery and learning and Open OutDoors for Kids is making sure all kids from across the country get the chance to experience them. Learn more about NPF's work with the Every Kid in a Park initiative, to see how you and your family can enjoy our national parks.</p>
 
+      <div class="col-sm-12 my-5"><hr></div>
+
+      <h3>Overcoming Obstacles</h3>
+      <p>Research demonstrates that kids who spend time outdoors are healthier and do better in school. Kids who have opportunities for hands-on learning outdoors also demonstrate more interest in and are more proficient in science. Similarly, a young person's understanding of history improves after visiting sites of cultural significance.</p>
+      <p>Yet with cutbacks in school funding for field trips and other barriers to access, kids today have fewer opportunities for experiential learning. At the same time, we are witnessing an epidemic of inactivity among children as they spend more time engaged in "screen time" as opposed to "green time," resulting in rising rates of obesity and other issues. Most at risk are children from underserved, urban communities.</p>
+
+      <div class="col-sm-12 my-5"><hr></div>
+
+      <h3>Providing Opportunities</h3>
+      <p>The National Park Foundation's Open Outdoors for Kids Initiative introduces and exposes kids — all kids — to experiential, outdoor experiences that promote physical and emotional health, civic engagement and long-term appreciation for nature. Using the spectacular and unparalleled resources of our nation's more than 400 national parks, the program's goal is to connect more children to their culture and heritage, enhance hands-on learning opportunities and deepen connections to the natural world.</p>
+
+      <h5>Through focused programming in and out of parks, Open Outdoors for Kids addresses the following:</h5>
+      <ul>
+        <li><strong>ACCESS:</strong> Providing transportation, programming and free entry to the parks for children and teachers to experience hands-on, immersive learning.</li>
+        <li><strong>RELEVANCY:</strong> Connecting kids and families to the parks through programs that make people's lives better. We establish emotional relevancy of the parks through cultural programs and encourage active, healthy lifestyles through recreational and restoration activities.</li>
+        <li><strong>EDUCATION:</strong> Establish "in-park" opportunities for children to learn in our national parks, the world's largest outdoor classrooms. Unmatched as learning environments and living laboratories, national parks offer children, families and teachers a unique gateway to experience nature, history and culture, to learn about biodiversity and the environment, and to engage with each other in the great outdoors.</li>
+      </ul>
+
+      <div class="col-sm-12 my-5"><hr></div>
+
+      <h3>What does it mean to Open Outdoors for Kids?</h3>
+      <ul>
+        <li>It means creating pathways for kids to enjoy, understand and connect to nature, history and culture in ways that they might never have experienced otherwise.</li>
+        <li>It means sending a child to a day camp where she’ll discover the joys of hiking Old Rag in Shenandoah National Park.</li>
+        <li>It means training a science teacher in the Ozark National Scenic Riverways to bring water conservation to life back in the classroom.</li>
+        <li>It means transporting a classroom of kids to the Charles Young Buffalo Soldiers National Monument, or the Santa Fe National Historical Trail, for a live, on-site history lesson.</li>
+      </ul>
+
+      <h4>Each door opened represents another kid newly connected to the outdoors, its majesty and history, and all of its possibilities.</h4>
 
     </div>
   </div>
