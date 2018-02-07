@@ -56,6 +56,58 @@ Yellowstone National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/sk-chairlift-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Snow King Scenic Chairlift <small>Jackson, WY</small>
+          </h3>
+          {{-- <h4 class="product-price">
+            <del>$99.99</del>$49.99
+          </h4> --}}
+          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
+            <h6 class="dp-warning">$20 possible savings</h6>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
+              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li><a href="#">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Vendor Listing -->
+      <div class="product-card product-list">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/sk-cowboycoaster-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Snow King Cowboy Coaster <small>Jackson, WY</small>
+          </h3>
+          {{-- <h4 class="product-price">
+            <del>$99.99</del>$49.99
+          </h4> --}}
+          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
+            <h6 class="dp-warning">$20 possible savings</h6>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
+              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li><a href="#">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Vendor Listing -->
+      <div class="product-card product-list">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/jhmr-tram-450x290.jpg" alt="">
         </a>
         <div class="product-info">
@@ -125,58 +177,6 @@ Yellowstone National Park
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li class="dp-danger">Reservation Recommended</li>
-              <li><a href="#">Visit Website</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Vendor Listing -->
-      <div class="product-card product-list">
-        <a class="product-thumb" href="#">
-          {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sk-chairlift-450x290.jpg" alt="">
-        </a>
-        <div class="product-info">
-          <h3 class="product-title">
-            Snow King Scenic Chairlift <small>Jackson, WY</small>
-          </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
-          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
-          <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
-            <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
-              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
-              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
-              <li><a href="#">Visit Website</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Vendor Listing -->
-      <div class="product-card product-list">
-        <a class="product-thumb" href="#">
-          {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sk-cowboycoaster-450x290.jpg" alt="">
-        </a>
-        <div class="product-info">
-          <h3 class="product-title">
-            Snow King Cowboy Coaster <small>Jackson, WY</small>
-          </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
-          <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
-          <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
-            <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
-              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
-              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
             </ul>
           </div>
