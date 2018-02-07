@@ -21,26 +21,23 @@ How does it work?
 
 @section('content')
 
-<!-- Page Title-->
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>How does it work?</h1>
+{{-- Main Slider --}}
+<section class="hero-slider" style="background-image: url(/img/hero-slider/main-bg1.jpg);">
+    <div class="item">
+      <div class="container padding-top-7x">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-12 padding-bottom-2x text-md-left text-center">
+            <div class="from-bottom">
+              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <div class="h4 mt-0 mb-4 gray-lighter">discounted. simple. best vacation ever.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>How does it work?</li>
-      </ul>
-    </div>
-  </div>
-</div>
+</section>
+
 <!-- Page Content-->
-
-
-<div class="container padding-bottom-2x mb-2">
+<div class="container padding-bottom-3x mb-1 mt-5">
 
   <div class="row padding-bottom-2x">
     <div class="col-md-5">
