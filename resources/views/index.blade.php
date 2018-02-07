@@ -37,7 +37,8 @@ Stop Planning. Start Playing. Save Money.
       </div>
     </div>
 </section>
-{{-- Top Categories --}}
+
+{{-- Featured Destinations --}}
 <section class="container padding-top-3x">
   {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
@@ -49,7 +50,8 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <p class="text-muted">$289 total savings</p><a class="btn btn-primary" href="/parks/yellowstone">View the <strong>$26</strong> Pass</a>
+          <h6 class="dp-warning"><strong>$289</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/yellowstone">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -61,26 +63,29 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <p class="text-muted">$324 total savings</p><a class="btn btn-primary" href="/parks/yosemite">View the <strong>$26</strong> Pass</a>
+          <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/yosemite">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/glacier">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/zion">
           <div class="inner">
-            <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
+            <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/zion-overlook-155x137.jpg" alt="Category"><img src="/img/destinations/zion-subway-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
-          <h4 class="card-title">Glacier</h4>
-          <p class="text-muted">$245 total savings</p><a class="btn btn-primary" href="/parks/glacier">View the <strong>$26</strong> Pass</a>
+          <h4 class="card-title">Zion</h4>
+          <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/zion">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
   </div>
   <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/parks">View All Dimple National Parks</a></div>
 </section>
-{{-- Popular Brands --}}
+
+{{-- The Dimple Pass Commitment --}}
 <section class="bg-faded padding-top-3x padding-bottom-3x mt-5">
   <div class="container">
     <h3 class="text-center mb-30 pb-2">Our Commitment to Your Vacation</h3>

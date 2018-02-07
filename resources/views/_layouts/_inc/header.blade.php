@@ -147,11 +147,11 @@
               <span class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/checkout"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/checkout">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/parks/yellowstone">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
                 </div>
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/checkout"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/checkout">Yosemite</a><span class="dropdown-product-details">1 x $26</span></div>
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/parks/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/parks/yosemite">Yosemite</a><span class="dropdown-product-details">1 x $26</span></div>
                 </div>
                 <div class="toolbar-dropdown-group">
                   <div class="column"><span class="text-lg">Total:</span></div>

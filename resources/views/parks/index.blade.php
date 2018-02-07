@@ -26,64 +26,77 @@ The National Parks
       @include('_layouts._inc.destinationmap')
 </div>
 
-<div class="container padding-bottom-3x">
+{{-- Destination Cards --}}
+<section class="container">
+  {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
-    <div class="col-sm-12">
-      <div class="card-deck">
-        <div class="card margin-bottom-1x">
-          <a href="/parks/glacier">
-            <img class="card-img-top" src="/img/destinations/glacier-315x278.jpg" alt="Glacier National Park">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Glacier</h4>
-            <p class="card-text dp-warning"><strong>$346</strong> savings</p>
-          </div>
-          <div class="card-footer text-muted"><a href="/parks/glacier">View 16 Discounts</a></div>
+    <div class="col-md-4 col-sm-6">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/glacier">
+          <div class="inner">
+            <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
+          </div></a>
+        <div class="card-body text-center">
+          <h4 class="card-title">Glacier</h4>
+          <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/glacier">View <strong>16</strong> Discounts</a>
         </div>
-        <div class="card margin-bottom-1x">
-          <a href="/parks/grandcanyon">
-            <img class="card-img-top" src="/img/destinations/grandcanyon-315x278.jpg" alt="Grand Canyon National Park">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Grand Canyon</h4>
-            <p class="card-text dp-warning">Coming Soon</p>
-          </div>
-          <div class="card-footer text-muted"><a href="/parks/grandcanyon">View 16 Discounts</a></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/grandcanyon">
+          <div class="inner">
+            <div class="main-img"><img src="/img/destinations/grandcanyon-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/grandcanyon-horse-155x137.jpg" alt="Category"><img src="/img/destinations/grandcanyon-falls-155x137.jpg" alt="Category"></div>
+          </div></a>
+        <div class="card-body text-center">
+          <h4 class="card-title">Grand Canyon</h4>
+          <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/grandcanyon">View <strong>16</strong> Discounts</a>
         </div>
-        <div class="card margin-bottom-1x">
-          <a href="/parks/yellowstone">
-            <img class="card-img-top" src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Yellowstone</h4>
-            <p class="card-text dp-warning"><strong>$289</strong> savings</p>
-          </div>
-          <div class="card-footer text-muted"><a href="/parks/yellowstone">View 16 Discounts</a></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
+          <div class="inner">
+            <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
+            <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
+          </div></a>
+        <div class="card-body text-center">
+          <h4 class="card-title">Yellowstone</h4>
+          <h6 class="dp-warning"><strong>$289</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/yellowstone">View <strong>16</strong> Discounts</a>
         </div>
-        <div class="card margin-bottom-1x">
-          <a href="/parks/yosemite">
-            <img class="card-img-top" src="/img/destinations/yosemite-315x278.jpg" alt="Yosemite National Park">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Yosemite</h4>
-            <p class="card-text dp-warning"><strong>$294</strong> savings</p>
-          </div>
-          <div class="card-footer text-muted"><a href="/parks/yosemite">View 16 Discounts</a></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yosemite">
+          <div class="inner">
+            <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
+          </div></a>
+        <div class="card-body text-center">
+          <h4 class="card-title">Yosemite</h4>
+          <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/yosemite">View <strong>16</strong> Discounts</a>
         </div>
-        <div class="card margin-bottom-1x">
-          <a href="/parks/zion">
-            <img class="card-img-top" src="/img/destinations/zion-315x278.jpg" alt="Zion National Park">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Zion</h4>
-            <p class="card-text dp-warning">Coming Soon</p>
-          </div>
-          <div class="card-footer text-muted"><a href="/parks/zion">View 16 Discounts</a></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="card mb-30"><a class="card-img-tiles" href="/parks/zion">
+          <div class="inner">
+            <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/zion-overlook-155x137.jpg" alt="Category"><img src="/img/destinations/zion-subway-155x137.jpg" alt="Category"></div>
+          </div></a>
+        <div class="card-body text-center">
+          <h4 class="card-title">Zion</h4>
+          <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
+          <a class="btn btn-primary" href="/parks/zion">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 @stop
 

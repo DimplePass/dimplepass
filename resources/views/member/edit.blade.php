@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Happy GoLucky
+My Profile: Happy GoLucky
 @stop
 
 @section('content')
@@ -25,14 +25,14 @@ Happy GoLucky
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>Happy GoLucky</h1>
+      <h1>My Profile: Happy GoLucky</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="/">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
-        <li>Happy GoLucky</li>
+        <li>My Profile</li>
       </ul>
     </div>
   </div>

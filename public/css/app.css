@@ -16944,6 +16944,12 @@ video {
 
 .destinationMap {
   width: 100%;
-  height: 600px;
+  height: 580px;
+}
+
+.hero-cta {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 16px;
 }
 

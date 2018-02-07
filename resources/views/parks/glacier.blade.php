@@ -28,7 +28,7 @@ Glacier National Park
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save <strong class="dp-warning">$346</strong> in</div>
+              <div class="h1 mb-2 gray-lighter">Save up to <strong class="dp-warning hero-cta">$346</strong> in</div>
               <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
               <h5 class="mt-0 mb-2 gray-lighter">View Wildlife and Geysers in America's 1st National Park.</h5>            
           </div>
