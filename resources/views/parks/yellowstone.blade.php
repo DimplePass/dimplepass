@@ -24,7 +24,7 @@ Yellowstone National Park
 {{-- Main Slider --}}
 <section class="hero-slider" style="background-image: url(/img/hero-slider/main-bg1.jpg);">
     <div class="item">
-      <div class="container padding-top-6x">
+      <div class="container padding-top-7x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
@@ -124,6 +124,7 @@ Yellowstone National Park
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li class="dp-danger">Reservation Recommended</li>
               <li><a href="#">Visit Website</a></li>
             </ul>
           </div>
@@ -306,6 +307,7 @@ Yellowstone National Park
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li class="dp-danger">Reservation Recommended</li>
               <li><a href="#">Visit Website</a></li>
             </ul>
           </div>
@@ -332,6 +334,7 @@ Yellowstone National Park
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li class="dp-danger">Reservation Required</li>
               <li><a href="#">Visit Website</a></li>
             </ul>
           </div>
@@ -358,6 +361,7 @@ Yellowstone National Park
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li class="dp-danger">Reservation Required</li>
               <li><a href="#">Visit Website</a></li>
             </ul>
           </div>
@@ -396,28 +400,28 @@ Yellowstone National Park
         <section class="widget">
           <h3 class="widget-title">Filter by Type</h3>
           <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type4">
-            <label class="custom-control-label" for="type4"> Boating<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type4">
-            <label class="custom-control-label" for="type4"> Guided Tour<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type4">
-            <label class="custom-control-label" for="type4"> Horseback<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
             <input class="custom-control-input" type="checkbox" id="type1">
-            <label class="custom-control-label" for="type1">Museum <span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type3">
-            <label class="custom-control-label" for="type3"> Rodeo<span class="text-muted">(2)</span></label>
+            <label class="custom-control-label" for="type1"> Boating<span class="text-muted">(2)</span></label>
           </div>
           <div class="custom-control custom-checkbox">
             <input class="custom-control-input" type="checkbox" id="type2">
-            <label class="custom-control-label" for="type2">Tram/Chairlift/Gondola <span class="text-muted">(2)</span></label>
+            <label class="custom-control-label" for="type2"> Guided Tour<span class="text-muted">(2)</span></label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="type3">
+            <label class="custom-control-label" for="type3"> Horseback<span class="text-muted">(2)</span></label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="type4">
+            <label class="custom-control-label" for="type4">Museum <span class="text-muted">(2)</span></label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="type5">
+            <label class="custom-control-label" for="type5"> Rodeo<span class="text-muted">(2)</span></label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="type6">
+            <label class="custom-control-label" for="type6">Tram/Chairlift/Gondola <span class="text-muted">(2)</span></label>
           </div>
         </section>
       </aside>

@@ -29,8 +29,8 @@ Stop Planning. Start Playing. Save Money.
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
               <div class="h1 mb-2 pt-1"><strong class="dp-white">National Park Travel Discounts</strong></div>
-              <div class="h2 mb-0 pb-1 gray-lighter"><strong class="dp-warning">Save Money.</strong> Don't miss a thing!</div>
-              <div class="h4 mt-0 mb-4 gray-lighter">discounted. simple. happy.</div>
+              <div class="h2 mb-0 pb-1 gray-lighter">Save Money. Don't miss a thing!</div>
+              <div class="h4 mt-0 mb-4 gray-lighter">Have the best vacation ever.</div>
             </div><a class="btn btn-primary btn-lg scale-up delay-1" href="/how">How it works</a>
           </div>
         </div>
