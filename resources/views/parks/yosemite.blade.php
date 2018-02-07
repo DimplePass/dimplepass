@@ -56,7 +56,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -82,7 +82,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -108,7 +108,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -134,7 +134,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -160,7 +160,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -186,7 +186,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -212,7 +212,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -238,7 +238,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -264,7 +264,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -290,7 +290,7 @@ Yosemite National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/ynp/sample-450x290.jpg" alt="Yosemite Discounts">
+          <img src="/img/vendors/yos/sample-450x290.jpg" alt="Yosemite Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">

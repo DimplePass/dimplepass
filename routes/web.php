@@ -22,8 +22,10 @@ Route::get('/parks', 'ParkController@parks');
 Route::get('/parks/park', 'ParkController@park');
 // Demo Parks
 Route::get('/parks/glacier', 'ParkController@glacier');
+Route::get('/parks/grandcanyon', 'ParkController@grandcanyon');
 Route::get('/parks/yosemite', 'ParkController@yosemite');
 Route::get('/parks/yellowstone', 'ParkController@yellowstone');
+Route::get('/parks/zion', 'ParkController@zion');
 Route::get('/parks/comingsoon', 'ParkController@comingsoon');
 
 ///// Checkout

@@ -16,19 +16,19 @@
 @stop
 
 @section('logo-tag')
-Glacier National Park
+Grand Canyon National Park
 @stop
 
 @section('content')
 
 {{-- Main Slider --}}
-<section class="hero-slider" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
+<section class="hero-slider" style="background-image: url(/img/destinations/grandcanyon-1920x580.jpg);">
     <div class="item">
       <div class="container padding-top-10x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save <strong class="dp-warning">$346</strong> in</div>
+              <div class="h1 mb-2 gray-lighter">Save <strong class="dp-warning">$286</strong> in</div>
               <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
               <h5 class="mt-0 mb-2 gray-lighter">View Wildlife and Geysers in America's 1st National Park.</h5>            
           </div>
@@ -45,8 +45,8 @@ Glacier National Park
       <!-- Dimple Pass CTA Bar -->
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
-          <h2 class="mb-0"><strong>The Glacier Dimple Pass</strong></h2>
-          <h3 class="dp-warning"><strong>$346</strong> possible savings</h3>
+          <h2 class="mb-0"><strong>The Grand Canyon Dimple Pass</strong></h2>
+          <h3 class="dp-warning"><strong>$286</strong> possible savings</h3>
         </div>
         <div class="column">
           <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
@@ -56,7 +56,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -82,7 +82,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -108,7 +108,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -134,7 +134,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -160,7 +160,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -186,7 +186,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -212,7 +212,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -238,7 +238,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -264,7 +264,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">
@@ -290,7 +290,7 @@ Glacier National Park
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
-          <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
+          <img src="/img/vendors/gca/sample-450x290.jpg" alt="Zion Discounts">
         </a>
         <div class="product-info">
           <h3 class="product-title">

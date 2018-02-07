@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Vendor Promise</title>
+  <title>Dimple Pass - National Park Destinations</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -41,14 +41,14 @@ The National Parks
           <div class="card-footer text-muted"><a href="/parks/glacier">View 16 Discounts</a></div>
         </div>
         <div class="card margin-bottom-1x">
-          <a href="/parks/comingsoon">
+          <a href="/parks/grandcanyon">
             <img class="card-img-top" src="/img/destinations/grandcanyon-315x278.jpg" alt="Grand Canyon National Park">
           </a>
           <div class="card-body">
             <h4 class="card-title">Grand Canyon</h4>
             <p class="card-text dp-warning">Coming Soon</p>
           </div>
-          <div class="card-footer text-muted"><a href="/parks/glacier">View 16 Discounts</a></div>
+          <div class="card-footer text-muted"><a href="/parks/grandcanyon">View 16 Discounts</a></div>
         </div>
         <div class="card margin-bottom-1x">
           <a href="/parks/yellowstone">
@@ -58,7 +58,7 @@ The National Parks
             <h4 class="card-title">Yellowstone</h4>
             <p class="card-text dp-warning"><strong>$289</strong> savings</p>
           </div>
-          <div class="card-footer text-muted"><a href="/parks/glacier">View 16 Discounts</a></div>
+          <div class="card-footer text-muted"><a href="/parks/yellowstone">View 16 Discounts</a></div>
         </div>
         <div class="card margin-bottom-1x">
           <a href="/parks/yosemite">
@@ -68,17 +68,17 @@ The National Parks
             <h4 class="card-title">Yosemite</h4>
             <p class="card-text dp-warning"><strong>$294</strong> savings</p>
           </div>
-          <div class="card-footer text-muted"><a href="/parks/glacier">View 16 Discounts</a></div>
+          <div class="card-footer text-muted"><a href="/parks/yosemite">View 16 Discounts</a></div>
         </div>
         <div class="card margin-bottom-1x">
-          <a href="/parks/comingsoon">
+          <a href="/parks/zion">
             <img class="card-img-top" src="/img/destinations/zion-315x278.jpg" alt="Zion National Park">
           </a>
           <div class="card-body">
             <h4 class="card-title">Zion</h4>
             <p class="card-text dp-warning">Coming Soon</p>
           </div>
-          <div class="card-footer text-muted"><a href="/parks/glacier">View 16 Discounts</a></div>
+          <div class="card-footer text-muted"><a href="/parks/zion">View 16 Discounts</a></div>
         </div>
       </div>
     </div>

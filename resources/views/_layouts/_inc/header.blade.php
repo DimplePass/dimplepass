@@ -40,10 +40,10 @@
           <li class="has-children"><span><a href="#"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               <li><a href="/parks/glacier">Glacier</a></li>
-              <li><a href="/parks/comingsoon">Grand Teton</a></li>
-              <li><a href="/parks/comingsoon">Great Smoky Mountains</a></li>
+              <li><a href="/parks/grandcanyon">Grand Canyon</a></li>
               <li><a href="/parks/yellowstone">Yellowstone</a></li>
               <li><a href="/parks/yosemite">Yosemite</a></li>
+              <li><a href="/parks/zion">Zion</a></li>
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -87,10 +87,10 @@
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
                   <li><a href="/parks/glacier">Glacier</a></li>
-                  <li><a href="/parks/comingsoon">Grand Teton</a></li>
-                  <li><a href="/parks/comingsoon">Great Smoky Mountains</a></li>
+                  <li><a href="/parks/grandcanyon">Grand Canyon</a></li>
                   <li><a href="/parks/yellowstone">Yellowstone</a></li>
                   <li><a href="/parks/yosemite">Yosemite</a></li>
+                  <li><a href="/parks/zion">Zion</a></li>
                   <li><a href="/parks"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>

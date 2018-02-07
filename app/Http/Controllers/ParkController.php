@@ -24,13 +24,18 @@ class ParkController extends Controller
 
 	// Demo - Glacier
 	public function glacier() { return view('parks.glacier'); }
-	// Demo - Grand Teton
-	// Demo - Great Smoky Mountains
-	public function comingsoon() { return view('parks.comingsoon'); }
+	// Demo - Grand Canyon
+	public function grandcanyon() { return view('parks.grandcanyon'); }
 	// Demo - Yellowstone
 	public function yellowstone() { return view('parks.yellowstone'); }
 	// Demo - Yosemite
 	public function yosemite() { return view('parks.yosemite'); }
+	// Demo - Zion
+	public function zion() { return view('parks.zion'); }
+
+	// Demo - Coming Soon
+	public function comingsoon() { return view('parks.comingsoon'); }
+
 
 
 
