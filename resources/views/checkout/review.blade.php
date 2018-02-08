@@ -25,12 +25,14 @@ Page Title
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
 
-    {{-- Checkout Steps --}}
     <div class="col-xl-9 col-lg-8">
-      <div class="checkout-steps">
+
+
+      {{-- Checkout Steps --}}
+      <div class="checkout-steps hidden-xs-down">
         <a class="active" href="/checkout/review">3. Review</a>
         <a class="completed" href="/checkout/payment"><span class="angle"></span><span class="step-indicator icon-circle-check"></span>2. Payment</a>
-        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. Billing Address</a>
+        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
       <div class="ml-3">
         <ul class="list-unstyled">
@@ -80,7 +82,7 @@ Page Title
       </div>
       <div class="shopping-cart-footer">
         <div class="column"></div>
-        <div class="column text-lg">Subtotal: <span class="text-medium">$<span class="totalDue">0</span></span></div>
+        <div class="column text-lg text-right">Subtotal: <span class="text-medium">$<span class="totalDue">0</span></span></div>
       </div>
 			<div class="text-right">
         <h5>Payment method</h5>
@@ -89,13 +91,13 @@ Page Title
           <li><span class="text-muted">Billing Address:</span> 44 Shirley Ave. West Chicago, IL 60185, USA</li>
         </ul>
 			</div>
-      <div class="checkout-footer margin-top-1x">
-        <div class="column"><a class="btn btn-outline-secondary" href="/checkout/payment"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Back</span></a></div>
+      <div class="checkout-footer margin-top-1x hidden-xs-down">
+        <div class="column"><a class="btn btn-outline-secondary" href="/checkout/payment"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Payment</span></a></div>
         <div class="column"><a class="btn btn-primary" href="/member"><span class="hidden-xs-down">Complete Order</span> <i class="icon-arrow-right"></i></a></div>
       </div>
     </div>
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4">
+    <div class="col-xl-3 col-lg-4 hidden-xs-down">
       <aside class="sidebar stickyOrderSummary">
         <div class="padding-top-2x hidden-lg-up"></div>
         <section class="widget widget-order-summary">

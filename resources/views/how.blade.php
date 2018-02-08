@@ -40,10 +40,10 @@ How does it work?
 <div class="container padding-bottom-3x mb-1 mt-5">
 
   <div class="row padding-bottom-2x">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
-    <div class="col-md-7 text-md-left text-center">
+    <div class="col-md-8 text-md-left text-center">
       <h2 class="mb-6">You <strong class="dp-warning">save money</strong> on items that should already be on your <strong class="dp-warning">must-do</strong> list.</h2>
       <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between">
         <div class="step">

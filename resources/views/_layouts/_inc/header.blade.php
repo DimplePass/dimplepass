@@ -159,7 +159,7 @@
                 </div>
                 <div class="toolbar-dropdown-group">
                   {{-- <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/checkout">View Cart</a></div> --}}
-                  <div class="column"><a class="btn btn-sm btn-block btn-primary" href="/checkout">Checkout</a></div>
+                  <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
                 </div>
               </div>
             </div>

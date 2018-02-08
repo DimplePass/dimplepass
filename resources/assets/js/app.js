@@ -19,6 +19,8 @@ require('../../../resources/assets/vendor/js/photoswipe-ui-default.min.js');
 require('../../../resources/assets/vendor/js/photoswipe.min.js');
 require('../../../resources/assets/vendor/js/popper.min.js');
 require('../../../resources/assets/vendor/js/velocity.min.js');
+require('../../../node_modules/formvalidation/dist/js/formValidation.min.js');
+require('../../../node_modules/formvalidation/dist/js/framework/bootstrap.min.js');
 require('./custom');
 
 // window.Vue = require('vue');
