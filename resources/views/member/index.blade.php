@@ -25,7 +25,7 @@ My Passes
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>My Passes</h1>
+      <h1>My Passes: Happy GoLucky</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
@@ -44,7 +44,7 @@ My Passes
     <div class="col-lg-4">
       <aside class="user-info-wrapper">
         <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-          <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>
+          {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
         </div>
         <div class="user-info">
           <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
@@ -67,39 +67,39 @@ My Passes
             <tr>
               <th>Park</th>
               <th>Status</th>
-              <th>Date Purchased</th>
               <th>Redeem</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Yellowstone</strong></td>
-              <td><span class="text-success">Active</span></td>
-              <td>March 08, 2017</td>
-              <td><a href="/member/pass"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
+              <td><h4>Yellowstone</h4></td>
+              <td>
+                <span class="text-success">Active</span><br>
+                <small>March 8, 2017</small>
+              </td>
+              <td><a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a><a href="#" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a></td>
             </tr>
             <tr>
-              <td><strong>Glacier</strong></td>
-              <td><span class="text-success">Active</span></td>
-              <td>Feburary 21, 2018</td>
-              <td><a href="/member/pass"><i class="icon-eye"> View</i></a> | <a href="#"><i class="icon-printer"> Print</i></a></td>
+              <td><h4>Glacier</h4></td>
+              <td>
+                <span class="text-success">Active</span><br>
+                <small>February 17, 2017</small>
+              </td>
+              <td><a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a><a href="#" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a></td>
             </tr>
             <tr>
-              <td><strong>Yosemite</strong></td>
+              <td><h4>Yosemite</h4></td>
               <td><span class="text-warning">Expired</span></td>
-              <td>June 15, 2017</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><strong>Zion</strong></td>
+              <td><h4>Zion</h4></td>
               <td><span class="text-warning">Expired</span></td>
-              <td>May 17, 2016</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><strong>Grand Canyon</strong></td>
+              <td><h4>Grand Canyon</h4></td>
               <td><span class="text-warning">Expired</span></td>
-              <td>April 10, 2015</td>
               <td>-</td>
             </tr>
           </tbody>
