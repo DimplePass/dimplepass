@@ -18,15 +18,15 @@ Route::get('robots.txt', 'UtilityController@robots');
 Route::get('/', 'UtilityController@home');
 
 ///// Parks
-Route::get('/parks', 'ParkController@parks');
-Route::get('/parks/park', 'ParkController@park');
-// Demo Parks
-Route::get('/parks/glacier', 'ParkController@glacier');
-Route::get('/parks/grandcanyon', 'ParkController@grandcanyon');
-Route::get('/parks/yosemite', 'ParkController@yosemite');
-Route::get('/parks/yellowstone', 'ParkController@yellowstone');
-Route::get('/parks/zion', 'ParkController@zion');
-Route::get('/parks/comingsoon', 'ParkController@comingsoon');
+Route::get('/d', 'DestinationController@index');
+Route::get('/d/destination', 'DestinationController@destination');
+// Demo d
+Route::get('/d/glacier', 'DestinationController@glacier');
+Route::get('/d/grandcanyon', 'DestinationController@grandcanyon');
+Route::get('/d/yosemite', 'DestinationController@yosemite');
+Route::get('/d/yellowstone', 'DestinationController@yellowstone');
+Route::get('/d/zion', 'DestinationController@zion');
+Route::get('/d/comingsoon', 'DestinationController@comingsoon');
 
 ///// Checkout
 Route::get('/checkout', 'CheckoutController@checkout');

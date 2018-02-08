@@ -31,7 +31,7 @@ The National Parks
   {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/glacier">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/glacier">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
@@ -39,12 +39,12 @@ The National Parks
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
           <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/glacier">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/glacier">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/grandcanyon">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/grandcanyon">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/grandcanyon-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/grandcanyon-horse-155x137.jpg" alt="Category"><img src="/img/destinations/grandcanyon-falls-155x137.jpg" alt="Category"></div>
@@ -52,12 +52,12 @@ The National Parks
         <div class="card-body text-center">
           <h4 class="card-title">Grand Canyon</h4>
           <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/grandcanyon">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/grandcanyon">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/yellowstone">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
             <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
@@ -65,12 +65,12 @@ The National Parks
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
           <h6 class="dp-warning"><strong>$289</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/yellowstone">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yellowstone">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yosemite">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/yosemite">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
@@ -78,12 +78,12 @@ The National Parks
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
           <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/yosemite">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yosemite">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/zion">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/zion">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/zion-overlook-155x137.jpg" alt="Category"><img src="/img/destinations/zion-subway-155x137.jpg" alt="Category"></div>
@@ -91,7 +91,7 @@ The National Parks
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
           <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/zion">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/zion">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -138,11 +138,11 @@ function initialize() {
 
     // Info Window Content
     var infoWindowContent = [
-      ['<div class="info-box"><a href="/parks/glacier" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/glacier-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Glacier National Park</strong></h5><h6 class="dp-warning">$346 savings</h6><a href="/parks/glacier" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'glacier\', 1);">View 16 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/parks/grandcanyon" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'grandcanyon\', 1);"><img src="/img/destinations/grandcanyon-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Grand Canyon National Park</strong></h5><h6 class="dp-warning">Coming Soon</h6><a href="/parks/grandcanyon" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'grandcanyon\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/parks/yellowstone" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yellowstone\', 1);"><img src="/img/destinations/yellowstone-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yellowstone National Park</strong></h5><h6 class="dp-warning">$294 savings</h6><a href="/parks/yellowstone" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 14 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/parks/yosemite" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yosemite\', 1);"><img src="/img/destinations/yosemite-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yosemite National Park</strong></h5><h6 class="dp-warning">$294 savings</h6><a href="/parks/yosemite" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/parks/zion" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'zion\', 1);"><img src="/img/destinations/zion-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Zion National Park</strong></h5><h6 class="dp-warning">$294 savings</h6><a href="/parks/zion" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'zion\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="/d/glacier" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/glacier-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Glacier National Park</strong></h5><h6 class="dp-warning">$346 savings</h6><a href="/d/glacier" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'glacier\', 1);">View 16 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="/d/grandcanyon" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'grandcanyon\', 1);"><img src="/img/destinations/grandcanyon-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Grand Canyon National Park</strong></h5><h6 class="dp-warning">Coming Soon</h6><a href="/d/grandcanyon" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'grandcanyon\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="/d/yellowstone" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yellowstone\', 1);"><img src="/img/destinations/yellowstone-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yellowstone National Park</strong></h5><h6 class="dp-warning">$294 savings</h6><a href="/d/yellowstone" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 14 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="/d/yosemite" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yosemite\', 1);"><img src="/img/destinations/yosemite-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yosemite National Park</strong></h5><h6 class="dp-warning">$294 savings</h6><a href="/d/yosemite" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="/d/zion" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'zion\', 1);"><img src="/img/destinations/zion-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Zion National Park</strong></h5><h6 class="dp-warning">$294 savings</h6><a href="/d/zion" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'zion\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
 
     ];
         

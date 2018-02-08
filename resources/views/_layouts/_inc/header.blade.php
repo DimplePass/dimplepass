@@ -10,13 +10,13 @@
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
-          <li class="has-children"><span><a href="/parks"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="/d"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="/parks/glacier">Glacier</a></li>
-              <li><a href="/parks/comingsoon">Grand Teton</a></li>
-              <li><a href="/parks/comingsoon">Great Smoky Mountains</a></li>
-              <li><a href="/parks/yellowstone">Yellowstone</a></li>
-              <li><a href="/parks/yosemite">Yosemite</a></li>
+              <li><a href="/d/glacier">Glacier</a></li>
+              <li><a href="/d/comingsoon">Grand Teton</a></li>
+              <li><a href="/d/comingsoon">Great Smoky Mountains</a></li>
+              <li><a href="/d/yellowstone">Yellowstone</a></li>
+              <li><a href="/d/yosemite">Yosemite</a></li>
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -39,11 +39,11 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="#"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="/parks/glacier">Glacier</a></li>
-              <li><a href="/parks/grandcanyon">Grand Canyon</a></li>
-              <li><a href="/parks/yellowstone">Yellowstone</a></li>
-              <li><a href="/parks/yosemite">Yosemite</a></li>
-              <li><a href="/parks/zion">Zion</a></li>
+              <li><a href="/d/glacier">Glacier</a></li>
+              <li><a href="/d/grandcanyon">Grand Canyon</a></li>
+              <li><a href="/d/yellowstone">Yellowstone</a></li>
+              <li><a href="/d/yosemite">Yosemite</a></li>
+              <li><a href="/d/zion">Zion</a></li>
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -71,14 +71,14 @@
       <nav class="site-menu">
         <ul>
           <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><span>Home</span></a></li>
-          <li class="has-megamenu {{ Request::is('parks*') ? 'active' : '' }}"><a href="/parks"><span>Destinations</span></a>
+          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="/d"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">save up to $346</h4>
-                    <a class="btn btn-sm btn-primary" href="/parks/glacier">
+                    <a class="btn btn-sm btn-primary" href="/d/glacier">
                       <h3 class="text-bold text-light text-shadow">Glacier</h3>
                     </a>
                   </div>
@@ -86,19 +86,19 @@
               </li>
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
-                  <li><a href="/parks/glacier">Glacier</a></li>
-                  <li><a href="/parks/grandcanyon">Grand Canyon</a></li>
-                  <li><a href="/parks/yellowstone">Yellowstone</a></li>
-                  <li><a href="/parks/yosemite">Yosemite</a></li>
-                  <li><a href="/parks/zion">Zion</a></li>
-                  <li><a href="/parks"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  <li><a href="/d/glacier">Glacier</a></li>
+                  <li><a href="/d/grandcanyon">Grand Canyon</a></li>
+                  <li><a href="/d/yellowstone">Yellowstone</a></li>
+                  <li><a href="/d/yosemite">Yosemite</a></li>
+                  <li><a href="/d/zion">Zion</a></li>
+                  <li><a href="/d"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">save up to $289</h4>
-                    <a class="btn btn-sm btn-primary" href="/parks/yellowstone">
+                    <a class="btn btn-sm btn-primary" href="/d/yellowstone">
                       <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
                     </a>
                   </div>
@@ -109,7 +109,7 @@
                   {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">save up to $294</h4>
-                    <a class="btn btn-sm btn-primary" href="/parks/yosemite">
+                    <a class="btn btn-sm btn-primary" href="/d/yosemite">
                       <h3 class="text-bold text-light text-shadow">Yosemite</h3>
                     </a>
                   </div>
@@ -147,11 +147,11 @@
               <span class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/parks/yellowstone">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yellowstone">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
                 </div>
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/parks/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/parks/yosemite">Yosemite</a><span class="dropdown-product-details">1 x $26</span></div>
+                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yosemite">Yosemite</a><span class="dropdown-product-details">1 x $26</span></div>
                 </div>
                 <div class="toolbar-dropdown-group">
                   <div class="column"><span class="text-lg">Total:</span></div>

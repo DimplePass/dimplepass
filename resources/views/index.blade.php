@@ -43,7 +43,7 @@ Stop Planning. Start Playing. Save Money.
   {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yellowstone">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/yellowstone">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
             <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
@@ -51,12 +51,12 @@ Stop Planning. Start Playing. Save Money.
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
           <h6 class="dp-warning"><strong>$289</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/yellowstone">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yellowstone">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/yosemite">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/yosemite">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
@@ -64,12 +64,12 @@ Stop Planning. Start Playing. Save Money.
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
           <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/yosemite">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yosemite">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/parks/zion">
+      <div class="card mb-30"><a class="card-img-tiles" href="/d/zion">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
             <div class="thumblist"><img src="/img/destinations/zion-overlook-155x137.jpg" alt="Category"><img src="/img/destinations/zion-subway-155x137.jpg" alt="Category"></div>
@@ -77,12 +77,12 @@ Stop Planning. Start Playing. Save Money.
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
           <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
-          <a class="btn btn-primary" href="/parks/zion">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/zion">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/parks">View All Dimple National Parks</a></div>
+  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/d">View All Dimple National Parks</a></div>
 </section>
 
 {{-- The Dimple Pass Commitment --}}
