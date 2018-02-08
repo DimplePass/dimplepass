@@ -17,10 +17,10 @@ Route::get('robots.txt', 'UtilityController@robots');
 ///// Home
 Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
-///// Parks
-Route::get('/d', ['as' => 'name', 'destinations.index' => 'DestinationController@index']);
+///// Destinations
+Route::get('/d', ['as' => 'destinations.index', 'uses' => 'DestinationController@index']);
 Route::get('/d/destination', ['as' => 'destinations.destination', 'uses' => 'DestinationController@destination']);
-// Demo d
+// Demo Destinations
 Route::get('/d/glacier', ['as' => 'destinations.glacier', 'uses' => 'DestinationController@glacier']);
 Route::get('/d/grandcanyon', ['as' => 'destinations.grandcanyon', 'uses' => 'DestinationController@grandcanyon']);
 Route::get('/d/yosemite', ['as' => 'destinations.yosemite', 'uses' => 'DestinationController@yosemite']);
@@ -40,6 +40,7 @@ Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation
 Route::get('/member', ['as' => 'member.index', 'uses' => 'MemberController@index']);
 Route::get('/member/edit', ['as' => 'member.edit', 'uses' => 'MemberController@edit']);
 Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'MemberController@pass']);
+Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'MemberController@terms']);
 
 ///// Vendors
 Route::get('/vendor', ['as' => 'vendor.index', 'uses' => 'VendorController@index']);

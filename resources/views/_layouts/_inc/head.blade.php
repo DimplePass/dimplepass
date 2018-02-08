@@ -1,11 +1,16 @@
   <head>
     <meta charset="utf-8">
     <title>Dimple Pass</title>
-    <!-- SEO Meta Tags-->
+
+    {{-- Laravel CSRF Token --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{-- SEO Meta Tags --}}
     <meta name="description" content="Dimple Pass - National Park Discounts">
     <meta name="keywords" content="">
     <meta name="author" content="Dimple Pass">
-    <!-- Mobile Specific Meta Tag-->
+
+    {{-- Mobile Specific Meta Tag --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	{{-- Page Meta Info set on Specific View.--}}
@@ -14,7 +19,7 @@
 	{{-- Social Graph Meta Info set on Specific View. --}}
 	@yield('meta-og')
 
-    <!-- Favicon and Apple Icons-->
+    {{-- Favicon and Apple Icons --}}
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="touch-icon-iphone.png">
@@ -25,7 +30,7 @@
     {{-- Laravel Mix created file --}}
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css" media="screen">
 
-    <!-- Modernizr-->
+    {{-- Modernizr --}}
     <script src="/js/modernizr.min.js"></script>
 
   </head>

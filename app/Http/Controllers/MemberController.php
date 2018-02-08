@@ -34,4 +34,10 @@ class MemberController extends Controller
 		return view('member.pass');
 	}
 
+	// Member Terms
+	public function terms()
+	{
+		return view('member.terms');
+	}
+
 }

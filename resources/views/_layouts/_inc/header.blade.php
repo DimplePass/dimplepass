@@ -71,7 +71,7 @@
       <nav class="site-menu">
         <ul>
           <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><span>Home</span></a></li>
-          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="/d"><span>Destinations</span></a>
+          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="{{ route('destinations.index') }}"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">

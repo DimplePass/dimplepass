@@ -21,22 +21,20 @@ Only the Best
 
 @section('content')
 
-{{-- Page Title --}}
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>Only the Best</h1>
+{{-- Hero Slider --}}
+<section class="hero-slider mb-6" style="background-image: url(/img/destinations/yosemite-1920x580.jpg);">
+    <div class="item">
+      <div class="container padding-top-10x">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-12 padding-bottom-2x text-md-left text-center">
+            <div class="from-bottom">
+              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <div class="h4 mt-0 mb-4 gray-lighter">The best attractions and activites for the best vacation.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>Only the Best</li>
-      </ul>
-    </div>
-  </div>
-</div>
+</section>
 
 {{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2">

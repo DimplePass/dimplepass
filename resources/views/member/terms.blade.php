@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
+  <title>Meta Title Here</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Our Story
+Member <span class="dp-warning">/</span> Terms & Conditions
 @stop
 
 @section('content')
@@ -29,7 +29,7 @@ Our Story
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
               <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
-              <div class="h4 mt-0 mb-4 gray-lighter">How did we get here and where are we headed.</div>
+              <div class="h4 mt-0 mb-4 gray-lighter">The small print.  But, there isn't much of it.</div>
           </div>
         </div>
       </div>
@@ -38,18 +38,19 @@ Our Story
 
 {{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2">
-  <div class="row padding-bottom-2x">
-    <div class="col-md-5">
+  <div class="row">
+    {{-- Side Menu --}}
+    <div class="col-md-4">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
-    <div class="col-md-7 text-md-left text-center">
+    {{-- Content --}}
+    <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
+      <h1>The Small Print <small>But, not much of it.</small></h1>
       <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
-      <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-    </div>
+      <hr>
+      <h3>Changes Can Happen <small>Be flexible.</small></h3>
+      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>    </div>
   </div>
 </div>
 
