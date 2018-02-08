@@ -16958,6 +16958,10 @@ a.list-group-item,
   color: #0F8B8D;
 }
 
+hr {
+  margin: 3rem !important;
+}
+
 .m-6 {
   margin: 4rem !important;
 }

@@ -43,8 +43,8 @@ Route::get('/member/pass', 'MemberController@pass');
 ///// Vendors
 Route::get('/vendor', 'VendorController@index');
 Route::get('/vendor/promise', 'VendorController@promise');
-Route::get('/vendor/signup', 'VendorController@signup');
-Route::get('/vendor/confirmation', 'VendorController@signupConfirmation');
+Route::get('/vendor/terms', 'VendorController@terms');
+Route::get('/vendor/application', 'VendorController@application');
 Route::get('/vendor/email/confirmation', 'VendorController@emailSignupConfirmation');
 
 ///// 100% for Kids

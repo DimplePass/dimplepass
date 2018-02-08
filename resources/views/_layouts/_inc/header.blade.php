@@ -125,7 +125,7 @@
       <div class="toolbar">
         <div class="inner">
           <div class="tools">
-            <div class="search"><i class="icon-search"></i></div>
+            {{-- <div class="search"><i class="icon-search"></i></div> --}}
             <div class="account"><a href="/member"></a><i class="icon-head"></i>
               <ul class="toolbar-dropdown">
                 <li class="sub-menu-user">

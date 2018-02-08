@@ -46,12 +46,56 @@ Contact Us
     </div>
     <div class="col-md-7 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
-      <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
-      <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <a class="btn btn-primary" href="/">Head on Home <i class="icon-arrow-right"></i></a>
+      <h2>Mailing Address</h2>
+      <p>Dimple Pass<br>130 Yellow Rose Dr.<br>Alta, WY  83414</p>
+      <h3>Phone</h3>
+      <p>(307) 690-9788</p>
+      <h3>Email Us</h3>
+      <p class="text-muted mb-30">We normally respond within 1 business day.<br>Most popular questions appear on our <a href="/faqs">Frequestly Asked Questions</a> page.</p>
+      <form class="row" method="post">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_name">Your Name</label>
+            <input class="form-control form-control-rounded" type="text" id="help_name" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_email">Your Email</label>
+            <input class="form-control form-control-rounded" type="email" id="help_email" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_subject">Subject</label>
+            <input class="form-control form-control-rounded" type="text" id="help_subject" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_category">Category</label>
+            <select class="form-control form-control-rounded" id="help_category">
+              <option>-- Please choose --</option>
+              <option>Having Login Troubles</option>
+              <option>My Passes</option>
+              <option>Having Trouble Redeeming</option>
+              <option>Having Trouble Making a Reservation</option>
+              <option>Want a Refund</option>
+              <option>Other</option>}
+              option
+            </select>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="help_question">Question </label>
+            <textarea class="form-control form-control-rounded" id="help_question" rows="8" required></textarea>
+          </div>
+        </div>
+        <div class="col-12 text-right">
+          <button class="btn btn-primary btn-rounded" type="submit">Submit Your Question <i class="icon-arrow-right"></i></button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

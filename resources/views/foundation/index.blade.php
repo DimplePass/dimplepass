@@ -75,13 +75,13 @@
       <p>Open OutDoors for Kids is an initiative from the National Park Foundation to connect more kids to their national parks through fun and engaging activities. Children today are more disconnected from their natural and cultural heritage than ever before. Open OutDoors for Kids is changing that—building on a child’s innate wonder and curiosity about the natural world.</p>
       <p>National parks are gateways to self-discovery and learning and Open OutDoors for Kids is making sure all kids from across the country get the chance to experience them. Learn more about NPF's work with the Every Kid in a Park initiative, to see how you and your family can enjoy our national parks.</p>
 
-      <div class="col-sm-12 my-5"><hr></div>
+      <hr>
 
       <h3>Overcoming Obstacles</h3>
       <p>Research demonstrates that kids who spend time outdoors are healthier and do better in school. Kids who have opportunities for hands-on learning outdoors also demonstrate more interest in and are more proficient in science. Similarly, a young person's understanding of history improves after visiting sites of cultural significance.</p>
       <p>Yet with cutbacks in school funding for field trips and other barriers to access, kids today have fewer opportunities for experiential learning. At the same time, we are witnessing an epidemic of inactivity among children as they spend more time engaged in "screen time" as opposed to "green time," resulting in rising rates of obesity and other issues. Most at risk are children from underserved, urban communities.</p>
 
-      <div class="col-sm-12 my-5"><hr></div>
+      <hr>
 
       <h3>Providing Opportunities</h3>
       <p>The National Park Foundation's Open Outdoors for Kids Initiative introduces and exposes kids — all kids — to experiential, outdoor experiences that promote physical and emotional health, civic engagement and long-term appreciation for nature. Using the spectacular and unparalleled resources of our nation's more than 400 national parks, the program's goal is to connect more children to their culture and heritage, enhance hands-on learning opportunities and deepen connections to the natural world.</p>
@@ -93,7 +93,7 @@
         <li><strong>EDUCATION:</strong> Establish "in-park" opportunities for children to learn in our national parks, the world's largest outdoor classrooms. Unmatched as learning environments and living laboratories, national parks offer children, families and teachers a unique gateway to experience nature, history and culture, to learn about biodiversity and the environment, and to engage with each other in the great outdoors.</li>
       </ul>
 
-      <div class="col-sm-12 my-5"><hr></div>
+      <hr>
 
       <h3>What does it mean to Open Outdoors for Kids?</h3>
       <ul>

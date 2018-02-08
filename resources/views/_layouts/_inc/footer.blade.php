@@ -30,22 +30,24 @@
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
+          {{-- Account / Shipping Info --}}
+          <section class="widget widget-links widget-light-skin">
+            <h3 class="widget-title">Pass Holders</h3>
+            <ul>
+              <li><a href="/member/edit">My Profile</a></li>
+              <li><a href="/member">My Passes</a></li>
+              <li><a href="/guarantee">Money Back Guarantee</a></li>
+              <li><a href="/member/terms">Terms & Conditions</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-lg-3 col-md-6">
           {{-- For Vendors --}}
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">For Vendors</h3>
             <ul>
               <li><a href="/vendor/">Become a Vendor</a></li>
               <li><a href="/vendor/promise">The Vendor Promise</a></li>
-            </ul>
-          </section>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          {{-- Account / Shipping Info --}}
-          <section class="widget widget-links widget-light-skin">
-            <h3 class="widget-title">Account Info</h3>
-            <ul>
-              <li><a href="/member/edit">My Profile</a></li>
-              <li><a href="/member">My Passes</a></li>
             </ul>
           </section>
         </div>

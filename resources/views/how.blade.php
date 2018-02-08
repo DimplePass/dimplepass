@@ -44,6 +44,7 @@ How does it work?
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
     <div class="col-md-7 text-md-left text-center">
+      <h2 class="mb-6">You <strong class="dp-warning">save money</strong> on items that should already be on your <strong class="dp-warning">must-do</strong> list.</h2>
       <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between">
         <div class="step">
           <div class="step-icon-wrap">
@@ -71,16 +72,19 @@ How does it work?
         </div>
       </div>
       <div class="mt-30 hidden-md-up"></div>
-      <h2 class="dp-warning">You save money on items that should already be on your hit list.</h2>
-      <div class="mb-4 mt-4"><hr></div>
+      <hr>
       <h2>Purchase the Dimple Pass</h2>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <hr>
       <h2>Print the Pass</h2>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <hr>
       <h2>Present to Vendor</h2>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>   
+      <hr>
       <h2>Save Money</h2>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <hr>
       <h2>Have the Best Vacation Ever</h2>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
     </div>

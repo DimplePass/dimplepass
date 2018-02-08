@@ -51,7 +51,6 @@ Our Story
       <div class="mb-4 mt-4"><hr></div>
       <h3>Some more important stuff.</h3>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <a class="btn btn-primary" href="/">Head on Home <i class="icon-arrow-right"></i></a>
     </div>
   </div>
 </div>

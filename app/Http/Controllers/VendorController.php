@@ -22,16 +22,16 @@ class VendorController extends Controller
 		return view('vendor.promise');
 	}
 
-	// Signup
-	public function signup()
+	// Terms & Agreement
+	public function terms()
 	{
-		return view('vendor.signup');
+		return view('vendor.terms');
 	}
 
-	// Signup Confirmation
-	public function signupConfirmation()
+	// Application
+	public function application()
 	{
-		return view('vendor.signupConfirmation');
+		return view('vendor.application');
 	}
 
 	// Email Signup Confirmation
