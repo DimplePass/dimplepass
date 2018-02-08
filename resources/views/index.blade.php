@@ -21,10 +21,10 @@ Stop Planning. Start Playing. Save Money.
 
 @section('content')
 
-{{-- Main Slider --}}
+{{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(img/hero-slider/main-bg1.jpg);">
     <div class="item">
-      <div class="container padding-top-8x">
+      <div class="container padding-top-9x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">

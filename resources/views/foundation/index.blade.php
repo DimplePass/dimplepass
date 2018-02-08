@@ -21,7 +21,7 @@
 
 @section('content')
 
-{{-- Main Slider --}}
+{{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/hero-slider/main-bg1.jpg);">
     <div class="item">
       <div class="container padding-top-9x">
@@ -36,7 +36,7 @@
     </div>
 </section>
 
-<!-- Page Title-->
+{{-- Page Title --}}
 <div class="page-title">
   <div class="container">
     <div class="column">
@@ -53,7 +53,7 @@
   </div>
 </div>
 
-<!-- Page Content-->
+{{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-5 text-center">

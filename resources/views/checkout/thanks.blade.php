@@ -21,7 +21,7 @@ Page Title
 
 @section('content')
 
-<!-- Page Title-->
+{{-- Page Title --}}
 <div class="page-title">
   <div class="container">
     <div class="column">
@@ -37,7 +37,8 @@ Page Title
     </div>
   </div>
 </div>
-<!-- Page Content-->
+
+{{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-5">

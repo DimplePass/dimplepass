@@ -21,7 +21,7 @@ My Yellowstone Park Pass
 
 @section('content')
 
-<!-- My Passes -->
+{{-- My Passes --}}
 <div class="page-title">
   <div class="container">
     <div class="column">
@@ -37,7 +37,8 @@ My Yellowstone Park Pass
     </div>
   </div>
 </div>
-<!-- Page Content-->
+
+{{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-5">

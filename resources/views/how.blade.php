@@ -21,7 +21,7 @@ How does it work?
 
 @section('content')
 
-{{-- Main Slider --}}
+{{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/yosemite-1920x580.jpg);">
     <div class="item">
       <div class="container padding-top-10x">
@@ -36,7 +36,7 @@ How does it work?
     </div>
 </section>
 
-<!-- Page Content-->
+{{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
 
   <div class="row padding-bottom-2x">

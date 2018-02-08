@@ -21,10 +21,11 @@ Page Title
 
 @section('content')
 
-<!-- Page Content-->
+{{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
-    <!-- Checkout Adress-->
+
+    {{-- Checkout Steps --}}
     <div class="col-xl-9 col-lg-8">
       <div class="checkout-steps">
         <a href="/checkout/review">3. Review</a>
@@ -32,6 +33,7 @@ Page Title
         <a class="active" href="/checkout"><span class="angle"></span>1. Billing Address</a>
       </div>
 
+      {{-- Checkout Address --}}
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
       <h4>Billing Address</h4>
       <hr class="padding-bottom-1x">
@@ -114,11 +116,12 @@ Page Title
         <div class="column"><a class="btn btn-primary" href="/checkout/payment"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
       </div>
     </div>
-    <!-- Sidebar          -->
+
+    {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4">
       <aside class="sidebar stickyOrderSummary">
         <div class="padding-top-2x hidden-lg-up"></div>
-        <!-- Order Summary Widget-->
+        {{-- Order Summary --}}
         <section class="widget widget-order-summary">
           <h3 class="widget-title">Order Summary</h3>
           <table class="table">

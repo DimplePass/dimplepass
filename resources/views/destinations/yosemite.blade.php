@@ -21,10 +21,10 @@ Yosemite National Park
 
 @section('content')
 
-{{-- Main Slider --}}
+{{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/yosemite-1920x580.jpg);">
     <div class="item">
-      <div class="container padding-top-10x">
+      <div class="container padding-top-9x">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
@@ -37,12 +37,12 @@ Yosemite National Park
     </div>
 </section>
 
-<!-- Page Content-->
+{{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
-    <!-- Coupons -->
+    {{-- Vendor Discounts --}}
     <div class="col-xl-9 col-lg-8 order-lg-2">
-      <!-- Dimple Pass CTA Bar -->
+      {{-- Dimple Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
           <h2 class="mb-0"><strong>The Yosemite Dimple Pass</strong></h2>
@@ -52,7 +52,7 @@ Yosemite National Park
           <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -78,7 +78,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -104,7 +104,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -130,7 +130,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -156,7 +156,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -182,7 +182,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -208,7 +208,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -234,7 +234,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -260,7 +260,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -286,7 +286,7 @@ Yosemite National Park
           </div>
         </div>
       </div>
-      <!-- Vendor Listing -->
+      {{-- Vendor Listing --}}
       <div class="product-card product-list">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -313,11 +313,11 @@ Yosemite National Park
         </div>
       </div>
     </div>
-    <!-- Sidebar -->
+    {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4 order-lg-1">
       <aside class="sidebar">
         <div class="padding-top-2x hidden-lg-up"></div>
-        <!-- Widget Town Filter-->
+        {{-- Town Filter --}}
         <section class="widget">
           <h3 class="widget-title">Filter by Location</h3>
           <div class="custom-control custom-checkbox">
@@ -345,7 +345,7 @@ Yosemite National Park
             <label class="custom-control-label" for="loc-6">Oakhurst, CA <span class="text-muted">(3)</span></label>
           </div>
         </section>
-        <!-- Widget Type Filter-->
+        {{-- Type Filter --}}
         <section class="widget">
           <h3 class="widget-title">Filter by Type</h3>
           <div class="custom-control custom-checkbox">

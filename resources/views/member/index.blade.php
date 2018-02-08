@@ -21,7 +21,7 @@ My Passes
 
 @section('content')
 
-<!-- Page Title-->
+{{-- Page Title --}}
 <div class="page-title">
   <div class="container">
     <div class="column">
@@ -37,7 +37,8 @@ My Passes
     </div>
   </div>
 </div>
-<!-- Page Content-->
+
+{{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row">
     <div class="col-lg-4">

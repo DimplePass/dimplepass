@@ -21,9 +21,11 @@ Page Title
 
 @section('content')
 
-<!-- Page Content-->
+{{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
+
+    {{-- Checkout Steps --}}
     <div class="col-xl-9 col-lg-8">
       <div class="checkout-steps">
         <a class="active" href="/checkout/review">3. Review</a>
@@ -92,7 +94,7 @@ Page Title
         <div class="column"><a class="btn btn-primary" href="/member"><span class="hidden-xs-down">Complete Order</span> <i class="icon-arrow-right"></i></a></div>
       </div>
     </div>
-    <!-- Sidebar -->
+    {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4">
       <aside class="sidebar stickyOrderSummary">
         <div class="padding-top-2x hidden-lg-up"></div>

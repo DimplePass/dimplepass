@@ -21,7 +21,7 @@ Vendor Info
 
 @section('content')
 
-{{-- Main Slider --}}
+{{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
     <div class="item">
       <div class="container padding-top-10x">
