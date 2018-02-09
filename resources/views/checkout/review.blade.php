@@ -27,7 +27,6 @@ Page Title
 
     <div class="col-xl-9 col-lg-8">
 
-
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
         <a class="active" href="/checkout/review">3. Review</a>
@@ -51,7 +50,7 @@ Page Title
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="data-passid-1">
               <td>
                 <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Yellowstone Dimple Pass"></a>
                   <div class="product-info">
@@ -62,9 +61,9 @@ Page Title
                 </div>
               </td>
               <td class="text-center text-lg text-medium">$26.00</td>
-              <td class="text-center"><a class="btn btn-outline-primary btn-sm" href="#">Remove</a></td>
+              <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="passid-1">Remove</a></td>
             </tr>
-            <tr>
+            <tr class="data-passid-2">
               <td>
                 <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yosemite-300x300.jpg" alt="Yellowstone Dimple Pass"></a>
                   <div class="product-info">
@@ -75,7 +74,7 @@ Page Title
                 </div>
               </td>
               <td class="text-center text-lg text-medium">$26.00</td>
-              <td class="text-center"><a class="btn btn-outline-primary btn-sm" href="#">Remove</a></td>
+              <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="passid-2">Remove</a></td>
             </tr>
           </tbody>
         </table>
@@ -98,36 +97,7 @@ Page Title
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4 hidden-xs-down">
-      <aside class="sidebar stickyOrderSummary">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        <section class="widget widget-order-summary">
-          <h3 class="widget-title">Order Summary</h3>
-          <table class="table">
-            <tr>
-              <td>Glacier</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>Yellowstone</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="donate4">
-                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-                  <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
-                </div>
-              </td>     
-              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
-            </tr>       
-            <tr>
-              <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
-            </tr>
-          </table>
-        </section>
-      </aside>
+      @include('/checkout/_inc/ordersummary')
     </div>
   </div>
 </div>
@@ -154,6 +124,23 @@ $(function() {
 
 $('#donate4').on('click', function() {
   addDonation();
+});
+
+//////////
+/// Remove pass
+//////////
+
+$('.removePass').on('click', function() {
+  // Get Pass ID.
+  var passid = $(this).data('passid');
+  // Submit Ajax to remove item from cart.
+
+  // Remove pass from table.
+  $(this).closest('tr').fadeOut(1400);
+  // Remove pass from header drop down and order summary.
+  $('.data-passid-' + passid + '').fadeOut(1400);
+  // Update total number in cart in header.
+  passCountSubtract();
 });
 
 //////////

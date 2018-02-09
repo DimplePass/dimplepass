@@ -67,25 +67,25 @@ Page Title
             <div class="row">
               <div class="form-group col-md-4">
                 <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
-                    {!! Form::text('number', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
+                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
                     <small class="text-danger">{{ $errors->first('number') }}</small>
                 </div>
               </div>
               <div class="form-group col-md-4">
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
                     <small class="text-danger">{{ $errors->first('name') }}</small>
                 </div>
               </div>
               <div class="form-group col-md-2">
                 <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
-                    {!! Form::text('expiry', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
+                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
                     <small class="text-danger">{{ $errors->first('expiry') }}</small>
                 </div>
               </div>
               <div class="form-group col-md-2">
                 <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
-                    {!! Form::text('cvc', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'CVC']) !!}
+                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
                     <small class="text-danger">{{ $errors->first('cvc') }}</small>
                 </div>
               </div>
@@ -106,35 +106,42 @@ Page Title
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('address1') ? ' has-error' : '' }}">
                     {!! Form::label('address1', 'Address 1 <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('address1', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => '123 Outdoor Lane']) !!}
+                    {!! Form::text('address1', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
                     <small class="text-danger">{{ $errors->first('address1') }}</small>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('address2') ? ' has-error' : '' }}">
                     {!! Form::label('address2', 'Address 2 <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('address2', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('address2', null, ['class' => 'form-control form-control-rounded']) !!}
                     <small class="text-danger">{{ $errors->first('address2') }}</small>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
                     {!! Form::label('city', 'City/Town <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('city', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Your City/Town']) !!}
+                    {!! Form::text('city', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
                     <small class="text-danger">{{ $errors->first('city') }}</small>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-2">
+                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                    {!! Form::label('state', 'ST <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('state', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                    <small class="text-danger">{{ $errors->first('state') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
                 <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
                     {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('zipcode', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => '00000']) !!}
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
                     <small class="text-danger">{{ $errors->first('zipcode') }}</small>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                     {!! Form::label('country', 'Country') !!}
-                    {!! Form::select('country', $selectCountries, null, ['id' => 'country', 'class' => 'form-control', 'required' => 'required', 'placeholder' => '-- Select One --']) !!}
+                    {!! Form::select('country', $selectCountries, null, ['id' => 'country', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Choose --']) !!}
                     <small class="text-danger">{{ $errors->first('inputname') }}</small>
                 </div>
               </div>
@@ -156,37 +163,7 @@ Page Title
 
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4 hidden-xs-down">
-      <aside class="sidebar stickyOrderSummary">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Order Summary --}}
-        <section class="widget widget-order-summary">
-          <h3 class="widget-title">Order Summary</h3>
-          <table class="table">
-            <tr>
-              <td>Glacier</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>Yellowstone</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="donate4">
-                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-                  <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
-                </div>
-              </td>     
-              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
-            </tr>       
-            <tr>
-              <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
-            </tr>
-          </table>
-        </section>
-      </aside>
+      @include('/checkout/_inc/ordersummary')
     </div>
 
     {{-- End Form --}}

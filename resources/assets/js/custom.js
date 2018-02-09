@@ -882,4 +882,32 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	//////////
+	/// Remove pass from header drop down
+	//////////
+
+	$('.dropdown-product-remove').on('click', function() {
+		// Get Pass ID.
+		var passid = $(this).data('passid');
+		// Submit Ajax to remove item from cart.
+
+		// Remove from header drop down display.
+		$(this).closest('div').fadeOut(1400);
+		// Remove from order summary on checkout pages.
+		// and Remove from checkout review table if on that page.
+		$('.data-passid-' + passid + '').fadeOut(1400);
+		// Update total number in cart header.
+		passCountSubtract();
+	});
+
+	//////////
+	/// Update Pass Count in Header after removal
+	//////////
+
+	function passCountSubtract() {
+		var count = Number($('.count').text());
+		count--;
+		$(".count").fadeOut(100).text(count).fadeIn(1200);
+	}
+
 });/*Document Ready End*/

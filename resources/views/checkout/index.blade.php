@@ -37,9 +37,8 @@ Checkout : My Profile
       {{-- Spacer --}}
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
-      <div class="col-sm-12 mb-4">
-        <h4 class="dp-warning">You'll need to create an account to attach to your Dimple Pass.</h4>
-      </div>
+      {{-- User Action Statement --}}
+      <h3 class="mb-5">Let's create an account to attach to your Dimple Pass.</h3>
 
       {{-- Start Form --}}
       {!! Form::open(['action' => 'MemberController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
@@ -47,42 +46,42 @@ Checkout : My Profile
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
               {!! Form::label('firstname', 'First Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Happy']) !!}
+              {!! Form::text('firstname', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('firstname') }}</small>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
               {!! Form::label('lastname', 'Last Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('lastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'GoLucky']) !!}
+              {!! Form::text('lastname', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('lastname') }}</small>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
               {!! Form::label('emailid', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'happy@golucky.com']) !!}
+              {!! Form::text('emailid', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('emailid') }}</small>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
               {!! Form::label('phone', 'Phone <small class="gray">optional</small>', [], false) !!}
-              {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => '(000) 000-0000']) !!}
+              {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'placeholder' => '(000) 000-0000']) !!}
               <small class="text-danger">{{ $errors->first('phone') }}</small>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
               {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => '*****']) !!}
+              {!! Form::text('password', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('password') }}</small>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('password2') ? ' has-error' : '' }}">
               {!! Form::label('password2', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('password2', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => '*****']) !!}
+              {!! Form::text('password2', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('password2') }}</small>
           </div>
         </div>
@@ -102,37 +101,7 @@ Checkout : My Profile
 
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4 hidden-xs-down">
-      <aside class="sidebar stickyOrderSummary">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Order Summary --}}
-        <section class="widget widget-order-summary">
-          <h3 class="widget-title">Order Summary</h3>
-          <table class="table">
-            <tr>
-              <td>Glacier</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>Yellowstone</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="donate4">
-                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-                  <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
-                </div>
-              </td>     
-              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
-            </tr>       
-            <tr>
-              <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
-            </tr>
-          </table>
-        </section>
-      </aside>
+      @include('/checkout/_inc/ordersummary')
     </div>
   </div>
 </div>
