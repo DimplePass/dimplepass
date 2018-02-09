@@ -78,6 +78,12 @@ select.form-control:not([size]):not([multiple]) {
 	padding-left: .5rem;
 }
 
+.widget-order-summary {
+	background: $gray-lighter;
+	padding: 10px 10px 0px 10px;
+	border-radius: 10px
+}
+
 .m-6 {
   margin: 4rem !important;
 }
