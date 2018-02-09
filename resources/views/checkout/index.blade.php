@@ -29,8 +29,8 @@ Checkout : My Profile
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a href="/checkout/review">3. Review</a>
-        <a href="/checkout/payment"><span class="angle"></span>2. Payment</a>
+        <a href="/checkout/payment">3. Payment</a>
+        <a href="/checkout/passholders"><span class="angle"></span>2. Passholders</a>
         <a class="active" href="/checkout"><span class="angle"></span>1. My Profile</a>
       </div>
 
@@ -38,7 +38,7 @@ Checkout : My Profile
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
       {{-- User Action Statement --}}
-      <h3 class="mb-5">Let's create an account to attach to your Dimple Pass.</h3>
+      <h3 class="mb-5">Let's create your profile to attach to the Dimple Pass.</h3>
 
       {{-- Start Form --}}
       {!! Form::open(['action' => 'MemberController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
@@ -90,7 +90,7 @@ Checkout : My Profile
         <div class="checkout-footer margin-top-1x">
           <div class="column"></div>
           <div class="column">
-            {!! Form::button('<span class="hidden-xs-down">Payment </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+            {!! Form::button('<span class="hidden-xs-down">Add Passholders </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
           </div>
         </div>
 

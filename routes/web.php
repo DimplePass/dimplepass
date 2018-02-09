@@ -32,7 +32,7 @@ Route::get('/d/comingsoon', ['as' => 'destinations.comingsoon', 'uses' => 'Desti
 Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@checkout']);
 Route::get('/checkout/payment', ['as' => 'checkout.payment.', 'uses' => 'CheckoutController@checkoutPayment']);
 Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
-Route::get('/checkout/review', ['as' => 'checkout.review', 'uses' => 'CheckoutController@checkoutReview']);
+Route::get('/checkout/passholders', ['as' => 'checkout.passholders', 'uses' => 'CheckoutController@checkoutPassholders']);
 Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);
 Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);
 

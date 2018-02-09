@@ -29,17 +29,34 @@ Page Title
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a class="active" href="/checkout/review">3. Review</a>
-        <a class="completed" href="/checkout/payment"><span class="angle"></span><span class="step-indicator icon-circle-check"></span>2. Payment</a>
+        <a href="/checkout/payment">3. Payment</a>
+        <a class="active" href="/checkout/passholders"><span class="angle"></span><span class="step-indicator icon-circle-check"></span> 2. Passholders</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
-      <div class="ml-3">
-        <ul class="list-unstyled">
-          <li><h4><span class="text-muted">Passholder:</span> Happy GoLucky</h4></li>
-          <li><h6><span class="text-muted">Email:</span> happy@golucky.com</h6></li>
-					<li><h6><span class="text-muted">Phone:</span> (307) 690-9788</h6></li>
-        </ul>
-      </div>
+
+      {{-- Member Profile --}}
+      <aside class="user-info-wrapper mb-5">
+        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
+        </div>
+        <div class="user-info">
+          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+          <column class="col-sm-5">
+            <div class="user-data">
+              <h4>Happy GoLucky</h4>
+              <span>Joined February 06, 2017</span>
+            </div>
+          </column>
+          <column class="col-sm-5">
+            <div class="user-data">
+              <h6><a href="#">happy@golucky.com</a></h6>
+              <h6>(307) 690-9788</h6>
+              <h6>130 Yellow Rose Dr., Alta, WY  83414</h6>
+            </div>
+          </column>
+        </div>
+      </aside>
+
+      {{-- Cart --}}
       <div class="table-responsive shopping-cart mt-5">
         <table class="table">
           <thead>
@@ -54,9 +71,11 @@ Page Title
               <td>
                 <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Yellowstone Dimple Pass"></a>
                   <div class="product-info">
-                    <h4 class="product-title"><a href="/parks/yellowstone">Yellowstone<small>x 1</small></a></h4>
+                    <h4 class="product-title"><a href="/parks/yellowstone">Yellowstone</a></h4>
 										<span>Save up to <em>$289</em></span>
 										<span>Good at 14 of the top attractions and activities in Yellowstone.</span>
+                    <h6 class="mt-2">$24 x 2 adults</h6>
+                    <h6>$16 x 3 children</h6>
                   </div>
                 </div>
               </td>
@@ -67,9 +86,11 @@ Page Title
               <td>
                 <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yosemite-300x300.jpg" alt="Yellowstone Dimple Pass"></a>
                   <div class="product-info">
-                    <h4 class="product-title"><a href="/parks/yellowstone">Yosemite<small>x 1</small></a></h4>
+                    <h4 class="product-title"><a href="/parks/yellowstone">Yosemite</a></h4>
 										<span>Save up to <em>$289</em></span>
 										<span>Good at 14 of the top attractions and activities in Yosemite.</span>
+                    <h6 class="mt-2">$24 x 2 adults</h6>
+                    <h6>$16 x 3 children</h6>
                   </div>
                 </div>
               </td>
@@ -83,16 +104,9 @@ Page Title
         <div class="column"></div>
         <div class="column text-lg text-right">Subtotal: <span class="text-medium">$<span class="totalDue">0</span></span></div>
       </div>
-			<div class="text-right">
-        <h5>Payment method</h5>
-        <ul class="list-unstyled">
-          <li><span class="text-muted">Credit Card:</span>**** **** **** 5300</li>
-          <li><span class="text-muted">Billing Address:</span> 44 Shirley Ave. West Chicago, IL 60185, USA</li>
-        </ul>
-			</div>
       <div class="checkout-footer margin-top-1x hidden-xs-down">
-        <div class="column"><a class="btn btn-outline-secondary" href="/checkout/payment"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Payment</span></a></div>
-        <div class="column"><a class="btn btn-primary" href="/member"><span class="hidden-xs-down">Complete Order</span> <i class="icon-arrow-right"></i></a></div>
+        <div class="column"><a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a></div>
+        <div class="column"><a class="btn btn-primary" href="/checkout/payment"><span class="hidden-xs-down">Payment</span> <i class="icon-arrow-right"></i></a></div>
       </div>
     </div>
     {{-- Sidebar --}}

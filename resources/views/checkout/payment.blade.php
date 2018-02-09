@@ -29,11 +29,12 @@ Page Title
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a href="/checkout/review">3. Review</a>
-        <a class="active" href="/checkout/payment"><span class="angle"></span>2. Payment</a>
+        <a class="active" href="/checkout/payment">3. Payment</a>
+        <a class="completed" href="/checkout/passholders"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>2. Passholders</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 
+      {{-- Member Profile --}}
       <aside class="user-info-wrapper mb-5">
         <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
         </div>
@@ -152,10 +153,10 @@ Page Title
         {{-- Checkout Step Buttons --}}
         <div class="checkout-footer margin-top-1x">
           <div class="column">
-            <a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
+            <a class="btn btn-outline-secondary" href="/checkout/passholders"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
           </div>
           <div class="column">
-            {!! Form::button('<span class="hidden-xs-down">Review Order </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+            {!! Form::button('<span class="hidden-xs-down">Complete Order </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
           </div>
         </div>
 
