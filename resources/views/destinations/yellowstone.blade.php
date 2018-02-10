@@ -28,8 +28,8 @@ Yellowstone National Park
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save up to <strong class="dp-warning hero-cta">$289</strong> on the best of</div>
-              <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
+              <div class="h1 mb-2 gray-lighter">Save on <strong class="dp-warning hero-cta">the best</strong> of</div>
+              <h1 class="mb-2"><strong class="hero-cta">@yield('logo-tag')</strong></h1>
               <h5 class="mt-0 mb-2 gray-lighter">View Wildlife and Geysers in America's 1st National Park.</h5>            
           </div>
         </div>
@@ -42,6 +42,17 @@ Yellowstone National Park
   <div class="row">
     {{-- Vendor Discounts --}}
     <div class="col-xl-9 col-lg-8 order-lg-2">
+      {{-- Dimple Pass CTA Bar --}}
+      <div class="shop-toolbar padding-bottom-1x mb-2">
+        <div class="column">
+          <h2 class="mb-0"><strong>The Yellowstone Dimple Pass</strong></h2>
+          <h3 class="mb-0 dp-warning">Summer 2018 <small>May 15 - October 15</small></h3>
+          <h6 class="mt-o">Dates may vary per vendor.</h6>
+        </div>
+        <div class="column">
+          {{-- <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2> --}}
+        </div>
+      </div>
       {{-- Add Dimple Pass to Cart --}}
       <div class="row mb-3">
         <div class="col-md-2">

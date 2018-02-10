@@ -28,8 +28,8 @@ Glacier National Park
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save up to <strong class="dp-warning hero-cta">$346</strong> on the best of</div>
-              <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
+              <div class="h1 mb-2 gray-lighter">Save on <strong class="dp-warning hero-cta">the best</strong> of</div>
+              <h1 class="mb-2"><strong class="hero-cta">@yield('logo-tag')</strong></h1>
               <h5 class="mt-0 mb-2 gray-lighter">A sweet tagline will go here specific to this park.</h5>            
           </div>
         </div>
