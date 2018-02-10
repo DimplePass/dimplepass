@@ -29,8 +29,8 @@ Page Title
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a class="active" href="/checkout/payment">3. Payment</a>
-        <a class="completed" href="/checkout/passholders"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>2. Passholders</a>
+        <a class="" href="/checkout/review">3. Review</a>
+        <a class="active" href="/checkout/payment"><span class="angle"></span>2. Payment</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 

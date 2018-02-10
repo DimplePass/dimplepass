@@ -29,8 +29,8 @@ Page Title
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a href="/checkout/payment">3. Payment</a>
-        <a class="active" href="/checkout/passholders"><span class="angle"></span><span class="step-indicator icon-circle-check"></span> 2. Passholders</a>
+        <a class="active" href="/checkout/review">3. Review</a>
+        <a class="completed" href="/checkout/payment"><span class="angle"></span><span class="step-indicator icon-circle-check"></span> 2. Payment</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 
@@ -74,8 +74,6 @@ Page Title
                     <h4 class="product-title"><a href="/parks/yellowstone">Yellowstone</a></h4>
 										<span>Save up to <em>$289</em></span>
 										<span>Good at 14 of the top attractions and activities in Yellowstone.</span>
-                    <h6 class="mt-2">$24 x 2 adults</h6>
-                    <h6>$16 x 3 children</h6>
                   </div>
                 </div>
               </td>
@@ -89,8 +87,6 @@ Page Title
                     <h4 class="product-title"><a href="/parks/yellowstone">Yosemite</a></h4>
 										<span>Save up to <em>$289</em></span>
 										<span>Good at 14 of the top attractions and activities in Yosemite.</span>
-                    <h6 class="mt-2">$24 x 2 adults</h6>
-                    <h6>$16 x 3 children</h6>
                   </div>
                 </div>
               </td>

@@ -50,34 +50,7 @@ Yellowstone National Park
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
-          {{-- <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2> --}}
-        </div>
-      </div>
-      {{-- Add Dimple Pass to Cart --}}
-      <div class="row mb-3">
-        <div class="col-md-2">
-          <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }} form-horizontal">
-              {!! Form::label('numAdults', '# Adults @ $24') !!}
-              {!! Form::text('numAdults', null, ['class' => 'form-control text-center']) !!}
-              <small class="text-danger">{{ $errors->first('numAdults') }}</small>
-          </div>
-        </div>
-        <div class="col-md-1 mt-5">
-          <h5>$<span class="numAdultsTotal">0</span></h5>
-        </div>
-        <div class="col-md-2">  
-          <div class="form-group{{ $errors->has('numChildren') ? ' has-error' : '' }}">
-              {!! Form::label('numChildren', '# Children @ $16') !!}
-              {!! Form::text('numChildren', null, ['class' => 'form-control text-center']) !!}
-              <small class="text-danger">{{ $errors->first('numChildren') }}</small>
-          </div>
-        </div>
-        <div class="col-md-1 mt-5">
-          <h5>$<span class="numChildrenTotal">0</span></h5>
-        </div>
-        <div class="col-md-3 mt-4 h1 text-center">$<span class="totalDue">0</span></div>
-        <div class="col-md-2 text-left">
-          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Add to My Cart</a></h2>
+          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
         </div>
       </div>
       {{-- Vendor Listing --}}

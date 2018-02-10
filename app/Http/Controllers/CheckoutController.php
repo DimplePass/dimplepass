@@ -106,9 +106,9 @@ class CheckoutController extends Controller
 		}
 
 		// Review
-		public function checkoutPassholders()
+		public function checkoutReview()
 		{
-			return view('checkout.passholder');
+			return view('checkout.review');
 		}
 
 		// Confirmation

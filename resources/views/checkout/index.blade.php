@@ -29,8 +29,8 @@ Checkout : My Profile
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a href="/checkout/payment">3. Payment</a>
-        <a href="/checkout/passholders"><span class="angle"></span>2. Passholders</a>
+        <a href="/checkout/review">3. Review</a>
+        <a href="/checkout/payment"><span class="angle"></span>2. Payment</a>
         <a class="active" href="/checkout"><span class="angle"></span>1. My Profile</a>
       </div>
 
