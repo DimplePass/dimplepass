@@ -28,9 +28,9 @@ Zion National Park
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save up to <strong class="dp-warning hero-cta">$286</strong> in</div>
+              <div class="h1 mb-2 gray-lighter">Save up to <strong class="dp-warning hero-cta">$286</strong> on the best of</div>
               <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
-              <h5 class="mt-0 mb-2 gray-lighter">View Wildlife and Geysers in America's 1st National Park.</h5>            
+              <h5 class="mt-0 mb-2 gray-lighter">A sweet tagline will go here specific to this park.</h5>            
           </div>
         </div>
       </div>
@@ -46,7 +46,8 @@ Zion National Park
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
           <h2 class="mb-0"><strong>The Zion Dimple Pass</strong></h2>
-          <h3 class="dp-warning"><strong>$286</strong> possible savings</h3>
+          <h3 class="mb-0 dp-warning">Summer 2018 <small>April 15 - November 15</small></h3>
+          <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
           <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
@@ -67,10 +68,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -93,10 +93,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -119,10 +118,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -145,10 +143,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -171,10 +168,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -197,10 +193,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -223,10 +218,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -249,10 +243,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -275,10 +268,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -301,10 +293,9 @@ Zion National Park
           </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
-              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Season:</span> April 15 - November 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
               <li><a href="#">Visit Website</a></li>
@@ -317,58 +308,8 @@ Zion National Park
     <div class="col-xl-3 col-lg-4 order-lg-1">
       <aside class="sidebar">
         <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Town Filter --}}
-        <section class="widget">
-          <h3 class="widget-title">Filter by Location</h3>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="city1">
-            <label class="custom-control-label" for="city1">City, ST <span class="text-muted">(3)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="city2">
-            <label class="custom-control-label" for="city2">City, ST <span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="city3">
-            <label class="custom-control-label" for="city3">City, ST <span class="text-muted">(5)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="city4">
-            <label class="custom-control-label" for="city4">City, ST <span class="text-muted">(3)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="city5">
-            <label class="custom-control-label" for="city5">City, ST<span class="text-muted">(2)</span></label>
-          </div>
-        </section>
-        {{-- Type Filter --}}
-        <section class="widget">
-          <h3 class="widget-title">Filter by Type</h3>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type1">
-            <label class="custom-control-label" for="type1"> Boating<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type2">
-            <label class="custom-control-label" for="type2"> Guided Tour<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type3">
-            <label class="custom-control-label" for="type3"> Horseback<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type4">
-            <label class="custom-control-label" for="type4">Museum <span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type5">
-            <label class="custom-control-label" for="type5"> Rodeo<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type6">
-            <label class="custom-control-label" for="type6">Tram/Chairlift/Gondola <span class="text-muted">(2)</span></label>
-          </div>
-        </section>
+        {{-- Filters --}}
+        @include('/destinations/_inc/filters')
       </aside>
 			<hr class="mb-5">
 			<aside class="sticky text-center">

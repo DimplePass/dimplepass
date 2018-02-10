@@ -30,7 +30,7 @@ Yellowstone National Park
             <div class="from-bottom">
               <div class="h1 mb-2 gray-lighter">Save <strong class="dp-warning">$289</strong> in</div>
               <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
-              <h5 class="mt-0 mb-2 gray-lighter">View Wildlife and Geysers in America's 1st National Park.</h5>            
+              <h5 class="mt-0 mb-2 gray-lighter">A sweet tagline will go here specific to this park.</h5>            
           </div>
         </div>
       </div>
