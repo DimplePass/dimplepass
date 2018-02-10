@@ -30,7 +30,7 @@ Zion National Park
             <div class="from-bottom">
               <div class="h1 mb-2 gray-lighter">Save on <strong class="dp-warning hero-cta">the best</strong> of</div>
               <h1 class="mb-2"><strong class="hero-cta">@yield('logo-tag')</strong></h1>
-              <h5 class="mt-0 mb-2 gray-lighter">A sweet tagline will go here specific to this park.</h5>            
+              <h5 class="mt-0 mb-2 gray-lighter">Exclusive Discounts.</h5>            
           </div>
         </div>
       </div>
