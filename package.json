@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "feather-icon": "^0.1.0",
+        "formvalidation": "^0.6.2-dev",
         "izitoast": "^1.2.0",
         "pe7-icon": "^1.0.4",
         "photoswipe": "^4.1.2",

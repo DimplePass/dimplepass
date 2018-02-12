@@ -4,40 +4,123 @@ namespace App\Http\Controllers;
 
 // use App\Destination;
 // use Carbon\Carbon;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Cache;
 
-class CHeckoutController extends Controller
+class CheckoutController extends Controller
 {
 
-	// Checkout
-	public function checkout()
-	{
-		return view('checkout.index');
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+			return view('checkout.index');
+    }
 
-	// Payment
-	public function checkoutPayment()
-	{
-		return view('checkout.payment');
-	}
 
-	// Review
-	public function checkoutReview()
-	{
-		return view('checkout.review');
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	// Confirmation
-	public function checkoutThanks()
-	{
-		return view('checkout.thanks');
-	}
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
-	// Email Confirmation
-	public function checkoutEmailConfirmation()
-	{
-		return view('checkout.email.confirmation');
-	}
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit()
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+		// Payment
+		public function checkoutPayment()
+		{
+
+			// Countries Drop Down List
+			$selectCountries = ['Canada', 'United States'];
+
+      return view('checkout.payment',[
+          'selectCountries' => $selectCountries,
+        ]);
+		}
+
+		// Payment Store
+		public function checkoutPaymentStore(Request $request)
+		{
+			return $request->all();
+		}
+
+		// Review
+		public function checkoutReview()
+		{
+			return view('checkout.review');
+		}
+
+		// Confirmation
+		public function checkoutThanks()
+		{
+			return view('checkout.thanks');
+		}
+
+		// Email Confirmation
+		public function checkoutEmailConfirmation()
+		{
+			return view('checkout.email.confirmation');
+		}
 
 }

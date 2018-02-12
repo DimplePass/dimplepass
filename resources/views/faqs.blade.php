@@ -21,33 +21,30 @@ Frequently Asked Questions
 
 @section('content')
 
-{{-- Page Title --}}
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>Frequently Asked Questions</h1>
+{{-- Hero Slider --}}
+<section class="hero-slider mb-6" style="background-image: url(/img/destinations/zion-1920x580.jpg);">
+    <div class="item">
+      <div class="container padding-top-10x">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-12 padding-bottom-2x text-md-left text-center">
+            <div class="from-bottom">
+              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <div class="h4 mt-0 mb-4 gray-lighter">If it isn't answered yet, just ask.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>Frequently Asked Questions</li>
-      </ul>
-    </div>
-  </div>
-</div>
+</section>
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x">
   <div class="row">
-    {{-- Side Menu --}}
-    <div class="col-lg-3 col-md-4">
-      <nav class="list-group"><a class="list-group-item active" href="#">Most Popular Questions</a><a class="list-group-item" href="#">Managing Account</a><a class="list-group-item" href="#">Working With Dashboard</a><a class="list-group-item" href="#">Available Payment Methods</a><a class="list-group-item" href="#">Delivery Information</a><a class="list-group-item" href="#">Order Tracking Instructions</a><a class="list-group-item" href="#">Refund Policy</a><a class="list-group-item" href="#">Offers And Discounts</a><a class="list-group-item" href="#">Reward Points</a><a class="list-group-item" href="#">Affiliate Program</a><a class="list-group-item" href="#">Service Terms &amp; Conditions</a></nav>
-      <div class="padding-bottom-3x hidden-md-up"></div>
+    {{-- Side Images --}}
+    <div class="col-md-4">
+      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
     {{-- Content --}}
-    <div class="col-lg-9 col-md-8">
+    <div class="col-md-8">
       <div class="accordion" id="accordion" role="tablist">
         <div class="card">
           <div class="card-header" role="tab">

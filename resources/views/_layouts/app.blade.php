@@ -13,6 +13,8 @@
       {{-- Page Specific JS --}}
       @yield('scripts')
 
+		</div>
+
     </body>
 
 </html>

@@ -12,7 +12,7 @@
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
             </ul>
             <p><a class="navi-link-light" href="#">info@dimplepass.com</a></p>
-            <p><a class="navi-link-light" href="/contact">Contact Form</a></p>
+            <p><a class="navi-link-light" href="{{ route('utility.contact') }}">Contact Form</a></p>
             <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/dimplepass/" target="_blank"><i class="socicon-facebook"></i></a>
             <a class="social-button shape-circle sb-twitter sb-light-skin" href="https://twitter.com/dimplepass" target="_blank"><i class="socicon-twitter"></i></a>
             <a class="social-button shape-circle sb-instagram sb-light-skin" href="https://www.instagram.com/dimplepass/" target="_blank"><i class="socicon-instagram"></i></a>
@@ -23,9 +23,10 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">About Us</h3>
             <ul>
-              <li><a href="/about">Our Story</a></li>
-              <li><a href="/foundation">100% to Kids</a></li>
-              <li><a href="/faqs">FAQs</a></li>
+              <li><a href="{{ route('utility.about') }}">Our Story</a></li>
+              <li><a href="{{ route('foundation') }}">100% to Kids</a></li>
+              <li><a href="{{ route('utility.thebest') }}">The Best Attractions</a></li>
+              <li><a href="{{ route('utility.faqs') }}">FAQs</a></li>
             </ul>
           </section>
         </div>
@@ -34,10 +35,10 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Pass Holders</h3>
             <ul>
-              <li><a href="/member/edit">My Profile</a></li>
-              <li><a href="/member">My Passes</a></li>
-              <li><a href="/guarantee">Money Back Guarantee</a></li>
-              <li><a href="/member/terms">Terms & Conditions</a></li>
+              <li><a href="/member">My Profile</a></li>
+              <li><a href="{{ route('member.index') }}">My Passes</a></li>
+              <li><a href="{{ route('utility.guarantee') }}">Money Back Guarantee</a></li>
+              <li><a href="{{ route('member.terms') }}">Terms & Conditions</a></li>
             </ul>
           </section>
         </div>

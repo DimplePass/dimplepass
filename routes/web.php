@@ -15,45 +15,51 @@
 Route::get('robots.txt', 'UtilityController@robots');
 
 ///// Home
-Route::get('/', 'UtilityController@home');
+Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
-///// Parks
-Route::get('/d', 'DestinationController@index');
-Route::get('/d/destination', 'DestinationController@destination');
-// Demo d
-Route::get('/d/glacier', 'DestinationController@glacier');
-Route::get('/d/grandcanyon', 'DestinationController@grandcanyon');
-Route::get('/d/yosemite', 'DestinationController@yosemite');
-Route::get('/d/yellowstone', 'DestinationController@yellowstone');
-Route::get('/d/zion', 'DestinationController@zion');
-Route::get('/d/comingsoon', 'DestinationController@comingsoon');
+///// Destinations
+Route::get('/d', ['as' => 'destinations.index', 'uses' => 'DestinationController@index']);
+Route::get('/d/destination', ['as' => 'destinations.destination', 'uses' => 'DestinationController@destination']);
+// Demo Destinations
+Route::get('/d/glacier', ['as' => 'destinations.glacier', 'uses' => 'DestinationController@glacier']);
+Route::get('/d/grandcanyon', ['as' => 'destinations.grandcanyon', 'uses' => 'DestinationController@grandcanyon']);
+Route::get('/d/yosemite', ['as' => 'destinations.yosemite', 'uses' => 'DestinationController@yosemite']);
+Route::get('/d/yellowstone', ['as' => 'destinations.yellowstone', 'uses' => 'DestinationController@yellowstone']);
+Route::get('/d/zion', ['as' => 'destinations.zion', 'uses' => 'DestinationController@zion']);
+Route::get('/d/comingsoon', ['as' => 'destinations.comingsoon', 'uses' => 'DestinationController@comingsoon']);
 
 ///// Checkout
-Route::get('/checkout', 'CheckoutController@checkout');
-Route::get('/checkout/payment', 'CheckoutController@checkoutPayment');
-Route::get('/checkout/review', 'CheckoutController@checkoutReview');
-Route::get('/checkout/thanks', 'CheckoutController@checkoutThanks');
-Route::get('/checkout/email/confirmation', 'CheckoutController@checkoutEmailConfirmation');
+Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@checkout']);
+Route::get('/checkout/payment', ['as' => 'checkout.payment.', 'uses' => 'CheckoutController@checkoutPayment']);
+Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
+Route::get('/checkout/review', ['as' => 'checkout.review', 'uses' => 'CheckoutController@checkoutReview']);
+Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);
+Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);
 
 ///// Members
-Route::get('/member', 'MemberController@index');
-Route::get('/member/edit', 'MemberController@edit');
-Route::get('/member/pass', 'MemberController@pass');
+Route::get('/member', ['as' => 'member.index', 'uses' => 'MemberController@index']);
+Route::get('/member/edit', ['as' => 'member.edit', 'uses' => 'MemberController@edit']);
+Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'MemberController@pass']);
+Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'MemberController@terms']);
 
 ///// Vendors
-Route::get('/vendor', 'VendorController@index');
-Route::get('/vendor/promise', 'VendorController@promise');
-Route::get('/vendor/terms', 'VendorController@terms');
-Route::get('/vendor/application', 'VendorController@application');
-Route::get('/vendor/email/confirmation', 'VendorController@emailSignupConfirmation');
+Route::get('/vendor', ['as' => 'vendor.index', 'uses' => 'VendorController@index']);
+Route::get('/vendor/promise', ['as' => 'vendor.promise', 'uses' => 'VendorController@promise']);
+Route::get('/vendor/terms', ['as' => 'vendor.terms', 'uses' => 'VendorController@terms']);
+Route::get('/vendor/application', ['as' => 'vendor.application', 'uses' => 'VendorController@application']);
+Route::get('/vendor/email/confirmation', ['as' => 'vendor.email.signupconfirmation', 'uses' => 'VendorController@emailSignupConfirmation']);
 
 ///// 100% for Kids
-Route::get('/foundation', 'UtilityController@foundation');
+Route::get('/foundation', ['as' => 'foundation', 'uses' => 'UtilityController@foundation']);
 
 ///// Supporting
-Route::get('/about', 'UtilityController@about');
-Route::get('/contact', 'UtilityController@contact');
-Route::get('/faqs', 'UtilityController@faqs');
-Route::get('/guarantee', 'UtilityController@guarantee');
-Route::get('/how', 'UtilityController@how');
-Route::get('/thebest', 'UtilityController@thebest');
+Route::get('/about', ['as' => 'utility.about', 'uses' => 'UtilityController@about']);
+Route::get('/contact', ['as' => 'utility.contact', 'uses' => 'UtilityController@contact']);
+Route::get('/faqs', ['as' => 'utility.faqs', 'uses' => 'UtilityController@faqs']);
+Route::get('/guarantee', ['as' => 'utility.guarantee', 'uses' => 'UtilityController@guarantee']);
+Route::get('/how', ['as' => 'utility.how', 'uses' => 'UtilityController@how']);
+Route::get('/thebest', ['as' => 'utility.thebest', 'uses' => 'UtilityController@thebest']);
+
+//Resource Controllers - Place custom methods on these controllers above the resources
+Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
+Route::resource('member', 'MemberController');

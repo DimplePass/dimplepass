@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 // use App\Destination;
 // use Carbon\Carbon;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Cache;
 
 class MemberController extends Controller
@@ -14,6 +14,12 @@ class MemberController extends Controller
 	public function index()
 	{
 		return view('member.index');
+	}
+
+	// Create a New Member
+	public function store(Request $request)
+	{
+		return $request->all();
 	}
 
 	// Member Edit
@@ -26,6 +32,12 @@ class MemberController extends Controller
 	public function pass()
 	{
 		return view('member.pass');
+	}
+
+	// Member Terms
+	public function terms()
+	{
+		return view('member.terms');
 	}
 
 }

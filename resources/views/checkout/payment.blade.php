@@ -25,17 +25,18 @@ Page Title
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
 
-    {{-- Checkout Steps --}}
     <div class="col-xl-9 col-lg-8">
-      <div class="checkout-steps">
-        <a href="/checkout/review">3. Review</a>
+
+      {{-- Checkout Steps --}}
+      <div class="checkout-steps hidden-xs-down">
+        <a class="" href="/checkout/review">3. Review</a>
         <a class="active" href="/checkout/payment"><span class="angle"></span>2. Payment</a>
-        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. Billing Address</a>
+        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 
-{{--       <aside class="user-info-wrapper">
+      {{-- Member Profile --}}
+      <aside class="user-info-wrapper mb-5">
         <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-          <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>
         </div>
         <div class="user-info">
           <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
@@ -53,74 +54,122 @@ Page Title
 	          </div>
 					</column>
         </div>
-      </aside> --}}
+      </aside>
 
-      <h4 class="mt-4">Payment Info</h4>
-      <hr class="padding-bottom-1x">
+      {{-- Start Form --}}
+      {!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
+
+        {{-- Credit Card --}}
         <div class="card">
           <div class="card-header" role="tab">
             <h6>We accept following credit cards:&nbsp;<img class="d-inline-block align-middle" src="/img/credit-cards.png" style="width: 120px;" alt="Cerdit Cards"></h6>
           </div>
           <div class="card-body">
-            <form class="interactive-credit-card row">
+            <div class="row">
               <div class="form-group col-md-4">
-                <input class="form-control" type="text" name="number" placeholder="Card Number" required>
+                <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
+                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
+                    <small class="text-danger">{{ $errors->first('number') }}</small>
+                </div>
               </div>
               <div class="form-group col-md-4">
-                <input class="form-control" type="text" name="name" placeholder="Name on Card" required>
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                </div>
               </div>
               <div class="form-group col-md-2">
-                <input class="form-control" type="text" name="expiry" placeholder="MM/YY" required>
+                <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
+                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
+                    <small class="text-danger">{{ $errors->first('expiry') }}</small>
+                </div>
               </div>
               <div class="form-group col-md-2">
-                <input class="form-control" type="text" name="cvc" placeholder="CVC" required>
+                <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
+                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
+                    <small class="text-danger">{{ $errors->first('cvc') }}</small>
+                </div>
               </div>
-              <div class="col-sm-6">
-                {{-- <button class="btn btn-outline-primary btn-block margin-top-none" type="submit">Submit</button> --}}
+              <div class="col-sm-12">
+                <div class="card-wrapper"></div>
               </div>
-            </form>
-            <div class="card-wrapper"></div>
+            </div>
           </div>
         </div>
-      <div class="checkout-footer margin-top-1x">
-        <div class="column"><a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back</span></a></div>
-        <div class="column"><a class="btn btn-primary" href="/checkout/review"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-      </div>
-    </div>
-    {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4">
-      <aside class="sidebar stickyOrderSummary">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Order Summary --}}
-        <section class="widget widget-order-summary">
-          <h3 class="widget-title">Order Summary</h3>
-          <table class="table">
-            <tr>
-              <td>Glacier</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>Yellowstone</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="donate4">
-                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-                  <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
+
+        {{-- Billing Address --}}
+        <div class="card mt-5">
+          <div class="card-header" role="tab">
+            <h6>Billing address</h6>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('address1') ? ' has-error' : '' }}">
+                    {!! Form::label('address1', 'Address 1 <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('address1', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                    <small class="text-danger">{{ $errors->first('address1') }}</small>
                 </div>
-              </td>     
-              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
-            </tr>       
-            <tr>
-              <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
-            </tr>
-          </table>
-        </section>
-      </aside>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('address2') ? ' has-error' : '' }}">
+                    {!! Form::label('address2', 'Address 2 <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('address2', null, ['class' => 'form-control form-control-rounded']) !!}
+                    <small class="text-danger">{{ $errors->first('address2') }}</small>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                    {!! Form::label('city', 'City/Town <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('city', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                    <small class="text-danger">{{ $errors->first('city') }}</small>
+                </div>
+              </div>
+              <div class="form-group col-md-2">
+                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                    {!! Form::label('state', 'ST <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('state', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                    <small class="text-danger">{{ $errors->first('state') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
+                    {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                    <small class="text-danger">{{ $errors->first('zipcode') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                    {!! Form::label('country', 'Country') !!}
+                    {!! Form::select('country', $selectCountries, null, ['id' => 'country', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Choose --']) !!}
+                    <small class="text-danger">{{ $errors->first('inputname') }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- Checkout Step Buttons --}}
+        <div class="checkout-footer margin-top-1x">
+          <div class="column">
+            <a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
+          </div>
+          <div class="column">
+            {!! Form::button('<span class="hidden-xs-down">Review </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+          </div>
+        </div>
+
     </div>
+
+    {{-- Sidebar --}}
+    <div class="col-xl-3 col-lg-4 hidden-xs-down">
+      @include('/checkout/_inc/ordersummary')
+    </div>
+
+    {{-- End Form --}}
+    {!! Form::close() !!}
+
   </div>
 </div>
 
@@ -199,6 +248,76 @@ function roundTo(num, places) {
   var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
   return calc.toFixed(2);
 }
+
+//////////
+/// Form Validation
+/// http://formvalidation.io/settings/
+//////////
+
+$(function () {
+  $('#checkoutPayment').formValidation({
+    framework: 'bootstrap',
+    excluded: ':disabled',
+    fields: {
+      number: {
+        validators: {
+          notEmpty: {
+            message: 'What is the credit card number?'
+          }
+        }
+      },
+      name: {
+        validators: {
+          notEmpty: {
+            message: 'What is the name on the card?'
+          }
+        }
+      },
+      expiry: {
+        validators: {
+          notEmpty: {
+            message: 'Required'
+          }
+        }
+      },
+      cvc: {
+        validators: {
+          notEmpty: {
+            message: 'Required'
+          }
+        }
+      },
+      address1: {
+        validators: {
+          notEmpty: {
+            message: 'What is the billing address on the card?'
+          }
+        }
+      },
+      city: {
+        validators: {
+          notEmpty: {
+            message: 'Billing address city, please?'
+          }
+        }
+      },
+      zipcode: {
+        validators: {
+          notEmpty: {
+            message: 'How about a zip code?'
+          }
+        }
+      },
+      country: {
+        validators: {
+          notEmpty: {
+            message: 'We\'ll need a country, please'
+          }
+        }
+      },
+    }
+  });
+});
 
 </script>
 @stop

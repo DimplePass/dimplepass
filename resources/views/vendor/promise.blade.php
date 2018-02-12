@@ -41,9 +41,7 @@ Vendor <span class="dp-warning">/</span> Promise to Visitors
   <div class="row">
     {{-- Side Menu --}}
     <div class="col-md-4">
-      <nav class="list-group stickyBuy">
-        @include('/vendor/_inc.nav')
-      </nav>
+      @include('/vendor/_inc.nav')
       <div class="padding-bottom-3x hidden-md-up"></div>
     </div>
     {{-- Content --}}

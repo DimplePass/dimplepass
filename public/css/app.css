@@ -1614,6 +1614,170 @@ a.pswp__share--download:hover {
 .socicon-hellocoton:before {
   content: "\E0A7";
 }
+/**
+ * FormValidation (http://formvalidation.io)
+ * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
+ *
+ * @author      http://twitter.com/nghuuphuoc
+ * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
+ * @license     http://formvalidation.io/license/
+ */
+
+.fv-has-feedback {
+    position: relative;
+}
+.fv-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+.fv-has-feedback .fv-control-feedback {
+    /*right: 15px;*/
+}
+.fv-help-block {
+    display: block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~ For Bootstrap form ~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.fv-form-bootstrap .help-block {
+    margin-bottom: 0;
+}
+.fv-form-bootstrap .tooltip-inner {
+    text-align: left;
+}
+/* Bootstrap stacked form without label */
+.fv-form-bootstrap .fv-icon-no-label {
+	top: 0;
+}
+.fv-form-bootstrap .fv-bootstrap-icon-input-group {
+	z-index: 100;
+}
+/* Bootstrap inline form */
+.form-inline.fv-form-bootstrap .form-group {
+    vertical-align: top;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~ For Foundation form ~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.fv-form-foundation .fv-control-feedback {
+    top: 21px;      /* The height of Foundation label */
+    right: 15px;    /* The padding-right of .columns */
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+}
+.fv-form-foundation .collapse .fv-control-feedback {
+    top: 0;
+    right: 0;
+}
+/* Foundation horizontal form */
+.fv-form-horizontal.fv-form-foundation .fv-control-feedback {
+    top: 0;
+}
+/* Foundation stacked form without label */
+.fv-form-foundation .fv-icon-no-label {
+	top: 0;
+}
+.fv-form-foundation .error .fv-control-feedback {
+    color: #f04124;
+}
+/**
+ * Foundation reset the bottom marin to 0 when the row has '.error' class
+ * I need to adjust it when using tooltip to show the error
+ */
+.fv-form-foundation .error.fv-has-tooltip input, .error.fv-has-tooltip textarea, .error.fv-has-tooltip select {
+    margin-bottom: 1rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~ For Pure form ~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+
+.fv-form-pure .fv-control-feedback {
+    top: 22px;      /* Height of Pure label */
+    width: 36px;    /* Height of Pure input */
+    height: 36px;
+    line-height: 36px;
+}
+.pure-form-stacked.fv-form-pure .fv-control-feedback {
+    top: 4px;
+}
+.pure-form-aligned .pure-control-group .fv-help-block {
+    margin-top: 5px;
+    margin-left: 180px;
+}
+.pure-form-aligned.fv-form-pure .fv-control-feedback,    /* Pure horizontal form */
+.fv-form-pure .fv-icon-no-label {           /* Pure stacked form without label */
+	top: 0;
+}
+.fv-form-pure .fv-has-error label,
+.fv-form-pure .fv-has-error .fv-help-block,
+.fv-form-pure .fv-has-error .fv-control-feedback {
+    color: #CA3C3C;     /* Same as .button-error */
+}
+.fv-form-pure .fv-has-success label,
+.fv-form-pure .fv-has-success .fv-control-feedback {
+    /*color: #1CB841;*/     /* Same as .button-success */
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~ For Semantic form ~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.fv-form-semantic .fv-control-feedback.icon {
+    right: 7px;
+}
+.fv-form-semantic .error .icon {
+    color: #d95c5c;
+}
+/* Semantic horizontal form */
+.fv-form-horizontal.fv-form-semantic .row {
+    padding-bottom: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~ For UIKit form ~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
+
+.fv-form-uikit .fv-control-feedback {
+    top: 25px;      /* Height of UIKit label */
+    width: 30px;    /* Height of UIKit input */
+    height: 30px;
+    line-height: 30px;
+}
+.fv-form-uikit .uk-text-danger {
+    display: block;
+}
+/* UIKit horizontal form */
+.uk-form-horizontal.fv-form-uikit .fv-control-feedback {
+    /*line-height: normal;*/
+    top: 0;
+}
+.fv-form-uikit .fv-has-error label,
+.fv-form-uikit .fv-has-error .uk-form-label,
+.fv-form-uikit .fv-has-error .fv-control-feedback {
+    color: #D85030;     /* Same as .uk-form-danger */
+}
+.fv-form-uikit .fv-has-success label,
+.fv-form-uikit .fv-has-success .uk-form-label,
+.fv-form-uikit .fv-has-success .fv-control-feedback {
+    /*color: #659F13;*/     /* Same as .uk-form-success */
+}
+/* UIKit stacked form without label */
+.fv-form-uikit .fv-icon-no-label {
+	top: 0;
+}
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -9175,7 +9339,7 @@ figure figcaption {
 }
 
 .text-success {
-  color: #00b055 !important;
+  color: #0F8B8D !important;
 }
 
 .text-danger {
@@ -9240,7 +9404,7 @@ figure figcaption {
 }
 
 .bg-success {
-  background-color: #00b055 !important;
+  background-color: #0F8B8D !important;
 }
 
 .bg-info {
@@ -9293,7 +9457,7 @@ figure figcaption {
 }
 
 .border-success {
-  border-color: #00b055 !important;
+  border-color: #0F8B8D !important;
 }
 
 .border-info {
@@ -10415,12 +10579,12 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
 .has-success .input-group .input-group-addon,
 .has-success.input-group .input-group-addon,
 .has-success .form-control:focus ~ .input-group-addon {
-  color: #00b055;
+  color: #0F8B8D;
 }
 
 .has-success .form-control,
 .has-success .form-control:focus {
-  border-color: #00b055;
+  border-color: #0F8B8D;
 }
 
 .has-success .form-control-success {
@@ -10622,7 +10786,7 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
 .table-success,
 .table-success td,
 .table-success th {
-  background-color: rgba(0, 176, 85, 0.09);
+  background-color: rgba(15, 139, 141, 0.09);
 }
 
 .table-info,
@@ -10785,11 +10949,11 @@ button:focus {
 }
 
 .btn-success {
-  background-color: #00b055;
+  background-color: #0F8B8D;
 }
 
 .btn-success:hover {
-  background-color: #007d3c;
+  background-color: #0a5e5f;
 }
 
 .btn-info {
@@ -10844,13 +11008,13 @@ button:focus {
 }
 
 .btn-outline-success {
-  border-color: #00b055;
+  border-color: #0F8B8D;
   background-color: transparent;
-  color: #00b055;
+  color: #0F8B8D;
 }
 
 .btn-outline-success:hover {
-  background-color: #00b055;
+  background-color: #0F8B8D;
   color: #ffffff;
 }
 
@@ -10919,11 +11083,11 @@ button:focus {
 }
 
 .btn-link-success {
-  color: #00b055;
+  color: #0F8B8D;
 }
 
 .btn-link-success:hover {
-  color: #007d3c;
+  color: #0a5e5f;
 }
 
 .btn-link-info {
@@ -11890,12 +12054,12 @@ button:focus {
 }
 
 .card.bg-success {
-  border-color: #008741;
+  border-color: #0b6768;
 }
 
 .card.bg-success .card-header {
-  border-bottom-color: #008741;
-  background-color: #009146;
+  border-bottom-color: #0b6768;
+  background-color: #0c7071;
 }
 
 .card.bg-info {
@@ -12559,7 +12723,7 @@ a.list-group-item {
 }
 
 .badge.badge-success {
-  background-color: #00b055;
+  background-color: #0F8B8D;
 }
 
 .badge.badge-warning {
@@ -12618,8 +12782,8 @@ a.list-group-item {
 }
 
 .list-group-item-success {
-  background-color: rgba(0, 176, 85, 0.12);
-  color: #00a14e !important;
+  background-color: rgba(15, 139, 141, 0.12);
+  color: #0e7d7f !important;
 }
 
 .list-group-item-success > *,
@@ -12633,7 +12797,7 @@ a.list-group-item {
 .list-group-item-success ul,
 .list-group-item-success ol,
 .list-group-item-success a {
-  color: #00a14e !important;
+  color: #0e7d7f !important;
 }
 
 .list-group-item-warning {
@@ -12681,7 +12845,7 @@ a.list-group-item {
 
 .list-group-item-action:hover.list-group-item-success,
 .list-group-item-action.active.list-group-item-success {
-  background-color: rgba(0, 176, 85, 0.24);
+  background-color: rgba(15, 139, 141, 0.24);
 }
 
 .list-group-item-action:hover.list-group-item-warning,
@@ -12884,12 +13048,12 @@ a.list-group-item {
 }
 
 .alert-success {
-  background-color: rgba(0, 176, 85, 0.12);
-  color: #00a14e;
+  background-color: rgba(15, 139, 141, 0.12);
+  color: #0e7d7f;
 }
 
 .alert-success::before {
-  border-color: rgba(0, 176, 85, 0.25);
+  border-color: rgba(15, 139, 141, 0.25);
 }
 
 .alert-success > *:not(.text-white),
@@ -12914,11 +13078,11 @@ a.list-group-item {
 .alert-success ol:not(.text-light),
 .alert-success a:not(.text-white),
 .alert-success a:not(.text-light) {
-  color: #00a14e;
+  color: #0e7d7f;
 }
 
 .alert-success .alert-close {
-  color: #00a14e;
+  color: #0e7d7f;
 }
 
 .alert-warning {
@@ -13050,9 +13214,9 @@ a.list-group-item {
 }
 
 .iziToast.iziToast-success {
-  border-color: rgba(0, 176, 85, 0.3);
-  background-color: #69ffb1;
-  color: #009146;
+  border-color: rgba(15, 139, 141, 0.3);
+  background-color: #65ecef;
+  color: #0c7071;
 }
 
 .iziToast.iziToast-success > .iziToast-close {
@@ -16481,7 +16645,7 @@ video {
   margin-top: -5px;
   margin-right: 7px;
   border-radius: 50%;
-  color: #00b055;
+  color: #0F8B8D;
   font-size: 18px;
   line-height: 20px;
   text-align: center;
@@ -16930,13 +17094,7 @@ video {
   font-size: 2.4rem;
 }
 
-.stickyBuy {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 120px;
-}
-
-.stickyOrderSummary {
+.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 140px;
@@ -16960,6 +17118,34 @@ a.list-group-item,
 
 hr {
   margin: 3rem !important;
+}
+
+.fv-form-bootstrap .help-block {
+  margin-left: .5rem;
+  color: #A8201A;
+}
+
+.form-control {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.form-control:not(textarea) {
+  height: 50px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: 50px;
+}
+
+.form-group label {
+  padding-left: .5rem;
+}
+
+.widget-order-summary {
+  background: #f5f5f5;
+  padding: 10px 10px 0px 10px;
+  border-radius: 10px;
 }
 
 .m-6 {

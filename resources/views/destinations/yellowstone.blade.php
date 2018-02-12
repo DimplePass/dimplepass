@@ -28,9 +28,9 @@ Yellowstone National Park
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save up to <strong class="dp-warning hero-cta">$289</strong> in</div>
-              <h1 class="mb-2"><strong class="dp-white">@yield('logo-tag')</strong></h1>
-              <h5 class="mt-0 mb-2 gray-lighter">View Wildlife and Geysers in America's 1st National Park.</h5>            
+              <div class="h1 mb-2 gray-lighter">Save on <strong class="dp-warning hero-cta">the best</strong> of</div>
+              <h1 class="mb-2"><strong class="hero-cta">@yield('logo-tag')</strong></h1>
+              <h5 class="mt-0 mb-2 gray-lighter">Exclusive Discounts.</h5>               
           </div>
         </div>
       </div>
@@ -46,10 +46,39 @@ Yellowstone National Park
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
           <h2 class="mb-0"><strong>The Yellowstone Dimple Pass</strong></h2>
-          <h3 class="dp-warning"><strong>$289</strong> possible savings</h3>
+          <h3 class="mb-0 dp-warning">Summer 2018 <small>May 15 - October 15</small></h3>
+          <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
           <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
+        </div>
+      </div>
+      {{-- Vendor Listing --}}
+      <div class="product-card product-list">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/sk-bigking-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Snow King Mountain <small>Jackson, WY</small>
+          </h3>
+          <p class="hidden-xs-down">A one-day pass that includes one tour on the Treetop Adventure, and unlimited rides on all open activities including the Cowboy Coaster, Mini-Golf, Alpine Slide, Amaze’n Maze, Bungee Trampoline and Scenic Chairlift!</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> 25% Off Big King Pass <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Adults / Juniors / Seniors <span class="dp-primary">|</span> <del>$125.00</del>$100
+            </h4>
+            <h4 class="product-price">
+              Children <small>6 & under</small> <span class="dp-primary">|</span> <del>$50.00</del>$40
+            </h4>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
+              <li><span class="opacity-50">Saturday:</span> 10.00 am - 6.00 pm</li>
+              <li><a href="#">Visit Website</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       {{-- Vendor Listing --}}
@@ -60,15 +89,20 @@ Yellowstone National Park
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Snow King Scenic Chairlift <small>Jackson, WY</small>
+            Snow King Mountain <small>Jackson, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Scenic Chairlift <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Adults <small>13-64</small> <span class="dp-primary">|</span> <del>$20.00</del>$14.00
+            </h4>
+            <h4 class="product-price">
+              Seniors <small>65 & up</small> <span class="dp-primary">|</span> <del>$15.00</del>$10.50
+            </h4>
+            <h4 class="product-price">
+              Junoirs <small>12 & under</small> <span class="dp-primary">|</span> <del>$15.00</del>$10.50
+            </h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -86,15 +120,20 @@ Yellowstone National Park
         </a>
         <div class="product-info">
           <h3 class="product-title">
-            Snow King Cowboy Coaster <small>Jackson, WY</small>
+            Snow King Mountain <small>Jackson, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Cowboy Coaster <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Driver <small>54+" tall</small> <span class="dp-primary">|</span> <del>$20.00</del>$14.00
+            </h4>
+            <h4 class="product-price">
+              Passenger <small>38+" tall</small> <span class="dp-primary">|</span> <del>$10.00</del>$7.00
+            </h4>
+            <h4 class="product-price">
+              Junoirs <small>12 & under</small> <span class="dp-primary">|</span> <del>$15.00</del>$10.50
+            </h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -114,13 +153,18 @@ Yellowstone National Park
           <h3 class="product-title">
             Jackson Hole Mountain Resort <small>Teton Village, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Tram Ride <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 25% Off Tram Ride <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Adult <small>18-64</small> <span class="dp-primary">|</span> <del>$42.00</del>$31.50
+            </h4>
+            <h4 class="product-price">
+              Senior <small>65+</small> <span class="dp-primary">|</span> <del>$34.00</del>$25.50
+            </h4>
+            <h4 class="product-price">
+              Junoirs <small>6-17</small> <span class="dp-primary">|</span> <del>$27.00</del>$20.25
+            </h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 20 - October 8</li>
               <li><span class="opacity-50">Daily:</span> 9.00 am - 5.00 pm</li>
@@ -139,13 +183,18 @@ Yellowstone National Park
           <h3 class="product-title">
             Grizzy and Wolf Discovery Center <small>West Yellowstone, MT</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$8 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Adult <small>13 and up</small> <span class="dp-primary">|</span> <del>$13.00</del>$9.10
+            </h4>
+            <h4 class="product-price">
+              Senior <small>62+</small> <span class="dp-primary">|</span> <del>$12.25</del>$8.58
+            </h4>
+            <h4 class="product-price">
+              Children <small>5-12</small> <span class="dp-primary">|</span> <del>$8.00</del>$5.60
+            </h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -165,13 +214,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Yellowstone Giant Screen - IMAX <small>West Yellowstone, MT</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -192,13 +237,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Buffalo Bill Center of the West <small>Cody, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -218,13 +259,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Grand Targhee Scenic Chairlift <small>Alta, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -244,13 +281,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Jackson Hole Rodeo <small>Jackson, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -270,13 +303,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Cody Night Rodeo <small>Cody, WY</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $5 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -296,13 +325,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Montana Whitewater Zipline <small>Gallatin, MT</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $10 Off Entry <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 20% Off Zipline <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -323,13 +348,9 @@ Yellowstone National Park
           <h3 class="product-title">
             Montana Whitewater Rafting <small>Gallatin, MT</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $12 Off 1/2 Day Whitewater Trip <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$20 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 20% Off 1/2 Day Whitewater Trip <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -350,13 +371,9 @@ Yellowstone National Park
           <h3 class="product-title">
             The Diamond P Ranch <small>West Yellowstone, MT</small>
           </h3>
-          {{-- <h4 class="product-price">
-            <del>$99.99</del>$49.99
-          </h4> --}}
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $12 Off Horseback Ride <small>(up to 4)</small></h4>
-            <h6 class="dp-warning">$48 possible savings</h6>
+            <h4><i class="icon-tag dp-success"></i> 20% Off Horseback Ride <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -372,61 +389,11 @@ Yellowstone National Park
     <div class="col-xl-3 col-lg-4 order-lg-1">
       <aside class="sidebar">
         <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Town Filter --}}
-        <section class="widget">
-          <h3 class="widget-title">Filter by Location</h3>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="bsk">
-            <label class="custom-control-label" for="bsk">Big Sky, MT <span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="cdy">
-            <label class="custom-control-label" for="cdy">Cody, WY <span class="text-muted">(3)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="grd">
-            <label class="custom-control-label" for="grd">Gardiner, MT<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="jkh">
-            <label class="custom-control-label" for="jkh">Jackson Hole, WY <span class="text-muted">(5)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="wys">
-            <label class="custom-control-label" for="wys">West Yellowstone, MT <span class="text-muted">(3)</span></label>
-          </div>
-        </section>
-        {{-- Type Filter --}}
-        <section class="widget">
-          <h3 class="widget-title">Filter by Type</h3>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type1">
-            <label class="custom-control-label" for="type1"> Boating<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type2">
-            <label class="custom-control-label" for="type2"> Guided Tour<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type3">
-            <label class="custom-control-label" for="type3"> Horseback<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type4">
-            <label class="custom-control-label" for="type4">Museum <span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type5">
-            <label class="custom-control-label" for="type5"> Rodeo<span class="text-muted">(2)</span></label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" id="type6">
-            <label class="custom-control-label" for="type6">Tram/Chairlift/Gondola <span class="text-muted">(2)</span></label>
-          </div>
-        </section>
+        {{-- Filters --}}
+        @include('/destinations/_inc/filters')
       </aside>
 			<hr class="mb-5">
-			<aside class="stickyBuy text-center">
+			<aside class="sticky text-center">
 				<h2><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
       	<h5><a href="/how">How does it work?</a></h5>				
 			</aside>

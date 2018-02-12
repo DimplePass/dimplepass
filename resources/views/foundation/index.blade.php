@@ -36,29 +36,12 @@
     </div>
 </section>
 
-{{-- Page Title --}}
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>100% of our Profits get Kids Outdoors</h1>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>100% of our Profits get Kids Outdoors</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 {{-- Page Content --}}
-<div class="container padding-bottom-2x mb-2">
+<div class="container padding-bottom-2x mb-2 mt-5">
   <div class="row padding-bottom-2x">
     <div class="col-md-5 text-center">
-      <aside class="stickyBuy">
-        <img class="d-block w-270 mx-auto rounded mb-3 my-5" src="/img/foundation/everykidinapark.png" alt="">
+      <aside class="sticky">
+        <img class="d-block w-270 mx-auto rounded mb-5" src="/img/foundation/everykidinapark.png" alt="">
         <h2><a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank" class="btn btn-primary btn-lg">Learn More About It <i class="icon-arrow-right"></i></a></h2>
       </aside> 
     </div>

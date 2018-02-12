@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Page Title
+Checkout : My Profile
 @stop
 
 @section('content')
@@ -25,131 +25,83 @@ Page Title
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
 
-    {{-- Checkout Steps --}}
     <div class="col-xl-9 col-lg-8">
-      <div class="checkout-steps">
+
+      {{-- Checkout Steps --}}
+      <div class="checkout-steps hidden-xs-down">
         <a href="/checkout/review">3. Review</a>
-        <a href="/checkout/payment">2. Payment</a>
-        <a class="active" href="/checkout"><span class="angle"></span>1. Billing Address</a>
+        <a href="/checkout/payment"><span class="angle"></span>2. Payment</a>
+        <a class="active" href="/checkout"><span class="angle"></span>1. My Profile</a>
       </div>
 
-      {{-- Checkout Address --}}
+      {{-- Spacer --}}
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
-      <h4>Billing Address</h4>
-      <hr class="padding-bottom-1x">
+
+      {{-- User Action Statement --}}
+      <h3 class="mb-5">Let's create your profile to attach to the Dimple Pass.</h3>
 
       {{-- Start Form --}}
-      <form class="row">
+      {!! Form::open(['action' => 'MemberController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
+
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="account-fn">First Name <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
-            <input class="form-control" type="text" id="account-fn" value="Happy" required>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="account-ln">Last Name <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
-            <input class="form-control" type="text" id="account-ln" value="GoLucky" required>
+          <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+              {!! Form::label('firstname', 'First Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::text('firstname', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('firstname') }}</small>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="account-email">E-mail Address <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
-            <input class="form-control" type="email" id="account-email" value="happy@golucky.com" disabled>
+          <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+              {!! Form::label('lastname', 'Last Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::text('lastname', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('lastname') }}</small>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="account-phone">Phone Number</label>
-            <input class="form-control" type="text" id="account-phone" value="(307) 690-9788" required>
+          <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
+              {!! Form::label('emailid', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::text('emailid', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('emailid') }}</small>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="checkout-address1">Address 1 <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
-            <input class="form-control" type="text" id="checkout-address1">
+          <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+              {!! Form::label('phone', 'Phone <small class="gray">optional</small>', [], false) !!}
+              {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'placeholder' => '(000) 000-0000']) !!}
+              <small class="text-danger">{{ $errors->first('phone') }}</small>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="checkout-address2">Address 2</label>
-            <input class="form-control" type="text" id="checkout-address2">
+          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+              {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::text('password', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('password') }}</small>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="checkout-city">City <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
-            <select class="form-control" id="checkout-city">
-              <option>Choose city</option>
-              <option>Amsterdam</option>
-              <option>Berlin</option>
-              <option>Geneve</option>
-              <option>New York</option>
-              <option>Paris</option>
-            </select>
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('password2') ? ' has-error' : '' }}">
+              {!! Form::label('password2', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::text('password2', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('password2') }}</small>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="checkout-zip">ZIP Code <span class="dp-warning"><i class="pe-7s-leaf"></i></span></label>
-            <input class="form-control" type="text" id="checkout-zip">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="checkout-country">Country</label>
-            <select class="form-control" id="checkout-country">
-              <option>Choose country</option>
-              <option>Australia</option>
-              <option>Canada</option>
-              <option>France</option>
-              <option>Germany</option>
-              <option>Switzerland</option>
-              <option>USA</option>
-            </select>
-          </div>
-        </div>
-      </form>
   
-      <div class="checkout-footer margin-top-1x">
-        <div class="column">{{-- <a class="btn btn-outline-secondary" href="checkout-shipping.html"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back</span></a> --}}</div>
-        <div class="column"><a class="btn btn-primary" href="/checkout/payment"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-      </div>
+        {{-- Checkout Progress Buttons --}}
+        <div class="checkout-footer margin-top-1x">
+          <div class="column"></div>
+          <div class="column">
+            {!! Form::button('<span class="hidden-xs-down">Payment </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+          </div>
+        </div>
+
+      {{-- End Form --}}
+      {!! Form::close() !!}
+
     </div>
 
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4">
-      <aside class="sidebar stickyOrderSummary">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Order Summary --}}
-        <section class="widget widget-order-summary">
-          <h3 class="widget-title">Order Summary</h3>
-          <table class="table">
-            <tr>
-              <td>Glacier</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>Yellowstone</td>
-              <td class="text-medium">$<span class="passFee">26.00</span></td>
-            </tr>
-            <tr>
-              <td>
-                <div class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="donate4">
-                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-                  <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
-                </div>
-              </td>     
-              <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
-            </tr>       
-            <tr>
-              <td></td>
-              <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
-            </tr>
-          </table>
-        </section>
-      </aside>
+    <div class="col-xl-3 col-lg-4 hidden-xs-down">
+      @include('/checkout/_inc/ordersummary')
     </div>
   </div>
 </div>
@@ -229,6 +181,56 @@ function roundTo(num, places) {
   var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
   return calc.toFixed(2);
 }
+
+//////////
+/// Form Validation
+/// http://formvalidation.io/settings/
+//////////
+
+$(function () {
+  $('#checkoutProfile').formValidation({
+    framework: 'bootstrap',
+    excluded: ':disabled',
+    fields: {
+      firstname: {
+        validators: {
+          notEmpty: {
+            message: 'What is your first name?'
+          }
+        }
+      },
+      lastname: {
+        validators: {
+          notEmpty: {
+            message: 'What is you last name?'
+          }
+        }
+      },
+      emailid: {
+        trigger: 'blur',
+        validators: {
+          notEmpty: {
+            message: 'Email is required.'
+          }
+        }
+      },
+      password: {
+        validators: {
+          notEmpty: {
+            message: 'A password is required.'
+          }
+        }
+      },
+      password2: {
+        validators: {
+          notEmpty: {
+            message: 'A password is required.'
+          }
+        }
+      }
+    }
+  });
+});
 
 </script>
 @stop

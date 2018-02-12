@@ -71,7 +71,7 @@
       <nav class="site-menu">
         <ul>
           <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><span>Home</span></a></li>
-          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="/d"><span>Destinations</span></a>
+          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="{{ route('destinations.index') }}"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
@@ -147,10 +147,10 @@
               <span class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
+                <div class="dropdown-product-item" id="passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
                   <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yellowstone">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
                 </div>
-                <div class="dropdown-product-item"><span class="dropdown-product-remove"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
+                <div class="dropdown-product-item" id="passid-2"><span class="dropdown-product-remove" data-passid="2"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
                   <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yosemite">Yosemite</a><span class="dropdown-product-details">1 x $26</span></div>
                 </div>
                 <div class="toolbar-dropdown-group">
@@ -159,7 +159,7 @@
                 </div>
                 <div class="toolbar-dropdown-group">
                   {{-- <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/checkout">View Cart</a></div> --}}
-                  <div class="column"><a class="btn btn-sm btn-block btn-primary" href="/checkout">Checkout</a></div>
+                  <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
                 </div>
               </div>
             </div>

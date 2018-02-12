@@ -47,7 +47,7 @@ Vendor <span class="dp-warning">/</span> Application
     {{-- Content --}}
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h1>Application Form</h1>
+      <h1>Vendor Application</h1>
       <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
       <hr>
       <h5 class="dp-warning">Form will go here.</h5>
