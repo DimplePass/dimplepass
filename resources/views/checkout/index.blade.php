@@ -90,7 +90,7 @@ Checkout : My Profile
         <div class="checkout-footer margin-top-1x">
           <div class="column"></div>
           <div class="column">
-            {!! Form::button('<span class="hidden-xs-down">Add Passholders </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+            {!! Form::button('<span class="hidden-xs-down">Payment </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
           </div>
         </div>
 

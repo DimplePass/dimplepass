@@ -153,10 +153,10 @@ Page Title
         {{-- Checkout Step Buttons --}}
         <div class="checkout-footer margin-top-1x">
           <div class="column">
-            <a class="btn btn-outline-secondary" href="/checkout/passholders"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
+            <a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
           </div>
           <div class="column">
-            {!! Form::button('<span class="hidden-xs-down">Complete Order </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+            {!! Form::button('<span class="hidden-xs-down">Review </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
           </div>
         </div>
 

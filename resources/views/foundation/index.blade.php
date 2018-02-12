@@ -36,25 +36,8 @@
     </div>
 </section>
 
-{{-- Page Title --}}
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>100% of our Profits get Kids Outdoors</h1>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>100% of our Profits get Kids Outdoors</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 {{-- Page Content --}}
-<div class="container padding-bottom-2x mb-2">
+<div class="container padding-bottom-2x mb-2 mt-5">
   <div class="row padding-bottom-2x">
     <div class="col-md-5 text-center">
       <aside class="sticky">

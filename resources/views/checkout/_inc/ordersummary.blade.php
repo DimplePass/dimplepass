@@ -17,7 +17,7 @@
           <div class="custom-control custom-checkbox">
             <input class="custom-control-input" type="checkbox" id="donate4">
             <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-            <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
+            <p><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-help1"></i> What is this?</a></p> 
           </div>
         </td>     
         <td  class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   

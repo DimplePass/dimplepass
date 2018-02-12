@@ -93,6 +93,17 @@ Page Title
               <td class="text-center text-lg text-medium">$26.00</td>
               <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="passid-2">Remove</a></td>
             </tr>
+            <tr>
+              <td>row 1</td>
+              <td>row 1</td> 
+              <td>
+                <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" id="donate4">
+                <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
+                <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
+              </div>
+              </td>  
+            </tr>     
           </tbody>
         </table>
       </div>
@@ -101,8 +112,8 @@ Page Title
         <div class="column text-lg text-right">Subtotal: <span class="text-medium">$<span class="totalDue">0</span></span></div>
       </div>
       <div class="checkout-footer margin-top-1x hidden-xs-down">
-        <div class="column"><a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a></div>
-        <div class="column"><a class="btn btn-primary" href="/checkout/payment"><span class="hidden-xs-down">Payment</span> <i class="icon-arrow-right"></i></a></div>
+        <div class="column"><a class="btn btn-outline-secondary" href="/payment"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a></div>
+        <div class="column"><a class="btn btn-primary" href=""><span class="hidden-xs-down">Complete Order</span> <i class="icon-arrow-right"></i></a></div>
       </div>
     </div>
     {{-- Sidebar --}}
