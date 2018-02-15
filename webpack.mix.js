@@ -23,6 +23,7 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
 mix.copy('resources/assets/img/', 'public/img/');
 mix.copy('resources/assets/fonts/', 'public/fonts/');
 mix.copy('node_modules/font-awesome/fonts/', 'public/fonts/');
+mix.copy('resources/assets/pdf/', 'public/pdf/');
 
 // Browsersync Reload
 mix.browserSync('localhost.dimplepass.com');

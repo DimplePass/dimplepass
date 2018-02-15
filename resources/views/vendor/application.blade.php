@@ -48,7 +48,7 @@ Vendor <span class="dp-warning">/</span> Application
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h1>Vendor Application</h1>
-      <h3>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner.</h3>
+      <h3>Although we pride ourselves in knowing the best of the best out there and hand selecting our vendors, we may have missed a gem or two.  Please drop a line to let us know if you are interested in becoming a part of the Dimple Pass in your region.</h3>
       <hr>
       <h5 class="dp-warning">Form will go here.</h5>
     </div>
