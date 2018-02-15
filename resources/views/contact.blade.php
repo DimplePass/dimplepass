@@ -28,7 +28,7 @@ Contact Us
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <h1 class="mb-0 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></h1>
               <div class="h4 mt-0 mb-4 gray-lighter">We are happy to help.</div>
           </div>
         </div>
@@ -39,10 +39,10 @@ Contact Us
 {{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
-    <div class="col-md-7 text-md-left text-center">
+    <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h2>Mailing Address</h2>
       <p>Dimple Pass<br>130 Yellow Rose Dr.<br>Alta, WY  83414</p>

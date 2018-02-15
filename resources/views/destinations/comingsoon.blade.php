@@ -28,7 +28,7 @@ Coming Soon!
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <h1 class="mb-0 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></h1>
               <div class="h4 mt-0 mb-4 gray-lighter">We are busy gathering awesome vendors at this time.</div>
           </div>
         </div>
