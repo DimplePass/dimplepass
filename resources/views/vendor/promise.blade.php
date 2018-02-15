@@ -48,23 +48,23 @@ Vendor <span class="dp-warning">/</span> Promise to Visitors
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h1>The Vendor Promise <small>Happy Travelers</small></h1>
-      <h3>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner.</h3>
+      <h3>As a Dimple Pass vendor, you are making a promise to the Dimple Pass members.</h3>
       <hr>
       <h3>Discounted Access <small>Save money.</small></h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>As a vendor, I will redeem all current offers in my agreement with Dimple Pass for current Dimple Pass members.  I have provided the Dimple Pass holders with savings on one or more of my services and/or products and I will accept the Dimple Pass for the entirety of the pass season.  In short, if you have a pass, you have a discount with us and we are happy to have you here!</p>
       <hr>
       <h3>Incredible Customer Service <small>Friendly and helpful.</small></h3>
       <i class="pe-7s-smile float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>It should go without saying that our vendor customer service is second to none.  Since we hand-pick the attractions, activities and restaurants in each destination, you are sure to have a great experience throughout your vacation experience.  Each vendor is committed to making every guest, including Dimple Pass holders, feel like family.  And, not the long lost cousin type of family!</p>
       <hr>
       <h3>No Hassle Bookings <small>Painless and simple.</small></h3>
       <i class="pe-7s-magic-wand float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>Vendors agree to have a simple and hassle free booking and reservation system in place for all Dimple Pass holders.  If the pass is taken at a front desk or ticket window, presenting the Dimple Pass will be a quick and painless procedure.  It's kinda like magic, really.</p>
       <hr>
       <h3>Knowledgable Staff <small>We know the Dimple traveler.</small></h3>
       <i class="pe-7s-info float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>Of most importance, is that all staff are aware of the agreement and discount with Dimple Pass.  When Dimple Pass holders present their pass in order to receive the discount offer, all employees should know what they are talking about and be ready to assist them with the no-hassle redemption.</p>
     </div>
   </div>
 </div>
