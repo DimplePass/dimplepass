@@ -50,7 +50,6 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <h6 class="dp-warning"><strong>$289</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/yellowstone">View <strong>16</strong> Discounts</a>
         </div>
       </div>
@@ -63,7 +62,6 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/yosemite">View <strong>16</strong> Discounts</a>
         </div>
       </div>
@@ -76,13 +74,12 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
-          <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/zion">View <strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/d">View All Dimple National Parks</a></div>
+  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/d">View All Dimple Parks</a></div>
 </section>
 
 {{-- The Dimple Pass Commitment --}}

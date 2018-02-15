@@ -4,7 +4,7 @@
         <div class="user-ava"><img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
         </div>
         <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6><span class="text-sm text-white opacity-60">290 Reward points</span>
+          <h6 class="user-name">Happy Golucky</h6><span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
         </div>
       </a>
       <nav class="offcanvas-menu">
@@ -31,7 +31,7 @@
         <div class="user-ava"><img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
         </div>
         <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6><span class="text-sm text-white opacity-60">290 Reward points</span>
+          <h6 class="user-name">Happy Golucky</h6><span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
         </div>
       </a>
       <nav class="offcanvas-menu">
@@ -57,7 +57,7 @@
     <header class="navbar navbar-sticky">
       {{-- Search --}}
       <form class="site-search" method="get">
-        <input type="text" name="site_search" placeholder="Type to search...">
+        <input type="text" name="site_search" placeholder="Find your park...">
         <div class="search-tools"><span class="clear-search">Clear</span><span class="close-search"><i class="icon-cross"></i></span></div>
       </form>
       <div class="site-branding">
@@ -132,10 +132,10 @@
                   <div class="user-ava"><img src="/img/account/user-ava-sm.jpg" alt="Happy Golucky">
                   </div>
                   <div class="user-info">
-                    <h6 class="user-name">Happy Golucky</h6><span class="text-xs text-muted">290 Reward points</span>
+                    <h6 class="user-name">Happy Golucky</h6><span class="text-xs text-muted">Joined Feb 06, 2018</span>
                   </div>
                 </li>
-                  <li><a href="/member">My Passes</a></li>
+                  <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
                   <li><a href="/member/edit">My Profile</a></li>
                 <li class="sub-menu-separator"></li>
                 <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>

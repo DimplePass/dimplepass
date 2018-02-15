@@ -28,7 +28,7 @@
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="from-bottom">
-              <div class="h1 mb-2 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></div>
+              <h1 class="mb-0 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></h1>
               <div class="h4 mt-0 mb-4 gray-lighter">Our Commitment to the future of the Outdoors.</div>
           </div>
         </div>
@@ -39,13 +39,13 @@
 {{-- Page Content --}}
 <div class="container padding-bottom-2x mb-2 mt-5">
   <div class="row padding-bottom-2x">
-    <div class="col-md-5 text-center">
+    <div class="col-md-4 text-center">
       <aside class="sticky">
         <img class="d-block w-270 mx-auto rounded mb-5" src="/img/foundation/everykidinapark.png" alt="">
         <h2><a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank" class="btn btn-primary btn-lg">Learn More About It <i class="icon-arrow-right"></i></a></h2>
       </aside> 
     </div>
-    <div class="col-md-7 text-md-left text-center">
+    <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
 
       <h2>Dimple Pass commits 100% of our profits to get kids outdoors.</h2>

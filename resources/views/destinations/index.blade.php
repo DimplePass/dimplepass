@@ -38,7 +38,6 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
-          <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/glacier">View <strong>16</strong> Discounts</a>
         </div>
       </div>
@@ -51,7 +50,6 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Grand Canyon</h4>
-          <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/grandcanyon">View <strong>16</strong> Discounts</a>
         </div>
       </div>
@@ -64,7 +62,6 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <h6 class="dp-warning"><strong>$289</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/yellowstone">View <strong>16</strong> Discounts</a>
         </div>
       </div>
@@ -77,7 +74,6 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <h6 class="dp-warning"><strong>$324</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/yosemite">View <strong>16</strong> Discounts</a>
         </div>
       </div>
@@ -90,7 +86,6 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
-          <h6 class="dp-warning"><strong>$245</strong> total savings</h6>
           <a class="btn btn-primary" href="/d/zion">View <strong>16</strong> Discounts</a>
         </div>
       </div>
