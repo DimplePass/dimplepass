@@ -17082,27 +17082,13 @@ video {
   color: #A8201A;
 }
 
-.checkout-steps > a {
-  width: 33%;
+hr {
+  margin: 3rem !important;
 }
 
-.checkout-steps > a:first-child {
-  width: 34%;
-}
-
-.commitmentFooter i {
-  font-size: 2.4rem;
-}
-
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 140px;
-}
-
-.destinationMap {
-  width: 100%;
-  height: 580px;
+a.list-group-item,
+.list-group-item-action {
+  color: #0F8B8D;
 }
 
 .hero-cta {
@@ -17111,13 +17097,23 @@ video {
   border-radius: 16px;
 }
 
-a.list-group-item,
-.list-group-item-action {
-  color: #0F8B8D;
+.destinationMap {
+  width: 100%;
+  height: 580px;
 }
 
-hr {
-  margin: 3rem !important;
+.checkout-steps > a {
+  width: 33%;
+}
+
+.checkout-steps > a:first-child {
+  width: 34%;
+}
+
+.widget-order-summary {
+  background: #f5f5f5;
+  padding: 10px 10px 0px 10px;
+  border-radius: 10px;
 }
 
 .fv-form-bootstrap .help-block {
@@ -17142,10 +17138,8 @@ select.form-control:not([size]):not([multiple]) {
   padding-left: .5rem;
 }
 
-.widget-order-summary {
-  background: #f5f5f5;
-  padding: 10px 10px 0px 10px;
-  border-radius: 10px;
+.commitmentFooter i {
+  font-size: 2.4rem;
 }
 
 .m-6 {
@@ -17170,5 +17164,13 @@ select.form-control:not([size]):not([multiple]) {
 .ml-6,
 .mx-6 {
   margin-left: 4rem !important;
+}
+
+@media (min-width: 576px) {
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 140px;
+  }
 }
 

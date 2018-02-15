@@ -48,10 +48,10 @@ Vendor <span class="dp-warning">/</span> Why be a vendor?
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h1>Why join Dimple Pass?</h1>
-      <p>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner corned beef alcatra. Strip steak turducken biltong, landjaeger cow short ribs shank spare ribs jowl pork belly t-bone. Biltong shank capicola, doner ribeye pork chop venison bacon ham corned beef drumstick short ribs. Flank andouille pig meatball prosciutto picanha. Ball tip prosciutto strip steak shankle, tongue filet mignon ribeye pork shoulder venison chuck pork belly picanha.</p>
+      <h3>With so many other opportunities available, why do you need one more marketing partner?  We kind of think it is a no brainer to sign up and gain access to the Dimple Community of travelers.  Yet, we've outlined below what our current vendors find valuable in their relationship with us at Dimple Pass. </h3>
       <hr>
       <h3>Exclusive Group <small>Only the best vendors.</small></h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>We're picky.  We like to hand-select the vendors in each region using one simple rule.  Is this the trip that we'd want to take if we had a few days to a week to explore during our well deserved vacation?  We strive to work with the best in class operators, resorts, restaurants and activity providers in each area.  We place a heavy weight on those that emcompass the culture and character of each unique destination.</p>
       <hr>
       <h3>New Advertising Channel <small>Reach more potential visitors.</small></h3>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
