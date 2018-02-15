@@ -46,7 +46,6 @@ $border-light-color:    rgba($white-color, .12);
 // Highlight color
 $highlight-color:       #fff8b0;
 
-
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
@@ -97,12 +96,10 @@ $line-height-h5:         1.35;
 $line-height-h6:         1.4;
 $line-height-display:    1.15;
 
-
 //== Grid Vertical Step
 // -------------------------------------------------------
 
 $grid-vertical-step:     24px;
-
 
 //== Border Radius
 // -------------------------------------------------------
@@ -111,7 +108,6 @@ $border-radius-lg: 		7px;
 $border-radius-base: 	5px;
 $border-radius-sm: 		3px;
 
-
 //== Forms
 // -------------------------------------------------------
 
@@ -119,7 +115,6 @@ $input-height-lg:							54px;
 $input-height:								44px;
 $input-height-sm:							36px;
 $input-color-placeholder:     $gray;
-
 
 //== Buttons
 // -------------------------------------------------------
@@ -137,14 +132,12 @@ $btn-sm-height: 							36px;
 $btn-margin:                  floor($grid-vertical-step / 2); //~12px
 $social-btn-size: 						$font-size-xs;
 
-
 //== Tables
 // -------------------------------------------------------
 
 $table-border-color: 					$border-color;
 $table-cell-padding:					15px;
 $table-bg-accent: 						$gray-lighter;
-
 
 //== Navbar / Logo
 //
@@ -158,7 +151,6 @@ $navbar-tools-color:          $gray-dark;
 $navbar-tools-size:           $btn-height;
 $offcanvas-toggle-icon-size:  20px;
 $tools-icon-size:             17px;
-
 
 //== Navigation
 //
@@ -176,7 +168,6 @@ $sub-menu-shadow:           0 7px 22px -5px rgba(darken($gray-darker, 4%), .2);
 // Off-Canvas
 $offcanvas-width:           290px;
 
-
 //== Tabs
 //
 
@@ -184,13 +175,11 @@ $nav-tabs-font-size:								floor(($font-size-base * .875)); // ~14px
 $nav-tabs-link-color: 							$gray;
 $nav-tabs-link-active-color:  			$gray-dark;
 
-
 //== Progress
 //
 
 $progress-height:     18px;
 $progress-bg:         $brand-primary;
-
 
 //== Steps
 //
@@ -202,7 +191,6 @@ $step-icon-default-color: $gray-darker;
 $step-title-size:         $font-size-sm;
 $step-title-color:        $gray-dark;
 $step-connect-height:     3px;
-
 
 // == Shop
 //
@@ -228,7 +216,6 @@ $cart-thumb-size:         110px;
 $cover-height:            120px;
 $user-ava-size:           115px;
 
-
 // == Blog
 //
 
@@ -238,14 +225,12 @@ $blog-post-meta-font-size:  $font-size-xs;
 $blog-post-color:           $headings-color;
 $blog-post-hover-color:     $brand-primary;
 
-
 // == Comments
 //
 
 $comment-author-ava-size:   50px;
 $comment-title-size:        $font-size-sm;
 $comment-title-weight:      500;
-
 
 //== Widgets
 //
@@ -267,7 +252,6 @@ $widget-tags-active-bg:           $nav-link-active-color;
 $widget-tags-active-border-color: $nav-link-active-color;
 $widget-tags-active-color:        $white-color;
 
-
 //== Pagination
 //
 
@@ -279,7 +263,6 @@ $pagination-link-active-color: $white-color;
 $pagination-link-hover-bg:     $gray-lighter;
 $pagination-link-active-bg:    $brand-primary;
 
-
 //== Tooltips
 //
 
@@ -287,7 +270,6 @@ $tooltip-opacity:    		1;
 $tooltip-bg: 				 		darken($gray-darker, 4%);
 $tooltip-color:         $white-color;
 $tooltip-arrow-color: 	$tooltip-bg;
-
 
 //== Carousel
 //
@@ -308,7 +290,6 @@ $hero-slider-min-height:      540px; // Original - 580px
 $countdown-box-size:          48px;
 $countdown-font-size:         floor(($font-size-base * 1.375)); // ~22px
 $countdown-label-size:        floor(($font-size-base * .75)); // ~12px
-
 
 //== Media queries (responsive breackpoints)
 //## Descktop, Tablet, Mobile
