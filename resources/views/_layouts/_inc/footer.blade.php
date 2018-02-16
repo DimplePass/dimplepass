@@ -57,7 +57,12 @@
       <div class="row">
         <div class="col-md-7 padding-bottom-1x">
           {{-- Payment Methods --}}
-          <div class="margin-bottom-1x" style="max-width: 615px;"><img src="/img/payment_methods.png" alt="Payment Methods">
+          <div class="paymentCards margin-bottom-1x" style="max-width: 615px;">
+            <i class="fa fa-cc-amex"></i>
+            <i class="fa fa-cc-discover"></i>
+            <i class="fa fa-cc-jcb"></i>
+            <i class="fa fa-cc-mastercard"></i>
+            <i class="fa fa-cc-visa"></i>
           </div>
         </div>
         <div class="col-md-5 padding-bottom-1x">
@@ -78,6 +83,6 @@
         </div>
       </div>
       {{-- Copyright --}}
-      <p class="footer-copyright">© 2018 - All rights reserved. Made with &nbsp;<i class="icon-heart text-danger"></i> &nbsp;by The Dimple Foundation.</p>
+      <p class="footer-copyright">© 2018 - All rights reserved. Made with &nbsp;<i class="icon-heart text-danger"></i> &nbsp;by The Dimplers.</p>
     </div>
   </footer>

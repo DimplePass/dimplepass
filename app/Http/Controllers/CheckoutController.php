@@ -87,40 +87,34 @@ class CheckoutController extends Controller
         //
     }
 
-		// Payment
-		public function checkoutPayment()
-		{
+	// Payment
+	public function checkoutPayment()
+	{
 
-			// Countries Drop Down List
-			$selectCountries = ['Canada', 'United States'];
+		// Countries Drop Down List
+		$selectCountries = ['Canada', 'United States'];
 
-      return view('checkout.payment',[
-          'selectCountries' => $selectCountries,
+        return view('checkout.payment',[
+            'selectCountries' => $selectCountries,
         ]);
-		}
+	}
 
-		// Payment Store
-		public function checkoutPaymentStore(Request $request)
-		{
-			return $request->all();
-		}
+	// Payment Store
+	public function checkoutPaymentStore(Request $request)
+	{
+		return $request->all();
+	}
 
-		// Review
-		public function checkoutReview()
-		{
-			return view('checkout.review');
-		}
+	// Confirmation
+	public function checkoutThanks()
+	{
+		return view('checkout.thanks');
+	}
 
-		// Confirmation
-		public function checkoutThanks()
-		{
-			return view('checkout.thanks');
-		}
-
-		// Email Confirmation
-		public function checkoutEmailConfirmation()
-		{
-			return view('checkout.email.confirmation');
-		}
+	// Email Confirmation
+	public function checkoutEmailConfirmation()
+	{
+		return view('checkout.email.confirmation');
+	}
 
 }

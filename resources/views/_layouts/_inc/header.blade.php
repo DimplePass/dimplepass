@@ -144,18 +144,21 @@
             <div class="cart">
               <a href="/checkout"></a>
               <i class="icon-bag"></i>
-              <span class="count">2</span>
+              <span id="count" class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
-                <div class="dropdown-product-item" id="passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yellowstone">Yellowstone</a><span class="dropdown-product-details">1 x $26</span></div>
+                <div class="dropdown-product-item passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yellowstone">Yellowstone</a><span class="dropdown-product-details">$26</span></div>
                 </div>
-                <div class="dropdown-product-item" id="passid-2"><span class="dropdown-product-remove" data-passid="2"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yosemite">Yosemite</a><span class="dropdown-product-details">1 x $26</span></div>
+                <div class="dropdown-product-item passid-2"><span class="dropdown-product-remove" data-passid="2"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yosemite">Yosemite</a><span class="dropdown-product-details">$26</span></div>
+                </div>
+                <div class="dropdown-product-item donate4" id="dropdown-donate4"><span class="dropdown-product-remove" data-donate4="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/foundation"><img src="/img/foundation/everykidinapark-215x215.png" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/foundation">Donation</a><span class="dropdown-product-details">$4</span></div>
                 </div>
                 <div class="toolbar-dropdown-group">
                   <div class="column"><span class="text-lg">Total:</span></div>
-                  <div class="column text-right"><span class="text-lg text-medium">$52</span></div>
+                  <div class="column text-right text-lg text-medium">$<span class="totalDue">52</span></div>
                 </div>
                 <div class="toolbar-dropdown-group">
                   {{-- <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/checkout">View Cart</a></div> --}}

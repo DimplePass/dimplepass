@@ -20141,6 +20141,10 @@ hr {
   margin: 3rem !important;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 a.list-group-item,
 .list-group-item-action {
   color: #0F8B8D;
@@ -20158,15 +20162,16 @@ a.list-group-item,
 }
 
 .checkout-steps > a {
-  width: 33%;
+  width: 50%;
 }
 
-.checkout-steps > a:first-child {
-  width: 34%;
+.checkout-footer {
+  background: #f5f5f5;
 }
 
 .widget-order-summary {
   background: #f5f5f5;
+  border: 1px solid #e1e7ec;
   padding: 10px 10px 0px 10px;
   border-radius: 10px;
 }
@@ -20197,6 +20202,16 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 2.4rem;
 }
 
+.paymentCards i {
+  font-size: 4rem;
+  margin-right: 2rem;
+}
+
+.card-header i {
+  font-size: 1.6rem;
+  color: #606975;
+}
+
 .m-6 {
   margin: 4rem !important;
 }
@@ -20219,6 +20234,22 @@ select.form-control:not([size]):not([multiple]) {
 .ml-6,
 .mx-6 {
   margin-left: 4rem !important;
+}
+
+.passCity {
+  display: block;
+  clear: both;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e7ec;
+}
+
+.passDiscount h6 {
+  margin: 0;
+}
+
+.passDiscount a {
+  text-decoration: none;
 }
 
 @media (min-width: 576px) {

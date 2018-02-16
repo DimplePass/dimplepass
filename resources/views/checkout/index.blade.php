@@ -25,12 +25,11 @@ Checkout : My Profile
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
 
-    <div class="col-xl-9 col-lg-8">
+    <div class="col-lg-8">
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a href="/checkout/review">3. Review</a>
-        <a href="/checkout/payment"><span class="angle"></span>2. Payment</a>
+        <a href="/checkout/payment">2. Payment</a>
         <a class="active" href="/checkout"><span class="angle"></span>1. My Profile</a>
       </div>
 
@@ -100,7 +99,7 @@ Checkout : My Profile
     </div>
 
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4 hidden-xs-down">
+    <div class="col-lg-4 hidden-xs-down">
       @include('/checkout/_inc/ordersummary')
     </div>
   </div>
@@ -123,26 +122,29 @@ $(function() {
 });
 
 //////////
-/// Add direct donation to total on checkbox click.
+/// Direct Donation sync and math.
 //////////
 
-$('#donate4').on('click', function() {
-  addDonation();
+$('.donate4').on('click', function() {
+  if($(this).is(':checked')) {
+    $('.donate4').prop('checked', true);
+    $('#dropdown-donate4').show();
+  } else {
+    $('.donate4').prop('checked', false);
+    $('#dropdown-donate4').hide();
+  }
+  // Fire donation math.
+  addTotalDue();
 });
 
 //////////
-/// Add direct donation to total
+/// Update Pass Count in Header after removal
 //////////
 
-function addDonation() {
-  if ($('#donate4').is(':checked')) {
-    var donateAmount = 4;
-  } else {
-    var donateAmount = 0;
-  }
-  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  var total = totalPasses + donateAmount;
-  $('.totalDue').text(addCommas(roundTo(total, 0)));
+function passCountSubtract() {
+  var count = Number($('#count').text());
+  count--;
+  $(".count").text(count).fadeIn(1200);
 }
 
 //////////
@@ -150,11 +152,21 @@ function addDonation() {
 //////////
 
 function addTotalDue() {
+  // Add total of passes.
   totalPasses = 0;
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
-  $('.totalDue').text(addCommas(roundTo(totalPasses, 0)));
+  // Add donation.
+  if ($('#donate4').is(':checked')) {
+    var donateAmount = 4;
+  } else {
+    var donateAmount = 0;
+  }
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  // Add total of passes and donation.
+  var total = totalPasses + donateAmount; 
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
 //////////
