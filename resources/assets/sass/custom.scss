@@ -24,6 +24,9 @@
 hr {
 	margin: 3rem !important;
 }
+.pointer {
+	cursor: pointer;
+}
 
 // Lists
 a.list-group-item, .list-group-item-action {
@@ -82,6 +85,13 @@ select.form-control:not([size]):not([multiple]) {
 	font-size: 2.4rem;
 }
 
+// Payment Cards
+.paymentCards i {
+	font-size: 4rem;
+	// margin-left: 1rem;
+	margin-right: 2rem;
+}
+
 // Additional Margins
 .m-6 {
   margin: 4rem !important;
@@ -97,6 +107,21 @@ select.form-control:not([size]):not([multiple]) {
 }
 .ml-6, .mx-6 {
   margin-left: 4rem !important;
+}
+
+// Pass PDF
+.passCity {
+	display: block;
+	clear: both;
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #e1e7ec;
+}
+.passDiscount h6 {
+	margin: 0;
+}
+.passDiscount a {
+	text-decoration: none;
 }
 
 //////////

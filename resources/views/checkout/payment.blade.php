@@ -113,7 +113,7 @@ Page Title
               </div>
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('address2') ? ' has-error' : '' }}">
-                    {!! Form::label('address2', 'Address 2 <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::label('address2', 'Address 2', [], false) !!}
                     {!! Form::text('address2', null, ['class' => 'form-control form-control-rounded']) !!}
                     <small class="text-danger">{{ $errors->first('address2') }}</small>
                 </div>
@@ -132,14 +132,14 @@ Page Title
                     <small class="text-danger">{{ $errors->first('state') }}</small>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
                     {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
                     {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
                     <small class="text-danger">{{ $errors->first('zipcode') }}</small>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                     {!! Form::label('country', 'Country') !!}
                     {!! Form::select('country', $selectCountries, null, ['id' => 'country', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Choose --']) !!}
@@ -190,26 +190,48 @@ $(function() {
 });
 
 //////////
-/// Add direct donation to total on checkbox click.
+/// Direct Donation sync and math.
 //////////
 
-$('#donate4').on('click', function() {
-  addDonation();
+$('.donate4').on('click', function() {
+  if($(this).is(':checked')) {
+    $('.donate4').prop('checked', true);
+    $('#dropdown-donate4').show();
+  } else {
+    $('.donate4').prop('checked', false);
+    $('#dropdown-donate4').hide();
+  }
+  // Fire donation math.
+  addTotalDue();
 });
 
 //////////
-/// Add direct donation to total
+/// Remove pass
 //////////
 
-function addDonation() {
-  if ($('#donate4').is(':checked')) {
-    var donateAmount = 4;
-  } else {
-    var donateAmount = 0;
-  }
-  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  var total = totalPasses + donateAmount;
-  $('.totalDue').text(addCommas(roundTo(total, 0)));
+$('.removePass').on('click', function(e) {
+    e.preventDefault();
+  // Get Pass ID.
+  var passid = $(this).data('passid');
+  // Submit Ajax to remove item from cart.
+
+  // Remove pass from table.
+  $(this).closest('tr').remove();
+  // Remove pass from header drop down and order summary.
+  $('.passid-' + passid + '').remove();
+  // Update total number in cart in header.
+  passCountSubtract();
+  addTotalDue();
+});
+
+//////////
+/// Update Pass Count in Header after removal
+//////////
+
+function passCountSubtract() {
+  var count = Number($('#count').text());
+  count--;
+  $(".count").text(count).fadeIn(1200);
 }
 
 //////////
@@ -217,11 +239,21 @@ function addDonation() {
 //////////
 
 function addTotalDue() {
+  // Add total of passes.
   totalPasses = 0;
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
-  $('.totalDue').text(addCommas(roundTo(totalPasses, 0)));
+  // Add donation.
+  if ($('#donate4').is(':checked')) {
+    var donateAmount = 4;
+  } else {
+    var donateAmount = 0;
+  }
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  // Add total of passes and donation.
+  var total = totalPasses + donateAmount; 
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
 //////////
@@ -297,21 +329,28 @@ $(function () {
       city: {
         validators: {
           notEmpty: {
-            message: 'Billing address city, please?'
+            message: 'City, please?'
+          }
+        }
+      },
+      state: {
+        validators: {
+          notEmpty: {
+            message: 'State, please?'
           }
         }
       },
       zipcode: {
         validators: {
           notEmpty: {
-            message: 'How about a zip code?'
+            message: 'How about a Zip Code?'
           }
         }
       },
       country: {
         validators: {
           notEmpty: {
-            message: 'We\'ll need a country, please'
+            message: 'Country, please?'
           }
         }
       },

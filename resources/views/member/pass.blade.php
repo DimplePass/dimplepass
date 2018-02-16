@@ -1,64 +1,116 @@
-@extends('_layouts.body')
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="utf-8">
+  <title>The Dimple Pass | Save Money on National Park Travel</title>  
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="description" content="Dimple Pass - National Park Discounts">
+  <meta name="keywords" content="">
+  <meta name="author" content="Dimple Pass">    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  {{-- Laravel Mix created file --}}
+  <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css" media="screen">
+</head>
 
-@section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
-@stop
+<body> 
+    
+<div class="container padding-bottom-3x mb-2">
+  <div class="row mt-5">
 
-@section('meta-og')
-  <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
-  <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
-  <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
-  <meta property="og:locale" content="en_US"/>
-@stop
+    <div class="col-xl-12">
+      
+      {{-- Pass Title --}}
+      <h2>2018 Yellowstone Dimple Pass</h2>
 
-@section('logo-tag')
-My Yellowstone Park Pass
-@stop
+      {{-- Pass Holder --}}
+      <aside class="user-info-wrapper mb-5">
+        <div class="user-cover" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);"></div>
+        <div class="user-info">
+          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+          <column class="col-sm-5">
+            <div class="user-data">
+              <h4>Happy GoLucky</h4>
+              <span>Joined February 06, 2017</span>
+            </div>
+          </column>
+          <column class="col-sm-5">
+            <div class="user-data">
+              <h6><a href="#">happy@golucky.com</a></h6>
+              <h6>(307) 690-9788</h6>
+              <h6>130 Yellow Rose Dr., Alta, WY  83414</h6>
+            </div>
+          </column>
+        </div>
+      </aside>
 
-@section('content')
+      <h5 class="mb-5"> Items with the alarm <i class="pe-7s-alarm dp-danger"></i> should be booked as soon as possible as they may have limited availability.</h5>
 
-{{-- My Passes --}}
-<div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>My Yellowstone Park Pass</h1>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>My Yellowstone Park Pass</li>
-      </ul>
+      {{-- Discounts Grouped by Location --}}
+      
+      <div class="passCity">
+        <h5 class="mb-3">Anytown, State</h5>
+        <div class="col-sm-12">
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | <span class="dp-danger">Reservation Required</span> | Book Online or Call <i class="pe-7s-alarm dp-danger"></i> | Code: 18DPJELLY</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | <span class="dp-danger">Reservation Required</span> | Phone Call | Code: 18DPJELLY</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+        </div> 
+      </div>
+
+      <div class="passCity">
+        <h5 class="mb-3">Anytown, State</h5>
+        <div class="col-sm-12">
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | <span class="dp-danger">Reservation Required</span> | Book Online or Call <i class="pe-7s-alarm dp-danger"></i> | Code: 18DPJELLY</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+        </div> 
+      </div> 
+
+      <div class="passCity">
+        <h5 class="mb-3">Anytown, State</h5>
+        <div class="col-sm-12">
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+          <div class="passDiscount">
+            <h6>Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | <span class="dp-danger">Reservation Required</span> | Phone Call | Code: 18DPJELLY</small></h6>
+            <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | <a href="mailto:email@vendorsite.com">email@vendorsite.com</a> | <a href="http://www.vendorsite.com">www.vendorsite.com</a></p>
+          </div>
+        </div> 
+      </div> 
+
     </div>
   </div>
 </div>
 
-{{-- Page Content --}}
-<div class="container padding-bottom-2x mb-2">
-  <div class="row padding-bottom-2x">
-    <div class="col-md-5">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
-    </div>
-    <div class="col-md-7 text-md-left text-center">
-      <div class="mt-30 hidden-md-up"></div>
-      <h2>Details of a currently active pass.</h2>
-      <h3>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner.</h3>
-      <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-    </div>
-  </div>
-</div>
+</body>
 
-@stop
+</html>
 
-@section('scripts')
-<script>
-
-</script>
-@stop

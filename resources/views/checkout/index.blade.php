@@ -123,26 +123,48 @@ $(function() {
 });
 
 //////////
-/// Add direct donation to total on checkbox click.
+/// Direct Donation sync and math.
 //////////
 
-$('#donate4').on('click', function() {
-  addDonation();
+$('.donate4').on('click', function() {
+  if($(this).is(':checked')) {
+    $('.donate4').prop('checked', true);
+    $('#dropdown-donate4').show();
+  } else {
+    $('.donate4').prop('checked', false);
+    $('#dropdown-donate4').hide();
+  }
+  // Fire donation math.
+  addTotalDue();
 });
 
 //////////
-/// Add direct donation to total
+/// Remove pass
 //////////
 
-function addDonation() {
-  if ($('#donate4').is(':checked')) {
-    var donateAmount = 4;
-  } else {
-    var donateAmount = 0;
-  }
-  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  var total = totalPasses + donateAmount;
-  $('.totalDue').text(addCommas(roundTo(total, 0)));
+$('.removePass').on('click', function(e) {
+    e.preventDefault();
+  // Get Pass ID.
+  var passid = $(this).data('passid');
+  // Submit Ajax to remove item from cart.
+
+  // Remove pass from table.
+  $(this).closest('tr').remove();
+  // Remove pass from header drop down and order summary.
+  $('.passid-' + passid + '').remove();
+  // Update total number in cart in header.
+  passCountSubtract();
+  addTotalDue();
+});
+
+//////////
+/// Update Pass Count in Header after removal
+//////////
+
+function passCountSubtract() {
+  var count = Number($('#count').text());
+  count--;
+  $(".count").text(count).fadeIn(1200);
 }
 
 //////////
@@ -150,11 +172,21 @@ function addDonation() {
 //////////
 
 function addTotalDue() {
+  // Add total of passes.
   totalPasses = 0;
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
-  $('.totalDue').text(addCommas(roundTo(totalPasses, 0)));
+  // Add donation.
+  if ($('#donate4').is(':checked')) {
+    var donateAmount = 4;
+  } else {
+    var donateAmount = 0;
+  }
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  // Add total of passes and donation.
+  var total = totalPasses + donateAmount; 
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
 //////////

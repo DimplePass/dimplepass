@@ -63,44 +63,49 @@ Page Title
             <tr>
               <th>Dimple Pass Destinations</th>
               <th class="text-center">Price</th>
-              <th></th>
+              <th width="20%"></th>
             </tr>
           </thead>
           <tbody>
-            <tr class="data-passid-1">
+            <tr class="passid-1">
               <td>
-                <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Yellowstone Dimple Pass"></a>
+                <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Yellowstone Dimple Pass" class="rounded"></a>
                   <div class="product-info">
                     <h4 class="product-title"><a href="/parks/yellowstone">Yellowstone</a></h4>
-										<span>Save up to <em>$289</em></span>
 										<span>Good at 14 of the top attractions and activities in Yellowstone.</span>
                   </div>
                 </div>
               </td>
-              <td class="text-center text-lg text-medium">$26.00</td>
-              <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="passid-1">Remove</a></td>
+              <td class="text-right text-lg text-medium">$26.00</td>
+              <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="1">Remove</a></td>
             </tr>
-            <tr class="data-passid-2">
+            <tr class="passid-2">
               <td>
-                <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yosemite-300x300.jpg" alt="Yellowstone Dimple Pass"></a>
+                <div class="product-item"><a class="product-thumb" href="/parks/yellowstone"><img src="/img/destinations/yosemite-300x300.jpg" alt="Yosemite Dimple Pass" class="rounded"></a>
                   <div class="product-info">
                     <h4 class="product-title"><a href="/parks/yellowstone">Yosemite</a></h4>
-										<span>Save up to <em>$289</em></span>
 										<span>Good at 14 of the top attractions and activities in Yosemite.</span>
                   </div>
                 </div>
               </td>
-              <td class="text-center text-lg text-medium">$26.00</td>
-              <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="passid-2">Remove</a></td>
+              <td class="text-right text-lg text-medium">$26.00</td>
+              <td class="text-center"><a class="btn btn-outline-primary btn-sm removePass" href="#" data-passid="2">Remove</a></td>
             </tr>
             <tr>
-              <td>row 1</td>
-              <td>row 1</td> 
+              <td>
+                <div class="product-item"><a class="product-thumb" href="/foundation"><img src="/img/foundation/everykidinapark-215x215.png" alt="Open OutDoors for Kids"></a>
+                  <div class="product-info">
+                    <h4 class="product-title"><a href="/foundation">$4 Direct Donation to Get Kids Outdoors.</a></h4>
+                    <span>National Park Foundation - Open OutDoors for Kids program.</span>
+                  </div>
+                </div>
+              </td>
+              <td CLASS="text-right text-lg text-medium">$<span class="donateAmount">0.00</span></td> 
               <td>
                 <div class="custom-control custom-checkbox">
-                <input class="custom-control-input" type="checkbox" id="donate4">
-                <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-                <p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
+                <input class="custom-control-input pointer donate4" type="checkbox">
+                <label class="custom-control-label pointer dp-warning" for="donate4">Add $4 Donation</label>
+                <p><a href="#">What is this?</a></p> 
               </div>
               </td>  
             </tr>     
@@ -112,7 +117,7 @@ Page Title
         <div class="column text-lg text-right">Subtotal: <span class="text-medium">$<span class="totalDue">0</span></span></div>
       </div>
       <div class="checkout-footer margin-top-1x hidden-xs-down">
-        <div class="column"><a class="btn btn-outline-secondary" href="/payment"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a></div>
+        <div class="column"><a class="btn btn-outline-secondary" href="/checkout/payment"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Payment</span></a></div>
         <div class="column"><a class="btn btn-primary" href=""><span class="hidden-xs-down">Complete Order</span> <i class="icon-arrow-right"></i></a></div>
       </div>
     </div>
@@ -140,43 +145,48 @@ $(function() {
 });
 
 //////////
-/// Add direct donation to total on checkbox click.
+/// Direct Donation sync and math.
 //////////
 
-$('#donate4').on('click', function() {
-  addDonation();
+$('.donate4').on('click', function() {
+  if($(this).is(':checked')) {
+    $('.donate4').prop('checked', true);
+    $('#dropdown-donate4').show();
+  } else {
+    $('.donate4').prop('checked', false);
+    $('#dropdown-donate4').hide();
+  }
+  // Fire donation math.
+  addTotalDue();
 });
 
 //////////
 /// Remove pass
 //////////
 
-$('.removePass').on('click', function() {
+$('.removePass').on('click', function(e) {
+    e.preventDefault();
   // Get Pass ID.
   var passid = $(this).data('passid');
   // Submit Ajax to remove item from cart.
 
   // Remove pass from table.
-  $(this).closest('tr').fadeOut(1400);
+  $(this).closest('tr').remove();
   // Remove pass from header drop down and order summary.
-  $('.data-passid-' + passid + '').fadeOut(1400);
+  $('.passid-' + passid + '').remove();
   // Update total number in cart in header.
   passCountSubtract();
+  addTotalDue();
 });
 
 //////////
-/// Add direct donation to total
+/// Update Pass Count in Header after removal
 //////////
 
-function addDonation() {
-  if ($('#donate4').is(':checked')) {
-    var donateAmount = 4;
-  } else {
-    var donateAmount = 0;
-  }
-  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  var total = totalPasses + donateAmount;
-  $('.totalDue').text(addCommas(roundTo(total, 0)));
+function passCountSubtract() {
+  var count = Number($('#count').text());
+  count--;
+  $(".count").text(count).fadeIn(1200);
 }
 
 //////////
@@ -184,11 +194,21 @@ function addDonation() {
 //////////
 
 function addTotalDue() {
+  // Add total of passes.
   totalPasses = 0;
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
-  $('.totalDue').text(addCommas(roundTo(totalPasses, 0)));
+  // Add donation.
+  if ($('#donate4').is(':checked')) {
+    var donateAmount = 4;
+  } else {
+    var donateAmount = 0;
+  }
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  // Add total of passes and donation.
+  var total = totalPasses + donateAmount; 
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
 //////////

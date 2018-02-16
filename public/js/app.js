@@ -4034,6 +4034,22 @@ if(c>31||d>12)return!1;for(var g=0,h=0;6>h;h++)g+=(7-h)*(parseInt(a.charAt(h),10
 
 /***/ }),
 
+/***/ "./node_modules/formvalidation/dist/js/framework/bootstrap.min.js":
+/***/ (function(module, exports) {
+
+/*!
+ * FormValidation (http://formvalidation.io)
+ * The best jQuery plugin to validate form fields. Support Bootstrap, Foundation, Pure, SemanticUI, UIKit and custom frameworks
+ *
+ * @version     v0.6.2-dev, built on 2015-03-13 8:15:46 AM
+ * @author      https://twitter.com/nghuuphuoc
+ * @copyright   (c) 2013 - 2015 Nguyen Huu Phuoc
+ * @license     http://formvalidation.io/license/
+ */
+!function(a){FormValidation.Framework.Bootstrap=function(b,c,d){c=a.extend(!0,{button:{selector:'[type="submit"]',disabled:"disabled"},err:{clazz:"help-block",parent:"^(.*)col-(xs|sm|md|lg)-(offset-){0,1}[0-9]+(.*)$"},icon:{valid:null,invalid:null,validating:null,feedback:"form-control-feedback"},row:{selector:".form-group",valid:"has-success",invalid:"has-error",feedback:"has-feedback"}},c),FormValidation.Base.apply(this,[b,c,d])},FormValidation.Framework.Bootstrap.prototype=a.extend({},FormValidation.Base.prototype,{_fixIcon:function(a,b){var c=this._namespace,d=a.attr("type"),e=a.attr("data-"+c+"-field"),f=this.options.fields[e].row||this.options.row.selector,g=a.closest(f);if("checkbox"===d||"radio"===d){var h=a.parent();h.hasClass(d)?b.insertAfter(h):h.parent().hasClass(d)&&b.insertAfter(h.parent())}0===g.find("label").length&&b.addClass("fv-icon-no-label"),0!==g.find(".input-group").length&&b.addClass("fv-bootstrap-icon-input-group").insertAfter(g.find(".input-group").eq(0))},_createTooltip:function(a,b,c){var d=this._namespace,e=a.data(d+".icon");if(e)switch(c){case"popover":e.css({cursor:"pointer","pointer-events":"auto"}).popover("destroy").popover({container:"body",content:b,html:!0,placement:"auto top",trigger:"hover click"});break;case"tooltip":default:e.css({cursor:"pointer","pointer-events":"auto"}).tooltip("destroy").tooltip({container:"body",html:!0,placement:"auto top",title:b})}},_destroyTooltip:function(a,b){var c=this._namespace,d=a.data(c+".icon");if(d)switch(b){case"popover":d.css({cursor:"","pointer-events":"none"}).popover("destroy");break;case"tooltip":default:d.css({cursor:"","pointer-events":"none"}).tooltip("destroy")}},_hideTooltip:function(a,b){var c=this._namespace,d=a.data(c+".icon");if(d)switch(b){case"popover":d.popover("hide");break;case"tooltip":default:d.tooltip("hide")}},_showTooltip:function(a,b){var c=this._namespace,d=a.data(c+".icon");if(d)switch(b){case"popover":d.popover("show");break;case"tooltip":default:d.tooltip("show")}}}),a.fn.bootstrapValidator=function(b){var c=arguments;return this.each(function(){var d=a(this),e=d.data("formValidation")||d.data("bootstrapValidator"),f="object"==typeof b&&b;e||(e=new FormValidation.Framework.Bootstrap(this,a.extend({},{events:{formInit:"init.form.bv",formError:"error.form.bv",formSuccess:"success.form.bv",fieldAdded:"added.field.bv",fieldRemoved:"removed.field.bv",fieldInit:"init.field.bv",fieldError:"error.field.bv",fieldSuccess:"success.field.bv",fieldStatus:"status.field.bv",localeChanged:"changed.locale.bv",validatorError:"error.validator.bv",validatorSuccess:"success.validator.bv"}},f),"bv"),d.addClass("fv-form-bootstrap").data("formValidation",e).data("bootstrapValidator",e)),"string"==typeof b&&e[b].apply(e,Array.prototype.slice.call(c,1))})},a.fn.bootstrapValidator.Constructor=FormValidation.Framework.Bootstrap}(jQuery);
+
+/***/ }),
+
 /***/ "./node_modules/is-buffer/index.js":
 /***/ (function(module, exports) {
 
@@ -31810,7 +31826,7 @@ __webpack_require__("./resources/assets/vendor/js/photoswipe.min.js");
 __webpack_require__("./resources/assets/vendor/js/popper.min.js");
 __webpack_require__("./resources/assets/vendor/js/velocity.min.js");
 __webpack_require__("./node_modules/formvalidation/dist/js/formValidation.min.js");
-// require('../../../node_modules/formvalidation/dist/js/framework/bootstrap.min.js');
+__webpack_require__("./node_modules/formvalidation/dist/js/framework/bootstrap.min.js");
 __webpack_require__("./resources/assets/js/custom.js");
 
 // window.Vue = require('vue');
@@ -32752,6 +32768,12 @@ jQuery(document).ready(function ($) {
 	}
 
 	//////////
+	/// Hide the donate row in the drop down on page load
+	//////////
+
+	$('#dropdown-donate4').hide();
+
+	//////////
 	/// Remove pass from header drop down
 	//////////
 
@@ -32761,12 +32783,15 @@ jQuery(document).ready(function ($) {
 		// Submit Ajax to remove item from cart.
 
 		// Remove from header drop down display.
-		$(this).closest('div').fadeOut(1400);
+		$(this).closest('div').remove();
+		// Uncheck Checkbox
+		$('.donate4').prop('checked', false);
 		// Remove from order summary on checkout pages.
 		// and Remove from checkout review table if on that page.
-		$('.data-passid-' + passid + '').fadeOut(1400);
+		$('.passid-' + passid + '').remove();
 		// Update total number in cart header.
 		passCountSubtract();
+		addTotalDue();
 	});
 
 	//////////
@@ -32774,9 +32799,56 @@ jQuery(document).ready(function ($) {
 	//////////
 
 	function passCountSubtract() {
-		var count = Number($('.count').text());
+		var count = Number($('#count').text());
 		count--;
-		$(".count").fadeOut(100).text(count).fadeIn(1200);
+		$(".count").text(count).fadeIn(1200);
+	}
+
+	//////////
+	/// Add total due and display
+	//////////
+
+	function addTotalDue() {
+		// Add total of passes.
+		totalPasses = 0;
+		$('.passFee').each(function () {
+			totalPasses += parseFloat($(this).text()); // Or this.innerHTML, this.innerText
+		});
+		// Add donation.
+		if ($('#donate4').is(':checked')) {
+			var donateAmount = 4;
+		} else {
+			var donateAmount = 0;
+		}
+		$('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+		// Add total of passes and donation.
+		var total = totalPasses + donateAmount;
+		$('.totalDue').text(addCommas(roundTo(total, 0)));
+	}
+
+	//////////
+	/// Adds Number Commas and decimal point.
+	//////////
+
+	function addCommas(nStr) {
+		nStr += '';
+		x = nStr.split('.');
+		x1 = x[0];
+		x2 = x.length > 1 ? '.' + x[1] : '';
+		var rgx = /(\d+)(\d{3})/;
+		while (rgx.test(x1)) {
+			x1 = x1.replace(rgx, '$1' + ',' + '$2');
+		}
+		return x1 + x2;
+	}
+
+	//////////
+	/// Rounds current calculations.
+	//////////
+
+	function roundTo(num, places) {
+		var calc = Math.round(num * Math.pow(10, places)) / Math.pow(10, places);
+		return calc.toFixed(2);
 	}
 }); /*Document Ready End*/
 
