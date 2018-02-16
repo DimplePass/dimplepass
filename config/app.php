@@ -170,6 +170,7 @@ return [
          */
         'EllisTheDev\Robots\RobotsServiceProvider',
         ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,6 +232,8 @@ return [
         'Robots' => 'EllisTheDev\Robots\RobotsFacade',
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
     ],
 
 ];

@@ -20162,11 +20162,7 @@ a.list-group-item,
 }
 
 .checkout-steps > a {
-  width: 33%;
-}
-
-.checkout-steps > a:first-child {
-  width: 34%;
+  width: 50%;
 }
 
 .widget-order-summary {

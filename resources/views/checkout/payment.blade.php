@@ -29,32 +29,9 @@ Page Title
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a class="" href="/checkout/review">3. Review</a>
-        <a class="active" href="/checkout/payment"><span class="angle"></span>2. Payment</a>
+        <a class="active" href="/checkout/payment">2. Payment</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
-
-      {{-- Member Profile --}}
-      <aside class="user-info-wrapper mb-5">
-        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-        </div>
-        <div class="user-info">
-          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
-					<column class="col-sm-5">
-	          <div class="user-data">
-	            <h4>Happy GoLucky</h4>
-	            <span>Joined February 06, 2017</span>
-	          </div>
-					</column>
-					<column class="col-sm-5">
-	          <div class="user-data">
-							<h6><a href="#">happy@golucky.com</a></h6>
-							<h6>(307) 690-9788</h6>
-							<h6>130 Yellow Rose Dr., Alta, WY  83414</h6>
-	          </div>
-					</column>
-        </div>
-      </aside>
 
       {{-- Start Form --}}
       {!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
@@ -156,7 +133,7 @@ Page Title
             <a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
           </div>
           <div class="column">
-            {!! Form::button('<span class="hidden-xs-down">Review </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+            {!! Form::button('<span class="hidden-xs-down">Complete Order </span><i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
           </div>
         </div>
 
@@ -164,6 +141,24 @@ Page Title
 
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4 hidden-xs-down">
+
+      <aside class="user-info-wrapper">
+        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
+          {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
+        </div>
+        <div class="user-info">
+          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+          <div class="user-data">
+            <h4>Happy GoLucky</h4>
+            <span>Joined February 06, 2017</span>
+          </div>
+        </div>
+      </aside>
+      <nav class="list-group mb-4">
+        <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+        <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+      </nav>
+
       @include('/checkout/_inc/ordersummary')
     </div>
 
