@@ -25,7 +25,7 @@ Checkout : My Profile
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
 
-    <div class="col-xl-9 col-lg-8">
+    <div class="col-lg-8">
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
@@ -99,7 +99,7 @@ Checkout : My Profile
     </div>
 
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4 hidden-xs-down">
+    <div class="col-lg-4 hidden-xs-down">
       @include('/checkout/_inc/ordersummary')
     </div>
   </div>
@@ -134,25 +134,6 @@ $('.donate4').on('click', function() {
     $('#dropdown-donate4').hide();
   }
   // Fire donation math.
-  addTotalDue();
-});
-
-//////////
-/// Remove pass
-//////////
-
-$('.removePass').on('click', function(e) {
-    e.preventDefault();
-  // Get Pass ID.
-  var passid = $(this).data('passid');
-  // Submit Ajax to remove item from cart.
-
-  // Remove pass from table.
-  $(this).closest('tr').remove();
-  // Remove pass from header drop down and order summary.
-  $('.passid-' + passid + '').remove();
-  // Update total number in cart in header.
-  passCountSubtract();
   addTotalDue();
 });
 

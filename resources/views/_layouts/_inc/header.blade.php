@@ -135,7 +135,7 @@
                     <h6 class="user-name">Happy Golucky</h6><span class="text-xs text-muted">Joined Feb 06, 2018</span>
                   </div>
                 </li>
-                  <li><a href="/member">My Passes <span class="badge badge-primary badge-pill count">2</span></a></li>
+                  <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
                   <li><a href="/member/edit">My Profile</a></li>
                 <li class="sub-menu-separator"></li>
                 <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>
@@ -144,7 +144,7 @@
             <div class="cart">
               <a href="/checkout"></a>
               <i class="icon-bag"></i>
-              <span class="count" id="count">2</span>
+              <span id="count" class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
                 <div class="dropdown-product-item passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>

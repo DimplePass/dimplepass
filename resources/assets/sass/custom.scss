@@ -50,10 +50,13 @@ a.list-group-item, .list-group-item-action {
 .checkout-steps > a {
 	width: 50%;
 }
-
+.checkout-footer {
+	background: $gray-lighter;
+}
 // Order Summary
 .widget-order-summary {
 	background: $gray-lighter;
+	border: 1px solid #e1e7ec;
 	padding: 10px 10px 0px 10px;
 	border-radius: 10px
 }
@@ -87,6 +90,12 @@ select.form-control:not([size]):not([multiple]) {
 	font-size: 4rem;
 	// margin-left: 1rem;
 	margin-right: 2rem;
+}
+
+// Pament Page Credit Card Applications
+.card-header i {
+	font-size: 1.6rem;
+	color: $gray-dark;
 }
 
 // Additional Margins

@@ -20165,8 +20165,13 @@ a.list-group-item,
   width: 50%;
 }
 
+.checkout-footer {
+  background: #f5f5f5;
+}
+
 .widget-order-summary {
   background: #f5f5f5;
+  border: 1px solid #e1e7ec;
   padding: 10px 10px 0px 10px;
   border-radius: 10px;
 }
@@ -20200,6 +20205,11 @@ select.form-control:not([size]):not([multiple]) {
 .paymentCards i {
   font-size: 4rem;
   margin-right: 2rem;
+}
+
+.card-header i {
+  font-size: 1.6rem;
+  color: #606975;
 }
 
 .m-6 {

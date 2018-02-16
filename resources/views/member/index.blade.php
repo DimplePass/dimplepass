@@ -39,7 +39,7 @@ My Passes
 </div>
 
 {{-- Page Content --}}
-<div class="container padding-bottom-3x mb-2">
+<div class="container padding-bottom-3x mb-2 mt-5">
   <div class="row">
     <div class="col-lg-4">
       <aside class="user-info-wrapper">

@@ -5,11 +5,11 @@
     <h3 class="widget-title">Order Summary</h3>
     <table class="table">
       <tr class="passid-1">
-        <td>Yellowstone</td>
+        <td><h6>Yellowstone 2018</h6></td>
         <td class="text-medium">$<span class="passFee">26.00</span></td>
       </tr>
       <tr class="passid-2">
-        <td>Yosemite</td>
+        <td><h6>Yosemite 2018</h6></td>
         <td class="text-medium">$<span class="passFee">26.00</span></td>
       </tr>
       <tr>
@@ -24,7 +24,7 @@
       </tr>       
       <tr>
         <td></td>
-        <td class="text-lg text-medium">$<span id="totalDue" class="totalDue"></span></td>
+        <td><h4><strong>$<span id="totalDue" class="totalDue"></span></strong></h4></td>
       </tr>
     </table>
   </section>

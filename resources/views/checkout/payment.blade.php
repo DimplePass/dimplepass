@@ -25,7 +25,7 @@ Page Title
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
 
-    <div class="col-xl-9 col-lg-8">
+    <div class="col-lg-8">
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
@@ -39,29 +39,29 @@ Page Title
         {{-- Credit Card --}}
         <div class="card">
           <div class="card-header" role="tab">
-            <h6>We accept following credit cards:&nbsp;<img class="d-inline-block align-middle" src="/img/credit-cards.png" style="width: 120px;" alt="Cerdit Cards"></h6>
+            <h6>Dimple Pass accepts:
+              <i class="fa fa-cc-amex"></i>
+              <i class="fa fa-cc-discover"></i>
+              <i class="fa fa-cc-jcb"></i>
+              <i class="fa fa-cc-mastercard"></i>
+              <i class="fa fa-cc-visa"></i>
+            </h6>
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="form-group col-md-4">
+              <div class="col-md-6">
                 <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
                     {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
                     <small class="text-danger">{{ $errors->first('number') }}</small>
                 </div>
               </div>
-              <div class="form-group col-md-4">
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
-                    <small class="text-danger">{{ $errors->first('name') }}</small>
-                </div>
-              </div>
-              <div class="form-group col-md-2">
+              <div class="col-md-3">
                 <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
                     {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
                     <small class="text-danger">{{ $errors->first('expiry') }}</small>
                 </div>
               </div>
-              <div class="form-group col-md-2">
+              <div class="col-md-3">
                 <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
                     {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
                     <small class="text-danger">{{ $errors->first('cvc') }}</small>
@@ -70,57 +70,16 @@ Page Title
               <div class="col-sm-12">
                 <div class="card-wrapper"></div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {{-- Billing Address --}}
-        <div class="card mt-5">
-          <div class="card-header" role="tab">
-            <h6>Billing address</h6>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group{{ $errors->has('address1') ? ' has-error' : '' }}">
-                    {!! Form::label('address1', 'Address 1 <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('address1', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-                    <small class="text-danger">{{ $errors->first('address1') }}</small>
+              <div class="col-md-7">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group{{ $errors->has('address2') ? ' has-error' : '' }}">
-                    {!! Form::label('address2', 'Address 2', [], false) !!}
-                    {!! Form::text('address2', null, ['class' => 'form-control form-control-rounded']) !!}
-                    <small class="text-danger">{{ $errors->first('address2') }}</small>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-                    {!! Form::label('city', 'City/Town <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('city', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-                    <small class="text-danger">{{ $errors->first('city') }}</small>
-                </div>
-              </div>
-              <div class="form-group col-md-2">
-                <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
-                    {!! Form::label('state', 'ST <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('state', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-                    <small class="text-danger">{{ $errors->first('state') }}</small>
-                </div>
-              </div>
-              <div class="col-md-2">
+              <div class="col-md-5">
                 <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
-                    {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
                     <small class="text-danger">{{ $errors->first('zipcode') }}</small>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                    {!! Form::label('country', 'Country') !!}
-                    {!! Form::select('country', $selectCountries, null, ['id' => 'country', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Choose --']) !!}
-                    <small class="text-danger">{{ $errors->first('inputname') }}</small>
                 </div>
               </div>
             </div>
@@ -140,7 +99,7 @@ Page Title
     </div>
 
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4 hidden-xs-down">
+    <div class="col-lg-4 hidden-xs-down">
 
       <aside class="user-info-wrapper">
         <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
@@ -155,7 +114,7 @@ Page Title
         </div>
       </aside>
       <nav class="list-group mb-4">
-        <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+        <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
         <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
       </nav>
 
@@ -197,25 +156,6 @@ $('.donate4').on('click', function() {
     $('#dropdown-donate4').hide();
   }
   // Fire donation math.
-  addTotalDue();
-});
-
-//////////
-/// Remove pass
-//////////
-
-$('.removePass').on('click', function(e) {
-    e.preventDefault();
-  // Get Pass ID.
-  var passid = $(this).data('passid');
-  // Submit Ajax to remove item from cart.
-
-  // Remove pass from table.
-  $(this).closest('tr').remove();
-  // Remove pass from header drop down and order summary.
-  $('.passid-' + passid + '').remove();
-  // Update total number in cart in header.
-  passCountSubtract();
   addTotalDue();
 });
 
@@ -314,38 +254,10 @@ $(function () {
           }
         }
       },
-      address1: {
-        validators: {
-          notEmpty: {
-            message: 'What is the billing address on the card?'
-          }
-        }
-      },
-      city: {
-        validators: {
-          notEmpty: {
-            message: 'City, please?'
-          }
-        }
-      },
-      state: {
-        validators: {
-          notEmpty: {
-            message: 'State, please?'
-          }
-        }
-      },
       zipcode: {
         validators: {
           notEmpty: {
             message: 'How about a Zip Code?'
-          }
-        }
-      },
-      country: {
-        validators: {
-          notEmpty: {
-            message: 'Country, please?'
           }
         }
       },
