@@ -39,7 +39,7 @@ Page Title
         {{-- Credit Card --}}
         <div class="card">
           <div class="card-header" role="tab">
-            <h6>Dimple Pass accepts:
+            <h6>
               <i class="fa fa-cc-amex"></i>
               <i class="fa fa-cc-discover"></i>
               <i class="fa fa-cc-jcb"></i>

@@ -39,6 +39,7 @@ Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation
 Route::get('/member', ['as' => 'member.index', 'uses' => 'MemberController@index']);
 Route::get('/member/edit', ['as' => 'member.edit', 'uses' => 'MemberController@edit']);
 Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'MemberController@pass']);
+Route::get('/member/printpass', ['as' => 'member.printpass', 'uses' => 'MemberController@printpass']);
 Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'MemberController@terms']);
 
 ///// Vendors

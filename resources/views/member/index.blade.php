@@ -67,7 +67,7 @@ My Passes
         <table class="table table-hover margin-bottom-none">
           <thead>
             <tr>
-              <th>Park</th>
+              <th>Pass</th>
               <th>Status</th>
               <th>Redeem</th>
             </tr>
@@ -82,7 +82,10 @@ My Passes
                 <span class="text-success">Active</span><br>
                 <small>May 15, 2018 - October 15, 2018</small>
               </td>
-              <td><a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a><a href="#" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a></td>
+              <td>
+                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                <a href="/member/printpass" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+              </td>
             </tr>
             <tr>
               <td>
@@ -93,7 +96,10 @@ My Passes
                 <span class="text-success">Active</span><br>
                 <small>May 15, 2018 - October 15, 2018</small>
               </td>
-              <td><a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a><a href="#" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a></td>
+              <td>
+                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                <a href="/member/printpass" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+              </td>
             </tr>
             <tr>
               <td>

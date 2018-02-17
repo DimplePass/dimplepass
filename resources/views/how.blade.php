@@ -44,7 +44,8 @@ How does it work?
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
     <div class="col-md-8 text-md-left text-center">
-      <h2 class="mb-5">You <strong class="dp-warning">save money</strong> on items that should already be on your <strong class="dp-warning">must-do</strong> list.</h2>
+      <img src="/img/logo/logo.png" alt="Dimple Pass" class="float-right">
+      <h2 class="mb-5">You <strong>save money</strong> on items that should already be on your <strong>must-do</strong> list.</h2>
       <div class="mt-30 hidden-md-up"></div>
       <hr>
       <h3>Purchase the Dimple Pass</h3>

@@ -31,7 +31,13 @@ class MemberController extends Controller
 	// Member View Pass
 	public function pass()
 	{
-		// return view('member.pass');
+		return view('member.pass');
+	}
+
+	// Member Print Pass
+	public function printpass()
+	{
+		// return view('member.printpass');
     // Displays PDF view.
     $pdf = \PDF::loadView('member.pass');
 		return $pdf->download('Pass.pdf');
