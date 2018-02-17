@@ -54,7 +54,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city3">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -79,7 +79,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city2">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -104,7 +104,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city1">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -129,7 +129,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -154,7 +154,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -179,7 +179,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city5">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -204,7 +204,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city5">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -229,7 +229,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city2">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -254,7 +254,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city3">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -279,7 +279,7 @@ Glacier National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city2">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/gla/sample-450x290.jpg" alt="Glacier Discounts">
@@ -324,6 +324,13 @@ Glacier National Park
 
 @section('scripts')
 <script>
+
+$("#filters :checkbox").click(function() {
+  $(".product-card").fadeOut('fast');
+  $("#filters :checkbox:checked").each(function() {
+    $("." + $(this).val()).fadeIn('fast');
+  });
+});
 
 </script>
 @stop

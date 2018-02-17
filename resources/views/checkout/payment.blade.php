@@ -87,13 +87,9 @@ Page Title
         </div>
 
         {{-- Checkout Step Buttons --}}
-        <div class="checkout-footer margin-top-1x">
-          <div class="column">
-            <a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
-          </div>
-          <div class="column">
-            {!! Form::button('Complete Order <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
-          </div>
+        <div class="checkout-footer mt-5">
+          <a class="btn btn-outline-secondary float-left m-2" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
+          {!! Form::button('Place Order <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2']) !!}
         </div>
 
     </div>

@@ -325,5 +325,12 @@ Zion National Park
 @section('scripts')
 <script>
 
+$("#filters :checkbox").click(function() {
+  $(".product-card").fadeOut('fast');
+  $("#filters :checkbox:checked").each(function() {
+    $("." + $(this).val()).fadeIn('fast');
+  });
+});
+
 </script>
 @stop

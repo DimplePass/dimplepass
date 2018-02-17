@@ -37,7 +37,7 @@ Checkout : My Profile
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
       {{-- User Action Statement --}}
-      <h3 class="mb-5">Let's create your profile to attach to the Dimple Pass.</h3>
+      <h3 class="mb-5">Create a profile to attach to the Dimple Pass.</h3>
 
       {{-- Start Form --}}
       {!! Form::open(['action' => 'MemberController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
@@ -86,10 +86,9 @@ Checkout : My Profile
         </div>
   
         {{-- Checkout Progress Buttons --}}
-        <div class="checkout-footer margin-top-1x">
-          <div class="column"></div>
-          <div class="column">
-            {!! Form::button('Payment <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
+        <div class="col-sm-12">
+          <div class="checkout-footer margin-top-1x">
+            {!! Form::button('Payment <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2']) !!}
           </div>
         </div>
 
