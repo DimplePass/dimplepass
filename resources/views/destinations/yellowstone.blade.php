@@ -50,11 +50,11 @@ Yellowstone National Park
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
-          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
+          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city1">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/sk-bigking-450x290.jpg" alt="">
@@ -82,7 +82,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city1">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/sk-chairlift-450x290.jpg" alt="">
@@ -113,7 +113,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city2">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/sk-cowboycoaster-450x290.jpg" alt="">
@@ -144,7 +144,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city3">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/jhmr-tram-450x290.jpg" alt="">
@@ -174,7 +174,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/gwdc-bears-450x290.jpg" alt="">
@@ -205,7 +205,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/imax-450x290.jpg" alt="">
@@ -228,7 +228,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city5">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/bb-museum-450x290.jpg" alt="">
@@ -250,7 +250,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city5">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/gt-chairlift-450x290.jpg" alt="">
@@ -272,7 +272,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city5">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/jh-rodeo-450x290.jpg" alt="">
@@ -294,7 +294,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city2">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/cdy-niterodeo-450x290.jpg" alt="">
@@ -316,7 +316,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city1">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/mtw-zipline-450x290.jpg" alt="">
@@ -339,7 +339,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/mtw-rafting-450x290.jpg" alt="">
@@ -362,7 +362,7 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
-      <div class="product-card product-list">
+      <div class="product-card product-list city2">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
           <img src="/img/vendors/ynp/dp-horseback-450x290.jpg" alt="">
@@ -387,16 +387,18 @@ Yellowstone National Park
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-4 order-lg-1">
-      <aside class="sidebar">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        {{-- Filters --}}
-        @include('/destinations/_inc/filters')
-      </aside>
-			<hr class="mb-5">
-			<aside class="sticky text-center">
-				<h2><a href="/checkout" class="btn btn-primary btn-lg">Buy the <strong>$26</strong> pass</a></h2>
-      	<h5><a href="/how">How does it work?</a></h5>				
-			</aside>
+      <div class="sticky">
+        <aside class="sidebar">
+          <div class="padding-top-2x hidden-lg-up"></div>
+          {{-- Filters --}}
+          @include('/destinations/_inc/filters')
+        </aside>
+  			<hr class="mb-5">
+  			<aside class="text-center">
+  				<h2><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+        	<h5><a href="/how">How does it work?</a></h5>				
+  			</aside>
+      </div>
     </div>
   </div>
 </div>
@@ -405,6 +407,13 @@ Yellowstone National Park
 
 @section('scripts')
 <script>
+
+$("#filters :checkbox").click(function() {
+  $(".product-card").fadeOut('fast');
+  $("#filters :checkbox:checked").each(function() {
+    $("." + $(this).val()).fadeIn('fast');
+  });
+});
 
 </script>
 @stop

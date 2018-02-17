@@ -42,22 +42,24 @@ My Passes
 <div class="container padding-bottom-3x mb-2 mt-5">
   <div class="row">
     <div class="col-lg-4">
-      <aside class="user-info-wrapper">
-        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-          {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
-        </div>
-        <div class="user-info">
-          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
-          <div class="user-data">
-            <h4>Happy GoLucky</h4>
-            <span>Joined February 06, 2017</span>
+      <div class="sticky">
+        <aside class="user-info-wrapper">
+          <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
+            {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
           </div>
-        </div>
-      </aside>
-      <nav class="list-group">
-        <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
-        <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
-      </nav>
+          <div class="user-info">
+            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+            <div class="user-data">
+              <h4>Happy GoLucky</h4>
+              <span>Joined February 06, 2017</span>
+            </div>
+          </div>
+        </aside>
+        <nav class="list-group">
+          <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+        </nav>
+      </div>
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
@@ -65,47 +67,76 @@ My Passes
         <table class="table table-hover margin-bottom-none">
           <thead>
             <tr>
-              <th>Park</th>
+              <th>Pass</th>
               <th>Status</th>
               <th>Redeem</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><h4>Yellowstone</h4></td>
+              <td>
+                <h5 class="mb-0">Yellowstone</h5>
+                18 discounts
+              </td>
               <td>
                 <span class="text-success">Active</span><br>
-                <small>March 8, 2017</small>
+                <small>May 15, 2018 - October 15, 2018</small>
               </td>
-              <td><a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a><a href="#" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a></td>
+              <td>
+                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                <a href="/member/printpass" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+              </td>
             </tr>
             <tr>
-              <td><h4>Glacier</h4></td>
+              <td>
+                <h5 class="mb-0">Glacier</h5>
+                <p>18 discounts</p>
+              </td>
               <td>
                 <span class="text-success">Active</span><br>
-                <small>February 17, 2017</small>
+                <small>May 15, 2018 - October 15, 2018</small>
               </td>
-              <td><a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a><a href="#" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a></td>
+              <td>
+                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                <a href="/member/printpass" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+              </td>
             </tr>
             <tr>
-              <td><h4>Yosemite</h4></td>
-              <td><span class="text-warning">Expired</span></td>
+              <td>
+                <h5 class="mb-0">Yosemite</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-warning">Expired</span><br>
+                <small>May 15, 2017 - October 15, 2017</small>
+              </td>
               <td>-</td>
             </tr>
             <tr>
-              <td><h4>Zion</h4></td>
-              <td><span class="text-warning">Expired</span></td>
+              <td>
+                <h5 class="mb-0">Zion</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-warning">Expired</span><br>
+                <small>May 15, 2016 - October 15, 2016</small>
+              </td>
               <td>-</td>
             </tr>
             <tr>
-              <td><h4>Grand Canyon</h4></td>
-              <td><span class="text-warning">Expired</span></td>
+              <td>
+                <h5 class="mb-0">Grand Canyon</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-warning">Expired</span><br>
+                <small>May 15, 2016 - October 15, 2016</small>
+              </td>
               <td>-</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <hr>
     </div>
   </div>
 </div>
