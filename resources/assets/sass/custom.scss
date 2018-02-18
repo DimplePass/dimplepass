@@ -39,6 +39,13 @@ a.list-group-item, .list-group-item-action {
 	padding: 8px;
 	border-radius: 16px;
 }
+.hero-overlay {
+	padding: 20px;
+	background: rgba(225, 231, 236, .35);
+	label {
+		color: #fff;
+	}
+}
 
 // Maps
 .destinationMap {

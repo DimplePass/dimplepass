@@ -20156,6 +20156,15 @@ a.list-group-item,
   border-radius: 16px;
 }
 
+.hero-overlay {
+  padding: 20px;
+  background: rgba(225, 231, 236, 0.35);
+}
+
+.hero-overlay label {
+  color: #fff;
+}
+
 .destinationMap {
   width: 100%;
   height: 580px;

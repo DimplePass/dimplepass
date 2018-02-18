@@ -41,6 +41,7 @@ Route::get('/member/edit', ['as' => 'member.edit', 'uses' => 'MemberController@e
 Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'MemberController@pass']);
 Route::get('/member/printpass', ['as' => 'member.printpass', 'uses' => 'MemberController@printpass']);
 Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'MemberController@terms']);
+Route::get('/member/login', ['as' => 'member.login', 'uses' => 'MemberController@login']);
 
 ///// Vendors
 Route::get('/vendor', ['as' => 'vendor.index', 'uses' => 'VendorController@index']);
