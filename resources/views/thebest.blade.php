@@ -22,18 +22,16 @@ Only the Best
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider mb-6" style="background-image: url(/img/destinations/yosemite-1920x580.jpg);">
-    <div class="item">
-      <div class="container padding-top-10x">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-md-12 padding-bottom-2x text-md-left text-center">
-            <div class="from-bottom">
-              <h1 class="mb-0 pt-1"><strong class="dp-white">@yield('logo-tag')</strong></h1>
-              <div class="h4 mt-0 mb-4 gray-lighter">The best attractions and activites for the best vacation.</div>
-          </div>
+<section class="hero-slider mb-6" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
+        <div class="hero-text">
+          <h1 class="mb-2 white-color">@yield('logo-tag')</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>The best attractions for the best vacation ever.</strong></h2>               
         </div>
-      </div>
     </div>
+  </div>
 </section>
 
 {{-- Page Content --}}

@@ -23,18 +23,15 @@ Grand Canyon National Park
 
 {{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/grandcanyon-1920x580.jpg);">
-    <div class="item">
-      <div class="container padding-top-9x">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-md-12 padding-bottom-2x text-md-left text-center">
-            <div class="from-bottom">
-              <div class="h1 mb-2 gray-lighter">Save on <strong class="dp-warning hero-cta">the best</strong> of</div>
-              <h1 class="mb-2"><strong class="hero-cta">@yield('logo-tag')</strong></h1>
-              <h5 class="mt-0 mb-2 gray-lighter">Exclusive Discounts.</h5>            
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
+        <div class="hero-text">
+          <h1 class="mb-2 white-color">The Best of @yield('logo-tag')</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">24 Discounts.</span></strong></h2>               
         </div>
-      </div>
     </div>
+  </div>
 </section>
 
 {{-- Page Content --}}

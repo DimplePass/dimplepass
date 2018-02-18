@@ -1,12 +1,22 @@
     {{-- Off-Canvas Category Menu --}}
     <div class="offcanvas-container" id="shop-categories">
       <a class="account-link" href="/member">
-        <div class="user-ava"><img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+        <div class="user-ava">
+          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
         </div>
         <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6><span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
+          <h6 class="user-name">Happy Golucky</h6>
+          <span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
         </div>
       </a>
+{{--       <a class="account-link" href="/member/login">
+        <div class="user-ava">
+          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+        </div>
+        <div class="user-info">
+          <h6 class="user-name">Login</h6>
+        </div>
+      </a>  --}}
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
@@ -28,12 +38,22 @@
     {{-- Off-Canvas Mobile Menu --}}
     <div class="offcanvas-container" id="mobile-menu">
       <a class="account-link" href="/member">
-        <div class="user-ava"><img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+        <div class="user-ava">
+          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
         </div>
         <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6><span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
+          <h6 class="user-name">Happy Golucky</h6>
+          <span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
         </div>
       </a>
+{{--       <a class="account-link" href="/member/login">
+        <div class="user-ava">
+          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+        </div>
+        <div class="user-info">
+          <h6 class="user-name">Login</h6>
+        </div>
+      </a>  --}}     
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
@@ -129,14 +149,17 @@
             <div class="account"><a href="/member"></a><i class="icon-head"></i>
               <ul class="toolbar-dropdown">
                 <li class="sub-menu-user">
-                  <div class="user-ava"><img src="/img/account/user-ava-sm.jpg" alt="Happy Golucky">
+                  <div class="user-ava">
+                    <img src="/img/account/user-ava-sm.jpg" alt="Happy Golucky">
                   </div>
                   <div class="user-info">
                     <h6 class="user-name">Happy Golucky</h6><span class="text-xs text-muted">Joined Feb 06, 2018</span>
                   </div>
                 </li>
-                  <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
-                  <li><a href="/member/edit">My Profile</a></li>
+                <li><a href="/member/login">Login</a></li>
+                <li><a href="/member/edit">Sign Up</a></li>
+                <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
+                <li><a href="/member/edit">My Profile</a></li>
                 <li class="sub-menu-separator"></li>
                 <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>
               </ul>

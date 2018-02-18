@@ -49,4 +49,22 @@ class MemberController extends Controller
 		return view('member.terms');
 	}
 
+	// Member Login
+	public function login()
+	{
+		return view('auth.login');
+	}
+
+	// Member Password Email
+	public function passwordemail()
+	{
+		return view('auth.passwords.email');
+	}
+
+	// Member Password Reset
+	public function passwordreset()
+	{
+		return view('auth.passwords.reset');
+	}
+
 }
