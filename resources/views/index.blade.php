@@ -23,13 +23,12 @@ Stop Planning. Start Playing. Save Money.
 
 {{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);">
-  <div class="container padding-top-8x">
+  <div class="container">
     <div class="row">
-      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center">
-        <div class="hero-overlay">
+      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
+        <div class="hero-text">
           <h1 class="mb-2 white-color">Save money. Don't miss a thing.</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>National Parks Discount Card</strong></h2>              
-          <a class="btn btn-primary btn-lg scale-up delay-1" href="/how">How it works</a>
+          <h2 class="mt-0 mb-2 white-color"><strong>National Parks <span class="dp-warning">Discount Card</span></strong></h2>               
         </div>
     </div>
   </div>

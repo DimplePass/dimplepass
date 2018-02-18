@@ -24,13 +24,13 @@ Password Reset
 {{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
     <div class="item">
-      <div class="container padding-top-2x">
+      <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
 
 						<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
 				
-							<div class="row hero-overlay">
+							<div class="row login-overlay">
 								<div class="col-sm-12">
 
 	              	<h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
@@ -53,7 +53,7 @@ Password Reset
 									    <small class="text-danger">{{ $errors->first('password2') }}</small>
 									</div>
 
-						      {!! Form::submit("Reset Password", ['class' => 'btn btn-success float-right']) !!}
+						      {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
 
 									{{-- {!! Form::close() !!} --}}
 

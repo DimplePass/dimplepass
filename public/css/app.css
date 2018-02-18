@@ -20167,12 +20167,23 @@ a.list-group-item,
   font-size: 1.8rem;
 }
 
-.hero-text label {
-  color: #fff;
-}
-
 .hero-text h2 {
   font-size: 3.1rem;
+}
+
+.login-overlay {
+  padding: 20px;
+  background: rgba(55, 66, 80, 0.5);
+  border-radius: 10px;
+  margin-top: 4rem;
+}
+
+.login-overlay h1 {
+  font-size: 1.8rem;
+}
+
+.login-overlay label {
+  color: #fff;
 }
 
 .destinationMap {
@@ -20273,7 +20284,7 @@ select.form-control:not([size]):not([multiple]) {
 
 @media (max-width: 576px) {
   .hero-text {
-    top: 4rem;
+    top: 3rem;
   }
 
   .hero-text h1 {
@@ -20290,6 +20301,15 @@ select.form-control:not([size]):not([multiple]) {
     padding: 4px;
     margin-top: 10px;
     border-radius: 8px;
+  }
+
+  .login-overlay {
+    padding: 16px;
+    margin-top: 3rem;
+  }
+
+  .login-overlay h1 {
+    font-size: 1.8rem;
   }
 }
 

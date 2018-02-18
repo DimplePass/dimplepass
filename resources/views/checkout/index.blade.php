@@ -33,11 +33,8 @@ Checkout : My Profile
         <a class="active" href="/checkout"><span class="angle"></span>1. My Profile</a>
       </div>
 
-      {{-- Spacer --}}
-      <div class="padding-top-2x mt-2 hidden-lg-up"></div>
-
       {{-- User Action Statement --}}
-      <h3 class="mb-5">Create a profile to attach to the Dimple Pass.</h3>
+      <h3 class="mb-5">Create a profile to attach to your Dimple Pass.</h3>
 
       {{-- Start Form --}}
       {!! Form::open(['action' => 'MemberController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}

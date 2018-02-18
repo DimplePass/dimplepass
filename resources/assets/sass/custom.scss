@@ -47,11 +47,22 @@ a.list-group-item, .list-group-item-action {
 	h1 {
 		font-size: 1.8rem;
 	}
-	label {
-		color: #fff;
-	}
 	h2 {
 		font-size: 3.1rem;
+	}
+}
+
+// Login Banners
+.login-overlay {
+	padding: 20px;
+	background: rgba(55, 66, 80, .50);
+	border-radius: 10px;
+	margin-top: 4rem;
+	h1 {
+		font-size: 1.8rem;
+	}
+	label {
+		color: #fff;
 	}
 }
 
@@ -153,7 +164,7 @@ select.form-control:not([size]):not([multiple]) {
 	
 	// Hero Banners
 	.hero-text {
-		top: 4rem;
+		top: 3rem;
 		h1 {
 			font-size: 1.6rem;
 		}
@@ -166,6 +177,15 @@ select.form-control:not([size]):not([multiple]) {
 				margin-top: 10px;
 				border-radius: 8px;
 			}
+		}
+	}
+
+	// Login Banners
+	.login-overlay {
+		padding: 16px;
+		margin-top: 3rem;
+		h1 {
+			font-size: 1.8rem;
 		}
 	}
 
