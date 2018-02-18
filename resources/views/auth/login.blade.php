@@ -28,7 +28,7 @@ Member Login
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
 
-						<div class="col-md-6 offset-md-3">
+						<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
 				
 							<div class="row hero-overlay">
 								<div class="col-sm-12">
@@ -39,17 +39,17 @@ Member Login
 							
 							    <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
 							        {!! Form::label('emailid', 'Username') !!}
-							        {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required']) !!}
+							        {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
 							        <small class="text-danger">{{ $errors->first('emailid') }}</small>
 							    </div>
 									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 									    {!! Form::label('password', 'Password') !!}
-									    {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required']) !!}
+									    {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
 									    <small class="text-danger">{{ $errors->first('password') }}</small>
 									</div>
 
 						      {!! Form::submit("Let's Go", ['class' => 'btn btn-success float-right']) !!}
-									<a href="" class="float-left btn btn-secondary">Forgot Password</a>
+									<a href="{{ url('/member/passwordemail') }}" class="float-left btn btn-secondary">Forgot Password</a>
 
 									{{-- {!! Form::close() !!} --}}
 
