@@ -20150,27 +20150,29 @@ a.list-group-item,
   color: #0F8B8D;
 }
 
-.hero-cta {
-  background: #ffffff;
-  padding: 8px;
-  border-radius: 16px;
+.hero-overlay {
+  position: relative;
+  margin-right: 20px;
 }
 
-.hero-overlay {
+.hero-text {
   padding: 20px;
   background: rgba(55, 66, 80, 0.5);
+  border-radius: 10px;
+  position: absolute;
+  top: 10rem;
 }
 
-.hero-overlay h1 {
+.hero-text h1 {
   font-size: 1.8rem;
 }
 
-.hero-overlay label {
+.hero-text label {
   color: #fff;
 }
 
-.hero-overlay h2 {
-  font-size: 3.6rem;
+.hero-text h2 {
+  font-size: 3.1rem;
 }
 
 .destinationMap {
@@ -20267,6 +20269,28 @@ select.form-control:not([size]):not([multiple]) {
 
 .passDiscount a {
   text-decoration: none;
+}
+
+@media (max-width: 576px) {
+  .hero-text {
+    top: 4rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h2 span {
+    display: block;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 4px;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
 }
 
 @media (min-width: 576px) {

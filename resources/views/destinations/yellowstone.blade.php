@@ -22,14 +22,14 @@ Yellowstone National Park
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider" style="background-image: url(/img/hero-slider/main-bg1.jpg);">
-  <div class="container padding-top-8x">
+<section class="hero-slider" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);">
+  <div class="container">
     <div class="row">
-      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center">
-        <div class="hero-overlay">
-          <h1 class="mb-2 white-color">The best of @yield('logo-tag')</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">24</span> Discounts.</strong></h2>               
-      </div>
+      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
+        <div class="hero-text">
+          <h1 class="mb-2 white-color">The Best of @yield('logo-tag')</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">24 Discounts.</span></strong></h2>               
+        </div>
     </div>
   </div>
 </section>
