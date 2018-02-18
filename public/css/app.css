@@ -20158,11 +20158,19 @@ a.list-group-item,
 
 .hero-overlay {
   padding: 20px;
-  background: rgba(225, 231, 236, 0.35);
+  background: rgba(55, 66, 80, 0.5);
+}
+
+.hero-overlay h1 {
+  font-size: 1.8rem;
 }
 
 .hero-overlay label {
   color: #fff;
+}
+
+.hero-overlay h2 {
+  font-size: 3.6rem;
 }
 
 .destinationMap {

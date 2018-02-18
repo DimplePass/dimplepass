@@ -41,9 +41,15 @@ a.list-group-item, .list-group-item-action {
 }
 .hero-overlay {
 	padding: 20px;
-	background: rgba(225, 231, 236, .35);
+	background: rgba(55, 66, 80, .50);
+	h1 {
+		font-size: 1.8rem;
+	}
 	label {
 		color: #fff;
+	}
+	h2 {
+		font-size: 3.6rem;
 	}
 }
 
