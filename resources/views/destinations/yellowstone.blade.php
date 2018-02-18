@@ -171,6 +171,34 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
+      <div class="product-card product-list city2">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/jkh-ecotouradventures-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Eco Tour Adventures <small>Jackson, WY</small>
+          </h3>
+          <p class="hidden-xs-down">Top 10 Greatest Wildlife Tours in the world (TripAdvisor). Jackson Hole Eco Tour Adventures offers a variety of wildlife viewing in the Jackson Hole, Grand Teton, and Yellowstone Ecosystems.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> 15% Off Full Day Wildlife Tour <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Adult <small>over 11</small> <span class="dp-primary">|</span> <del>$290.00</del>$246.00
+            </h4>
+            <h4 class="product-price">
+              Child <small>10 & under</small> <span class="dp-primary">|</span> <del>$240.00</del>$204.00
+            </h4>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday - Sunday:</span> Leaving Jackson, WY at 8am</li>
+              <li class="dp-danger">Reservation Required - Limited Availability - Book ASAP!</li>
+              <li><a href="http://www.jhecotouradventures.com/Wildlife-Tours/yellowstone-lower-loop">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{-- Vendor Listing --}}
       <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -213,7 +241,7 @@ Yellowstone National Park
           </h3>
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(one time)</small></h4>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>

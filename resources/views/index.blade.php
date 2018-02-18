@@ -28,7 +28,7 @@ Stop Planning. Start Playing. Save Money.
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h1 class="mb-2 white-color">Save money. Don't miss a thing.</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>National Parks <span class="dp-warning">Discount Card</span></strong></h2>               
+          <h2 class="mt-0 mb-2 white-color"><strong>National Parks Discount Card</strong></h2>               
         </div>
     </div>
   </div>
