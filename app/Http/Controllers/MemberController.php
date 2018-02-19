@@ -22,6 +22,11 @@ class MemberController extends Controller
 		return $request->all();
 	}
 
+	public function show(User $user)
+	{
+		return view('member.show',['user' => $user]);
+	}
+
 	// Member Edit
 	public function edit()
 	{
