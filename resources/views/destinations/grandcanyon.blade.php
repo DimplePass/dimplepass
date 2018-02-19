@@ -308,7 +308,7 @@ Grand Canyon National Park
         {{-- Filters --}}
         @include('/destinations/_inc/filters')
       </aside>
-			<hr class="mb-5">
+			<hr class="mb-5 hidden-sm-down">
 			<aside class="sticky text-center">
 				<h2><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
       	<h5><a href="/how">How does it work?</a></h5>				
