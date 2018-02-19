@@ -1,0 +1,519 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"start",
+				"start_date"
+			],
+			[
+				"you",
+				"youtube_channel_id"
+			],
+			[
+				"Admin",
+				"AdminController"
+			],
+			[
+				"remo",
+				"remote_id"
+			],
+			[
+				"rem",
+				"remote_id"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"brand",
+				"brand_id"
+			],
+			[
+				"conf",
+				"confirmedEvents"
+			],
+			[
+				"vide",
+				"videoList"
+			],
+			[
+				"vid",
+				"videoList"
+			],
+			[
+				"vi",
+				"videoList"
+			],
+			[
+				"char",
+				"chartData"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 565,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"phpun",
+				"Sublime PHPUnit: Run This File"
+			],
+			[
+				"packag in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 576.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/timbradshaw/Documents/Sites/personal_dimple"
+	],
+	"file_history":
+	[
+		"/Users/timbradshaw/Documents/Sites/personal_vr/public/css/theme.css",
+		"/Users/timbradshaw/Documents/Sites/seismic/composer.json",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Publisher.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Http/Controllers/EventController.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Http/Controllers/AdminController.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/contracts/show_cpa.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/publishers/show.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Http/Controllers/PublisherController.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/publishers/index.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/reports/sales_revenue.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Http/Controllers/ReportController.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Http/Controllers/DashboardController.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/admin/activity.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Console/Commands/ImportEventsCommand.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Brand.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Repositories/YouTubeRepository.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/storage/framework/views/970eeb3aa1f4830a046990f3f54fcd07d21765eb.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/database/migrations/2018_02_09_183232_drop_publisher_id_from_events.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/admin/unmatched_events.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Event.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Console/Commands/TransformTimecodedUrlsCommand.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Console/Commands/InitialYoutubeImportCommand.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/events/partials/youtube_modal.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/database/migrations/2018_02_09_173258_drop_column_youtubechannelid_from_publishers.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Console/Kernel.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/storage/framework/views/e13bb222f34987aa9d61d4465000efe34fb09a35.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/brands/show.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/publishers/events.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/InsertionOrder.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/database/migrations/2018_02_07_181335_add_linksponsor_brand_id_to_events.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Content.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Http/Controllers/ContentController.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/content/show.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/layouts/partials/sidebar.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/database/migrations/2018_01_31_130955_adds_ignored_events_to_publishers_table.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/welcome2.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/vendor/alaouy/youtube/src/Youtube.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Contract.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/app/Repositories/Reports/BrandChartRepository.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/resources/views/reports/brand_revenue.blade.php",
+		"/Users/timbradshaw/Documents/Sites/seismic/.env",
+		"/Users/timbradshaw/Documents/Sites/at_abe/.env",
+		"/Users/timbradshaw/Documents/Sites/at_abe/phpunit.xml",
+		"/Users/timbradshaw/Documents/Sites/at_abe/tests/Unit/XeroRepositoryTest.php",
+		"/Users/timbradshaw/Documents/Sites/at_abe/app/Repositories/XeroRepository.php"
+	],
+	"find":
+	{
+		"height": 71.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "personal_dimple.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"publisher/sh",
+				"resources/views/publishers/show.blade.php"
+			],
+			[
+				"publ",
+				"app/Publisher.php"
+			],
+			[
+				"contractd",
+				"app/Http/Controllers/ContractDetailController.php"
+			],
+			[
+				"inser",
+				"app/InsertionOrder.php"
+			],
+			[
+				"admin/ac",
+				"resources/views/admin/activity.blade.php"
+			],
+			[
+				"admin",
+				"app/Http/Controllers/AdminController.php"
+			],
+			[
+				"comp",
+				"composer.json"
+			],
+			[
+				"eventc",
+				"app/Http/Controllers/EventController.php"
+			],
+			[
+				"publishers/sh",
+				"resources/views/publishers/show.blade.php"
+			],
+			[
+				"pub",
+				"app/Http/Controllers/PublisherController.php"
+			],
+			[
+				"activ",
+				"resources/views/admin/activity.blade.php"
+			],
+			[
+				"dash",
+				"app/Http/Controllers/DashboardController.php"
+			],
+			[
+				"repo",
+				"app/Http/Controllers/ReportController.php"
+			],
+			[
+				"eve",
+				"app/Event.php"
+			],
+			[
+				"brand",
+				"app/Brand.php"
+			],
+			[
+				"publis",
+				"app/Publisher.php"
+			],
+			[
+				"activity",
+				"resources/views/admin/activity.blade.php"
+			],
+			[
+				"ev",
+				"app/Event.php"
+			],
+			[
+				"publishersshow",
+				"resources/views/publishers/show.blade.php"
+			],
+			[
+				"event",
+				"app/Event.php"
+			],
+			[
+				"adm",
+				"app/Http/Controllers/AdminController.php"
+			],
+			[
+				"publiserc",
+				"app/Http/Controllers/PublisherController.php"
+			],
+			[
+				"even",
+				"app/Event.php"
+			],
+			[
+				"you",
+				"app/Repositories/YouTubeRepository.php"
+			],
+			[
+				"publi",
+				"app/Publisher.php"
+			],
+			[
+				"in",
+				"app/InsertionOrder.php"
+			],
+			[
+				"bra",
+				"app/Brand.php"
+			],
+			[
+				"content",
+				"app/Content.php"
+			],
+			[
+				"pu",
+				"app/Publisher.php"
+			],
+			[
+				"contentc",
+				"app/Http/Controllers/ContentController.php"
+			],
+			[
+				"conten",
+				"app/Content.php"
+			],
+			[
+				"content/sh",
+				"resources/views/content/show.blade.php"
+			],
+			[
+				"contentcon",
+				"app/Http/Controllers/ContentController.php"
+			],
+			[
+				"ignored",
+				"database/migrations/2018_01_31_130955_adds_ignored_events_to_publishers_table.php"
+			],
+			[
+				"adminc",
+				"app/Http/Controllers/AdminController.php"
+			],
+			[
+				"welcom",
+				"resources/views/welcome2.blade.php"
+			],
+			[
+				"report",
+				"app/Http/Controllers/ReportController.php"
+			],
+			[
+				"publisherc",
+				"app/Http/Controllers/PublisherController.php"
+			],
+			[
+				"com",
+				"composer.json"
+			],
+			[
+				"wel",
+				"resources/views/welcome2.blade.php"
+			],
+			[
+				"contra",
+				"app/Contract.php"
+			],
+			[
+				".",
+				".env"
+			],
+			[
+				"rou",
+				"app/Http/routes.php"
+			],
+			[
+				"web.p",
+				"routes/web.php"
+			],
+			[
+				".e",
+				".env"
+			],
+			[
+				".en",
+				".env"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "se",
+		"selected_items":
+		[
+			[
+				"se",
+				"~/Documents/Sites/seismic/seismic.sublime-project"
+			],
+			[
+				"all",
+				"~/Documents/Sites/at_allcabins/at_allcabins.sublime-project"
+			],
+			[
+				"ab",
+				"~/Documents/Sites/at_abe/at_abe.sublime-project"
+			],
+			[
+				"abe",
+				"~/Documents/Sites/at_abe/at_abe.sublime-project"
+			],
+			[
+				"",
+				"~/Documents/Sites/amanager/amanager_v2.sublime-project"
+			],
+			[
+				"a",
+				"~/Documents/Sites/amanager/amanager_v2.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 303.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
