@@ -27,15 +27,15 @@
           <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
           <column class="col-sm-5">
             <div class="user-data">
-              <h4>Happy GoLucky</h4>
+              <h4>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h4>
               <span>Joined February 06, 2017</span>
             </div>
           </column>
           <column class="col-sm-5">
             <div class="user-data">
-              <h6><a href="#">happy@golucky.com</a></h6>
-              <h6>(307) 690-9788</h6>
-              <h6>130 Yellow Rose Dr., Alta, WY  83414</h6>
+              <h6><a href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a></h6>
+              <h6>{{ Auth::user()->phone }}</h6>
+              <h6>{{ Auth::user()->address1 }}, {{ Auth::user()->city }}, {{ Auth::user()->state }}  {{ Auth::user()->zip }}</h6>
             </div>
           </column>
         </div>

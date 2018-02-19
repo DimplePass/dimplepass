@@ -1,22 +1,25 @@
     {{-- Off-Canvas Category Menu --}}
     <div class="offcanvas-container" id="shop-categories">
-      <a class="account-link" href="/member">
+      @if (Auth::user())
+        <a class="account-link" href="/member">
+          <div class="user-ava">
+            <img src="/img/account/user-ava-md.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}">
+          </div>
+          <div class="user-info">
+            <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6>
+            <span class="text-sm text-white opacity-60">{{ Auth::user()->created_at->format('F j, Y') }}</span>
+          </div>
+        </a>
+      @else
+      <a class="account-link" href="/member/login">
         <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
-        </div>
-        <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6>
-          <span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
-        </div>
-      </a>
-{{--       <a class="account-link" href="/member/login">
-        <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+          <img src="/img/account/user-ava-md.jpg" alt="">
         </div>
         <div class="user-info">
           <h6 class="user-name">Login</h6>
         </div>
-      </a>  --}}
+      </a> 
+      @endif
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
@@ -37,23 +40,26 @@
     </div>
     {{-- Off-Canvas Mobile Menu --}}
     <div class="offcanvas-container" id="mobile-menu">
-      <a class="account-link" href="/member">
+      @if (Auth::user())
+        <a class="account-link" href="/member">
+          <div class="user-ava">
+            <img src="/img/account/user-ava-md.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}">
+          </div>
+          <div class="user-info">
+            <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6>
+            <span class="text-sm text-white opacity-60">{{ Auth::user()->created_at->format('F j, Y') }}</span>
+          </div>
+        </a>
+      @else
+      <a class="account-link" href="/member/login">
         <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
-        </div>
-        <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6>
-          <span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
-        </div>
-      </a>
-{{--       <a class="account-link" href="/member/login">
-        <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+          <img src="/img/account/user-ava-md.jpg" alt="">
         </div>
         <div class="user-info">
           <h6 class="user-name">Login</h6>
         </div>
-      </a>  --}}     
+      </a> 
+      @endif   
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
@@ -151,7 +157,7 @@
                 @if (Auth::user())
                   <li class="sub-menu-user">
                     <div class="user-ava">
-                      <img src="/img/account/user-ava-sm.jpg" alt="Happy Golucky">
+                      <img src="/img/account/user-ava-sm.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}">
                     </div>
                     <div class="user-info">
                       <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6><span class="text-xs text-muted">{{ Auth::user()->created_at->format('F j, Y') }}</span>

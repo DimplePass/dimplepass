@@ -25,7 +25,7 @@ My Passes
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>My Passes: Happy GoLucky</h1>
+      <h1>My Passes: {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
@@ -50,8 +50,8 @@ My Passes
           <div class="user-info">
             <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
             <div class="user-data">
-              <h4>Happy GoLucky</h4>
-              <span>Joined February 06, 2017</span>
+              <h4>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h4>
+              <span>Joined {{ Auth::user()->created_at->format('F j, Y') }}</span>
             </div>
           </div>
         </aside>
