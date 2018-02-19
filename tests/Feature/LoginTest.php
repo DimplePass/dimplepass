@@ -17,9 +17,10 @@ class LoginTest extends TestCase
     /** @test */
     public function cannot_access_member_page_without_login()
     {
-        // $this->disableExceptionHandling();
-        $response = $this->get('/member');
 
+        $response = $this->get('/member');
+        // $data = json_decode($response->getContent(),true);
+        // dd($data);        
         $response->assertStatus(302);
         $response->assertRedirect('/login');        
     }
@@ -68,16 +69,9 @@ class LoginTest extends TestCase
     {
         // $this->seed('DatabaseSeeder');
         $user = factory(User::class)->create();
-        $property = Property::first();
-        factory(PropertySetting::class)->create(['property_id' => $property->id]);
-        $response = $this->actingAs($user)->get('/');
+        $response = $this->actingAs($user)->get('/member');
 
         $response->assertStatus(200);
-        $response->assertSee($property->name);
-
-        // dd($property->settings);
-        // $response->assertSee((string) $property->settings->id);
-        $response->assertViewHas('property');
         $response->assertViewHas(\Auth::user(),function() use ($user){
             return \Auth::user()->id === $user->id;
         });
