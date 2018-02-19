@@ -66,3 +66,18 @@ Route::get('/thebest', ['as' => 'utility.thebest', 'uses' => 'UtilityController@
 //Resource Controllers - Place custom methods on these controllers above the resources
 Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
 Route::resource('member', 'MemberController');
+
+
+    /*
+    |------------------------------------
+    | Login Required Routes 
+    |------------------------------------
+     */
+    Route::group(['middleware' => 'auth'], function () {
+
+    });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
