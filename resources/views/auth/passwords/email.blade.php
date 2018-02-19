@@ -28,32 +28,28 @@ Password Reset
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
             <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
-                <div class="row login-overlay">
+              <div class="row login-overlay">
+                <div class="col-sm-12">
 
-                    <div class="col-sm-12">
+                    <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
 
-                        <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
+                    {!! Form::open(['method' => 'POST', 'route' => 'password.email', 'class' => 'form-horizontal']) !!}
 
-                        {!! Form::open(['method' => 'POST', 'route' => 'password.email', 'class' => 'form-horizontal']) !!}
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        {!! Form::label('email', 'Email') !!}
+                        {!! Form::text('email', old('email'), ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
+                        <small class="text-danger">{{ $errors->first('email') }}</small>
+                    </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            {!! Form::label('email', 'Email') !!}
-                            {!! Form::text('email', old('email'), ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-                            <small class="text-danger">{{ $errors->first('email') }}</small>
-                        </div>
+                    <h4 class="gray-lighter">An email will be sent to you with a reset link.</h4>
 
-                        <h4 class="gray-lighter">An email will be sent to you with a reset link.</h4>
+                    {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
 
-                        {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
+                    {!! Form::close() !!}
 
-                        {!! Form::close() !!}
-
-                    </div>  
-                
-                </div>                          
-
+                </div>
+              </div>                          
             </div>      
-
         </div>
       </div>
     </div>
