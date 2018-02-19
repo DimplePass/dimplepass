@@ -28,39 +28,39 @@ Password Reset
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
 
-						<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
-				
-							<div class="row login-overlay">
-								<div class="col-sm-12">
+            <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
 
-	              	<h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
+                <div class="row login-overlay">
+                    <div class="col-sm-12">
 
-									{{-- {!! Form::open(['method' => 'POST', 'route' => 'routeName', 'class' => 'form-horizontal']) !!} --}}
-							
-							    <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
-							        {!! Form::label('emailid', 'Username') !!}
-							        {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-							        <small class="text-danger">{{ $errors->first('emailid') }}</small>
-							    </div>
-									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-									    {!! Form::label('password', 'Password') !!}
-									    {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
-									    <small class="text-danger">{{ $errors->first('password') }}</small>
-									</div>
-									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-									    {!! Form::label('password2', 'Confirm Password') !!}
-									    {!! Form::password('password2', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
-									    <small class="text-danger">{{ $errors->first('password2') }}</small>
-									</div>
+                        <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
 
-						      {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
+                        {!! Form::open(['method' => 'POST', 'route' => 'password.request', 'class' => 'form-horizontal']) !!}
+                    
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            {!! Form::label('email', 'Email') !!}
+                            {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
+                            <small class="text-danger">{{ $errors->first('email') }}</small>
+                        </div>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            {!! Form::label('password', 'Password') !!}
+                            {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+                            <small class="text-danger">{{ $errors->first('password') }}</small>
+                        </div>
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            {!! Form::label('password_confirmation', 'Confirm Password') !!}
+                            {!! Form::text('password_confirmation', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+                            <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
+                        </div>
 
-									{{-- {!! Form::close() !!} --}}
+                        {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
 
-								</div>	
-							</div>							
-							
-						</div>		
+                        {!! Form::close() !!}
+
+                    </div>  
+                </div>                          
+                
+            </div>      
 
         </div>
       </div>
