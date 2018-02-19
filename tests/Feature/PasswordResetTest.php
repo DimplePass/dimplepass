@@ -14,7 +14,6 @@ class PasswordResetTest extends TestCase
 {
     // use DatabaseMigrations;
 
-
     public function sendNotification($user)
     {
         Notification::fake();
@@ -120,10 +119,11 @@ class PasswordResetTest extends TestCase
         // dd($response);
         // dd($this->app['session.store']);
         // $this->assertTrue(true);
-        // $refresh_user = User::where('email',$user->email)->first();
+        $refresh_user = User::where('email',$user->email)->first();
+        // dd(password_verify($new_password,$refresh_user->password));
         // // $user->fresh();
         // $response->assertStatus(302);
-        // // $response->assertEqual(\Hash::make($new_password),$refresh_user->password);
+        $this->assertTrue(password_verify($new_password,$refresh_user->password));
         // $response->assertRedirect('/');
 
     }    
