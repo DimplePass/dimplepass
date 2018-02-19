@@ -3,11 +3,11 @@
       @if (Auth::user())
         <a class="account-link" href="/member">
           <div class="user-ava">
-            <img src="/img/account/user-ava-md.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}">
+            <img src="/img/account/user-ava-md.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
           </div>
           <div class="user-info">
-            <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6>
-            <span class="text-sm text-white opacity-60">{{ Auth::user()->created_at->format('F j, Y') }}</span>
+            <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6>
+            <span class="text-sm text-white opacity-60">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
           </div>
         </a>
       @else
@@ -43,11 +43,11 @@
       @if (Auth::user())
         <a class="account-link" href="/member">
           <div class="user-ava">
-            <img src="/img/account/user-ava-md.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}">
+            <img src="/img/account/user-ava-md.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
           </div>
           <div class="user-info">
-            <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6>
-            <span class="text-sm text-white opacity-60">{{ Auth::user()->created_at->format('F j, Y') }}</span>
+            <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6>
+            <span class="text-sm text-white opacity-60">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
           </div>
         </a>
       @else
@@ -157,10 +157,10 @@
                 @if (Auth::user())
                   <li class="sub-menu-user">
                     <div class="user-ava">
-                      <img src="/img/account/user-ava-sm.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}">
+                      <img src="/img/account/user-ava-sm.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
                     </div>
                     <div class="user-info">
-                      <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6><span class="text-xs text-muted">{{ Auth::user()->created_at->format('F j, Y') }}</span>
+                      <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6><span class="text-xs text-muted">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
                     </div>
                   </li>
                   <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
@@ -176,7 +176,11 @@
               </ul>
             </div>
             <div class="cart">
-              <a href="/checkout"></a>
+              @if (Auth::user())
+                <a href="/checkout/payment"></a>
+              @else
+                <a href="/checkout"></a>
+              @endif
               <i class="icon-bag"></i>
               <span id="count" class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
@@ -196,7 +200,11 @@
                 </div>
                 <div class="toolbar-dropdown-group">
                   {{-- <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/checkout">View Cart</a></div> --}}
-                  <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
+                  @if (Auth::user())
+                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.payment') }}">Checkout</a></div>
+                  @else
+                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
+                  @endif
                 </div>
               </div>
             </div>
