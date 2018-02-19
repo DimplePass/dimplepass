@@ -44,12 +44,12 @@ Password Reset
 							    </div>
 									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 									    {!! Form::label('password', 'Password') !!}
-									    {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+									    {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
 									    <small class="text-danger">{{ $errors->first('password') }}</small>
 									</div>
 									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 									    {!! Form::label('password2', 'Confirm Password') !!}
-									    {!! Form::text('password2', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+									    {!! Form::password('password2', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
 									    <small class="text-danger">{{ $errors->first('password2') }}</small>
 									</div>
 
