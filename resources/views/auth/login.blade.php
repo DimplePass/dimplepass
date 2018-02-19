@@ -42,7 +42,7 @@ Member Login
                   </div>
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                       {!! Form::label('password', 'Password') !!}
-                      {!! Form::password('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+                      {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
                       <small class="text-danger">{{ $errors->first('password') }}</small>
                   </div>
                   <div class="form-group">
