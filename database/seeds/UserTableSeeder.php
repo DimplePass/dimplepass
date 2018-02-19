@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
             'firstname' => 'BJ',
             'lastname' => 'Hansen',
             'email' => 'bj@riverecho.com',
-            'password' => Hash::make('secret'),
+            'password' => Hash::make('wolverine'),
             'phone' => '3076909788'
         ]);
         $faker = Faker::create();
