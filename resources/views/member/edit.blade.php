@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-My Profile: Happy GoLucky
+My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@ My Profile: Happy GoLucky
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>My Profile: Happy GoLucky</h1>
+      <h1>My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
@@ -50,8 +50,8 @@ My Profile: Happy GoLucky
           <div class="user-info">
             <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
             <div class="user-data">
-              <h4>Happy GoLucky</h4>
-              <span>Joined February 06, 2017</span>
+              <h4>{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
+              <span>Joined {{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
             </div>
           </div>
         </aside>

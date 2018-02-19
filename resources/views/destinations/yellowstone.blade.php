@@ -47,7 +47,11 @@ Yellowstone National Park
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
-          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @if (Auth::user())
+            <h2><strong></strong><a href="{{ route('checkout.payment') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @else
+            <h2><strong></strong><a href="{{ route('checkout.index') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @endif
         </div>
       </div>
       {{-- Vendor Listing --}}
@@ -419,7 +423,11 @@ Yellowstone National Park
         </aside>
   			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
-  				<h2><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @if (Auth::user())
+            <h2><strong></strong><a href="{{ route('checkout.payment') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @else
+            <h2><strong></strong><a href="{{ route('checkout.index') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @endif
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>
       </div>

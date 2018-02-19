@@ -104,8 +104,8 @@ Page Title
         <div class="user-info">
           <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
           <div class="user-data">
-            <h4>Happy GoLucky</h4>
-            <span>Joined February 06, 2017</span>
+            <h4>{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
+            <span>Joined {{ (isset(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
           </div>
         </div>
       </aside>

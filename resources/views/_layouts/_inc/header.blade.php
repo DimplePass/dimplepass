@@ -1,22 +1,25 @@
     {{-- Off-Canvas Category Menu --}}
     <div class="offcanvas-container" id="shop-categories">
-      <a class="account-link" href="/member">
+      @if (Auth::user())
+        <a class="account-link" href="/member">
+          <div class="user-ava">
+            <img src="/img/account/user-ava-md.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
+          </div>
+          <div class="user-info">
+            <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6>
+            <span class="text-sm text-white opacity-60">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
+          </div>
+        </a>
+      @else
+      <a class="account-link" href="/member/login">
         <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
-        </div>
-        <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6>
-          <span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
-        </div>
-      </a>
-{{--       <a class="account-link" href="/member/login">
-        <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+          <img src="/img/account/user-ava-md.jpg" alt="">
         </div>
         <div class="user-info">
           <h6 class="user-name">Login</h6>
         </div>
-      </a>  --}}
+      </a> 
+      @endif
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
@@ -37,23 +40,26 @@
     </div>
     {{-- Off-Canvas Mobile Menu --}}
     <div class="offcanvas-container" id="mobile-menu">
-      <a class="account-link" href="/member">
+      @if (Auth::user())
+        <a class="account-link" href="/member">
+          <div class="user-ava">
+            <img src="/img/account/user-ava-md.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
+          </div>
+          <div class="user-info">
+            <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6>
+            <span class="text-sm text-white opacity-60">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
+          </div>
+        </a>
+      @else
+      <a class="account-link" href="/member/login">
         <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
-        </div>
-        <div class="user-info">
-          <h6 class="user-name">Happy Golucky</h6>
-          <span class="text-sm text-white opacity-60">Joined Feb 06, 2018</span>
-        </div>
-      </a>
-{{--       <a class="account-link" href="/member/login">
-        <div class="user-ava">
-          <img src="/img/account/user-ava-md.jpg" alt="Happy Golucky">
+          <img src="/img/account/user-ava-md.jpg" alt="">
         </div>
         <div class="user-info">
           <h6 class="user-name">Login</h6>
         </div>
-      </a>  --}}     
+      </a> 
+      @endif   
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
@@ -151,10 +157,10 @@
                 @if (Auth::user())
                   <li class="sub-menu-user">
                     <div class="user-ava">
-                      <img src="/img/account/user-ava-sm.jpg" alt="Happy Golucky">
+                      <img src="/img/account/user-ava-sm.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
                     </div>
                     <div class="user-info">
-                      <h6 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h6><span class="text-xs text-muted">{{ Auth::user()->created_at->format('F j, Y') }}</span>
+                      <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6><span class="text-xs text-muted">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
                     </div>
                   </li>
                   <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
@@ -170,7 +176,11 @@
               </ul>
             </div>
             <div class="cart">
-              <a href="/checkout"></a>
+              @if (Auth::user())
+                <a href="/checkout/payment"></a>
+              @else
+                <a href="/checkout"></a>
+              @endif
               <i class="icon-bag"></i>
               <span id="count" class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
@@ -190,7 +200,11 @@
                 </div>
                 <div class="toolbar-dropdown-group">
                   {{-- <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/checkout">View Cart</a></div> --}}
-                  <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
+                  @if (Auth::user())
+                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.payment') }}">Checkout</a></div>
+                  @else
+                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
+                  @endif
                 </div>
               </div>
             </div>

@@ -31,7 +31,7 @@ Route::group(['middleware' => 'web'], function () {
 
 	///// Checkout
 	Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@checkout']);
-	Route::get('/checkout/payment', ['as' => 'checkout.payment.', 'uses' => 'CheckoutController@checkoutPayment']);
+	Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@checkoutPayment']);
 	Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
 	Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);
 	Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);

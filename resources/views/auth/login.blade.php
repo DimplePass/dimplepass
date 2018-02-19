@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-Member Login
+Login
 @stop
 
 @section('content')
