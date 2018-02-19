@@ -38,7 +38,7 @@ Yellowstone National Park
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
     {{-- Vendor Discounts --}}
-    <div class="col-xl-9 col-lg-8 order-lg-2">
+    <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
       {{-- Dimple Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
@@ -47,7 +47,7 @@ Yellowstone National Park
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
-          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy a <strong>$26</strong> pass</a></h2>
         </div>
       </div>
       {{-- Vendor Listing --}}
@@ -411,16 +411,15 @@ Yellowstone National Park
       </div>
     </div>
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4 order-lg-1">
+    <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
       <div class="sticky">
         <aside class="sidebar">
-          <div class="padding-top-2x hidden-lg-up"></div>
           {{-- Filters --}}
           @include('/destinations/_inc/filters')
         </aside>
-  			<hr class="mb-5">
+  			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
-  				<h2><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+  				<h2><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy a <strong>$26</strong> pass</a></h2>
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>
       </div>
