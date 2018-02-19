@@ -65,7 +65,7 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-    public function logged_in_user_can_view_homepage()
+    public function logged_in_user_can_view_member_page()
     {
         // $this->seed('DatabaseSeeder');
         $user = factory(User::class)->create();
