@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Notifications\ResetPasswordNotification;
 use App\User;
-use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -27,7 +27,7 @@ class PasswordResetTest extends TestCase
 
         Notification::assertSentTo(
             $user,
-            ResetPassword::class,
+            ResetPasswordNotification::class,
             function ($notification, $channels) use (&$token) {
                 $token = $notification->token;
 
@@ -50,6 +50,7 @@ class PasswordResetTest extends TestCase
     public function user_can_send_password_reset_link()
     {
         // $this->seed('DatabaseSeeder');
+        $this->disableExceptionHandling();
         $user = factory(\App\User::class)->create([
                 'email' => 'tim@alltrips.com'
             ]);
@@ -59,8 +60,8 @@ class PasswordResetTest extends TestCase
         $response = $this->call('POST', '/password/email',[
                 'email' => $user->email,
             ],[], [], ['HTTP_REFERER' => '/password/email']);
-        $data = json_decode($response->getContent(),true);
-        dd($data); 
+        // $data = json_decode($response->getContent(),true);
+        // dd($data); 
         // dd($this->app['session.store']);
         // Notification::assertSentTo($user, ResetPasswordNotification::class);
         $response->assertStatus(302);
@@ -115,7 +116,7 @@ class PasswordResetTest extends TestCase
         // $response->dump();
         $response->assertSessionHas('status','Your password has been reset!');
         $response->assertStatus(302);
-        $response->assertRedirect('/');
+        $response->assertRedirect('/member');
         // dd($response);
         // dd($this->app['session.store']);
         // $this->assertTrue(true);
