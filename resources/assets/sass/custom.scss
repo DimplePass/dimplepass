@@ -113,10 +113,12 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 // Payment Cards
-.paymentCards i {
-	font-size: 4rem;
-	// margin-left: 1rem;
-	margin-right: 2rem;
+.paymentCards {
+	text-align: center;
+	i {
+		font-size: 4rem;
+		margin-right: 1.6rem;
+	}
 }
 
 // Pament Page Credit Card Applications
@@ -188,6 +190,12 @@ select.form-control:not([size]):not([multiple]) {
 		h1 {
 			font-size: 1.8rem;
 		}
+	}
+
+	// Card Icons
+	.paymentCards i {
+	  font-size: 2.4rem;
+	  margin-right: .3rem;
 	}
 
 }

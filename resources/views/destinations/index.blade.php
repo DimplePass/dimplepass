@@ -38,7 +38,7 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
-          <a class="btn btn-primary" href="/d/glacier">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/glacier"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Grand Canyon</h4>
-          <a class="btn btn-primary" href="/d/grandcanyon">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/grandcanyon"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <a class="btn btn-primary" href="/d/yellowstone">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yellowstone"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <a class="btn btn-primary" href="/d/yosemite">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yosemite"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@ The National Parks
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
-          <a class="btn btn-primary" href="/d/zion">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/zion"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>

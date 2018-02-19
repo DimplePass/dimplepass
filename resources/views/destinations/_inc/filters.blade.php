@@ -1,5 +1,5 @@
 {{-- Town Filter --}}
-<section class="widget" id="filters">
+<section class="widget hidden-sm-down" id="filters">
   <h3 class="widget-title">Filter by Location</h3>
   <div class="custom-control custom-checkbox">
     <input class="custom-control-input" type="checkbox" id="city1" value="city1">
