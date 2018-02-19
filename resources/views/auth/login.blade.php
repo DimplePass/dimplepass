@@ -33,7 +33,7 @@ Member Login
 
                   <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
 
-                  {!! Form::open(['method' => 'POST', 'route' => 'login', 'class' => 'form-horizontal']) !!}
+                  {!! Form::open(['method' => 'POST', 'route' => 'login', 'class' => 'form-horizontal', 'id' => 'loginForm']) !!}
           
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                       {!! Form::label('email', 'Username') !!}

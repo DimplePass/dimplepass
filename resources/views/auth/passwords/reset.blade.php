@@ -33,7 +33,7 @@ Password Reset
 
                   <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
 
-                  {!! Form::open(['method' => 'POST', 'route' => 'password.request', 'class' => 'form-horizontal']) !!}
+                  {!! Form::open(['method' => 'POST', 'route' => 'password.request', 'class' => 'form-horizontal', 'id' => 'resetPasswordForm']) !!}
               
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                       {!! Form::label('email', 'Email') !!}
