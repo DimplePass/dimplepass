@@ -161,7 +161,7 @@
                 <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
                 <li><a href="/member/edit">My Profile</a></li>
                 <li class="sub-menu-separator"></li>
-                <li><a href="#"> <i class="icon-unlock"></i>Logout</a></li>
+                <li><a href="{{ route('logout') }}"> <i class="icon-unlock"></i>Logout</a></li>
               </ul>
             </div>
             <div class="cart">

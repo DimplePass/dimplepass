@@ -36,13 +36,13 @@ Member Login
                   {!! Form::open(['method' => 'POST', 'route' => 'login', 'class' => 'form-horizontal', 'id' => 'loginForm']) !!}
           
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                      {!! Form::label('email', 'Username') !!}
+                      {!! Form::label('email', 'Email') !!}
                       {!! Form::text('email', old('email'), ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
                       <small class="text-danger">{{ $errors->first('email') }}</small>
                   </div>
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                       {!! Form::label('password', 'Password') !!}
-                      {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+                      {!! Form::password('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
                       <small class="text-danger">{{ $errors->first('password') }}</small>
                   </div>
                   <div class="form-group">
