@@ -26,10 +26,10 @@
           <li class="has-children"><span><a href="/d"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               <li><a href="/d/glacier">Glacier</a></li>
-              <li><a href="/d/comingsoon">Grand Teton</a></li>
-              <li><a href="/d/comingsoon">Great Smoky Mountains</a></li>
+              <li><a href="/d/grandcanyon">Grand Canyon</a></li>
               <li><a href="/d/yellowstone">Yellowstone</a></li>
               <li><a href="/d/yosemite">Yosemite</a></li>
+              <li><a href="/d/zion">Zion</a></li>
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>

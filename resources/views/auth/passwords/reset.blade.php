@@ -30,24 +30,23 @@ Password Reset
             <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
               <div class="row login-overlay">
                 <div class="col-sm-12">
-
                   <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
-
-                  {!! Form::open(['method' => 'POST', 'route' => 'password.request', 'class' => 'form-horizontal', 'id' => 'resetPasswordForm']) !!}
-              
+                  <form action="/password/reset" method="POST" accept-charset="utf-8" id="resetPasswordForm" class="form-horizontal">
+                  {{ csrf_field() }}
+                  {!! Form::hidden('token', $token) !!}
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                       {!! Form::label('email', 'Email') !!}
                       {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
                       <small class="text-danger">{{ $errors->first('email') }}</small>
                   </div>
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                      {!! Form::label('password', 'Password') !!}
-                      {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+                      {!! Form::label('password', 'New Password') !!}
+                      {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
                       <small class="text-danger">{{ $errors->first('password') }}</small>
                   </div>
                   <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                      {!! Form::label('password_confirmation', 'Confirm Password') !!}
-                      {!! Form::text('password_confirmation', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+                      {!! Form::label('password_confirmation', 'Confirm New Password') !!}
+                      {!! Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
                       <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
                   </div>
 
