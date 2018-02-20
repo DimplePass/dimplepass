@@ -166,7 +166,7 @@
                                 <tr>
                                     <td align="center" height="70" style="height:70px;">
                                         <a href="" style="display: block; border-style: none !important; border: 0 !important;">
-																					<img width="258" border="0" style="display: block; width: 100px;" src="https://dev.dimplepass.com/img/logo/logo.png" alt="Dimple Pass" />
+																					<img width="258" border="0" style="display: block; width: 100px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
 																				</a>
                                     </td>
                                 </tr>
@@ -281,7 +281,7 @@
                                     <!-- logo -->
                                     <td align="left">
                                         <a href="" style="display: block; border-style: none !important; border: 0 !important;">
-																					<img width="80" border="0" style="display: block; width: 140px;" src="https://dev.dimplepass.com/img/logo/logo.png" alt="Dimple Pass" />
+																					<img width="80" border="0" style="display: block; width: 140px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
 																				</a>
                                     </td>
                                 </tr>
@@ -317,7 +317,7 @@
                                                 </td>
                                                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                 <td>
-                                                    <a href="https://twitter.com/dimplepass" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.dimplepass.com/img/emails/icon-instagram.png" alt="Twitter"></a>
+                                                    <a href="https://twitter.com/dimplepass" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.dimplepass.com/img/emails/icon-twitter.png" alt="Twitter"></a>
                                                 </td>
                                                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                 <td>
