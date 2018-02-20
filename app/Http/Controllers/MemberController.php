@@ -73,4 +73,4 @@ class MemberController extends Controller
 // 		return view('auth.passwords.reset');
 // 	}
 
-// }
+}
