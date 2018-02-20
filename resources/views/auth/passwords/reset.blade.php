@@ -27,41 +27,36 @@ Password Reset
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-12 padding-bottom-2x text-md-left text-center">
+            <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
+              <div class="row login-overlay">
+                <div class="col-sm-12">
+                  <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
+                  <form action="/password/reset" method="POST" accept-charset="utf-8" id="resetPasswordForm" class="form-horizontal">
+                  {{ csrf_field() }}
+                  {!! Form::hidden('token', $token) !!}
+                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                      {!! Form::label('email', 'Email') !!}
+                      {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
+                      <small class="text-danger">{{ $errors->first('email') }}</small>
+                  </div>
+                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      {!! Form::label('password', 'New Password') !!}
+                      {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+                      <small class="text-danger">{{ $errors->first('password') }}</small>
+                  </div>
+                  <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                      {!! Form::label('password_confirmation', 'Confirm New Password') !!}
+                      {!! Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+                      <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
+                  </div>
 
-						<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
-				
-							<div class="row login-overlay">
-								<div class="col-sm-12">
+                  {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
 
-	              	<h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
+                  {!! Form::close() !!}
 
-									{{-- {!! Form::open(['method' => 'POST', 'route' => 'routeName', 'class' => 'form-horizontal']) !!} --}}
-							
-							    <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
-							        {!! Form::label('emailid', 'Username') !!}
-							        {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-							        <small class="text-danger">{{ $errors->first('emailid') }}</small>
-							    </div>
-									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-									    {!! Form::label('password', 'Password') !!}
-									    {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
-									    <small class="text-danger">{{ $errors->first('password') }}</small>
-									</div>
-									<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-									    {!! Form::label('password2', 'Confirm Password') !!}
-									    {!! Form::text('password2', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
-									    <small class="text-danger">{{ $errors->first('password2') }}</small>
-									</div>
-
-						      {!! Form::submit("Reset Password", ['class' => 'btn btn-success']) !!}
-
-									{{-- {!! Form::close() !!} --}}
-
-								</div>	
-							</div>							
-							
-						</div>		
-
+                </div>  
+              </div>
+            </div>      
         </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ Yellowstone National Park
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
     {{-- Vendor Discounts --}}
-    <div class="col-xl-9 col-lg-8 order-lg-2">
+    <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
       {{-- Dimple Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
@@ -47,7 +47,11 @@ Yellowstone National Park
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
-          <h2><strong></strong><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @if (Auth::user())
+            <h2><strong></strong><a href="{{ route('checkout.payment') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @else
+            <h2><strong></strong><a href="{{ route('checkout.index') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @endif
         </div>
       </div>
       {{-- Vendor Listing --}}
@@ -171,6 +175,34 @@ Yellowstone National Park
         </div>
       </div>
       {{-- Vendor Listing --}}
+      <div class="product-card product-list city2">
+        <a class="product-thumb" href="#">
+          {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <img src="/img/vendors/ynp/jkh-ecotouradventures-450x290.jpg" alt="">
+        </a>
+        <div class="product-info">
+          <h3 class="product-title">
+            Eco Tour Adventures <small>Jackson, WY</small>
+          </h3>
+          <p class="hidden-xs-down">Top 10 Greatest Wildlife Tours in the world (TripAdvisor). Jackson Hole Eco Tour Adventures offers a variety of wildlife viewing in the Jackson Hole, Grand Teton, and Yellowstone Ecosystems.</p>
+          <div class="product-buttons">
+            <h4><i class="icon-tag dp-success"></i> 15% Off Full Day Wildlife Tour <small>(one time)</small></h4>
+            <h4 class="product-price">
+              Adult <small>over 11</small> <span class="dp-primary">|</span> <del>$290.00</del>$246.00
+            </h4>
+            <h4 class="product-price">
+              Child <small>10 & under</small> <span class="dp-primary">|</span> <del>$240.00</del>$204.00
+            </h4>
+            <ul class="list-unstyled text-sm">
+              <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
+              <li><span class="opacity-50">Monday - Sunday:</span> Leaving Jackson, WY at 8am</li>
+              <li class="dp-danger">Reservation Required - Limited Availability - Book ASAP!</li>
+              <li><a href="http://www.jhecotouradventures.com/Wildlife-Tours/yellowstone-lower-loop">Visit Website</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{-- Vendor Listing --}}
       <div class="product-card product-list city4">
         <a class="product-thumb" href="#">
           {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -213,7 +245,7 @@ Yellowstone National Park
           </h3>
           <p class="hidden-xs-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore odit officiis illo perferendis deserunt, ipsam dolor ad dolorem eaque veritatis harum facilis aliquid id doloribus incidunt quam beatae, soluta magni alori sedum quanto.</p>
           <div class="product-buttons">
-            <h4><i class="icon-tag dp-success"></i> $2 Off Entry <small>(one time)</small></h4>
+            <h4><i class="icon-tag dp-success"></i> 30% Off Entry <small>(one time)</small></h4>
             <ul class="list-unstyled text-sm">
               <li><span class="opacity-50">Season:</span> May 15 - October 15</li>
               <li><span class="opacity-50">Monday-Friday:</span> 9.00 am - 8.00 pm</li>
@@ -383,16 +415,19 @@ Yellowstone National Park
       </div>
     </div>
     {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-4 order-lg-1">
+    <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
       <div class="sticky">
         <aside class="sidebar">
-          <div class="padding-top-2x hidden-lg-up"></div>
           {{-- Filters --}}
           @include('/destinations/_inc/filters')
         </aside>
-  			<hr class="mb-5">
+  			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
-  				<h2><a href="/checkout" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @if (Auth::user())
+            <h2><strong></strong><a href="{{ route('checkout.payment') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @else
+            <h2><strong></strong><a href="{{ route('checkout.index') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>$26</strong> pass</a></h2>
+          @endif
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>
       </div>

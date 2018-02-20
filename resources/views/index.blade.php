@@ -28,7 +28,7 @@ Stop Planning. Start Playing. Save Money.
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h1 class="mb-2 white-color">Save money. Don't miss a thing.</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>National Parks <span class="dp-warning">Discount Card</span></strong></h2>               
+          <h2 class="mt-0 mb-2 white-color"><strong>National Parks Discount Card</strong></h2>               
         </div>
     </div>
   </div>
@@ -46,7 +46,7 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <a class="btn btn-primary" href="/d/yellowstone">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yellowstone"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <a class="btn btn-primary" href="/d/yosemite">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/yosemite"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@ Stop Planning. Start Playing. Save Money.
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
-          <a class="btn btn-primary" href="/d/zion">View <strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="/d/zion"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>

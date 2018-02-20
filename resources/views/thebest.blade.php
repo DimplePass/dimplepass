@@ -22,7 +22,7 @@ Only the Best
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider mb-6" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);">
+<section class="hero-slider mb-6" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">

@@ -70,14 +70,14 @@ Checkout : My Profile
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
               {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('password', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              {!! Form::password('password', ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('password') }}</small>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('password2') ? ' has-error' : '' }}">
               {!! Form::label('password2', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('password2', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              {!! Form::password('password2',['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('password2') }}</small>
           </div>
         </div>

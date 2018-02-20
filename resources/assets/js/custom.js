@@ -966,4 +966,8 @@ jQuery(document).ready(function($) {
 	  return calc.toFixed(2);
 	}
 
+	$('.edit-avatar').on ('click', function() {
+		alert('Upload member profile images coming soon.');
+	});
+
 });/*Document Ready End*/

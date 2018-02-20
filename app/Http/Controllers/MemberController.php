@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use App\Destination;
 // use Carbon\Carbon;
+use App\User;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Cache;
 
@@ -20,6 +21,11 @@ class MemberController extends Controller
 	public function store(Request $request)
 	{
 		return $request->all();
+	}
+
+	public function show(User $user)
+	{
+		return view('member.show',['user' => $user]);
 	}
 
 	// Member Edit
@@ -50,21 +56,21 @@ class MemberController extends Controller
 	}
 
 	// Member Login
-	public function login()
-	{
-		return view('auth.login');
-	}
+// 	public function login()
+// 	{
+// 		return view('auth.login');
+// 	}
 
-	// Member Password Email
-	public function passwordemail()
-	{
-		return view('auth.passwords.email');
-	}
+// 	// Member Password Email
+// 	public function passwordemail()
+// 	{
+// 		return view('auth.passwords.email');
+// 	}
 
-	// Member Password Reset
-	public function passwordreset()
-	{
-		return view('auth.passwords.reset');
-	}
+// 	// Member Password Reset
+// 	public function passwordreset()
+// 	{
+// 		return view('auth.passwords.reset');
+// 	}
 
 }
