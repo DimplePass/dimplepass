@@ -20190,6 +20190,11 @@ a.list-group-item,
   color: #fff;
 }
 
+.login-overlay .text-danger {
+  font-size: 1.2rem;
+  color: #EC9A29 !important;
+}
+
 .destinationMap {
   width: 100%;
   height: 580px;

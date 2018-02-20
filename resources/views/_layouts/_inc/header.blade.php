@@ -11,7 +11,7 @@
           </div>
         </a>
       @else
-      <a class="account-link" href="/member/login">
+      <a class="account-link" href="{{ route('login') }}">
         <div class="user-ava">
           <img src="/img/account/user-ava-md.jpg" alt="">
         </div>
@@ -51,7 +51,7 @@
           </div>
         </a>
       @else
-      <a class="account-link" href="/member/login">
+      <a class="account-link" href="{{ route('login') }}">
         <div class="user-ava">
           <img src="/img/account/user-ava-md.jpg" alt="">
         </div>
@@ -171,7 +171,7 @@
                     {{ csrf_field() }}
                   </form>
                   @else
-                    <li><a href="/member/login">Login</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
                   @endif
               </ul>
             </div>
