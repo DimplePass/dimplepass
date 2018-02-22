@@ -143,19 +143,51 @@ $(function () {
     $('#memberEdit').formValidation({
         framework: 'bootstrap',
         icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            confirmPassword: {
-                validators: {
-                    identical: {
-                        field: 'password',
-                        message: 'Password does not match.'
-                    }
-                }
+          firstname: {
+            validators: {
+              notEmpty: {
+                message: 'What is your first name?'
+              }
             }
+          },
+          lastname: {
+            validators: {
+              notEmpty: {
+                message: 'What is you last name?'
+              }
+            }
+          },
+          emailid: {
+            trigger: 'blur',
+            validators: {
+              notEmpty: {
+                message: 'Email is required.'
+              }
+            }
+          },
+          password: {
+            validators: {
+              notEmpty: {
+                message: 'A password is required.'
+              }
+            }
+          },
+          confirmPassword: {
+            validators: {
+              notEmpty: {
+                message: 'Password confirmation is required.'
+              },
+              identical: {
+                field: 'password',
+                message: 'Passwords do not match.'
+              }
+            }
+          }
         }
     });
 });
