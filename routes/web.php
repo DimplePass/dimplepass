@@ -59,18 +59,17 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/how', ['as' => 'utility.how', 'uses' => 'UtilityController@how']);
 	Route::get('/thebest', ['as' => 'utility.thebest', 'uses' => 'UtilityController@thebest']);
 
+  /*
+  |------------------------------------
+  | Login Required Routes 
+  |------------------------------------
+   */
+  
+  Route::group(['middleware' => 'auth'], function () {
 
+  	Route::resource('member', 'MemberController');
 
-	    /*
-	    |------------------------------------
-	    | Login Required Routes 
-	    |------------------------------------
-	     */
-	    
-	    Route::group(['middleware' => 'auth'], function () {
-
-	    	Route::resource('member', 'MemberController');
-	    });
+  });
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
 	Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);

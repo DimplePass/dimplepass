@@ -64,9 +64,10 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
-        <div class="row">
-        {{-- {!! Form::open(['method' => 'POST', 'route' => 'routeName', 'class' => 'row form-horizontal']) !!} --}}
-        
+        {{-- Start Form --}}
+        {!! Form::open(['route' => ['member.update', 2], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
+
+        <div class="row">     
             <div class="col-md-6">
               <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
                   {!! Form::label('firstname', 'First Name') !!}
@@ -91,7 +92,7 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
             <div class="col-md-6">
               <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                   {!! Form::label('phone', 'Phone') !!}
-                  {!! Form::text('phone', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Phone']) !!}
+                  {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) !!}
                   <small class="text-danger">{{ $errors->first('phone') }}</small>
               </div>
             </div>
@@ -103,15 +104,14 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group{{ $errors->has('password2') ? ' has-error' : '' }}">
-                  {!! Form::label('password2', 'Confirm Password') !!}
-                  {!! Form::password('password2', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
-                  <small class="text-danger">{{ $errors->first('password2') }}</small>
+              <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
+                  {!! Form::label('confirmPassword', 'Confirm Password') !!}
+                  {!! Form::password('confirmPassword', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+                  <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
               </div>
             </div>
-        
-        {{-- {!! Form::close() !!} --}}
         </div>
+
         <div class="col-12">
           <hr class="mt-2 mb-3">
           <div class="d-flex flex-wrap justify-content-between align-items-center">
@@ -119,10 +119,12 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
               <input class="custom-control-input" type="checkbox" id="subscribe_me" checked>
               <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
             </div>
-            <button class="btn btn-primary margin-right-none" type="button" data-toast data-toast-position="topRight" data-toast-type="success" data-toast-icon="icon-circle-check" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile <i class="fa fa-arrow-right"></i></button>
+            {!! Form::button('Update Profile <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary margin-right-none']) !!}
           </div>
         </div>
-      </form>
+
+        {!! Form::close() !!}
+
     </div>
   </div>
 </div>
@@ -131,6 +133,32 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
 
 @section('scripts')
 <script>
+
+//////////
+/// Form Validation
+/// http://formvalidation.io/settings/
+//////////
+
+$(function () {
+    $('#memberEdit').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            confirmPassword: {
+                validators: {
+                    identical: {
+                        field: 'password',
+                        message: 'Password does not match.'
+                    }
+                }
+            }
+        }
+    });
+});
 
 </script>
 @stop

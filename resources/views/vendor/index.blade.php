@@ -62,7 +62,7 @@ Vendor <span class="dp-warning">/</span> Why be a vendor?
       <hr>
       <h3>No Fees <small>No direct costs.</small></h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>There are no sign up fees and no commissions to pay - EVER.  Of course, if it isn't obvious yet, each of the visitors that we send your way will be looking to save a bit of money by presenting their Dimple Pass in exchange for discount.  However, we'd like to think that the discount you provide would be less than your normal marketing costs to acquire the same visitor.  You've got nothing to lose and more visitors to gain.</p>
+      <p>There are no sign up fees and no commissions to pay - EVER.  Of course, if it isn't obvious yet, each of the visitors that we send your way will be looking to save a bit of money by presenting their Dimple Pass in exchange for discount.</p>
       <hr>
       <h3>100% to the Kids <small>Profits go to getting kids outdoors.</small></h3>
       <img class="d-block w-200 ml-5 float-md-right rounded mb-5" src="/img/foundation/everykidinapark.png" alt="Open OutDoors for Kids - National Park Foundation">

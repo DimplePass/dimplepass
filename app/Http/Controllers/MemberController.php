@@ -23,15 +23,23 @@ class MemberController extends Controller
 		return $request->all();
 	}
 
-	public function show(User $user)
-	{
-		return view('member.show',['user' => $user]);
-	}
-
 	// Member Edit
 	public function edit()
 	{
 		return view('member.edit');
+	}
+
+	// Member Show
+	public function show()
+	{
+		return view('member.edit');
+	}
+
+	// Member Update
+	public function update()
+	{
+		return $request->all();
+		// return view('member.edit');
 	}
 
 	// Member View Pass
@@ -54,23 +62,5 @@ class MemberController extends Controller
 	{
 		return view('member.terms');
 	}
-
-	// Member Login
-// 	public function login()
-// 	{
-// 		return view('auth.login');
-// 	}
-
-// 	// Member Password Email
-// 	public function passwordemail()
-// 	{
-// 		return view('auth.passwords.email');
-// 	}
-
-// 	// Member Password Reset
-// 	public function passwordreset()
-// 	{
-// 		return view('auth.passwords.reset');
-// 	}
 
 }
