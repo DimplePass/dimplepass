@@ -32,13 +32,14 @@ class UserController extends Controller
 	// Member Show
 	public function show(User $user)
 	{
-		return view('member.edit',['user' => $user]);
+		return view('member.show',['user' => $user]);
 	}
 
 	public function update(User $user, Request $request)
 	{
 		// return $request->all();
-		$user->fill($request->all());
+		// $user->fill($request->all());
+		$user->fill($request->except('confirmPassword'));
 		$user->save();
 		return redirect()->route('member.show',[$user])->with('status','Your information has been updated successfully!');
 	}

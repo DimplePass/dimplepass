@@ -56,8 +56,8 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
-          <a class="list-group-item active" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+          <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item active" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>
     </div>
@@ -65,51 +65,49 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
         {{-- Start Form --}}
-        {!! Form::open(['route' => ['member.update', 2], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
-
-        <div class="row">     
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                  {!! Form::label('firstname', 'First Name') !!}
-                  {!! Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'First Name']) !!}
-                  <small class="text-danger">{{ $errors->first('firstname') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                  {!! Form::label('lastname', 'Last Name') !!}
-                  {!! Form::text('lastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Last Name']) !!}
-                  <small class="text-danger">{{ $errors->first('lastname') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
-                  {!! Form::label('emailid', 'Email') !!}
-                  {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-                  <small class="text-danger">{{ $errors->first('emailid') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                  {!! Form::label('phone', 'Phone') !!}
-                  {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) !!}
-                  <small class="text-danger">{{ $errors->first('phone') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                  {!! Form::label('password', 'Password') !!}
-                  {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
-                  <small class="text-danger">{{ $errors->first('password') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
-                  {!! Form::label('confirmPassword', 'Confirm Password') !!}
-                  {!! Form::password('confirmPassword', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
-                  <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
-              </div>
-            </div>
+        {!! Form::model($user, ['route' => ['member.update', $user], 'id' => 'memberEdit', 'class' => 'row form-horizontal', 'method' => 'PUT']) !!}
+     
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+              {!! Form::label('firstname', 'First Name') !!}
+              {!! Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'First Name']) !!}
+              <small class="text-danger">{{ $errors->first('firstname') }}</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+              {!! Form::label('lastname', 'Last Name') !!}
+              {!! Form::text('lastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Last Name']) !!}
+              <small class="text-danger">{{ $errors->first('lastname') }}</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+              {!! Form::label('email', 'Email') !!}
+              {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
+              <small class="text-danger">{{ $errors->first('email') }}</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+              {!! Form::label('phone', 'Phone') !!}
+              {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) !!}
+              <small class="text-danger">{{ $errors->first('phone') }}</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+              {!! Form::label('password', 'Password') !!}
+              {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+              <small class="text-danger">{{ $errors->first('password') }}</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
+              {!! Form::label('confirmPassword', 'Confirm Password') !!}
+              {!! Form::password('confirmPassword', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+              <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
+          </div>
         </div>
 
         <div class="col-12">

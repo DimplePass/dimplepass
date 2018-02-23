@@ -1,7 +1,7 @@
     {{-- Off-Canvas Category Menu --}}
     <div class="offcanvas-container" id="shop-categories">
       @if (Auth::user())
-        <a class="account-link" href="/member">
+        <a class="account-link" href="{{ route('member.show', Auth::user()) }}">
           <div class="user-ava">
             <img src="/img/account/user-ava-md.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
           </div>
@@ -41,7 +41,7 @@
     {{-- Off-Canvas Mobile Menu --}}
     <div class="offcanvas-container" id="mobile-menu">
       @if (Auth::user())
-        <a class="account-link" href="/member">
+        <a class="account-link" href="{{ route('member.show', Auth::user()) }}">
           <div class="user-ava">
             <img src="/img/account/user-ava-md.jpg" alt="{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}">
           </div>
@@ -152,7 +152,7 @@
         <div class="inner">
           <div class="tools">
             {{-- <div class="search"><i class="icon-search"></i></div> --}}
-            <div class="account"><a href="/member"></a><i class="icon-head"></i>
+            <div class="account"><a href="{{ route('member.show', Auth::user()) }}"></a><i class="icon-head"></i>
               <ul class="toolbar-dropdown">
                 @if (Auth::user())
                   <li class="sub-menu-user">
@@ -163,8 +163,8 @@
                       <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6><span class="text-xs text-muted">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
                     </div>
                   </li>
-                  <li><a href="/member">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
-                  <li><a href="/member/edit">My Profile</a></li>
+                  <li><a href="{{ route('member.show', Auth::user()) }}">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
+                  <li><a href="{{ route('member.edit', Auth::user()) }}">My Profile</a></li>
                   <li class="sub-menu-separator"></li>
                   <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="icon-unlock"></i>Logout</a></li>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

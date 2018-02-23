@@ -110,8 +110,8 @@ Page Title
         </div>
       </aside>
       <nav class="list-group mb-4">
-        <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
-        <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+        <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+        <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
       </nav>
 
       @include('/checkout/_inc/ordersummary')
