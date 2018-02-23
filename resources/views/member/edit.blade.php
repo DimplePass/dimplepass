@@ -64,6 +64,13 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
+        @if(Session::has('status'))
+        <div class="alert alert-success alert-dismissible fade show margin-bottom-1x"><span class="alert-close" data-dismiss="alert"></span>
+          <h3>Yabba Dabba Doo!</h3>
+          <h5> {{ session('status') }}</h5>
+        </div>
+        @endif
+
         {{-- Start Form --}}
         {!! Form::model($user, ['route' => ['member.update', $user], 'id' => 'memberEdit', 'class' => 'row form-horizontal', 'method' => 'PUT']) !!}
      

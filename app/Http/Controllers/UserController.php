@@ -39,9 +39,9 @@ class UserController extends Controller
 	{
 		// return $request->all();
 		// $user->fill($request->all());
-		$user->fill($request->except('confirmPassword'));
+		$user->fill($request->except('password','confirmPassword'));
 		$user->save();
-		return redirect()->route('member.show',[$user])->with('status','Your information has been updated successfully!');
+		return redirect()->route('member.edit',[$user])->with('status','Your information has been updated successfully!');
 	}
 
 	// Member View Pass
