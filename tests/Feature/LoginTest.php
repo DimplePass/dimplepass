@@ -26,6 +26,7 @@ class LoginTest extends TestCase
     }
 
 
+
     /** @test */
     public function user_can_view_login()
     {

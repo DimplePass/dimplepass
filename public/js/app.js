@@ -32850,6 +32850,10 @@ jQuery(document).ready(function ($) {
 		var calc = Math.round(num * Math.pow(10, places)) / Math.pow(10, places);
 		return calc.toFixed(2);
 	}
+
+	$('.edit-avatar').on('click', function () {
+		alert('Upload member profile images coming soon.');
+	});
 }); /*Document Ready End*/
 
 /***/ }),

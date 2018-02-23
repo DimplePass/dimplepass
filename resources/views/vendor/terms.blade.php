@@ -55,13 +55,13 @@ Vendor <span class="dp-warning">/</span> Terms & Conditions
       <h3>Pass Redemption <small>Must allow one of these.</small></h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Book Online</h5>
-      <p>Many Dimple Pass vendors are capable of taking bookings online and redeeming the discount via a code in ther reservation system.  Dimple Pass will generate a new code for every year that you can place into your booking engine.  The Dimple Pass member will receive this code when they purchase the Dimple Pass to use with your system.</p>   
+      <p>Many Dimple Pass vendors are capable of taking bookings online and redeeming the discount via a code in their reservation system.  Dimple Pass will generate a new code for every year that you can place into your booking engine.  The Dimple Pass member will receive this code when they purchase the Dimple Pass to use with your system.</p>   
       <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 6rem;"></i>      
       <h5>Book by Phone</h5>
       <p>Very similar to the online booking systems for vendors.  Dimple Pass will generate a new code every year that can be used by the Dimple Pass member when they call in to make reservations.  The visitor will receive this code when they purchase the Dimple Pass.  The vendor will simply need to know the code each year so that they can confirm the discount.</p> 
       <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Print It</h5>
-      <p>For the larger vendors that may not be restricted by availablity (resorts, museums, restaurants, etc.), Dimple Pass holders may simpply present the printed pass at the vendor's place of business.  The pass will have the full name and contact info of the pass holder in case the vendor wants to confirm the identity by checking another form of ID.</p>
+      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), Dimple Pass holders may simply present the printed pass at the vendor's place of business.  The pass will have the full name and contact info of the pass holder in case the vendor wants to confirm the identity by checking another form of ID.</p>
       <hr>
       <h3>Annual Renewal and Review <small>Is everyone happy?</small></h3>
       <i class="pe-7s-graph1 float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
@@ -69,7 +69,7 @@ Vendor <span class="dp-warning">/</span> Terms & Conditions
       <hr>
       <h3>Reporting <small>Yearly Dimple visitor counts.</small></h3>
       <i class="pe-7s-calculator float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>We realize that not all vendors may have this capability.  Yet, we would love to know the actual number of Diimple Pass holders that visited your business each season.  Even better if we can hone it down to the specific month.  Yet, if you are not able to provide us with that data easily, no problem.</p>
+      <p>We realize that not all vendors may have this capability.  Yet, we would love to know the actual number of Dimple Pass holders that visited your business each season.  Even better if we can hone it down to the specific month.  Yet, if you are not able to provide us with that data easily, no problem.</p>
       <hr>
       <h3>Sample Agreement <small>A preview for your review.</small></h3>
       <i class="pe-7s-news-paper float-md-left gray-light mr-4" style="font-size: 6rem;"></i>

@@ -23,19 +23,21 @@ class UserController extends Controller
 		return $request->all();
 	}
 
-	public function show(User $user)
-	{
-		return view('member.show',['user' => $user]);
-	}
-
 	// Member Edit
 	public function edit(User $user)
 	{
 		return view('member.edit',['user' => $user]);
 	}
 
+	// Member Show
+	public function show(User $user)
+	{
+		return view('member.edit',['user' => $user]);
+	}
+
 	public function update(User $user, Request $request)
 	{
+		// return $request->all();
 		$user->fill($request->all());
 		$user->save();
 		return redirect()->route('member.show',[$user])->with('status','Your information has been updated successfully!');
@@ -61,23 +63,4 @@ class UserController extends Controller
 	{
 		return view('member.terms');
 	}
-
-	// Member Login
-// 	public function login()
-// 	{
-// 		return view('auth.login');
-// 	}
-
-// 	// Member Password Email
-// 	public function passwordemail()
-// 	{
-// 		return view('auth.passwords.email');
-// 	}
-
-// 	// Member Password Reset
-// 	public function passwordreset()
-// 	{
-// 		return view('auth.passwords.reset');
-// 	}
-
 }

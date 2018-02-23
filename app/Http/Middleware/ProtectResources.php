@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
 class ProtectResources
 {
@@ -14,12 +13,12 @@ class ProtectResources
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard = null)
     {
-        // dd(Auth::user());
-        if(!\Auth::check() && \Auth::user() != request()->get('member'))
+        // dd((\Auth::user()->id === $request->member->id));
+        if(!(\Auth::user()->id === $request->member->id))
         {
-          dd("you are not allowed to see this");
+          return redirect('/member/'.\Auth::user()->id.'/edit');
         }        
         return $next($request);
     }
