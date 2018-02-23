@@ -69,7 +69,7 @@ Route::group(['middleware' => 'web'], function () {
 	    
 	    Route::group(['middleware' => 'auth'], function () {
 
-	    	Route::resource('member', 'MemberController');
+	    	Route::resource('member', 'UserController');
 	    });
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
