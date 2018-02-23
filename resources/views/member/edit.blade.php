@@ -163,7 +163,6 @@ $(function () {
             }
           },
           emailid: {
-            trigger: 'blur',
             validators: {
               notEmpty: {
                 message: 'Email is required.'

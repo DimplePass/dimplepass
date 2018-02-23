@@ -75,10 +75,10 @@ Checkout : My Profile
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group{{ $errors->has('password2') ? ' has-error' : '' }}">
-              {!! Form::label('password2', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::password('password2',['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('password2') }}</small>
+          <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
+              {!! Form::label('confirmPassword', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::password('confirmPassword',['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
           </div>
         </div>
   
@@ -229,10 +229,14 @@ $(function () {
           }
         }
       },
-      password2: {
+      confirmPassword: {
         validators: {
           notEmpty: {
-            message: 'A password is required.'
+            message: 'Password confirmation is required.'
+          },
+          identical: {
+            field: 'password',
+            message: 'Passwords do not match.'
           }
         }
       }
