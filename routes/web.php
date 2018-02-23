@@ -37,9 +37,9 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);
 
 	///// Members
-	Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'MemberController@pass']);
-	Route::get('/member/printpass', ['as' => 'member.printpass', 'uses' => 'MemberController@printpass']);
-	Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'MemberController@terms']);
+	Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'UserController@pass']);
+	Route::get('/member/printpass', ['as' => 'member.printpass', 'uses' => 'UserController@printpass']);
+	Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'UserController@terms']);
 
 	///// Vendors
 	Route::get('/vendor', ['as' => 'vendor.index', 'uses' => 'VendorController@index']);
@@ -59,17 +59,18 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/how', ['as' => 'utility.how', 'uses' => 'UtilityController@how']);
 	Route::get('/thebest', ['as' => 'utility.thebest', 'uses' => 'UtilityController@thebest']);
 
-  /*
-  |------------------------------------
-  | Login Required Routes 
-  |------------------------------------
-   */
-  
-  Route::group(['middleware' => 'auth'], function () {
 
-  	Route::resource('member', 'MemberController');
 
-  });
+	    /*
+	    |------------------------------------
+	    | Login Required Routes 
+	    |------------------------------------
+	     */
+	    
+	    Route::group(['middleware' => 'auth'], function () {
+
+	    	Route::resource('member', 'UserController')->middleware('member');
+	    });
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
 	Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);

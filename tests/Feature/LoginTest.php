@@ -26,6 +26,7 @@ class LoginTest extends TestCase
     }
 
 
+
     /** @test */
     public function user_can_view_login()
     {
@@ -69,7 +70,7 @@ class LoginTest extends TestCase
     {
         // $this->seed('DatabaseSeeder');
         $user = factory(User::class)->create();
-        $response = $this->actingAs($user)->get('/member');
+        $response = $this->actingAs($user)->get('/member/'.$user->id);
 
         $response->assertStatus(200);
         $response->assertViewHas(\Auth::user(),function() use ($user){

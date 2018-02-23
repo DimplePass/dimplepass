@@ -25,7 +25,7 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
+      <h1>My Profile: {{ $user->firstname . " " . $user->lastname }}</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">

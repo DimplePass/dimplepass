@@ -8,7 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Cache;
 
-class MemberController extends Controller
+class UserController extends Controller
 {
 
 	// Member Overview
@@ -24,22 +24,23 @@ class MemberController extends Controller
 	}
 
 	// Member Edit
-	public function edit()
+	public function edit(User $user)
 	{
-		return view('member.edit');
+		return view('member.edit',['user' => $user]);
 	}
 
 	// Member Show
-	public function show()
+	public function show(User $user)
 	{
-		return view('member.edit');
+		return view('member.edit',['user' => $user]);
 	}
 
-	// Member Update
-	public function update()
+	public function update(User $user, Request $request)
 	{
-		return $request->all();
-		// return view('member.edit');
+		// return $request->all();
+		$user->fill($request->all());
+		$user->save();
+		return redirect()->route('member.show',[$user])->with('status','Your information has been updated successfully!');
 	}
 
 	// Member View Pass
@@ -62,5 +63,4 @@ class MemberController extends Controller
 	{
 		return view('member.terms');
 	}
-
 }
