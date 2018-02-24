@@ -56,13 +56,20 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
-          <a class="list-group-item active" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+          <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item active" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+
+        @if(Session::has('status'))
+        <div class="alert alert-success alert-dismissible fade show margin-bottom-1x"><span class="alert-close" data-dismiss="alert"></span>
+          <h3>Yabba Dabba Doo!</h3>
+          <h5> {{ session('status') }}</h5>
+        </div>
+        @endif
 
         {{-- Start Form --}}
         {!! Form::model($user,['route' => ['member.update', $user], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
@@ -163,7 +170,6 @@ $(function () {
             }
           },
           emailid: {
-            trigger: 'blur',
             validators: {
               notEmpty: {
                 message: 'Email is required.'

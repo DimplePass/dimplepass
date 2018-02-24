@@ -56,8 +56,8 @@ My Passes
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge active" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
-          <a class="list-group-item" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>
     </div>

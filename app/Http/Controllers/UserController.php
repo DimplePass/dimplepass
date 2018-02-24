@@ -32,7 +32,7 @@ class UserController extends Controller
 	// Member Show
 	public function show(User $user)
 	{
-		return view('member.show');
+		return view('member.show',['user' => $user]);
 	}
 
 	public function update(User $user, Request $request)
@@ -47,7 +47,7 @@ class UserController extends Controller
 		$user->fill($request->except('password','confirmPassword'));
 		if(!empty($request->password) && $request->password == $request->confirmPassword) $user->password = \Hash::make($request->password);
 		$user->save();
-		return redirect()->route('member.show',[$user])->with('status','Your information has been updated successfully!');
+		return redirect()->route('member.edit',[$user])->with('status','Your information has been updated successfully!');
 	}
 
 	// Member View Pass
