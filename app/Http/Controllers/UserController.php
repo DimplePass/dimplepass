@@ -14,7 +14,7 @@ class UserController extends Controller
 	// Member Overview
 	public function index()
 	{
-		return view('member.index');
+		
 	}
 
 	// Create a New Member
@@ -32,7 +32,7 @@ class UserController extends Controller
 	// Member Show
 	public function show(User $user)
 	{
-		return view('member.edit',['user' => $user]);
+		return view('member.show');
 	}
 
 	public function update(User $user, Request $request)
