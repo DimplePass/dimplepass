@@ -15,10 +15,9 @@ class ProtectResources
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        // dd((\Auth::user()->id === $request->member->id));
-        if(!(\Auth::user()->id === $request->member->id))
+        if(!empty($request->member) && !(\Auth::user()->id === $request->member->id))
         {
-          return redirect('/member/'.\Auth::user()->id.'/edit');
+          return redirect('/member/'.\Auth::user()->id);
         }        
         return $next($request);
     }

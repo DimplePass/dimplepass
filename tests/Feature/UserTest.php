@@ -29,7 +29,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($user)->get('/member/'.$userTwo->id . "/edit");
 
         $response->assertStatus(302);
-        $response->assertRedirect('/member/'.$user->id."/edit");
+        $response->assertRedirect('/member/'.$user->id);
 
         
     }
@@ -48,15 +48,19 @@ class UserTest extends TestCase
     /** @test */
     function user_can_update_profile()
     {
+        $this->disableExceptionHandling();
         $user = factory(User::class)->create();
         $faker  = Faker\Factory::create();
+        $password = $faker->password;
 
         $response = $this->actingAs($user)->put('/member/'.$user->id,[
         	'firstname' => $faker->firstname,
         	'lastname' => $faker->lastname,
         	'email' => $faker->email,
-        	'password' => \Hash::make($faker->password)
+        	'password' => $password,
+            'confirmPassword' => $password,
         ]);        
+
         // $data = json_decode($response->getContent(),true);
         // dd($data);  
         $response->assertStatus(302);

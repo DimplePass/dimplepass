@@ -65,7 +65,7 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
         {{-- Start Form --}}
-        {!! Form::open(['route' => ['member.update', 2], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
+        {!! Form::model($user,['route' => ['member.update', $user], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
 
         <div class="row">     
             <div class="col-md-6">
@@ -83,10 +83,10 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
-                  {!! Form::label('emailid', 'Email') !!}
-                  {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-                  <small class="text-danger">{{ $errors->first('emailid') }}</small>
+              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  {!! Form::label('email', 'Email') !!}
+                  {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
+                  <small class="text-danger">{{ $errors->first('email') }}</small>
               </div>
             </div>
             <div class="col-md-6">
@@ -99,14 +99,14 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
             <div class="col-md-6">
               <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                   {!! Form::label('password', 'Password') !!}
-                  {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
+                  {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
                   <small class="text-danger">{{ $errors->first('password') }}</small>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
                   {!! Form::label('confirmPassword', 'Confirm Password') !!}
-                  {!! Form::password('confirmPassword', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Confirm Password']) !!}
+                  {!! Form::password('confirmPassword', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) !!}
                   <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
               </div>
             </div>
@@ -170,24 +170,24 @@ $(function () {
               }
             }
           },
-          password: {
-            validators: {
-              notEmpty: {
-                message: 'A password is required.'
-              }
-            }
-          },
-          confirmPassword: {
-            validators: {
-              notEmpty: {
-                message: 'Password confirmation is required.'
-              },
-              identical: {
-                field: 'password',
-                message: 'Passwords do not match.'
-              }
-            }
-          }
+          // password: {
+          //   validators: {
+          //     notEmpty: {
+          //       message: 'A password is required.'
+          //     }
+          //   }
+          // },
+          // confirmPassword: {
+          //   validators: {
+          //     notEmpty: {
+          //       message: 'Password confirmation is required.'
+          //     },
+          //     identical: {
+          //       field: 'password',
+          //       message: 'Passwords do not match.'
+          //     }
+          //   }
+          // }
         }
     });
 });

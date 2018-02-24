@@ -14,7 +14,7 @@ class UserController extends Controller
 	// Member Overview
 	public function index()
 	{
-		
+		return redirect()->route('member.show',[\Auth::user()]);
 	}
 
 	// Create a New Member
@@ -38,7 +38,14 @@ class UserController extends Controller
 	public function update(User $user, Request $request)
 	{
 		// return $request->all();
-		$user->fill($request->all());
+		$request->validate([
+            'firstname'            =>  'required',
+            'lastname'             =>  'required',
+            'email'                 =>  'unique:users,email,'.$user->id.'|required|email',
+	    ]);
+		
+		$user->fill($request->except('password','confirmPassword'));
+		if(!empty($request->password) && $request->password == $request->confirmPassword) $user->password = \Hash::make($request->password);
 		$user->save();
 		return redirect()->route('member.show',[$user])->with('status','Your information has been updated successfully!');
 	}
