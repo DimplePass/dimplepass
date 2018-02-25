@@ -73,6 +73,7 @@ Route::group(['middleware' => 'web'], function () {
 	    });
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
+	Route::resource('passes','PassController',['only' => 'show']);
 	Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
 });
 
