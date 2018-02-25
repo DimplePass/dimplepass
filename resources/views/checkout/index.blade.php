@@ -37,7 +37,7 @@ Checkout : My Profile
       <h3 class="mb-5">Create a profile to attach to your Dimple Pass.</h3>
 
       {{-- Start Form --}}
-      {!! Form::open(['action' => 'MemberController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
+      {!! Form::open(['action' => 'UserController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
 
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
