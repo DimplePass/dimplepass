@@ -28,7 +28,9 @@ class CreateDiscountsTable extends Migration
             $table->dateTime('end')->nullable();
             $table->string('url')->nullable();
             $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();            
+            $table->string('longitude')->nullable();
+            $table->tinyInteger('reservations_required')->default(0);
+            $table->tinyInteger('limited_availability')->default(0);
             $table->timestamps();
         });
     }
