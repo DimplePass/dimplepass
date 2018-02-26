@@ -20,5 +20,7 @@ $factory->define(App\Discount::class, function (Faker $faker) {
         'url' => $faker->url,
         'latitude' => $faker->latitude(43,45),
         'longitude' => $faker->longitude(-105,-115),
+        'reservations_required' => 0,
+        'limited_availability' => 0,
     ];
 });
