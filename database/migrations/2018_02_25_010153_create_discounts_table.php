@@ -19,7 +19,8 @@ class CreateDiscountsTable extends Migration
             $table->integer('pass_id')->unsigned()->index('ix_pass_id');
             $table->string('name')->nullable();
             $table->string('description')->nullable();
-            $table->string('hours')->nullable();
+            $table->string('hours',500)->nullable();
+            $table->string('rates',500)->nullable();
             $table->string('fine_print')->nullable();
             $table->integer('limit')->nullable();
             $table->decimal('percent',13)->nullable();

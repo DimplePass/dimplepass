@@ -59,7 +59,7 @@
         <div class="product-card product-list city1">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}
-            <img src="/img/vendors/ynp/sk-bigking-450x290.jpg" alt="">
+            <img src="/img/discounts/yellowstone/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
           </a>
           <div class="product-info">
             <h3 class="product-title">
@@ -68,12 +68,7 @@
             <p class="hidden-xs-down">{{ $d->description }}</p>
             <div class="product-buttons">
               <h4><i class="icon-tag dp-success"></i> {{ round($d->percent*100) }}% Off {{ $d->name }} <small>(limit {{ $d->limit }})</small></h4>
-              <h4 class="product-price">
-                Adults / Juniors / Seniors <span class="dp-primary">|</span> <del>$125.00</del>$100
-              </h4>
-              <h4 class="product-price">
-                Children <small>6 & under</small> <span class="dp-primary">|</span> <del>$50.00</del>$40
-              </h4>
+              {!! $d->rates !!}
               <ul class="list-unstyled text-sm">
                 <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
                 {!! $d->hours !!}
