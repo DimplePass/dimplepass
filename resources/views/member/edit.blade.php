@@ -75,49 +75,51 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
         {!! Form::model($user,['route' => ['member.update', $user], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
 
         <div class="row">     
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                  {!! Form::label('firstname', 'First Name') !!}
-                  {!! Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'First Name']) !!}
-                  <small class="text-danger">{{ $errors->first('firstname') }}</small>
-              </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                {!! Form::label('firstname', 'First Name') !!}
+                {!! Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'First Name']) !!}
+                <small class="text-danger">{{ $errors->first('firstname') }}</small>
             </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                  {!! Form::label('lastname', 'Last Name') !!}
-                  {!! Form::text('lastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Last Name']) !!}
-                  <small class="text-danger">{{ $errors->first('lastname') }}</small>
-              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                {!! Form::label('lastname', 'Last Name') !!}
+                {!! Form::text('lastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Last Name']) !!}
+                <small class="text-danger">{{ $errors->first('lastname') }}</small>
             </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                  {!! Form::label('email', 'Email') !!}
-                  {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-                  <small class="text-danger">{{ $errors->first('email') }}</small>
-              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                {!! Form::label('email', 'Email') !!}
+                {!! Form::text('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
+                <small class="text-danger">{{ $errors->first('email') }}</small>
             </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                  {!! Form::label('phone', 'Phone') !!}
-                  {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) !!}
-                  <small class="text-danger">{{ $errors->first('phone') }}</small>
-              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                {!! Form::label('phone', 'Phone') !!}
+                {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) !!}
+                <small class="text-danger">{{ $errors->first('phone') }}</small>
             </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                  {!! Form::label('password', 'Password') !!}
-                  {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
-                  <small class="text-danger">{{ $errors->first('password') }}</small>
-              </div>
+          </div>
+          <div class="col-md-6 changePasswordDisplay">
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                {!! Form::label('password', 'Change Password') !!}
+                {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+                <small class="text-danger">{{ $errors->first('password') }}</small>
             </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
-                  {!! Form::label('confirmPassword', 'Confirm Password') !!}
-                  {!! Form::password('confirmPassword', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) !!}
-                  <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
-              </div>
+          </div>
+          <div class="col-md-6 changePasswordDisplay">
+            <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
+                {!! Form::label('confirmPassword', 'Confirm New Password') !!}
+                {!! Form::password('confirmPassword', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) !!}
+                <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
             </div>
-        </div>
+          </div>
+          <div class="col-sm-12 text-right" id="changePasswordButton">
+            <h6><a href="#" id="changePassword" class="btn btn-sm btn-primary">Change Password</a></h6>
+          </div>
 
         <div class="col-12">
           <hr class="mt-2 mb-3">
@@ -132,6 +134,8 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
 
         {!! Form::close() !!}
 
+      </div>
+
     </div>
   </div>
 </div>
@@ -140,6 +144,29 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
 
 @section('scripts')
 <script>
+
+//////////
+/// On Page Load
+//////////
+
+$(function() {
+
+  /// Status Alert Fadeout
+  $("#status").fadeOut(2000)
+
+  /// Hide Change Password Display
+  $('.changePasswordDisplay').hide();
+
+});
+
+//////////
+/// Show Password Fields
+/////////
+
+$('#changePassword').on('click', function() {
+  $('.changePasswordDisplay').toggle();
+  $('#changePasswordButton').toggle();
+});
 
 //////////
 /// Form Validation
@@ -176,26 +203,33 @@ $(function () {
               }
             }
           },
-          // password: {
-          //   validators: {
-          //     notEmpty: {
-          //       message: 'A password is required.'
-          //     }
-          //   }
-          // },
-          // confirmPassword: {
-          //   validators: {
-          //     notEmpty: {
-          //       message: 'Password confirmation is required.'
-          //     },
-          //     identical: {
-          //       field: 'password',
-          //       message: 'Passwords do not match.'
-          //     }
-          //   }
-          // }
+          password: {
+            enabled: false,
+            validators: {
+              notEmpty: {
+                message: 'A password is required.'
+              }
+            }
+          },
+          confirmPassword: {
+            enabled: false,
+            validators: {
+              notEmpty: {
+                message: 'Password confirmation is required.'
+              },
+              identical: {
+                field: 'password',
+                message: 'Passwords do not match.'
+              }
+            }
+          }
         }
-    });
+    }).on('click', '#changePasswordButton', function() {
+    // Enable Validation of Password Fields
+      $('#memberEdit')
+        .formValidation('enableFieldValidators', 'password')
+        .formValidation('enableFieldValidators', 'confirmPassword');
+  });
 });
 
 </script>
