@@ -103,8 +103,8 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">save up to $346</h4>
-                    <a class="btn btn-sm btn-primary" href="/d/glacier">
+                    <h4 class="text-light text-thin text-shadow">24 discounts</h4>
+                    <a class="btn btn-sm btn-primary" href="{{ route('passes.show', 'glacier') }}">
                       <h3 class="text-bold text-light text-shadow">Glacier</h3>
                     </a>
                   </div>
@@ -123,8 +123,8 @@
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">save up to $289</h4>
-                    <a class="btn btn-sm btn-primary" href="/d/yellowstone">
+                    <h4 class="text-light text-thin text-shadow">22 discounts</h4>
+                    <a class="btn btn-sm btn-primary" href="{{ route('passes.show', 'yellowstone') }}">
                       <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
                     </a>
                   </div>
@@ -134,8 +134,8 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/yosemite-300x300.jpg);">
                   {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">save up to $294</h4>
-                    <a class="btn btn-sm btn-primary" href="/d/yosemite">
+                    <h4 class="text-light text-thin text-shadow">28 discounts</h4>
+                    <a class="btn btn-sm btn-primary" href="{{ route('passes.show', 'yosemite') }}">
                       <h3 class="text-bold text-light text-shadow">Yosemite</h3>
                     </a>
                   </div>
@@ -185,11 +185,11 @@
               <span id="count" class="count">2</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
               <div class="toolbar-dropdown">
-                <div class="dropdown-product-item passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yellowstone"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yellowstone">Yellowstone</a><span class="dropdown-product-details">$26</span></div>
+                <div class="dropdown-product-item passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="{{ route('passes.show', 'yellowstone') }}"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a><span class="dropdown-product-details">$26</span></div>
                 </div>
-                <div class="dropdown-product-item passid-2"><span class="dropdown-product-remove" data-passid="2"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/d/yosemite"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/d/yosemite">Yosemite</a><span class="dropdown-product-details">$26</span></div>
+                <div class="dropdown-product-item passid-2"><span class="dropdown-product-remove" data-passid="2"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="{{ route('passes.show', 'yosemite') }}"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ route('passes.show', 'yosemite') }}">Yosemite</a><span class="dropdown-product-details">$26</span></div>
                 </div>
                 <div class="dropdown-product-item donate4" id="dropdown-donate4"><span class="dropdown-product-remove" data-donate4="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/foundation"><img src="/img/foundation/everykidinapark-215x215.png" alt="Product"></a>
                   <div class="dropdown-product-info"><a class="dropdown-product-title" href="/foundation">Donation</a><span class="dropdown-product-details">$4</span></div>

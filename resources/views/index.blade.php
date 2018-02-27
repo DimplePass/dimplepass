@@ -39,38 +39,38 @@ Stop Planning. Start Playing. Save Money.
   {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/yellowstone">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'yellowstone') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
-            <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/yellowstone-1-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <a class="btn btn-primary" href="/d/yellowstone"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'yellowstone') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/yosemite">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'yosemite') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/yosemite-1-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <a class="btn btn-primary" href="/d/yosemite"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'yosemite') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/zion">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'zion') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/zion-overlook-155x137.jpg" alt="Category"><img src="/img/destinations/zion-subway-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/zion-1-155x137.jpg" alt="Category"><img src="/img/destinations/zion-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
-          <a class="btn btn-primary" href="/d/zion"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'zion') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>

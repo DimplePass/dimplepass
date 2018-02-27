@@ -16,28 +16,4 @@ class DestinationController extends Controller
 		return view('destinations.index');
 	}
 
-	// Specific Destination
-	public function destination()
-	{
-		return view('destinations.destination');
-	}
-
-	// Demo - Glacier
-	public function glacier() { return view('destinations.glacier'); }
-	// Demo - Grand Canyon
-	public function grandcanyon() { return view('destinations.grandcanyon'); }
-	// Demo - Yellowstone
-	public function yellowstone() { return view('destinations.yellowstone'); }
-	// Demo - Yosemite
-	public function yosemite() { return view('destinations.yosemite'); }
-	// Demo - Zion
-	public function zion() { return view('destinations.zion'); }
-
-	// Demo - Coming Soon
-	public function comingsoon() { return view('destinations.comingsoon'); }
-
-
-
-
-
 }

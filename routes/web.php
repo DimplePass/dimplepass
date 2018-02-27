@@ -19,15 +19,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
 	///// Destinations
-	Route::get('/d', ['as' => 'destinations.index', 'uses' => 'DestinationController@index']);
-	Route::get('/d/destination', ['as' => 'destinations.destination', 'uses' => 'DestinationController@destination']);
-	// Demo Destinations
-	Route::get('/d/glacier', ['as' => 'destinations.glacier', 'uses' => 'DestinationController@glacier']);
-	Route::get('/d/grandcanyon', ['as' => 'destinations.grandcanyon', 'uses' => 'DestinationController@grandcanyon']);
-	Route::get('/d/yosemite', ['as' => 'destinations.yosemite', 'uses' => 'DestinationController@yosemite']);
-	Route::get('/d/yellowstone', ['as' => 'destinations.yellowstone', 'uses' => 'DestinationController@yellowstone']);
-	Route::get('/d/zion', ['as' => 'destinations.zion', 'uses' => 'DestinationController@zion']);
-	Route::get('/d/comingsoon', ['as' => 'destinations.comingsoon', 'uses' => 'DestinationController@comingsoon']);
+	Route::get('/destinations', ['as' => 'destinations.index', 'uses' => 'DestinationController@index']);
 
 	///// Checkout
 	Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@checkout']);

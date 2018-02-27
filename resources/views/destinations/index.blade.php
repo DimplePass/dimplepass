@@ -31,62 +31,74 @@ The National Parks
   {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/glacier">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'glacier') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/glacier-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/glacier-bus-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-kayak-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/glacier-1-155x137.jpg" alt="Category"><img src="/img/destinations/glacier-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Glacier</h4>
-          <a class="btn btn-primary" href="/d/glacier"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'glacier') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/grandcanyon">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'grand-canyon') }}">
           <div class="inner">
-            <div class="main-img"><img src="/img/destinations/grandcanyon-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/grandcanyon-horse-155x137.jpg" alt="Category"><img src="/img/destinations/grandcanyon-falls-155x137.jpg" alt="Category"></div>
+            <div class="main-img"><img src="/img/destinations/grand-canyon-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/grand-canyon-1-155x137.jpg" alt="Category"><img src="/img/destinations/grand-canyon-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Grand Canyon</h4>
-          <a class="btn btn-primary" href="/d/grandcanyon"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'grand-canyon') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/yellowstone">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'great-smoky-mountains') }}">
+          <div class="inner">
+            <div class="main-img"><img src="/img/destinations/great-smoky-mountains-315x278.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/great-smoky-mountains-1-155x137.jpg" alt="Category"><img src="/img/destinations/great-smoky-mountains-2-155x137.jpg" alt="Category"></div>
+          </div></a>
+        <div class="card-body text-center">
+          <h4 class="card-title">Great Smoky Mountains</h4>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'great-smoky-mountains') }}"><strong>16</strong> Discounts</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'yellowstone') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
-            <div class="thumblist"><img src="/img/destinations/yellowstone-falls-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-bison-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/yellowstone-1-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yellowstone</h4>
-          <a class="btn btn-primary" href="/d/yellowstone"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'yellowstone') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/yosemite">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'yosemite') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/yosemite-trees-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-falls-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/yosemite-1-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Yosemite</h4>
-          <a class="btn btn-primary" href="/d/yosemite"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'yosemite') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="/d/zion">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'zion') }}">
           <div class="inner">
             <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/zion-overlook-155x137.jpg" alt="Category"><img src="/img/destinations/zion-subway-155x137.jpg" alt="Category"></div>
+            <div class="thumblist"><img src="/img/destinations/zion-1-155x137.jpg" alt="Category"><img src="/img/destinations/zion-2-155x137.jpg" alt="Category"></div>
           </div></a>
         <div class="card-body text-center">
           <h4 class="card-title">Zion</h4>
-          <a class="btn btn-primary" href="/d/zion"><strong>16</strong> Discounts</a>
+          <a class="btn btn-primary" href="{{ route('passes.show', 'zion') }}"><strong>16</strong> Discounts</a>
         </div>
       </div>
     </div>
@@ -133,11 +145,11 @@ function initialize() {
 
     // Info Window Content
     var infoWindowContent = [
-      ['<div class="info-box"><a href="/d/glacier" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/glacier-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Glacier National Park</strong></h5><a href="/d/glacier" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'glacier\', 1);">View 16 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/d/grandcanyon" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'grandcanyon\', 1);"><img src="/img/destinations/grandcanyon-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Grand Canyon National Park</strong></h5><a href="/d/grandcanyon" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'grandcanyon\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/d/yellowstone" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yellowstone\', 1);"><img src="/img/destinations/yellowstone-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yellowstone National Park</strong></h5><a href="/d/yellowstone" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 14 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/d/yosemite" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yosemite\', 1);"><img src="/img/destinations/yosemite-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yosemite National Park</strong></h5><a href="/d/yosemite" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
-      ['<div class="info-box"><a href="/d/zion" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'zion\', 1);"><img src="/img/destinations/zion-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Zion National Park</strong></h5><a href="/d/zion" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'zion\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="{{ route('passes.show', 'glacier') }}" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/glacier-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Glacier National Park</strong></h5><a href="{{ route('passes.show', 'glacier') }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'glacier\', 1);">View 16 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="{{ route('passes.show', 'grand-canyon') }}" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'grandcanyon\', 1);"><img src="/img/destinations/grandcanyon-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Grand Canyon National Park</strong></h5><a href="{{ route('passes.show', 'grand-canyon') }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'grandcanyon\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="{{ route('passes.show', 'yellowstone') }}" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yellowstone\', 1);"><img src="/img/destinations/yellowstone-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yellowstone National Park</strong></h5><a href="{{ route('passes.show', 'yellowstone') }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 14 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="{{ route('passes.show', 'yosemite') }}" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'yosemite\', 1);"><img src="/img/destinations/yosemite-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Yosemite National Park</strong></h5><a href="{{ route('passes.show', 'yosemite') }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'yosemite\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
+      ['<div class="info-box"><a href="{{ route('passes.show', 'zion') }}" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'Image\', \'zion\', 1);"><img src="/img/destinations/zion-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>Zion National Park</strong></h5><a href="{{ route('passes.show', 'zion') }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Homepage-Map\', \'View Discounts\', \'zion\', 1);">View 19 Discounts <i class="icon-arrow-right"></i></a></div>'],
 
     ];
         
