@@ -23,7 +23,7 @@
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
-          <li class="has-children"><span><a href="/d"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
               <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
@@ -63,7 +63,7 @@
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
-          <li class="has-children"><span><a href="#"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
               <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
@@ -97,7 +97,7 @@
       <nav class="site-menu">
         <ul>
           <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><span>Home</span></a></li>
-          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="{{ route('destinations.index') }}"><span>Destinations</span></a>
+          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="{{ route('passes.index') }}"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
@@ -117,7 +117,7 @@
                   <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
                   <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
                   <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
-                  <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  <li><a href="{{ route('passes.index') }}"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
               <li>

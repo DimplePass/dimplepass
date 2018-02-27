@@ -39,9 +39,9 @@ class UserController extends Controller
 	{
 		// return $request->all();
 		$request->validate([
-            'firstname'            =>  'required',
-            'lastname'             =>  'required',
-            'email'                 =>  'unique:users,email,'.$user->id.'|required|email',
+            'firstname'		=>  'required',
+            'lastname'		=>  'required',
+            'email'				=>  'unique:users,email,'.$user->id.'|required|email',
 	    ]);
 		
 		$user->fill($request->except('password','confirmPassword'));

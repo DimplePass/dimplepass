@@ -124,7 +124,7 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
         <div class="col-12">
           <hr class="mt-2 mb-3">
           <div class="d-flex flex-wrap justify-content-between align-items-center">
-            <div class="custom-control custom-checkbox d-block">
+            <div class="mx-3 custom-control custom-checkbox d-block">
               <input class="custom-control-input" type="checkbox" id="subscribe_me" checked>
               <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
             </div>

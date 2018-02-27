@@ -14,7 +14,10 @@ class PassController extends Controller
      */
     public function index()
     {
-        //
+        $passes = \App\Pass::all()->where('active',1)->sortBy('name');
+        return view('passes.index',[
+            'passes' => $passes
+        ]);;
     }
 
     /**
