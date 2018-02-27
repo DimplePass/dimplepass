@@ -22,7 +22,7 @@ How does it work?
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider" style="background-image: url(/img/destinations/yosemite-1920x580.jpg);">
+<section class="hero-slider" style="background-image: url(/img/destinations/grand-canyon-1920x580.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">

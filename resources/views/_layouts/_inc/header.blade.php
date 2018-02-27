@@ -117,7 +117,7 @@
                   <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
                   <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
                   <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
-                  <li><a href="/d"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
               <li>

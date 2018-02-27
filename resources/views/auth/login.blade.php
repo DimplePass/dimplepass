@@ -22,7 +22,7 @@ Login
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
+<section class="hero-slider" style="background-image: url(/img/destinations/grand-canyon-1920x580.jpg);">
     <div class="item">
       <div class="container">
         <div class="row justify-content-center align-items-center">

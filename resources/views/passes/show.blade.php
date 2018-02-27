@@ -84,7 +84,7 @@
           </div>
         </div>
       @empty
-        <h3><strong>The 2018  pass will be available on April 15th with exclusive savings on the best {{ $pass->name }} activities.</strong></h3>
+        <h3><strong>The 2018  pass will be available in mid-April.</strong></h3>
       @endforelse
     </div>
     {{-- Sidebar --}}
