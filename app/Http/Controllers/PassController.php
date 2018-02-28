@@ -46,9 +46,10 @@ class PassController extends Controller
      */
     public function show(Pass $pass)
     {
-        //
+        $towns = $pass->discounts->sortBy('vendor.town')->pluck('vendor.town');
         return view('passes.show',[
             'pass' => $pass,
+            'towns' => $towns
         ]);
     }
 
