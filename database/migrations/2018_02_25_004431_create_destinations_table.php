@@ -17,8 +17,8 @@ class CreateDestinationsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('tagline')->nullable();
-            $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->string('slug')->nullable();
             $table->timestamps();
         });

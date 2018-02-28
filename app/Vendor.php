@@ -12,4 +12,5 @@ class Vendor extends Model
     {
     	return $this->city . ", " . $this->state;
     }
+
 }
