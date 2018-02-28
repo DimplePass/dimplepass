@@ -17,7 +17,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-			return view('checkout.index');
+		//
     }
 
 
@@ -85,6 +85,12 @@ class CheckoutController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // Register
+    public function register()
+    {
+            return view('checkout.register');
     }
 
 	// Payment

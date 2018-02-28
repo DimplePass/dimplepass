@@ -22,7 +22,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
 	///// Checkout
-	Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@checkout']);
+	Route::get('/checkout/register', ['as' => 'checkout.register', 'uses' => 'CheckoutController@register']);
 	Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@checkoutPayment']);
 	Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
 	Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);

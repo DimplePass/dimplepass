@@ -203,7 +203,7 @@
                   @if (Auth::user())
                     <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.payment') }}">Checkout</a></div>
                   @else
-                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.index') }}">Checkout</a></div>
+                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.register') }}">Checkout</a></div>
                   @endif
                 </div>
               </div>

@@ -50,7 +50,7 @@
           @if (Auth::user())
             <h2><strong></strong><a href="{{ route('checkout.payment') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.index') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @endif
         </div>
       </div>
@@ -99,7 +99,7 @@
           @if (Auth::user())
             <h2><strong></strong><a href="{{ route('checkout.payment') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.index') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register') }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @endif
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>
