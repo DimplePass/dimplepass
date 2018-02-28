@@ -53,16 +53,16 @@ How does it work?
       <h3 class="mb-30">Present to Vendor</h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Book Online</h5>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>   
+      <p>Many Dimple Pass vendors are capable of taking bookings online and redeeming the discount via a code in their reservation system.  Dimple Pass will generate a new code for every year that you can place into your booking engine.  The Dimple Pass member will receive this code when they purchase the Dimple Pass to use with your system.</p>   
       <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 6rem;"></i>      
       <h5>Book by Phone</h5>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p> 
+      <p>Very similar to the online booking systems for vendors.  Dimple Pass will generate a new code every year that can be used by the Dimple Pass member when they call in to make reservations.  The visitor will receive this code when they purchase the Dimple Pass.  The vendor will simply need to know the code each year so that they can confirm the discount.</p> 
       <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Show Pass on Phone</h5>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>Dimple Pass holders will be able to login using their phone or iPad and view their active passes.  Each pass will have contain the name of the passholder, the active pass, and the discount code in an easy to view display.  This will be able to be shown to the vendor at their place of business during ticket purchasing or booking.</p>
       <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Print It</h5>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), Dimple Pass holders may simply present the printed pass at the vendor's place of business.  The pass will have the full name and contact info of the pass holder in case the vendor wants to confirm the identity by checking another form of ID.</p>
       <hr>
       <h3 class="mb-30">Save Money</h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  

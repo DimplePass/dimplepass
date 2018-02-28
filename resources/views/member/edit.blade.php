@@ -72,7 +72,7 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
         @endif
 
         {{-- Start Form --}}
-        {!! Form::model($user,['route' => ['member.update', $user], 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
+        {!! Form::model($user,['route' => ['member.update', $user], 'method' => 'PUT', 'id' => 'memberEdit', 'class' => 'row form-horizontal']) !!}
 
         <div class="row">     
           <div class="col-md-6">
@@ -101,6 +101,34 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
                 {!! Form::label('phone', 'Phone') !!}
                 {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) !!}
                 <small class="text-danger">{{ $errors->first('phone') }}</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                {!! Form::label('city', 'City') !!}
+                {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                <small class="text-danger">{{ $errors->first('city') }}</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                {!! Form::label('state', 'State') !!}
+                {!! Form::select('state', $states, null, ['id' => 'state', 'class' => 'form-control', 'placeholder' => 'Choose']) !!}
+                <small class="text-danger">{{ $errors->first('state') }}</small>
+            </div>
+          </div>  
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('zip') ? ' has-error' : '' }}">
+                {!! Form::label('zip', 'Zip') !!}
+                {!! Form::text('zip', null, ['class' => 'form-control']) !!}
+                <small class="text-danger">{{ $errors->first('zip') }}</small>
+            </div>
+          </div> 
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                {!! Form::label('country', 'Country') !!}
+                {!! Form::select('country', $countries, null, ['id' => 'country', 'class' => 'form-control', 'placeholder' => 'Choose']) !!}
+                <small class="text-danger">{{ $errors->first('country') }}</small>
             </div>
           </div>
           <div class="col-md-6 changePasswordDisplay">
