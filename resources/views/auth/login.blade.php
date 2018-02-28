@@ -22,7 +22,7 @@ Login
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
+<section class="hero-slider" style="background-image: url(/img/destinations/grand-canyon-1920x580.jpg);">
     <div class="item">
       <div class="container">
         <div class="row justify-content-center align-items-center">
@@ -71,6 +71,38 @@ Login
 
 @section('scripts')
 <script>
+
+//////////
+/// Form Validation
+/// http://formvalidation.io/settings/
+//////////
+
+$(function () {
+    $('#loginForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+          email: {
+            validators: {
+              notEmpty: {
+                message: 'Email is required.'
+              }
+            }
+          },
+          password: {
+            validators: {
+              notEmpty: {
+                message: 'A password is required.'
+              }
+            }
+          },
+        }
+    });
+});
 
 </script>
 @stop

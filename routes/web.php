@@ -10,24 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(['middleware' => 'web'], function () {
+
 	Auth::routes();
+
 	// Robots.txt
 	Route::get('robots.txt', 'UtilityController@robots');
 
 	///// Home
 	Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
-
-	///// Destinations
-	Route::get('/d', ['as' => 'destinations.index', 'uses' => 'DestinationController@index']);
-	Route::get('/d/destination', ['as' => 'destinations.destination', 'uses' => 'DestinationController@destination']);
-	// Demo Destinations
-	Route::get('/d/glacier', ['as' => 'destinations.glacier', 'uses' => 'DestinationController@glacier']);
-	Route::get('/d/grandcanyon', ['as' => 'destinations.grandcanyon', 'uses' => 'DestinationController@grandcanyon']);
-	Route::get('/d/yosemite', ['as' => 'destinations.yosemite', 'uses' => 'DestinationController@yosemite']);
-	Route::get('/d/yellowstone', ['as' => 'destinations.yellowstone', 'uses' => 'DestinationController@yellowstone']);
-	Route::get('/d/zion', ['as' => 'destinations.zion', 'uses' => 'DestinationController@zion']);
-	Route::get('/d/comingsoon', ['as' => 'destinations.comingsoon', 'uses' => 'DestinationController@comingsoon']);
 
 	///// Checkout
 	Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@checkout']);
@@ -59,22 +51,22 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/how', ['as' => 'utility.how', 'uses' => 'UtilityController@how']);
 	Route::get('/thebest', ['as' => 'utility.thebest', 'uses' => 'UtilityController@thebest']);
 
+	/*
+	|------------------------------------
+	| Login Required Routes 
+	|------------------------------------
+	 */
 
+	Route::group(['middleware' => 'auth'], function () {
 
-	    /*
-	    |------------------------------------
-	    | Login Required Routes 
-	    |------------------------------------
-	     */
-	    
-	    Route::group(['middleware' => 'auth'], function () {
+		Route::resource('member', 'UserController')->middleware('member');
 
-	    	Route::resource('member', 'UserController')->middleware('member');
-	    });
+	});
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
-	Route::resource('passes','PassController',['only' => 'show']);
+	Route::resource('passes','PassController',['only' => ['index', 'show']]);
 	Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
+
 });
 
 	

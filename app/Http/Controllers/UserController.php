@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 // use App\Destination;
 // use Carbon\Carbon;
 use App\User;
+use CountryState;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Cache;
 
@@ -26,7 +27,13 @@ class UserController extends Controller
 	// Member Edit
 	public function edit(User $user)
 	{
-		return view('member.edit',['user' => $user]);
+    $states = \CountryState::getStates('US');
+    $countries = \CountryState::getCountries();
+		return view('member.edit',[
+		  'user' => $user,
+		  'states' => $states,
+			'countries' => $countries
+		  ]);
 	}
 
 	// Member Show
@@ -39,9 +46,9 @@ class UserController extends Controller
 	{
 		// return $request->all();
 		$request->validate([
-            'firstname'            =>  'required',
-            'lastname'             =>  'required',
-            'email'                 =>  'unique:users,email,'.$user->id.'|required|email',
+            'firstname'		=>  'required',
+            'lastname'		=>  'required',
+            'email'				=>  'unique:users,email,'.$user->id.'|required|email',
 	    ]);
 		
 		$user->fill($request->except('password','confirmPassword'));

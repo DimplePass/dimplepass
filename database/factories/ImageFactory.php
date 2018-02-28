@@ -8,6 +8,6 @@ $factory->define(Image::class, function (Faker $faker) {
         //
         'name' => $faker->word,
         'filename' => $faker->domainWord,
-        'ext' => $faker->fileExtension
+        'ext' => '.jpg'
     ];
 });

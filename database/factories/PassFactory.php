@@ -6,10 +6,11 @@ use Faker\Generator as Faker;
 
 $factory->define(Pass::class, function (Faker $faker) {
     return [
-        'name' => 'Yellowstone Pass',
-        'start' => Carbon::parse('May 1st ' . Carbon::now()->year),
-        'end' => Carbon::parse('October 31st ' . Carbon::now()->year),
-        'slug' => 'yellowstone_pass',
+        'name' => 'Yellowstone',
+        'start' => Carbon::parse('May 15th ' . Carbon::now()->year),
+        'end' => Carbon::parse('October 15th ' . Carbon::now()->year),
+				'price' => '26.00',
+        'slug' => 'yellowstone',
         'active' => 1
     ];
 });

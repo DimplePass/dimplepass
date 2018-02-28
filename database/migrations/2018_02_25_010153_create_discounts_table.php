@@ -19,7 +19,8 @@ class CreateDiscountsTable extends Migration
             $table->integer('pass_id')->unsigned()->index('ix_pass_id');
             $table->string('name')->nullable();
             $table->string('description')->nullable();
-            $table->string('hours')->nullable();
+            $table->string('hours',500)->nullable();
+            $table->string('rates',500)->nullable();
             $table->string('fine_print')->nullable();
             $table->integer('limit')->nullable();
             $table->decimal('percent',13)->nullable();
@@ -28,7 +29,9 @@ class CreateDiscountsTable extends Migration
             $table->dateTime('end')->nullable();
             $table->string('url')->nullable();
             $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();            
+            $table->string('longitude')->nullable();
+            $table->tinyInteger('reservations_required')->default(0);
+            $table->tinyInteger('limited_availability')->default(0);
             $table->timestamps();
         });
     }

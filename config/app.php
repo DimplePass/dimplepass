@@ -171,6 +171,7 @@ return [
         'EllisTheDev\Robots\RobotsServiceProvider',
         ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
+        DougSisk\CountryState\CountryStateServiceProvider::class,
 
         /*
          * Application Service Providers...
