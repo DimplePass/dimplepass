@@ -34,48 +34,24 @@ Stop Planning. Start Playing. Save Money.
   </div>
 </section>
 
-{{-- Featured Destinations --}}
+{{-- Pass Cards --}}
 <section class="container padding-top-3x">
-  {{-- <h3 class="text-center mb-30">Top National Parks</h3> --}}
   <div class="row">
+    @foreach ($passes as $p)
     <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'yellowstone') }}">
+      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', $p->slug) }}">
           <div class="inner">
-            <div class="main-img"><img src="/img/destinations/yellowstone-315x278.jpg" alt="Yellowstone National Park"></div>
-            <div class="thumblist"><img src="/img/destinations/yellowstone-1-155x137.jpg" alt="Category"><img src="/img/destinations/yellowstone-2-155x137.jpg" alt="Category"></div>
+            <div class="main-img"><img src="/img/destinations/{{ $p->slug }}-315x278.jpg" alt="{{ $p->name }}"></div>
+            <div class="thumblist"><img src="/img/destinations/{{ $p->slug }}-1-155x137.jpg" alt="{{ $p->name }}"><img src="/img/destinations/{{ $p->slug }}-2-155x137.jpg" alt="{{ $p->name }}"></div>
           </div></a>
         <div class="card-body text-center">
-          <h4 class="card-title">Yellowstone</h4>
-          <a class="btn btn-primary" href="{{ route('passes.show', 'yellowstone') }}"><strong>16</strong> Discounts</a>
+          <h4 class="card-title">{{ $p->name }}</h4>
+          <a class="btn btn-primary" href="{{ route('passes.show', $p->slug) }}"><strong>{{ count($p->discounts) }}</strong> Discounts</a>
         </div>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'yosemite') }}">
-          <div class="inner">
-            <div class="main-img"><img src="/img/destinations/yosemite-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/yosemite-1-155x137.jpg" alt="Category"><img src="/img/destinations/yosemite-2-155x137.jpg" alt="Category"></div>
-          </div></a>
-        <div class="card-body text-center">
-          <h4 class="card-title">Yosemite</h4>
-          <a class="btn btn-primary" href="{{ route('passes.show', 'yosemite') }}"><strong>16</strong> Discounts</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="card mb-30"><a class="card-img-tiles" href="{{ route('passes.show', 'zion') }}">
-          <div class="inner">
-            <div class="main-img"><img src="/img/destinations/zion-315x278.jpg" alt="Category"></div>
-            <div class="thumblist"><img src="/img/destinations/zion-1-155x137.jpg" alt="Category"><img src="/img/destinations/zion-2-155x137.jpg" alt="Category"></div>
-          </div></a>
-        <div class="card-body text-center">
-          <h4 class="card-title">Zion</h4>
-          <a class="btn btn-primary" href="{{ route('passes.show', 'zion') }}"><strong>16</strong> Discounts</a>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </div>
-  <div class="text-center"><a class="btn btn-outline-secondary margin-top-none" href="/d">View All Dimple Parks</a></div>
 </section>
 
 {{-- The Dimple Pass Commitment --}}

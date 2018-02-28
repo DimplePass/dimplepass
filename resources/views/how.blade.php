@@ -46,26 +46,29 @@ How does it work?
       <h2 class="mb-5">You <strong>save money</strong> on items that should already be on your <strong>must-do</strong> list.</h2>
       <div class="mt-30 hidden-md-up"></div>
       <hr>
-      <h3>Purchase the Dimple Pass</h3>
+      <h3 class="mb-30">Purchase the Dimple Pass</h3>
       <i class="pe-7s-credit float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <hr>
-      <h3>Present to Vendor</h3>
+      <hr >
+      <h3 class="mb-30">Present to Vendor</h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Book Online</h5>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>   
       <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 6rem;"></i>      
       <h5>Book by Phone</h5>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p> 
+      <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <h5>Show Pass on Phone</h5>
+      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
       <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <h5>Print It</h5>
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
       <hr>
-      <h3>Save Money</h3>
+      <h3 class="mb-30">Save Money</h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
       <hr>
-      <h3>Have the Best Vacation Ever</h3>
+      <h3 class="mb-30">Have the Best Vacation Ever</h3>
       <i class="pe-7s-smile float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
     </div>
