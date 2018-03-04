@@ -23,6 +23,7 @@ Route::group(['middleware' => 'web'], function () {
 
 	///// Checkout
 	Route::get('/checkout/register', ['as' => 'checkout.register', 'uses' => 'CheckoutController@register']);
+	Route::post('/checkout/register', ['as' => 'checkout.register_user', 'uses' => 'CheckoutController@registerUser']);
 	Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@checkoutPayment']);
 	Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
 	Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);

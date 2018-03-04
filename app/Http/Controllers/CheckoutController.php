@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 // use App\Destination;
 // use Carbon\Carbon;
+use App\Pass;
+use App\User;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Cache;
 
@@ -88,15 +90,53 @@ class CheckoutController extends Controller
     }
 
     // Register
-    public function register()
+    public function register(Request $request)
     {
-            return view('checkout.register');
+        $pass = Pass::findOrFail($request->pass_id);
+
+        if($request->session()->has('passes'))
+        {
+            $request->session()->push('passes',$request->pass_id);
+        } else {
+            $passes = [$request->pass_id];
+            $request->session()->push('passes',$passes);
+        }
+        return view('checkout.register',[
+            'pass' => $pass,
+        ]);
     }
 
+    // Register
+    public function registerUser(Request $request)
+    {
+        $request->validate([
+            'firstname'     =>  'required',
+            'lastname'      =>  'required',
+            'email'             =>  'unique:users,email|required|email',
+        ]);        
+        $user = User::make($request->except('password','confirmPassword','pass_id'));
+        $user->password = \Hash::make($request->password);
+        $user->save();
+        \Auth::login($user, true);
+        $pass = Pass::findOrFail($request->pass_id);
+        return view('checkout.payment',[
+            'pass' => $pass,
+            'user' => $user
+        ]);
+    }
 	// Payment
-	public function checkoutPayment()
+	public function checkoutPayment(Request $request)
 	{
+        $user = Auth::user();
+        $pass = Pass::findOrFail($request->pass_id);
 
+        if($request->session()->has('passes'))
+        {
+            $request->session()->push('passes',$request->pass_id);
+        } else {
+            $passes = [$request->pass_id];
+            $request->session()->push('passes',$passes);
+        }
 		// Countries Drop Down List
 		$selectCountries = ['Canada', 'United States'];
 
