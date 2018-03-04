@@ -23,6 +23,8 @@ class PassTest extends TestCase
 			'pass_id' => $pass->id
 		])->each(function($d){
 			$d->images()->saveMany(factory(Image::class,5)->create());
+            $d->vendor_id = factory(Vendor::class)->create()->id;
+            $d->save();
 		});
 		// dd($pass->images);
 		// dd($pass->load('destinations','discounts.images'));
@@ -32,6 +34,7 @@ class PassTest extends TestCase
 
 		$response->assertStatus(200);
 		$response->assertViewHas('pass');
+		$response->assertViewHas('activePasses');
 
     }
 }

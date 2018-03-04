@@ -33,4 +33,10 @@ class Pass extends Model
     {
     	return $this->hasMany(\App\Discount::class);
     }
+
+    // Scopes
+    public function scopeActive($query)
+    {
+        return $query->where('active',1);
+    }
 }
