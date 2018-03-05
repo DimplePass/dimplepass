@@ -37,7 +37,9 @@ Checkout : My Profile
       <h3 class="mb-5">Create a profile to attach to your Dimple Pass.</h3>
 
       {{-- Start Form --}}
-      {!! Form::open(['action' => 'UserController@store','method' => 'POST', 'class' => 'row', 'id' => 'checkoutProfile']) !!}
+      {!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'class' => 'row', 'id' => 'checkoutRegister']) !!}
+
+        {!! Form::hidden('pass_id', $pass->id) !!}
 
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
@@ -54,10 +56,10 @@ Checkout : My Profile
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
-              {!! Form::label('emailid', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('emailid', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('emailid') }}</small>
+          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+              {!! Form::label('email', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+              <small class="text-danger">{{ $errors->first('email') }}</small>
           </div>
         </div>
         <div class="col-md-6">
@@ -196,7 +198,7 @@ function roundTo(num, places) {
 //////////
 
 $(function () {
-  $('#checkoutProfile').formValidation({
+  $('#checkoutRegister').formValidation({
     framework: 'bootstrap',
     excluded: ':disabled',
     fields: {
@@ -214,7 +216,7 @@ $(function () {
           }
         }
       },
-      emailid: {
+      email: {
         trigger: 'blur',
         validators: {
           notEmpty: {
