@@ -25,11 +25,9 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
-              <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
-              <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
-              <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
-              <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
+              @foreach ($activePasses->sortBy('name') as $ap)
+                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -65,11 +63,9 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
-              <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
-              <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
-              <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
-              <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
+              @foreach ($activePasses->sortBy('name') as $ap)
+                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -112,11 +108,9 @@
               </li>
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
-                  <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
-                  <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
-                  <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
-                  <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
-                  <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
+                  @foreach ($activePasses->random(5)->sortBy('name') as $ap)
+                    <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+                  @endforeach
                   <li><a href="{{ route('passes.index') }}"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
