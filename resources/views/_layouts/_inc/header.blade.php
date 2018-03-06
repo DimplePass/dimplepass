@@ -25,11 +25,9 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
-              <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
-              <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
-              <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
-              <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
+              @foreach ($activePasses->sortBy('name') as $ap)
+                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -65,11 +63,9 @@
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
           <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
-              <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
-              <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
-              <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
-              <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
-              <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
+              @foreach ($activePasses->sortBy('name') as $ap)
+                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><span><a href="/how">How does it Work?</a></span></li>
@@ -112,11 +108,9 @@
               </li>
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
-                  <li><a href="{{ route('passes.show', 'glacier') }}">Glacier</a></li>
-                  <li><a href="{{ route('passes.show', 'grand-canyon') }}">Grand Canyon</a></li>
-                  <li><a href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a></li>
-                  <li><a href="{{ route('passes.show', 'yosemite') }}">Yosemite</a></li>
-                  <li><a href="{{ route('passes.show', 'zion') }}">Zion</a></li>
+                  @foreach ($activePasses->random(5)->sortBy('name') as $ap)
+                    <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+                  @endforeach
                   <li><a href="{{ route('passes.index') }}"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
@@ -177,19 +171,17 @@
             </div>
             <div class="cart">
               @if (Auth::user())
-                <a href="/checkout/payment"></a>
+                <a href="{{ route('checkout.payment') }}"></a>
               @else
-                <a href="/checkout"></a>
+                <a href="{{ route('checkout.register') }}"></a>
               @endif
               <i class="icon-bag"></i>
-              <span id="count" class="count">2</span>
+              <span id="count" class="count">0</span>
               <span class="subtotal">$<span class="totalDue">52</span></span>
+              @if (isset($pass))
               <div class="toolbar-dropdown">
-                <div class="dropdown-product-item passid-1"><span class="dropdown-product-remove" data-passid="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="{{ route('passes.show', 'yellowstone') }}"><img src="/img/destinations/yellowstone-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ route('passes.show', 'yellowstone') }}">Yellowstone</a><span class="dropdown-product-details">$26</span></div>
-                </div>
-                <div class="dropdown-product-item passid-2"><span class="dropdown-product-remove" data-passid="2"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="{{ route('passes.show', 'yosemite') }}"><img src="/img/destinations/yosemite-300x300.jpg" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ route('passes.show', 'yosemite') }}">Yosemite</a><span class="dropdown-product-details">$26</span></div>
+                <div class="dropdown-product-item passid-{{ $pass->id }}"><span class="dropdown-product-remove" data-passid="{{ $pass->id }}"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="{{ route('passes.show', $pass->slug) }}"><img src="/img/destinations/{{ $pass->slug }}-300x300.jpg" alt="{{ $pass->name }}"></a>
+                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ route('passes.show', $pass->slug) }}">{{ $pass->name }}</a><span class="dropdown-product-details">${{ $pass->price }}</span></div>
                 </div>
                 <div class="dropdown-product-item donate4" id="dropdown-donate4"><span class="dropdown-product-remove" data-donate4="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/foundation"><img src="/img/foundation/everykidinapark-215x215.png" alt="Product"></a>
                   <div class="dropdown-product-info"><a class="dropdown-product-title" href="/foundation">Donation</a><span class="dropdown-product-details">$4</span></div>
@@ -207,6 +199,7 @@
                   @endif
                 </div>
               </div>
+              @endif
             </div>
           </div>
         </div>

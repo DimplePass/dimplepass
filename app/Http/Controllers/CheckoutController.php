@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Pass;
 use App\User;
 use Illuminate\Http\Request;
+
 // use Illuminate\Support\Facades\Cache;
 
 class CheckoutController extends Controller
@@ -112,7 +113,7 @@ class CheckoutController extends Controller
         $request->validate([
             'firstname'     =>  'required',
             'lastname'      =>  'required',
-            'email'             =>  'unique:users,email|required|email',
+            'email'         =>  'unique:users,email|required|email',
         ]);        
         $user = User::make($request->except('password','confirmPassword','pass_id'));
         $user->password = \Hash::make($request->password);

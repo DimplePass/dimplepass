@@ -6,8 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- SEO Meta Tags --}}
-    <meta name="description" content="Dimple Pass - National Park Discounts">
-    <meta name="keywords" content="">
+    <meta name="description" content="Dimple Pass - National Park Travel Discounts">
+    <meta name="keywords" content="national park, travel, discounts, dimple pass, attractions, activities, coupons">
     <meta name="author" content="Dimple Pass">
 
     {{-- Mobile Specific Meta Tag --}}
@@ -33,4 +33,16 @@
     {{-- Modernizr --}}
     <script src="/js/modernizr.min.js"></script>
 
+    {{--  Global site tag (gtag.js) - Google Analytics --}}
+    @if(\App::environment('production'))
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115046513-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115046513-1');
+    </script>
+    @endif
+    
   </head>
