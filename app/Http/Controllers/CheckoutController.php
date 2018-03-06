@@ -127,7 +127,7 @@ class CheckoutController extends Controller
 	// Payment
 	public function checkoutPayment(Request $request)
 	{
-        $user = Auth::user();
+        $user = \Auth::user();
         $pass = Pass::findOrFail($request->pass_id);
 
         if($request->session()->has('passes'))
