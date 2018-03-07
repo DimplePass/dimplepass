@@ -16,7 +16,7 @@
 @stop
 
 @section('logo-tag')
-My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}
+My Passes
 @stop
 
 @section('content')
@@ -25,21 +25,21 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
 <div class="page-title">
   <div class="container">
     <div class="column">
-      <h1>My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
+      <h1>My Passes: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
     </div>
     <div class="column">
       <ul class="breadcrumbs">
         <li><a href="/">Home</a>
         </li>
         <li class="separator">&nbsp;</li>
-        <li>My Profile</li>
+        <li>My Passes</li>
       </ul>
     </div>
   </div>
 </div>
 
 {{-- Page Content --}}
-<div class="container padding-bottom-3x mb-2">
+<div class="container padding-bottom-3x mb-2 mt-5">
   <div class="row">
     <div class="col-lg-4">
       <div class="sticky">
@@ -56,73 +56,87 @@ My Profile: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : n
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge" href="/member/"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
-          <a class="list-group-item active" href="/member/edit"><i class="icon-head"></i>My Profile</a>
+          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
-
-        <div class="row">
-        {{-- {!! Form::open(['method' => 'POST', 'route' => 'routeName', 'class' => 'row form-horizontal']) !!} --}}
-        
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                  {!! Form::label('firstname', 'First Name') !!}
-                  {!! Form::text('firstname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'First Name']) !!}
-                  <small class="text-danger">{{ $errors->first('firstname') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                  {!! Form::label('lastname', 'Last Name') !!}
-                  {!! Form::text('lastname', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Last Name']) !!}
-                  <small class="text-danger">{{ $errors->first('lastname') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('emailid') ? ' has-error' : '' }}">
-                  {!! Form::label('emailid', 'Email') !!}
-                  {!! Form::text('emailid', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Email']) !!}
-                  <small class="text-danger">{{ $errors->first('emailid') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                  {!! Form::label('phone', 'Phone') !!}
-                  {!! Form::text('phone', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Phone']) !!}
-                  <small class="text-danger">{{ $errors->first('phone') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                  {!! Form::label('password', 'Password') !!}
-                  {!! Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
-                  <small class="text-danger">{{ $errors->first('password') }}</small>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group{{ $errors->has('password2') ? ' has-error' : '' }}">
-                  {!! Form::label('password2', 'Confirm Password') !!}
-                  {!! Form::password('password2', ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'Password']) !!}
-                  <small class="text-danger">{{ $errors->first('password2') }}</small>
-              </div>
-            </div>
-        
-        {{-- {!! Form::close() !!} --}}
-        </div>
-        <div class="col-12">
-          <hr class="mt-2 mb-3">
-          <div class="d-flex flex-wrap justify-content-between align-items-center">
-            <div class="custom-control custom-checkbox d-block">
-              <input class="custom-control-input" type="checkbox" id="subscribe_me" checked>
-              <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
-            </div>
-            <button class="btn btn-primary margin-right-none" type="button" data-toast data-toast-position="topRight" data-toast-type="success" data-toast-icon="icon-circle-check" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile <i class="fa fa-arrow-right"></i></button>
-          </div>
-        </div>
-      </form>
+      <div class="table-responsive">
+        <table class="table table-hover margin-bottom-none">
+          <thead>
+            <tr>
+              <th>Pass</th>
+              <th>Status</th>
+              <th>Redeem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h5 class="mb-0">Yellowstone</h5>
+                18 discounts
+              </td>
+              <td>
+                <span class="text-success">Active</span><br>
+                <small>May 15, 2018 - October 15, 2018</small>
+              </td>
+              <td>
+                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5 class="mb-0">Glacier</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-success">Active</span><br>
+                <small>May 15, 2018 - October 15, 2018</small>
+              </td>
+              <td>
+                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5 class="mb-0">Yosemite</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-warning">Expired</span><br>
+                <small>May 15, 2017 - October 15, 2017</small>
+              </td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <h5 class="mb-0">Zion</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-warning">Expired</span><br>
+                <small>May 15, 2016 - October 15, 2016</small>
+              </td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <h5 class="mb-0">Grand Canyon</h5>
+                <p>18 discounts</p>
+              </td>
+              <td>
+                <span class="text-warning">Expired</span><br>
+                <small>May 15, 2016 - October 15, 2016</small>
+              </td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

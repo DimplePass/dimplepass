@@ -60,7 +60,7 @@ Vendor <span class="dp-warning">/</span> Promise to Visitors
       <i class="pe-7s-magic-wand float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <p>Vendors agree to have a simple and hassle free booking and reservation system in place for all Dimple Pass holders.  If the pass is taken at a front desk or ticket window, presenting the Dimple Pass will be a quick and painless procedure.  It's kinda like magic, really.</p>
       <hr>
-      <h3>Knowledgable Staff <small>We know the Dimple traveler.</small></h3>
+      <h3>Knowledgeable Staff <small>We know the Dimple traveler.</small></h3>
       <i class="pe-7s-info float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <p>Of most importance, is that all staff are aware of the agreement and discount with Dimple Pass.  When Dimple Pass holders present their pass in order to receive the discount offer, all employees should know what they are talking about and be ready to assist them with the no-hassle redemption.</p>
     </div>

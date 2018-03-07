@@ -35,8 +35,8 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Pass Holders</h3>
             <ul>
-              <li><a href="{{ route('member.index') }}">My Passes</a></li>
-              <li><a href="/member/edit">My Profile</a></li>
+              <li><a href="{{ route('member.show', Auth::user()) }}">My Passes</a></li>
+              <li><a href="{{ route('member.edit', Auth::user()) }}">My Profile</a></li>
               <li><a href="{{ route('utility.guarantee') }}">Money Back Guarantee</a></li>
               <li><a href="{{ route('member.terms') }}">Terms & Conditions</a></li>
             </ul>

@@ -26,6 +26,7 @@ class LoginTest extends TestCase
     }
 
 
+
     /** @test */
     public function user_can_view_login()
     {
@@ -36,12 +37,13 @@ class LoginTest extends TestCase
     /** @test */
     public function valid_user_can_login()
     {
+        // $this->disableExceptionHandling();
         // $this->seed('DatabaseSeeder');
         $user = factory(User::class)->create();
         // $user = User::find(1);
         $response = $this->post('/login',[
                 'email' => $user->email,
-                'password' => \Hash::make($user->password)
+                'password' => $user->password
             ]);
 
         $response->assertStatus(302);
@@ -69,7 +71,7 @@ class LoginTest extends TestCase
     {
         // $this->seed('DatabaseSeeder');
         $user = factory(User::class)->create();
-        $response = $this->actingAs($user)->get('/member');
+        $response = $this->actingAs($user)->get('/member/'.$user->id);
 
         $response->assertStatus(200);
         $response->assertViewHas(\Auth::user(),function() use ($user){

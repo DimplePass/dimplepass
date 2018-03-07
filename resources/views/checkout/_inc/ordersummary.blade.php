@@ -4,24 +4,17 @@
   <section class="widget widget-order-summary">
     <h3 class="widget-title">Order Summary</h3>
     <table class="table">
-      <tr class="passid-1">
+      <tr class="passid-{{ $pass->id }}">
         <td>
-          <h6 class="mb-0">Yellowstone 2018</h6>
-          <p class="mt-0">16 Discounts</p>
+          <h6 class="mb-0">{{ $pass->name }} {{ $pass->end->format('Y') }}</h6>
+          <p class="mt-0">{{ count($pass->discounts) }} Discounts</p>
         </td>
-        <td class="text-medium">$<span class="passFee">26.00</span></td>
-      </tr>
-      <tr class="passid-2">
-        <td>
-          <h6 class="mb-0">Yosemite 2018</h6>
-          <p class="mt-0">16 Discounts</p>
-        </td>
-        <td class="text-medium">$<span class="passFee">26.00</span></td>
+        <td class="text-medium">$<span class="passFee">{{ $pass->price }}</span></td>
       </tr>
       <tr>
         <td>
           <div class="custom-control custom-checkbox">
-            <input class="custom-control-input pointer donate4" type="checkbox" id="donate4">
+            {!! Form::checkbox('donate4', '1', null, ['id' => 'donate4', 'class' => 'custom-control-input pointer donate4']) !!} 
             <label class="custom-control-label dp-warning pointer" for="donate4">Add $4 to get kids outdoors.</label>
             <p><a href="#" data-toggle="modal" data-target="#exampleModal">What is this?</a></p> 
           </div>
