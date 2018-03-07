@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\User;
 use CountryState;
 use Illuminate\Http\Request;
+use PDF;
 // use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
@@ -66,10 +67,12 @@ class UserController extends Controller
 	// Member Print Pass
 	public function printpass()
 	{
-		// return view('member.printpass');
-    // Displays PDF view.
-    $pdf = \PDF::loadView('member.pass');
-		return $pdf->download('Pass.pdf');
+		return view('member.printpass');
+		$data = [
+			'foo' => 'bar'
+		];
+		$pdf = PDF::loadView('member.printpass', $data);
+		return $pdf->stream('Pass.pdf');
 	}
 
 	// Member Terms

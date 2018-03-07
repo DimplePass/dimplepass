@@ -10,7 +10,7 @@
   <meta name="author" content="Dimple Pass">    
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   {{-- Laravel Mix created file --}}
-  <link href="/css/app.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="{{ url ('/css/app.css') }}" rel="stylesheet" type="text/css" media="screen">
 </head>
 
 <body> 
