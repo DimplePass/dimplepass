@@ -72,7 +72,7 @@ class UserController extends Controller
 			'foo' => 'bar'
 		];
 		$pdf = PDF::loadView('member.printpass', $data);
-		return $pdf->stream('Pass.pdf');
+		return $pdf->stream('DimplePass.pdf');
 	}
 
 	// Member Terms

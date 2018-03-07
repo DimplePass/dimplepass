@@ -22,7 +22,7 @@ My Passes
 @section('content')
 
 {{-- Page Title --}}
-<div class="page-title">
+{{-- <div class="page-title">
   <div class="container">
     <div class="column">
       <h1>My Passes: 2018 Yellowstone Dimple Pass</h1>
@@ -37,7 +37,7 @@ My Passes
       </ul>
     </div>
   </div>
-</div>
+</div> --}}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2 mt-5">

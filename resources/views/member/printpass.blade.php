@@ -110,6 +110,12 @@
       width: 14%;
     }
 
+    /*Discounts*/
+    .discounts {
+      margin-left: 26px;
+      margin-right: 26px;
+    }
+
   </style>
 
 </head>
@@ -142,7 +148,7 @@
       <h1 class="m-x-0">2018 Yellowstone Summer</h1>
     </div>
     <div class="column">
-      <h1 class="m-x-0 text-right"> CODE: <span class="dp-warning">18YNP-GEYSER</span></h1>
+      <h1 class="m-x-0 text-right"> CODE: <span class="dp-primary">18YNP-GEYSER</span></h1>
     </div>  
   </div>
 
@@ -157,60 +163,68 @@
   {{-- Discounts Grouped by Town --}}
 
   <h3>Big Sky, Montana</h3>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  <div class="discounts">
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  </div>
 
   <h3>Cody, Wyoming</h3>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  <div class="discounts">
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  </div>
 
   <h3>Jackson Hole, Wyoming</h3>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  <div class="discounts">
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  </div>
 
   <h3>West Yellowstone, Montana</h3>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
-  <h5 class="m-x-0">Vendor Name<small> | <span class="dp-warning">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
-  <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  <div class="discounts">
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+    <h5 class="m-x-0">Vendor Name<small> | <span class="dp-primary">20% Off Tram Ride</span> (limit 4) | Redeem with Printed Pass</small></h5>
+    <p>123 Any Street, Anytown, ST  83414 | 800-555-1212 | email@vendorsite.com | www.vendorsite.com</p>
+  </div>
 
   {{-- Separator --}}
   <hr>
