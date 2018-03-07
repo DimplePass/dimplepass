@@ -14,7 +14,7 @@
       <tr>
         <td>
           <div class="custom-control custom-checkbox">
-            <input class="custom-control-input pointer donate4" type="checkbox" id="donate4">
+            {!! Form::checkbox('donate4', '1', null, ['id' => 'donate4', 'class' => 'custom-control-input pointer donate4']) !!} 
             <label class="custom-control-label dp-warning pointer" for="donate4">Add $4 to get kids outdoors.</label>
             <p><a href="#" data-toggle="modal" data-target="#exampleModal">What is this?</a></p> 
           </div>

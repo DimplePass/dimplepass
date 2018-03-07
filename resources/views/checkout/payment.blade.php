@@ -21,6 +21,9 @@ Page Title
 
 @section('content')
 
+{{-- Start Form --}}
+{!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
+
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
@@ -32,9 +35,6 @@ Page Title
         <a class="active" href="/checkout/payment">2. Payment</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
-
-      {{-- Start Form --}}
-      {!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
 
         {{-- Credit Card --}}
         <div class="card">
@@ -117,11 +117,11 @@ Page Title
       @include('/checkout/_inc/ordersummary')
     </div>
 
-    {{-- End Form --}}
-    {!! Form::close() !!}
-
   </div>
 </div>
+
+    {{-- End Form --}}
+    {!! Form::close() !!}
 
 @stop
 

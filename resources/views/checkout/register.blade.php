@@ -21,10 +21,13 @@ Checkout : My Profile
 
 @section('content')
 
+{{-- Start Form --}}
+{!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'id' => 'checkoutRegister']) !!}
+{!! Form::hidden('pass_id', $pass->id) !!}
+
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
-
     <div class="col-lg-8">
 
       {{-- Checkout Steps --}}
@@ -35,12 +38,7 @@ Checkout : My Profile
 
       {{-- User Action Statement --}}
       <h3 class="mb-5">Create a profile to attach to your Dimple Pass.</h3>
-
-      {{-- Start Form --}}
-      {!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'class' => 'row', 'id' => 'checkoutRegister']) !!}
-
-        {!! Form::hidden('pass_id', $pass->id) !!}
-
+      <div class="row">
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
               {!! Form::label('firstname', 'First Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
@@ -83,7 +81,7 @@ Checkout : My Profile
               <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
           </div>
         </div>
-  
+
         {{-- Checkout Progress Buttons --}}
         <div class="col-sm-12">
           <div class="checkout-footer margin-top-1x">
@@ -91,17 +89,19 @@ Checkout : My Profile
           </div>
         </div>
 
-      {{-- End Form --}}
-      {!! Form::close() !!}
-
+      </div>
     </div>
 
     {{-- Sidebar --}}
     <div class="col-lg-4 hidden-xs-down">
       @include('/checkout/_inc/ordersummary')
     </div>
+
   </div>
 </div>
+
+{{-- End Form --}}
+{!! Form::close() !!}
 
 @stop
 
