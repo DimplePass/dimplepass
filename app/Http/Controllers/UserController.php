@@ -67,7 +67,7 @@ class UserController extends Controller
 	// Member Print Pass
 	public function printpass()
 	{
-		// return view('member.printpass');
+		return view('member.printpass');
 		$data = [
 			'foo' => 'bar'
 		];
