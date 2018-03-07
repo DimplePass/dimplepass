@@ -1,22 +1,19 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>{{ $pass->name }} Dimple Pass</title>
+  <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
+  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupoints, attractions, activities, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="{{ $pass->name }} Dimple Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-{{ $pass->name }} National Park
 @stop
 
 @section('content')
@@ -27,7 +24,7 @@
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">The Best of @yield('logo-tag')</h1>
+          <h1 class="mb-2 white-color">The Best of {{ $pass->name }} National Park</h1>
           <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>               
         </div>
     </div>
