@@ -144,6 +144,8 @@ class CheckoutController extends Controller
 
         return view('checkout.payment',[
             'selectCountries' => $selectCountries,
+            'pass' => $pass,
+            'user' => $user
         ]);
 	}
 
