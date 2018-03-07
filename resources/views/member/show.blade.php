@@ -84,7 +84,7 @@ My Passes
               </td>
               <td>
                 <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                <a href="/member/printpass" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
               </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@ My Passes
               </td>
               <td>
                 <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                <a href="/member/printpass" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
               </td>
             </tr>
             <tr>
