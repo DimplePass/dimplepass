@@ -1,22 +1,19 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Meta Title Here</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>Dimple Pass - National Parks Discount Cards</title>
+  <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
+  <meta property="og:title" content="Dimple Pass - National Parks Discount Cards"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-Password Reset
 @stop
 
 @section('content')
@@ -30,7 +27,7 @@ Password Reset
             <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">
               <div class="row login-overlay">
                 <div class="col-sm-12">
-                  <h1><strong class="dp-white">@yield('logo-tag')</strong></h1>
+                  <h1><strong class="dp-white">Password Reset</strong></h1>
                   <form action="/password/reset" method="POST" accept-charset="utf-8" id="resetPasswordForm" class="form-horizontal">
                   {{ csrf_field() }}
                   {!! Form::hidden('token', $token) !!}

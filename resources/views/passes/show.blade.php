@@ -1,22 +1,19 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>{{ $pass->name }} Dimple Pass</title>
+  <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
+  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="{{ $pass->name }} Dimple Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-{{ $pass->name }} National Park
 @stop
 
 @section('content')
@@ -27,12 +24,20 @@
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">The Best of @yield('logo-tag')</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>               
+          <h1 class="mb-2 white-color">The Best of {{ $pass->name }} National Park</h1>
+          @if (count($pass->discounts))
+            <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>   
+          @else
+            <h2 class="mt-0 mb-2 white-color"><strong>2018 Summer Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
+          @endif
+                      
         </div>
     </div>
   </div>
 </section>
+
+{{-- Show Pass if actively selling. --}}
+@if (count($pass->discounts))
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
@@ -48,14 +53,14 @@
         </div>
         <div class="column">
           @if (Auth::user())
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @endif
         </div>
       </div>
       {{-- Vendor Listing --}}
-      @forelse ($pass->discounts->shuffle() as $d)
+      @foreach ($pass->discounts->sortBy('vendor_id') as $d)
         <div class="product-card product-list city1">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -78,14 +83,12 @@
                 @if ($d->limited_availability == 1)
                   <li class="dp-danger">Limited Availability - Book Early!</li>
                 @endif
-                <li><a href="{{ $d->url }}" target="_blank">Visit Website</a></li>
+                <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
               </ul>
             </div>
           </div>
         </div>
-      @empty
-        <h3><strong>The 2018  pass will be available May 1st.</strong></h3>
-      @endforelse
+      @endforeach
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
@@ -97,9 +100,9 @@
   			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
           @if (Auth::user())
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @endif
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>
@@ -107,6 +110,8 @@
     </div>
   </div>
 </div>
+
+@endif
 
 @stop
 

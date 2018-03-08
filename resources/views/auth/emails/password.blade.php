@@ -28,8 +28,8 @@
                                 <tr>
                                     <td align="center" height="70" style="height:70px;">
                                         <a href="" style="display: block; border-style: none !important; border: 0 !important;">
-																					<img width="220" border="0" style="display: block; width: 220px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
-																				</a>
+											<img width="220" border="0" style="display: block; width: 220px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
+										</a>
                                     </td>
                                 </tr>
                             </table>
@@ -86,8 +86,8 @@
                     {{-- <tr>
                         <td align="center" class="section-img">
                             <a href="" style=" border-style: none !important; display: block; border: 0 !important;">
-															<img src="https://dev.dimplepass.com/img/emails/hero-ynp.jpg" style="display: block; width: 590px;" width="590" border="0" alt="" />
-														</a>
+								<img src="https://dev.dimplepass.com/img/emails/hero-ynp.jpg" style="display: block; width: 590px;" width="590" border="0" alt="" />
+							</a>
                         </td>
                     </tr> --}}
                     <tr>
@@ -99,7 +99,7 @@
                                 <tr>
                                     <td align="center" style="color: #888888; font-size: 16px; font-family: 'Maven Pro', sans-serif; line-height: 24px;">
                                        <div style="line-height: 24px;">
-																						<h3>Lost something, did ya?</h3>
+											<h3>Lost something, did ya?</h3>
                                             <h2><a href="{{ $link = url(config('app.url').route('password.reset', $token, false)) }}">Click here to reset your password.</a></h2>
                                         </div>
                                     </td>

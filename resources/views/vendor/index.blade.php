@@ -1,22 +1,19 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Meta Title Here</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>Dimple Pass - Vendor Info</title>
+  <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
+  <meta property="og:title" content="Dimple Pass - Vendor Info"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-Vendor <span class="dp-warning">/</span> Why be a vendor?
 @stop
 
 @section('content')
@@ -27,7 +24,7 @@ Vendor <span class="dp-warning">/</span> Why be a vendor?
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">@yield('logo-tag')</h1>
+          <h1 class="mb-2 white-color">Vendor <span class="dp-warning">/</span> Why be a vendor?</h1>
           <h2 class="mt-0 mb-2 white-color"><strong>Exclusive network of the best travel providers.</strong></h2>               
         </div>
     </div>

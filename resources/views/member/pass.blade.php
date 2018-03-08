@@ -1,43 +1,22 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>Dimple Pass - My Passes</title>
+  <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
+  <meta property="og:title" content="Dimple Pass - My Passes"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
 
-@section('logo-tag')
-My Passes
-@stop
-
 @section('content')
-
-{{-- Page Title --}}
-{{-- <div class="page-title">
-  <div class="container">
-    <div class="column">
-      <h1>My Passes: 2018 Yellowstone Dimple Pass</h1>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a></li>
-        <li class="separator">&nbsp;</li>
-        <li><a href="{{ route('member.show', Auth::user()) }}">My Passes</a></li>
-        <li class="separator">&nbsp;</li>
-        <li>2018 Yellowstone</li>
-      </ul>
-    </div>
-  </div>
-</div> --}}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2 mt-5">
