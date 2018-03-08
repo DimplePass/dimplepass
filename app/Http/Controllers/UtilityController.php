@@ -48,13 +48,19 @@ class UtilityController extends Controller
 	// Contact
 	public function contact()
 	{
-		return view('contact');
+		$helpTypes = ['Login Issues', 'My Passes', 'Membership', 'Redemption', 'Payment', 'Refunds', 'Other'];
+		return view('contact', [
+			'helpTypes' => $helpTypes
+		]);
 	}
 
 	// FAQs
 	public function faqs()
 	{
-		return view('faqs');
+		$helpTypes = ['Login Issues', 'My Passes', 'Membership', 'Redemption', 'Payment', 'Refunds', 'Other'];
+		return view('faqs', [
+			'helpTypes' => $helpTypes
+		]);
 	}
 
 	// Foundation Pages

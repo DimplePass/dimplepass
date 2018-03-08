@@ -65,18 +65,10 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="form-group">
-            <label for="help_category">Category</label>
-            <select class="form-control form-control-rounded" id="help_category">
-              <option>-- Please choose --</option>
-              <option>Having Login Troubles</option>
-              <option>My Passes</option>
-              <option>Having Trouble Redeeming</option>
-              <option>Having Trouble Making a Reservation</option>
-              <option>Want a Refund</option>
-              <option>Other</option>}
-              option
-            </select>
+          <div class="form-group{{ $errors->has('help_type') ? ' has-error' : '' }}">
+              {!! Form::label('help_type', 'Type') !!}
+              {!! Form::select('help_type', $helpTypes, null, ['id' => 'help_type', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => '-- Please choose --']) !!}
+              <small class="text-danger">{{ $errors->first('help_type') }}</small>
           </div>
         </div>
         <div class="col-12">
