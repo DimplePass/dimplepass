@@ -3,7 +3,7 @@
 @section('meta-page')
   <title>{{ $pass->name }} Dimple Pass</title>
   <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
-  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupoints, attractions, activities, dimple pass">
+  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
@@ -25,11 +25,19 @@
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h1 class="mb-2 white-color">The Best of {{ $pass->name }} National Park</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>               
+          @if (count($pass->discounts))
+            <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>   
+          @else
+            <h2 class="mt-0 mb-2 white-color"><strong>2018 Summer Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
+          @endif
+                      
         </div>
     </div>
   </div>
 </section>
+
+{{-- Show Pass if actively selling. --}}
+@if (count($pass->discounts))
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
@@ -52,7 +60,7 @@
         </div>
       </div>
       {{-- Vendor Listing --}}
-      @forelse ($pass->discounts->shuffle() as $d)
+      @foreach ($pass->discounts->shuffle() as $d)
         <div class="product-card product-list city1">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -80,9 +88,7 @@
             </div>
           </div>
         </div>
-      @empty
-        <h3><strong>The 2018  pass will be available May 1st.</strong></h3>
-      @endforelse
+      @endforeach
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
@@ -104,6 +110,8 @@
     </div>
   </div>
 </div>
+
+@endif
 
 @stop
 
