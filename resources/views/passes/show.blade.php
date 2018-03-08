@@ -53,9 +53,9 @@
         </div>
         <div class="column">
           @if (Auth::user())
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @endif
         </div>
       </div>
@@ -83,7 +83,7 @@
                 @if ($d->limited_availability == 1)
                   <li class="dp-danger">Limited Availability - Book Early!</li>
                 @endif
-                <li><a href="{{ $d->url }}" target="_blank">Visit Website</a></li>
+                <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
               </ul>
             </div>
           </div>
@@ -100,9 +100,9 @@
   			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
           @if (Auth::user())
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
           @endif
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>

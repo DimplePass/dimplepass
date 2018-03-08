@@ -37,11 +37,11 @@
         <div class="card">
           <div class="card-header" role="tab">
             <h6>
+              <i class="fa fa-cc-visa"></i>
+              <i class="fa fa-cc-mastercard"></i>
               <i class="fa fa-cc-amex"></i>
               <i class="fa fa-cc-discover"></i>
-              <i class="fa fa-cc-jcb"></i>
-              <i class="fa fa-cc-mastercard"></i>
-              <i class="fa fa-cc-visa"></i>
+              <i class="fa fa-cc-diners-club"></i>
             </h6>
           </div>
           <div class="card-body">
