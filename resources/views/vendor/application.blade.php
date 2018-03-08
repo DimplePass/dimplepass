@@ -43,9 +43,110 @@
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h1>Vendor Application</h1>
-      <h3>Although we pride ourselves in knowing the best of the best out there and hand selecting our vendors, we may have missed a gem or two.  Please drop a line to let us know if you are interested in becoming a part of the Dimple Pass in your region.</h3>
+      <h4>Although we pride ourselves in knowing the best of the best out there and hand selecting our vendors, we may have missed a gem or two.  Please drop a line to let us know if you are interested in becoming a part of the Dimple Pass in your region.</h4>
       <hr>
-      <h5 class="dp-warning">Form will go here.</h5>
+
+      {!! Form::open(['method' => 'POST', 'route' => 'vendor.application.process', 'class' => 'form-horizontal']) !!}
+      
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group{{ $errors->has('vendor') ? ' has-error' : '' }}">
+                {!! Form::label('vendor', 'Vendor Name') !!}
+                {!! Form::text('vendor', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('vendor') }}</small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+                {!! Form::label('url', 'Website') !!}
+                {!! Form::text('url', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('url') }}</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
+                {!! Form::label('location', 'Location') !!}
+                {!! Form::text('location', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('location') }}</small>
+            </div> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group{{ $errors->has('years') ? ' has-error' : '' }}">
+                {!! Form::label('years', 'Years in Business') !!}
+                {!! Form::text('years', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('years') }}</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group{{ $errors->has('occupancy') ? ' has-error' : '' }}">
+                {!! Form::label('occupancy', 'Occupancy Per Day') !!}
+                {!! Form::text('occupancy', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('occupancy') }}</small>
+            </div> 
+          </div>
+          <div class="col-md-4">
+            <div class="form-group{{ $errors->has('existingDiscounts') ? ' has-error' : '' }}">
+                {!! Form::label('existingDiscounts', 'Currently Offering Discounts?') !!}
+                {!! Form::text('existingDiscounts', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('existingDiscounts') }}</small>
+            </div> 
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
+                {!! Form::label('about', 'About the Business') !!}
+                {!! Form::textarea('about', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'What makes you unique and stand out from the crowd?', 'rows' => '5']) !!}
+                <small class="text-danger">{{ $errors->first('about') }}</small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group{{ $errors->has('discounts') ? ' has-error' : '' }}">
+                {!! Form::label('discounts', 'What discounts would you like to offer?') !!}
+                {!! Form::textarea('discounts', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Tell us a bit about your discount offer(s).', 'rows' => '5']) !!}
+                <small class="text-danger">{{ $errors->first('discounts') }}</small>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                {!! Form::label('name', 'Contact Name') !!}
+                {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('name') }}</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                {!! Form::label('email', 'Your Email') !!}
+                {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('email') }}</small>
+            </div> 
+          </div>
+          <div class="col-md-4">
+            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                {!! Form::label('phone', 'Your Phone') !!}
+                {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                <small class="text-danger">{{ $errors->first('phone') }}</small>
+            </div> 
+          </div>
+        </div>
+        <hr>
+        <h4>We look forward to learning more and will be in touch soon!</h4>
+
+        {!! Form::submit("Send Application", ['class' => 'btn btn-success btn-lg float-right mt-3']) !!}
+      
+      {!! Form::close() !!}
+
+
     </div>
   </div>
 </div>

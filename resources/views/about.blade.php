@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider mb-6" style="background-image: url(/img/destinations/glacier-1920x580.jpg);">
+<section class="hero-slider mb-6" style="background-image: url(/img/destinations/grand-canyon-1920x580.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
@@ -35,15 +35,21 @@
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-5">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+      <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/features/grand-canyon-havasu-540x540.jpg" alt="Havasu Falls in Grand Canyon National Park">
     </div>
     <div class="col-md-7 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
-      <h3>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner.</h3>
+      <h2>Passion for the Outdoors</h2>
+      <h3>We are lifelong adventurers looking to do something for the future of the outdoors.</h3>
       <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <h3>The Past</h3>
+      <p>We are a small group of explorers who have worked together in the outdoor travel marketing industry for 56 cumulative years.  We even worked together for most of those years bringing solutions to both vendors and visitors in outdoor destinations.  Our focus included national parks and the ski and summer resorts throughout most of the west and a few gems back east.  Needless to say, we've learned a lot over the years and we've brought that knowledge to Dimple Pass.</p>
+      <hr>
+      <h3>The Present</h3>
+      <p>We wanted to continue working together on something fresh - something that exploited each of our individual talents and allowed us to thrive into areas of true passion.  Something that was simple in concept, but rich and complex in value.  We think the Dimple Pass solves many of the root problems that travelers and vendors navigate each day and we can't wait to continue learning as we grow.  To top it all off, we are going to give 100% of our profits to organizations that <a href="{{ route('foundation') }}">get kids outdoors</a>.</p>
+      <hr>
+      <h3>The Future</h3>
+      <p>We are starting modestly by introducing only a few national park passes.  We plan to learn from our experience this year and evolve from there.  Our goal is to listen closely to both visitors and vendors and continue to solve real problems for each of them.  One day, when someone asks you about your vacation, you can say - "I Dimpled it and it was the best vacation of my life.'</p>
     </div>
   </div>
 </div>

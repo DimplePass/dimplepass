@@ -35,17 +35,17 @@
 <div class="container padding-bottom-3x mb-1 mt-5">
 
   <div class="row padding-bottom-2x">
-    <div class="col-md-4">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+    <div class="col-md-4 text-center">
+      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="100% Profits to Get Kids Outdoors">
+      <h4><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></h4>
     </div>
     <div class="col-md-8 text-md-left text-center">
-      <img src="/img/logo/logo.png" alt="Dimple Pass" class="float-right">
       <h2 class="mb-5">You <strong>save money</strong> on items that should already be on your <strong>must-do</strong> list.</h2>
       <div class="mt-30 hidden-md-up"></div>
       <hr>
       <h3 class="mb-30">Purchase the Dimple Pass</h3>
       <i class="pe-7s-credit float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>If you like the discounts in a Pass, click "Buy the $26 Pass".  You will be taken to a simple and secure checkout page to create a basic profile and pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
       <hr >
       <h3 class="mb-30">Present to Vendor</h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
@@ -63,11 +63,11 @@
       <hr>
       <h3 class="mb-30">Save Money</h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>Well, yeah...that's the point!  You probably understand this already, but the whole reason behind the Dimple Pass is so that you can save money on the best attractions and activities during your vacation.  We'd like to think that you can use at least one discount per day!</p>
       <hr>
       <h3 class="mb-30">Have the Best Vacation Ever</h3>
       <i class="pe-7s-smile float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>We've done the research and have already chosen the best attractions and activities for you.  You have a leg up on everyone else who has been spending countless hours doing their own research.  Simply put...we wish we were on this vacation with you!</p>
     </div>
   </div>
 </div>
