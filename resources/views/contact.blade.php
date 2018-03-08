@@ -35,7 +35,7 @@
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-4">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+      <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/features/zion-path-540x540.jpg" alt="Hiking in Zion National Park">
     </div>
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
