@@ -1,132 +1,262 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>Dimple Pass - National Parks Discount Cards</title>
+  <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
+  <meta property="og:title" content="Dimple Pass - National Parks Discount Cards"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-Page Title
 @stop
 
 @section('content')
 
-<!-- Page Content-->
+{{-- Start Form --}}
+{!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
+
+{{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
-    <!-- Checkout Adress-->
-    <div class="col-xl-9 col-lg-8">
-      <div class="checkout-steps">
-        <a href="/checkout/review">3. Review</a>
-        <a class="active" href="/checkout/payment"><span class="angle"></span>2. Payment</a>
-        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. Billing Address</a>
+
+    <div class="col-lg-8">
+
+      {{-- Checkout Steps --}}
+      <div class="checkout-steps hidden-xs-down">
+        <a class="active" href="/checkout/payment">2. Payment</a>
+        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 
-{{--       <aside class="user-info-wrapper">
+        {{-- Credit Card --}}
+        <div class="card">
+          <div class="card-header" role="tab">
+            <h6>
+              <i class="fa fa-cc-visa"></i>
+              <i class="fa fa-cc-mastercard"></i>
+              <i class="fa fa-cc-amex"></i>
+              <i class="fa fa-cc-discover"></i>
+              <i class="fa fa-cc-diners-club"></i>
+            </h6>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
+                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
+                    <small class="text-danger">{{ $errors->first('number') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
+                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
+                    <small class="text-danger">{{ $errors->first('expiry') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
+                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
+                    <small class="text-danger">{{ $errors->first('cvc') }}</small>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="card-wrapper"></div>
+              </div>
+              <div class="col-md-7">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
+                    <small class="text-danger">{{ $errors->first('zipcode') }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- Checkout Step Buttons --}}
+        <div class="checkout-footer mt-5">
+          <a class="btn btn-outline-secondary float-left m-2" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
+          {!! Form::button('Place Order <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2']) !!}
+        </div>
+
+    </div>
+
+    {{-- Sidebar --}}
+    <div class="col-lg-4 hidden-xs-down">
+
+      <aside class="user-info-wrapper">
         <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-          <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div>
+          {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
         </div>
         <div class="user-info">
           <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
-					<column class="col-sm-5">
-	          <div class="user-data">
-	            <h4>Happy GoLucky</h4>
-	            <span>Joined February 06, 2017</span>
-	          </div>
-					</column>
-					<column class="col-sm-5">
-	          <div class="user-data">
-							<h6><a href="#">happy@golucky.com</a></h6>
-							<h6>(307) 690-9788</h6>
-							<h6>130 Yellow Rose Dr., Alta, WY  83414</h6>
-	          </div>
-					</column>
-        </div>
-      </aside> --}}
-
-      <h4 class="mt-4">Payment Info</h4>
-      <hr class="padding-bottom-1x">
-        <div class="card">
-          <div class="card-header" role="tab">
-            <h6>We accept following credit cards:&nbsp;<img class="d-inline-block align-middle" src="/img/credit-cards.png" style="width: 120px;" alt="Cerdit Cards"></h6>
-          </div>
-          <div class="card-body">
-            <form class="interactive-credit-card row">
-              <div class="form-group col-md-4">
-                <input class="form-control" type="text" name="number" placeholder="Card Number" required>
-              </div>
-              <div class="form-group col-md-4">
-                <input class="form-control" type="text" name="name" placeholder="Name on Card" required>
-              </div>
-              <div class="form-group col-md-2">
-                <input class="form-control" type="text" name="expiry" placeholder="MM/YY" required>
-              </div>
-              <div class="form-group col-md-2">
-                <input class="form-control" type="text" name="cvc" placeholder="CVC" required>
-              </div>
-              <div class="col-sm-6">
-                {{-- <button class="btn btn-outline-primary btn-block margin-top-none" type="submit">Submit</button> --}}
-              </div>
-            </form>
-            <div class="card-wrapper"></div>
+          <div class="user-data">
+            <h4>{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
+            <span>Joined {{ (isset(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
           </div>
         </div>
-      <div class="checkout-footer margin-top-1x">
-        <div class="column"><a class="btn btn-outline-secondary" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back</span></a></div>
-        <div class="column"><a class="btn btn-primary" href="/checkout/review"><span class="hidden-xs-down">Continue&nbsp;</span><i class="icon-arrow-right"></i></a></div>
-      </div>
-    </div>
-    <!-- Sidebar          -->
-    <div class="col-xl-3 col-lg-4">
-      <aside class="sidebar">
-        <div class="padding-top-2x hidden-lg-up"></div>
-        <!-- Order Summary Widget-->
-        <section class="widget widget-order-summary">
-          <h3 class="widget-title">Order Summary</h3>
-          <table class="table">
-            <tr>
-              <td>Glacier</td>
-              <td class="text-medium">$26.00</td>
-            </tr>
-            <tr>
-              <td>Yellowstone</td>
-              <td class="text-medium">$26.00</td>
-            </tr>
-            <tr>
-							<td>
-                <div class="custom-control custom-checkbox">
-                  <input class="custom-control-input" type="checkbox" id="donate4">
-                  <label class="custom-control-label dp-warning" for="donate4">Add $4 to get kids outdoors.</label>
-									<p><a href="#"><i class="pe-7s-help1"></i> What is this?</a></p> 
-                </div>
-							</td>			
-              <td  class="text-medium">$0</td>   
-            </tr>       
-            <tr>
-              <td></td>
-              <td class="text-lg text-medium">$52.00</td>
-            </tr>
-          </table>
-        </section>
       </aside>
+      <nav class="list-group mb-4">
+        <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+        <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
+      </nav>
+
+      @include('/checkout/_inc/ordersummary')
     </div>
+
   </div>
 </div>
+
+    {{-- End Form --}}
+    {!! Form::close() !!}
 
 @stop
 
 @section('scripts')
 <script>
+
+//////////
+/// On Page Load
+//////////
+
+$(function() {
+
+  /// Add total of all passes.
+  addTotalDue();
+
+});
+
+//////////
+/// Direct Donation sync and math.
+//////////
+
+$('.donate4').on('click', function() {
+  if($(this).is(':checked')) {
+    $('.donate4').prop('checked', true);
+    $('#dropdown-donate4').show();
+  } else {
+    $('.donate4').prop('checked', false);
+    $('#dropdown-donate4').hide();
+  }
+  // Fire donation math.
+  addTotalDue();
+});
+
+//////////
+/// Update Pass Count in Header after removal
+//////////
+
+function passCountSubtract() {
+  var count = Number($('#count').text());
+  count--;
+  $(".count").text(count).fadeIn(1200);
+}
+
+//////////
+/// Add total due and display
+//////////
+
+function addTotalDue() {
+  // Add total of passes.
+  totalPasses = 0;
+  $('.passFee').each(function(){
+      totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
+  });
+  // Add donation.
+  if ($('#donate4').is(':checked')) {
+    var donateAmount = 4;
+  } else {
+    var donateAmount = 0;
+  }
+  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+  // Add total of passes and donation.
+  var total = totalPasses + donateAmount; 
+  $('.totalDue').text(addCommas(roundTo(total, 0)));
+}
+
+//////////
+/// Adds Number Commas and decimal point.
+//////////
+
+function addCommas(nStr) {
+  nStr += '';
+  x = nStr.split('.');
+  x1 = x[0];
+  x2 = x.length > 1 ? '.' + x[1] : '';
+  var rgx = /(\d+)(\d{3})/;
+  while (rgx.test(x1)) {
+    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+  }
+  return x1 + x2;
+}
+
+//////////
+/// Rounds current calculations.
+//////////
+
+function roundTo(num, places) {
+  var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
+  return calc.toFixed(2);
+}
+
+//////////
+/// Form Validation
+/// http://formvalidation.io/settings/
+//////////
+
+$(function () {
+  $('#checkoutPayment').formValidation({
+    framework: 'bootstrap',
+    excluded: ':disabled',
+    fields: {
+      number: {
+        validators: {
+          notEmpty: {
+            message: 'What is the credit card number?'
+          }
+        }
+      },
+      name: {
+        validators: {
+          notEmpty: {
+            message: 'What is the name on the card?'
+          }
+        }
+      },
+      expiry: {
+        validators: {
+          notEmpty: {
+            message: 'Required'
+          }
+        }
+      },
+      cvc: {
+        validators: {
+          notEmpty: {
+            message: 'Required'
+          }
+        }
+      },
+      zipcode: {
+        validators: {
+          notEmpty: {
+            message: 'How about a Zip Code?'
+          }
+        }
+      },
+    }
+  });
+});
 
 </script>
 @stop

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pass;
 // use App\Destination;
 // use Carbon\Carbon;
 // use Illuminate\Http\Request;
@@ -31,9 +32,11 @@ class UtilityController extends Controller
 	// Homepage
 	public function home()
 	{
-		// return view('index');
-		// return view('maintenance');
-    return view('comingsoon');
+    $passes = \App\Pass::all()->where('active',1)->sortBy('name');
+		// return $passes;
+    return view('index',[
+        'passes' => $passes
+    ]);
 	}
 
 	// About
@@ -60,10 +63,22 @@ class UtilityController extends Controller
 		return view('foundation.index');
 	}
 
+	// Guarantee
+	public function guarantee()
+	{
+		return view('guarantee');
+	}
+
 	// How it Works
 	public function how()
 	{
 		return view('how');
+	}
+
+	// Only the Best Attractions
+	public function thebest()
+	{
+		return view('thebest');
 	}
 
 }

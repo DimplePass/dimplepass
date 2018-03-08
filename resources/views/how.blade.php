@@ -1,88 +1,72 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>Dimple Pass - How it Works</title>
+  <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
+  <meta property="og:title" content="Dimple Pass - How it Works"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-How does it work?
 @stop
 
 @section('content')
 
-<!-- Page Title-->
-<div class="page-title">
+{{-- Hero Slider --}}
+<section class="hero-slider" style="background-image: url(/img/destinations/grand-canyon-1920x580.jpg);">
   <div class="container">
-    <div class="column">
-      <h1>How does it work?</h1>
-    </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>How does it work?</li>
-      </ul>
+    <div class="row">
+      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
+        <div class="hero-text">
+          <h1 class="mb-2 white-color">How does it work?</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>Discounted. Simple. <span class="dp-warning">Best Vacation Ever.</span></strong></h2>               
+        </div>
     </div>
   </div>
-</div>
-<!-- Page Content-->
+</section>
 
-
-<div class="container padding-bottom-2x mb-2">
+{{-- Page Content --}}
+<div class="container padding-bottom-3x mb-1 mt-5">
 
   <div class="row padding-bottom-2x">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
     </div>
-    <div class="col-md-7 text-md-left text-center">
-      <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between">
-        <div class="step">
-          <div class="step-icon-wrap">
-            <div class="step-icon"><i class="pe-7s-credit"></i></div>
-          </div>
-          <h4 class="step-title"><strong class="dp-warning">1</strong> Purchase a Pass</h4>
-        </div>
-        <div class="step">
-          <div class="step-icon-wrap">
-            <div class="step-icon"><i class="pe-7s-print"></i></div>
-          </div>
-          <h4 class="step-title"><strong class="dp-warning">2</strong> Print it</h4>
-        </div>
-        <div class="step">
-          <div class="step-icon-wrap">
-            <div class="step-icon"><i class="pe-7s-id"></i></div>
-          </div>
-          <h4 class="step-title"><strong class="dp-warning">3</strong> Present to Vendor</h4>
-        </div>
-        <div class="step">
-          <div class="step-icon-wrap">
-            <div class="step-icon"><i class="pe-7s-piggy"></i></div>
-          </div>
-          <h4 class="step-title"><strong class="dp-warning">4</strong> Save Money</h4>
-        </div>
-      </div>
+    <div class="col-md-8 text-md-left text-center">
+      <img src="/img/logo/logo.png" alt="Dimple Pass" class="float-right">
+      <h2 class="mb-5">You <strong>save money</strong> on items that should already be on your <strong>must-do</strong> list.</h2>
       <div class="mt-30 hidden-md-up"></div>
-      <h2 class="dp-warning">You save money on items that should already be on your hit list.</h2>
-      <div class="mb-4 mt-4"><hr></div>
-      <h2>Purchase the Dimple Pass</h2>
+      <hr>
+      <h3 class="mb-30">Purchase the Dimple Pass</h3>
+      <i class="pe-7s-credit float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <h2>Print the Pass</h2>
+      <hr >
+      <h3 class="mb-30">Present to Vendor</h3>
+      <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <h5>Book Online</h5>
+      <p>Many Dimple Pass vendors are capable of taking bookings online and redeeming the discount via a code in their reservation system.  Dimple Pass will generate a new code for every year that you can place into your booking engine.  The Dimple Pass member will receive this code when they purchase the Dimple Pass to use with your system.</p>   
+      <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 6rem;"></i>      
+      <h5>Book by Phone</h5>
+      <p>Very similar to the online booking systems for vendors.  Dimple Pass will generate a new code every year that can be used by the Dimple Pass member when they call in to make reservations.  The visitor will receive this code when they purchase the Dimple Pass.  The vendor will simply need to know the code each year so that they can confirm the discount.</p> 
+      <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <h5>Show Pass on Phone</h5>
+      <p>Dimple Pass holders will be able to login using their phone or iPad and view their active passes.  Each pass will have contain the name of the passholder, the active pass, and the discount code in an easy to view display.  This will be able to be shown to the vendor at their place of business during ticket purchasing or booking.</p>
+      <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <h5>Print It</h5>
+      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), Dimple Pass holders may simply present the printed pass at the vendor's place of business.  The pass will have the full name and contact info of the pass holder in case the vendor wants to confirm the identity by checking another form of ID.</p>
+      <hr>
+      <h3 class="mb-30">Save Money</h3>
+      <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
-      <h2>Present to Vendor</h2>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>   
-      <h2>Save Money & Have Fun</h2>
+      <hr>
+      <h3 class="mb-30">Have the Best Vacation Ever</h3>
+      <i class="pe-7s-smile float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
     </div>
   </div>
