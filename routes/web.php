@@ -39,6 +39,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/vendor/promise', ['as' => 'vendor.promise', 'uses' => 'VendorController@promise']);
 	Route::get('/vendor/terms', ['as' => 'vendor.terms', 'uses' => 'VendorController@terms']);
 	Route::get('/vendor/application', ['as' => 'vendor.application', 'uses' => 'VendorController@application']);
+	Route::post('/vendor/application', ['as' => 'vendor.application.process', 'uses' => 'VendorController@applicationProcess']);
 	Route::get('/vendor/email/confirmation', ['as' => 'vendor.email.signupconfirmation', 'uses' => 'VendorController@emailSignupConfirmation']);
 
 	///// 100% for Kids

@@ -11,7 +11,7 @@
               <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
             </ul>
-            <p><a class="navi-link-light" href="#">info@dimplepass.com</a></p>
+            <p><a class="navi-link-light" href="mailto:info@dimplepass.com">info@dimplepass.com</a></p>
             <p><a class="navi-link-light" href="{{ route('utility.contact') }}">Contact Form</a></p>
             <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/dimplepass/" target="_blank"><i class="socicon-facebook"></i></a>
             <a class="social-button shape-circle sb-twitter sb-light-skin" href="https://twitter.com/dimplepass" target="_blank"><i class="socicon-twitter"></i></a>

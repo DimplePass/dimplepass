@@ -35,7 +35,7 @@
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-4">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+      <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/features/zion-path-540x540.jpg" alt="Hiking in Zion National Park">
     </div>
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
@@ -65,18 +65,10 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="form-group">
-            <label for="help_category">Category</label>
-            <select class="form-control form-control-rounded" id="help_category">
-              <option>-- Please choose --</option>
-              <option>Having Login Troubles</option>
-              <option>My Passes</option>
-              <option>Having Trouble Redeeming</option>
-              <option>Having Trouble Making a Reservation</option>
-              <option>Want a Refund</option>
-              <option>Other</option>}
-              option
-            </select>
+          <div class="form-group{{ $errors->has('help_type') ? ' has-error' : '' }}">
+              {!! Form::label('help_type', 'Type') !!}
+              {!! Form::select('help_type', $helpTypes, null, ['id' => 'help_type', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => '-- Please choose --']) !!}
+              <small class="text-danger">{{ $errors->first('help_type') }}</small>
           </div>
         </div>
         <div class="col-12">
