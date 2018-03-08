@@ -34,6 +34,12 @@ class VendorController extends Controller
 		return view('vendor.application');
 	}
 
+	// Application
+	public function applicationProcess()
+	{
+		return view('vendor.application');
+	}
+
 	// Email Signup Confirmation
 	public function emailSignupConfirmation()
 	{
