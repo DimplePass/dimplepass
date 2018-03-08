@@ -35,16 +35,16 @@
 <div class="container padding-bottom-2x mb-2">
   <div class="row padding-bottom-2x">
     <div class="col-md-5">
-      <img class="d-block w-270 mx-auto rounded mb-3" src="/img/holder-540x540.jpg" alt="">
+      <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/features/yosemite-ladyarms-540x540.jpg" alt="">
     </div>
     <div class="col-md-7 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h2>A little heading here</h2>
-      <h3>Bacon ipsum dolor amet hamburger pork loin kevin t-bone sirloin jerky cupim turkey short ribs brisket flank pastrami doner.</h3>
+      <h2>Not Happy with the Dimple Pass?</h2>
+      <h3>Just let us know and we'll give you a full refund.</h3>
       <div class="mb-4 mt-4"><hr></div>
-      <h3>Some more important stuff.</h3>
+      <h3>Easy refund process</h3>
       <i class="pe-7s-cash float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Chuck pork belly tri-tip turducken meatloaf, pig short ribs capicola jerky t-bone cow. Pork chop chuck jerky landjaeger venison cupim alcatra turkey ribeye tail ham hock buffalo tenderloin tongue. Cow filet mignon chicken, tri-tip swine meatloaf capicola pork loin kielbasa pork belly hamburger jowl fatback salami. Leberkas shank jowl, venison landjaeger jerky tri-tip.</p>
+      <p>We understand that sometimes things go wrong that are beyond our control.  Maybe you weren't able to bookt that perfect excursion because the vendor didn't have availability.  Or, maybe it just rained the whole time and you didn't get out of the hotel room.  In any case, all you have to do is let us know within 30 days of returning home and we'll refund your Dimple Pass purchase.</p>
     </div>
   </div>
 </div>
