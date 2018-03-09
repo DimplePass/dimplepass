@@ -20299,6 +20299,19 @@ select.form-control:not([size]):not([multiple]) {
   text-decoration: none;
 }
 
+.fade.in {
+  opacity: 1;
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-backdrop.in {
+  opacity: 0.5;
+}
+
 @media (max-width: 576px) {
   .hero-text {
     top: 3rem;

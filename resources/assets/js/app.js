@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-require('../../../resources/assets/vendor/js/jquery.min.js');
+require('../../../resources/assets/vendor/js/jquery-3.3.1.min.js');
 require('../../../resources/assets/vendor/js/card.min.js');
 require('../../../resources/assets/vendor/js/downCount.min.js');
 require('../../../resources/assets/vendor/js/gmap3.min.js');
