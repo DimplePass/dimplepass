@@ -20154,10 +20154,6 @@ a.list-group-item,
   color: #0F8B8D;
 }
 
-.toolbar .account > .toolbar-dropdown {
-  margin-left: -170px;
-}
-
 .hero-overlay {
   position: relative;
   margin-right: 20px;
@@ -20297,19 +20293,6 @@ select.form-control:not([size]):not([multiple]) {
 
 .passDiscount a {
   text-decoration: none;
-}
-
-.fade.in {
-  opacity: 1;
-}
-
-.modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
-.modal-backdrop.in {
-  opacity: 0.5;
 }
 
 @media (max-width: 576px) {
