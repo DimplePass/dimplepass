@@ -54,7 +54,7 @@
       <a href="https://www.bigcitymountaineers.org" target="_blank">
         <img class="d-block w-270 m-3 rounded mb-5 float-right" src="/img/foundation/bigcitymountaineers.png" alt="Big City Mountaineers">
       </a>
-      <h3>Building Better Futures in the Great Outdoors</h3>
+      <h3>Building Better Futures in the Great Outdoors.</h3>
       <p>At BCM, we work alongside the transformative powers of Mother Nature to leave a lasting impact on the lives of under-resourced youth. Our wilderness expeditions bring kids out of their comfort zones and into the wild, where they develop the confidence needed for more promising futures.</p>
       <p>Our programs focus on improving the self-esteem, sense of responsibility, group communication and decision-making skills of nearly 1,000 youth annually. We engage youth in 7 cities across the country including Boston, Denver, Miami, Minneapolis, Portland, San Francisco, and Seattle. Learn more about our programs by watching the video below.</p>
       <h4><a href="https://www.bigcitymountaineers.org" target="_blank">Learn more about Big City Mountaineers <i class="fa fa-arrow-right"></i></a></h4>

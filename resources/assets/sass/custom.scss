@@ -34,6 +34,11 @@ a.list-group-item, .list-group-item-action {
 	color: $brand-primary;
 }
 
+// Header
+.toolbar .account > .toolbar-dropdown {
+	margin-left: -170px;
+}
+
 // Hero Banners
 .hero-overlay {
 	position: relative;

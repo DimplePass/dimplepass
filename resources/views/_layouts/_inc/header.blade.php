@@ -169,38 +169,6 @@
                   @endif
               </ul>
             </div>
-            <div class="cart">
-              @if (Auth::user())
-                <a href="{{ route('checkout.payment') }}"></a>
-              @else
-                <a href="{{ route('checkout.register') }}"></a>
-              @endif
-              <i class="icon-bag"></i>
-              <span id="count" class="count">0</span>
-              <span class="subtotal">$<span class="totalDue">52</span></span>
-              @if (isset($pass))
-              <div class="toolbar-dropdown">
-                <div class="dropdown-product-item passid-{{ $pass->id }}"><span class="dropdown-product-remove" data-passid="{{ $pass->id }}"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="{{ route('passes.show', $pass->slug) }}"><img src="/img/destinations/{{ $pass->slug }}-300x300.jpg" alt="{{ $pass->name }}"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="{{ route('passes.show', $pass->slug) }}">{{ $pass->name }}</a><span class="dropdown-product-details">${{ $pass->price }}</span></div>
-                </div>
-                <div class="dropdown-product-item donate4" id="dropdown-donate4"><span class="dropdown-product-remove" data-donate4="1"><i class="icon-cross"></i></span><a class="dropdown-product-thumb" href="/foundation"><img src="/img/foundation/everykidinapark-215x215.png" alt="Product"></a>
-                  <div class="dropdown-product-info"><a class="dropdown-product-title" href="/foundation">Donation</a><span class="dropdown-product-details">$4</span></div>
-                </div>
-                <div class="toolbar-dropdown-group">
-                  <div class="column"><span class="text-lg">Total:</span></div>
-                  <div class="column text-right text-lg text-medium">$<span class="totalDue">52</span></div>
-                </div>
-                <div class="toolbar-dropdown-group">
-                  {{-- <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/checkout">View Cart</a></div> --}}
-                  @if (Auth::user())
-                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.payment') }}">Checkout</a></div>
-                  @else
-                    <div class="column"><a class="btn btn-sm btn-block btn-primary" href="{{ route('checkout.register') }}">Checkout</a></div>
-                  @endif
-                </div>
-              </div>
-              @endif
-            </div>
           </div>
         </div>
       </div>
