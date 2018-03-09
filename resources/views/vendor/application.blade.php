@@ -139,10 +139,13 @@
             </div> 
           </div>
         </div>
-        <hr>
-        <h4>We look forward to learning more and will be in touch soon!</h4>
+       
+         <hr>
 
-        {!! Form::submit("Send Application", ['class' => 'btn btn-success btn-lg float-right mt-3']) !!}
+        <div class="text-center">
+          <h4 class="text-center">We look forward to learning more and will be in touch soon!</h4>
+          {!! Form::submit("Send Application", ['class' => 'btn btn-success btn-lg mt-3']) !!}
+        </div>    
       
       {!! Form::close() !!}
 

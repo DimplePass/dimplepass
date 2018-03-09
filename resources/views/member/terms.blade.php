@@ -50,7 +50,7 @@
       <hr>
       <h3>Changes Can Happen <small>Be flexible.</small></h3>
       <i class="pe-7s-way float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>We do our best to lock in vendors before we release each Pass.  Yet, sometimes changes will happen and it is possible that a discount may no longer be offerred.  We hope that you can find another great attraction or activity on the Pass to take the place of any that are no longer available.  Yet, if you possibly bought the pass for one particular offer and it is no longer valide, please remember our <a href="{{ route('utility.guarantee') }}">money back guarantee</a>.</p>
+      <p>We do our best to lock in vendors before we release each Pass.  Yet, sometimes changes will happen and it is possible that a discount may no longer be offerred.  We hope that you can find another great attraction or activity on the Pass to take the place of any that are no longer available.  Yet, if you possibly bought the pass for one particular offer and it is no longer valid, please remember our <a href="{{ route('utility.guarantee') }}">money back guarantee</a>.</p>
     </div>
   </div>
 </div>
