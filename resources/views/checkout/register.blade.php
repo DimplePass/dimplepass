@@ -29,8 +29,8 @@
 
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
-        <a href="/checkout/payment">2. Payment</a>
-        <a class="active" href="/checkout"><span class="angle"></span>1. My Profile</a>
+        <a href="#">2. Payment</a>
+        <a class="active" href="#"><span class="angle"></span>1. My Profile</a>
       </div>
 
       {{-- User Action Statement --}}
