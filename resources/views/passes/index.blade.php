@@ -57,16 +57,20 @@ function initialize() {
         
     // Multiple Markers
     var markers = [
-			@foreach ($passes as $p)
-        ['{{ $p->name }}', {{ $p->destinations->first()->latitude }}, {{ $p->destinations->first()->longitude }}],
-			@endforeach
+		@foreach ($passes as $p)
+            ['{{ $p->name }}', {{ $p->destinations->first()->latitude }}, {{ $p->destinations->first()->longitude }}],
+		@endforeach
     ];
 
     // Info Window Content
     var infoWindowContent = [
 			@foreach ($passes as $p)
-				['<div class="info-box"><a href="{{ route('passes.show', $p->slug) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $p->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $p->name }}</strong></h5><a href="{{ route('passes.show', $p->slug) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">View {{ count($p->discounts) }} Discounts <i class="icon-arrow-right"></i></a></div>'],
-			@endforeach
+                @if(count($p->discounts) == 0)
+				    ['<div class="info-box"><a href="{{ route('passes.show', $p->slug) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $p->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $p->name }}</strong></h5><a href="{{ route('passes.show', $p->slug) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">Available May 1st <i class="icon-arrow-right"></i></a></div>'],
+			    @else
+                    ['<div class="info-box"><a href="{{ route('passes.show', $p->slug) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $p->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $p->name }}</strong></h5><a href="{{ route('passes.show', $p->slug) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">View {{ count($p->discounts) }} Discounts <i class="icon-arrow-right"></i></a></div>'],
+                @endif
+            @endforeach
     ];
         
     // Display multiple markers on a map
