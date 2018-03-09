@@ -10,6 +10,7 @@
 
 	    {{-- JavaScript (jQuery) libraries, and plugins --}}
 			<script src="{{ mix('/js/app.js') }}" type="text/javascript"></script>
+
       {{-- Page Specific JS --}}
       @yield('scripts')
 

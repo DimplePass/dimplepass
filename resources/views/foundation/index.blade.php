@@ -36,52 +36,38 @@
   <div class="row padding-bottom-2x">
     <div class="col-md-4 text-center">
       <aside class="sticky">
-        <img class="d-block w-270 mx-auto rounded mb-5" src="/img/foundation/everykidinapark.png" alt="">
-        <h2><a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank" class="btn btn-primary btn-lg">Learn More About It <i class="icon-arrow-right"></i></a></h2>
+        <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/features/kid-logfly-540x540.jpg" alt="100% Profits to Get Kids Outdoors">
+        <h3 class="gray">
+          Less screen time.<br>
+          More green time!
+        </h3>
       </aside> 
     </div>
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
 
       <h2>Dimple Pass commits 100% of our profits to get kids outdoors.</h2>
-      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Dimple Pass.  There is nothing like seeing a child smile while discovering themselves as a part of their natural environment.  We've teamed up with the National Park Foundation and the Open Outdoors for Kids program in order to create more dimples out there.</p>
+      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Dimple Pass.  Children have less and less opportunity to get outside and experience the growth, independence and discovery that occurs in the great outdoors.  We've teamed up with the two organizations below in order to contribute to a future with more 'green time' and less 'screen time'.</p>
       
-      <blockquote class="my-5">
-        Open OutDoors for Kids creates pathways for kids to enjoy, understand and connect with nature in exciting ways by facilitating outdoor activity, experiential learning, and cultural heritage exercises.
-      </blockquote>
+      <hr>
 
+      <a href="https://www.bigcitymountaineers.org" target="_blank">
+        <img class="d-block w-270 m-3 rounded mb-5 float-right" src="/img/foundation/bigcitymountaineers.png" alt="Big City Mountaineers">
+      </a>
+      <h3>Building Better Futures in the Great Outdoors.</h3>
+      <p>At BCM, we work alongside the transformative powers of Mother Nature to leave a lasting impact on the lives of under-resourced youth. Our wilderness expeditions bring kids out of their comfort zones and into the wild, where they develop the confidence needed for more promising futures.</p>
+      <p>Our programs focus on improving the self-esteem, sense of responsibility, group communication and decision-making skills of nearly 1,000 youth annually. We engage youth in 7 cities across the country including Boston, Denver, Miami, Minneapolis, Portland, San Francisco, and Seattle. Learn more about our programs by watching the video below.</p>
+      <h4><a href="https://www.bigcitymountaineers.org" target="_blank">Learn more about Big City Mountaineers <i class="fa fa-arrow-right"></i></a></h4>
+
+      <hr>
+
+      <a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank">
+        <img class="d-block w-270 rounded m-3 float-right" src="/img/foundation/everykidinapark.png" alt="Ever Kid in a Park">
+      </a>
+      <h3>Creating pathways for kids to enjoy, understand and connect with nature in exciting ways by facilitating outdoor activity, experiential learning, and cultural heritage exercises.</h3>
       <p>Open OutDoors for Kids is an initiative from the National Park Foundation to connect more kids to their national parks through fun and engaging activities. Children today are more disconnected from their natural and cultural heritage than ever before. Open OutDoors for Kids is changing that—building on a child’s innate wonder and curiosity about the natural world.</p>
       <p>National parks are gateways to self-discovery and learning and Open OutDoors for Kids is making sure all kids from across the country get the chance to experience them. Learn more about NPF's work with the Every Kid in a Park initiative, to see how you and your family can enjoy our national parks.</p>
-
-      <hr>
-
-      <h3>Overcoming Obstacles</h3>
-      <p>Research demonstrates that kids who spend time outdoors are healthier and do better in school. Kids who have opportunities for hands-on learning outdoors also demonstrate more interest in and are more proficient in science. Similarly, a young person's understanding of history improves after visiting sites of cultural significance.</p>
-      <p>Yet with cutbacks in school funding for field trips and other barriers to access, kids today have fewer opportunities for experiential learning. At the same time, we are witnessing an epidemic of inactivity among children as they spend more time engaged in "screen time" as opposed to "green time," resulting in rising rates of obesity and other issues. Most at risk are children from underserved, urban communities.</p>
-
-      <hr>
-
-      <h3>Providing Opportunities</h3>
-      <p>The National Park Foundation's Open Outdoors for Kids Initiative introduces and exposes kids — all kids — to experiential, outdoor experiences that promote physical and emotional health, civic engagement and long-term appreciation for nature. Using the spectacular and unparalleled resources of our nation's more than 400 national parks, the program's goal is to connect more children to their culture and heritage, enhance hands-on learning opportunities and deepen connections to the natural world.</p>
-
-      <h5>Through focused programming in and out of parks, Open Outdoors for Kids addresses the following:</h5>
-      <ul>
-        <li><strong>ACCESS:</strong> Providing transportation, programming and free entry to the parks for children and teachers to experience hands-on, immersive learning.</li>
-        <li><strong>RELEVANCY:</strong> Connecting kids and families to the parks through programs that make people's lives better. We establish emotional relevancy of the parks through cultural programs and encourage active, healthy lifestyles through recreational and restoration activities.</li>
-        <li><strong>EDUCATION:</strong> Establish "in-park" opportunities for children to learn in our national parks, the world's largest outdoor classrooms. Unmatched as learning environments and living laboratories, national parks offer children, families and teachers a unique gateway to experience nature, history and culture, to learn about biodiversity and the environment, and to engage with each other in the great outdoors.</li>
-      </ul>
-
-      <hr>
-
-      <h3>What does it mean to Open Outdoors for Kids?</h3>
-      <ul>
-        <li>It means creating pathways for kids to enjoy, understand and connect to nature, history and culture in ways that they might never have experienced otherwise.</li>
-        <li>It means sending a child to a day camp where she’ll discover the joys of hiking Old Rag in Shenandoah National Park.</li>
-        <li>It means training a science teacher in the Ozark National Scenic Riverways to bring water conservation to life back in the classroom.</li>
-        <li>It means transporting a classroom of kids to the Charles Young Buffalo Soldiers National Monument, or the Santa Fe National Historical Trail, for a live, on-site history lesson.</li>
-      </ul>
-
-      <h4>Each door opened represents another kid newly connected to the outdoors, its majesty and history, and all of its possibilities.</h4>
+      <h4><a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank">Learn more about Open Outdoors for Kids <i class="fa fa-arrow-right"></i></a></h4>
 
     </div>
   </div>

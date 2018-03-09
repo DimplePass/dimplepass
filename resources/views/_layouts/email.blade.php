@@ -155,8 +155,8 @@
                     <tr>
                         <td align="center">
                             <a href="https://www.dimplepass.com" style="display: block; border-style: none !important; border: 0 !important;">
-															<img width="90" border="0" style="display: block; width: 90px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
-														</a>
+								<img width="90" border="0" style="display: block; width: 90px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
+							</a>
                         </td>
                     </tr>
                     <tr>
@@ -169,7 +169,7 @@
                     <tr>
                         <td align="center" style="color: #888888; font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 26px;" class="text_color">
                             <div style="color: #333333; font-size: 14px; font-family: 'Maven Pro', sans-serif; font-weight: 600; mso-line-height-rule: exactly; line-height: 26px;">
-																<a href="https://dimplepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">www.dimplepass.com</a> | 
+								<a href="https://dimplepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">www.dimplepass.com</a> | 
                                 <a href="mailto:info@dimplepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">info@dimplepass.com</a>
                             </div>
                         </td>
@@ -199,9 +199,9 @@
                     <tr>
                         <td align="center">
                             <table align="center" border="0" cellpadding="0" cellspacing="0">
-						                    <tr>
-						                        <td height="15" style="font-size: 15px; line-height: 15px;">&nbsp;</td>
-						                    </tr>
+			                    <tr>
+			                        <td height="15" style="font-size: 15px; line-height: 15px;">&nbsp;</td>
+			                    </tr>
                                 <tr>
                                     <td align="center">
                                         <a style="font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 24px;color: #009696; text-decoration: none;font-weight:bold;" href="#">UNSUBSCRIBE</a>

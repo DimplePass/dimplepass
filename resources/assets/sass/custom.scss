@@ -34,6 +34,11 @@ a.list-group-item, .list-group-item-action {
 	color: $brand-primary;
 }
 
+// Header
+.toolbar .account > .toolbar-dropdown {
+	margin-left: -170px;
+}
+
 // Hero Banners
 .hero-overlay {
 	position: relative;
@@ -161,6 +166,19 @@ select.form-control:not([size]):not([multiple]) {
 }
 .passDiscount a {
 	text-decoration: none;
+}
+
+// Total Hack to Make the Modal Work
+.fade.in {
+  opacity: 1;
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.modal-backdrop.in {
+  opacity: 0.5;
 }
 
 //////////
