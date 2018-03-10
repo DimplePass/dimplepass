@@ -3,11 +3,11 @@
     
 <head>
   <meta charset="utf-8">
-  <title>The Dimple Pass | Save Money on National Park Travel</title>  
+  <title>The Get Outside Pass | Save Money on National Park Travel</title>  
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="Dimple Pass - National Park Discounts">
+  <meta name="description" content="Get Outside Pass - National Park Discounts">
   <meta name="keywords" content="">
-  <meta name="author" content="Dimple Pass">    
+  <meta name="author" content="Get Outside Pass">    
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   {{-- Laravel Mix created file --}}
   <link href="{{ url ('/css/printpass.css') }}" rel="stylesheet" type="text/css" media="screen">
@@ -125,7 +125,7 @@
   {{-- Header --}}
   <div class="row">
     <div class="header-1">
-      <img src="/img/logo/logo.png" alt="Dimple Pass" width="200px">
+      <img src="/img/logo/logo.png" alt="Get Outside Pass" width="200px">
     </div>
     <div class="header-2 text-right">
       <h1 class="m-x-0">{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
@@ -232,11 +232,11 @@
   {{-- Footer --}}
   <div class="row">
     <div class="column">
-      <img src="/img/logo/logo.png" alt="Dimple Pass" width="200px">
+      <img src="/img/logo/logo.png" alt="Get Outside Pass" width="200px">
     </div>
     <div class="column text-right">
       <h2 class="m-x-0">Help During Your Vacation?</h2>
-      <h4 class="m-x-0">800-555-1212 | help@dimplepass.com</h4>
+      <h4 class="m-x-0">800-555-1212 | help@getoutsidepass.com</h4>
       <p class="m-x-0">Mon- Fri: 9am-5pm | Sat & Sun: 10am-4pm</p>
       <p>Please let us know activities and attractions you'd like to see added!</p>
     </div>

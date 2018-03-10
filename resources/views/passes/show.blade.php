@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>{{ $pass->name }} Dimple Pass</title>
+  <title>Go {{ $pass->name }} Pass</title>
   <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
-  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, get outside pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="{{ $pass->name }} Dimple Pass"/>
+  <meta property="og:title" content="Go {{ $pass->name }} Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -28,7 +28,7 @@
           @if (count($pass->discounts))
             <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>   
           @else
-            <h2 class="mt-0 mb-2 white-color"><strong>2018 Summer Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
+            <h2 class="mt-0 mb-2 white-color"><strong>The 2018 GO {{ $pass->name }} Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
           @endif
                       
         </div>
@@ -44,10 +44,10 @@
   <div class="row">
     {{-- Vendor Discounts --}}
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
-      {{-- Dimple Pass CTA Bar --}}
+      {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
-          <h2 class="mb-0"><strong>The {{ $pass->name }} Dimple Pass</strong></h2>
+          <h2 class="mb-0"><strong>The GO {{ $pass->name }} Pass</strong></h2>
           <h3 class="mb-0 dp-warning">Summer {{ $pass->start->format('Y') }} <small>{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }}</small></h3>
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>

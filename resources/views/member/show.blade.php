@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Dimple Pass - My Account</title>
+  <title>Get Outside Pass - My Account</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Dimple Pass - My Account"/>
+  <meta property="og:title" content="Get Outside Pass - My Account"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop

@@ -11,11 +11,11 @@
               <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
             </ul>
-            <p><a class="navi-link-light" href="mailto:info@dimplepass.com">info@dimplepass.com</a></p>
+            <p><a class="navi-link-light" href="mailto:info@getoutsidepass.com">info@getoutsidepass.com</a></p>
             <p><a class="navi-link-light" href="{{ route('utility.contact') }}">Contact Form</a></p>
-            <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/dimplepass/" target="_blank"><i class="socicon-facebook"></i></a>
-            <a class="social-button shape-circle sb-twitter sb-light-skin" href="https://twitter.com/dimplepass" target="_blank"><i class="socicon-twitter"></i></a>
-            <a class="social-button shape-circle sb-instagram sb-light-skin" href="https://www.instagram.com/dimplepass/" target="_blank"><i class="socicon-instagram"></i></a>
+            <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/getoutsidepass/" target="_blank"><i class="socicon-facebook"></i></a>
+            <a class="social-button shape-circle sb-twitter sb-light-skin" href="https://twitter.com/getoutsidepass" target="_blank"><i class="socicon-twitter"></i></a>
+            <a class="social-button shape-circle sb-instagram sb-light-skin" href="https://www.instagram.com/getoutsidepass/" target="_blank"><i class="socicon-instagram"></i></a>
           </section>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -78,11 +78,11 @@
                 <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
               </div>
               <button class="btn btn-primary" type="submit"><i class="icon-check"></i></button>
-            </div><span class="form-text text-sm text-white opacity-50">Subscribe to receive new Dimple Pass offers and the latest news.</span>
+            </div><span class="form-text text-sm text-white opacity-50">Subscribe to receive new Get Outside Pass offers and the latest news.</span>
           </form>
         </div>
       </div>
       {{-- Copyright --}}
-      <p class="footer-copyright">© 2018 - All rights reserved. Made with &nbsp;<i class="icon-heart text-danger"></i> &nbsp;by The Dimplers.</p>
+      <p class="footer-copyright">© 2018 - All rights reserved. Made with &nbsp;<i class="icon-heart text-danger"></i> &nbsp;by the Get Outside Pass.</p>
     </div>
   </footer>

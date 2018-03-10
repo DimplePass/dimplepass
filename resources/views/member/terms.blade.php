@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Dimple Pass - National Parks Discount Cards</title>
+  <title>Get Outside Pass - National Parks Discount Cards</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Dimple Pass - National Parks Discount Cards"/>
+  <meta property="og:title" content="Get Outside Pass - National Parks Discount Cards"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -42,7 +42,7 @@
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h1>The Small Print <small>But, not much of it.</small></h1>
-      <h3>These are some things to be aware of about your Dimple Pass.</h3>
+      <h3>These are some things to be aware of about your Get Outside Pass.</h3>
       <hr>
       <h3>Vendors May Not Have Availability <small>Book Early.</small></h3>
       <i class="pe-7s-ticket float-md-left gray-light mr-4" style="font-size: 6rem;"></i>

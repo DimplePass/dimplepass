@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
     <!-- <![endif]-->
 
-    <title>Dimple Pass</title>
+    <title>Get Outside Pass</title>
 
     <style type="text/css">
         body {
@@ -154,8 +154,8 @@
                 <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
                     <tr>
                         <td align="center">
-                            <a href="https://www.dimplepass.com" style="display: block; border-style: none !important; border: 0 !important;">
-								<img width="90" border="0" style="display: block; width: 90px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
+                            <a href="https://www.getoutsidepass.com" style="display: block; border-style: none !important; border: 0 !important;">
+								<img width="90" border="0" style="display: block; width: 90px;" src="https://dev.getoutsidepass.com/img/emails/logo.png" alt="Get Outside Pass" />
 							</a>
                         </td>
                     </tr>
@@ -169,8 +169,8 @@
                     <tr>
                         <td align="center" style="color: #888888; font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 26px;" class="text_color">
                             <div style="color: #333333; font-size: 14px; font-family: 'Maven Pro', sans-serif; font-weight: 600; mso-line-height-rule: exactly; line-height: 26px;">
-								<a href="https://dimplepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">www.dimplepass.com</a> | 
-                                <a href="mailto:info@dimplepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">info@dimplepass.com</a>
+								<a href="https://getoutsidepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">www.getoutsidepass.com</a> | 
+                                <a href="mailto:info@getoutsidepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">info@getoutsidepass.com</a>
                             </div>
                         </td>
                     </tr>
@@ -182,15 +182,15 @@
                             <table align="center" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <a href="https://www.facebook.com/dimplepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.dimplepass.com/img/emails/icon-facebook.png" alt="Facebook"></a>
+                                        <a href="https://www.facebook.com/getoutsidepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.getoutsidepass.com/img/emails/icon-facebook.png" alt="Facebook"></a>
                                     </td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                     <td>
-                                        <a href="https://twitter.com/dimplepass" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.dimplepass.com/img/emails/icon-twitter.png" alt="Twitter"></a>
+                                        <a href="https://twitter.com/getoutsidepass" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.getoutsidepass.com/img/emails/icon-twitter.png" alt="Twitter"></a>
                                     </td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                     <td>
-                                        <a href="https://www.instagram.com/dimplepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.dimplepass.com/img/emails/icon-instagram.png" alt="Instagram"></a>
+                                        <a href="https://www.instagram.com/getoutsidepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.getoutsidepass.com/img/emails/icon-instagram.png" alt="Instagram"></a>
                                     </td>
                                 </tr>
                             </table>
