@@ -72,7 +72,7 @@
             </h3>
             <p class="hidden-xs-down">{{ $d->description }}</p>
             <div class="product-buttons">
-              <h4><i class="icon-tag dp-success"></i> {{ round($d->percent*100) }}% Off {{ $d->name }} <small>(limit {{ $d->limit }})</small></h4>
+              <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
               {!! $d->rates !!}
               <ul class="list-unstyled text-sm">
                 <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
