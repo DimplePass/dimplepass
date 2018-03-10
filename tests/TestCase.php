@@ -1,5 +1,7 @@
 <?php
 namespace Tests;
+use App\Billing\FakePaymentGateway;
+use App\Billing\PaymentGateway;
 use App\Exceptions\Handler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
@@ -11,6 +13,9 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
         // $this->disableExceptionHandling();
         \Artisan::call('migrate');
+        $paymentGateway = new FakePaymentGateway;
+        // Use this for the Payment Gateway
+        $this->app->instance(PaymentGateway::class,$paymentGateway);
     }
     // Hat tip, @adamwathan.
     protected function disableExceptionHandling()

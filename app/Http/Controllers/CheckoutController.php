@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 // use App\Destination;
-// use Carbon\Carbon;
+use Carbon\Carbon;
+use App\Billing\PaymentGateway;
 use App\Pass;
+use App\Purchase;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -12,82 +14,11 @@ use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
+    private $paymentGateway;
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct(PaymentGateway $paymentGateway)
     {
-		//
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit()
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $this->paymentGateway = $paymentGateway;
     }
 
     // Register
@@ -110,7 +41,7 @@ class CheckoutController extends Controller
     // Register
     public function registerUser(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $request->validate([
             'firstname'     =>  'required',
             'lastname'      =>  'required',
@@ -152,7 +83,32 @@ class CheckoutController extends Controller
 	// Payment Store
 	public function checkoutPaymentStore(Request $request)
 	{
-		return $request->all();
+		$this->validate($request,[
+            'number' => 'required',
+            'expiry' => 'required',
+            'cvc' => 'required',
+            'name' => 'required',
+        ]);
+        $token = $this->paymentGateway->getValidTestToken();
+        // return $request->all();
+        $user = \Auth::user();
+        $pass = Pass::findOrFail($request->pass_id);
+
+        $amount = $request->qty*$pass->price;
+        $this->paymentGateway->charge($amount,$token);
+
+        $purchase = Purchase::create([
+            'user_id' => $user->id,
+            'purchase_date' => Carbon::now(),
+        ]);
+        $purchase->items()->create([
+            'pass_id' => $pass->id,
+            'qty' => $request->qty,
+            'price' => $pass->price
+        ]);
+
+        return response()->json($purchase,201);
+
 	}
 
 	// Confirmation
