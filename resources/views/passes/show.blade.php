@@ -47,8 +47,8 @@
       {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
-          <h2 class="mb-0"><strong>The GO {{ $pass->name }} Pass</strong></h2>
-          <h3 class="mb-0 dp-warning">Summer {{ $pass->start->format('Y') }} <small>{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }}</small></h3>
+          <h2 class="mb-0"><strong>The <span class="dp-warning">G.O. {{ $pass->name }}</span> Pass</strong></h2>
+          <h3 class="mb-0">Summer {{ $pass->start->format('Y') }} <small>{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }}</small></h3>
           <h6 class="mt-o">Dates may vary per vendor.</h6>
         </div>
         <div class="column">
