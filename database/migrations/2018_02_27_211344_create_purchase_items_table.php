@@ -17,6 +17,8 @@ class CreatePurchaseItemsTable extends Migration
             $table->increments('id');
             $table->integer('purchase_id')->unsigned();
             $table->integer('pass_id')->unsigned();
+            $table->integer('qty')->default(0);
+            $table->integer('price')->default(0);
             $table->timestamps();
         });
     }

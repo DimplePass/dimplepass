@@ -18,8 +18,8 @@ class CreatePurchasesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('confirmation',20)->nullable();
             $table->dateTime('purchase_date')->nullable();
-            $table->integer('credit_card_id')->unsigned();
-            $table->string('stripe_id')->nullable();
+            $table->integer('credit_card_id')->unsigned()->nullable();
+            $table->string('stripe_charge_id')->nullable();
             $table->string('stripe_status')->nullable();
             $table->timestamps();
         });

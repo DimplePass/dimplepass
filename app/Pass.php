@@ -34,6 +34,11 @@ class Pass extends Model
     	return $this->hasMany(\App\Discount::class);
     }
 
+    public function purchases()
+    {
+        return $this->hasManyThrough(\App\Purchase::class,\App\PurchaseItem::class,'pass_id','id');
+    }
+
     // Scopes
     public function scopeActive($query)
     {

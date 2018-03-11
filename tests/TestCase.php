@@ -1,5 +1,7 @@
 <?php
 namespace Tests;
+use App\Billing\FakePaymentGateway;
+use App\Billing\PaymentGateway;
 use App\Exceptions\Handler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
