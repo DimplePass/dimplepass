@@ -110,7 +110,7 @@ class CheckoutController extends Controller
     // Register
     public function registerUser(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $request->validate([
             'firstname'     =>  'required',
             'lastname'      =>  'required',
