@@ -69,11 +69,10 @@ class CheckoutTest extends TestCase
         	'pass_id' => $pass->id,
         	'qty' => 1,
         	'number' => '4242424242424242',
-        	'expiry' => '04 / '.Carbon::now()->addYears(3),
+        	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
         	'cvc' => '123',
         	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
-        	'token' => $paymentGateway->getValidTestToken()
         ]);
 
         $response->assertStatus(201);
@@ -104,7 +103,7 @@ class CheckoutTest extends TestCase
         	'pass_id' => $pass->id,
         	'qty' => 1,
         	'number' => '4242424242424242',
-        	'expiry' => '04 / '.Carbon::now()->addYears(3),
+        	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
         	'cvc' => '123',
         	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,

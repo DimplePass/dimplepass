@@ -1,5 +1,6 @@
 <?php
 
+use App\Billing\PaymentFailedException;
 use App\Billing\StripePaymentGateway;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -9,6 +10,12 @@ use Tests\TestCase;
 
 class StripePaymentGatewayTest extends TestCase
 {
+	protected function setUp()
+	{
+		parent::setUp();
+		$this->lastCharge = $this->lastCharge();
+	}
+
 	private function lastCharge()
 	{
 	    return array_first(\Stripe\Charge::all(
@@ -17,11 +24,11 @@ class StripePaymentGatewayTest extends TestCase
 	    )['data']);		
 	}
 
-	private function newCharges($endingBefore)
+	private function newCharges()
 	{
 		return \Stripe\Charge::all(
 	    	[
-	    		'ending_before' => $endingBefore->id,
+	    		'ending_before' => $this->lastCharge->id,
 	    	],
 	    	['api_key' => config('services.stripe.secret')]
 	    )['data'];		
@@ -44,7 +51,35 @@ class StripePaymentGatewayTest extends TestCase
 
 	    $paymentGateway->charge(2500,$token);
 
-	    $this->assertCount(1,$this->newCharges($lastCharge));
+	    $this->assertCount(1,$this->newCharges());
 	    $this->assertEquals(2500,$this->lastCharge()->amount);
 	}    
+
+	/** @test */
+	function charges_with_invalid_payment_token_fail()
+	{
+		try {
+		    $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
+		    $paymentGateway->charge(2500,'invalid-token');			
+		} catch(PaymentFailedException $e){
+			$this->assertCount(0,$this->newCharges());
+			return;
+		}
+		$this->fail('Charges with invalid token, did not fail!');
+	}
+
+	/** @test */
+	function stripe_returns_valid_token()
+	{
+	    $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
+
+	    $token = $paymentGateway->getValidToken([
+		    "number" => "4242424242424242",
+		    "exp_month" => 1,
+		    "exp_year" => Carbon::now()->addYears(2)->year,
+		    "cvc" => "314"
+	    ]);
+
+	    $this->assertNotNull($token);
+	}
 }

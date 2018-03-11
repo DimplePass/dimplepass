@@ -21,6 +21,11 @@ class FakePaymentGateway implements PaymentGateway
 		return 'valid-token';
 	}
 
+	public function getValidToken()
+	{
+		return 'valid-token';
+	}
+
 	public function charge($amount, $token)
 	{
 		if($token != $this->getValidTestToken())

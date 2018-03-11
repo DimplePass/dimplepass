@@ -84,14 +84,26 @@ class CheckoutController extends Controller
 	// Payment Store
 	public function checkoutPaymentStore(Request $request)
 	{
-		$this->validate($request,[
+		// return $request->all();
+        $this->validate($request,[
             'number' => 'required',
             'expiry' => 'required',
             'cvc' => 'required',
             'name' => 'required',
         ]);
         // $token = $this->paymentGateway->getValidTestToken();
-        $token = $request->token;
+        // dd(trim(substr($request->expiry, 0,strpos($request->expiry, '/'))));
+        // dd(trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry))));
+        if(empty($request->token))
+        {
+            $token = $this->paymentGateway->getValidToken([
+                "number" => $request->number,
+                "exp_month" => trim(substr($request->expiry, 0,strpos($request->expiry, '/'))),
+                "exp_year" => trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry))),
+                "cvc" => $request->cvc
+            ]);            
+        } else $token = $request->token;
+
         // return $request->all();
         $user = \Auth::user();
         $pass = Pass::findOrFail($request->pass_id);
