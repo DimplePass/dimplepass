@@ -145,7 +145,7 @@
   <img src="/img/destinations/yellowstone-1920x580.jpg" alt="2018 Yellowstone Summer" class="m-b-1">
   <div class="row">
     <div class="column">
-      <h1 class="m-x-0">2018 Yellowstone Summer</h1>
+      <h1 class="m-x-0">G.O. Yellowstone - 2018</h1>
     </div>
     <div class="column">
       <h1 class="m-x-0 text-right"> CODE: <span class="dp-primary">18YNP-GEYSER</span></h1>

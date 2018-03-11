@@ -44,7 +44,7 @@
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
       {{-- Pass Title --}}
-      <h2>2018 Yellowstone Get Outside Pass <small class="dp-success">Active</small></h2>
+      <h2>G.O. Yellowstone Pass - Summer 2018 <small class="dp-success">Active</small></h2>
 
       {{-- Book Early Call to Action --}}
       <h5 class="mb-4"> Items with the alarm <i class="pe-7s-alarm dp-danger"></i> should be booked as soon as possible due to limited availability.</h5>

@@ -72,7 +72,7 @@
           <tbody>
             <tr>
               <td>
-                <h5 class="mb-0">Yellowstone</h5>
+                <h5 class="mb-0">G.O. Yellowstone </h5>
                 18 discounts
               </td>
               <td>
@@ -86,7 +86,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Glacier</h5>
+                <h5 class="mb-0">G.O. Glacier</h5>
                 <p>18 discounts</p>
               </td>
               <td>
@@ -100,7 +100,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Yosemite</h5>
+                <h5 class="mb-0">G.O. Yosemite</h5>
                 <p>18 discounts</p>
               </td>
               <td>
@@ -111,7 +111,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Zion</h5>
+                <h5 class="mb-0">G.O. Zion</h5>
                 <p>18 discounts</p>
               </td>
               <td>
@@ -122,7 +122,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Grand Canyon</h5>
+                <h5 class="mb-0">G.O. Grand Canyon</h5>
                 <p>18 discounts</p>
               </td>
               <td>
