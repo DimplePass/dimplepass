@@ -15,10 +15,15 @@ class CreateCreditCardsTable extends Migration
     {
         Schema::create('credit_cards', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('card_number',20);
-            $table->dateTime('exp_date');
-            $table->integer('code')->unsigned();
+            $table->integer('user_id')->index('ix_userid');
+            $table->string('stripe_credit_card_id')->nullable();
+            $table->string('stripe_customer_id')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('last4');
+            $table->string('exp_month');
+            $table->string('exp_year');
+            $table->string('code');
+            $table->tinyInteger('default')->default(0);
             $table->timestamps();
         });
     }
