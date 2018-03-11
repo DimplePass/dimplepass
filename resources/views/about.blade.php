@@ -3,7 +3,7 @@
 @section('meta-page')
   <title>The Get Outside Pass Story</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
 @stop
 
 @section('meta-og')
@@ -11,7 +11,7 @@
   <meta property="og:title" content="The Get Outside Pass Story"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Get Outside Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop

@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
     <!-- <![endif]-->
 
-    <title>Get Outside Pass</title>
+    <title>Get Outside Network</title>
 
     <style type="text/css">
         body {
