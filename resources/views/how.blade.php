@@ -37,10 +37,10 @@
   <div class="row padding-bottom-2x">
     <div class="col-md-4 text-center">
       <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/holder-540x540.jpg" alt="100% Profits to Get Kids Outdoors">
-      <h4 class="hidden-sm-down"><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></h4>
+      <h4 class="hidden-sm-down"><strong><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></strong></h4>
     </div>
     <div class="col-md-8 text-md-left text-center">
-      <h2 class="mb-5">You <strong>save money</strong> on items that should already be on your <strong>must-do</strong> list.</h2>
+      <h2 class="mb-5">You <strong class="dp-warning">save money</strong> on <strong class="dp-warning">the best</strong> attractions and activities for your <strong class="dp-warning">vacation</strong>.</h2>
       <div class="mt-30 hidden-md-up"></div>
       <hr>
       <h3 class="mb-30">Purchase the Get Outside Pass</h3>
