@@ -95,8 +95,8 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
 		$user = factory(User::class)->create();        
-        // $paymentGateway = new FakePaymentGateway;
-        $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
+        $paymentGateway = new FakePaymentGateway;
+        // $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
 
@@ -110,11 +110,11 @@ class CheckoutTest extends TestCase
         	'cvc' => '123',
         	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
-        	// 'token' => 'invalid-token'
+        	'token' => 'invalid-token'
         ], ['HTTP_REFERER' => '/checkout/payment']);
 
         $response->assertStatus(302);
-        $response->assertSessionHas('error','Oops, this credit card payment failed. Your card was declined.');
+        $response->assertSessionHas('error','Oops, this credit card payment failed. ');
         $response->assertRedirect('/checkout/payment');
 
     }
