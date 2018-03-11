@@ -13,9 +13,6 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
         // $this->disableExceptionHandling();
         \Artisan::call('migrate');
-        $paymentGateway = new FakePaymentGateway;
-        // Use this for the Payment Gateway
-        $this->app->instance(PaymentGateway::class,$paymentGateway);
     }
     // Hat tip, @adamwathan.
     protected function disableExceptionHandling()

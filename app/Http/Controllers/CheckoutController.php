@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 // use App\Destination;
-use Carbon\Carbon;
+use App\Billing\PaymentFailedException;
 use App\Billing\PaymentGateway;
 use App\Pass;
 use App\Purchase;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 // use Illuminate\Support\Facades\Cache;
@@ -89,23 +90,29 @@ class CheckoutController extends Controller
             'cvc' => 'required',
             'name' => 'required',
         ]);
-        $token = $this->paymentGateway->getValidTestToken();
+        // $token = $this->paymentGateway->getValidTestToken();
+        $token = $request->token;
         // return $request->all();
         $user = \Auth::user();
         $pass = Pass::findOrFail($request->pass_id);
 
-        $amount = $request->qty*$pass->price;
-        $this->paymentGateway->charge($amount,$token);
+        try {
+            $amount = $request->qty*$pass->price;
+            $this->paymentGateway->charge($amount,$token);
 
-        $purchase = Purchase::create([
-            'user_id' => $user->id,
-            'purchase_date' => Carbon::now(),
-        ]);
-        $purchase->items()->create([
-            'pass_id' => $pass->id,
-            'qty' => $request->qty,
-            'price' => $pass->price
-        ]);
+            $purchase = Purchase::create([
+                'user_id' => $user->id,
+                'purchase_date' => Carbon::now(),
+            ]);
+            $purchase->items()->create([
+                'pass_id' => $pass->id,
+                'qty' => $request->qty,
+                'price' => $pass->price
+            ]);
+        } catch (PaymentFailedException $e){
+            return response()->json([],422);
+        }
+    
 
         return response()->json($purchase,201);
 

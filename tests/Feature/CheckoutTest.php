@@ -17,7 +17,9 @@ class CheckoutTest extends TestCase
     {
 		$this->disableExceptionHandling();	
 		$pass = factory(Pass::class)->create();	
-
+        $paymentGateway = new FakePaymentGateway;
+        // Use this for the Payment Gateway
+        $this->app->instance(PaymentGateway::class,$paymentGateway);
 		$response = $this->get('/checkout/register?pass_id='.$pass->id);
 
 		$response->assertStatus(200);
@@ -30,7 +32,9 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
         $faker  = Faker\Factory::create();	
 		$pass = factory(Pass::class)->create();	
-
+        $paymentGateway = new FakePaymentGateway;
+        // Use this for the Payment Gateway
+        $this->app->instance(PaymentGateway::class,$paymentGateway);
 		$password = $faker->password;
 
 		$response = $this->post('/checkout/register',[
@@ -54,7 +58,9 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
 		$user = factory(User::class)->create();
-
+        $paymentGateway = new FakePaymentGateway;
+        // Use this for the Payment Gateway
+        $this->app->instance(PaymentGateway::class,$paymentGateway);
         // Create a Pass
         $pass = factory(Pass::class)->create(['price' => '2000']);	
 
@@ -67,6 +73,7 @@ class CheckoutTest extends TestCase
         	'cvc' => '123',
         	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
+        	'token' => $paymentGateway->getValidTestToken()
         ]);
 
         $response->assertStatus(201);
@@ -87,6 +94,10 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
 		$user = factory(User::class)->create();        
+        $paymentGateway = new FakePaymentGateway;
+        // Use this for the Payment Gateway
+        $this->app->instance(PaymentGateway::class,$paymentGateway);
+
         $pass = factory(Pass::class)->create(['price' => '2000']);	
 
         $response = $this->actingAs($user)->post('/checkout/payment',[
@@ -97,6 +108,7 @@ class CheckoutTest extends TestCase
         	'cvc' => '123',
         	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
+        	'token' => 'invalid-token'
         ]);
 
         $response->assertStatus(422);
