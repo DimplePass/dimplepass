@@ -10,7 +10,7 @@
   <meta property="og:title" content="OG Title Here"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="OG Image URL Here."/>
-  <meta property="og:site_name" content="Get Outside Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="OG Description Here."/>
   <meta property="og:locale" content="en_US"/>
 @stop

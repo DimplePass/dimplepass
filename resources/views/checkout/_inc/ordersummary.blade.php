@@ -6,8 +6,8 @@
     <table class="table">
       <tr class="passid-{{ $pass->id }}">
         <td>
-          <h6 class="mb-0">{{ $pass->name }} {{ $pass->end->format('Y') }}</h6>
-          <p class="mt-0">{{ count($pass->discounts) }} Discounts</p>
+          <h6 class="mb-0">G.O. {{ $pass->name }} Pass</h6>
+          <p class="mt-0">Summer {{ $pass->end->format('Y') }} - {{ count($pass->discounts) }} Discounts</p>
         </td>
         <td class="text-medium">$<span class="passFee">{{ $pass->price }}</span></td>
       </tr>

@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Go {{ $pass->name }} Pass</title>
+  <title>G.O. {{ $pass->name }} Pass</title>
   <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
-  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, get outside pass">
+  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, get outside network, g.o. pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Go {{ $pass->name }} Pass"/>
+  <meta property="og:title" content="G.O. {{ $pass->name }} Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Get Outside Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -28,7 +28,7 @@
           @if (count($pass->discounts))
             <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>   
           @else
-            <h2 class="mt-0 mb-2 white-color"><strong>The 2018 GO {{ $pass->name }} Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
+            <h2 class="mt-0 mb-2 white-color"><strong>The 2018 G.O. {{ $pass->name }} Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
           @endif
                       
         </div>
