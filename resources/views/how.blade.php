@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Get Outside Pass - How it Works</title>
+  <title>Get Outside Network - How it Works</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Get Outside Pass - How it Works"/>
+  <meta property="og:title" content="Get Outside Network - How it Works"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Get Outside Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -37,10 +37,10 @@
   <div class="row padding-bottom-2x">
     <div class="col-md-4 text-center">
       <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/holder-540x540.jpg" alt="100% Profits to Get Kids Outdoors">
-      <h4 class="hidden-sm-down"><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></h4>
+      <h4 class="hidden-sm-down"><strong><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></strong></h4>
     </div>
     <div class="col-md-8 text-md-left text-center">
-      <h2 class="mb-5">You <strong>save money</strong> on items that should already be on your <strong>must-do</strong> list.</h2>
+      <h2 class="mb-5">You <strong class="dp-warning">save money</strong> on <strong class="dp-warning">the best</strong> attractions and activities for your <strong class="dp-warning">vacation</strong>.</h2>
       <div class="mt-30 hidden-md-up"></div>
       <hr>
       <h3 class="mb-30">Purchase the Get Outside Pass</h3>
