@@ -2,6 +2,7 @@
 
 use App\Billing\FakePaymentGateway;
 use App\Billing\PaymentGateway;
+use App\Billing\StripePaymentGateway;
 use App\Pass;
 use App\User;
 use Carbon\Carbon;
@@ -59,6 +60,7 @@ class CheckoutTest extends TestCase
 		$faker  = Faker\Factory::create();
 		$user = factory(User::class)->create();
         $paymentGateway = new FakePaymentGateway;
+        // $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
         // Create a Pass
@@ -75,7 +77,7 @@ class CheckoutTest extends TestCase
         	'zipcode' => $faker->postcode,
         ]);
 
-        $response->assertStatus(201);
+        $response->assertStatus(302);
 
         // Assert that Purchase was created
         // dd($pass->purchases);
@@ -93,7 +95,8 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
 		$user = factory(User::class)->create();        
-        $paymentGateway = new FakePaymentGateway;
+        // $paymentGateway = new FakePaymentGateway;
+        $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
 
@@ -102,15 +105,17 @@ class CheckoutTest extends TestCase
         $response = $this->actingAs($user)->post('/checkout/payment',[
         	'pass_id' => $pass->id,
         	'qty' => 1,
-        	'number' => '4242424242424242',
+        	'number' => '4000000000000002',
         	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
         	'cvc' => '123',
         	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
-        	'token' => 'invalid-token'
-        ]);
+        	// 'token' => 'invalid-token'
+        ], ['HTTP_REFERER' => '/checkout/payment']);
 
-        $response->assertStatus(422);
+        $response->assertStatus(302);
+        $response->assertSessionHas('error','Oops, this credit card payment failed. Your card was declined.');
+        $response->assertRedirect('/checkout/payment');
 
     }
 }

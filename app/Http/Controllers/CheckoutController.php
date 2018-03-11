@@ -91,13 +91,15 @@ class CheckoutController extends Controller
             'cvc' => 'required',
             'name' => 'required',
         ]);
-        // $token = $this->paymentGateway->getValidTestToken();
-        // dd(trim(substr($request->expiry, 0,strpos($request->expiry, '/'))));
-        // dd(trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry))));
+        $user = \Auth::user();
+        $pass = Pass::findOrFail($request->pass_id);
+        //@ToDo Create the Customer Card 
+
         if(empty($request->token))
         {
             $token = $this->paymentGateway->getValidToken([
                 "number" => $request->number,
+                'name' => $request->name,
                 "exp_month" => trim(substr($request->expiry, 0,strpos($request->expiry, '/'))),
                 "exp_year" => trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry))),
                 "cvc" => $request->cvc
@@ -105,12 +107,13 @@ class CheckoutController extends Controller
         } else $token = $request->token;
 
         // return $request->all();
-        $user = \Auth::user();
-        $pass = Pass::findOrFail($request->pass_id);
+
 
         try {
             $amount = $request->qty*$pass->price;
             $this->paymentGateway->charge($amount,$token);
+
+            // @ToDo: Create Confirmation Number
 
             $purchase = Purchase::create([
                 'user_id' => $user->id,
@@ -121,12 +124,12 @@ class CheckoutController extends Controller
                 'qty' => $request->qty,
                 'price' => $pass->price
             ]);
-        } catch (PaymentFailedException $e){
-            return response()->json([],422);
+        } catch (\Exception $e){
+            // return response()->json(['Payment Failed'],422);
+            return redirect()->back()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
         }
-    
 
-        return response()->json($purchase,201);
+        return redirect()->route('checkout.thanks');
 
 	}
 
