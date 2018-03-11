@@ -26,4 +26,4 @@ mix.copy('node_modules/font-awesome/fonts/', 'public/fonts/');
 mix.copy('resources/assets/pdf/', 'public/pdf/');
 
 // Browsersync Reload
-mix.browserSync('localhost.dimplepass.com');
+mix.browserSync('localhost.getoutsidepass.com');
