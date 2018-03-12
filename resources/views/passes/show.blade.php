@@ -28,7 +28,7 @@
           @if (count($pass->discounts))
             <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>   
           @else
-            <h2 class="mt-0 mb-2 white-color"><strong>The 2018 G.O. {{ $pass->name }} Pass will be available on <span class="dp-warning">May 1st.</span></strong></h2>   
+            <h2 class="mt-0 mb-2 white-color"><strong>G.O. {{ $pass->name }} Pass is available <span class="dp-warning">May 1st.</span></strong></h2>   
           @endif
                       
         </div>
