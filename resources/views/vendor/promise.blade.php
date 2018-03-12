@@ -47,19 +47,19 @@
       <hr>
       <h3>Discounted Access <small>Save money.</small></h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>As a vendor, I will redeem all current offers in my agreement with Get Outside Network for current G.O. Pass holders.  I have provided the G.O. Pass holders with savings on one or more of my services and/or products and I will accept the G.O. Pass for the entirety of the pass season.  In short, if you have a pass, you have a discount with us and we are happy to have you here!</p>
+      <p>As a vendor, I will redeem all current offers in my agreement with Get Outside Pass for current G.O. Yellowstone Pass holders. I have provided discounts on one or more of my services and/or products and I will accept the G.O. Yellowstone Pass for the entirety of the pass season. In short, if you have a pass, you have a discount with us and we are happy to have you here!</p>
       <hr>
       <h3>Incredible Customer Service <small>Friendly and helpful.</small></h3>
       <i class="pe-7s-smile float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>It should go without saying that our vendor customer service is second to none.  Since we hand-pick the attractions, activities and restaurants in each destination, you are sure to have a great experience throughout your vacation experience.  Each vendor is committed to making every guest, including G.O. Pass holders, feel like family.  And, not the long lost cousin type of family!</p>
+      <p>As a vendor, I am committed to provide one of the best customer service experiences out there!  I treat all of my customers with great respect and will do my best to meet expectations and create incredible memories.  I will do what I can to make G.O. Yellowstone Pass holders feel like family.  And, not the long lost cousin type of family!</p>
       <hr>
       <h3>No Hassle Bookings <small>Painless and simple.</small></h3>
       <i class="pe-7s-magic-wand float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Vendors agree to have a simple and hassle free booking and reservation system in place for all G.O. Pass holders.  If the pass is taken at a front desk or ticket window, presenting the G.O. Pass will be a quick and painless procedure.  It's kinda like magic, really.</p>
+      <p>As a vendor, I agree to have a simple and hassle free booking and reservation system in place for all G.O. Yellowstone Pass holders.  Whether booking online or over the phone with a G.O. Yellowstone Pass code, or taken at a front desk or ticket window, presenting the G.O. Yellowstone Pass will be a quick and painless procedure.</p>
       <hr>
       <h3>Knowledgeable Staff <small>We know the Get Outside traveler.</small></h3>
       <i class="pe-7s-info float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>Of most importance, is that all staff are aware of the agreement with the Get Outside Network.  When G.O. Pass holders present their pass in order to receive the discount offer, all employees should know what they are talking about and be ready to assist them with the no-hassle redemption.</p>
+      <p>As a vendor, I will ensure that all staff are aware of the agreement and discount with the Get Outside Pass. When G.O. Yellowstone Pass holders present their pass in order to receive the discount offer, all employees will know what they are talking about and be ready to assist them with the no-hassle redemption.</p>
     </div>
   </div>
 </div>
