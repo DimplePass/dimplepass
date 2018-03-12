@@ -14,11 +14,11 @@
         "bootstrap-sass": "^3.3.7",
         "browser-sync": "^2.23.6",
         "browser-sync-webpack-plugin": "^1.2.0",
-        "cross-env": "^5.1",
+        "cross-env": "^5.1.4",
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "lodash": "^4.17.5",
+        "vue": "^2.5.15"
     },
     "dependencies": {
         "feather-icon": "^0.1.0",
