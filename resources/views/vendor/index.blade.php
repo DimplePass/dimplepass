@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">Vendor <span class="dp-warning">/</span> Why be a vendor?</h1>
+          <h1 class="mb-2 white-color">Why be a vendor?</h1>
           <h2 class="mt-0 mb-2 white-color"><strong>Exclusive network of the best travel providers.</strong></h2>               
         </div>
     </div>
@@ -42,8 +42,8 @@
     {{-- Content --}}
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
-      <h1>Why join Get Outside Pass?</h1>
-      <h3>With so many options, why do you need one more marketing partner?  We've outlined what our current vendors find valuable in their relationship with us at Get Outside Pass. </h3>
+      <h1>Why join the Get Outside Network?</h1>
+      <h3>With so many options, why do you need one more marketing partner?  We've outlined what our current vendors find valuable in their relationship with us at the Get Outside Network. </h3>
       <hr>
       <h3>Exclusive Group <small>Only the best vendors.</small></h3>
       <i class="pe-7s-diamond float-md-left gray-light mr-4" style="font-size: 6rem;"></i>      
@@ -51,19 +51,18 @@
       <hr>
       <h3>New Marketing Partner <small>Reach more potential visitors.</small></h3>
       <i class="pe-7s-plugin float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>Grow your reach into the broader region through what could be called a "cooperative marketing" program.  We get in front of the visitor while they are planning their travel to introduce the Get Outside Pass, and you, an exclusive vendor.  Through online and social media marketing, advertisements in regional print publications, and our network of travel journalists and bloggers, we are doing everything we can to get in front of the vistitor and get them to your front door.</p>
+      <p>Grow your reach into the broader region through what could be called a "cooperative marketing" program.  We get in front of the visitor while they are planning their travel to introduce the G.O. Pass, and you, an exclusive vendor.  Through online and social media marketing, advertisements in regional print publications, and our network of travel journalists and bloggers, we are doing everything we can to get in front of the vistitor and get them to your front door.</p>
       <hr>
-      <h3>The Get Outside Community <small>Happy travelers at your door.</small></h3>
+      <h3>The Get Outside Network <small>Happy travelers at your door.</small></h3>
       <i class="pe-7s-users float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>The Get Outside Community of outdoor travelers is growing and we can introduce you to them.  We are cultivating a group of travelers who enjoy the outdoors and have a love of the National Parks.  They are discerning travelers who enjoy that we are curating the best vendors in the region for them to make the most of their outdoor vacation.  So...join us, and let them discover your incredible experience during their visit.</p>
+      <p>The Get Outside Network of outdoor travelers is growing and we can introduce you to them.  We are cultivating a group of travelers who enjoy the outdoors and have a love of the National Parks.  They are discerning travelers who enjoy that we are curating the best vendors in the region for them to make the most of their outdoor vacation.  So...join us, and let them discover your incredible experience during their visit.</p>
       <hr>
       <h3>No Fees <small>No direct costs.</small></h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>There are no sign up fees and no commissions to pay - EVER.  Of course, if it isn't obvious yet, each of the visitors that we send your way will be looking to save a bit of money by presenting their Get Outside Pass in exchange for discount.</p>
+      <p>There are no sign up fees and no commissions to pay - EVER.  Of course, if it isn't obvious yet, each of the visitors that we send your way will be looking to save a bit of money by presenting their G.O. Pass in exchange for discount.</p>
       <hr>
       <h3>100% to the Kids <small>Profits go to getting kids outdoors.</small></h3>
-      <img class="d-block w-200 ml-5 float-md-right rounded mb-5" src="/img/foundation/everykidinapark.png" alt="Open OutDoors for Kids - National Park Foundation">
-      <p>We have brought our love of the outdoors and experience in digital marketing for the travel industry into a place where we can make a difference.  What better place than to focus on the children of the world who will become the ambassadors of the natural world.  We founded the Get Outside Pass as a place to have fun as we commit 100% of our profits to getting kids outdoors - less "screen time" and more "green time".</p>
+      <p>We have brought our love of the outdoors and experience in digital marketing for the travel industry into a place where we can make a difference.  What better place than to focus on the children of the world who will become the ambassadors of the natural world.  We founded the Get Outside Network as a place to have fun as we commit 100% of our profits to getting kids outdoors - less "screen time" and more "green time".</p>
       <h5><a href="/foundation">Learn more <i class="fa fa-arrow-right"></i></a></h5>
     </div>
   </div>
