@@ -94,7 +94,7 @@ class CheckoutController extends Controller
         ]);
         $user = \Auth::user();
         $pass = Pass::findOrFail($request->pass_id);
-        //@ToDo Create the Customer Card 
+
         $exp_month = trim(substr($request->expiry, 0,strpos($request->expiry, '/')));
         $exp_year = trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry)));
 
