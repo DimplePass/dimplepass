@@ -1,7 +1,7 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
+  <title>The Get Outside Pass | Save Money on National Park Travel</title>
   <meta name="description" content="Meta Description Here" />
 @stop
 
@@ -10,7 +10,7 @@
   <meta property="og:title" content="OG Title Here"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="OG Image URL Here."/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="OG Description Here."/>
   <meta property="og:locale" content="en_US"/>
 @stop

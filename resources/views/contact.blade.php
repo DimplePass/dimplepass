@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Dimple Pass - Contact Us</title>
+  <title>Get Outside Network - Contact Us</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Dimple Pass - Contact Us"/>
+  <meta property="og:title" content="Get Outside Network - Contact Us"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -40,7 +40,7 @@
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h2>Mailing Address</h2>
-      <p>Dimple Pass<br>130 Yellow Rose Dr.<br>Alta, WY  83414</p>
+      <p>Get Outside Pass<br>130 Yellow Rose Dr.<br>Alta, WY  83414</p>
       <h3>Phone</h3>
       <p>(307) 690-9788</p>
       <h3>Email Us</h3>

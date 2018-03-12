@@ -86,7 +86,7 @@
         <div class="inner">
           {{-- Off-Canvas Toggle (#shop-categories) --}}<a class="offcanvas-toggle cats-toggle" href="#shop-categories" data-toggle="offcanvas"></a>
           {{-- Off-Canvas Toggle (#mobile-menu) --}}<a class="offcanvas-toggle menu-toggle" href="#mobile-menu" data-toggle="offcanvas"></a>
-          {{-- Site Logo --}}<a class="site-logo" href="/"><img src="/img/logo/logo.png" alt="Dimple Pass"></a>
+          {{-- Site Logo --}}<a class="site-logo" href="/"><img src="/img/logo/logo.png" alt="Get Outside Network"></a>
         </div>
       </div>
       {{-- Main Navigation --}}
@@ -108,7 +108,7 @@
               </li>
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
-                  @foreach ($activePasses->random(5)->sortBy('name') as $ap)
+                  @foreach ($activePasses->sortBy('name') as $ap)
                     <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
                   @endforeach
                   <li><a href="{{ route('passes.index') }}"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>

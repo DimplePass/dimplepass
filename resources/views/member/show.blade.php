@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Dimple Pass - My Account</title>
+  <title>Get Outside Network - My Account</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Dimple Pass - My Account"/>
+  <meta property="og:title" content="Get Outside Network - My Account"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -72,7 +72,7 @@
           <tbody>
             <tr>
               <td>
-                <h5 class="mb-0">Yellowstone</h5>
+                <h5 class="mb-0">G.O. Yellowstone </h5>
                 18 discounts
               </td>
               <td>
@@ -86,7 +86,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Glacier</h5>
+                <h5 class="mb-0">G.O. Glacier</h5>
                 <p>18 discounts</p>
               </td>
               <td>
@@ -100,7 +100,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Yosemite</h5>
+                <h5 class="mb-0">G.O. Yosemite</h5>
                 <p>18 discounts</p>
               </td>
               <td>
@@ -111,7 +111,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Zion</h5>
+                <h5 class="mb-0">G.O. Zion</h5>
                 <p>18 discounts</p>
               </td>
               <td>
@@ -122,7 +122,7 @@
             </tr>
             <tr>
               <td>
-                <h5 class="mb-0">Grand Canyon</h5>
+                <h5 class="mb-0">G.O. Grand Canyon</h5>
                 <p>18 discounts</p>
               </td>
               <td>

@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Dimple Pass - The Best Attractions </title>
+  <title>Get Outside Network - The Best Attractions </title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Dimple Pass - The Best Attractions "/>
+  <meta property="og:title" content="Get Outside Network - The Best Attractions "/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -46,10 +46,9 @@
       <i class="pe-7s-diamond float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <p>We're picky. We like to hand-select the vendors in each region using one simple rule. Is this the trip that we'd want to take if we had a few days to explore during our well deserved vacation? We strive to work with the best in class operators, resorts, restaurants and activity providers in each area. We place a heavy weight on those that encompass the culture and character of each unique destination. </p>
       <hr>
-      <h3>Curated by Dimple Pass Members</h3>
+      <h3>Curated by Get Outside Pass Members</h3>
       <i class="pe-7s-chat float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>As the Dimple Membership grows, we acquire feedback from real travelers each and every day.  We ask that you get involved as well to let us know if you think we are missing something that should be included in the Pass.  We also ask that you let us know if we've included something that you didn't enjoy.</p>
-
+      <p>As the Get Outside Membership grows, we acquire feedback from real travelers each and every day.  We ask that you get involved as well to let us know if you think we are missing something that should be included in the Pass.  We also ask that you let us know if we've included something that you didn't enjoy.</p>
     </div>
   </div>
 </div>

@@ -3,91 +3,23 @@
 namespace App\Http\Controllers;
 
 // use App\Destination;
-// use Carbon\Carbon;
+use App\Billing\PaymentFailedException;
+use App\Billing\PaymentGateway;
 use App\Pass;
+use App\Purchase;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 // use Illuminate\Support\Facades\Cache;
 
 class CheckoutController extends Controller
 {
+    private $paymentGateway;
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct(PaymentGateway $paymentGateway)
     {
-		//
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit()
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $this->paymentGateway = $paymentGateway;
     }
 
     // Register
@@ -110,7 +42,7 @@ class CheckoutController extends Controller
     // Register
     public function registerUser(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $request->validate([
             'firstname'     =>  'required',
             'lastname'      =>  'required',
@@ -152,7 +84,70 @@ class CheckoutController extends Controller
 	// Payment Store
 	public function checkoutPaymentStore(Request $request)
 	{
-		return $request->all();
+		// return $request->all();
+        $this->validate($request,[
+            'number' => 'required',
+            'expiry' => 'required',
+            'cvc' => 'required',
+            'name' => 'required',
+            'zipcode' => 'required',
+        ]);
+        $user = \Auth::user();
+        $pass = Pass::findOrFail($request->pass_id);
+        //@ToDo Create the Customer Card 
+        $exp_month = trim(substr($request->expiry, 0,strpos($request->expiry, '/')));
+        $exp_year = trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry)));
+
+        if(empty($request->token))
+        {
+            $token = $this->paymentGateway->getValidToken([
+                "number" => $request->number,
+                'name' => $request->name,
+                "exp_month" => $exp_month,
+                "exp_year" => $exp_year,
+                "cvc" => $request->cvc,
+                "address_zip" => $request->zipcode,
+            ]);            
+        } else $token = $request->token;
+
+        // return $request->all();
+
+
+        try {
+            $amount = $request->qty*$pass->price;
+            $charge = $this->paymentGateway->charge($amount,$token);
+
+            // @ToDo: Create Confirmation Number
+
+            $card = $user->cards()->firstOrCreate([
+                'brand' => $charge->source->brand,
+                'last4' => $charge->source->last4,
+                'exp_month' => $charge->source->exp_month,
+                'exp_year' => $charge->source->exp_year,
+                'code' => $request->cvc
+            ]);
+            // dd($card);
+            $purchase = Purchase::create([
+                'user_id' => $user->id,
+                'credit_card_id' => $card->id,
+                'purchase_date' => Carbon::now(),
+                'stripe_charge_id' => $charge->id,
+
+            ]);
+            $purchase->items()->create([
+                'pass_id' => $pass->id,
+                'qty' => $request->qty,
+                'price' => $pass->price
+            ]);
+        } catch (\Exception $e){
+            // return response()->json(['Payment Failed'],422);
+            return redirect()->back()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
+        }
+
+
+
+        return redirect()->route('checkout.thanks');
+
 	}
 
 	// Confirmation

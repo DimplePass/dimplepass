@@ -7,7 +7,7 @@
         <tr>
             <td>
                 <div style="overflow:hidden;display:none;font-size:1px;color:#ffffff;line-height:1px;font-family:Arial;maxheight:0px;max-width:0px;opacity:0;">
-                    Reset your password with Dimple Pass.
+                    Reset your password with Get Outside Pass.
                 </div>
             </td>
         </tr>
@@ -28,7 +28,7 @@
                                 <tr>
                                     <td align="center" height="70" style="height:70px;">
                                         <a href="" style="display: block; border-style: none !important; border: 0 !important;">
-											<img width="220" border="0" style="display: block; width: 220px;" src="https://dev.dimplepass.com/img/emails/logo.png" alt="Dimple Pass" />
+											<img width="220" border="0" style="display: block; width: 220px;" src="https://dev.getoutsidepass.com/img/emails/logo.png" alt="Get Outside Pass" />
 										</a>
                                     </td>
                                 </tr>
@@ -86,7 +86,7 @@
                     {{-- <tr>
                         <td align="center" class="section-img">
                             <a href="" style=" border-style: none !important; display: block; border: 0 !important;">
-								<img src="https://dev.dimplepass.com/img/emails/hero-ynp.jpg" style="display: block; width: 590px;" width="590" border="0" alt="" />
+								<img src="https://dev.getoutsidepass.com/img/emails/hero-ynp.jpg" style="display: block; width: 590px;" width="590" border="0" alt="" />
 							</a>
                         </td>
                     </tr> --}}

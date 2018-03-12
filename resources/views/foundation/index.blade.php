@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Dimple Pass - National Parks Discount Cards</title>
+  <title>Get Outside Network - National Parks Discount Cards</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, dimple pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Dimple Pass - National Parks Discount Cards"/>
+  <meta property="og:title" content="Get Outside Network - National Parks Discount Cards"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Dimple Pass"/>
+  <meta property="og:site_name" content="Get Outside Network"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -46,8 +46,8 @@
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
 
-      <h2>Dimple Pass commits 100% of our profits to get kids outdoors.</h2>
-      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Dimple Pass.  Children have less and less opportunity to get outside and experience the growth, independence and discovery that occurs in the great outdoors.  We've teamed up with the two organizations below in order to contribute to a future with more 'green time' and less 'screen time'.</p>
+      <h2>Get Outside Pass commits 100% of our profits to get kids outdoors.</h2>
+      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Get Outside Pass.  Children have less and less opportunity to get outside and experience the growth, independence and discovery that occurs in the great outdoors.  We've teamed up with the two organizations below in order to contribute to a future with more 'green time' and less 'screen time'.</p>
       
       <hr>
 

@@ -26,6 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    // Releationships
+    public function cards()
+    {
+        return $this->hasMany(\App\CreditCard::class);
+    }
+    // Attributes
 
     // Get and Set Phone Fields as presentable and numbers only
     public function getPhoneAttribute($value) 
