@@ -90,19 +90,23 @@ class CheckoutController extends Controller
             'expiry' => 'required',
             'cvc' => 'required',
             'name' => 'required',
+            'zipcode' => 'required',
         ]);
         $user = \Auth::user();
         $pass = Pass::findOrFail($request->pass_id);
         //@ToDo Create the Customer Card 
+        $exp_month = trim(substr($request->expiry, 0,strpos($request->expiry, '/')));
+        $exp_year = trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry)));
 
         if(empty($request->token))
         {
             $token = $this->paymentGateway->getValidToken([
                 "number" => $request->number,
                 'name' => $request->name,
-                "exp_month" => trim(substr($request->expiry, 0,strpos($request->expiry, '/'))),
-                "exp_year" => trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry))),
-                "cvc" => $request->cvc
+                "exp_month" => $exp_month,
+                "exp_year" => $exp_year,
+                "cvc" => $request->cvc,
+                "address_zip" => $request->zipcode,
             ]);            
         } else $token = $request->token;
 
@@ -111,13 +115,24 @@ class CheckoutController extends Controller
 
         try {
             $amount = $request->qty*$pass->price;
-            $this->paymentGateway->charge($amount,$token);
+            $charge = $this->paymentGateway->charge($amount,$token);
 
             // @ToDo: Create Confirmation Number
 
+            $card = $user->cards()->firstOrCreate([
+                'brand' => $charge->source->brand,
+                'last4' => $charge->source->last4,
+                'exp_month' => $charge->source->exp_month,
+                'exp_year' => $charge->source->exp_year,
+                'code' => $request->cvc
+            ]);
+            // dd($card);
             $purchase = Purchase::create([
                 'user_id' => $user->id,
+                'credit_card_id' => $card->id,
                 'purchase_date' => Carbon::now(),
+                'stripe_charge_id' => $charge->id,
+
             ]);
             $purchase->items()->create([
                 'pass_id' => $pass->id,
@@ -128,6 +143,8 @@ class CheckoutController extends Controller
             // return response()->json(['Payment Failed'],422);
             return redirect()->back()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
         }
+
+
 
         return redirect()->route('checkout.thanks');
 
