@@ -21,7 +21,7 @@ class StripePaymentGateway implements PaymentGateway
 	public function charge($amount,$token)
 	{
 		try{
-			Charge::create([
+			return Charge::create([
 				'amount' => $amount,
 				'source' => $token,
 				'currency' => 'usd'

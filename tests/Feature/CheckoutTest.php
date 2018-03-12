@@ -59,8 +59,8 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
 		$user = factory(User::class)->create();
-        $paymentGateway = new FakePaymentGateway;
-        // $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
+        // $paymentGateway = new FakePaymentGateway;
+        $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
         // Create a Pass
@@ -83,6 +83,7 @@ class CheckoutTest extends TestCase
         // dd($pass->purchases);
         $purchase = $pass->purchases()->where('user_id',$user->id)->first();
         $this->assertNotNull($purchase);
+        $this->assertNotNull($purchase->stripe_charge_id);
         // Verify the Total of the Purchase
         $this->assertEquals(1, $purchase->items->sum('qty'));
         $this->assertEquals(1*$pass->price, $purchase->total);
