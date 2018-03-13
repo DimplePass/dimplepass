@@ -74,7 +74,7 @@
       <h3 class="mb-30">Sample Agreement <small>A preview for your review.</small></h3>
       <i class="pe-7s-news-paper float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
       <p>This is the agreement that we have with Vendors.  There are a few different requirements to be met in the partnership.  Each clearly outlined discount is added as an Attachment.</p>
-      <h5><a href="/pdf/SampleAgreement.pdf" target="_blank">View Sample Agreement <i class="fa fa-arrow-right"></i></a></h5>
+      <h5><a href="/pdf/GOPass-SampleAgreement.pdf" target="_blank">View Sample Agreement <i class="fa fa-arrow-right"></i></a></h5>
     </div>
   </div>
 </div>
