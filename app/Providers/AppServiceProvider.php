@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Billing\PaymentGateway;
 use App\Billing\StripePaymentGateway;
+use App\PurchaseConfirmationNumberGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,5 +31,6 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(PaymentGateway::class,StripePaymentGateway::class);
+        $this->app->bind(PurchaseConfirmationNumberGenerator::class,RandomPurchaseConfirmationNumberGenerator::class);
     }
 }

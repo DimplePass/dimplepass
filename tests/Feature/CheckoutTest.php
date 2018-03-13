@@ -4,6 +4,7 @@ use App\Billing\FakePaymentGateway;
 use App\Billing\PaymentGateway;
 use App\Billing\StripePaymentGateway;
 use App\Pass;
+use App\PurchaseConfirmationNumberGenerator;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -66,6 +67,12 @@ class CheckoutTest extends TestCase
         // Create a Pass
         $pass = factory(Pass::class)->create(['price' => '2000']);	
 
+        // Stubb out the PurchaseConfirmationNumberGenerator
+        $purchaseConfirmationNumberGenerator = Mockery::mock(PurchaseConfirmationNumberGenerator::class,[
+            'generate' => 'CONFIRMATION1234',
+        ]); 
+        $this->app->instance(PurchaseConfirmationNumberGenerator::class,$purchaseConfirmationNumberGenerator);
+
         // Purchase a Pass
         $response = $this->actingAs($user)->post('/checkout/payment',[
         	'pass_id' => $pass->id,
@@ -84,6 +91,7 @@ class CheckoutTest extends TestCase
         $purchase = $pass->purchases()->where('user_id',$user->id)->first();
         $this->assertNotNull($purchase);
         $this->assertNotNull($purchase->stripe_charge_id);
+        $this->assertEquals('CONFIRMATION1234',$purchase->confirmation_number);
         // Verify the Total of the Purchase
         $this->assertEquals(1, $purchase->items->sum('qty'));
         $this->assertEquals(1*$pass->price, $purchase->total);
