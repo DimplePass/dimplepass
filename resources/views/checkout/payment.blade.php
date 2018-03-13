@@ -1,9 +1,9 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Get Outside Network - National Park Discounts</title>
+  <title>Get Outside Pass - National Park Discounts</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, GO Pass, Get Outside Network">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, GO Pass, Get Outside Pass">
 @stop
 
 @section('meta-og')

@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <title>The Get Outside Pass | Save Money on National Park Travel</title>  
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="Get Outside Network - National Park Discounts">
+  <meta name="description" content="Get Outside Pass - National Park Discounts">
   <meta name="keywords" content="">
-  <meta name="author" content="Get Outside Network">    
+  <meta name="author" content="Get Outside Pass">    
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   {{-- Laravel Mix created file --}}
   <link href="{{ url ('/css/printpass.css') }}" rel="stylesheet" type="text/css" media="screen">

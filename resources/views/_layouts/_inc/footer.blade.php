@@ -12,7 +12,7 @@
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
             </ul>
             <p><a class="navi-link-light" href="mailto:info@getoutsidepass.com">info@getoutsidepass.com</a></p>
-            <p><a class="navi-link-light" href="{{ route('utility.contact') }}">Contact Form</a></p>
+            <p><a class="navi-link-light" href="{{ route('utility.contact') }}">Contact Us</a></p>
             <a class="social-button shape-circle sb-facebook sb-light-skin" href="https://www.facebook.com/getoutsidepass/" target="_blank"><i class="socicon-facebook"></i></a>
             <a class="social-button shape-circle sb-twitter sb-light-skin" href="https://twitter.com/getoutsidepass" target="_blank"><i class="socicon-twitter"></i></a>
             <a class="social-button shape-circle sb-instagram sb-light-skin" href="https://www.instagram.com/getoutsidepass/" target="_blank"><i class="socicon-instagram"></i></a>

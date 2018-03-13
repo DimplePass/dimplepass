@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Get Outside Network - Our Guarantee</title>
+  <title>Get Outside Pass - Our Guarantee</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Network">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="Get Outside Network - Our Guarantee"/>
+  <meta property="og:title" content="Get Outside Pass - Our Guarantee"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Get Outside Network"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -44,7 +44,7 @@
       <div class="mb-4 mt-4"><hr></div>
       <h3>Easy refund process</h3>
       <i class="pe-7s-cash float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>We understand that sometimes things go wrong that are beyond our control.  Maybe you weren't able to bookt that perfect excursion because the vendor didn't have availability.  Or, maybe it just rained the whole time and you didn't get out of the hotel room.  In any case, all you have to do is let us know within 30 days of returning home and we'll refund your Get Outside Pass purchase.</p>
+      <p>We understand that sometimes things go wrong that are beyond our control.  Maybe you weren't able to bookt that perfect excursion because the vendor didn't have availability.  Or, maybe it just rained the whole time and you didn't get out of the hotel room.  In any case, all you have to do is let us know within 30 days of returning home and we'll refund your Get Outside Pass purchase. <strong><a href="mailto:info@getoutsidepass.com?subject=Refund Please">Request Refund <i class="fa fa-arrow-right"></i></a></strong></p>
     </div>
   </div>
 </div>

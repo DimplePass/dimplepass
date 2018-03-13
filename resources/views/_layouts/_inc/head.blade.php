@@ -7,7 +7,7 @@
 
     {{-- SEO Meta Tags --}}
     @yield('meta-page')
-    <meta name="author" content="Get Outside Network">
+    <meta name="author" content="Get Outside Pass">
 
 	{{-- Social Graph Meta Info set on Specific View. --}}
 	@yield('meta-og')

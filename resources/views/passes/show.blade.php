@@ -3,7 +3,7 @@
 @section('meta-page')
   <title>G.O. {{ $pass->name }} Pass</title>
   <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
-  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, get outside network, g.o. pass">
+  <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass, g.o. pass">
 @stop
 
 @section('meta-og')
@@ -11,7 +11,7 @@
   <meta property="og:title" content="G.O. {{ $pass->name }} Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="Get Outside Network"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
   <meta property="og:locale" content="en_US"/>
 @stop
