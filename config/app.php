@@ -182,6 +182,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
+        Maknz\Slack\Laravel\ServiceProvider::class,
 
     ],
 
@@ -236,6 +237,7 @@ return [
         'Html' => 'Collective\Html\HtmlFacade',
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
+        'Slack' => Maknz\Slack\Laravel\Facade::class,
     ],
 
 ];

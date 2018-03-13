@@ -139,6 +139,8 @@ class CheckoutController extends Controller
                 'qty' => $request->qty,
                 'price' => $pass->price
             ]);
+
+            \Slack::to('#pass-sold')->send('Pass Sold!');
         } catch (\Exception $e){
             // return response()->json(['Payment Failed'],422);
             return redirect()->back()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
