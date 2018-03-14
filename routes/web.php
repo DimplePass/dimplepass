@@ -62,12 +62,14 @@ Route::group(['middleware' => 'web'], function () {
 		Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
 		Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);
 		Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);
+		Route::get('/purchases/{confirmationNumber}',['as' => 'purchases.show','uses' => 'PurchaseController@show']);
+
 
 	});
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
 	Route::resource('passes','PassController',['only' => ['index', 'show']]);
-	Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
+	// Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
 
 });
 

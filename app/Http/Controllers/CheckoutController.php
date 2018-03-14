@@ -100,21 +100,29 @@ class CheckoutController extends Controller
 
         if(empty($request->token))
         {
-            $token = $this->paymentGateway->getValidToken([
-                "number" => $request->number,
-                'name' => $request->name,
-                "exp_month" => $exp_month,
-                "exp_year" => $exp_year,
-                "cvc" => $request->cvc,
-                "address_zip" => $request->zipcode,
-            ]);            
+            try{
+                $token = $this->paymentGateway->getValidToken([
+                    "number" => $request->number,
+                    'name' => $request->name,
+                    "exp_month" => $exp_month,
+                    "exp_year" => $exp_year,
+                    "cvc" => $request->cvc,
+                    "address_zip" => $request->zipcode,
+                ]);  
+            } catch (\Exception $e)
+            {
+                return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
+            }
+              
         } else $token = $request->token;
 
         // return $request->all();
 
 
         try {
-            $amount = $request->qty*$pass->price;
+            $amount = ($request->qty*$pass->price);
+            if($request->donate4) $amount = $amount + 400;
+            // dd($amount);
             $charge = $this->paymentGateway->charge($amount,$token);
 
             // @ToDo: Create Confirmation Number
@@ -136,19 +144,29 @@ class CheckoutController extends Controller
             ]);
             $purchase->items()->create([
                 'pass_id' => $pass->id,
+                'description' => $pass->name,
                 'qty' => $request->qty,
                 'price' => $pass->price
             ]);
 
+            if($request->donate4) {
+                $purchase->items()->create([
+                    // 'pass_id' => $pass->id,
+                    'description' => '$4 Get Kids Outdoors Donation',
+                    'qty' => $request->qty,
+                    'price' => $pass->price
+                ]);                
+            }
+
             \Slack::to('#pass-sold')->send('Pass Sold!');
-        } catch (\Exception $e){
+        } catch (PaymentFailedException $e){
+            // return $e;
             // return response()->json(['Payment Failed'],422);
-            return redirect()->back()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
+            
+            return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
         }
-
-
-
-        return redirect()->route('checkout.thanks');
+        // return redirect('/purchases/' . $purchase->confirmationNumber)->with('status','Congratulations - now Get Outside!');
+        return redirect()->route('purchases.show',['confirmationNumber' => $purchase->confirmation_number]);
 
 	}
 

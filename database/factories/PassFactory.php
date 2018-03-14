@@ -9,7 +9,7 @@ $factory->define(Pass::class, function (Faker $faker) {
         'name' => 'Yellowstone',
         'start' => Carbon::parse('May 15th ' . Carbon::now()->year),
         'end' => Carbon::parse('October 15th ' . Carbon::now()->year),
-				'price' => '26.00',
+		'price' => '2600',
         'slug' => 'yellowstone',
         'active' => 1
     ];

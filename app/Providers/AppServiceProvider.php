@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Billing\PaymentGateway;
 use App\Billing\StripePaymentGateway;
 use App\PurchaseConfirmationNumberGenerator;
+use App\RandomPurchaseConfirmationNumberGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

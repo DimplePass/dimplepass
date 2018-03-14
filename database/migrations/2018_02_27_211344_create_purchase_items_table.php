@@ -16,7 +16,8 @@ class CreatePurchaseItemsTable extends Migration
         Schema::create('purchase_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('purchase_id')->unsigned();
-            $table->integer('pass_id')->unsigned();
+            $table->integer('pass_id')->unsigned()->nullable();
+            $table->string('description')->nullable();
             $table->integer('qty')->default(0);
             $table->integer('price')->default(0);
             $table->timestamps();

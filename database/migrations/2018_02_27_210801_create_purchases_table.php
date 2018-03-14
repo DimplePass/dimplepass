@@ -16,7 +16,7 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('confirmation_number',20)->nullable();
+            $table->string('confirmation_number')->nullable();
             $table->dateTime('purchase_date')->nullable();
             $table->integer('credit_card_id')->unsigned()->nullable();
             $table->string('stripe_charge_id')->nullable();

@@ -14,9 +14,10 @@ class StripePaymentGateway implements PaymentGateway
 {
 	private $apiKey;
 
-	public function __construct($apiKey)
+	public function __construct()
 	{
-		$this->apiKey = $apiKey;
+		// $this->apiKey = $apiKey;
+		$this->apiKey = config('services.stripe.secret');
 	}
 
 	public function charge($amount,$token)
@@ -29,6 +30,7 @@ class StripePaymentGateway implements PaymentGateway
 			],['api_key' => $this->apiKey]);
 
 		} catch(InvalidRequest $e){
+			// dd($e);
 			throw new PaymentFailedException;
 		}	
 	}

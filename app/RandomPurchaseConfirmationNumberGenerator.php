@@ -7,7 +7,7 @@ use App\PurchaseConfirmationNumberGenerator;
 /**
 * 
 */
-class RandomOrderConfirmationNumberGenerator implements PurchaseConfirmationNumberGenerator
+class RandomPurchaseConfirmationNumberGenerator implements PurchaseConfirmationNumberGenerator
 {
 	
 	public function generate()

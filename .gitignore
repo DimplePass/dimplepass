@@ -12,3 +12,4 @@ yarn-error.log
 .env
 personal_dimple.sublime-workspace
 personal_go.sublime-workspace
+personal_go.sublime-project
