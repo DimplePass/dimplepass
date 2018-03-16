@@ -17,7 +17,10 @@ class TestDataSeeder extends Seeder
     public function run()
     {
         //
-        $pass = factory(Pass::class)->create();
+        $pass = factory(Pass::class)->create([
+            'name' => 'Yellowstone',
+            'slug' => 'yellowstone',
+        ]);
 		$images = $pass->images()->save(factory(Image::class)->create());
 		$destinations = $pass->destinations()->save(factory(Destination::class)->create());
 		$discounts = factory(Discount::class,25)->create([
@@ -28,5 +31,29 @@ class TestDataSeeder extends Seeder
             $d->save();
 			$d->images()->saveMany(factory(Image::class,5)->create());
 		});
+
+        factory(Pass::class)->create([
+            'name' => 'Zion',
+            'slug' => 'zion',
+        ]);
+
+        factory(Pass::class)->create([
+            'name' => 'Glacier',
+            'slug' => 'glacier',
+        ]);
+        factory(Pass::class)->create([
+            'name' => 'Grand Canyon',
+            'slug' => 'grand-canyon',
+        ]);
+
+        factory(Pass::class)->create([
+            'name' => 'Yosemite',
+            'slug' => 'yosemite',
+        ]);
+        factory(Pass::class)->create([
+            'name' => 'Great Smoky Mountains',
+            'slug' => 'great-smoky-mountains',
+        ]);
+
     }
 }
