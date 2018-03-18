@@ -21,6 +21,9 @@
 {{-- Start Form --}}
 {!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
 
+{!! Form::hidden('qty', 1) !!}
+{!! Form::hidden('pass_id', $pass->pass_id) !!}
+
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
