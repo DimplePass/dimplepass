@@ -36,6 +36,16 @@
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 
+      {{-- Error Alert --}}
+      @if(Session::has('error'))
+      <div class="col-sm-12" id="error">
+        <div class="alert alert-danger alert-dismissable" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('error') }}
+        </div>
+      </div>
+      @endif
+
         {{-- Credit Card --}}
         <div class="card">
           <div class="card-header" role="tab">

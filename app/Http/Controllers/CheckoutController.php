@@ -84,7 +84,7 @@ class CheckoutController extends Controller
 	// Payment Store
 	public function checkoutPaymentStore(Request $request)
 	{
-		return $request->all();
+		// return $request->all();
         $this->validate($request,[
             'number' => 'required',
             'expiry' => 'required',
