@@ -21,6 +21,9 @@
 {{-- Start Form --}}
 {!! Form::open(['route' => 'checkout.payment.store','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
 
+{!! Form::hidden('qty', 1) !!}
+{!! Form::hidden('pass_id', $pass->pass_id) !!}
+
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
@@ -32,6 +35,16 @@
         <a class="active" href="/checkout/payment">2. Payment</a>
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
+
+      {{-- Error Alert --}}
+      @if(Session::has('error'))
+      <div class="col-sm-12 mb-5" id="error">
+        <div class="alert alert-danger alert-dismissable" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('error') }}
+        </div>
+      </div>
+      @endif
 
         {{-- Credit Card --}}
         <div class="card">
