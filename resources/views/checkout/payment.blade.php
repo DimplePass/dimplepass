@@ -38,7 +38,7 @@
 
       {{-- Error Alert --}}
       @if(Session::has('error'))
-      <div class="col-sm-12" id="error">
+      <div class="col-sm-12 mb-5" id="error">
         <div class="alert alert-danger alert-dismissable" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
           <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('error') }}
