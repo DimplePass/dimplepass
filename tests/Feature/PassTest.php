@@ -37,4 +37,13 @@ class PassTest extends TestCase
 		$response->assertViewHas('activePasses');
 
     }
+
+    /** @test */
+    function can_view_pass_price_in_dollars()
+    {
+		$this->disableExceptionHandling();
+		$pass = factory(Pass::class)->create();
+
+		$this->assertEquals($pass->price/100, $pass->price_in_dollars);        
+    }
 }

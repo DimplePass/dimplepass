@@ -106,7 +106,7 @@ class CheckoutController extends Controller
                     "cvc" => $request->cvc,
                     "address_zip" => $request->zipcode,
                 ]);  
-            } catch (\Exception $e)
+            } catch (PaymentFailedException $e)
             {
                 return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
             }

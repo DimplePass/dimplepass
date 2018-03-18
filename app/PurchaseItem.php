@@ -21,4 +21,9 @@ class PurchaseItem extends Model
 		return $this->qty*$this->price;
 	}
 
+	public function getLineTotalInDollarsAttribute()
+	{
+		return ($this->qty*$this->price)/100;
+	}
+
 }
