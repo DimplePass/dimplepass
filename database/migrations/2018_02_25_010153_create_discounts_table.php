@@ -24,6 +24,11 @@ class CreateDiscountsTable extends Migration
             $table->string('fine_print')->nullable();
             $table->integer('limit')->nullable();
             $table->decimal('percent',13)->nullable();
+            $table->string('address1')->nullable();
+            $table->string('address2')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip',10)->nullable();
             $table->tinyInteger('active')->default(1);
             $table->dateTime('start')->nullable();
             $table->dateTime('end')->nullable();
