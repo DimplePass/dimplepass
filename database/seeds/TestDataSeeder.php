@@ -33,11 +33,6 @@ class TestDataSeeder extends Seeder
 		});
 
         factory(Pass::class)->create([
-            'name' => 'Zion',
-            'slug' => 'zion',
-        ]);
-
-        factory(Pass::class)->create([
             'name' => 'Glacier',
             'slug' => 'glacier',
         ]);
@@ -45,14 +40,17 @@ class TestDataSeeder extends Seeder
             'name' => 'Grand Canyon',
             'slug' => 'grand-canyon',
         ]);
-
+        factory(Pass::class)->create([
+            'name' => 'Great Smoky Mountains',
+            'slug' => 'great-smoky-mountains',
+        ]);
         factory(Pass::class)->create([
             'name' => 'Yosemite',
             'slug' => 'yosemite',
         ]);
         factory(Pass::class)->create([
-            'name' => 'Great Smoky Mountains',
-            'slug' => 'great-smoky-mountains',
+            'name' => 'Zion',
+            'slug' => 'zion',
         ]);
 
     }
