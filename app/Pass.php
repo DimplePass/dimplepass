@@ -10,6 +10,16 @@ class Pass extends Model
     protected $dates = ['start','end'];
     protected $guarded = [];
 
+    // Attributes
+    public function getFormattedPriceInDollarsAttribute()
+    {
+        return money_format('%.2n',$this->price/100);
+    }
+
+    public function getPriceInDollarsAttribute()
+    {
+        return $this->price/100;
+    }
     /**
      * Get the route key for the model.
      *

@@ -10,6 +10,7 @@ class Purchase extends Model
 {
     //
     protected $guarded = [];
+    protected $dates = ['purchase_date'];
 
     public function pass()
     {
@@ -25,6 +26,12 @@ class Purchase extends Model
     {
     	return $this->items->sum('line_total');
     }
+
+    public function getTotalInDollarsAttribute()
+    {
+        return $this->items->sum('line_total')/100;
+    }
+
     /*
         Set a confirmation number when a purchase is created
      */
