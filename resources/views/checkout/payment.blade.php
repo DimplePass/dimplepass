@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Start Form --}}
-{!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
+{!! Form::open(['route' => 'checkout.payment.store','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
