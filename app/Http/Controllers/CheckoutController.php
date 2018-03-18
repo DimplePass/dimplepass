@@ -53,10 +53,7 @@ class CheckoutController extends Controller
         $user->save();
         \Auth::login($user, true);
         $pass = Pass::findOrFail($request->pass_id);
-        return view('checkout.payment',[
-            'pass' => $pass,
-            'user' => $user
-        ]);
+        return redirect()->route('checkout.payment',['pass_id' => $pass->id]);
     }
 	// Payment
 	public function checkoutPayment(Request $request)
