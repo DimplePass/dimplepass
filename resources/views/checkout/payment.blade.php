@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Start Form --}}
-{!! Form::open(['action' => 'CheckoutController@checkoutPaymentStore','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
+{!! Form::open(['route' => 'checkout.payment.store','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
 
 {!! Form::hidden('qty', 1) !!}
 {!! Form::hidden('pass_id', $pass->pass_id) !!}
