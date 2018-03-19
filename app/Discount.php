@@ -23,4 +23,10 @@ class Discount extends Model
     {
     	return $this->belongsToMany(\App\Image::class)->withTimestamps();
     }
+
+    public function getTownAttribute()
+    {
+        return $this->city . ", " . $this->state;
+    }
+
 }
