@@ -11,6 +11,7 @@ class PurchaseController extends Controller
 
 	public function show($confirmationNumber)
 	{
-		return Purchase::where('confirmation_number',$confirmationNumber)->first();
+		$purchase = Purchase::where('confirmation_number',$confirmationNumber)->firstOrFail();
+		return view('member.pass',['purchase' => $purchase]);
 	}
 }
