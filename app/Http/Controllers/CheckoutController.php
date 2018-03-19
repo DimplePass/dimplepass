@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 // use App\Destination;
 use App\Billing\PaymentFailedException;
 use App\Billing\PaymentGateway;
+use App\Mail\NewPurchase;
 use App\Pass;
 use App\Purchase;
 use App\User;
@@ -154,7 +155,7 @@ class CheckoutController extends Controller
                     'price' => $pass->price
                 ]);                
             }
-            
+            \Mail::to($user)->send(new NewPurchase($purchase));
             \Slack::to('#pass-sold')->send('Pass Sold!');
         } catch (PaymentFailedException $e){
             // return $e;
