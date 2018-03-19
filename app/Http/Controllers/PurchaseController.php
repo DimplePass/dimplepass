@@ -14,4 +14,10 @@ class PurchaseController extends Controller
 		$purchase = Purchase::where('confirmation_number',$confirmationNumber)->firstOrFail();
 		return view('member.pass',['purchase' => $purchase]);
 	}
+
+	public function print($confirmationNumber)
+	{
+		$purchase = Purchase::where('confirmation_number',$confirmationNumber)->firstOrFail();
+		return view('member.printpass',['purchase' => $purchase]);
+	}
 }
