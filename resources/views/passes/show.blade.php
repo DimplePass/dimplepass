@@ -61,14 +61,14 @@
       </div>
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->sortBy('vendor_id') as $d)
-        <div class="product-card product-list city1">
+        <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}
             <img src="/img/discounts/yellowstone/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
           </a>
           <div class="product-info">
             <h3 class="product-title">
-              {{ $d->vendor->name }} <small>{{ $d->vendor->city }}, {{ $d->vendor->state }}</small>
+              {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
             </h3>
             <p class="hidden-xs-down">{{ $d->description }}</p>
             <div class="product-buttons">
