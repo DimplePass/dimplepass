@@ -44,7 +44,7 @@ trait PaymentGatewayContractTests
 			try {
 				$paymentGateway->charge(2500,'invalid-token');     	
 			} catch(PaymentFailedException $e){
-				return;
+				return $e->getMessage();
 			}
 			$this->fail('Charges with invalid token, did not fail!');
 	    });

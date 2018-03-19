@@ -38,20 +38,22 @@ class CheckoutTest extends TestCase
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
 		$password = $faker->password;
+        $email = $faker->email;
 
 		$response = $this->post('/checkout/register',[
 			'pass_id' => $pass->id,
 			'firstname' => $faker->firstname,
 			'lastname' => $faker->lastname,
-			'email' => $faker->email,
+			'email' => $email,
 			'phone' => $faker->phoneNumber,
 			'password' => $password,
 			'confirmPassword' => $password,
 		]);   
-
-		$response->assertStatus(200);  
-		$response->assertViewHas('user');
-		$response->assertViewHas('pass');   
+        $newUser = User::where('email',$email)->first();
+        $this->assertEquals($newUser->id,\Auth::user()->id);
+		$response->assertStatus(302);  
+		// $response->assertViewHas('user');
+		// $response->assertViewHas('pass');   
     }
 
     /** @test */
