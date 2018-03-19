@@ -29,6 +29,7 @@ class PurchaseTest extends TestCase
 
         $response = $this->actingAs($user)->get('/purchases/'.$purchase->confirmation_number);
 
+        $this->assertEquals(1,$user->purchases->count());
         $response->assertViewHas('purchase');
 
 

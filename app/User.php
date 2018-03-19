@@ -31,6 +31,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(\App\CreditCard::class);
     }
+
+    public function purchases()
+    {
+        return $this->hasMany(\App\Purchase::class);
+    }
+
     // Attributes
 
     // Get and Set Phone Fields as presentable and numbers only
