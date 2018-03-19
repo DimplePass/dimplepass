@@ -60,6 +60,17 @@
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+
+      {{-- Payment Confirmation --}}
+      @if(Session::has('status'))
+      <div class="col-sm-12 mb-5" id="success">
+        <div class="alert alert-danger alert-dismissable" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('success') }}
+        </div>
+      </div>
+      @endif
+
       <div class="table-responsive">
         <table class="table table-hover margin-bottom-none">
           <thead>

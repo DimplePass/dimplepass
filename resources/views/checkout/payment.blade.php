@@ -36,7 +36,7 @@
         <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
       </div>
 
-      {{-- Error Alert --}}
+      {{-- Card Error Alert --}}
       @if(Session::has('error'))
       <div class="col-sm-12 mb-5" id="error">
         <div class="alert alert-danger alert-dismissable" role="alert">
