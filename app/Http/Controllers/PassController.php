@@ -49,7 +49,9 @@ class PassController extends Controller
      */
     public function show(Pass $pass)
     {
-        $towns = $pass->discounts->sortBy('town')->pluck('town')->unique();
+        $towns = $pass->discounts->sortBy('town')->groupBy('town')->map(function($d){
+           return $d->count();
+        });
         // return $towns;
         return view('passes.show',[
             'pass' => $pass,
