@@ -154,7 +154,7 @@ class CheckoutController extends Controller
                     'price' => $pass->price
                 ]);                
             }
-
+            
             \Slack::to('#pass-sold')->send('Pass Sold!');
         } catch (PaymentFailedException $e){
             // return $e;
@@ -163,7 +163,8 @@ class CheckoutController extends Controller
             return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
         }
         // return redirect('/purchases/' . $purchase->confirmationNumber)->with('status','Congratulations - now Get Outside!');
-        return redirect()->route('purchases.show',['confirmationNumber' => $purchase->confirmation_number]);
+        // return redirect()->route('user.show',['confirmationNumber' => $purchase->confirmation_number]);
+        return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
 
 	}
 
