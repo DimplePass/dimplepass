@@ -157,7 +157,7 @@
                       <h6 class="user-name">{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h6><span class="text-xs text-muted">{{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
                     </div>
                   </li>
-                  <li><a href="{{ route('member.show', Auth::user()) }}">My Passes <span class="badge badge-primary badge-pill">2</span></a></li>
+                  <li><a href="{{ route('member.show', Auth::user()) }}">My Passes <span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a></li>
                   <li><a href="{{ route('member.edit', Auth::user()) }}">My Profile</a></li>
                   <li class="sub-menu-separator"></li>
                   <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> <i class="icon-unlock"></i>Logout</a></li>

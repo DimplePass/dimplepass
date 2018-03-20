@@ -53,7 +53,7 @@
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
           <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>
@@ -66,7 +66,7 @@
       <div class="col-sm-12 mb-5" id="success">
         <div class="alert alert-success alert-dismissable" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('status') }}
+          <i class="fa fa-smile"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('status') }}
         </div>
       </div>
       @endif
@@ -81,67 +81,34 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Yellowstone </h5>
-                18 discounts
-              </td>
-              <td>
-                <span class="text-success">Active</span><br>
-                <small>May 15, 2018 - October 15, 2018</small>
-              </td>
-              <td>
-                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Glacier</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-success">Active</span><br>
-                <small>May 15, 2018 - October 15, 2018</small>
-              </td>
-              <td>
-                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Yosemite</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-warning">Expired</span><br>
-                <small>May 15, 2017 - October 15, 2017</small>
-              </td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Zion</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-warning">Expired</span><br>
-                <small>May 15, 2016 - October 15, 2016</small>
-              </td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Grand Canyon</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-warning">Expired</span><br>
-                <small>May 15, 2016 - October 15, 2016</small>
-              </td>
-              <td>-</td>
-            </tr>
+            @foreach ($user->purchases as $p)
+              @foreach ($p->items as $i)
+              <tr>
+                <td>
+                  <h5 class="mb-0">{{ $i->pass->name }} </h5>
+                  {{ count($i->pass->discounts) }} discounts
+                </td>
+                <td>
+                  @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($i->pass->start), Carbon\Carbon::parse($i->pass->end)))
+                    <span class="text-success">Active</span><br>
+                  @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($i->pass->start)))
+                    <span class="text-warning">Upcoming</span><br>
+                  @else
+                    <span class="text-danger">Expired</span><br>
+                  @endif
+                  <small>{{ $i->pass->start->format('F d, Y') }} - {{ $i->pass->end->format('F d, Y') }}</small>
+                </td>
+                <td>
+                  @if (Carbon\Carbon::now() <= Carbon\Carbon::parse($i->pass->end))
+                    <a href="{{ route('purchases.show', $i->purchase->confirmation_number) }}" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                    <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+                  @else
+                    <p class="text-danger">Pass has expired.</p>
+                  @endif
+                </td>
+              </tr>
+              @endforeach
+            @endforeach
           </tbody>
         </table>
       </div>
