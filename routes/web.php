@@ -63,6 +63,7 @@ Route::group(['middleware' => 'web'], function () {
 		Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);
 		Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);
 		Route::get('/purchases/{confirmationNumber}',['as' => 'purchases.show','uses' => 'PurchaseController@show']);
+		Route::get('/purchases/{confirmationNumber}/print',['as' => 'purchases.print','uses' => 'PurchaseController@print']);
 
 
 	});

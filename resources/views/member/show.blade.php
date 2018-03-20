@@ -64,9 +64,9 @@
       {{-- Payment Confirmation --}}
       @if(Session::has('status'))
       <div class="col-sm-12 mb-5" id="success">
-        <div class="alert alert-danger alert-dismissable" role="alert">
+        <div class="alert alert-success alert-dismissable" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('success') }}
+          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('status') }}
         </div>
       </div>
       @endif

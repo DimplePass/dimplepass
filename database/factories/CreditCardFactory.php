@@ -1,9 +1,11 @@
 <?php
 
+use App\CreditCard;
 use App\User;
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(CreditCard::class, function (Faker $faker) {
     return [
         //
         'user_id' => factory(User::class)->create()->id,

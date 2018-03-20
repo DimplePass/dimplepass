@@ -15,6 +15,11 @@ class PurchaseItem extends Model
 		return $this->belongsTo(\App\Purchase::class);
 	}
 
+	public function pass()
+	{
+		return $this->belongsTo(\App\Pass::class);
+	}
+
 	// Attributes
 	public function getLineTotalAttribute()
 	{

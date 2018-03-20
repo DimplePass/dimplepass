@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 // use App\Destination;
 use App\Billing\PaymentFailedException;
 use App\Billing\PaymentGateway;
+use App\Mail\NewPurchase;
 use App\Pass;
 use App\Purchase;
 use App\User;
@@ -155,7 +156,12 @@ class CheckoutController extends Controller
                 ]);                
             }
 
+            $purchase = new NewPurchase($purchase);
+            $purchase->subject('GO Pass Purchase');
+    
+            \Mail::to($user)->send($purchase);
             \Slack::to('#pass-sold')->send('Pass Sold!');
+
         } catch (PaymentFailedException $e){
             // return $e;
             // return response()->json(['Payment Failed'],422);
@@ -163,7 +169,8 @@ class CheckoutController extends Controller
             return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
         }
         // return redirect('/purchases/' . $purchase->confirmationNumber)->with('status','Congratulations - now Get Outside!');
-        return redirect()->route('purchases.show',['confirmationNumber' => $purchase->confirmation_number]);
+        // return redirect()->route('user.show',['confirmationNumber' => $purchase->confirmation_number]);
+        return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
 
 	}
 
