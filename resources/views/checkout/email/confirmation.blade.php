@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
     <meta name="viewport" content="width=600,initial-scale = 2.3,user-scalable=no">
     <!--[if !mso]><!-- -->
-		<link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900" rel="stylesheet">
     <!-- <![endif]-->
 
     <title>Get Outside Pass</title>
@@ -154,57 +154,56 @@
                 <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
                     <tr>
                         <td align="center">
-                            <a href="https://www.getoutsidepass.com" style="display: block; border-style: none !important; border: 0 !important;">
-															<img width="90" border="0" style="display: block; width: 90px;" src="https://www..getoutsidepass.com/img/emails/logo.png" alt="Get Outside Pass" />
-														</a>
+                            <a href="http://www.getoutsidepass.com" style="display: block; border-style: none !important; border: 0 !important;">
+								<img width="258" border="0" style="display: block; width: 258px;" src="http://www.getoutsidepass.com/img/emails/logo.png" alt="Get Outside Pass" />
+							</a>
                         </td>
                     </tr>
                     <tr>
-                        <td  align="center"style="color: #aaaaaa; font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 24px;">
+                        <td  align="center" style="color: #aaaaaa; font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 24px;">
                             <div style="line-height: 24px;">
                                 <span style="color: #333333;">National Park Travel Discounts</span>
                             </div>
                         </td>
                     </tr>
                     <tr>
+                      <td height="65" ><hr /></td>
+                    </tr>     
+                    {{-- Content --}}
+                    <tr>
+                        <td style="color: #333333; font-size: 16px; font-family: 'Maven Pro', sans-serif; line-height: 24px;">
+                            <h2 style="margin-bottom: 12px">Yippee!</h2>
+                            <h3 style="margin-bottom: 12px">Your Get Outside Pass is now available.</h3>
+                            <p style="margin-bottom: 12px">You have unlocked great savings on the best activities and attractions for your upcoming national park vacation.  Be sure to book activities that require reservations early so that you can ensure availability.</p>
+                            <h4 style="margin-bottom: 12px">Have an incredible vacation!</h4>
+                            <h4>The Get Outside Crew</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td height="65" ><hr /></td>
+                    </tr>
+                    <tr>
                         <td align="center" style="color: #888888; font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 26px;" class="text_color">
                             <div style="color: #333333; font-size: 14px; font-family: 'Maven Pro', sans-serif; font-weight: 600; mso-line-height-rule: exactly; line-height: 26px;">
-																<a href="https://www.getoutsidepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">www.getoutsidepass.com</a> | 
+								<a href="http://www.getoutsidepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">www.getoutsidepass.com</a> | 
                                 <a href="mailto:info@getoutsidepass.com" style="color: #888888; font-size: 14px; font-family: 'Hind Siliguri', Calibri, Sans-serif; font-weight: 400;">info@getoutsidepass.com</a>
                             </div>
                         </td>
                     </tr>
-	                  <tr>
-	                      <td height="15" style="font-size: 15px; line-height: 15px;">&nbsp;</td>
-	                  </tr>
                     <tr>
                         <td align="center" >
                             <table align="center" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <a href="https://www.facebook.com/getoutsidepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.getoutsidepass.com/img/emails/icon-facebook.png" alt="Facebook"></a>
+                                        <a href="http://www.facebook.com/getoutsidepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="http://dev.getoutsidepass.com/img/emails/icon-facebook.png" alt="Facebook"></a>
                                     </td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                     <td>
-                                        <a href="https://twitter.com/getoutsidepass" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.getoutsidepass.com/img/emails/icon-twitter.png" alt="Twitter"></a>
+                                        <a href="http://twitter.com/getoutsidepass" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="http://dev.getoutsidepass.com/img/emails/icon-twitter.png" alt="Twitter"></a>
                                     </td>
                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                     <td>
-                                        <a href="https://www.instagram.com/getoutsidepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="https://dev.getoutsidepass.com/img/emails/icon-instagram.png" alt="Instagram"></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">
-                            <table align="center" border="0" cellpadding="0" cellspacing="0">
-						                    <tr>
-						                        <td height="15" style="font-size: 15px; line-height: 15px;">&nbsp;</td>
-						                    </tr>
-                                <tr>
-                                    <td align="center">
-                                        <a style="font-size: 14px; font-family: 'Maven Pro', sans-serif; line-height: 24px;color: #009696; text-decoration: none;font-weight:bold;" href="#">UNSUBSCRIBE</a>
+                                        <a href="http://www.instagram.com/getoutsidepass/" style="display: block; border-style: none !important; border: 0 !important;"><img width="24" border="0" style="display: block;" src="http://dev.getoutsidepass.com/img/emails/icon-instagram.png" alt="Instagram"></a>
                                     </td>
                                 </tr>
                             </table>
