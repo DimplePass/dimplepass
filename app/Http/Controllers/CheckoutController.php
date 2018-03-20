@@ -155,8 +155,13 @@ class CheckoutController extends Controller
                     'price' => $pass->price
                 ]);                
             }
-            \Mail::to($user)->send(new NewPurchase($purchase));
+
+            $purchase = new NewPurchase($purchase);
+            $purchase->subject('GO Pass Purchase');
+    
+            \Mail::to($user)->send($purchase);
             \Slack::to('#pass-sold')->send('Pass Sold!');
+
         } catch (PaymentFailedException $e){
             // return $e;
             // return response()->json(['Payment Failed'],422);
