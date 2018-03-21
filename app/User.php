@@ -49,7 +49,16 @@ class User extends Authenticatable
         $this->attributes['phone'] = preg_replace('/[^0-9]/i', '', trim($value));
     }
     
+    public function getPassesAttribute()
+    {
+        $purchases = $this->purchases()->with('items')->get();
+        // return $purchases;
+        $passes = $purchases->map(function($p){
+            return $p->items->pluck('pass');
+        })->collapse();
 
+        return $passes;
+    }
 
     // Functions
 
