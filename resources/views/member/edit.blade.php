@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Page Title --}}
-<div class="page-title">
+<div class="page-title hidden-sm-down">
   <div class="container">
     <div class="column">
       <h1>My Profile: {{ $user->firstname . " " . $user->lastname }}</h1>
@@ -34,6 +34,8 @@
     </div>
   </div>
 </div>
+
+<div class="hidden-sm-up mt-5"></div>
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">

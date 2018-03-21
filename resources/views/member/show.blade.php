@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Page Title --}}
-{{-- <div class="page-title">
+<div class="page-title hidden-sm-down">
   <div class="container">
     <div class="column">
       <h1>My Passes: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
@@ -33,7 +33,9 @@
       </ul>
     </div>
   </div>
-</div> --}}
+</div>
+
+<div class="hidden-sm-up mt-5"></div>
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2 mt-5">
