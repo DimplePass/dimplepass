@@ -54,7 +54,7 @@
           <small class="text-danger">Expired</small><br>
         @endif
       </strong></h2>
-      <h2>Discount Code: {{ $purchase->pass->first->code }}</h2>
+      <h2>Discount Code: {{ $purchase->pass->first()->code }}</h2>
 
       <h4 class="gray">{{ $purchase->pass->first()->start->format('F d, Y') }} - {{ $purchase->pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates vary per discount.</small></h4>
 
@@ -68,7 +68,20 @@
           @foreach ($purchase->pass->first()->discounts as $d)
           <div class="passDiscount">
             <h6>{{ $d->vendor->name }}<small> | <span class="dp-warning">{{ round($d->percent*100) }}% Off {{ $d->name }}</span> <small>(limit {{ $d->limit }})</small></small></h6>
-            <p>Redeem with Printed Pass
+            <p>
+            Redeem By: 
+            @if ($d->redeem_online == 1)
+              <i class="dp-success fa fa-globe"></i>
+            @endif
+            @if ($d->redeem_phone == 1)
+              <i class="dp-success fa fa-phone"></i>
+            @endif
+            @if ($d->redeem_showphone == 1)
+              <i class="dp-success fa fa-address-book"></i>
+            @endif
+            @if ($d->redeem_showprint == 1)
+              <i class="dp-success fa fa-print"></i>
+            @endif
             @if ($d->reservations_required == 1)
                | <span class="text-danger">Reservations Required</span>
             @endif

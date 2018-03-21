@@ -83,6 +83,7 @@
           <tbody>
             @foreach ($user->purchases as $p)
               @foreach ($p->items as $i)
+              {{-- If item pass id is NULL, do not display. --}}
               <tr>
                 <td>
                   <h5 class="mb-0">{{ $i->pass->name }} </h5>

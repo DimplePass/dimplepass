@@ -40,8 +40,6 @@ class CreateDiscountsTable extends Migration
             $table->tinyInteger('redeem_showphone')->default(0);
             $table->tinyInteger('redeem_showprint')->default(0);
             $table->tinyInteger('reservations_required')->default(0);
-            $table->tinyInteger('reservations_required')->default(0);
-            $table->tinyInteger('reservations_required')->default(0);
             $table->tinyInteger('limited_availability')->default(0);
             $table->timestamps();
         });
