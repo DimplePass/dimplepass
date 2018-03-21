@@ -45,7 +45,7 @@
             {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
           </div>
           <div class="user-info">
-            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}"></div>
             <div class="user-data">
               <h4>{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
               <span>Joined {{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
@@ -81,34 +81,31 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($user->purchases as $p)
-              @foreach ($p->items as $i)
-              {{-- If item pass id is NULL, do not display. --}}
+            @foreach ($user->passes as $p)
               <tr>
                 <td>
-                  <h5 class="mb-0">{{ $i->pass->name }} </h5>
-                  {{ count($i->pass->discounts) }} discounts
+                  <h5 class="mb-0">{{ $p->name }} </h5>
+                  {{ count($p->discounts) }} discounts
                 </td>
                 <td>
-                  @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($i->pass->start), Carbon\Carbon::parse($i->pass->end)))
+                  @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($p->start), Carbon\Carbon::parse($p->end)))
                     <span class="text-success">Active</span><br>
-                  @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($i->pass->start)))
+                  @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($p->start)))
                     <span class="text-warning">Upcoming</span><br>
                   @else
                     <span class="text-danger">Expired</span><br>
                   @endif
-                  <small>{{ $i->pass->start->format('F d, Y') }} - {{ $i->pass->end->format('F d, Y') }}</small>
+                  <small>{{ $p->start->format('F d, Y') }} - {{ $p->end->format('F d, Y') }}</small>
                 </td>
                 <td>
-                  @if (Carbon\Carbon::now() <= Carbon\Carbon::parse($i->pass->end))
-                    <a href="{{ route('purchases.show', $i->purchase->confirmation_number) }}" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                  @if (Carbon\Carbon::now() <= Carbon\Carbon::parse($p->end))
+                    <a href="#" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
                     <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
                   @else
                     <p class="text-danger">Pass has expired.</p>
                   @endif
                 </td>
               </tr>
-              @endforeach
             @endforeach
           </tbody>
         </table>
