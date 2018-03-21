@@ -19,6 +19,7 @@ class CreatePassesTable extends Migration
             $table->dateTime('start');
             $table->dateTime('end');
             $table->integer('price')->default(0);
+            $table->string('code')->default('GOYP18');
             $table->string('stripe_id')->nullable();
             $table->string('slug');
             $table->tinyInteger('active')->default(0);

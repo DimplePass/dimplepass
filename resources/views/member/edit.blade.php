@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Page Title --}}
-<div class="page-title">
+<div class="page-title hidden-sm-down">
   <div class="container">
     <div class="column">
       <h1>My Profile: {{ $user->firstname . " " . $user->lastname }}</h1>
@@ -34,6 +34,8 @@
     </div>
   </div>
 </div>
+
+<div class="hidden-sm-up mt-5"></div>
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
@@ -53,7 +55,7 @@
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
           <a class="list-group-item active" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>

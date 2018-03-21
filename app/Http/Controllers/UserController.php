@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 // use App\Destination;
-// use Carbon\Carbon;
+use Carbon\Carbon;
 use App\User;
 use CountryState;
 use Illuminate\Http\Request;
@@ -40,6 +40,7 @@ class UserController extends Controller
 	// Member Show
 	public function show(User $user)
 	{
+		// return $user->purchases->pass;
 		return view('member.show',['user' => $user]);
 	}
 

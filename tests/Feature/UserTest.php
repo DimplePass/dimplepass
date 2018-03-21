@@ -1,5 +1,7 @@
 <?php
 
+use App\Pass;
+use App\Purchase;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -66,6 +68,55 @@ class UserTest extends TestCase
         $response->assertStatus(302);
         $this->assertNotEquals($user->email,$user->fresh()->email);
         $this->assertNotEquals($user->password,$user->fresh()->password);
+
+    }
+
+    /** @test */
+    function user_can_view_purchased_passes()
+    {
+        $this->disableExceptionHandling();
+        $user = factory(User::class)->create();   
+        $pass1 = factory(Pass::class)->create();
+        $pass2 = factory(Pass::class)->create([
+            'name' => 'Glacier',
+            'slug' => 'glacier',
+        ]);
+        $pass3 = factory(Pass::class)->create([
+            'name' => 'Grand Canyon',
+            'slug' => 'grand-canyon',
+        ]);
+        $purchase = factory(Purchase::class)->create([
+            'user_id' => $user->id,
+        ]);        
+        $purchase->items()->create([
+            'purchase_id' => $purchase->id,
+            'pass_id' => $pass1->id,
+            'description' => $pass1->name,
+            'qty' => 1,
+            'price' => $pass1->price,            
+        ]);
+        $purchase->items()->create([
+            'purchase_id' => $purchase->id,
+            'pass_id' => $pass2->id,
+            'description' => $pass2->name,
+            'qty' => 1,
+            'price' => $pass2->price,            
+        ]);  
+        $purchase->items()->create([
+            'purchase_id' => $purchase->id,
+            'pass_id' => $pass3->id,
+            'description' => $pass3->name,
+            'qty' => 1,
+            'price' => $pass3->price,            
+        ]);  
+        // dd($purchase->items->pluck('pass'));
+        // dd($user->passes);
+        // $this->assertEquals(3,$user->passes->count());
+        // dd($pass2->id);
+        $response = $this->actingAs($user)->get('/member/'.$user->id.'/passes');
+
+        $response->assertStatus(200);
+       
 
     }
 }

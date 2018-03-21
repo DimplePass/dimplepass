@@ -18,8 +18,8 @@ class TestDataSeeder extends Seeder
     {
         //
         $pass = factory(Pass::class)->create([
-            'name' => 'Yellowstone',
-            'slug' => 'yellowstone',
+            'name' => 'GO Yellowstone Summer 2018',
+            'slug' => 'go-yellowstone-summer-2018',
         ]);
 		$images = $pass->images()->save(factory(Image::class)->create());
 		$destinations = $pass->destinations()->save(factory(Destination::class)->create());
@@ -33,24 +33,24 @@ class TestDataSeeder extends Seeder
 		});
 
         factory(Pass::class)->create([
-            'name' => 'Glacier',
-            'slug' => 'glacier',
+            'name' => 'GO Glacier Summer 2018',
+            'slug' => 'go-glacier-summer-2018',
         ]);
         factory(Pass::class)->create([
-            'name' => 'Grand Canyon',
-            'slug' => 'grand-canyon',
+            'name' => 'GO Grand Canyon Summer 2018',
+            'slug' => 'go-grand-canyon-summer-2018',
         ]);
         factory(Pass::class)->create([
-            'name' => 'Great Smoky Mountains',
-            'slug' => 'great-smoky-mountains',
+            'name' => 'GO Great Smoky Mountains Summer 2018',
+            'slug' => 'go-great-smoky-mountains-summer-2018',
         ]);
         factory(Pass::class)->create([
-            'name' => 'Yosemite',
-            'slug' => 'yosemite',
+            'name' => 'GO Yosemite Summer 2018',
+            'slug' => 'go-yosemite-summer-2018',
         ]);
         factory(Pass::class)->create([
-            'name' => 'Zion',
-            'slug' => 'zion',
+            'name' => 'GO Zion Summer 2018',
+            'slug' => 'go-zion-summer-2018',
         ]);
 
     }

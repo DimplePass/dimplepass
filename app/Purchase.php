@@ -12,7 +12,7 @@ class Purchase extends Model
     protected $guarded = [];
     protected $dates = ['purchase_date'];
 
-    public function pass()
+    public function passes()
     {
     	return $this->belongsToMany(\App\Pass::class,'purchase_items')->withTimestamps()->withPivot('qty','price');
     }

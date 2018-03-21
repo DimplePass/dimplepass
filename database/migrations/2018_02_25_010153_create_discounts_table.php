@@ -35,6 +35,10 @@ class CreateDiscountsTable extends Migration
             $table->string('url')->nullable();
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
+            $table->tinyInteger('redeem_online')->default(0);
+            $table->tinyInteger('redeem_phone')->default(0);
+            $table->tinyInteger('redeem_showphone')->default(0);
+            $table->tinyInteger('redeem_showprint')->default(0);
             $table->tinyInteger('reservations_required')->default(0);
             $table->tinyInteger('limited_availability')->default(0);
             $table->timestamps();

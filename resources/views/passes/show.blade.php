@@ -24,11 +24,11 @@
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">The Best of {{ $pass->name }} National Park</h1>
+          <h1 class="mb-2 white-color">The Best of {{ $pass->destinations->first()->name }}</h1>
           @if (count($pass->discounts))
             <h2 class="mt-0 mb-2 white-color"><strong>One Pass. <span class="dp-warning">{{ count($pass->discounts) }} Discounts.</span></strong></h2>   
           @else
-            <h2 class="mt-0 mb-2 white-color"><strong>G.O. {{ $pass->name }} Pass is available <span class="dp-warning">May 1st.</span></strong></h2>   
+            <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass is available <span class="dp-warning">May 1st.</span></strong></h2>   
           @endif
                       
         </div>
@@ -47,9 +47,8 @@
       {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
-          <h2 class="mb-0"><strong>The <span class="dp-warning">G.O. {{ $pass->name }}</span> Pass</strong></h2>
-          <h3 class="mb-0">Summer {{ $pass->start->format('Y') }} <small>{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }}</small></h3>
-          <h6 class="mt-o">Dates may vary per vendor.</h6>
+          <h2 class="mb-0"><strong>The <span class="dp-warning">{{ $pass->name }}</span> Pass</strong></h2>
+          <h5 class="mb-0">{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h5>
         </div>
         <div class="column">
           @if (Auth::user())

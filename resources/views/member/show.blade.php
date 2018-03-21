@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Page Title --}}
-<div class="page-title">
+<div class="page-title hidden-sm-down">
   <div class="container">
     <div class="column">
       <h1>My Passes: {{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
@@ -35,6 +35,8 @@
   </div>
 </div>
 
+<div class="hidden-sm-up mt-5"></div>
+
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2 mt-5">
   <div class="row">
@@ -45,7 +47,7 @@
             {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
           </div>
           <div class="user-info">
-            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}"></div>
             <div class="user-data">
               <h4>{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
               <span>Joined {{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
@@ -53,7 +55,7 @@
           </div>
         </aside>
         <nav class="list-group">
-          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">5</span></a>
+          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
           <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
         </nav>
       </div>
@@ -66,7 +68,7 @@
       <div class="col-sm-12 mb-5" id="success">
         <div class="alert alert-success alert-dismissable" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('status') }}
+          <i class="fa fa-smile"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('status') }}
         </div>
       </div>
       @endif
@@ -81,67 +83,32 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Yellowstone </h5>
-                18 discounts
-              </td>
-              <td>
-                <span class="text-success">Active</span><br>
-                <small>May 15, 2018 - October 15, 2018</small>
-              </td>
-              <td>
-                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Glacier</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-success">Active</span><br>
-                <small>May 15, 2018 - October 15, 2018</small>
-              </td>
-              <td>
-                <a href="/member/pass" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Yosemite</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-warning">Expired</span><br>
-                <small>May 15, 2017 - October 15, 2017</small>
-              </td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Zion</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-warning">Expired</span><br>
-                <small>May 15, 2016 - October 15, 2016</small>
-              </td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>
-                <h5 class="mb-0">G.O. Grand Canyon</h5>
-                <p>18 discounts</p>
-              </td>
-              <td>
-                <span class="text-warning">Expired</span><br>
-                <small>May 15, 2016 - October 15, 2016</small>
-              </td>
-              <td>-</td>
-            </tr>
+            @foreach ($user->passes as $p)
+              <tr>
+                <td>
+                  <h5 class="mb-0">{{ $p->name }} </h5>
+                  {{ count($p->discounts) }} discounts
+                </td>
+                <td>
+                  @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($p->start), Carbon\Carbon::parse($p->end)))
+                    <span class="text-success">Active</span><br>
+                  @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($p->start)))
+                    <span class="text-warning">Upcoming</span><br>
+                  @else
+                    <span class="text-danger">Expired</span><br>
+                  @endif
+                  <small>{{ $p->start->format('F d, Y') }} - {{ $p->end->format('F d, Y') }}</small>
+                </td>
+                <td>
+                  @if (Carbon\Carbon::now() <= Carbon\Carbon::parse($p->end))
+                    <a href="{{ route('member.passes', [Auth::user(), $p]) }}" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
+                    <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+                  @else
+                    <p class="text-danger">Pass has expired.</p>
+                  @endif
+                </td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
