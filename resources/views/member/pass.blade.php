@@ -45,49 +45,53 @@
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
       
       {{-- Pass Title --}}
-      <h2><strong>{{ $purchase->pass->first()->name }} 
-        @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($purchase->pass->first()->start), Carbon\Carbon::parse($purchase->pass->first()->end)))
+      <h2><strong>{{ $pass->first()->name }} 
+        @if (Carbon\Carbon::now()->addMonth(3)->between(Carbon\Carbon::parse($pass->first()->start), Carbon\Carbon::parse($pass->first()->end)))
           <small class="dp-success">Active</small>
-        @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($purchase->pass->first()->start)))
+        @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($pass->first()->start)))
           <small class="text-warning">Upcoming</small>
         @else
           <small class="text-danger">Expired</small><br>
         @endif
       </strong></h2>
-      <h2>Discount Code: {{ $purchase->pass->first()->code }}</h2>
+      <h3>Discount Code: {{ $pass->first()->code }}</h3>
 
-      <h4 class="gray">{{ $purchase->pass->first()->start->format('F d, Y') }} - {{ $purchase->pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates vary per discount.</small></h4>
+      <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates vary per discount.</small></h5>
 
-      {{-- Book Early Call to Action --}}
-      <h6 class="mb-4"> Items with the alarm <i class="pe-7s-alarm dp-danger"></i> should be booked as soon as possible due to limited availability.</h6>
+      <h6><strong>Important!</strong> - We recommend booking early for those discounts that require a reservation to ensure that they have availability during your travel dates.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
 
       {{-- Discounts Grouped by Location --}}
-      <div class="passCity">
-        <h5 class="mb-3">Big Sky, Montana</h5>
+      <div class="passCity mt-4">
+        <h4 class="mb-3">Big Sky, Montana</h4>
         <div class="col-sm-12">
-          @foreach ($purchase->pass->first()->discounts as $d)
+          @foreach ($pass->first()->discounts as $d)
           <div class="passDiscount">
-            <h6>{{ $d->vendor->name }}<small> | <span class="dp-warning">{{ round($d->percent*100) }}% Off {{ $d->name }}</span> <small>(limit {{ $d->limit }})</small></small></h6>
+            <h5 class="mb-0"><span class="dp-warning">{{ round($d->percent*100) }}% Off {{ $d->name }}</span><small> | {{ $d->vendor->name }}</small></h5>
+            <p class="mb-0">Valid {{ $d->start->format('F d, Y') }} to {{ $d->end->format('F d, Y') }}</p>
             <p>
-            Redeem By: 
-            @if ($d->redeem_online == 1)
-              <i class="dp-success fa fa-globe"></i>
-            @endif
-            @if ($d->redeem_phone == 1)
-              <i class="dp-success fa fa-phone"></i>
-            @endif
-            @if ($d->redeem_showphone == 1)
-              <i class="dp-success fa fa-address-book"></i>
-            @endif
-            @if ($d->redeem_showprint == 1)
-              <i class="dp-success fa fa-print"></i>
-            @endif
             @if ($d->reservations_required == 1)
-               | <span class="text-danger">Reservations Required</span>
+              <span class="text-danger">Reservations Required</span>
             @endif
             @if ($d->limited_availability == 1)
                | <span class="text-danger">Book Early - Limited Availability</span>
             @endif
+            @if ($d->reservations_required || $d->limited_availability)
+              <br>
+            @endif
+            Redeem By: 
+            @if ($d->redeem_online == 1)
+              <span class="dp-success ml-1"><i class="fa fa-globe"></i> Online</span>
+            @endif
+            @if ($d->redeem_phone == 1)
+              <span class="dp-success ml-1"><i class="fa fa-phone"></i> Phone Call</span>
+            @endif
+            @if ($d->redeem_showphone == 1)
+              <span class="dp-success ml-1"><i class="fa fa-mobile"></i> View Pass on Phone</span>
+            @endif
+            @if ($d->redeem_showprint == 1)
+              <span class="dp-success ml-1"><i class="fa fa-print"></i> Printed Pass</span>
+            @endif
+            <small>(limit {{ $d->limit }})</small>
             <br>
             {{ (isset($d->address1)) ? $d->address1 : $d->vendor->address1 }}, {{ (isset($d->city)) ? $d->city : $d->vendor->city }}, {{ (isset($d->state)) ? $d->state : $d->vendor->state }}  {{ (isset($d->zip)) ? $d->zip : $d->vendor->zip }}<br>
             {{ (isset($d->phone)) ? $d->phone : $d->vendor->phone }} | <a href="mailto:{{ $d->vendor->email }}">{{ $d->vendor->email }}</a><br>
