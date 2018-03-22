@@ -2212,16 +2212,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.4.1",
+            "version": "v6.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "e3b39607a2eb0f5c7010bb3f81dc1ff5eed218e0"
+                "reference": "d38739b67bfe601e5ef3193567b0016f8989be65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/e3b39607a2eb0f5c7010bb3f81dc1ff5eed218e0",
-                "reference": "e3b39607a2eb0f5c7010bb3f81dc1ff5eed218e0",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d38739b67bfe601e5ef3193567b0016f8989be65",
+                "reference": "d38739b67bfe601e5ef3193567b0016f8989be65",
                 "shasum": ""
             },
             "require": {
@@ -2263,7 +2263,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2018-03-02 13:36:28"
+            "time": "2018-03-17 21:35:08"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4826,16 +4826,16 @@
         },
         {
             "name": "symfony/thanks",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/thanks.git",
-                "reference": "9474ce305253c2f0bc20322ff8e9973cf25c9a94"
+                "reference": "bade4992c46ed722162694b4af8d72f84402819a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/thanks/zipball/9474ce305253c2f0bc20322ff8e9973cf25c9a94",
-                "reference": "9474ce305253c2f0bc20322ff8e9973cf25c9a94",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/bade4992c46ed722162694b4af8d72f84402819a",
+                "reference": "bade4992c46ed722162694b4af8d72f84402819a",
                 "shasum": ""
             },
             "require": {
@@ -4865,7 +4865,7 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
-            "time": "2018-02-02 13:47:40"
+            "time": "2018-03-14 21:51:39"
         },
         {
             "name": "theseer/tokenizer",

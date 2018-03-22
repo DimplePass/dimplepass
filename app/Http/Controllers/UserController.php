@@ -7,7 +7,6 @@ use Carbon\Carbon;
 use App\User;
 use CountryState;
 use Illuminate\Http\Request;
-use PDF;
 // use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
@@ -57,23 +56,6 @@ class UserController extends Controller
 		if(!empty($request->password) && $request->password == $request->confirmPassword) $user->password = \Hash::make($request->password);
 		$user->save();
 		return redirect()->route('member.edit',[$user])->with('status','Your information has been updated successfully!');
-	}
-
-	// Member View Pass
-	public function pass()
-	{
-		return view('member.pass');
-	}
-
-	// Member Print Pass
-	public function printpass()
-	{
-		// return view('member.printpass');
-		$data = [
-			'foo' => 'bar'
-		];
-		$pdf = PDF::loadView('member.printpass', $data);
-		return $pdf->stream('DimplePass.pdf');
 	}
 
 	// Member Terms

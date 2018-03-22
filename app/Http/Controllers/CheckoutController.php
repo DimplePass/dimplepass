@@ -174,16 +174,4 @@ class CheckoutController extends Controller
 
 	}
 
-	// Confirmation
-	public function checkoutThanks()
-	{
-		return view('checkout.thanks');
-	}
-
-	// Email Confirmation
-	public function checkoutEmailConfirmation()
-	{
-		return view('checkout.email.confirmation');
-	}
-
 }

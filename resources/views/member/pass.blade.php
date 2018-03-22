@@ -46,7 +46,7 @@
       
       {{-- Pass Title --}}
       <h2><strong>{{ $pass->first()->name }} 
-        @if (Carbon\Carbon::now()->addMonth(3)->between(Carbon\Carbon::parse($pass->first()->start), Carbon\Carbon::parse($pass->first()->end)))
+        @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($pass->first()->start), Carbon\Carbon::parse($pass->first()->end)))
           <small class="dp-success">Active</small>
         @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($pass->first()->start)))
           <small class="text-warning">Upcoming</small>
@@ -56,17 +56,17 @@
       </strong></h2>
       <h3>Discount Code: {{ $pass->first()->code }}</h3>
 
-      <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates vary per discount.</small></h5>
+      <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Available dates vary per discount.</small></h5>
 
-      <h6><strong>Important!</strong> - We recommend booking early for those discounts that require a reservation to ensure that they have availability during your travel dates.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
+      <h6><strong>Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
 
       {{-- Discounts Grouped by Location --}}
       <div class="passCity mt-4">
-        <h4 class="mb-3">Big Sky, Montana</h4>
+        <h4 class="mb-3 dp-warning"><strong>Big Sky, Montana</strong></h4>
         <div class="col-sm-12">
-          @foreach ($pass->first()->discounts as $d)
+          @foreach ($pass->discounts as $d)
           <div class="passDiscount">
-            <h5 class="mb-0"><span class="dp-warning">{{ round($d->percent*100) }}% Off {{ $d->name }}</span><small> | {{ $d->vendor->name }}</small></h5>
+            <h5 class="mb-0">{{ round($d->percent*100) }}% Off {{ $d->name }}<small> | {{ $d->vendor->name }}</small></h5>
             <p class="mb-0">Valid {{ $d->start->format('F d, Y') }} to {{ $d->end->format('F d, Y') }}</p>
             <p>
             @if ($d->reservations_required == 1)
