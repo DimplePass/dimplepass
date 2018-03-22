@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pass;
 use App\User;
 use Illuminate\Http\Request;
+use PDF;
 
 class UserPassesController extends Controller
 {
@@ -18,7 +19,10 @@ class UserPassesController extends Controller
 
 	public function print(User $user, Pass $pass)
 	{
-		return view('member.printpass',['pass' => $pass]);
+		// return $pass;
+		// return view('member.printpass',['pass' => $pass]);
+		$pdf = PDF::loadView('member.printpass', compact('pass'));
+		return $pdf->stream('GoPass.pdf');
 	}
 
 }

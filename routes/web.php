@@ -26,8 +26,6 @@ Route::group(['middleware' => 'web'], function () {
 	Route::post('/checkout/register', ['as' => 'checkout.register_user', 'uses' => 'CheckoutController@registerUser']);
 
 	///// Members
-	// Route::get('/member/pass', ['as' => 'member.pass', 'uses' => 'UserController@pass']);
-	// Route::get('/member/printpass', ['as' => 'member.printpass', 'uses' => 'UserController@printpass']);
 	Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'UserController@terms']);
 
 	///// Vendors
@@ -57,17 +55,11 @@ Route::group(['middleware' => 'web'], function () {
 
 	Route::group(['middleware' => 'auth'], function () {
 
-		Route::get('/member/{member}/passes/{pass}',['as' => 'member.passes','uses' => 'UserPassesController@show']);
-		Route::get('/member/{member}/passes/{pass}/print',['as' => 'member.passes.print','uses' => 'UserPassesController@show']);		
-		
 		Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@checkoutPayment']);
 		Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
-		Route::get('/checkout/thanks', ['as' => 'checkout.thanks', 'uses' => 'CheckoutController@checkoutThanks']);
-		Route::get('/checkout/email/confirmation', ['as' => 'checkout.email.confirmation', 'uses' => 'CheckoutController@checkoutEmailConfirmation']);
-		Route::get('/purchases/{confirmationNumber}',['as' => 'purchases.show','uses' => 'PurchaseController@show']);
-		Route::get('/purchases/{confirmationNumber}/print',['as' => 'purchases.print','uses' => 'PurchaseController@print']);
+		Route::get('/member/{member}/passes/{pass}',['as' => 'member.passes','uses' => 'UserPassesController@show']);
+		Route::get('/member/{member}/passes/{pass}/print',['as' => 'member.passes.print','uses' => 'UserPassesController@print']);		
 		Route::resource('member', 'UserController')->middleware('member');
-
 
 	});
 
