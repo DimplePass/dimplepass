@@ -158,7 +158,7 @@
       <h1 class="mx-0">{{ $pass->name }}</h1>
     </div>
     <div class="column">
-      <h1 class="mx-0 text-right"> CODE: <span class="go-primary">{{ $pass->code }}</span></h1>
+      <h1 class="mx-0 text-right"> Code: <span class="go-primary">{{ $pass->code }}</span></h1>
     </div>  
   </div>
 
@@ -170,7 +170,6 @@
   </div>
 
   {{-- Discounts Grouped by Town --}}
-  {{-- <h3>Big Sky, Montana</h3> --}}
   <div class="discounts">
     @foreach ($pass->discounts as $d)
       <h5 class="mb-0"><strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong><small> | {{ $d->vendor->name }}</small></h5>
