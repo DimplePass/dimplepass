@@ -82,6 +82,9 @@
               <ul class="list-unstyled text-sm">
                 <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
                 {!! $d->hours !!}
+                @if ($d->fine_print)
+                  <li>{{ $d->fine_print }}</li>
+                @endif
                 @if ($d->reservations_required == 1)
                   <li class="dp-danger">Reservations Required</li>
                 @endif

@@ -43,29 +43,29 @@
       <h2 class="mb-5">You <strong class="dp-warning">save money</strong> on <strong class="dp-warning">the best</strong> attractions and activities for your <strong class="dp-warning">vacation</strong>.</h2>
       <div class="mt-30 hidden-md-up"></div>
       <hr>
-      <h3 class="mb-30">Purchase the Get Outside Pass</h3>
+      <h3 class="mb-30"><strong class="text-black">1.)</strong> Purchase the Get Outside Pass</h3>
       <i class="pe-7s-credit float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>If you like the discounts in a Pass, click "Buy the $26 Pass".  You will be taken to a simple and secure checkout page to create a basic profile and pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
+      <p>If you like the discounts in a Pass, click "Buy the Pass".  You will be taken to a simple and secure checkout page to create a basic profile and pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
       <hr >
-      <h3 class="mb-30">Present to Vendor</h3>
-      <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <h3 class="mb-30"><strong class="text-black">2.)</strong> Present to Vendor</h3>
+      <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Book Online</h5>
-      <p>Many Get Outside Pass vendors are capable of taking bookings online and redeeming the discount via a code in their reservation system.  Get Outside Pass will generate a new code for every year that you can place into your booking engine.  The Get Outside Pass member will receive this code when they purchase the Get Outside Pass to use with your system.</p>   
-      <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 6rem;"></i>      
+      <p>Many Get Outside Pass vendors are capable of taking bookings online and redeeming the discount via a code in their online reservation system.  Simply place use the Get Outside Pass code into your booking and save!</p>   
+      <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 5rem;"></i>      
       <h5>Book by Phone</h5>
-      <p>Very similar to the online booking systems for vendors.  Get Outside Pass will generate a new code every year that can be used by the Get Outside Pass member when they call in to make reservations.  The visitor will receive this code when they purchase the Get Outside Pass.  The vendor will simply need to know the code each year so that they can confirm the discount.</p> 
-      <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <p>When booking by phone, simply let the vendor know that you have a Get Outside Pass.  They'll ask you for the redemption code while placing your reservation into their system.  Bam, it's that easy - you just saved!</p> 
+      <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Show Pass on Phone</h5>
-      <p>Get Outside Pass holders will be able to login using their phone or iPad and view their active passes.  Each pass will have contain the name of the passholder, the active pass, and the discount code in an easy to view display.  This will be able to be shown to the vendor at their place of business during ticket purchasing or booking.</p>
-      <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
+      <p>You will be able to login using your phone or iPad and view your active passes.  You can then show the active to the vendor at their place of business during ticket purchasing or booking.  <strong>NOTE: Many places may not have phone service, we suggest printing a copy of the pass to take with you.</strong></p>
+      <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Print It</h5>
-      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), Get Outside Pass holders may simply present the printed pass at the vendor's place of business.  The pass will have the full name and contact info of the pass holder in case the vendor wants to confirm the identity by checking another form of ID.</p>
+      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), you can present the printed pass at the vendor's place of business.  The pass will have your full name and contact info and you may be asked to show ID to confirm your identity.</p>
       <hr>
-      <h3 class="mb-30">Save Money</h3>
+      <h3 class="mb-30"><strong class="text-black">3.)</strong> Save Money</h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>Well, yeah...that's the point!  You probably understand this already, but the whole reason behind the Get Outside Pass is so that you can save money on the best attractions and activities during your vacation.  We'd like to think that you can use at least one discount per day!</p>
+      <p><strong>Well, yeah...that's the point!</strong>  You probably understand this already, but the whole reason behind the Get Outside Pass is so that you can save money on the best attractions and activities during your vacation.  We'd like to think that you can use at least one discount per day!</p>
       <hr>
-      <h3 class="mb-30">Have the Best Vacation Ever</h3>
+      <h3 class="mb-30"><strong class="text-black">4.)</strong> Have the Best Vacation Ever</h3>
       <i class="pe-7s-smile float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
       <p>We've done the research and have already chosen the best attractions and activities for you.  You have a leg up on everyone else who has been spending countless hours doing their own research.  Simply put...we wish we were on this vacation with you!</p>
     </div>
