@@ -113,7 +113,7 @@ class UserTest extends TestCase
         // dd($user->passes);
         // $this->assertEquals(3,$user->passes->count());
         // dd($pass2->id);
-        $response = $this->actingAs($user)->get('/member/'.$user->id.'/passes');
+        $response = $this->actingAs($user)->get('/member/'.$user->id.'/passes/'.$user->passes->first()->slug);
 
         $response->assertStatus(200);
        
