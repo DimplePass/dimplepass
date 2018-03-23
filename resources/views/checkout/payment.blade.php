@@ -99,7 +99,7 @@
         {{-- Checkout Step Buttons --}}
         <div class="checkout-footer mt-5">
           <a class="btn btn-outline-secondary float-left m-2" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
-          {!! Form::button('Place Order <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2']) !!}
+          {!! Form::button('Place Order <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2', 'onClick' => 'goog_report_conversion(\'Pass Purchased\')']) !!}
         </div>
 
     </div>

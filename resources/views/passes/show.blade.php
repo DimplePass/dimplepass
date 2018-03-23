@@ -59,7 +59,7 @@
         </div>
       </div>
       {{-- Vendor Listing --}}
-      @foreach ($pass->discounts->sortBy('vendor_id') as $d)
+      @foreach ($pass->discounts->shuffle() as $d)
         <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}

@@ -31,13 +31,33 @@
 
     {{--  Global site tag (gtag.js) - Google Analytics --}}
     @if(\App::environment('production'))
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115046513-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-115046513-1');
-    </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115046513-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          {{-- Analytics --}}
+          gtag('config', 'UA-115046513-1');
+          {{-- Adwords --}}
+          gtag('config', 'AW-818523520');
+        </script>
+        <!-- Event snippet for Purchase Pass conversion page
+        Add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+        <script>
+        function gtag_report_conversion(url) {
+          var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
+          gtag('event', 'conversion', {
+              'send_to': 'AW-818523520/I_57CIimoH8QgNumhgM',
+              'transaction_id': '',
+              'event_callback': callback
+          });
+          return false;
+        }
+        </script>
     @endif
 
     {{-- Start of getoutsidepass Zendesk Widget script --}}

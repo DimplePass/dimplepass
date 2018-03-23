@@ -26,7 +26,7 @@
           <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               @foreach ($activePasses->sortBy('name') as $ap)
-                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->destinations->first()->name }}</a></li>
               @endforeach
             </ul>
           </li>
@@ -64,7 +64,7 @@
           <li class="has-children"><span><a href="{{ route('passes.index') }}"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               @foreach ($activePasses->sortBy('name') as $ap)
-                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+                <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->destinations->first()->name }}</a></li>
               @endforeach
             </ul>
           </li>
