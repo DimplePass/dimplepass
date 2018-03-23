@@ -19,9 +19,7 @@
 @section('content')
 
 {{-- Destination Map --}}
-<div class="padding-bottom-3x">
-      @include('_layouts._inc.destinationmap')
-</div>
+@include('_layouts._inc.destinationmap')
 
 {{-- Pass Cards --}}
 @include('_layouts._inc.passcards')
