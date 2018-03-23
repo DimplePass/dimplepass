@@ -3,6 +3,7 @@
 use App\Billing\FakePaymentGateway;
 use App\Billing\PaymentGateway;
 use App\Billing\StripePaymentGateway;
+use App\Destination;
 use App\Pass;
 use App\PurchaseConfirmationNumberGenerator;
 use App\User;
@@ -19,6 +20,8 @@ class CheckoutTest extends TestCase
     {
 		$this->disableExceptionHandling();	
 		$pass = factory(Pass::class)->create();	
+        $destination = factory(Destination::class)->create();
+        $pass->destinations()->attach($destination->id);
         $paymentGateway = new FakePaymentGateway;
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
@@ -34,6 +37,8 @@ class CheckoutTest extends TestCase
 		$this->disableExceptionHandling();
         $faker  = Faker\Factory::create();	
 		$pass = factory(Pass::class)->create();	
+        $destination = factory(Destination::class)->create();
+        $pass->destinations()->attach($destination->id);
         $paymentGateway = new FakePaymentGateway;
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);

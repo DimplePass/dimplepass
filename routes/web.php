@@ -60,6 +60,7 @@ Route::group(['middleware' => 'web'], function () {
 		Route::get('/member/{member}/passes/{pass}',['as' => 'member.passes','uses' => 'UserPassesController@show']);
 		Route::get('/member/{member}/passes/{pass}/print',['as' => 'member.passes.print','uses' => 'UserPassesController@print']);		
 		Route::resource('member', 'UserController')->middleware('member');
+		Route::get('/purchases/{confirmationNumber}',['as' => 'purchases.show','uses' => 'PurchaseController@show']);
 
 	});
 
