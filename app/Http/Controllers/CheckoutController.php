@@ -49,12 +49,16 @@ class CheckoutController extends Controller
             'lastname'      =>  'required',
             'email'         =>  'unique:users,email|required|email',
         ]);        
-        $user = User::make($request->except('password','confirmPassword','pass_id'));
+        $user = User::make($request->except('password','confirmPassword','pass_id', 'donate4'));
         $user->password = \Hash::make($request->password);
         $user->save();
         \Auth::login($user, true);
         $pass = Pass::findOrFail($request->pass_id);
-        return redirect()->route('checkout.payment',['pass_id' => $pass->id]);
+        $donate4 = $request->donate4;
+        return redirect()->route('checkout.payment',[
+            'pass_id' => $pass->id,
+            'donate4' => $donate4
+        ]);
     }
 	// Payment
 	public function checkoutPayment(Request $request)
