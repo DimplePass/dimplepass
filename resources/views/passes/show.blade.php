@@ -1,25 +1,25 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>G.O. {{ $pass->name }} Pass</title>
-  <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park." />
+  <title>{{ $pass->name }} Pass</title>
+  <meta name="description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->destinations->first()->name }}." />
   <meta name="keywords" content="{{ $pass->name }}, national park, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass, g.o. pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="G.O. {{ $pass->name }} Pass"/>
+  <meta property="og:title" content="{{ $pass->name }} Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
+  <meta property="og:image" content="{{ url('/img/destinations/' . $pass->destinations->first()->slug .'-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Get Outside Pass"/>
-  <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
+  <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->destinations->first()->name }}."/>
   <meta property="og:locale" content="en_US"/>
 @stop
 
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider" style="background-image: url(/img/destinations/{{ $pass->slug }}-1920x580.jpg);">
+<section class="hero-slider" style="background-image: url(/img/destinations/{{ $pass->destinations->first()->slug }}-1920x580.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
@@ -44,6 +44,12 @@
   <div class="row">
     {{-- Vendor Discounts --}}
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
+      <div class="mb-5" id="success">
+        <div class="alert alert-success" role="alert">
+          <h2><strong>${{ round($pass->price) }}</strong> <small class="text-primary">Early Bird Rate. <small class="gray-darker">$36 starting May 1st.</small></small></h2>
+          <h5><span class="gray-darker">Buy today and save as we continue to add more discounts for the summer.  The savings are already pretty awesome, but we'll be adding more and you'll have access to all of them!</span>  </h5>
+        </div>
+      </div>
       {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
@@ -59,7 +65,7 @@
         </div>
       </div>
       {{-- Vendor Listing --}}
-      @foreach ($pass->discounts->sortBy('vendor_id') as $d)
+      @foreach ($pass->discounts->shuffle() as $d)
         <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}
@@ -76,6 +82,9 @@
               <ul class="list-unstyled text-sm">
                 <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
                 {!! $d->hours !!}
+                @if ($d->fine_print)
+                  <li>{{ $d->fine_print }}</li>
+                @endif
                 @if ($d->reservations_required == 1)
                   <li class="dp-danger">Reservations Required</li>
                 @endif

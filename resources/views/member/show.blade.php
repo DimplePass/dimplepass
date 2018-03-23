@@ -102,7 +102,7 @@
                 <td>
                   @if (Carbon\Carbon::now() <= Carbon\Carbon::parse($p->end))
                     <a href="{{ route('member.passes', [Auth::user(), $p]) }}" class="btn btn-sm btn-primary"><i class="icon-eye"> View</i></a>
-                    <a href="/member/printpass" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
+                    <a href="{{ route('member.passes.print', [Auth::user(), $p]) }}" target="_blank" class="btn btn-sm btn-primary"><i class="icon-printer"> Print</i></a>
                   @else
                     <p class="text-danger">Pass has expired.</p>
                   @endif

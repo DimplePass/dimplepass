@@ -6,7 +6,7 @@
           {{-- Contact Info --}}
           <section class="widget widget-light-skin">
             <h3 class="widget-title">Get Outside Pass</h3>
-            <p class="text-white">Phone: (800) 555-1212</p>
+            <p class="text-white">Phone: (307) 690-9788</p>
             <ul class="list-unstyled text-sm text-white">
               <li><span class="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
               <li><span class="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
