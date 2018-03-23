@@ -78,7 +78,7 @@
             <p class="hidden-xs-down">{{ $d->description }}</p>
             <div class="product-buttons">
               @if ($d->percent > 1)
-                <h3><i class="icon-tag dp-success"></i> <strong>${{ $d->percent }} Off {{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
+                <h3><i class="icon-tag dp-success"></i> <strong>${{ round($d->percent) }} Off {{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
               @else
                 <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
               @endif
