@@ -10,7 +10,7 @@
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="G.O. {{ $pass->name }} Pass"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="{{ url('/img/destinations/' . $pass->slug .'-1200x630.jpg') }}"/>
+  <meta property="og:image" content="{{ url('/img/destinations/' . $pass->destinations->first()->slug .'-1200x630.jpg') }}"/>
   <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. {{ count($pass->discounts) }} Discounts. Save money and don't miss a thing in {{ $pass->name }} National Park."/>
   <meta property="og:locale" content="en_US"/>
@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Hero Slider --}}
-<section class="hero-slider" style="background-image: url(/img/destinations/{{ $pass->slug }}-1920x580.jpg);">
+<section class="hero-slider" style="background-image: url(/img/destinations/{{ $pass->destinations->first()->slug }}-1920x580.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">

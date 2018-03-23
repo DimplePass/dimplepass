@@ -109,7 +109,7 @@
               <li><span class="mega-menu-title">Top National Parks</span>
                 <ul class="sub-menu">
                   @foreach ($activePasses->sortBy('name') as $ap)
-                    <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->name }}</a></li>
+                    <li><a href="{{ route('passes.show', $ap->slug) }}">{{ $ap->destinations->first()->name }}</a></li>
                   @endforeach
                   <li><a href="{{ route('passes.index') }}"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
