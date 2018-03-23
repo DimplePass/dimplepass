@@ -44,6 +44,12 @@
   <div class="row">
     {{-- Vendor Discounts --}}
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
+      <div class="mb-5" id="success">
+        <div class="alert alert-success" role="alert">
+          <h2><strong>${{ round($pass->price) }}</strong> <small class="text-primary">Early Bird Rate. <small class="gray-darker">$36 starting May 1st.</small></small></h2>
+          <h5><span class="gray-darker">Buy today and save as we continue to add more discounts for the summer.  The savings are already pretty awesome, but we'll be adding more and you'll have access to all of them!</span>  </h5>
+        </div>
+      </div>
       {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
