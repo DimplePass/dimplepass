@@ -164,7 +164,11 @@ class CheckoutController extends Controller
             $purchase->subject('GO Pass Purchase');
     
             \Mail::to($user)->send($purchase);
-            \Slack::to('#pass-sold')->send('Pass Sold!');
+            @if(\App::environment() == 'production')
+            {
+                \Slack::to('#pass-sold')->send('Pass Sold!');
+            }
+            
 
         } catch (PaymentFailedException $e){
             // return $e;
