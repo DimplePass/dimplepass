@@ -54,7 +54,7 @@ class User extends Authenticatable
         $purchases = $this->purchases()->with('items')->get();
         // return $purchases;
         $passes = $purchases->map(function($p){
-            return $p->items->pluck('pass');
+            return $p->items()->whereNotNull('pass_id')->get()->pluck('pass');
         })->collapse();
 
         return $passes;
