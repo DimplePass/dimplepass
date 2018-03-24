@@ -1,5 +1,6 @@
 <?php
 
+use App\Destination;
 use App\Pass;
 use App\Purchase;
 use App\User;
@@ -26,6 +27,10 @@ class UserTest extends TestCase
     public function user_cannot_view_another_member_page()
     {
         // $this->seed('DatabaseSeeder');
+        $this->disableExceptionHandling();  
+        $pass = factory(Pass::class)->create(); 
+        $destination = factory(Destination::class)->create();
+        $pass->destinations()->attach($destination->id);
         $user = factory(User::class)->create();
         $userTwo = factory(User::class)->create();
         $response = $this->actingAs($user)->get('/member/'.$userTwo->id . "/edit");
@@ -39,6 +44,10 @@ class UserTest extends TestCase
     /** @test */
     function user_can_view_form_to_edit_profile()
     {
+        $this->disableExceptionHandling();  
+        $pass = factory(Pass::class)->create(); 
+        $destination = factory(Destination::class)->create();
+        $pass->destinations()->attach($destination->id);
         $user = factory(User::class)->create();
         $response = $this->actingAs($user)->get('/member/'.$user->id.'/edit');
         $response->assertStatus(200);
@@ -50,7 +59,10 @@ class UserTest extends TestCase
     /** @test */
     function user_can_update_profile()
     {
-        $this->disableExceptionHandling();
+        $this->disableExceptionHandling();  
+        $pass = factory(Pass::class)->create(); 
+        $destination = factory(Destination::class)->create();
+        $pass->destinations()->attach($destination->id);
         $user = factory(User::class)->create();
         $faker  = Faker\Factory::create();
         $password = $faker->password;
@@ -77,14 +89,35 @@ class UserTest extends TestCase
         $this->disableExceptionHandling();
         $user = factory(User::class)->create();   
         $pass1 = factory(Pass::class)->create();
+        $destination1 = factory(Destination::class)->create();
+        $pass1->destinations()->attach($destination1->id);
+
         $pass2 = factory(Pass::class)->create([
             'name' => 'Glacier',
             'slug' => 'glacier',
         ]);
+        $destinaton2 = factory(Destination::class)->create([
+            'name' => 'Glacier National Park',
+            'tagline' => "Glaciers Galore",
+            'latitude' => '44.45901000',
+            'longitude' => '-110.82901100',
+            'slug' => 'glacier'
+        ]);
+        $pass2->destinations()->attach($destinaton2->id);
+
         $pass3 = factory(Pass::class)->create([
             'name' => 'Grand Canyon',
             'slug' => 'grand-canyon',
         ]);
+        $destination3 = factory(Destination::class)->create([
+            'name' => 'Grand Canyon National Park',
+            'tagline' => "Ride a Mule",
+            'latitude' => '44.45901000',
+            'longitude' => '-110.82901100',
+            'slug' => 'grand-canyon'
+        ]);
+        $pass3->destinations()->attach($destination3->id);
+
         $purchase = factory(Purchase::class)->create([
             'user_id' => $user->id,
         ]);        

@@ -30,7 +30,7 @@ class PassTest extends TestCase
 		// dd($pass->load('destinations','discounts.images'));
 		// dd($discounts->load('vendor'));
 		// dd($pass);
-		$response = $this->get('/passes/'.$pass->slug);
+		$response = $this->get('/'.$pass->destinations()->first()->slug.'/passes/'.$pass->slug);
 
 		$response->assertStatus(200);
 		$response->assertViewHas('pass');

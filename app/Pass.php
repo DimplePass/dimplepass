@@ -10,6 +10,16 @@ class Pass extends Model
     protected $dates = ['start','end'];
     protected $guarded = [];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     // Attributes
     public function getFormattedPriceInDollarsAttribute()
     {
@@ -19,15 +29,6 @@ class Pass extends Model
     public function getPriceInDollarsAttribute()
     {
         return $this->price/100;
-    }
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
     }
 
     public function images()

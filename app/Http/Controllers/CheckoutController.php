@@ -164,7 +164,7 @@ class CheckoutController extends Controller
             $purchase->subject('GO Pass Purchase');
     
             \Mail::to($user)->send($purchase);
-            @if(\App::environment() == 'production')
+            if(\App::environment() == 'production')
             {
                 \Slack::to('#pass-sold')->send('Pass Sold!');
             }

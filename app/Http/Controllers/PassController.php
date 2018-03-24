@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Destination;
 use App\Pass;
 use Illuminate\Http\Request;
 
@@ -47,13 +48,14 @@ class PassController extends Controller
      * @param  \App\Pass  $pass
      * @return \Illuminate\Http\Response
      */
-    public function show(Pass $pass)
+    public function show(Destination $destination, Pass $pass)
     {
         $towns = $pass->discounts->sortBy('town')->groupBy('town')->map(function($d){
            return $d->count();
         });
         // return $towns;
         return view('passes.show',[
+            'destination' => $destination,
             'pass' => $pass,
             'towns' => $towns
         ]);
@@ -65,7 +67,7 @@ class PassController extends Controller
      * @param  \App\Pass  $pass
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pass $pass)
+    public function edit(Destination $destination, Pass $pass)
     {
         //
     }

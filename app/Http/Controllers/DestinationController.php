@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Destination;
+use App\Destination;
 use App\Pass;
 // use Carbon\Carbon;
 // use Illuminate\Http\Request;
@@ -12,9 +12,14 @@ class DestinationController extends Controller
 {
 
 	// Destinations Map/Index
-	public function index(Destination $destination)
+	public function index()
+	{
+		
+	}
+
+	// Show Destination 
+	public function show(Destination $destination)
 	{
 		return $destination;
 	}
-
 }

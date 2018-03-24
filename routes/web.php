@@ -65,7 +65,19 @@ Route::group(['middleware' => 'web'], function () {
 	});
 
 	//Resource Controllers - Place custom methods on these controllers above the resources
-	Route::resource('passes','PassController',['only' => ['index', 'show']]);
+	Route::resource('/', 'DestinationController',['parameters' => [
+	    '' => 'destination'
+	], 'as' => 'destinations',
+	'only' => [
+	    'show'
+	]]);
+
+	// Route::resource('destinations','DestinationController',['only' => ['index', 'show']]);
+	Route::resource('/{destination}/passes','PassController',[
+		'as' => 'destinations',
+		'only' => ['index', 'show'],
+		// 'parameters' => ['' => 'pass'],
+	]);
 	// Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
 
 });
