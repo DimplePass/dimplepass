@@ -15,7 +15,7 @@ class AddActiveToDestinations extends Migration
     {
         Schema::table('destinations', function (Blueprint $table) {
             //
-            $table->tinyInteger('active')->nullable()->after('slug');
+            $table->tinyInteger('active')->nullable()->after('slug')->defalt(1);
         });
     }
 
@@ -28,7 +28,7 @@ class AddActiveToDestinations extends Migration
     {
         Schema::table('destinations', function (Blueprint $table) {
             //
-            $table->tinyInteger('active')->nullable()->after('slug');
+            $table->tinyInteger('active')->nullable()->after('slug')->default(1);
         });
     }
 }
