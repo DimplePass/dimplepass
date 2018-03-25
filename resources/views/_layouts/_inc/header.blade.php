@@ -23,7 +23,7 @@
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
-          <li class="has-children"><span><a href="/"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="/destinations"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               @foreach ($activePasses->sortBy('name') as $ap)
                 <li><a href="{{ route('destinations.passes.show', [$ap->destinations->first()->slug,$ap->slug]) }}">{{ $ap->destinations->first()->name }}</a></li>
@@ -61,7 +61,7 @@
       <nav class="offcanvas-menu">
         <ul class="menu">
           <li class="active"><span><a href="/"><span>Home</span></a></span></li>
-          <li class="has-children"><span><a href="/"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
+          <li class="has-children"><span><a href="/destinations"><span>Destinations</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
               @foreach ($activePasses->sortBy('name') as $ap)
                 <li><a href="{{ route('destinations.passes.show', [$ap->destinations->first()->slug,$ap->slug]) }}">{{ $ap->destinations->first()->name }}</a></li>
@@ -93,7 +93,7 @@
       <nav class="site-menu">
         <ul>
           <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/"><span>Home</span></a></li>
-          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="/"><span>Destinations</span></a>
+          <li class="has-megamenu {{ Request::is('d*') ? 'active' : '' }}"><a href="/destinations"><span>Destinations</span></a>
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">

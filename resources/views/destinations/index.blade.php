@@ -64,15 +64,15 @@ function initialize() {
 
     // Info Window Content
     var infoWindowContent = [
-			@foreach ($destinations as $d)
-                @foreach ($d->passes as $p)
-                    @if(count($p->discounts) == 0)
-    				    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$p->destinations->slug, $p]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $p->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $p->name }}</strong></h5><a href="{{ route('passes.show', $p->slug) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">Available May 1st <i class="icon-arrow-right"></i></a></div>'],
-    			    @else
-                        ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$p->destinations->slug, $p]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $p->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $p->name }}</strong></h5><a href="{{ route('passes.show', $p->slug) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">View {{ count($p->discounts) }} Discounts <i class="icon-arrow-right"></i></a></div>'],
-                    @endif
-                @endforeach
+		@foreach ($destinations as $d)
+            @foreach ($d->passes as $p)
+                @if(count($p->discounts) == 0)
+				    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$d->slug, $p->slug]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $d->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $d->name }}</strong></h5><a href="{{ route('destinations.passes.show',[$d->slug,$p->slug]) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">Available May 1st <i class="icon-arrow-right"></i></a></div>'],
+			    @else
+                    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$d->slug, $p->slug]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $d->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $d->name }}</strong></h5><a href="{{ route('destinations.passes.show',[$d->slug,$p->slug]) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">View {{ count($p->discounts) }} Discounts <i class="icon-arrow-right"></i></a></div>'],
+                @endif
             @endforeach
+        @endforeach
     ];
         
     // Display multiple markers on a map

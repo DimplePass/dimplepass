@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pass;
+use App\Destination;
 // use App\Destination;
 // use Carbon\Carbon;
 // use Illuminate\Http\Request;
@@ -32,10 +33,12 @@ class UtilityController extends Controller
 	// Homepage
 	public function home()
 	{
+		$destinations = \App\Destination::all()->where('active',1)->sortBy('name');
     $passes = \App\Pass::all()->where('active',1)->sortBy('name');
 		// return $passes;
     return view('index',[
-        'passes' => $passes
+			'destinations' => $destinations,
+	    'passes' => $passes
     ]);
 	}
 
