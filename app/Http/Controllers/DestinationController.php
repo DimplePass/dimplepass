@@ -14,7 +14,10 @@ class DestinationController extends Controller
 	// Destinations Map/Index
 	public function index()
 	{
-		
+		$destinations = \App\Destination::all()->where('active',1)->sortBy('name');
+		return view('destinations.index',[
+		  'destinations' => $destinations
+		  ]);
 	}
 
 	// Show Destination 

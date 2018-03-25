@@ -170,36 +170,39 @@
   </div>
 
   {{-- Discounts Grouped by Town --}}
+  @foreach ($pass->discounts->groupBy('town') as $k => $v)
   <div class="discounts">
-    @foreach ($pass->discounts as $d)
-      <h5 class="mb-0"><strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong><small> | {{ $d->vendor->name }}</small></h5>
-      <p class="mb-0 gray">Valid {{ $d->start->format('F d, Y') }} to {{ $d->end->format('F d, Y') }}</p>
+    <h4 class="mb-3 go-warning"><strong>{{ $k }}</strong></h4>
+    @foreach ($v as $v)
+      <h5 class="mb-0"><strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong><small> | {{ $v->vendor->name }}</small></h5>
+      <p class="mb-0 gray">Valid {{ $v->start->format('F d, Y') }} to {{ $v->end->format('F d, Y') }}</p>
       <p>
       Redeem By: 
-      @if ($d->redeem_online == 1)
+      @if ($v->redeem_online == 1)
         <span class="go-success ml-1"><i class="fa fa-globe"></i> Online</span> | 
       @endif
-      @if ($d->redeem_phone == 1)
+      @if ($v->redeem_phone == 1)
         <span class="go-success ml-1"><i class="fa fa-phone"></i> Phone Call</span> | 
       @endif
-      @if ($d->redeem_showphone == 1)
+      @if ($v->redeem_showphone == 1)
         <span class="go-success ml-1"><i class="fa fa-mobile"></i> View Pass on Phone</span> | 
       @endif
-      @if ($d->redeem_showprint == 1)
+      @if ($v->redeem_showprint == 1)
         <span class="go-success ml-1"><i class="fa fa-print"></i> Printed Pass</span> | 
       @endif
-      <small>Limit {{ $d->limit }}</small>
-      @if ($d->reservations_required == 1)
+      <small>Limit {{ $v->limit }}</small>
+      @if ($v->reservations_required == 1)
          | <span class="go-danger">Reservations Required</span>
       @endif
-      @if ($d->limited_availability == 1)
+      @if ($v->limited_availability == 1)
          | <span class="go-danger">Book Early - Limited Availability</span>
       @endif
       <br>
-      {{ (isset($d->address1)) ? $d->address1 : $d->vendor->address1 }}, {{ (isset($d->city)) ? $d->city : $d->vendor->city }}, {{ (isset($d->state)) ? $d->state : $d->vendor->state }}  {{ (isset($d->zip)) ? $d->zip : $d->vendor->zip }}<br>
-      {{ (isset($d->phone)) ? $d->phone : $d->vendor->phone }} | <a href="mailto:{{ $d->vendor->email }}">{{ $d->vendor->email }}</a> | <a href="{{ $d->url }}" target="_blank">{{ $d->url }}</a></p>
+      {{ (isset($v->address1)) ? $v->address1 : $v->vendor->address1 }}, {{ (isset($v->city)) ? $v->city : $v->vendor->city }}, {{ (isset($v->state)) ? $v->state : $v->vendor->state }}  {{ (isset($v->zip)) ? $v->zip : $v->vendor->zip }}<br>
+      {{ (isset($v->phone)) ? $v->phone : $v->vendor->phone }} | <a href="mailto:{{ $v->vendor->email }}">{{ $v->vendor->email }}</a> | <a href="{{ $v->url }}" target="_blank">{{ $v->url }}</a></p>
     @endforeach
   </div>
+  @endforeach
 
   {{-- Separator --}}
   <hr>

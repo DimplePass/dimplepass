@@ -16,4 +16,10 @@ class Destination extends Model
     {
         return 'slug';
     }
+
+    public function passes()
+    {
+        return $this->belongsToMany(\App\Pass::class)->withTimestamps();
+    }
+
 }
