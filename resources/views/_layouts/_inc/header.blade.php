@@ -97,10 +97,10 @@
             <ul class="mega-menu">
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
-                  {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
+                  <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">Available May 1st</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','glacier']) }}">
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Glacier</h3>
                     </a>
                   </div>
@@ -118,7 +118,7 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">11 discounts</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','glacier']) }}">
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
                     </a>
                   </div>
@@ -126,10 +126,10 @@
               </li>
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/yosemite-300x300.jpg);">
-                  {{-- Choose between .overlay-dark (#000) or .overlay-light (#fff) with default opacity of 50%. You can overrride default color and opacity values via 'style' attribute. --}}<span class="overlay-dark" style="opacity: .45;"></span>
+                  <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">Available May 1st</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','glacier']) }}">
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yosemite','go-yosemite-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Yosemite</h3>
                     </a>
                   </div>
