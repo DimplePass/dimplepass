@@ -169,7 +169,6 @@ return [
          * Package Service Providers...
          */
         'EllisTheDev\Robots\RobotsServiceProvider',
-        ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
         DougSisk\CountryState\CountryStateServiceProvider::class,
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         \Code16\Privat\PrivatServiceProvider::class,
