@@ -10,7 +10,7 @@
           <p class="mt-0 mb-0">{{ $pass->start->format('M d, Y') }} - {{ $pass->end->format('M d, Y') }}</p>
           <p class="mt-0">{{ count($pass->discounts) }} Discounts</p>
         </td>
-        <td class="text-medium">$<span class="passFee">{{ $pass->price }}</span></td>
+        <td class="text-medium">$<span class="passFee">{{ number_format($pass->price/100, 2, '.', ',') }}</span></td>
       </tr>
       <tr>
         <td>

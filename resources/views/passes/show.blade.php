@@ -46,7 +46,7 @@
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
       <div class="mb-5" id="success">
         <div class="alert alert-success" role="alert">
-          <h2><del>$36</del><strong> ${{ round($pass->price) }}</strong> <small class="text-primary">Early Bird Rate until May 1st.</small></h2>
+          <h2><del>$36</del><strong> ${{ number_format($pass->price/100, 0, '.', ',') }}</strong> <small class="text-primary">Early Bird Rate until May 1st.</small></h2>
           <h5><span class="gray-darker">Buy today and save as we continue to add more discounts for the summer.  The savings are already pretty awesome, but we'll be adding more and you'll have access to all of them!</span>  </h5>
         </div>
       </div>
@@ -58,9 +58,9 @@
         </div>
         <div class="column">
           @if (Auth::user())
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
           @endif
         </div>
       </div>
@@ -112,9 +112,9 @@
   			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
           @if (Auth::user())
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
           @else
-            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ round($pass->price) }}</strong> pass</a></h2>
+            <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-lg btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
           @endif
         	<h5><a href="/how">How does it work?</a></h5>				
   			</aside>
@@ -130,6 +130,7 @@
 @section('scripts')
 <script>
 
+// Checkbox towns filter.
 $("#filters :checkbox").click(function() {
   $(".product-card").fadeOut('fast');
   $("#filters :checkbox:checked").each(function() {
