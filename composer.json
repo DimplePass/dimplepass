@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "code16/privat": "^2.1",
         "dougsisk/laravel-country-state": "^2.1",
         "elic-dev/laravel-site-protection": "^1.0",
         "ellisthedev/laravel-5-robots": "~0.1.0",
