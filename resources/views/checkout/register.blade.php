@@ -34,7 +34,7 @@
       </div>
 
       {{-- User Action Statement --}}
-      <h3 class="mb-5">Create a profile to attach to your Get Outside Pass.</h3>
+      <h3 class="mb-5">Just a little about you.</h3>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
@@ -66,7 +66,7 @@
         </div>
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-              {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+              {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i> <small class="gray">to access your pass in the future</small>', [], false) !!}
               {!! Form::password('password', ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
               <small class="text-danger">{{ $errors->first('password') }}</small>
           </div>
