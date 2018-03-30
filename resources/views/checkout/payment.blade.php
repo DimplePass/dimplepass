@@ -33,7 +33,7 @@
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
         <a class="active" href="/checkout/payment">2. Payment</a>
-        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. My Profile</a>
+        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. Billing Contact</a>
       </div>
 
       {{-- Card Error Alert --}}

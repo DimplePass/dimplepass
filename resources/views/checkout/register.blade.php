@@ -30,11 +30,11 @@
       {{-- Checkout Steps --}}
       <div class="checkout-steps hidden-xs-down">
         <a href="#">2. Payment</a>
-        <a class="active" href="#"><span class="angle"></span>1. My Profile</a>
+        <a class="active" href="#"><span class="angle"></span>1. Billing Contact</a>
       </div>
 
       {{-- User Action Statement --}}
-      <h3 class="mb-5">Just a little about you.</h3>
+      <h3 class="mb-5">Billing Contact <small>Payment on next page.</small></h3>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
