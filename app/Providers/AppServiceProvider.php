@@ -34,5 +34,9 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(PaymentGateway::class,StripePaymentGateway::class);
         $this->app->bind(PurchaseConfirmationNumberGenerator::class,RandomPurchaseConfirmationNumberGenerator::class);
+
+        $this->app->alias('bugsnag.logger', \Illuminate\Contracts\Logging\Log::class);
+        $this->app->alias('bugsnag.logger', \Psr\Log\LoggerInterface::class);
+
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Billing;
 
 use App\Billing\PaymentFailedException;
+use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Carbon\Carbon;
 use Stripe\Charge;
 use Stripe\Error\InvalidRequest;
@@ -32,6 +33,7 @@ class StripePaymentGateway implements PaymentGateway
 		} catch(\Exception $e){
 			// dd($e);
 			// return $e;
+			Bugsnag::notifyException($e);
 			throw new PaymentFailedException;
 		}	
 	}

@@ -172,6 +172,7 @@ return [
         DougSisk\CountryState\CountryStateServiceProvider::class,
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         \Code16\Privat\PrivatServiceProvider::class,
+        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
 
         /*
          * Application Service Providers...
