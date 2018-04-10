@@ -46,7 +46,7 @@
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
       <div class="mb-5" id="success">
         <div class="alert alert-success" role="alert">
-          <h2><del>$36</del><strong> ${{ number_format($pass->price/100, 0, '.', ',') }}</strong> <small class="text-primary">Early Bird Rate until May 1st.</small></h2>
+          <h2><del>$36</del><strong> ${{ number_format($pass->price/100, 0, '.', ',') }}</strong> <small class="text-primary">Early Bird Rate until May 15th.</small></h2>
           <h5><span class="gray-darker">Buy today and save as we continue to add more discounts for the summer.  The savings are already pretty awesome, but we'll be adding more and you'll have access to all of them!</span>  </h5>
         </div>
       </div>
