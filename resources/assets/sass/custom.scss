@@ -82,6 +82,19 @@ a.list-group-item, .list-group-item-action {
 	height: 580px;
 }
 
+// Buttons
+.btn-xl {
+	height: 74px;
+	border-radius: 38px;
+	line-height: 72px;
+	font-size: 1.2rem;
+}
+
+// Product Card
+.product-card {
+	background: #fafafa;
+}
+
 // Checkout Navigation
 .checkout-steps > a {
 	width: 50%;

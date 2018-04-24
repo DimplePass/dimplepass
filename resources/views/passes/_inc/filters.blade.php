@@ -1,6 +1,6 @@
 {{-- Town Filter --}}
 <section class="widget hidden-sm-down" id="filters">
-  <h3 class="widget-title">Filter by Location</h3>
+  <h3 class="widget-title">Filter by Town</h3>
   @foreach ($towns as $k => $v)
     <div class="custom-control custom-checkbox">
       <input class="custom-control-input" type="checkbox" id="{{ $k }}" value="{{ str_slug("$k", "-") }}" onClick="ga('send', 'event', 'Filter-Town', '{{ Request::path() }}', '{{ $k }}');">

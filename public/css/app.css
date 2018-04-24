@@ -20204,6 +20204,17 @@ a.list-group-item,
   height: 580px;
 }
 
+.btn-xl {
+  height: 74px;
+  border-radius: 38px;
+  line-height: 72px;
+  font-size: 1.2rem;
+}
+
+.product-card {
+  background: #fafafa;
+}
+
 .checkout-steps > a {
   width: 50%;
 }
