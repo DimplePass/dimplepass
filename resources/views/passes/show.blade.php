@@ -49,7 +49,7 @@
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
           <h2 class="mb-1"><strong>The {{ $pass->name }} Pass</strong></h2>
-          <h4 class="text-warning">$16 gets you discounts on the best attractions and activities.</h4>
+          <h4 class="text-warning"><strong>$16</strong> gets you discounts on the best attractions and activities.</h4>
           <h6 class="mb-0">{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h6>
         </div>
         <div class="column">
@@ -118,12 +118,13 @@
   			<aside class="text-center">
           @if (Auth::user())
             <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
-            <h5 class="text-warning">Early Bird Rate until May 15th</h5>
-            <h6>Buy today and save as we continue to add more savings for the summer.</h6>
+            <h5 class="text-warning">Early Bird Rate</h5>
+            <h6>Buy today and save as we continue to add more offers.</h6>
+            <h6><strong>$36 after May 15th</strong></h6>
           @else
             <h2><strong></strong><a href="{{ route('checkout.register', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
             <h5 class="text-warning">Early Bird Rate until May 15th</h5>
-            <h6>Buy today and save as we continue to add more savings for the summer.</h6>
+            <h6>Buy today and save as we continue to add more offers.</h6>
           @endif		
   			</aside> 
       </div>
