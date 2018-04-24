@@ -7,5 +7,6 @@ return [
 	'subject'               => '',
 	'keywords'              => '',
 	'creator'               => 'Laravel Pdf',
-	'display_mode'          => 'fullpage'
+	'display_mode'          => 'fullpage',
+	'tempDir' 							=> base_path('../temp/')
 ];
