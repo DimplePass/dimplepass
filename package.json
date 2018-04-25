@@ -21,6 +21,7 @@
         "vue": "^2.5.15"
     },
     "dependencies": {
+        "exit-intent-popup": "^1.0.0",
         "feather-icon": "^0.1.0",
         "font-awesome": "^4.7.0",
         "formvalidation": "^0.6.2-dev",
