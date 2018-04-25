@@ -100,7 +100,7 @@
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
-      <aside class="sidebar mb-5">
+      <aside class="sidebar mb-5 text-center text-md-left">
         <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5">
         <h4><strong><a href="/how">How does it work?</a></strong></h4>
         <h5 class="gray">4 Easy Ways to Redeem</h5>   
