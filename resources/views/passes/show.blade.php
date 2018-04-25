@@ -140,6 +140,24 @@
 @section('scripts')
 <script>
 
+//////////
+/// On Page Load
+//////////
+
+$(function() {
+
+  /// Exit Popup
+    bioEp.init({
+      width: 600,
+      height: 450,
+      html: '<a href="/foundation" target="_blank"><img src="/img/dontblowit.jpg" alt="Don\'t Blow It!" /></a>',
+      cookieExp: 0
+    });
+
+});
+
+
+
 // Checkbox towns filter.
 $("#filters :checkbox").click(function() {
   $(".product-card").fadeOut('fast');
