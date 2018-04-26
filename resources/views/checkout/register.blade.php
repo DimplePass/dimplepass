@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Start Form --}}
-{!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'id' => 'checkoutRegister']) !!}
+{!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
 {!! Form::hidden('pass_id', $pass->id) !!}
 
 {{-- Page Content --}}
@@ -27,70 +27,81 @@
   <div class="row mt-5">
     <div class="col-lg-8">
 
-      {{-- Checkout Steps --}}
-      <div class="checkout-steps hidden-xs-down">
-        <a href="#">2. Payment</a>
-        <a class="active" href="#"><span class="angle"></span>1. Billing Contact</a>
-      </div>
+        <h3 class="text-warning text-bold">Start saving money right now.</h3>
+        <h4><strong>Your pass will be available immediately upon purchase.</strong></h4>
 
-      {{-- User Action Statement --}}
-      <h3 class="mb-5">Billing Contact <small>Payment on next page.</small></h3>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-              {!! Form::label('firstname', 'First Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('firstname', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('firstname') }}</small>
+        <div class="card mt-3">
+          <div class="card-header" role="tab">
+            <h6>
+              <i class="fa fa-cc-visa"></i>
+              <i class="fa fa-cc-mastercard"></i>
+              <i class="fa fa-cc-amex"></i>
+              <i class="fa fa-cc-discover"></i>
+              <i class="fa fa-cc-diners-club"></i>
+            </h6>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-              {!! Form::label('lastname', 'Last Name <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('lastname', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('lastname') }}</small>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-              {!! Form::label('email', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('email') }}</small>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-              {!! Form::label('phone', 'Phone <small class="gray">optional</small>', [], false) !!}
-              {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'placeholder' => '(000) 000-0000']) !!}
-              <small class="text-danger">{{ $errors->first('phone') }}</small>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-              {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i> <small class="gray">to access your pass in the future</small>', [], false) !!}
-              {!! Form::password('password', ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('password') }}</small>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
-              {!! Form::label('confirmPassword', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-              {!! Form::password('confirmPassword',['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
-              <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    {!! Form::label('name', 'Name on Card <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Full Name']) !!}
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
+                    {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
+                    <small class="text-danger">{{ $errors->first('zipcode') }}</small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    {!! Form::label('email', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'you@email.com']) !!}
+                    <small class="text-danger">{{ $errors->first('email') }}</small>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    {!! Form::label('phone', 'Phone <small class="gray">optional</small>', [], false) !!}
+                    {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'placeholder' => '(000) 000-0000']) !!}
+                    <small class="text-danger">{{ $errors->first('phone') }}</small>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="card-wrapper"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
+                    {!! Form::label('number', 'Card Number <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
+                    <small class="text-danger">{{ $errors->first('number') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
+                    {!! Form::label('expiry', 'Expiration <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
+                    <small class="text-danger">{{ $errors->first('expiry') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
+                    {!! Form::label('cvc', 'CVC <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
+                    <small class="text-danger">{{ $errors->first('cvc') }}</small>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {{-- Checkout Progress Buttons --}}
-        <div class="col-sm-12">
-          <div class="checkout-footer margin-top-1x">
-            {!! Form::button('Payment <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2']) !!}
-          </div>
-        </div>
-
-      </div>
     </div>
 
     {{-- Sidebar --}}
-    <div class="col-lg-4 hidden-xs-down">
+    <div class="col-lg-4">
       @include('/checkout/_inc/ordersummary')
     </div>
 
@@ -115,6 +126,15 @@ $(function() {
   addTotalDue();
 
 });
+
+//////////
+/// Promo Code Validation
+//////////
+
+$('#promo').on('blur', function() {
+  alert('Validate on blur.');
+});
+
 
 //////////
 /// Direct Donation sync and math.
@@ -221,21 +241,59 @@ $(function () {
           }
         }
       },
-      password: {
+      number: {
         validators: {
           notEmpty: {
-            message: 'A password is required.'
+            message: 'What is the credit card number?'
           }
         }
       },
-      confirmPassword: {
+      name: {
         validators: {
           notEmpty: {
-            message: 'Password confirmation is required.'
-          },
-          identical: {
-            field: 'password',
-            message: 'Passwords do not match.'
+            message: 'What is the name on the card?'
+          }
+        }
+      },
+      address: {
+        validators: {
+          notEmpty: {
+            message: 'What is your address?'
+          }
+        }
+      },
+      city: {
+        validators: {
+          notEmpty: {
+            message: 'What city?'
+          }
+        }
+      },
+      state: {
+        validators: {
+          notEmpty: {
+            message: 'Which state?'
+          }
+        }
+      },
+      expiry: {
+        validators: {
+          notEmpty: {
+            message: 'Required'
+          }
+        }
+      },
+      cvc: {
+        validators: {
+          notEmpty: {
+            message: 'Required'
+          }
+        }
+      },
+      zipcode: {
+        validators: {
+          notEmpty: {
+            message: 'How about a Zip Code?'
           }
         }
       }
