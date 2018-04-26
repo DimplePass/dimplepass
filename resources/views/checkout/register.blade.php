@@ -135,7 +135,6 @@ $('#promo').on('blur', function() {
   alert('Validate on blur.');
 });
 
-
 //////////
 /// Direct Donation sync and math.
 //////////

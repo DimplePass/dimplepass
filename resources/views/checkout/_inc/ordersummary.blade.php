@@ -21,7 +21,7 @@
           </div>
         </td> 
         <td class="text-medium">$<span id="promoamount" class="promoamount">0.00</span></td>    
-      </tr>  
+      </tr>
       <tr>
         <td>
           <div class="custom-control custom-checkbox">
