@@ -111,13 +111,13 @@
                   @foreach ($activePasses->sortBy('name') as $ap)
                     <li><a href="{{ route('destinations.passes.show', [$ap->destinations->first()->slug,$ap->slug]) }}">{{ $ap->destinations->first()->name }}</a></li>
                   @endforeach
-                  <li><a href="/"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">12 discounts</h4>
+                    <h4 class="text-light text-thin text-shadow">14 discounts</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
                     </a>
