@@ -111,7 +111,7 @@
                   @foreach ($activePasses->sortBy('name') as $ap)
                     <li><a href="{{ route('destinations.passes.show', [$ap->destinations->first()->slug,$ap->slug]) }}">{{ $ap->destinations->first()->name }}</a></li>
                   @endforeach
-                  <li><a href="/"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
                 </ul>
               </li>
               <li>
