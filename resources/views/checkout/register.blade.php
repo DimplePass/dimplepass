@@ -27,8 +27,7 @@
   <div class="row mt-5">
     <div class="col-lg-8">
 
-        <h3 class="text-warning text-bold">Start saving money right now.</h3>
-        <h4><strong>Your pass will be available immediately upon purchase.</strong></h4>
+        <h3 class="text-bold">Your pass will be available immediately.</h3>
 
         <div class="card mt-3">
           <div class="card-header" role="tab">
@@ -132,7 +131,14 @@ $(function() {
 //////////
 
 $('#promo').on('blur', function() {
-  alert('Validate on blur.');
+  var activePromos = ['000000', '111111', '222222', '333333'];
+  var promo = $(this).val();
+  alert(promo);
+  if (jQuery.inArray(promo, activePromos)!='-1') {
+      alert(promo + ' is in the array!');
+  } else {
+      alert(promo + ' is NOT in the array...');
+  }  
 });
 
 //////////
