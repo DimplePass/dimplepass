@@ -26,7 +26,8 @@ class AddPromoIdToPurchases extends Migration
     public function down()
     {
         Schema::table('purchases', function (Blueprint $table) {
-            $table->integer('promo_id')->nullable();
+            // $table->integer('promo_id')->nullable();
+            $table->dropColumn('promo_id');
         });
     }
 }

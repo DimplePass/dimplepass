@@ -18,7 +18,7 @@ class CreatePromoCodesTable extends Migration
             $table->string('code');
             $table->integer('discount')->default(400);
             $table->decimal('commission',13)->nullable();
-            $table->integer('vendor_id')->unsigned()->index('ix_vendor_id')->nullable();
+            $table->integer('vendor_id')->unsigned()->index('ix_vendor_promo_id')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
         });
