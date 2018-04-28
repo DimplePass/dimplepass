@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Dimple Pass'),
 
     /*
     |--------------------------------------------------------------------------
@@ -163,12 +163,16 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        'Collective\Html\HtmlServiceProvider',
 
         /*
          * Package Service Providers...
          */
         'EllisTheDev\Robots\RobotsServiceProvider',
-        ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
+        DougSisk\CountryState\CountryStateServiceProvider::class,
+        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
+        \Code16\Privat\PrivatServiceProvider::class,
+        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,6 +182,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
+        Maknz\Slack\Laravel\ServiceProvider::class,
 
     ],
 
@@ -228,7 +234,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Robots' => 'EllisTheDev\Robots\RobotsFacade',
-
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
+        'Slack' => Maknz\Slack\Laravel\Facade::class,
     ],
 
 ];

@@ -14,16 +14,234 @@
 // Brand colors
 .dp-white 			{color: #FFFFFF;}
 .dp-black				{color: #000000;}
-.dp-primary 		{color: #00b0ad;}
-.dp-info 				{color: #005bb0;}
+.dp-primary 		{color: #0F8B8D;}
+.dp-secondary		{color: #0c5354}
+.dp-info 				{color: #143642;}
 .dp-success 		{color: #00b055;}
-.dp-warning 		{color: #b0ad00;}
-.dp-danger 			{color: #b00003;}
+.dp-warning 		{color: #EC9A29;}
+.dp-danger 			{color: #A8201A;}
+
+// Utilities
+hr {
+	margin: 3rem !important;
+}
+.pointer {
+	cursor: pointer;
+}
+
+// Lists
+a.list-group-item, .list-group-item-action {
+	color: $brand-primary;
+}
+
+// Header
+.toolbar .account > .toolbar-dropdown {
+	margin-left: -170px;
+}
+
+// Hero Banners
+.hero-overlay {
+	position: relative;
+	margin-right: 20px;
+}
+.hero-text {
+	padding: 20px;
+	background: rgba(55, 66, 80, .70);
+	border-radius: 10px;
+	position: absolute;
+	top: 10rem;
+	h1 {
+		font-size: 1.8rem;
+	}
+	h2 {
+		font-size: 3.1rem;
+	}
+}
+
+// Login Banners
+.login-overlay {
+	padding: 20px;
+	background: rgba(55, 66, 80, .50);
+	border-radius: 10px;
+	margin-top: 4rem;
+	h1 {
+		font-size: 1.8rem;
+	}
+	label {
+		color: #fff;
+	}
+	.text-danger {
+		font-size: 1.2rem;
+		color: $brand-warning !important;
+	}
+}
+
+// Maps
+.destinationMap {
+	width: 100%;
+	height: 580px;
+}
+
+// Buttons
+.btn-xl {
+	height: 74px;
+	border-radius: 38px;
+	line-height: 72px;
+	font-size: 1.2rem;
+}
+
+// Product Card
+.product-card {
+	background: #fafafa;
+}
 
 // Checkout Navigation
 .checkout-steps > a {
-	width: 33%;
+	width: 50%;
 }
-.checkout-steps > a:first-child {
-	width: 34%;
+.checkout-footer {
+	background: $gray-lighter;
+}
+// Order Summary
+.widget-order-summary {
+	background: $gray-lighter;
+	border: 1px solid #e1e7ec;
+	padding: 10px 10px 0px 10px;
+	border-radius: 10px
+}
+
+// Forms
+.fv-form-bootstrap .help-block {
+	margin-left: .5rem;
+	color: $brand-danger;
+}
+.form-control {
+	font-size: 1.3rem;
+	color: #333;
+}
+.form-control:not(textarea) {
+	height: 50px;
+}
+select.form-control:not([size]):not([multiple]) {
+	height: 50px;
+}
+.form-group label {
+	padding-left: .5rem;
+}
+
+// Footer
+.commitmentFooter i {
+	font-size: 2.4rem;
+}
+
+// Payment Cards
+.paymentCards {
+	text-align: center;
+	i {
+		font-size: 4rem;
+		margin-right: 1.6rem;
+	}
+}
+
+// Pament Page Credit Card Applications
+.card-header i {
+	font-size: 1.6rem;
+	color: $gray-dark;
+}
+
+// Additional Margins
+.m-6 {
+  margin: 4rem !important;
+}
+.mt-6, .my-6 {
+  margin-top: 4rem !important;
+}
+.mr-6, .mx-6 {
+  margin-right: 4rem !important;
+}
+.mb-6, .my-6 {
+  margin-bottom: 4rem !important;
+}
+.ml-6, .mx-6 {
+  margin-left: 4rem !important;
+}
+
+// Pass PDF
+.passCity {
+	display: block;
+	clear: both;
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #e1e7ec;
+}
+.passDiscount h6 {
+	margin: 0;
+}
+.passDiscount a {
+	text-decoration: none;
+}
+
+// Total Hack to Make the Modal Work
+.fade.in {
+  opacity: 1;
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.modal-backdrop.in {
+  opacity: 0.5;
+}
+
+//////////
+/// Media Customizations
+//////////
+
+@media (max-width: $screen-sm) {
+	
+	// Hero Banners
+	.hero-text {
+		top: 3rem;
+		h1 {
+			font-size: 1.6rem;
+		}
+		h2 {
+			font-size: 2.2rem;
+			span {
+				display: block;
+				background: rgba(255, 255, 255, .85);
+				padding: 4px;
+				margin-top: 10px;
+				border-radius: 8px;
+			}
+		}
+	}
+
+	// Login Banners
+	.login-overlay {
+		padding: 16px;
+		margin-top: 3rem;
+		h1 {
+			font-size: 1.8rem;
+		}
+	}
+
+	// Card Icons
+	.paymentCards i {
+	  font-size: 2.4rem;
+	  margin-right: .3rem;
+	}
+
+}
+
+@media (min-width: $screen-sm) {
+
+	// Sticky
+	.sticky {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 140px;
+	}
+
 }

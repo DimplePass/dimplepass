@@ -11,40 +11,75 @@
 |
 */
 
-// Robots.txt
-Route::get('robots.txt', 'UtilityController@robots');
+Route::group(['middleware' => 'web'], function () {
 
-///// Home
-Route::get('/', 'UtilityController@home');
+	Auth::routes();
 
-///// Parks
-Route::get('/parks', 'ParkController@parks');
-Route::get('/parks/yellowstone', 'ParkController@park');
+	// Robots.txt
+	Route::get('robots.txt', 'UtilityController@robots');
 
-///// Checkout
-Route::get('/checkout', 'checkoutController@checkout');
-Route::get('/checkout/payment', 'CheckoutController@checkoutPayment');
-Route::get('/checkout/review', 'CheckoutController@checkoutReview');
-Route::get('/checkout/thanks', 'CheckoutController@checkoutThanks');
-Route::get('/checkout/email/confirmation', 'CheckoutController@checkoutEmailConfirmation');
+	///// Home
+	Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
-///// Members
-Route::get('/member', 'MemberController@index');
-Route::get('/member/edit', 'MemberController@edit');
-Route::get('/member/pass', 'MemberController@pass');
+	///// Checkout
+	Route::get('/checkout/register', ['as' => 'checkout.register', 'uses' => 'CheckoutController@register']);
+	Route::post('/checkout/register', ['as' => 'checkout.register_user', 'uses' => 'CheckoutController@registerUser']);
 
-///// Vendors
-Route::get('/vendor', 'VendorController@index');
-Route::get('/vendor/promise', 'VendorController@promise');
-Route::get('/vendor/signup', 'VendorController@signup');
-Route::get('/vendor/confirmation', 'VendorController@signupConfirmation');
-Route::get('/vendor/email/confirmation', 'VendorController@emailSignupConfirmation');
+	///// Members
+	Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'UserController@terms']);
 
-///// 100% for Kids
-Route::get('/foundation', 'UtilityController@foundation');
+	///// Vendors
+	Route::get('/vendor', ['as' => 'vendor.index', 'uses' => 'VendorController@index']);
+	Route::get('/vendor/promise', ['as' => 'vendor.promise', 'uses' => 'VendorController@promise']);
+	Route::get('/vendor/terms', ['as' => 'vendor.terms', 'uses' => 'VendorController@terms']);
+	Route::get('/vendor/application', ['as' => 'vendor.application', 'uses' => 'VendorController@application']);
+	Route::post('/vendor/application', ['as' => 'vendor.application.process', 'uses' => 'VendorController@applicationProcess']);
+	Route::get('/vendor/email/confirmation', ['as' => 'vendor.email.signupconfirmation', 'uses' => 'VendorController@emailSignupConfirmation']);
 
-///// Supporting
-Route::get('/how', 'UtilityController@how');
-Route::get('/about', 'UtilityController@about');
-Route::get('/faqs', 'UtilityController@faqs');
-Route::get('/contact', 'UtilityController@contact');
+	///// 100% for Kids
+	Route::get('/foundation', ['as' => 'foundation', 'uses' => 'UtilityController@foundation']);
+
+	///// Supporting
+	Route::get('/about', ['as' => 'utility.about', 'uses' => 'UtilityController@about']);
+	Route::get('/contact', ['as' => 'utility.contact', 'uses' => 'UtilityController@contact']);
+	Route::get('/faqs', ['as' => 'utility.faqs', 'uses' => 'UtilityController@faqs']);
+	Route::get('/guarantee', ['as' => 'utility.guarantee', 'uses' => 'UtilityController@guarantee']);
+	Route::get('/how', ['as' => 'utility.how', 'uses' => 'UtilityController@how']);
+	Route::get('/thebest', ['as' => 'utility.thebest', 'uses' => 'UtilityController@thebest']);
+
+	/*
+	|------------------------------------
+	| Login Required Routes 
+	|------------------------------------
+	 */
+
+	Route::group(['middleware' => 'auth'], function () {
+
+		Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@checkoutPayment']);
+		Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
+		Route::get('/member/{member}/passes/{pass}',['as' => 'member.passes','uses' => 'UserPassesController@show']);
+		Route::get('/member/{member}/passes/{pass}/print',['as' => 'member.passes.print','uses' => 'UserPassesController@print']);		
+		Route::resource('member', 'UserController')->middleware('member');
+		Route::get('/purchases/{confirmationNumber}',['as' => 'purchases.show','uses' => 'PurchaseController@show']);
+
+	});
+
+	//Resource Controllers - Place custom methods on these controllers above the resources
+	Route::resource('/destinations', 'DestinationController',['parameters' => [
+	    '' => 'destination'
+	], 'as' => 'destinations',
+	'only' => ['index', 'show']]);
+
+	// Route::resource('destinations','DestinationController',['only' => ['index', 'show']]);
+	Route::resource('/{destination}/passes','PassController',[
+		'as' => 'destinations',
+		'only' => ['index', 'show'],
+		// 'parameters' => ['' => 'pass'],
+	]);
+	// Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);
+
+});
+
+	
+
+

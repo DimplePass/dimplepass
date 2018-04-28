@@ -882,4 +882,92 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	//////////
+	/// Hide the donate row in the drop down on page load
+	//////////
+
+	$('#dropdown-donate4').hide();
+
+	//////////
+	/// Remove pass from header drop down
+	//////////
+
+	$('.dropdown-product-remove').on('click', function() {
+		// Get Pass ID.
+		var passid = $(this).data('passid');
+		// Submit Ajax to remove item from cart.
+
+		// Remove from header drop down display.
+		$(this).closest('div').remove();
+		// Uncheck Checkbox
+		$('.donate4').prop('checked', false);
+		// Remove from order summary on checkout pages.
+		// and Remove from checkout review table if on that page.
+		$('.passid-' + passid + '').remove();
+		// Update total number in cart header.
+		passCountSubtract();
+		addTotalDue();
+	});
+
+	//////////
+	/// Update Pass Count in Header after removal
+	//////////
+
+	function passCountSubtract() {
+	  var count = Number($('#count').text());
+	  count--;
+	  $(".count").text(count).fadeIn(1200);
+	}
+
+	//////////
+	/// Add total due and display
+	//////////
+
+	function addTotalDue() {
+	  // Add total of passes.
+	  totalPasses = 0;
+	  $('.passFee').each(function(){
+	      totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
+	  });
+	  // Add donation.
+	  if ($('#donate4').is(':checked')) {
+	    var donateAmount = 4;
+	  } else {
+	    var donateAmount = 0;
+	  }
+	  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
+	  // Add total of passes and donation.
+	  var total = totalPasses + donateAmount; 
+	  $('.totalDue').text(addCommas(roundTo(total, 0)));
+	}
+
+	//////////
+	/// Adds Number Commas and decimal point.
+	//////////
+
+	function addCommas(nStr) {
+	  nStr += '';
+	  x = nStr.split('.');
+	  x1 = x[0];
+	  x2 = x.length > 1 ? '.' + x[1] : '';
+	  var rgx = /(\d+)(\d{3})/;
+	  while (rgx.test(x1)) {
+	    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	  }
+	  return x1 + x2;
+	}
+
+	//////////
+	/// Rounds current calculations.
+	//////////
+
+	function roundTo(num, places) {
+	  var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
+	  return calc.toFixed(2);
+	}
+
+	$('.edit-avatar').on ('click', function() {
+		alert('Upload member profile images coming soon.');
+	});
+
 });/*Document Ready End*/

@@ -1,151 +1,139 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>The Dimple Pass | Save Money on National Park Travel</title>
-  <meta name="description" content="Meta Description Here" />
+  <title>Get Outside Pass - FAQs</title>
+  <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="OG Title Here"/>
+  <meta property="og:title" content="Get Outside Pass - FAQs"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
-  <meta property="og:image" content="OG Image URL Here."/>
-  <meta property="og:site_name" content="Dimple Pass"/>
-  <meta property="og:description" content="OG Description Here."/>
+  <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
+  <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
-@stop
-
-@section('logo-tag')
-Frequently Asked Questions
 @stop
 
 @section('content')
 
-<!-- Page Title-->
-<div class="page-title">
+{{-- Hero Slider --}}
+<section class="hero-slider mb-6" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);">
   <div class="container">
-    <div class="column">
-      <h1>Frequently Asked Questions</h1>
+    <div class="row">
+      <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
+        <div class="hero-text">
+          <h1 class="mb-2 white-color">Frequently Asked Questions</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>If you can't find the answer, just ask.</strong></h2>               
+        </div>
     </div>
-    <div class="column">
-      <ul class="breadcrumbs">
-        <li><a href="/">Home</a>
-        </li>
-        <li class="separator">&nbsp;</li>
-        <li>Frequently Asked Questions</li>
-      </ul>
+  </div>
+</section>
+
+{{-- Page Content --}}
+<div class="container padding-bottom-3x">
+  <div class="row">
+    {{-- Side Images --}}
+    <div class="col-md-4">
+      <img class="d-block w-270 mx-auto rounded mb-3 hidden-sm-down" src="/img/features/yellowstone-bison-540x540.jpg" alt="Yellowstone Bison">
+    </div>
+    {{-- Content --}}
+    <div class="col-md-8">
+      <div class="mt-30 hidden-md-up"></div>
+      <h2>The Most Popular Questions</h2>
+      <h3>We will be adding to this as we learn more and more.</h3>
+      <div class="mb-4 mt-4"><hr></div>
+      <div class="card">
+        <div class="card-header">
+          <h6>How is the Get Outside Pass delivered?</h6>
+        </div>
+        <div class="card-body">
+          The pass will be available immediately after your purchase.  It will appear on your Member page and you can view the details of it by clicking on the pass.  There will also be a link to a PDF version fo the pass in case you want to print it out and take it with you.  We strongly encourage this as sometimes you may not be connected during your travels.  <a href="{{ route('utility.how') }}">Read more about how it works</a>.
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          <h6>Should I make reservations ahead of time?</h6>
+        </div>
+         <div class="card-body">
+            We recommend making reservations ahead of time for any offer that is flagged as "reservation required".  Booking early is always a good thing and will give you the best chance of the dates and times that work best for you.  Please note that some of the smaller provider do book up completely during peak travel seasons.
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          <h6>What if a vendor does not accept my Get Outside Pass?</h6>
+        </div>
+         <div class="card-body">
+            Well, we haven't had that happen yet.  Yes, there will be the occassional instance where a new staff member may not be familiar with the Get Outside Pass.  However, it usually just takes them asking a manager about it to sort things out. However, if you encounter a situation where you are unable to redeem your pass, please let us know as soon as possible.  We want to be able to contact the vendor quickly to curb any further misunderstandings.
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          <h6>Are there limits to the number of people that can use the Get Outside Pass?</h6>
+        </div>
+         <div class="card-body">
+            Each vendor will set limits on the total number of people that can use the discount.  This will vary, and in some cases you may not be able to apply the discount to your entire party.  Yet, we thought this was better than having each person need to buy a Get Outside Pass.  Bigger savings to you!
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          <h6>Are you adding new destinations?</h6>
+        </div>
+         <div class="card-body">
+            We will likely be adding new destinations for 2019.  At this time, we wanted to keep things manageable as we continue to learn what is valuable and what can be streamlined moving forward.  It's our first year and we are expecting some kinks!
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          <h6>Do you offer refunds for cancelled trips?</h6>
+        </div>
+         <div class="card-body">
+            We actually offer full refunds with no questions asked.  As long as it is within 30 days of you returning from travel, we will promptly process your refund.  <a href="{{ route('utility.guarantee') }}">Read more about our Money Back Guarantee here.</a>
+        </div>
+      </div>
+      
+      <h3 class="padding-top-2x">Haven't found the answer? Ask us.</h3>
+      <p class="text-muted mb-30">We normally respond within 1 business day. Most popular questions will appear on this page.</p>
+      <form class="row" method="post">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_name">Your Name</label>
+            <input class="form-control form-control-rounded" type="text" id="help_name" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_email">Your Email</label>
+            <input class="form-control form-control-rounded" type="email" id="help_email" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="help_subject">Subject</label>
+            <input class="form-control form-control-rounded" type="text" id="help_subject" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group{{ $errors->has('help_type') ? ' has-error' : '' }}">
+              {!! Form::label('help_type', 'Type') !!}
+              {!! Form::select('help_type', $helpTypes, null, ['id' => 'help_type', 'class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => '-- Please choose --']) !!}
+              <small class="text-danger">{{ $errors->first('help_type') }}</small>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="help_question">Question </label>
+            <textarea class="form-control form-control-rounded" id="help_question" rows="8" required></textarea>
+          </div>
+        </div>
+        <div class="col-12 text-right">
+          <button class="btn btn-primary btn-rounded" type="submit">Submit Question</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-      <!-- Page Content-->
-      <div class="container padding-bottom-3x">
-        <div class="row">
-          <!-- Side Menu-->
-          <div class="col-lg-3 col-md-4">
-            <nav class="list-group"><a class="list-group-item active" href="#">Most Popular Questions</a><a class="list-group-item" href="#">Managing Account</a><a class="list-group-item" href="#">Working With Dashboard</a><a class="list-group-item" href="#">Available Payment Methods</a><a class="list-group-item" href="#">Delivery Information</a><a class="list-group-item" href="#">Order Tracking Instructions</a><a class="list-group-item" href="#">Refund Policy</a><a class="list-group-item" href="#">Offers And Discounts</a><a class="list-group-item" href="#">Reward Points</a><a class="list-group-item" href="#">Affiliate Program</a><a class="list-group-item" href="#">Service Terms &amp; Conditions</a></nav>
-            <div class="padding-bottom-3x hidden-md-up"></div>
-          </div>
-          <!-- Content-->
-          <div class="col-lg-9 col-md-8">
-            <div class="accordion" id="accordion" role="tablist">
-              <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">How is the Dimple Pass delivered?</a></h6>
-                </div>
-                <div class="collapse show" id="collapseOne" role="tabpanel">
-                  <div class="card-body">
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, harum. Asperiores mollitia sed ullam quae blanditiis explicabo, reprehenderit sint rerum, labore, fugit obcaecati laboriosam nulla voluptatem inventore nobis esse nemo.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">Do you offer refunds for cancelled trips?</a></h6>
-                </div>
-                <div class="collapse" id="collapseTwo" role="tabpanel">
-                  <div class="card-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseThree" data-toggle="collapse" data-parent="#accordion">Should I make reservations ahead of time?</a></h6>
-                </div>
-                <div class="collapse" id="collapseThree" role="tabpanel">
-                  <div class="card-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseFour" data-toggle="collapse" data-parent="#accordion">Are there limits to the number of people that can use the Dimple Pass?</a></h6>
-                </div>
-                <div class="collapse" id="collapseFour" role="tabpanel">
-                  <div class="card-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseFive" data-toggle="collapse" data-parent="#accordion">Are you adding new destinations?</a></h6>
-                </div>
-                <div class="collapse" id="collapseFive" role="tabpanel">
-                  <div class="card-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" role="tab">
-                  <h6><a class="collapsed" href="#collapseSix" data-toggle="collapse" data-parent="#accordion">What if a vendor does not accept my Dimple Pass?</a></h6>
-                </div>
-                <div class="collapse" id="collapseSix" role="tabpanel">
-                  <div class="card-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
-                </div>
-              </div>
-            </div>
-            <h3 class="padding-top-2x">Haven't found the answer? Ask us.</h3>
-            <p class="text-muted mb-30">We normally respond within 2 business days. Most popular questions will appear on this page.</p>
-            <form class="row" method="post">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="help_name">Your Name</label>
-                  <input class="form-control form-control-rounded" type="text" id="help_name" required>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="help_email">Your Email</label>
-                  <input class="form-control form-control-rounded" type="email" id="help_email" required>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="help_subject">Subject</label>
-                  <input class="form-control form-control-rounded" type="text" id="help_subject" required>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="help_category">Category</label>
-                  <select class="form-control form-control-rounded" id="help_category">
-                    <option>Account Management</option>
-                    <option>Refund Policy</option>
-                    <option>Payment Procedure</option>
-                    <option>Shipping Info</option>
-                    <option>Referral Program</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="help_question">Question </label>
-                  <textarea class="form-control form-control-rounded" id="help_question" rows="8" required></textarea>
-                </div>
-              </div>
-              <div class="col-12 text-right">
-                <button class="btn btn-primary btn-rounded" type="submit">Submit Question</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
 
 @stop
 
