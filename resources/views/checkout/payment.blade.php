@@ -1,17 +1,17 @@
 @extends('_layouts.body')
 
 @section('meta-page')
-  <title>Get Outside Pass - National Park Discounts</title>
+  <title>Get Outside Pass - National Parks Discount Cards</title>
   <meta name="description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation." />
-  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, GO Pass, Get Outside Pass">
+  <meta name="keywords" content="national parks, travel, discounts, coupons, attractions, activities, things to do, Get Outside Pass">
 @stop
 
 @section('meta-og')
   <meta property="og:type" content="article"/>
-  <meta property="og:title" content="GO Pass - National Parks Discounts"/>
+  <meta property="og:title" content="Get Outside Pass - National Parks Discount Cards"/>
   <meta property="og:url" content="{{ Request::url() }}"/>
   <meta property="og:image" content="{{ url('/img/destinations/yellowstone-1200x630.jpg') }}"/>
-  <meta property="og:site_name" content="GO Pass"/>
+  <meta property="og:site_name" content="Get Outside Pass"/>
   <meta property="og:description" content="One Pass. Multiple Discounts. Save money and don't miss a thing during your National Park Vacation."/>
   <meta property="og:locale" content="en_US"/>
 @stop
@@ -19,35 +19,17 @@
 @section('content')
 
 {{-- Start Form --}}
-{!! Form::open(['route' => 'checkout.payment.store','method' => 'POST', 'class' => 'interactive-credit-card', 'id' => 'checkoutPayment']) !!}
-
-{!! Form::hidden('qty', 1) !!}
-{!! Form::hidden('pass_id', $pass->pass_id) !!}
+{!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
+{!! Form::hidden('pass_id', $pass->id) !!}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
   <div class="row mt-5">
-
     <div class="col-lg-8">
 
-      {{-- Checkout Steps --}}
-      <div class="checkout-steps hidden-xs-down">
-        <a class="active" href="/checkout/payment">2. Payment</a>
-        <a class="completed" href="/checkout"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>1. Billing Contact</a>
-      </div>
+        <h3 class="text-bold">Your pass will be available immediately.</h3>
 
-      {{-- Card Error Alert --}}
-      @if(Session::has('error'))
-      <div class="col-sm-12 mb-5" id="error">
-        <div class="alert alert-danger alert-dismissable" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <i class="fa fa-bomb"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('error') }}
-        </div>
-      </div>
-      @endif
-
-        {{-- Credit Card --}}
-        <div class="card">
+        <div class="card mt-3">
           <div class="card-header" role="tab">
             <h6>
               <i class="fa fa-cc-visa"></i>
@@ -60,78 +42,73 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    {!! Form::label('name', 'Name on Card <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Full Name']) !!}
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
+                    {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
+                    <small class="text-danger">{{ $errors->first('zipcode') }}</small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    {!! Form::label('email', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                    {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'you@email.com']) !!}
+                    <small class="text-danger">{{ $errors->first('email') }}</small>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    {!! Form::label('phone', 'Phone <small class="gray">optional</small>', [], false) !!}
+                    {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'placeholder' => '(000) 000-0000']) !!}
+                    <small class="text-danger">{{ $errors->first('phone') }}</small>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="card-wrapper"></div>
+              </div>
+              <div class="col-md-6">
                 <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
+                    {!! Form::label('number', 'Card Number <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
                     {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
                     <small class="text-danger">{{ $errors->first('number') }}</small>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
+                    {!! Form::label('expiry', 'Expiration <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
                     {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
                     <small class="text-danger">{{ $errors->first('expiry') }}</small>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
+                    {!! Form::label('cvc', 'CVC <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
                     {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
                     <small class="text-danger">{{ $errors->first('cvc') }}</small>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="card-wrapper"></div>
-              </div>
-              <div class="col-md-7">
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Name on Card']) !!}
-                    <small class="text-danger">{{ $errors->first('name') }}</small>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
-                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
-                    <small class="text-danger">{{ $errors->first('zipcode') }}</small>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {{-- Checkout Step Buttons --}}
-        <div class="checkout-footer mt-5">
-          <a class="btn btn-outline-secondary float-left m-2" href="/checkout"><i class="icon-arrow-left"></i><span class="hidden-xs-down"> Profile</span></a>
-          {!! Form::button('Place Order <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary float-right m-2', 'onClick' => 'goog_report_conversion(\'Pass Purchased\')']) !!}
-        </div>
-
     </div>
 
     {{-- Sidebar --}}
-    <div class="col-lg-4 hidden-xs-down">
-
-      <aside class="user-info-wrapper">
-        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-          {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
-        </div>
-        <div class="user-info">
-          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
-          <div class="user-data">
-            <h4>{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
-            <span>Joined {{ (isset(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
-          </div>
-        </div>
-      </aside>
-      <nav class="list-group mb-4">
-        <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
-        <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
-      </nav>
-
+    <div class="col-lg-4">
       @include('/checkout/_inc/ordersummary')
     </div>
 
   </div>
 </div>
 
-    {{-- End Form --}}
-    {!! Form::close() !!}
+{{-- End Form --}}
+{!! Form::close() !!}
 
 @stop
 
@@ -147,6 +124,20 @@ $(function() {
   /// Add total of all passes.
   addTotalDue();
 
+});
+
+//////////
+/// Promo Code Validation
+//////////
+
+$('#promo').on('blur', function() {
+  var activePromos = ['000000', '111111', '222222', '333333'];
+  var promo = $(this).val();
+  if (jQuery.inArray(promo, activePromos)!='-1') {
+      alert('Active Promo');
+  } else {
+      alert('No way Jose');
+  }  
 });
 
 //////////
@@ -228,10 +219,32 @@ function roundTo(num, places) {
 //////////
 
 $(function () {
-  $('#checkoutPayment').formValidation({
+  $('#checkoutRegister').formValidation({
     framework: 'bootstrap',
     excluded: ':disabled',
     fields: {
+      firstname: {
+        validators: {
+          notEmpty: {
+            message: 'What is your first name?'
+          }
+        }
+      },
+      lastname: {
+        validators: {
+          notEmpty: {
+            message: 'What is you last name?'
+          }
+        }
+      },
+      email: {
+        trigger: 'blur',
+        validators: {
+          notEmpty: {
+            message: 'Email is required.'
+          }
+        }
+      },
       number: {
         validators: {
           notEmpty: {
@@ -243,6 +256,27 @@ $(function () {
         validators: {
           notEmpty: {
             message: 'What is the name on the card?'
+          }
+        }
+      },
+      address: {
+        validators: {
+          notEmpty: {
+            message: 'What is your address?'
+          }
+        }
+      },
+      city: {
+        validators: {
+          notEmpty: {
+            message: 'What city?'
+          }
+        }
+      },
+      state: {
+        validators: {
+          notEmpty: {
+            message: 'Which state?'
           }
         }
       },
@@ -266,7 +300,7 @@ $(function () {
             message: 'How about a Zip Code?'
           }
         }
-      },
+      }
     }
   });
 });
