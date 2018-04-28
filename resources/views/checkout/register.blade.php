@@ -41,58 +41,7 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    {!! Form::label('name', 'Name on Card <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Full Name']) !!}
-                    <small class="text-danger">{{ $errors->first('name') }}</small>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
-                    {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
-                    <small class="text-danger">{{ $errors->first('zipcode') }}</small>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    {!! Form::label('email', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'you@email.com']) !!}
-                    <small class="text-danger">{{ $errors->first('email') }}</small>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                    {!! Form::label('phone', 'Phone <small class="gray">optional</small>', [], false) !!}
-                    {!! Form::text('phone', null, ['class' => 'form-control form-control-rounded', 'placeholder' => '(000) 000-0000']) !!}
-                    <small class="text-danger">{{ $errors->first('phone') }}</small>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="card-wrapper"></div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
-                    {!! Form::label('number', 'Card Number <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
-                    <small class="text-danger">{{ $errors->first('number') }}</small>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
-                    {!! Form::label('expiry', 'Expiration <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
-                    <small class="text-danger">{{ $errors->first('expiry') }}</small>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
-                    {!! Form::label('cvc', 'CVC <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
-                    <small class="text-danger">{{ $errors->first('cvc') }}</small>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -133,11 +82,10 @@ $(function() {
 $('#promo').on('blur', function() {
   var activePromos = ['000000', '111111', '222222', '333333'];
   var promo = $(this).val();
-  alert(promo);
   if (jQuery.inArray(promo, activePromos)!='-1') {
-      alert(promo + ' is in the array!');
+      alert('Active Promo');
   } else {
-      alert(promo + ' is NOT in the array...');
+      alert('No way Jose');
   }  
 });
 
