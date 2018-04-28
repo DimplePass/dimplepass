@@ -16,57 +16,57 @@ use Tests\TestCase;
 class CheckoutTest extends TestCase
 {
     /** @test */
-    function user_can_view_form_to_create_profile()
-    {
-		$this->disableExceptionHandling();	
-		$pass = factory(Pass::class)->create();	
-        $destination = factory(Destination::class)->create();
-        $pass->destinations()->attach($destination->id);
-        $paymentGateway = new FakePaymentGateway;
-        // Use this for the Payment Gateway
-        $this->app->instance(PaymentGateway::class,$paymentGateway);
-		$response = $this->get('/checkout/register?pass_id='.$pass->id);
+  //   function user_can_view_form_to_create_profile()
+  //   {
+		// $this->disableExceptionHandling();	
+		// $pass = factory(Pass::class)->create();	
+  //       $destination = factory(Destination::class)->create();
+  //       $pass->destinations()->attach($destination->id);
+  //       $paymentGateway = new FakePaymentGateway;
+  //       // Use this for the Payment Gateway
+  //       $this->app->instance(PaymentGateway::class,$paymentGateway);
+		// $response = $this->get('/checkout/register?pass_id='.$pass->id);
 
-		$response->assertStatus(200);
-		$response->assertViewHas('pass');	        
-    }
+		// $response->assertStatus(200);
+		// $response->assertViewHas('pass');	        
+  //   }
 
     /** @test */
-    function user_can_register_before_purchase_of_pass()
-    {
-		$this->disableExceptionHandling();
-        $faker  = Faker\Factory::create();	
-		$pass = factory(Pass::class)->create();	
-        $destination = factory(Destination::class)->create();
-        $pass->destinations()->attach($destination->id);
-        $paymentGateway = new FakePaymentGateway;
-        // Use this for the Payment Gateway
-        $this->app->instance(PaymentGateway::class,$paymentGateway);
-		$password = $faker->password;
-        $email = $faker->email;
+  //   function user_can_register_before_purchase_of_pass()
+  //   {
+		// $this->disableExceptionHandling();
+  //       $faker  = Faker\Factory::create();	
+		// $pass = factory(Pass::class)->create();	
+  //       $destination = factory(Destination::class)->create();
+  //       $pass->destinations()->attach($destination->id);
+  //       $paymentGateway = new FakePaymentGateway;
+  //       // Use this for the Payment Gateway
+  //       $this->app->instance(PaymentGateway::class,$paymentGateway);
+		// $password = $faker->password;
+  //       $email = $faker->email;
 
-		$response = $this->post('/checkout/register',[
-			'pass_id' => $pass->id,
-			'firstname' => $faker->firstname,
-			'lastname' => $faker->lastname,
-			'email' => $email,
-			'phone' => $faker->phoneNumber,
-			'password' => $password,
-			'confirmPassword' => $password,
-		]);   
-        $newUser = User::where('email',$email)->first();
-        $this->assertEquals($newUser->id,\Auth::user()->id);
-		$response->assertStatus(302);  
-		// $response->assertViewHas('user');
-		// $response->assertViewHas('pass');   
-    }
+		// $response = $this->post('/checkout/register',[
+		// 	'pass_id' => $pass->id,
+		// 	'firstname' => $faker->firstname,
+		// 	'lastname' => $faker->lastname,
+		// 	'email' => $email,
+		// 	'phone' => $faker->phoneNumber,
+		// 	'password' => $password,
+		// 	'confirmPassword' => $password,
+		// ]);   
+  //       $newUser = User::where('email',$email)->first();
+  //       $this->assertEquals($newUser->id,\Auth::user()->id);
+		// $response->assertStatus(302);  
+		// // $response->assertViewHas('user');
+		// // $response->assertViewHas('pass');   
+  //   }
 
     /** @test */
     function user_can_purchase_a_pass()
     {
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
-		$user = factory(User::class)->create();
+		// $user = factory(User::class)->create();
         // $paymentGateway = new FakePaymentGateway;
         $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
         // Use this for the Payment Gateway
@@ -79,23 +79,27 @@ class CheckoutTest extends TestCase
             'generate' => 'CONFIRMATION1234',
         ]); 
         $this->app->instance(PurchaseConfirmationNumberGenerator::class,$purchaseConfirmationNumberGenerator);
-
+        $email = $faker->email;
         // Purchase a Pass
-        $response = $this->actingAs($user)->post('/checkout/payment',[
-        	'pass_id' => $pass->id,
+        $response = $this->post('/checkout/payment',[
+        	'name' => $faker->firstName . " " . $faker->lastName,
+            'email' => $email,
+            'phone' => $faker->phoneNumber,
+            'pass_id' => $pass->id,
         	'qty' => 1,
         	'number' => '4242424242424242',
         	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
         	'cvc' => '123',
-        	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
         ]);
 
         $response->assertStatus(302);
-
+        $response->assertSessionHas('user');
         // Assert that Purchase was created
         // dd($pass->purchases);
-        $purchase = $pass->purchases()->where('user_id',$user->id)->first();
+        $purchase = $pass->purchases()->whereHas('user',function($q) use ($email) {
+            $q->where('email',$email);
+        })->first();
         $this->assertNotNull($purchase);
         $this->assertNotNull($purchase->stripe_charge_id);
         $this->assertEquals('CONFIRMATION1234',$purchase->confirmation_number);
@@ -110,21 +114,23 @@ class CheckoutTest extends TestCase
     {
 		$this->disableExceptionHandling();
 		$faker  = Faker\Factory::create();
-		$user = factory(User::class)->create();        
+		// $user = factory(User::class)->create();        
         $paymentGateway = new FakePaymentGateway;
         // $paymentGateway = new StripePaymentGateway(config('services.stripe.secret'));
         // Use this for the Payment Gateway
         $this->app->instance(PaymentGateway::class,$paymentGateway);
 
         $pass = factory(Pass::class)->create(['price' => '2000']);	
-
-        $response = $this->actingAs($user)->post('/checkout/payment',[
+        $email = $faker->email;
+        $response = $this->post('/checkout/payment',[
+            'name' => $faker->firstName . " " . $faker->lastName,
+            'email' => $email,
+            'phone' => $faker->phoneNumber,
         	'pass_id' => $pass->id,
         	'qty' => 1,
         	'number' => '4000000000000002',
         	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
         	'cvc' => '123',
-        	'name' => $faker->firstName . " " . $faker->lastName,
         	'zipcode' => $faker->postcode,
         	'token' => 'invalid-token'
         ], ['HTTP_REFERER' => '/checkout/payment']);
