@@ -16,6 +16,8 @@ class ChangePasswordToNullableOnUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('password')->change()->nullable();
+            $table->string('firstname')->change()->nullable();
+            $table->string('lastname')->change()->nullable();
         });
     }
 
