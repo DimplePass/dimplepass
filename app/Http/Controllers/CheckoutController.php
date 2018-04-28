@@ -152,6 +152,7 @@ class CheckoutController extends Controller
                 'credit_card_id' => $card->id,
                 'purchase_date' => Carbon::now(),
                 'stripe_charge_id' => $charge->id,
+                'promo_id' => $request->promo,
 
             ]);
             $purchase->items()->create([
