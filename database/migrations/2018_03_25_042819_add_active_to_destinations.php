@@ -27,8 +27,7 @@ class AddActiveToDestinations extends Migration
     public function down()
     {
         Schema::table('destinations', function (Blueprint $table) {
-            //
-            $table->tinyInteger('active')->nullable()->after('slug')->default(1);
+            $table->dropColumn('active');
         });
     }
 }

@@ -27,22 +27,42 @@
   <div class="row mt-5">
     <div class="col-lg-8">
 
-        <h3 class="text-bold">Your pass will be available immediately.</h3>
+        <h1 class="text-bold">WooHoo! <small class="text-warning">Purchase Successful</small></h1>
 
         <div class="card mt-3">
           <div class="card-header" role="tab">
-            <h6>
-              <i class="fa fa-cc-visa"></i>
-              <i class="fa fa-cc-mastercard"></i>
-              <i class="fa fa-cc-amex"></i>
-              <i class="fa fa-cc-discover"></i>
-              <i class="fa fa-cc-diners-club"></i>
-            </h6>
+            <h3><strong>Please create a password.</strong></h3>
           </div>
           <div class="card-body">
-            <div class="row">
-
-            </div>
+            {{-- Start Form --}}
+            {!! Form::open(['action' => 'CheckoutController@registerStore','method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
+              <div class="row">
+                <div class="col-sm-12 mb-3">
+                  <h4>Your Username: <strong>you@email.com</strong></h4>
+                </div>
+{{--                 <div class="col-sm-12">
+                  <h4>Password</h4>
+                </div> --}}
+                <div class="col-md-6">
+                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      {!! Form::label('password', 'Password <i class="pe-7s-leaf dp-warning"></i> <small class="gray">to access your pass in the future</small>', [], false) !!}
+                      {!! Form::password('password', ['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                      <small class="text-danger">{{ $errors->first('password') }}</small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group{{ $errors->has('confirmPassword') ? ' has-error' : '' }}">
+                      {!! Form::label('confirmPassword', 'Re-enter Password <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
+                      {!! Form::password('confirmPassword',['class' => 'form-control form-control-rounded', 'required' => 'required']) !!}
+                      <small class="text-danger">{{ $errors->first('confirmPassword') }}</small>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  {!! Form::button('Create Password and View Pass <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'class' => 'btn btn-primary btn-lg']) !!}
+                </div>    
+              </div>
+            {{-- End Form --}}
+            {!! Form::close() !!}
           </div>
         </div>
 
@@ -50,7 +70,24 @@
 
     {{-- Sidebar --}}
     <div class="col-lg-4">
-      @include('/checkout/_inc/ordersummary')
+      <div class="sticky">
+        <aside class="user-info-wrapper">
+          <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
+            {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
+          </div>
+          <div class="user-info">
+            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+            <div class="user-data">
+{{--               <h4>{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
+              <span>Joined {{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span> --}}
+            </div>
+          </div>
+        </aside>
+        <nav class="list-group">
+{{--           <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
+          <a class="list-group-item active" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a> --}}
+        </nav>
+      </div>
     </div>
 
   </div>
@@ -65,188 +102,29 @@
 <script>
 
 //////////
-/// On Page Load
-//////////
-
-$(function() {
-
-  /// Add total of all passes.
-  addTotalDue();
-
-});
-
-//////////
-/// Promo Code Validation
-//////////
-
-$('#promo').on('blur', function() {
-  var activePromos = ['000000', '111111', '222222', '333333'];
-  var promo = $(this).val();
-  if (jQuery.inArray(promo, activePromos)!='-1') {
-      alert('Active Promo');
-  } else {
-      alert('No way Jose');
-  }  
-});
-
-//////////
-/// Direct Donation sync and math.
-//////////
-
-$('.donate4').on('click', function() {
-  if($(this).is(':checked')) {
-    $('.donate4').prop('checked', true);
-    $('#dropdown-donate4').show();
-  } else {
-    $('.donate4').prop('checked', false);
-    $('#dropdown-donate4').hide();
-  }
-  // Fire donation math.
-  addTotalDue();
-});
-
-//////////
-/// Update Pass Count in Header after removal
-//////////
-
-function passCountSubtract() {
-  var count = Number($('#count').text());
-  count--;
-  $(".count").text(count).fadeIn(1200);
-}
-
-//////////
-/// Add total due and display
-//////////
-
-function addTotalDue() {
-  // Add total of passes.
-  totalPasses = 0;
-  $('.passFee').each(function(){
-      totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
-  });
-  // Add donation.
-  if ($('#donate4').is(':checked')) {
-    var donateAmount = 4;
-  } else {
-    var donateAmount = 0;
-  }
-  $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  // Add total of passes and donation.
-  var total = totalPasses + donateAmount; 
-  $('.totalDue').text(addCommas(roundTo(total, 0)));
-}
-
-//////////
-/// Adds Number Commas and decimal point.
-//////////
-
-function addCommas(nStr) {
-  nStr += '';
-  x = nStr.split('.');
-  x1 = x[0];
-  x2 = x.length > 1 ? '.' + x[1] : '';
-  var rgx = /(\d+)(\d{3})/;
-  while (rgx.test(x1)) {
-    x1 = x1.replace(rgx, '$1' + ',' + '$2');
-  }
-  return x1 + x2;
-}
-
-//////////
-/// Rounds current calculations.
-//////////
-
-function roundTo(num, places) {
-  var calc = (Math.round(num * (Math.pow(10, places))) / (Math.pow(10, places)));
-  return calc.toFixed(2);
-}
-
-//////////
 /// Form Validation
 /// http://formvalidation.io/settings/
 //////////
-
 $(function () {
   $('#checkoutRegister').formValidation({
     framework: 'bootstrap',
     excluded: ':disabled',
     fields: {
-      firstname: {
+      password: {
         validators: {
           notEmpty: {
-            message: 'What is your first name?'
+            message: 'A password is required.'
           }
         }
       },
-      lastname: {
+      confirmPassword: {
         validators: {
           notEmpty: {
-            message: 'What is you last name?'
-          }
-        }
-      },
-      email: {
-        trigger: 'blur',
-        validators: {
-          notEmpty: {
-            message: 'Email is required.'
-          }
-        }
-      },
-      number: {
-        validators: {
-          notEmpty: {
-            message: 'What is the credit card number?'
-          }
-        }
-      },
-      name: {
-        validators: {
-          notEmpty: {
-            message: 'What is the name on the card?'
-          }
-        }
-      },
-      address: {
-        validators: {
-          notEmpty: {
-            message: 'What is your address?'
-          }
-        }
-      },
-      city: {
-        validators: {
-          notEmpty: {
-            message: 'What city?'
-          }
-        }
-      },
-      state: {
-        validators: {
-          notEmpty: {
-            message: 'Which state?'
-          }
-        }
-      },
-      expiry: {
-        validators: {
-          notEmpty: {
-            message: 'Required'
-          }
-        }
-      },
-      cvc: {
-        validators: {
-          notEmpty: {
-            message: 'Required'
-          }
-        }
-      },
-      zipcode: {
-        validators: {
-          notEmpty: {
-            message: 'How about a Zip Code?'
+            message: 'Password confirmation is required.'
+          },
+          identical: {
+            field: 'password',
+            message: 'Passwords do not match.'
           }
         }
       }

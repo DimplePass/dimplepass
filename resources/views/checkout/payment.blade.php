@@ -19,7 +19,7 @@
 @section('content')
 
 {{-- Start Form --}}
-{!! Form::open(['action' => 'CheckoutController@registerUser','method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
+{!! Form::open(['action' => 'CheckoutController@paymentStore','method' => 'POST', 'id' => 'checkoutPayment', 'class' => 'interactive-credit-card']) !!}
 {!! Form::hidden('pass_id', $pass->id) !!}
 
 {{-- Page Content --}}
@@ -219,7 +219,7 @@ function roundTo(num, places) {
 //////////
 
 $(function () {
-  $('#checkoutRegister').formValidation({
+  $('#checkoutPaymen').formValidation({
     framework: 'bootstrap',
     excluded: ':disabled',
     fields: {
