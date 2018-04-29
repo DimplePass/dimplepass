@@ -7,6 +7,7 @@ use App\Billing\PaymentFailedException;
 use App\Billing\PaymentGateway;
 use App\Mail\NewPurchase;
 use App\Pass;
+use App\PromoCode;
 use App\Purchase;
 use App\User;
 use Carbon\Carbon;
@@ -63,6 +64,7 @@ class CheckoutController extends Controller
     {
 
         $pass = Pass::findOrFail($request->pass_id);
+        $promoCodes = PromoCode::where('active',1)->get();
 
         if($request->session()->has('passes'))
         {
@@ -73,6 +75,7 @@ class CheckoutController extends Controller
         }
         return view('checkout.payment',[
             'pass' => $pass,
+            'promoCodes' => $promoCodes
         ]);
 
     }

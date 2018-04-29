@@ -62,6 +62,20 @@ class CheckoutTest extends TestCase
     }
 
     /** @test */
+    function user_can_view_form_to_purchase_pass()
+    {
+        $this->disableExceptionHandling();
+        $faker  = Faker\Factory::create();        
+        $pass = factory(Pass::class)->create(['price' => '2000']);
+        $destinations = $pass->destinations()->save(factory(Destination::class)->create());
+        $response = $this->get('/checkout/payment?pass_id='.$pass->id);
+
+        $response->assertViewHas('pass');
+        $response->assertViewHas('promoCodes');
+        $response->assertStatus(200);
+    }
+
+    /** @test */
     function user_can_purchase_a_pass()
     {
 		$this->disableExceptionHandling();
