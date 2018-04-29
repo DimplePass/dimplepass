@@ -16,50 +16,50 @@ use Tests\TestCase;
 class CheckoutTest extends TestCase
 {
     /** @test */
-  //   function user_can_view_form_to_create_profile()
-  //   {
-		// $this->disableExceptionHandling();	
-		// $pass = factory(Pass::class)->create();	
-  //       $destination = factory(Destination::class)->create();
-  //       $pass->destinations()->attach($destination->id);
-  //       $paymentGateway = new FakePaymentGateway;
-  //       // Use this for the Payment Gateway
-  //       $this->app->instance(PaymentGateway::class,$paymentGateway);
-		// $response = $this->get('/checkout/register?pass_id='.$pass->id);
-
-		// $response->assertStatus(200);
-		// $response->assertViewHas('pass');	        
-  //   }
+    function user_can_view_form_to_create_password()
+    {
+		$this->disableExceptionHandling();	
+        $user = factory(User::class)->create(['password' => '']);
+		$response = $this->withSession(['user' => $user])->get('/checkout/register');
+        // $data = json_decode($response->getContent(),true);
+        // dd($response->getContent());  
+		$response->assertStatus(200);        
+    }
 
     /** @test */
-  //   function user_can_register_before_purchase_of_pass()
-  //   {
-		// $this->disableExceptionHandling();
-  //       $faker  = Faker\Factory::create();	
+    function unregistered_user_cannot_view_form_to_create_password()
+    {
+        // $this->disableExceptionHandling();  
+        $user = factory(User::class)->create(['password' => '']);
+        $response = $this->get('/checkout/register');
+        $response->assertStatus(404);          
+    }
+
+    /** @test */
+    function user_can_register_a_password_after_purchase_of_pass()
+    {
+		$this->disableExceptionHandling();
+        $faker  = Faker\Factory::create();
+        $user = factory(User::class)->create(['password' => '']);	
 		// $pass = factory(Pass::class)->create();	
   //       $destination = factory(Destination::class)->create();
   //       $pass->destinations()->attach($destination->id);
   //       $paymentGateway = new FakePaymentGateway;
-  //       // Use this for the Payment Gateway
-  //       $this->app->instance(PaymentGateway::class,$paymentGateway);
-		// $password = $faker->password;
-  //       $email = $faker->email;
+        // Use this for the Payment Gateway
+        // $this->app->instance(PaymentGateway::class,$paymentGateway);
+		$password = $faker->password;
 
-		// $response = $this->post('/checkout/register',[
-		// 	'pass_id' => $pass->id,
-		// 	'firstname' => $faker->firstname,
-		// 	'lastname' => $faker->lastname,
-		// 	'email' => $email,
-		// 	'phone' => $faker->phoneNumber,
-		// 	'password' => $password,
-		// 	'confirmPassword' => $password,
-		// ]);   
-  //       $newUser = User::where('email',$email)->first();
-  //       $this->assertEquals($newUser->id,\Auth::user()->id);
-		// $response->assertStatus(302);  
-		// // $response->assertViewHas('user');
-		// // $response->assertViewHas('pass');   
-  //   }
+		$response = $this->post('/checkout/register',[
+			'user_id' => $user->id,
+            'password' => $password,
+			'confirmPassword' => $password,
+		]);   
+        $newUser = $user->fresh();
+        $this->assertNotEquals('',$newUser->password);
+		$response->assertStatus(302);  
+		// $response->assertViewHas('user');
+		// $response->assertViewHas('pass');   
+    }
 
     /** @test */
     function user_can_purchase_a_pass()

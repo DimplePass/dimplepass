@@ -20,7 +20,7 @@
 
 {{-- Start Form --}}
 {!! Form::open(['route' => ['checkout.payment.store'],'method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
-{!! Form::hidden('pass_id', $pass->id) !!}
+{{-- Form::hidden('pass_id', $pass->id) --}}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
