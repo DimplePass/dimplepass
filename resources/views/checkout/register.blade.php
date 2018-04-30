@@ -36,9 +36,10 @@
           <div class="card-body">
             {{-- Start Form --}}
             {!! Form::open(['action' => 'CheckoutController@registerStore','method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
+            {!! Form::hidden('user_id', $user->id) !!}
               <div class="row">
                 <div class="col-sm-12 mb-3">
-                  <h4>Your Username: <strong>you@email.com</strong></h4>
+                  <h4>Your Username: <strong>{{ $user->email }}</strong></h4>
                 </div>
 {{--                 <div class="col-sm-12">
                   <h4>Password</h4>
@@ -70,6 +71,7 @@
 
     {{-- Sidebar --}}
     <div class="col-lg-4">
+      {{ $user }}
       <div class="sticky">
         <aside class="user-info-wrapper">
           <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
@@ -78,15 +80,15 @@
           <div class="user-info">
             <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
             <div class="user-data">
-              <h4>{{ (!is_null(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (!is_null(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
-              <span>Joined {{ (!is_null(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
+              <h4>{{ $user->firstname ? $user->firstname : null }} {{ $user->lastname ? $user->lastname : null }}</h4>
+              <span>Joined {{ $user->created_at ? $user->created_at->format('F j, Y') : null }}</span>
             </div>
           </div>
         </aside>
-        <nav class="list-group">
-          <a class="list-group-item with-badge" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
-          <a class="list-group-item active" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
-        </nav>
+{{--         <nav class="list-group">
+          <a class="list-group-item with-badge" href="{{ route('member.show', $user) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count($user->purchases) }}</span></a>
+          <a class="list-group-item active" href="{{ route('member.edit', $user) }}"><i class="icon-head"></i>My Profile</a>
+        </nav> --}}
       </div>
     </div>
 

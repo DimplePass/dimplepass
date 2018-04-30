@@ -21,6 +21,8 @@
 {{-- Start Payment Form --}}
 {!! Form::open(['action' => 'CheckoutController@paymentStore','method' => 'POST', 'id' => 'checkoutPayment', 'class' => 'interactive-credit-card']) !!}
 {!! Form::hidden('pass_id', $pass->id) !!}
+{!! Form::hidden('qty', 1) !!}
+{!! Form::hidden('total', 0, ['id' => 'totalAmount']) !!}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x">
@@ -256,7 +258,10 @@ function addTotalDue(promoDiscount) {
   }
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
   // Determine total amount.
-  var total = (totalPasses - promoDiscount) + donateAmount; 
+  var total = (totalPasses - promoDiscount) + donateAmount;
+  // Send to hidden input field to send in form.
+  $('#totalAmount').val(total*100);
+  // Display total due in Order Summary.
   $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 

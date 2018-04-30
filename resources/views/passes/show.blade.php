@@ -24,10 +24,10 @@
     <div class="row">
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h2 class="mb-2 white-color"><strong>Save Money.</strong></h2>
-          <h1 class="mb-2 text-warning">{{ $pass->destinations->first()->name }}'s Top Attractions and Activities.</h1>
+          {{-- <h2 class="mb-2 white-color"><strong>Save Money.</strong></h2> --}}
+          <h1 class="mb-2 white-color">{{ $pass->destinations->first()->name }}</h1>
           @if (count($pass->discounts))
-            <h2 class="mt-0 mb-2 white-color"><strong>Exclusive Discounts!</strong></h2>   
+            <h2 class="mt-0 mb-2 white-color"><strong>Exclusive Activity Discounts</strong></h2>   
           @else
             <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass is available <span class="dp-warning">May 15th.</span></strong></h2>   
           @endif           
@@ -97,7 +97,7 @@
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
       <aside class="sidebar mb-5 text-center text-md-left">
-        <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5">
+        {{-- <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5"> --}}
         <h4><strong><a href="/how">How does it work?</a></strong></h4>
         <h5 class="gray">4 Easy Ways to Redeem</h5>   
         <h6><i class="pe-7s-mouse text-warning"></i> Book Online</h6>

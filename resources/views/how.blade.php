@@ -25,7 +25,7 @@
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h1 class="mb-2 white-color">How does it work?</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>Discounted. Simple. <span class="dp-warning">Best Vacation Ever.</span></strong></h2>               
+          <h2 class="mt-0 mb-2 white-color"><strong>Save Money.<br><span class="dp-warning">Have the Best Vacation Ever.</span></strong></h2>               
         </div>
     </div>
   </div>
@@ -40,12 +40,10 @@
       <h4 class="hidden-sm-down"><strong><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></strong></h4>
     </div>
     <div class="col-md-8 text-md-left text-center">
-      <h2 class="mb-5">You <strong class="dp-warning">save money</strong> on <strong class="dp-warning">the best</strong> attractions and activities for your <strong class="dp-warning">vacation</strong>.</h2>
       <div class="mt-30 hidden-md-up"></div>
-      <hr>
       <h3 class="mb-30"><strong class="text-black">1.)</strong> Purchase the Get Outside Pass</h3>
       <i class="pe-7s-credit float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>If you like the discounts in a Pass, click "Buy the Pass".  You will be taken to a simple and secure checkout page to create a basic profile and pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
+      <p>If you like the discounts on a Pass, click "Buy the Pass".  You will be taken to a secure checkout page to pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
       <hr >
       <h3 class="mb-30"><strong class="text-black">2.)</strong> Present to Vendor</h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
