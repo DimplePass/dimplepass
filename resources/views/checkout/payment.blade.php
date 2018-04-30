@@ -189,7 +189,7 @@ $('#promo').on('keyup', function() {
   var promo = $(this).val();
   // If the promo code is valid.
   if (jQuery.inArray(promo, promoCodes)!='-1') {
-      $('#promoMessage').empty();
+      $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       var promoDiscount = 4;
@@ -199,7 +199,7 @@ $('#promo').on('keyup', function() {
   } 
   // If the promo code is emptied by the user.
   else if ($(this).val() == '') {
-      $('#promoMessage').empty();
+      $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
       $('#promoDiscountDisplay').hide();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       var promoDiscount = 0;
