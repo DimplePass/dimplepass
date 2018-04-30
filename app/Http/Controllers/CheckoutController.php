@@ -59,6 +59,7 @@ class CheckoutController extends Controller
         \Auth::login($user, true);
         return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
     }
+
 	// Payment
     public function payment(Request $request)
     {
@@ -80,6 +81,7 @@ class CheckoutController extends Controller
 
     }
 
+    // Process the Payment
     public function paymentStore(Request $request)
     {
         // return $request->all();
