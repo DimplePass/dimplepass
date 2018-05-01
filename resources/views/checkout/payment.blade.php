@@ -18,17 +18,18 @@
 
 @section('content')
 
-{{-- Start Form --}}
+{{-- Start Payment Form --}}
 {!! Form::open(['action' => 'CheckoutController@paymentStore','method' => 'POST', 'id' => 'checkoutPayment', 'class' => 'interactive-credit-card']) !!}
 {!! Form::hidden('pass_id', $pass->id) !!}
+{!! Form::hidden('qty', 1) !!}
+{!! Form::hidden('total', 0, ['id' => 'totalAmount']) !!}
 
 {{-- Page Content --}}
-<div class="container padding-bottom-3x mb-2">
+<div class="container padding-bottom-3x">
   <div class="row mt-5">
-    <div class="col-lg-8">
-
-        <h3 class="text-bold">Your pass will be available immediately.</h3>
-
+    
+      {{-- Left Column - Payment Info --}}
+      <div class="col-lg-8">
         <div class="card mt-3">
           <div class="card-header" role="tab">
             <h6>
@@ -41,6 +42,9 @@
           </div>
           <div class="card-body">
             <div class="row">
+              <div class="col-sm-12">
+                <h3 class="text-bold">Your pass will be available immediately.</h3>
+              </div>      
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     {!! Form::label('name', 'Name on Card <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
@@ -96,18 +100,58 @@
             </div>
           </div>
         </div>
-
     </div>
 
-    {{-- Sidebar --}}
-    <div class="col-lg-4">
-      @include('/checkout/_inc/ordersummary')
+    {{-- Right Column - Order Summary --}}
+    <div class="col-sm-12 col-lg-4">
+      <aside class="sidebar sticky mt-3">
+        <div class="padding-top-2x hidden-lg-up"></div>
+        <section class="widget widget-order-summary">
+          <h3 class="widget-title">Order Summary</h3>
+          <table class="table">
+            <tr class="passid-{{ $pass->id }}">
+              <td>
+                <h6 class="mb-0">{{ $pass->name }} Pass</h6>
+                <p class="mt-0 mb-0">{{ $pass->start->format('M d, Y') }} - {{ $pass->end->format('M d, Y') }}</p>
+                <p class="mt-0">{{ count($pass->discounts) }} Discounts</p>
+              </td>
+              <td class="text-medium">$<span class="passFee">{{ number_format($pass->price/100, 2, '.', ',') }}</span></td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <div class="form-group{{ $errors->has('promo') ? ' has-error' : '' }}">
+                    {!! Form::text('promo', null, ['class' => 'form-control form-control-rounded', 'id' => 'promo']) !!}
+                    {!! Form::label('promo', 'Promo Code') !!}
+                    <small class="text-danger" id="promoMessage">{{ $errors->first('promo') }}</small>
+                    <span id="promoAmount" style="visibility: hidden;">0</span>
+                </div>
+              </td> 
+              <td class="text-medium"><span id="promoDiscountDisplay">- $<span id="promoDiscount" class="promoDiscount">0.00</span></span></td>    
+            </tr>
+            <tr>
+              <td>
+                <div class="custom-control custom-checkbox">
+                  {!! Form::checkbox('donate4', '1', null, ['id' => 'donate4', 'class' => 'custom-control-input pointer donate4']) !!} 
+                  <label class="custom-control-label dp-warning pointer" for="donate4">Add $4 to get kids outdoors.</label>
+                  <p><a href="#" data-toggle="modal" data-target="#modalDonate" id="whatIsThis">What is this?</a></p> 
+                </div>
+              </td>     
+              <td class="text-medium">$<span id="donateAmount" class="donateAmount">0</span></td>   
+            </tr>       
+            <tr>
+              <td></td>
+              <td><h4><strong>$<span id="totalDue" class="totalDue"></span></strong></h4></td>
+            </tr>
+          </table>
+        </section>
+        {!! Form::button('Get My Pass <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'id' => 'paymentSubmit', 'class' => 'btn btn-primary btn-xl btn-block mt-0', 'onClick' => 'goog_report_conversion(\'Pass Purchased\')']) !!}
+      </aside>
     </div>
 
   </div>
 </div>
 
-{{-- End Form --}}
+{{-- End Payment Form --}}
 {!! Form::close() !!}
 
 @stop
@@ -121,8 +165,12 @@
 
 $(function() {
 
-  /// Add total of all passes.
-  addTotalDue();
+  // Hide the discount.
+  $('#promoDiscountDisplay').hide();
+  // Set promo discount to zero.
+  var promoDiscount = 0;
+  // Fire Total Due.
+  addTotalDue(promoDiscount);
 
 });
 
@@ -130,18 +178,51 @@ $(function() {
 /// Promo Code Validation
 //////////
 
-$('#promo').on('blur', function() {
-  var activePromos = ['000000', '111111', '222222', '333333'];
+// If the promo code is starting to be entered, disable the submit button.
+$('#promo').on('focus', function() {
+  if ($(this). val() != '') {
+    $('#paymentSubmit').attr("disabled", "disabled");
+  }
+})
+
+// As the user enters the promo code, continue to check for a valid promo code.
+$('#promo').on('keyup', function() {
+  var promoCodes = {!! $promoCodes->pluck('code') !!};
   var promo = $(this).val();
-  if (jQuery.inArray(promo, activePromos)!='-1') {
-      alert('Active Promo');
-  } else {
-      alert('No way Jose');
-  }  
+  // If the promo code is valid.
+  if (jQuery.inArray(promo, promoCodes)!='-1') {
+      $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
+      $('#promoDiscountDisplay').show();
+      $('#paymentSubmit').removeAttr("disabled", "disabled");
+      var promoDiscount = 4;
+      $('#promoAmount').text(promoDiscount);
+      // Fire Total Due
+      addTotalDue(promoDiscount);
+  } 
+  // If the promo code is emptied by the user.
+  else if ($(this).val() == '') {
+      $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
+      $('#promoDiscountDisplay').hide();
+      $('#paymentSubmit').removeAttr("disabled", "disabled");
+      var promoDiscount = 0;
+      $('#promoAmount').text(promoDiscount);
+      // Fire Total Due
+      addTotalDue(promoDiscount);
+  }
+  // If the promo code is not valid (as they enter usaully). 
+  else {
+      $('#promoMessage').html('<strong>Code Not Valid</strong>');
+      $('#promoDiscountDisplay').hide();
+      $('#paymentSubmit').attr("disabled", "disabled");
+      var promoDiscount = 0;
+      $('#promoAmount').text(promoDiscount);
+      // Fire Total Due
+      addTotalDue(promoDiscount);
+  }
 });
 
 //////////
-/// Direct Donation sync and math.
+/// Direct Donation.
 //////////
 
 $('.donate4').on('click', function() {
@@ -152,30 +233,23 @@ $('.donate4').on('click', function() {
     $('.donate4').prop('checked', false);
     $('#dropdown-donate4').hide();
   }
-  // Fire donation math.
-  addTotalDue();
+  var promoAmount = $('#promoAmount').text();
+  // Fire Total Due
+  addTotalDue(promoAmount);
 });
-
-//////////
-/// Update Pass Count in Header after removal
-//////////
-
-function passCountSubtract() {
-  var count = Number($('#count').text());
-  count--;
-  $(".count").text(count).fadeIn(1200);
-}
 
 //////////
 /// Add total due and display
 //////////
 
-function addTotalDue() {
+function addTotalDue(promoDiscount) {
   // Add total of passes.
   totalPasses = 0;
   $('.passFee').each(function(){
       totalPasses += parseFloat($(this).text());  // Or this.innerHTML, this.innerText
   });
+  // Apply Promo Discount.
+  $('.promoDiscount').text(addCommas(roundTo(promoDiscount, 0)));
   // Add donation.
   if ($('#donate4').is(':checked')) {
     var donateAmount = 4;
@@ -183,8 +257,11 @@ function addTotalDue() {
     var donateAmount = 0;
   }
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  // Add total of passes and donation.
-  var total = totalPasses + donateAmount; 
+  // Determine total amount.
+  var total = (totalPasses - promoDiscount) + donateAmount;
+  // Send to hidden input field to send in form.
+  $('#totalAmount').val(total*100);
+  // Display total due in Order Summary.
   $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
 
@@ -219,7 +296,7 @@ function roundTo(num, places) {
 //////////
 
 $(function () {
-  $('#checkoutPaymen').formValidation({
+  $('#checkoutPayment').formValidation({
     framework: 'bootstrap',
     excluded: ':disabled',
     fields: {
