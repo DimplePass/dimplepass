@@ -95,9 +95,10 @@ class CheckoutController extends Controller
         // Create or find A User
         $redirectTo = 'checkout.register';
         $user = User::firstOrCreate(['email' => $request->email]);
-        if(!$user->exists())
+        $user->phone = $request->phone;
+        if(!$user->firstname)
         {
-            $parts = explode(" ", $input['name']);
+            $parts = explode(" ", $request->name);
             $lastname = array_pop($parts);
             $firstname = implode(" ", $parts);    
             (empty($firstname)) ? ($firstname = $lastname) && ($lastname = '') : $firstname = $firstname;
