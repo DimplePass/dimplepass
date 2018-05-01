@@ -35,7 +35,7 @@
           </div>
           <div class="card-body">
             {{-- Start Form --}}
-            {!! Form::open(['action' => 'CheckoutController@registerStore','method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
+            {!! Form::open(['method' => 'POST', 'route' => 'checkout.register.store', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
             {!! Form::hidden('user_id', $user->id) !!}
               <div class="row">
                 <div class="col-sm-12 mb-3">
@@ -71,7 +71,6 @@
 
     {{-- Sidebar --}}
     <div class="col-lg-4">
-      {{ $user }}
       <div class="sticky">
         <aside class="user-info-wrapper">
           <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">

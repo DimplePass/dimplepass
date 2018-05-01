@@ -24,42 +24,6 @@ class CheckoutController extends Controller
         $this->paymentGateway = $paymentGateway;
     }
 
-    // Register
-    public function register(Request $request)
-    {
-        
-        $pass = [];
-
-        if(!$request->session()->has('user'))
-        {
-            abort(404);
-        } else {
-            $user = session('user');
-        }
-        // return $user;
-        return view('checkout.register',[
-            'user' => $user
-        ]);
-    }
-
-    // Store Password
-    public function registerStore(Request $request)
-    {
-        return $request->all();
-        $request->validate([
-            'password'     =>  'required',
-            'confirmPassword' => 'required'
-        ]);        
-        // Confirm Passwords Match
-        if($request->password !== $request->confirmPassword) return redirect()->back()->with('error','Your passwords do not match.');
-
-        $user = User::findOrFail($request->user_id);
-        $user->password = \Hash::make($request->password);
-        $user->save();
-        \Auth::login($user, true);
-        return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
-    }
-
 	// Payment
     public function payment(Request $request)
     {
@@ -137,8 +101,8 @@ class CheckoutController extends Controller
 
 
         try {
-            $amount = ($request->qty*$pass->price);
-            if($request->donate4) $amount = $amount + 400;
+            $amount = $request->total;
+            // if($request->donate4) $amount = $amount + 400;
             // dd($amount);
             $charge = $this->paymentGateway->charge($amount,$token);
 
@@ -203,6 +167,42 @@ class CheckoutController extends Controller
         return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
 
                    
+    }
+
+    // Register
+    public function register(Request $request)
+    {
+        
+        $pass = [];
+
+        if(!$request->session()->has('user'))
+        {
+            abort(404);
+        } else {
+            $user = session('user');
+        }
+        // return $user;
+        return view('checkout.register',[
+            'user' => $user
+        ]);
+    }
+
+    // Store Password
+    public function registerStore(Request $request)
+    {
+        // return $request->all();
+        $request->validate([
+            'password'     =>  'required',
+            'confirmPassword' => 'required'
+        ]);        
+        // Confirm Passwords Match
+        if($request->password !== $request->confirmPassword) return redirect()->back()->with('error','Your passwords do not match.');
+
+        $user = User::findOrFail($request->user_id);
+        $user->password = \Hash::make($request->password);
+        $user->save();
+        \Auth::login($user, true);
+        return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
     }
 
 }
