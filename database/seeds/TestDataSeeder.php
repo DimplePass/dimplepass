@@ -45,26 +45,30 @@ class TestDataSeeder extends Seeder
         // Make some Active Promo Codes
         factory(PromoCode::class,25)->create();
 
-        factory(Pass::class)->create([
+        $pass = factory(Pass::class)->create([
             'name' => 'GO Glacier Summer 2018',
             'slug' => 'go-glacier-summer-2018',
         ]);
-        factory(Pass::class)->create([
+        $destinations = $pass->destinations()->save(factory(Destination::class)->create());
+        $pass = factory(Pass::class)->create([
             'name' => 'GO Grand Canyon Summer 2018',
             'slug' => 'go-grand-canyon-summer-2018',
         ]);
-        factory(Pass::class)->create([
+        $destinations = $pass->destinations()->save(factory(Destination::class)->create());
+        $pass = factory(Pass::class)->create([
             'name' => 'GO Great Smoky Mountains Summer 2018',
             'slug' => 'go-great-smoky-mountains-summer-2018',
         ]);
-        factory(Pass::class)->create([
+        $destinations = $pass->destinations()->save(factory(Destination::class)->create());
+        $pass = factory(Pass::class)->create([
             'name' => 'GO Yosemite Summer 2018',
             'slug' => 'go-yosemite-summer-2018',
         ]);
-        factory(Pass::class)->create([
+        $destinations = $pass->destinations()->save(factory(Destination::class)->create());
+        $pass = factory(Pass::class)->create([
             'name' => 'GO Zion Summer 2018',
             'slug' => 'go-zion-summer-2018',
         ]);
-
+        $destinations = $pass->destinations()->save(factory(Destination::class)->create());
     }
 }

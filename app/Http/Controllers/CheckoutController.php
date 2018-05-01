@@ -45,7 +45,7 @@ class CheckoutController extends Controller
     // Store Password
     public function registerStore(Request $request)
     {
-        // return $request->all();
+        return $request->all();
         $request->validate([
             'password'     =>  'required',
             'confirmPassword' => 'required'
