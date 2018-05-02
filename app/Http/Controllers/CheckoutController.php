@@ -102,7 +102,19 @@ class CheckoutController extends Controller
 
         try {
             // $amount = $request->total;
-            if($request->donate4) $amount = $amount + 400;
+            $amount = ($request->qty*$pass->price);
+            if($request->donate4) $amount += 400;
+            // dd($amount);
+            if(!empty($request->promo))
+            {
+                $promo = PromoCode::find($request->promo);
+                $amount = $amount-$promo->discount;
+                $promoItem = [
+                    'description' => $promo->code,
+                    'qty' => 1,
+                    'price' => -abs($promo->discount),
+                ];
+            }
             // dd($amount);
             $charge = $this->paymentGateway->charge($amount,$token);
 
@@ -139,14 +151,18 @@ class CheckoutController extends Controller
                     'price' => $pass->price
                 ]);                
             }
+            if(!empty($request->promo))
+            {
+                $purchase->items()->create($promoItem);
+            }
 
-            $purchase = new NewPurchase($purchase);
-            $purchase->subject('GO Pass Purchase');
+            $purchaseNotice = new NewPurchase($purchase);
+            $purchaseNotice->subject('GO Pass Purchase');
     
-            \Mail::to($user)->send($purchase);
+            \Mail::to($user)->send($purchaseNotice);
             if(\App::environment() == 'production')
             {
-                \Slack::to('#pass-sold')->send('Pass Sold!');
+                \Slack::to('#pass-sold')->send('Pass Sold! to ' . $user->fullname . " (" . $user->email . ")");
             }
             
 
