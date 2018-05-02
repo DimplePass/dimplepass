@@ -101,8 +101,8 @@ class CheckoutController extends Controller
 
 
         try {
-            $amount = $request->total;
-            // if($request->donate4) $amount = $amount + 400;
+            // $amount = $request->total;
+            if($request->donate4) $amount = $amount + 400;
             // dd($amount);
             $charge = $this->paymentGateway->charge($amount,$token);
 
