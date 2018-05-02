@@ -19,8 +19,8 @@
 @section('content')
 
 {{-- Start Form --}}
-{!! Form::open(['route' => ['checkout.payment.store'],'method' => 'POST', 'id' => 'checkoutRegister', 'class' => 'interactive-credit-card']) !!}
-{{-- Form::hidden('pass_id', $pass->id) --}}
+{!! Form::open(['route' => ['checkout.register.store'],'method' => 'POST', 'id' => 'checkoutRegister']) !!}
+{!! Form::hidden('user_id', $user->id) !!}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-2">
