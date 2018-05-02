@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddActiveToDestinations extends Migration
+class AddNameToPromoCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddActiveToDestinations extends Migration
      */
     public function up()
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            //
-            $table->tinyInteger('active')->nullable()->after('slug')->default(1);
+        Schema::table('promo_codes', function (Blueprint $table) {
+             $table->string('name')->nullable()->after('code');
         });
     }
 
@@ -26,8 +25,6 @@ class AddActiveToDestinations extends Migration
      */
     public function down()
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            $table->dropColumn('active');
-        });
+        $table->dropColumn('name');
     }
 }
