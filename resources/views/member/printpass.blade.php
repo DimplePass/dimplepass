@@ -139,7 +139,7 @@
     </div>
     <div class="header-2 text-right">
       <h1 class="mx-0">{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h1>
-      <h6 class="mx-0">{{ Auth::user()->email }} | {{ Auth::user()->phone }} | {{ Auth::user()->city }}, {{ Auth::user()->state }}  {{ Auth::user()->zip }}</h6>
+      <h6 class="mx-0">{{ Auth::user()->email }} | {{ Auth::user()->phone ? Auth::user()->phone : null }} | {{ Auth::user()->city ? Auth::user()->city : null }}, {{ Auth::user()->state }}  {{ Auth::user()->zip }}</h6>
       <p class="mx-0">Purchased on {{ (isset(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</p>
       <p class="mx-0 gray-dark"><small>Please show ID when presenting a printed pass.</small></p>
     </div>
@@ -214,7 +214,7 @@
     </div>
     <div class="column text-right">
       <h2 class="mx-0">Help During Your Vacation?</h2>
-      <h4 class="mx-0">800-555-1212 | help@getoutsidepass.com</h4>
+      <h4 class="mx-0">307-690-9788 | help@getoutsidepass.com</h4>
       <p class="mx-0">Mon- Fri: 9am-5pm | Sat & Sun: 10am-4pm</p>
       <p>Please let us know activities and attractions you'd like to see added!</p>
     </div>
