@@ -162,7 +162,7 @@ class CheckoutController extends Controller
             \Mail::to($user)->send($purchaseNotice);
             if(\App::environment() == 'production')
             {
-                \Slack::to('#pass-sold')->send('Pass Sold! to ' . $user->fullname . " (" . $user->email . ")");
+                \Slack::to('#pass-sold')->send('Pass sold to ' . $user->firstname . " (" . $user->email . ")");
             }
             
 
