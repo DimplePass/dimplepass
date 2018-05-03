@@ -107,7 +107,7 @@ class CheckoutController extends Controller
             // dd($amount);
             if(!empty($request->promo))
             {
-                $promo = PromoCode::find($request->promo);
+                $promo = PromoCode::findOrFail($request->promo);
                 $amount = $amount-$promo->discount;
                 $promoItem = [
                     'description' => $promo->code,
