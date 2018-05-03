@@ -107,7 +107,8 @@ class CheckoutController extends Controller
             // dd($amount);
             if(!empty($request->promo))
             {
-                $promo = PromoCode::findOrFail($request->promo);
+                $promo = PromoCode::where('code',$request->promo)->first();
+                if(is_null($promo)) return redirect()->back()->with('error','Sorry, this promotional code is not valid.');
                 $amount = $amount-$promo->discount;
                 $promoItem = [
                     'description' => $promo->code,
@@ -115,7 +116,6 @@ class CheckoutController extends Controller
                     'price' => -abs($promo->discount),
                 ];
             }
-            // dd($amount);
             $charge = $this->paymentGateway->charge($amount,$token);
 
             // @ToDo: Create Confirmation Number
@@ -158,7 +158,7 @@ class CheckoutController extends Controller
 
             $purchaseNotice = new NewPurchase($purchase);
             $purchaseNotice->subject('GO Pass Purchase');
-    
+            // dd($purchaseNotice);
             \Mail::to($user)->send($purchaseNotice);
             if(\App::environment() == 'production')
             {
@@ -172,6 +172,7 @@ class CheckoutController extends Controller
             
             return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
         }
+        // dd($user);
         // return redirect('/purchases/' . $purchase->confirmationNumber)->with('status','Congratulations - now Get Outside!');
         // return redirect()->route('user.show',['confirmationNumber' => $purchase->confirmation_number]);
         // If the user is new and doesn't have a password, redirect them to create one.
