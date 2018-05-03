@@ -8,6 +8,7 @@
         "php": ">=7.0.0",
         "bugsnag/bugsnag-laravel": "^2.0",
         "code16/privat": "^2.1",
+        "doctrine/dbal": "^2.7",
         "dougsisk/laravel-country-state": "^2.1",
         "ellisthedev/laravel-5-robots": "~0.1.0",
         "fideloper/proxy": "~3.3",

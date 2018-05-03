@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddActiveToDestinations extends Migration
+class CreateVendorTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddActiveToDestinations extends Migration
      */
     public function up()
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            //
-            $table->tinyInteger('active')->nullable()->after('slug')->default(1);
+        Schema::create('vendor_types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class AddActiveToDestinations extends Migration
      */
     public function down()
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            $table->dropColumn('active');
-        });
+        Schema::dropIfExists('vendor_types');
     }
 }

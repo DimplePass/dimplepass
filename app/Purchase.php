@@ -21,6 +21,11 @@ class Purchase extends Model
     	return $this->hasMany(\App\PurchaseItem::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class);
+    }
+
     // Attributes
     public function getTotalAttribute()
     {

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddActiveToDestinations extends Migration
+class ChangePasswordToNullableOnUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddActiveToDestinations extends Migration
      */
     public function up()
     {
-        Schema::table('destinations', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->tinyInteger('active')->nullable()->after('slug')->default(1);
+            $table->string('password')->change()->nullable();
+            $table->string('firstname')->change()->nullable();
+            $table->string('lastname')->change()->nullable();
         });
     }
 
@@ -26,8 +28,8 @@ class AddActiveToDestinations extends Migration
      */
     public function down()
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            $table->dropColumn('active');
+        Schema::table('users', function (Blueprint $table) {
+            //
         });
     }
 }

@@ -75,9 +75,8 @@
           <form class="subscribe-form" action="" method="post" target="_blank" novalidate>
             <div class="clearfix">
               <div class="input-group input-light">
-                <input class="form-control" type="email" name="EMAIL" placeholder="Your e-mail"><span class="input-group-addon"><i class="icon-mail"></i></span>
+                <input class="form-control" type="email" name="EMAIL" placeholder="Your e-mail" tabindex="-1"><span class="input-group-addon"><i class="icon-mail"></i></span>
               </div>
-              {{-- real people should not fill this in and expect good things - do not remove this or risk form bot signups --}}
               <div style="position: absolute; left: -5000px;" aria-hidden="true">
                 <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
               </div>
