@@ -102,7 +102,7 @@ class CheckoutTest extends TestCase
             'email' => $email,
             'phone' => $faker->phoneNumber,
             'pass_id' => $pass->id,
-            'promo' => $promo->id,
+            'promo' => $promo->code,
         	'qty' => 1,
         	'number' => '4242424242424242',
         	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
