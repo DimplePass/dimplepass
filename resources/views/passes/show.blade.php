@@ -29,7 +29,7 @@
           @if (count($pass->discounts))
             <h2 class="mt-0 mb-2 white-color"><strong>Exclusive Activity Discounts</strong></h2>   
           @else
-            <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass is available <span class="dp-warning">May 15th.</span></strong></h2>   
+            <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass is available <span class="dp-warning">June 1st.</span></strong></h2>   
           @endif           
         </div>
       </div>
