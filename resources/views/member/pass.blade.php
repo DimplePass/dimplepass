@@ -67,7 +67,7 @@
             <div class="col-sm-12">
               @foreach ($v as $v)
               <div class="passDiscount">
-                @if ($v->percent > 1)
+                @if ($v->percent > .99)
                   <h5 class="mb-0">${{ round($v->percent) }} Off {{ $v->name }}<small> | {{ $v->vendor->name }}</small></h5>
                 @else
                   <h5 class="mb-0">{{ round($v->percent*100) }}% Off {{ $v->name }}<small> | {{ $v->vendor->name }}</small></h5>
