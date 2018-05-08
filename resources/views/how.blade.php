@@ -48,16 +48,16 @@
       <h3 class="mb-30"><strong class="text-black">2.)</strong> Present to Vendor</h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Book Online</h5>
-      <p>Many Get Outside Pass vendors are capable of taking bookings online and redeeming the discount via a code in their online reservation system.  Simply place use the Get Outside Pass code into your booking and save!</p>   
+      <p>Many Get Outside Pass vendors are capable of taking bookings online and redeeming the discount via a code in their online reservation system.  Simply place the Get Outside Pass code while booking and save!</p>   
       <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 5rem;"></i>      
       <h5>Book by Phone</h5>
-      <p>When booking by phone, simply let the vendor know that you have a Get Outside Pass.  They'll ask you for the redemption code while placing your reservation into their system.  Bam, it's that easy - you just saved!</p> 
+      <p>When booking by phone, simply let the vendor know that you have a Get Outside Pass.  They'll ask you for the redemption code while placing your reservation into their system.  Bam, it's that easy - you just saved money!</p> 
       <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Show Pass on Phone</h5>
-      <p>You will be able to login using your phone or iPad and view your active passes.  You can then show the active to the vendor at their place of business during ticket purchasing or booking.  <strong>NOTE: Many places may not have phone service, we suggest printing a copy of the pass to take with you.</strong></p>
+      <p>You will be able to login using your phone or iPad and view your active passes.  You can then show the pass to the vendor at their place of business during ticket purchasing or booking.  <strong>NOTE: Many places may not have phone service, we suggest printing a copy of the pass to take with you.  You can also take a screen capture of the pass so that is available when you are not connected.</strong></p>
       <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Print It</h5>
-      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), you can present the printed pass at the vendor's place of business.  The pass will have your full name and contact info and you may be asked to show ID to confirm your identity.</p>
+      <p>For the larger vendors (resorts, museums, restaurants, etc.), you can usually present the printed pass at the vendor's place of business.  The pass will have your full name and contact info and you may be asked to show ID to confirm your identity.</p>
       <hr>
       <h3 class="mb-30"><strong class="text-black">3.)</strong> Save Money</h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
