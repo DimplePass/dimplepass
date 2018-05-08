@@ -179,7 +179,6 @@
       @else
         <h5 class="mb-0"><strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong><small> | {{ $v->vendor->name }}</small></h5>
       @endif
-      <h5 class="mb-0"><strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong><small> | {{ $v->vendor->name }}</small></h5>
       <p class="mb-0 gray">Valid {{ $v->start->format('F d, Y') }} to {{ $v->end->format('F d, Y') }}</p>
       <p>
       Redeem By: 
