@@ -70,11 +70,11 @@
             <p class="hidden-xs-down">{{ $d->description }}</p>
             <div class="product-buttons">
               @if (is_null($d->percent))
-                <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
+                <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong></h3>
               @elseif ($d->percent > .99)
-                <h3><i class="icon-tag dp-success"></i> <strong>${{ $d->percent }} Off {{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
+                <h3><i class="icon-tag dp-success"></i> <strong>${{ $d->percent }} Off {{ $d->name }}</strong></h3>
               @else
-                <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong> <small>(limit {{ $d->limit }})</small></h3>
+                <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
               @endif
               {!! $d->rates !!}
               <ul class="list-unstyled text-sm">
@@ -83,6 +83,7 @@
                 @if ($d->fine_print)
                   <li>{{ $d->fine_print }}</li>
                 @endif
+                  <li><span class="opacity-50">Limit:</span> {{ $d->limit }}</li>
                 @if ($d->reservations_required == 1)
                   <li class="dp-danger">Reservations Required</li>
                 @endif
