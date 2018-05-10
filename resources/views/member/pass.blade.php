@@ -67,10 +67,12 @@
             <div class="col-sm-12">
               @foreach ($v as $v)
               <div class="passDiscount">
-                @if ($v->percent > .99)
-                  <h5 class="mb-0">${{ $v->percent }} Off {{ $v->name }}<small> | {{ $v->vendor->name }}</small></h5>
+                @if (is_null($v->percent))
+                  <h3><i class="icon-tag dp-success"></i> <strong>{{ $v->name }}</strong> <small>(limit {{ $v->limit }})</small></h3>
+                @elseif ($v->percent > .99)
+                  <h3><i class="icon-tag dp-success"></i> <strong>${{ $v->percent }} Off {{ $v->name }}</strong> <small>(limit {{ $v->limit }})</small></h3>
                 @else
-                  <h5 class="mb-0">{{ round($v->percent*100) }}% Off {{ $v->name }}<small> | {{ $v->vendor->name }}</small></h5>
+                  <h3><i class="icon-tag dp-success"></i> <strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong> <small>(limit {{ $v->limit }})</small></h3>
                 @endif
                 <p class="mb-0">Valid {{ $v->start->format('F d, Y') }} to {{ $v->end->format('F d, Y') }}</p>
                 <p>
