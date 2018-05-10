@@ -57,7 +57,7 @@
         </div>
       </div>
       {{-- Vendor Listing --}}
-      @foreach ($pass->discounts->shuffle() as $d)
+      @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
         <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}

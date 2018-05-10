@@ -170,7 +170,7 @@
   </div>
 
   {{-- Discounts Grouped by Town --}}
-  @foreach ($pass->discounts->groupBy('town') as $k => $v)
+  @foreach ($pass->discounts->where('active', '=', 1)->groupBy('town') as $k => $v)
   <div class="discounts">
     <h4 class="mb-3 go-warning"><strong>{{ $k }}</strong></h4>
     @foreach ($v as $v)

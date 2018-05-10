@@ -61,7 +61,7 @@
       <h6><strong>Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
 
       {{-- Discounts Grouped by Location --}}
-      @foreach ($pass->discounts->groupBy('town') as $k => $v)
+      @foreach ($pass->discounts->where('active', '=', 1)->groupBy('town') as $k => $v)
         <div class="passCity mt-4">
             <h4 class="mb-3 dp-warning"><strong>{{ $k }}</strong></h4>
             <div class="col-sm-12">
