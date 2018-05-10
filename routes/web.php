@@ -21,6 +21,10 @@ Route::group(['middleware' => 'web'], function () {
 	///// Home
 	Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
+	// Alias
+	Route::redirect('/goyellowstone', '/yellowstone/passes/go-yellowstone-summer-2018', 301);
+
+
 	///// Checkout
 	Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@payment']);
 	Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@paymentStore']);
