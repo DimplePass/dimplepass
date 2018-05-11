@@ -139,12 +139,12 @@
 $(function() {
 
   /// Exit Popup
-    bioEp.init({
-      width: 600,
-      height: 450,
-      html: '<a href="/foundation" target="_blank"><img src="/img/dontblowit.jpg" alt="Don\'t Blow It!" /></a>',
-      cookieExp: 0
-    });
+    // bioEp.init({
+    //   width: 600,
+    //   height: 450,
+    //   html: '<a href="/foundation" target="_blank"><img src="/img/dontblowit.jpg" alt="Don\'t Blow It!" /></a>',
+    //   cookieExp: 0
+    // });
 
 });
 
