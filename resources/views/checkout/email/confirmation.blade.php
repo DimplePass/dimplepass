@@ -173,7 +173,7 @@
                     <tr>
                         <td style="color: #333333; font-size: 16px; font-family: 'Maven Pro', sans-serif; line-height: 24px;">
                             <h2 style="margin-bottom: 12px">Yippee!</h2>
-                            <h3 style="margin-bottom: 12px">Your Get Outside Pass is now available.</h3>
+                            <h3 style="margin-bottom: 12px"><a href="{{ route('member.show', $purchase->user_id) }}">Your Get Outside Pass is now available.</a></h3>
                             <p style="margin-bottom: 12px">You have unlocked great savings on the best activities and attractions for your upcoming national park vacation.  Be sure to book activities that require reservations early so that you can ensure availability.</p>
                             <h4 style="margin-bottom: 12px">Have an incredible vacation!</h4>
                             <h4>The Get Outside Crew</h4>
