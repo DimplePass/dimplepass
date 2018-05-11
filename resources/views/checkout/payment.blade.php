@@ -194,7 +194,7 @@ $('#promo').on('keyup', function() {
       $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
-      var promoDiscount = 4;
+      var promoDiscount = 2;
       $('#promoAmount').text(promoDiscount);
       // Fire Total Due
       addTotalDue(promoDiscount);
