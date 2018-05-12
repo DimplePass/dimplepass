@@ -24,13 +24,13 @@
     <div class="row">
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          {{-- <h2 class="mb-2 white-color"><strong>Save Money.</strong></h2> --}}
-          <h1 class="mb-2 white-color">{{ $pass->destinations->first()->name }}</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
-            <h2 class="mt-0 mb-2 white-color"><strong>Exclusive Activity Discounts</strong></h2>   
+            <h3 class="white-color"><strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on top attractions and activities.</h3>
+            <h3 class="white-color">Save up to <strong class="text-warning">$346</strong> per person.</h3>
           @else
-            <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass is available <span class="dp-warning">June 1st.</span></strong></h2>   
-          @endif           
+            <h3 class="text-warning"><strong>Available <span class="dp-warning">June 1st.</span></strong></h3>
+          @endif
         </div>
       </div>
     </div>
@@ -49,11 +49,12 @@
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
           <h2 class="mb-1"><strong>The {{ $pass->name }} Pass</strong></h2>
-          <h4 class="text-warning"><strong>$16</strong> gets you discounts on the best attractions and activities.</h4>
+          <h4 class="text-warning">Our <strong>$16 Pass</strong> unlocks discounts on the activities below.</h4>
           <h6 class="mb-0">{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h6>
         </div>
         <div class="column">
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
+            <h2 class="mb-1"><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
+            <h6 class="mt-1 text-center">Good for up to 5 people</h6>
         </div>
       </div>
       {{-- Vendor Listing --}}
@@ -116,9 +117,7 @@
   			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
             <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
-            <h5 class="text-warning">Early Bird Rate</h5>
-            <h6>Buy today and save as we continue to add more offers.</h6>
-            <h6><strong>$36 after May 15th</strong></h6>
+            <h6 class="mt-1 text-center">Good for up to 5 people</h6>
   			</aside> 
       </div>
     </div>
