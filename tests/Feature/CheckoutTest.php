@@ -100,7 +100,7 @@ class CheckoutTest extends TestCase
         $cookies = [
             'referer' => encrypt('http://www.google.com'),
             'ga_campaign' => encrypt('AllTrips'),
-            'visit_count' => encrypt(5),
+            'visit_count' => 5,
         ];
 
         // Stubb out the PurchaseConfirmationNumberGenerator

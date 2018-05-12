@@ -43,12 +43,12 @@ class CheckReferral
             $visits = \Cookie::get('visit_count');
             // dd($visits);
             // If this session doesn't have a visit_count, it is a new session, so increment the visit_count
-            // if(!session()->has('visit_count'))
-            // {
-            //     // Increment the visit count and set the session
-            //     \Cookie::queue('visit_count',$visits+1, 86400);
-            //     session(['visit_count' => $visits+1]);
-            // }            
+            if(!session()->has('visit_count'))
+            {
+                // Increment the visit count and set the session
+                \Cookie::queue('visit_count',$visits+1, 86400);
+                session(['visit_count' => $visits+1]);
+            }            
         }
 
         return $next($request);        
