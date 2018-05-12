@@ -101,6 +101,17 @@ class CheckoutController extends Controller
 
 
         try {
+            // dd($request);
+            if ($request->hasCookie('referer')) {
+                $referer = $request->cookie('referer');
+            } else $referer = null;
+            if ($request->hasCookie('ga_campaign')) {
+                $ga_campaign = $request->cookie('ga_campaign');
+            } else $ga_campaign = null;
+            if ($request->hasCookie('visit_count')) {
+                $visit_count = $request->cookie('visit_count');
+                // dd($request->cookie('visit_count'));
+            } else $visit_count = null;            
             // $amount = $request->total;
             $amount = ($request->qty*$pass->price);
             if($request->donate4) $amount += 400;
@@ -134,7 +145,9 @@ class CheckoutController extends Controller
                 'purchase_date' => Carbon::now(),
                 'stripe_charge_id' => $charge->id,
                 'promo_id' => $request->promo,
-
+                'referring_url' => $referer,
+                'campaign_id' => $ga_campaign,
+                'num_visits' => $visit_count,
             ]);
             $purchase->items()->create([
                 'pass_id' => $pass->id,

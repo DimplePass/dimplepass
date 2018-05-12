@@ -69,8 +69,13 @@ class CheckoutTest extends TestCase
         $faker  = Faker\Factory::create();        
         $pass = factory(Pass::class)->create(['price' => '2000']);
         $destinations = $pass->destinations()->save(factory(Destination::class)->create());
-        $response = $this->get('/checkout/payment?pass_id='.$pass->id);
+        $response = $this->withHeaders([
+                'HTTP_REFERER' => 'http://www.google.com',
+            ])->get('/checkout/payment?pass_id='.$pass->id.'&promo=123456789&utm_campaign=AllTrips');
 
+        $response->assertCookie('referer','http://www.google.com');
+        $response->assertCookie('promo','123456789');
+        $response->assertCookie('ga_campaign','AllTrips');
         $response->assertViewHas('pass');
         $response->assertViewHas('promoCodes');
         $response->assertStatus(200);
@@ -89,6 +94,14 @@ class CheckoutTest extends TestCase
         // Create a Pass
         $pass = factory(Pass::class)->create(['price' => '2000']);	
         $promo = factory(PromoCode::class)->create();
+        $headers = [
+            'HTTP_REFERER' => 'http://www.google.com',
+        ];
+        $cookies = [
+            'referer' => encrypt('http://www.google.com'),
+            'ga_campaign' => encrypt('AllTrips'),
+            'visit_count' => encrypt(5),
+        ];
 
         // Stubb out the PurchaseConfirmationNumberGenerator
         $purchaseConfirmationNumberGenerator = Mockery::mock(PurchaseConfirmationNumberGenerator::class,[
@@ -97,7 +110,7 @@ class CheckoutTest extends TestCase
         $this->app->instance(PurchaseConfirmationNumberGenerator::class,$purchaseConfirmationNumberGenerator);
         $email = $faker->email;
         // Purchase a Pass
-        $response = $this->post('/checkout/payment',[
+        $response = $this->call('POST','/checkout/payment',[
         	'name' => $faker->firstName . " " . $faker->lastName,
             'email' => $email,
             'phone' => $faker->phoneNumber,
@@ -108,7 +121,7 @@ class CheckoutTest extends TestCase
         	'expiry' => '04 / '.substr(Carbon::now()->addYears(3)->year,2),
         	'cvc' => '123',
         	'zipcode' => $faker->postcode,
-        ]);
+        ],$cookies);
         // dd($response);
         $response->assertStatus(302);
         // $response->assertSessionHas('user');
@@ -121,6 +134,9 @@ class CheckoutTest extends TestCase
         $this->assertNotNull($purchase);
         $this->assertNotNull($purchase->stripe_charge_id);
         $this->assertEquals('CONFIRMATION1234',$purchase->confirmation_number);
+        $this->assertEquals(5,$purchase->num_visits);
+        $this->assertEquals('AllTrips',$purchase->campaign_id);
+        $this->assertEquals('http://www.google.com',$purchase->referring_url);
         // Verify the Total of the Purchase
         $this->assertEquals(2, $purchase->items->sum('qty'));
         $this->assertEquals(1*$pass->price-$promo->discount, $purchase->total);
