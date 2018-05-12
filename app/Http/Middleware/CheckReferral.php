@@ -32,21 +32,23 @@ class CheckReferral
           \Cookie::queue('ga_campaign',$request->query('utm_campaign'), 86400);
         }
         // Check that there is not already a cookie set
+
         if (! $request->hasCookie('visit_count')) {
           // Add a cookie to the response that lasts 60 days (in minutes)
-          \Cookie::queue('visit_count',encrypt(1), 86400);
+          \Cookie::queue('visit_count',1, 86400);
           session(['visit_count' => 1]);
         } else {
-            $visits = \Crypt::decrypt($request->cookie('visit_count'));
-            // $visits = \Cookie::get('visit_count');
+            // dd($request);
+            // $visits = \Crypt::decrypt($request->cookie('visit_count'));
+            $visits = \Cookie::get('visit_count');
             // dd($visits);
             // If this session doesn't have a visit_count, it is a new session, so increment the visit_count
-            if(!session()->has('visit_count'))
-            {
-                // Increment the visit count and set the session
-                \Cookie::queue('visit_count',$visits+1, 86400);
-                session(['visit_count' => $visits+1]);
-            }            
+            // if(!session()->has('visit_count'))
+            // {
+            //     // Increment the visit count and set the session
+            //     \Cookie::queue('visit_count',$visits+1, 86400);
+            //     session(['visit_count' => $visits+1]);
+            // }            
         }
 
         return $next($request);        
