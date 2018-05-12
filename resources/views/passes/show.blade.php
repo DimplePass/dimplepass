@@ -27,7 +27,7 @@
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
             <h3 class="white-color"><strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on top attractions and activities.</h3>
-          <h3 class="white-color">Save up to <strong class="text-warning">$346</strong> per person.</h3>
+            <h3 class="white-color">Save up to <strong class="text-warning">$346</strong> per person.</h3>
           @else
             <h3 class="text-warning"><strong>Available <span class="dp-warning">June 1st.</span></strong></h3>
           @endif
@@ -117,9 +117,7 @@
   			<hr class="mb-5 hidden-sm-down">
   			<aside class="text-center">
             <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
-            <h5 class="text-warning">Early Bird Rate</h5>
-            <h6>Buy today and save as we continue to add more offers.</h6>
-            <h6><strong>$36 after May 15th</strong></h6>
+            <h6 class="mt-1 text-center">Good for up to 5 people</h6>
   			</aside> 
       </div>
     </div>
