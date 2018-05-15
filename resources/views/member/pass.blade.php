@@ -50,19 +50,17 @@
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
       
       {{-- Pass Title --}}
-      <h2><strong>{{ $pass->first()->name }} <small>({{ count($pass->discounts) }} discounts)</small>
-        @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($pass->first()->start), Carbon\Carbon::parse($pass->first()->end)))
-          <small class="dp-success">Active</small>
-        @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($pass->first()->start)))
-          <small class="text-warning">Upcoming</small>
-        @else
-          <small class="text-danger">Expired</small><br>
+      <h2><strong>{{ $pass->first()->name }} Pass
+        @if (Carbon\Carbon::now() > (Carbon\Carbon::parse($pass->first()->end)))
+          <small class="text-danger">Expired</small>
         @endif
       </strong></h2>
 
-      <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Available dates vary per discount.</small></h5>
+      <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates may vary per offer.</small></h5>
 
-      <h6><strong>Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
+      <h6><strong class="text-danger">Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
+
+      <h4 class="mt-4"><strong>{{ count($pass->discounts) }} exclusive discounts</strong></h4>
 
       {{-- Discounts Grouped by Location --}}
       @foreach ($pass->discounts->where('active', '=', 1)->groupBy('town') as $k => $v)
