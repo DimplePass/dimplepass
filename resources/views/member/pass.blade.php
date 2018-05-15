@@ -22,30 +22,35 @@
 <div class="container padding-bottom-3x mb-2 mt-5">
   <div class="row">
     <div class="col-lg-4">
+      <aside class="user-info-wrapper">
+        <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
+          {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
+        </div>
+        <div class="user-info">
+          <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
+          <div class="user-data">
+            <h4>{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
+            <span>Joined {{ (isset(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
+          </div>
+        </div>
+      </aside>
+      <nav class="list-group">
+        <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
+        <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
+      </nav>
       <div class="sticky">
-        <aside class="user-info-wrapper">
-          <div class="user-cover" style="background-image: url(/img/account/user-cover-img.jpg);">
-            {{-- <div class="info-label" data-toggle="tooltip" title="You currently have 290 Reward Points to spend"><i class="icon-medal"></i>290 points</div> --}}
-          </div>
-          <div class="user-info">
-            <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/img/account/user-ava.jpg" alt="User"></div>
-            <div class="user-data">
-              <h4>{{ (isset(Auth::user()->firstname)) ? Auth::user()->firstname : null }} {{ (isset(Auth::user()->lastname)) ? Auth::user()->lastname : null }}</h4>
-              <span>Joined {{ (isset(Auth::user()->created_at)) ? Auth::user()->created_at->format('F j, Y') : null }}</span>
-            </div>
-          </div>
+        <aside class="mt-4 text-center">
+          <h2><strong class="dp-success">{{ $pass->first()->code }}</strong></h2>
+          <h5 class="mx-5">Use this code at the ticket window or when making reservations.</h5>
+          <h2 class="mt-5 hidden-xs-down"><a href="{{ route('member.passes.print', [Auth::user(), $pass]) }}" target="_blank" class="btn btn-lg btn-rounded btn-primary btn-block"><i class="icon-printer"> Print Your Pass</i></a></h2>
         </aside>
-        <nav class="list-group">
-          <a class="list-group-item with-badge active" href="{{ route('member.show', Auth::user()) }}"><i class="icon-tag"></i>My Passes<span class="badge badge-primary badge-pill">{{ count(Auth::user()->purchases) }}</span></a>
-          <a class="list-group-item" href="{{ route('member.edit', Auth::user()) }}"><i class="icon-head"></i>My Profile</a>
-        </nav>
       </div>
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
       
       {{-- Pass Title --}}
-      <h2><strong>{{ $pass->first()->name }} 
+      <h2><strong>{{ $pass->first()->name }} <small>({{ count($pass->discounts) }} discounts)</small>
         @if (Carbon\Carbon::now()->between(Carbon\Carbon::parse($pass->first()->start), Carbon\Carbon::parse($pass->first()->end)))
           <small class="dp-success">Active</small>
         @elseif (Carbon\Carbon::now() < (Carbon\Carbon::parse($pass->first()->start)))
@@ -54,7 +59,6 @@
           <small class="text-danger">Expired</small><br>
         @endif
       </strong></h2>
-      <h3>Discount Code: {{ $pass->first()->code }}</h3>
 
       <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Available dates vary per discount.</small></h5>
 
@@ -68,11 +72,11 @@
               @foreach ($v as $v)
               <div class="passDiscount">
                 @if (is_null($v->percent))
-                  <h3><i class="icon-tag dp-success"></i> <strong>{{ $v->name }}</strong> <small>(limit {{ $v->limit }})</small></h3>
+                  <h3><i class="icon-tag dp-success"></i> <strong>{{ $v->name }}</strong></h3>
                 @elseif ($v->percent > .99)
-                  <h3><i class="icon-tag dp-success"></i> <strong>${{ $v->percent }} Off {{ $v->name }}</strong> <small>(limit {{ $v->limit }})</small></h3>
+                  <h3><i class="icon-tag dp-success"></i> <strong>${{ $v->percent }} Off {{ $v->name }}</strong></h3>
                 @else
-                  <h3><i class="icon-tag dp-success"></i> <strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong> <small>(limit {{ $v->limit }})</small></h3>
+                  <h3><i class="icon-tag dp-success"></i> <strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong></h3>
                 @endif
                 <p class="mb-0">Valid {{ $v->start->format('F d, Y') }} to {{ $v->end->format('F d, Y') }}</p>
                 <p>
@@ -87,16 +91,16 @@
                 @endif
                 Redeem By: 
                 @if ($v->redeem_online == 1)
-                  <span class="dp-success ml-1"><i class="fa fa-globe"></i> Online</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Click on the link below to make an online booking. When prompted, enter the code {{ $pass->first()->code }}. The system will automatically apply our discount."><i class="fa fa-globe"></i> Online</span>
                 @endif
                 @if ($v->redeem_phone == 1)
-                  <span class="dp-success ml-1"><i class="fa fa-phone"></i> Phone Call</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Call the number below to make a reservation over the phone. Let the reservationist know that you have a {{ $pass->first()->name }} Pass. You will be prompted to share the code {{ $pass->first()->code }} and your name."><i class="fa fa-phone"></i> Phone Call</span>
                 @endif
                 @if ($v->redeem_showphone == 1)
-                  <span class="dp-success ml-1"><i class="fa fa-mobile"></i> View Pass on Phone</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Simply view your pass on your phone internet browser. You’ll have a link to this pass in your confirmation email so just keep it handy OR, better yet, bookmark it. When you arrive at the attraction or activity, simply go to the ticket window and show them this screen on your phone. You may be required to show your ID as well."><i class="fa fa-mobile"></i> Show Pass on Phone</span>
                 @endif
                 @if ($v->redeem_showprint == 1)
-                  <span class="dp-success ml-1"><i class="fa fa-print"></i> Printed Pass</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Print your pass using the button on the left. When you arrive at the attraction or activity, simply go to the ticket window and say you have a {{ $pass->first()->name }} Pass and show them the paper copy of your pass. You may be required to show your ID as well."><i class="fa fa-print"></i> Printed Pass</span>
                 @endif
                 <small>(limit {{ $v->limit }})</small>
                 <br>
@@ -117,6 +121,10 @@
 
 @section('scripts')
 <script>
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 </script>
 @stop
