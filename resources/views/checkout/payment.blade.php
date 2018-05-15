@@ -43,7 +43,14 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-12">
-                <h3 class="text-bold">Your pass will be available immediately.</h3>
+                @if (\Session::has('error'))
+                  <div class="alert alert-danger mb-3">
+                    <h3>{!! \Session::get('error') !!}</h3>
+                    <h5>Please check your card details and try again.</h5>
+                  </div>
+                @else
+                  <h3 class="text-bold">Your pass will be available immediately.</h3>   
+                @endif
               </div>      
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
