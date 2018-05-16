@@ -68,7 +68,6 @@
             <h3 class="product-title">
               {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
             </h3>
-            <p class="hidden-xs-down">{{ $d->description }}</p>
             <div class="product-buttons">
               @if (is_null($d->percent))
                 <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong></h3>
@@ -78,21 +77,25 @@
                 <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
               @endif
               {!! $d->rates !!}
-              <ul class="list-unstyled text-sm">
-                <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
-                {!! $d->hours !!}
-                @if ($d->fine_print)
-                  <li>{{ $d->fine_print }}</li>
-                @endif
-                  <li><span class="opacity-50">Limit:</span> {{ $d->limit }}</li>
-                @if ($d->reservations_required == 1)
-                  <li class="dp-danger">Reservations Required</li>
-                @endif
-                @if ($d->limited_availability == 1)
-                  <li class="dp-danger">Limited Availability - Book Early!</li>
-                @endif
-                <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
-              </ul>
+              <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details</a></p>
+              <div class="collapse" id="details_{{ $d->id }}">
+                <p class="hidden-xs-down">{{ $d->description }}</p>
+                <ul class="list-unstyled text-sm">
+                  <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
+                  {!! $d->hours !!}
+                  @if ($d->fine_print)
+                    <li>{{ $d->fine_print }}</li>
+                  @endif
+                    <li><span class="opacity-50">Limit:</span> {{ $d->limit }}</li>
+                  @if ($d->reservations_required == 1)
+                    <li class="dp-danger">Reservations Required</li>
+                  @endif
+                  @if ($d->limited_availability == 1)
+                    <li class="dp-danger">Limited Availability - Book Early!</li>
+                  @endif
+                  <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

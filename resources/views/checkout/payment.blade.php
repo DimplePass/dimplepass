@@ -201,7 +201,12 @@ $('#promo').on('keyup', function() {
       $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
-      var promoDiscount = 2;
+      // If Friends and Family promo code.
+      if (promo = 007007) {
+        var promoDiscount = 20;
+      } else {
+        var promoDiscount = 2;
+      }
       $('#promoAmount').text(promoDiscount);
       // Fire Total Due
       addTotalDue(promoDiscount);
