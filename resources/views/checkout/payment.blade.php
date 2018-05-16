@@ -202,7 +202,7 @@ $('#promo').on('keyup', function() {
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       // If Friends and Family promo code.
-      if (promo = 007007) {
+      if (promo == '007007') {
         var promoDiscount = 20;
       } else {
         var promoDiscount = 2;
