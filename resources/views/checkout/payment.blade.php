@@ -112,10 +112,6 @@
     {{-- Right Column - Order Summary --}}
     <div class="col-sm-12 col-lg-4">
       <aside class="sidebar sticky mt-3">
-        @if (Request::get('promo'))
-          <h3 class="dp-warning"><strong>Lucky You!</strong></h3>
-          <h5>Use code <strong>{{ app('request')->input('promo') }}</strong> and save $24.</h5>
-        @endif
         <div class="padding-top-2x hidden-lg-up"></div>
         <section class="widget widget-order-summary">
           <h3 class="widget-title">Order Summary</h3>
@@ -128,6 +124,13 @@
               </td>
               <td class="text-medium">$<span class="passFee">{{ number_format($pass->price/100, 2, '.', ',') }}</span></td>
             </tr>
+            @if (Request::get('promo'))
+            <tr>
+              <td colspan="2" class="text-left">
+                <h3 class="dp-warning"><strong>Lucky You!</strong></h3>
+              </td>
+            </tr> 
+            @endif
             <tr>
               <td class="text-left">
                 <div class="form-group{{ $errors->has('promo') ? ' has-error' : '' }}">

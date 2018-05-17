@@ -256,6 +256,18 @@ select.form-control:not([size]):not([multiple]) {
 	  margin-right: .3rem;
 	}
 
+	// Pop Slide from Bottom
+	.footerDrawer {
+	  width: 100%;
+		right: 0;
+	}
+	.footerDrawer h3 {
+	  font-size: 18px;
+	}
+	.footerDrawer h4 {
+	  font-size: 18px;
+	}
+
 }
 
 @media (min-width: $screen-sm) {

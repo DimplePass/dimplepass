@@ -164,7 +164,7 @@ $(document).ready(function() {
     $('.footerDrawer .open').show();
     $('.footerDrawer .content').fadeIn();
     $('#launcher').hide();
-  }, 6000);
+  }, 20000);
 
 });
 
