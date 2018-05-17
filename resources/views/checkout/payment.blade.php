@@ -112,6 +112,10 @@
     {{-- Right Column - Order Summary --}}
     <div class="col-sm-12 col-lg-4">
       <aside class="sidebar sticky mt-3">
+        @if (Request::get('promo'))
+          <h3 class="dp-warning"><strong>Lucky You!</strong></h3>
+          <h5>Use code <strong>{{ app('request')->input('promo') }}</strong> and save $24.</h5>
+        @endif
         <div class="padding-top-2x hidden-lg-up"></div>
         <section class="widget widget-order-summary">
           <h3 class="widget-title">Order Summary</h3>
@@ -127,7 +131,7 @@
             <tr>
               <td class="text-left">
                 <div class="form-group{{ $errors->has('promo') ? ' has-error' : '' }}">
-                    {!! Form::text('promo', null, ['class' => 'form-control form-control-rounded', 'id' => 'promo']) !!}
+                    {!! Form::text('promo', (isset($request->promo)) ? $request->promo : null, ['class' => 'form-control form-control-rounded', 'id' => 'promo']) !!}
                     {!! Form::label('promo', 'Promo Code') !!}
                     <small class="text-danger" id="promoMessage">{{ $errors->first('promo') }}</small>
                     <span id="promoAmount" style="visibility: hidden;">0</span>
@@ -179,6 +183,10 @@ $(function() {
   // Fire Total Due.
   addTotalDue(promoDiscount);
 
+  // Check for pre-filled promo code.
+  var promo = $('#promo').val();
+  checkPromo(promo);
+
 });
 
 //////////
@@ -190,12 +198,16 @@ $('#promo').on('focus', function() {
   if ($(this). val() != '') {
     $('#paymentSubmit').attr("disabled", "disabled");
   }
-})
+});
 
 // As the user enters the promo code, continue to check for a valid promo code.
 $('#promo').on('keyup', function() {
-  var promoCodes = {!! $promoCodes->pluck('code') !!};
   var promo = $(this).val();
+  checkPromo(promo)
+});
+
+function checkPromo(promo) {
+  var promoCodes = {!! $promoCodes->pluck('code') !!};
   // If the promo code is valid.
   if (jQuery.inArray(promo, promoCodes)!='-1') {
       $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
@@ -204,6 +216,9 @@ $('#promo').on('keyup', function() {
       // If Friends and Family promo code.
       if (promo == '007007') {
         var promoDiscount = 20;
+      // If On Site Slide Up promo code.
+      } else if (promo == '201001') {
+        var promoDiscount = 24;
       } else {
         var promoDiscount = 2;
       }
@@ -212,8 +227,8 @@ $('#promo').on('keyup', function() {
       addTotalDue(promoDiscount);
   } 
   // If the promo code is emptied by the user.
-  else if ($(this).val() == '') {
-      $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
+  else if (promo == '') {
+      $('#promoMessage').html('');
       $('#promoDiscountDisplay').hide();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       var promoDiscount = 0;
@@ -231,7 +246,7 @@ $('#promo').on('keyup', function() {
       // Fire Total Due
       addTotalDue(promoDiscount);
   }
-});
+};
 
 //////////
 /// Direct Donation.

@@ -20323,6 +20323,30 @@ select.form-control:not([size]):not([multiple]) {
   opacity: 0.5;
 }
 
+.footerDrawer {
+  background-color: #eeeeee;
+  width: 360px;
+  position: fixed;
+  bottom: 0;
+  right: 1%;
+  z-index: 999999;
+}
+
+.footerDrawer .open {
+  background-color: #EC9A29;
+  padding: 20px 30px 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.footerDrawer .content {
+  height: 200px;
+  background-color: #fafafa;
+  border: 1px solid #e1e7ec;
+  display: none;
+  padding: 30px;
+}
+
 @media (max-width: 576px) {
   .hero-text {
     top: 3rem;
