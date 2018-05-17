@@ -134,10 +134,14 @@
             <tr>
               <td class="text-left">
                 <div class="form-group{{ $errors->has('promo') ? ' has-error' : '' }}">
+                  @if (Request::get('promo'))
                     {!! Form::text('promo', (isset($request->promo)) ? $request->promo : null, ['class' => 'form-control form-control-rounded', 'id' => 'promo']) !!}
-                    {!! Form::label('promo', 'Promo Code') !!}
-                    <small class="text-danger" id="promoMessage">{{ $errors->first('promo') }}</small>
-                    <span id="promoAmount" style="visibility: hidden;">0</span>
+                  @else
+                    {!! Form::text('promo', Cookie::get('promo') ? Cookie::get('promo') : null, ['class' => 'form-control form-control-rounded', 'id' => 'promo']) !!}
+                  @endif
+                  {!! Form::label('promo', 'Promo Code') !!}
+                  <small class="text-danger" id="promoMessage">{{ $errors->first('promo') }}</small>
+                  <span id="promoAmount" style="visibility: hidden;">0</span>
                 </div>
               </td> 
               <td class="text-medium"><span id="promoDiscountDisplay">- $<span id="promoDiscount" class="promoDiscount">0.00</span></span></td>    

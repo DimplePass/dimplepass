@@ -212,7 +212,8 @@ select.form-control:not([size]):not([multiple]) {
 .footerDrawer .content {
   height: 200px;
   background-color: #fafafa;
-	border: 1px solid #e1e7ec;
+	border-left: 1px solid #EC9A29;
+	border-right: 1px solid #EC9A29;
   display: none;
   padding: 30px;
 }

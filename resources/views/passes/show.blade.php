@@ -159,7 +159,7 @@ $(document).ready(function() {
     }, 300);
   });
   
-  // Open after 2 seconds.
+  // Open after 20 seconds.
   setTimeout(function(){
     $('.footerDrawer .open').show();
     $('.footerDrawer .content').fadeIn();
