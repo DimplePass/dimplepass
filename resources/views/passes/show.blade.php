@@ -27,7 +27,7 @@
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
             <h3 class="white-color"><strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on {{ $pass->destinations->first()->short_name }}'s Top Activities.</h3>
-            <h3 class="white-color">Save up to <strong class="text-warning">$346</strong> per person.</h3>
+            <h3 class="white-color">Save up to <strong class="text-warning">$376</strong> per person.</h3>
           @else
             <h3 class="text-warning"><strong>Available <span class="dp-warning">June 1st.</span></strong></h3>
           @endif
