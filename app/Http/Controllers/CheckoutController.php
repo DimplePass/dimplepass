@@ -31,6 +31,10 @@ class CheckoutController extends Controller
         $pass = Pass::findOrFail($request->pass_id);
         $promoCodes = PromoCode::where('active',1)->get();
 
+        if ($request->hasCookie('go_promo')) {
+            $promoCookie = $request->cookie('go_promo');
+        } else $promoCookie = null;        
+
         if($request->session()->has('passes'))
         {
             $request->session()->push('passes',$request->pass_id);
@@ -40,7 +44,8 @@ class CheckoutController extends Controller
         }
         return view('checkout.payment',[
             'pass' => $pass,
-            'promoCodes' => $promoCodes
+            'promoCodes' => $promoCodes,
+            'promoCookie' => $promoCookie,
         ]);
 
     }
@@ -102,14 +107,14 @@ class CheckoutController extends Controller
 
         try {
             // dd($request);
-            if ($request->hasCookie('referer')) {
-                $referer = $request->cookie('referer');
+            if ($request->hasCookie('go_referer')) {
+                $referer = $request->cookie('go_referer');
             } else $referer = null;
-            if ($request->hasCookie('ga_campaign')) {
-                $ga_campaign = $request->cookie('ga_campaign');
+            if ($request->hasCookie('go_ga_campaign')) {
+                $ga_campaign = $request->cookie('go_ga_campaign');
             } else $ga_campaign = null;
-            if ($request->hasCookie('visit_count')) {
-                $visit_count = $request->cookie('visit_count');
+            if ($request->hasCookie('go_visit_count')) {
+                $visit_count = $request->cookie('go_visit_count');
                 // dd($request->cookie('visit_count'));
             } else $visit_count = null;            
             // $amount = $request->total;

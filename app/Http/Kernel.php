@@ -19,7 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
-        \App\Http\Middleware\CheckReferral::class,
+        
 
 
     ];
@@ -38,7 +38,8 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Code16\Privat\PrivatMiddleware::class
+            \Code16\Privat\PrivatMiddleware::class,
+            \App\Http\Middleware\CheckReferral::class,
         ],
 
         'api' => [

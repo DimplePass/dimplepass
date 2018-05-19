@@ -73,9 +73,9 @@ class CheckoutTest extends TestCase
                 'HTTP_REFERER' => 'http://www.google.com',
             ])->get('/checkout/payment?pass_id='.$pass->id.'&promo=123456789&utm_campaign=AllTrips');
 
-        $response->assertCookie('referer','http://www.google.com');
-        $response->assertCookie('promo','123456789');
-        $response->assertCookie('ga_campaign','AllTrips');
+        $response->assertCookie('go_referer','http://www.google.com');
+        $response->assertCookie('go_promo','123456789');
+        $response->assertCookie('go_ga_campaign','AllTrips');
         $response->assertViewHas('pass');
         $response->assertViewHas('promoCodes');
         $response->assertStatus(200);
@@ -98,9 +98,9 @@ class CheckoutTest extends TestCase
             'HTTP_REFERER' => 'http://www.google.com',
         ];
         $cookies = [
-            'referer' => encrypt('http://www.google.com'),
-            'ga_campaign' => encrypt('AllTrips'),
-            'visit_count' => 5,
+            'go_referer' => encrypt('http://www.google.com'),
+            'go_ga_campaign' => encrypt('AllTrips'),
+            'go_visit_count' => 5,
         ];
 
         // Stubb out the PurchaseConfirmationNumberGenerator
