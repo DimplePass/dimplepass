@@ -40,7 +40,7 @@
       </nav>
       <div class="sticky">
         <aside class="mt-4 text-center">
-          <h2><strong class="dp-success">{{ $pass->first()->code }}</strong></h2>
+          <h1 class="img-thumbnail mx-auto w-200"><strong class="dp-success">{{ $pass->first()->code }}</strong></h1>
           <h5 class="mx-5">Use this code at the ticket window or when making reservations.</h5>
           <h2 class="mt-5 hidden-xs-down"><a href="{{ route('member.passes.print', [Auth::user(), $pass]) }}" target="_blank" class="btn btn-lg btn-rounded btn-primary btn-block"><i class="icon-printer"> Print Your Pass</i></a></h2>
         </aside>
@@ -58,7 +58,7 @@
 
       <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates may vary per offer.</small></h5>
 
-      <h6><strong class="text-danger">Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service.</h6>
+      <h6><strong class="text-danger">Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service. <a href="{{ route('member.passes.print', [Auth::user(), $pass]) }}" target="_blank">Print Your Pass</i></a></h6>
 
       <h4 class="mt-4"><strong>{{ count($pass->discounts) }} exclusive discounts</strong></h4>
 
