@@ -40,7 +40,7 @@
       </nav>
       <div class="sticky">
         <aside class="mt-4 text-center">
-          <h1 class="img-thumbnail mx-auto w-200"><strong class="dp-success">{{ $pass->first()->code }}</strong></h1>
+          <h1 class="img-thumbnail mx-auto w-200 bg-gray-lighter"><strong class="dp-success">{{ $pass->first()->code }}</strong></h1>
           <h5 class="mx-5">Use this code at the ticket window or when making reservations.</h5>
           <h2 class="mt-5 hidden-xs-down"><a href="{{ route('member.passes.print', [Auth::user(), $pass]) }}" target="_blank" class="btn btn-lg btn-rounded btn-primary btn-block"><i class="icon-printer"> Print Your Pass</i></a></h2>
         </aside>

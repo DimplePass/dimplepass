@@ -30,7 +30,7 @@
               @endforeach
             </ul>
           </li>
-          <li><span><a href="/how">How does it Work?</a></span></li>
+          <li><span><a href="/how">How it Works</a></span></li>
           <li><span><a href="/foundation">100% to Kids</a></span></li>
           <li><span><a href="/faqs">FAQs</a></span></li>
         </ul>
@@ -68,7 +68,7 @@
               @endforeach
             </ul>
           </li>
-          <li><span><a href="/how">How does it Work?</a></span></li>
+          <li><span><a href="/how">How it Works</a></span></li>
           <li><span><a href="/foundation">100% to Kids</a></span></li>
           <li><span><a href="/faqs">FAQs</a></span></li>
         </ul>
@@ -137,7 +137,7 @@
               </li>
             </ul>
           </li>
-          <li class="{{ Request::is('how*') ? 'active' : '' }}"><a href="/how"><span>How does it work?</span></a></li>
+          <li class="{{ Request::is('how*') ? 'active' : '' }}"><a href="/how"><span>How it Works</span></a></li>
           <li class="{{ Request::is('foundation*') ? 'active' : '' }}"><a href="/foundation"><span>100% to Kids</span></a></li>
         </ul>
       </nav>
