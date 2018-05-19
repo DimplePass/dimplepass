@@ -63,7 +63,7 @@
       <h4 class="mt-4"><strong>{{ count($pass->discounts) }} exclusive discounts</strong></h4>
 
       {{-- Discounts Grouped by Location --}}
-      @foreach ($pass->discounts->where('active', '=', 1)->groupBy('town') as $k => $v)
+      @foreach ($pass->discounts->where('active', '=', 1)->sortBy('town')->groupBy('town') as $k => $v)
         <div class="passCity mt-4">
             <h4 class="mb-3 dp-warning"><strong>{{ $k }}</strong></h4>
             <div class="col-sm-12">
@@ -76,6 +76,7 @@
                 @else
                   <h3><i class="icon-tag dp-success"></i> <strong>{{ round($v->percent*100) }}% Off {{ $v->name }}</strong></h3>
                 @endif
+                <p class="hidden-xs-down">{{ $v->description }}</p>
                 <p class="mb-0">Valid {{ $v->start->format('F d, Y') }} to {{ $v->end->format('F d, Y') }}</p>
                 <p>
                 @if ($v->reservations_required == 1)
