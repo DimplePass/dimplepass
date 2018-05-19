@@ -27,7 +27,7 @@
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
             <h3 class="white-color"><strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on {{ $pass->destinations->first()->short_name }}'s Top Activities.</h3>
-            <h3 class="white-color">Save up to <strong class="text-warning">$346</strong> per person.</h3>
+            <h3 class="white-color">Save up to <strong class="text-warning">$376</strong> per person.</h3>
           @else
             <h3 class="text-warning"><strong>Available <span class="dp-warning">June 1st.</span></strong></h3>
           @endif
@@ -132,8 +132,8 @@
     <h3 class="white-color"><small><i class="fa fa-chevron-down white-color"></i></small> <strong>Buy Pass Now for $12!</strong></h3>
   </div>
   <div class="content">
-    <h4><strong>Good for the next 6 visitors.</strong></h4>
-    <h5>It's your lucky day!</h5>
+    <h4><strong>It's National Kids to Parks Day.</strong></h4>
+    <h5>Today Only!</h5>
     <a href="{{ route('checkout.payment', ['pass_id' => $pass->id, 'promo' => '201001']) }}" class="btn btn-primary btn-rounded btn-lg mt-3">Buy for $12</a>
   </div>
 </div>
