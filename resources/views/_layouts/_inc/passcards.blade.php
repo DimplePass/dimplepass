@@ -1,7 +1,7 @@
 <section class="container padding-top-3x">
   <div class="row">
     @foreach ($destinations as $d)
-      @foreach ($d->passes as $p)
+      @foreach ($d->passes->where('active', '=', 1) as $p)
       <div class="col-md-4 col-sm-6">
         <div class="card mb-30"><a class="card-img-tiles" href="{{ route('destinations.passes.show', [$d->slug,$p->slug]) }}">
             <div class="inner">

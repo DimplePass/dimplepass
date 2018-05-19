@@ -117,7 +117,7 @@
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">26 discounts</h4>
+                    <h4 class="text-light text-thin text-shadow">28 discounts</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
                     </a>
@@ -125,12 +125,12 @@
                 </section>
               </li>
               <li>
-                <section class="promo-box" style="background-image: url(/img/destinations/yosemite-300x300.jpg);">
+                <section class="promo-box" style="background-image: url(/img/destinations/zion-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">Available June 1st</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yosemite','go-yosemite-summer-2018']) }}">
-                      <h3 class="text-bold text-light text-shadow">Yosemite</h3>
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['zion','go-zion-summer-2018']) }}">
+                      <h3 class="text-bold text-light text-shadow">Zion</h3>
                     </a>
                   </div>
                 </section>
