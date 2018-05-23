@@ -151,6 +151,9 @@
 
 $(document).ready(function() {
 
+// If Yellowstone Pass
+@if ($pass->id)
+
   // Open/Close on click.
   $('.footerDrawer .open').on('click', function() {
     $('.footerDrawer .content').slideToggle();
@@ -165,6 +168,8 @@ $(document).ready(function() {
     $('.footerDrawer .content').fadeIn();
     $('#launcher').hide();
   }, 20000);
+
+@endif
 
 });
 
