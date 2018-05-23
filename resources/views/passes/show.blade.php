@@ -152,7 +152,7 @@
 $(document).ready(function() {
 
 // If Yellowstone Pass
-@if ($pass->id)
+@if ($pass->id == 1)
 
   // Open/Close on click.
   $('.footerDrawer .open').on('click', function() {
