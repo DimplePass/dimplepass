@@ -49,7 +49,7 @@
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
           <h2 class="mb-1"><strong>The {{ $pass->name }} Pass</strong></h2>
-          <h4 class="text-warning">Our <strong>$36 Pass</strong> unlocks discounts on the activities below.</h4>
+          <h4 class="text-warning">Our <strong>${{ number_format($pass->price/100, 0, '.', ',') }} Pass</strong> unlocks discounts on the activities below.</h4>
           <h6 class="mb-0">{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h6>
         </div>
         <div class="column">
