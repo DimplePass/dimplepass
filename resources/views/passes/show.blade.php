@@ -62,7 +62,7 @@
         <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
           <a class="product-thumb" href="#">
             {{-- <div class="product-badge text-danger">50% Off</div> --}}
-            <img src="/img/discounts/yellowstone/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
+            <img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
           </a>
           <div class="product-info">
             <h3 class="product-title">
