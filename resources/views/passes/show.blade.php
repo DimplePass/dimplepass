@@ -29,7 +29,7 @@
             <h3 class="white-color"><strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on {{ $pass->destinations->first()->short_name }}'s Top Activities.</h3>
             <h3 class="white-color">The Best of {{ $pass->destinations->first()->short_name }} for less.</h3>
           @else
-            <h3 class="text-warning"><strong>Available <span class="dp-warning">June 1st.</span></strong></h3>
+            <h3 class="text-warning"><strong>Available <span class="dp-warning">June 15th.</span></strong></h3>
           @endif
         </div>
       </div>
