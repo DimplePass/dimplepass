@@ -149,7 +149,7 @@
 /// On Page Load
 //////////
 
-$(document).ready(function() {
+$(function() {
 
 // If Yellowstone Pass
 @if ($pass->id == 1)
@@ -163,25 +163,13 @@ $(document).ready(function() {
   });
   
   // Open after 20 seconds.
-  setTimeout(function(){
-    $('.footerDrawer .open').show();
-    $('.footerDrawer .content').fadeIn();
-    $('#launcher').hide();
-  }, 20000);
+  // setTimeout(function(){
+  //   $('.footerDrawer .open').show();
+  //   $('.footerDrawer .content').fadeIn();
+  //   $('#launcher').hide();
+  // }, 20000);
 
 @endif
-
-});
-
-$(function() {
-
-  /// Exit Popup
-    // bioEp.init({
-    //   width: 600,
-    //   height: 450,
-    //   html: '<a href="/foundation" target="_blank"><img src="/img/dontblowit.jpg" alt="Don\'t Blow It!" /></a>',
-    //   cookieExp: 0
-    // });
 
 });
 
