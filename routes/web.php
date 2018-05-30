@@ -23,7 +23,7 @@ Route::group(['middleware' => 'web'], function () {
 
 	// Alias
 	Route::redirect('/goyellowstone', '/yellowstone/passes/go-yellowstone-summer-2018', 301);
-
+	Route::redirect('/goglacier', '/glacier/passes/go-glacier-summer-2018', 301);
 
 	///// Checkout
 	Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@payment']);
