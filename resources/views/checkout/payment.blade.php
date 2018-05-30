@@ -225,7 +225,7 @@ function checkPromo(promo) {
         var promoDiscount = 20;
       // If On Site Slide Up promo code.
       } else if (promo == '201001') {
-        var promoDiscount = 20;
+        var promoDiscount = 18;
       } else {
         var promoDiscount = 2;
       }

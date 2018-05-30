@@ -129,12 +129,12 @@
 
 <div class="footerDrawer">
   <div class="open">
-    <h3 class="white-color"><small><i class="fa fa-chevron-down white-color"></i></small> <strong>Buy Pass Now for $16!</strong></h3>
+    <h3 class="white-color"><small><i class="fa fa-chevron-down white-color"></i></small> <strong>Buy Pass Now for $18!</strong></h3>
   </div>
   <div class="content">
-    <h4><strong>Early Bird Special.</strong></h4>
-    <h5>Ends May 29th!</h5>
-    <a href="{{ route('checkout.payment', ['pass_id' => $pass->id, 'promo' => '201001']) }}" class="btn btn-primary btn-rounded btn-lg mt-3">Buy for $16</a>
+    <h4><strong>Help us celebrate National Get Outdoors Day.</strong></h4>
+    <h5><strong>Save 50%</strong> on pass purchase until June 9th!</h5>
+    <a href="{{ route('checkout.payment', ['pass_id' => $pass->id, 'promo' => '201001']) }}" class="btn btn-primary btn-rounded btn-lg mt-3">Buy for $18</a>
   </div>
 </div>
 
@@ -163,11 +163,11 @@ $(function() {
   });
   
   // Open after 20 seconds.
-  // setTimeout(function(){
-  //   $('.footerDrawer .open').show();
-  //   $('.footerDrawer .content').fadeIn();
-  //   $('#launcher').hide();
-  // }, 20000);
+  setTimeout(function(){
+    $('.footerDrawer .open').show();
+    $('.footerDrawer .content').fadeIn();
+    $('#launcher').hide();
+  }, 2000);
 
 @endif
 
