@@ -122,15 +122,8 @@
                 <p class="mt-0 mb-0">{{ $pass->start->format('M d, Y') }} - {{ $pass->end->format('M d, Y') }}</p>
                 <p class="mt-0">{{ count($pass->discounts) }} Discounts</p>
               </td>
-              <td class="text-medium">$<span class="passFee">{{ number_format($pass->price/100, 2, '.', ',') }}</span></td>
+              <td class="text-medium">$<span class="passFee">{{ number_format(($pass->price-Request::get('discount'))/100, 2, '.', ',') }}</span></td>
             </tr>
-            @if (Request::get('promo'))
-            <tr>
-              <td colspan="2" class="text-left">
-                <h3 class="dp-warning"><strong>Lucky You!</strong></h3>
-              </td>
-            </tr> 
-            @endif
             <tr>
               <td class="text-left">
                 <div class="form-group{{ $errors->has('promo') ? ' has-error' : '' }}">
@@ -224,8 +217,6 @@ function checkPromo(promo) {
       if (promo == '007007') {
         var promoDiscount = 20;
       // If On Site Slide Up promo code.
-      } else if (promo == '201001') {
-        var promoDiscount = 18;
       } else {
         var promoDiscount = 2;
       }
