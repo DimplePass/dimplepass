@@ -199,6 +199,7 @@ class CheckoutController extends Controller
             return redirect()->route('checkout.register',[$user])->with('status','Purchase Successful!')->with('user',$user); 
         }
         \Auth::login($user, true);
+        return $request->all();
         return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
 
                    
