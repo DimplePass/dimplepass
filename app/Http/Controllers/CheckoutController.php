@@ -118,7 +118,7 @@ class CheckoutController extends Controller
                 // dd($request->cookie('visit_count'));
             } else $visit_count = null;      
             // $amount = $request->total;
-            $amount = ($request->qty*$pass->price);
+            $amount = ($request->qty*$request->price);
             if($request->donate4) $amount += 400;
             // dd($amount);
             if(!empty($request->promo))
