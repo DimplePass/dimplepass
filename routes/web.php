@@ -78,7 +78,7 @@ Route::group(['middleware' => 'web'], function () {
 	// Route::resource('destinations','DestinationController',['only' => ['index', 'show']]);
 	Route::resource('/{destination}/passes','PassController',[
 		'as' => 'destinations',
-		'only' => ['index', 'show'],
+		'only' => ['show'],
 		// 'parameters' => ['' => 'pass'],
 	]);
 	// Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);

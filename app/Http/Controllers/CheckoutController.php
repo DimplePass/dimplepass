@@ -56,12 +56,12 @@ class CheckoutController extends Controller
         // return $request->all();
         $this->validate($request,[
             'name'      =>  'required',
-            'email'         =>  'required|email',
-            'number' => 'required',
-            'expiry' => 'required',
-            'cvc' => 'required',
-            'name' => 'required',
-            'zipcode' => 'required',
+            'email'     =>  'required|email',
+            'number'    => 'required',
+            'expiry'    => 'required',
+            'cvc'       => 'required',
+            'name'      => 'required',
+            'zipcode'   => 'required',
         ]);
         // Create or find A User
         $redirectTo = 'checkout.register';
@@ -116,7 +116,8 @@ class CheckoutController extends Controller
             if ($request->hasCookie('go_visit_count')) {
                 $visit_count = $request->cookie('go_visit_count');
                 // dd($request->cookie('visit_count'));
-            } else $visit_count = null;            
+            } else $visit_count = null;
+            // @TODO-BJ - Ask Tim why he changed amount from getting the total to the pass->price.         
             // $amount = $request->total;
             $amount = ($request->qty*$pass->price);
             if($request->donate4) $amount += 400;
@@ -199,7 +200,6 @@ class CheckoutController extends Controller
             return redirect()->route('checkout.register',[$user])->with('status','Purchase Successful!')->with('user',$user); 
         }
         \Auth::login($user, true);
-        return $request->all();
         return redirect()->route('member.show',[\Auth::user()])->with('status','Purchase Successful!');
 
                    
