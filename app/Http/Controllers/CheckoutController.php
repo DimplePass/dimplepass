@@ -106,7 +106,7 @@ class CheckoutController extends Controller
 
 
         try {
-            dd($request);
+            // dd($request);
             if ($request->hasCookie('go_referer')) {
                 $referer = $request->cookie('go_referer');
             } else $referer = null;
