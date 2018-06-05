@@ -116,8 +116,7 @@ class CheckoutController extends Controller
             if ($request->hasCookie('go_visit_count')) {
                 $visit_count = $request->cookie('go_visit_count');
                 // dd($request->cookie('visit_count'));
-            } else $visit_count = null;
-            // @TODO-BJ - Ask Tim why he changed amount from getting the total to the pass->price.         
+            } else $visit_count = null;      
             // $amount = $request->total;
             $amount = ($request->qty*$pass->price);
             if($request->donate4) $amount += 400;
@@ -159,7 +158,7 @@ class CheckoutController extends Controller
                 'pass_id' => $pass->id,
                 'description' => $pass->name,
                 'qty' => $request->qty,
-                'price' => $pass->price
+                'price' => $request->price
             ]);
 
             if($request->donate4) {
@@ -167,7 +166,7 @@ class CheckoutController extends Controller
                     // 'pass_id' => $pass->id,
                     'description' => '$4 Get Kids Outdoors Donation',
                     'qty' => $request->qty,
-                    'price' => $pass->price
+                    'price' => 400
                 ]);                
             }
             if(!empty($request->promo))

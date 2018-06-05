@@ -23,6 +23,7 @@
 {!! Form::hidden('pass_id', $pass->id) !!}
 {!! Form::hidden('qty', 1) !!}
 {!! Form::hidden('total', 0, ['id' => 'totalAmount']) !!}
+{!! Form::hidden('price', $pass->price-Request::get('discount')) !!}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x">
