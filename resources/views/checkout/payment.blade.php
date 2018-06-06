@@ -23,7 +23,7 @@
 {!! Form::hidden('pass_id', $pass->id) !!}
 {!! Form::hidden('qty', 1) !!}
 {!! Form::hidden('total', 0, ['id' => 'totalAmount']) !!}
-{!! Form::hidden('price', $pass->price-Request::get('discount')) !!}
+{!! Form::hidden('price', $pass->price-Request::get('discount'), ['id' => 'price']) !!}
 
 {{-- Page Content --}}
 <div class="container padding-bottom-3x">
@@ -216,12 +216,13 @@ function checkPromo(promo) {
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       // If Friends and Family promo code.
       if (promo == '007007') {
-        var promoDiscount = 20;
+        var promoDiscount = 28;
+        $('#promoAmount').text(28);
       // If On Site Slide Up promo code.
       } else {
         var promoDiscount = 2;
+        $('#promoAmount').text(promoDiscount);
       }
-      $('#promoAmount').text(promoDiscount);
       // Fire Total Due
       addTotalDue(promoDiscount);
   } 
@@ -283,10 +284,17 @@ function addTotalDue(promoDiscount) {
     var donateAmount = 0;
   }
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-  // Determine total amount.
-  var total = (totalPasses - promoDiscount) + donateAmount;
+// Determine total amount.
+  if (promoDiscount == '007007') {
+    var total = (10 + donateAmount);
+  } else if (promoDiscount == 'YNPBFF') {
+    var total = (4 + donateAmount);
+  } else {
+    var total = (totalPasses - promoDiscount) + donateAmount;
+  }
   // Send to hidden input field to send in form.
   $('#totalAmount').val(total*100);
+  $('#price').val(total*100);
   // Display total due in Order Summary.
   $('.totalDue').text(addCommas(roundTo(total, 0)));
 }
