@@ -286,7 +286,7 @@ function addTotalDue(promoDiscount) {
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
 // Determine total amount.
   if (promoDiscount == '007007') {
-    var total = (10 + donateAmount);
+    var total = (8 + donateAmount);
   } else if (promoDiscount == 'YNPBFF') {
     var total = (4 + donateAmount);
   } else {

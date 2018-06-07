@@ -152,7 +152,7 @@
   <hr>
 
   {{-- Pass Title --}}
-  <img src="/img/destinations/yellowstone-1920x580.jpg" alt="2018 Yellowstone Summer" class="mb-1">
+  <img src="/img/destinations/{{ $pass->destinations->first()->slug }}-1920x580.jpg" alt="2018 {{ $pass->destinations->first()->name }} Summer" class="mb-1">
   <div class="row">
     <div class="column">
       <h1 class="mx-0">{{ $pass->name }}</h1>
