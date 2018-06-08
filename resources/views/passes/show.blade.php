@@ -78,7 +78,7 @@
               {!! $d->rates !!}
               {{-- <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details</a></p> --}}
               {{-- <div class="collapse" id="details_{{ $d->id }}"> --}}
-                <p class="hidden-xs-down">{{ $d->description }}</p>
+                {{-- <p class="hidden-xs-down">{{ $d->description }}</p> --}}
                 <ul class="list-unstyled text-sm">
                   <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
                   {!! $d->hours !!}
