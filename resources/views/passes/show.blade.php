@@ -162,11 +162,11 @@ $(function() {
   });
   
   // Open after 20 seconds.
-  setTimeout(function(){
-    $('.footerDrawer .open').show();
-    $('.footerDrawer .content').slideToggle();
-    $('#launcher').hide();
-  }, 20000);
+  // setTimeout(function(){
+  //   $('.footerDrawer .open').show();
+  //   $('.footerDrawer .content').slideToggle();
+  //   $('#launcher').hide();
+  // }, 20000);
 
 @endif
 
