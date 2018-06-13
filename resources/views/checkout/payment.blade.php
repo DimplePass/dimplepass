@@ -228,7 +228,7 @@ function checkPromo(promo) {
         var promoDiscount = 12;
         $('#promoAmount').text(12);
         // Hide credit card entry fields.
-        $('.card-info').hide();
+        $('.card-info').remove();
         $('#card-info').show().html('<div class="col-sm-12"><hr><h3 class="text-bold">Well, aren\'t you special!</h3><h5>Enjoy the discounts and spread the word about the GO Pass with travelers!</h5></div>');
         $('#number, #expiry, #cvc').attr("required", false);
       } else {
