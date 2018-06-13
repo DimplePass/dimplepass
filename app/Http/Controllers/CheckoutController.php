@@ -54,15 +54,24 @@ class CheckoutController extends Controller
     public function paymentStore(Request $request)
     {
         // return $request->all();
-        $this->validate($request,[
-            'name'      =>  'required',
-            'email'     =>  'required|email',
-            'number'    => 'required',
-            'expiry'    => 'required',
-            'cvc'       => 'required',
-            'name'      => 'required',
-            'zipcode'   => 'required',
-        ]);
+        // Check if Free Pass
+        if ($request->total == 0) {
+            $this->validate($request,[
+                'name'      =>  'required',
+                'zipcode'   => 'required',
+                'email'     =>  'required|email',
+            ]);
+        } else {
+            $this->validate($request,[
+                'name'      =>  'required',
+                'zipcode'   => 'required',
+                'email'     =>  'required|email',
+                'number'    => 'required',
+                'expiry'    => 'required',
+                'cvc'       => 'required',
+            ]);            
+        }
+        
         // Create or find A User
         $redirectTo = 'checkout.register';
         $user = User::firstOrCreate(['email' => $request->email]);
@@ -76,34 +85,37 @@ class CheckoutController extends Controller
             $user->firstname = $firstname;
             $user->lastname = $lastname;
             $user->save();
-
         }
 
         $pass = Pass::findOrFail($request->pass_id);
+        // Check if Free Pass
+        if ($request->total > 0) {
+            $exp_month = trim(substr($request->expiry, 0,strpos($request->expiry, '/')));
+            $exp_year = trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry)));
+        }
 
-        $exp_month = trim(substr($request->expiry, 0,strpos($request->expiry, '/')));
-        $exp_year = trim(substr($request->expiry, strpos($request->expiry, '/')+1,strlen($request->expiry)));
-
-        if(empty($request->token))
-        {
-            try{
-                $token = $this->paymentGateway->getValidToken([
-                    "number" => $request->number,
-                    'name' => $request->name,
-                    "exp_month" => $exp_month,
-                    "exp_year" => $exp_year,
-                    "cvc" => $request->cvc,
-                    "address_zip" => $request->zipcode,
-                ]);  
-            } catch (PaymentFailedException $e)
+        // Check if Free Pass
+        if ($request->total > 0) {
+            if(empty($request->token))
             {
-                return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
-            }
-              
-        } else $token = $request->token;
+                try{
+                    $token = $this->paymentGateway->getValidToken([
+                        "number" => $request->number,
+                        'name' => $request->name,
+                        "exp_month" => $exp_month,
+                        "exp_year" => $exp_year,
+                        "cvc" => $request->cvc,
+                        "address_zip" => $request->zipcode,
+                    ]);  
+                } catch (PaymentFailedException $e)
+                {
+                    return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
+                }
+                  
+            } else $token = $request->token;
+        }
 
         // return $request->all();
-
 
         try {
             // dd($request);
@@ -132,28 +144,48 @@ class CheckoutController extends Controller
                     'price' => -abs($promo->discount),
                 ];
             }
-            $charge = $this->paymentGateway->charge($amount,$token);
+
+            // Check if Free Pass    
+            if ($request->total > 0) {
+                $charge = $this->paymentGateway->charge($amount,$token);
+            }
 
             // @ToDo: Create Confirmation Number
 
-            $card = $user->cards()->firstOrCreate([
-                'brand' => $charge->source->brand,
-                'last4' => $charge->source->last4,
-                'exp_month' => $charge->source->exp_month,
-                'exp_year' => $charge->source->exp_year,
-                'code' => $request->cvc
-            ]);
+            // Check if Free Pass
+            if ($request->total > 0) {
+                $card = $user->cards()->firstOrCreate([
+                    'brand' => $charge->source->brand,
+                    'last4' => $charge->source->last4,
+                    'exp_month' => $charge->source->exp_month,
+                    'exp_year' => $charge->source->exp_year,
+                    'code' => $request->cvc
+                ]);
+            }
             // dd($card);
-            $purchase = Purchase::create([
-                'user_id' => $user->id,
-                'credit_card_id' => $card->id,
-                'purchase_date' => Carbon::now(),
-                'stripe_charge_id' => $charge->id,
-                'promo_id' => $request->promo,
-                'referring_url' => $referer,
-                'campaign_id' => $ga_campaign,
-                'num_visits' => $visit_count,
-            ]);
+            
+            // Check if Free Pass
+            if ($request->total == 0) {
+                $purchase = Purchase::create([
+                    'user_id' => $user->id,
+                    'purchase_date' => Carbon::now(),
+                    'promo_id' => $request->promo,
+                    'referring_url' => $referer,
+                    'campaign_id' => $ga_campaign,
+                    'num_visits' => $visit_count,
+                ]);
+            } else {
+                $purchase = Purchase::create([
+                    'user_id' => $user->id,
+                    'purchase_date' => Carbon::now(),
+                    'promo_id' => $request->promo,
+                    'referring_url' => $referer,
+                    'campaign_id' => $ga_campaign,
+                    'num_visits' => $visit_count,
+                    'credit_card_id' => $card->id,
+                    'stripe_charge_id' => $charge->id,
+                ]);
+            }
             $purchase->items()->create([
                 'pass_id' => $pass->id,
                 'description' => $pass->name,

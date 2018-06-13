@@ -56,21 +56,21 @@
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     {!! Form::label('name', 'Name on Card <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Full Name']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'Full Name']) !!}
                     <small class="text-danger">{{ $errors->first('name') }}</small>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group{{ $errors->has('zipcode') ? ' has-error' : '' }}">
                     {!! Form::label('zipcode', 'Zip Code <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Zip Code']) !!}
+                    {!! Form::text('zipcode', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'Zip Code']) !!}
                     <small class="text-danger">{{ $errors->first('zipcode') }}</small>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     {!! Form::label('email', 'Email <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'you@email.com']) !!}
+                    {!! Form::text('email', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'you@email.com']) !!}
                     <small class="text-danger">{{ $errors->first('email') }}</small>
                 </div>
               </div>
@@ -81,30 +81,32 @@
                     <small class="text-danger">{{ $errors->first('phone') }}</small>
                 </div>
               </div>
-              <div class="col-sm-12">
+              <div class="col-sm-12 card-info">
                 <div class="card-wrapper"></div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 card-info">
                 <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
                     {!! Form::label('number', 'Card Number <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'Card Number']) !!}
+                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'Card Number']) !!}
                     <small class="text-danger">{{ $errors->first('number') }}</small>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 card-info">
                 <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
                     {!! Form::label('expiry', 'Expiration <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'MM/YY']) !!}
+                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'MM/YY']) !!}
                     <small class="text-danger">{{ $errors->first('expiry') }}</small>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 card-info">
                 <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
                     {!! Form::label('cvc', 'CVC <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'required' => 'required', 'placeholder' => 'CVC']) !!}
+                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'CVC']) !!}
                     <small class="text-danger">{{ $errors->first('cvc') }}</small>
                 </div>
               </div>
+              {{-- Message if Local Free Purchase --}}
+              <div class="col-sm-12" id="card-info"></div>
             </div>
           </div>
         </div>
@@ -209,19 +211,32 @@ $('#promo').on('keyup', function() {
 
 function checkPromo(promo) {
   var promoCodes = {!! $promoCodes->pluck('code') !!};
+  var passid = {{ $pass->id }};
   // If the promo code is valid.
   if (jQuery.inArray(promo, promoCodes)!='-1') {
       $('#promoMessage').html('<strong class="text-success">Cha Ching!</strong>');
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       // If Friends and Family promo code.
-      if (promo == '007007') {
-        var promoDiscount = 28;
-        $('#promoAmount').text(28);
-      // If On Site Slide Up promo code.
+      if (promo == 'YNPBFF' && passid == 1) {
+        var promoDiscount = 8;
+        $('#promoAmount').text(8);
+        $('.card-info').show();
+        $('#card-info').hide();
+        $('#number, #expiry, #cvc').attr("required", true);
+      } else if (promo == 'YNPLOC' && passid == 1) {
+        var promoDiscount = 12;
+        $('#promoAmount').text(12);
+        // Hide credit card entry fields.
+        $('.card-info').hide();
+        $('#card-info').show().html('<div class="col-sm-12"><hr><h3 class="text-bold">Well, aren\'t you special!</h3><h5>Enjoy the discounts and spread the word about the GO Pass with travelers!</h5></div>');
+        $('#number, #expiry, #cvc').attr("required", false);
       } else {
         var promoDiscount = 2;
         $('#promoAmount').text(promoDiscount);
+        $('.card-info').show();
+        $('#card-info').hide();
+        $('#number, #expiry, #cvc').attr("required", true);
       }
       // Fire Total Due
       addTotalDue(promoDiscount);
@@ -230,6 +245,9 @@ function checkPromo(promo) {
   else if (promo == '') {
       $('#promoMessage').html('');
       $('#promoDiscountDisplay').hide();
+      $('.card-info').show();
+      $('#card-info').hide();
+      $('#number, #expiry, #cvc').attr("required", true);
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       var promoDiscount = 0;
       $('#promoAmount').text(promoDiscount);
@@ -240,6 +258,9 @@ function checkPromo(promo) {
   else {
       $('#promoMessage').html('<strong>Code Not Valid</strong>');
       $('#promoDiscountDisplay').hide();
+      $('.card-info').show();
+      $('#card-info').hide();
+      $('#number, #expiry, #cvc').attr("required", true);
       $('#paymentSubmit').attr("disabled", "disabled");
       var promoDiscount = 0;
       $('#promoAmount').text(promoDiscount);
@@ -285,10 +306,10 @@ function addTotalDue(promoDiscount) {
   }
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
 // Determine total amount.
-  if (promoDiscount == '007007') {
-    var total = (8 + donateAmount);
-  } else if (promoDiscount == 'YNPBFF') {
+  if (promoDiscount == 'YNPBFF') {
     var total = (4 + donateAmount);
+  } else if (promoDiscount == 'YNPLOC') {
+    var total = (0 + donateAmount);
   } else {
     var total = (totalPasses - promoDiscount) + donateAmount;
   }
@@ -334,17 +355,17 @@ $(function () {
     framework: 'bootstrap',
     excluded: ':disabled',
     fields: {
-      firstname: {
+      name: {
         validators: {
           notEmpty: {
-            message: 'What is your first name?'
+            message: 'What is the name on the card?'
           }
         }
       },
-      lastname: {
+      zipcode: {
         validators: {
           notEmpty: {
-            message: 'What is you last name?'
+            message: 'How about a Zip Code?'
           }
         }
       },
@@ -356,62 +377,27 @@ $(function () {
           }
         }
       },
-      number: {
-        validators: {
-          notEmpty: {
-            message: 'What is the credit card number?'
-          }
-        }
-      },
-      name: {
-        validators: {
-          notEmpty: {
-            message: 'What is the name on the card?'
-          }
-        }
-      },
-      address: {
-        validators: {
-          notEmpty: {
-            message: 'What is your address?'
-          }
-        }
-      },
-      city: {
-        validators: {
-          notEmpty: {
-            message: 'What city?'
-          }
-        }
-      },
-      state: {
-        validators: {
-          notEmpty: {
-            message: 'Which state?'
-          }
-        }
-      },
-      expiry: {
-        validators: {
-          notEmpty: {
-            message: 'Required'
-          }
-        }
-      },
-      cvc: {
-        validators: {
-          notEmpty: {
-            message: 'Required'
-          }
-        }
-      },
-      zipcode: {
-        validators: {
-          notEmpty: {
-            message: 'How about a Zip Code?'
-          }
-        }
-      }
+      // number: {
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'What is the credit card number?'
+      //     }
+      //   }
+      // },
+      // expiry: {
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'Required'
+      //     }
+      //   }
+      // },
+      // cvc: {
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'Required'
+      //     }
+      //   }
+      // }
     }
   });
 });
