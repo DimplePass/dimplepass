@@ -210,9 +210,17 @@ class CheckoutController extends Controller
             $purchaseNotice->subject('GO Pass Purchase');
             // dd($purchaseNotice);
             \Mail::to($user)->send($purchaseNotice);
+
+
+            // Slack Message
+            $slackMessage = "Pass Sold to " . $user->firstname . " " . $user->lastname . "\n";
+            $slackMessage .= "Email: " . $user->email . "\n";
+            $slackMessage .= "Pass: " . $pass->name . "\n";
+            $slackMessage .= "Code: " . $request->promo . "\n";
+            $slackMessage .= "Total: $" . number_format($request->total/100, 0, '.', ',') . "";
             if(\App::environment() == 'production')
             {
-                \Slack::to('#pass-sold')->send('Pass sold to ' . $user->firstname . " (" . $user->email . ")");
+                \Slack::to('#pass-sold')->send($slackMessage);
             }
             
 
