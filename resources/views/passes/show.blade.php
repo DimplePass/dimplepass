@@ -26,12 +26,13 @@
         <div class="hero-text">
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
-            <h3 class="white-color"><strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on {{ $pass->destinations->first()->short_name }}'s Top Activities.</h3>
+            <h3 class="white-color">Unlock <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on {{ $pass->destinations->first()->short_name }}'s Top Activities.</h3>
           @else
             <h3 class="text-warning"><strong>Available <span class="dp-warning">June 15th.</span></strong></h3>
           @endif
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -47,8 +48,8 @@
       {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
-          <h2 class="mb-1"><strong>The {{ $pass->name }} Pass</strong></h2>
-          <h4 class="text-warning">Our <strong>${{ number_format($pass->price/100, 0, '.', ',') }} Pass</strong> unlocks discounts on the activities below.</h4>
+          <h2 class="mb-1"><strong>All Profits to Get Kids Outdoors</strong> <a href="/foundation"><i class="fa fa-question-circle fa-xs"></i></a></h2>
+          <h4 class="text-warning">Our <strong>${{ number_format($pass->price/100, 0, '.', ',') }} Pass</strong> unlocks the discounts below.</h4>
           <h6 class="mb-0">{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h6>
         </div>
         <div class="column">
@@ -86,11 +87,12 @@
                     <li>{{ $d->fine_print }}</li>
                   @endif
                     <li><span class="opacity-50">Limit:</span> {{ $d->limit }}</li>
-                  @if ($d->reservations_required == 1)
+                  @if ($d->reservations_required == 1 && $d->limited_availability == 0)
                     <li class="dp-danger">Reservations Required</li>
-                  @endif
-                  @if ($d->limited_availability == 1)
+                  @elseif ($d->reservations_required == 0 && $d->limited_availability == 1)
                     <li class="dp-danger">Limited Availability - Book Early!</li>
+                  @elseif ($d->reservations_required == 1 && $d->limited_availability == 1)
+                    <li class="dp-danger">Reservations Required <span class="gray-darker">|</span> Limited Availability - Book Early!</li> 
                   @endif
                   <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
                 </ul>
@@ -105,11 +107,7 @@
       <aside class="sidebar mb-5 text-center text-md-left">
         {{-- <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5"> --}}
         <h4><strong><a href="/how">How does it work?</a></strong></h4>
-        <h5 class="gray">4 Easy Ways to Redeem</h5>   
-        <h6><i class="pe-7s-mouse text-warning"></i> Book Online</h6>
-        <h6><i class="pe-7s-call text-warning"></i> Book by Phone</h6>
-        <h6><i class="pe-7s-phone text-warning"></i> Show Pass on Phone</h6>
-        <h6><i class="pe-7s-print text-warning"></i> Show Printed Pass</h6> 
+        <h5 class="gray">Buy. Redeem. Save.</h5>   
       </aside>
       <div class="sticky">
         <aside class="sidebar">
