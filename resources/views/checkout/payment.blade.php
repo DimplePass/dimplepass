@@ -87,21 +87,21 @@
               <div class="col-md-6 card-info">
                 <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
                     {!! Form::label('number', 'Card Number <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'Card Number']) !!}
+                    {!! Form::text('number', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'Card Number', 'required']) !!}
                     <small class="text-danger">{{ $errors->first('number') }}</small>
                 </div>
               </div>
               <div class="col-md-3 card-info">
                 <div class="form-group{{ $errors->has('expiry') ? ' has-error' : '' }}">
                     {!! Form::label('expiry', 'Expiration <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'MM/YY']) !!}
+                    {!! Form::text('expiry', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'MM/YY', 'required']) !!}
                     <small class="text-danger">{{ $errors->first('expiry') }}</small>
                 </div>
               </div>
               <div class="col-md-3 card-info">
                 <div class="form-group{{ $errors->has('cvc') ? ' has-error' : '' }}">
                     {!! Form::label('cvc', 'CVC <i class="pe-7s-leaf dp-warning"></i>', [], false) !!}
-                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'CVC']) !!}
+                    {!! Form::text('cvc', null, ['class' => 'form-control form-control-rounded', 'placeholder' => 'CVC', 'required']) !!}
                     <small class="text-danger">{{ $errors->first('cvc') }}</small>
                 </div>
               </div>
@@ -158,7 +158,7 @@
             </tr>
           </table>
         </section>
-        {!! Form::button('Get My Pass <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'id' => 'paymentSubmit', 'class' => 'btn btn-primary btn-xl btn-block mt-0', 'onClick' => 'goog_report_conversion(\'Pass Purchased\')']) !!}
+        {!! Form::button('Get My Pass <i class="icon-arrow-right"></i></a>', ['type' => 'submit', 'id' => 'paymentSubmit', 'class' => 'btn btn-primary btn-xl btn-block mt-0']) !!}
       </aside>
     </div>
 
@@ -218,25 +218,21 @@ function checkPromo(promo) {
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       // If Friends and Family promo code.
-      if (promo == 'YNPBFF' && passid == 1) {
-        var promoDiscount = 8;
-        $('#promoAmount').text(8);
-        $('.card-info').show();
-        $('#card-info').hide();
-        $('#number, #expiry, #cvc').attr("required", true);
-      } else if (promo == 'YNPLOC' && passid == 1) {
+      if (promo == 'YNPLOC' && passid == 1) {
         var promoDiscount = 12;
         $('#promoAmount').text(12);
         // Hide credit card entry fields.
         $('.card-info').remove();
         $('#card-info').show().html('<div class="col-sm-12"><hr><h3 class="text-bold">Well, aren\'t you special!</h3><h5>Enjoy the discounts and spread the word about the GO Pass with travelers!</h5></div>');
         $('#number, #expiry, #cvc').attr("required", false);
+        $('#paymentSubmit').removeAttr("disabled", "disabled");
       } else {
         var promoDiscount = 2;
         $('#promoAmount').text(promoDiscount);
         $('.card-info').show();
         $('#card-info').hide();
         $('#number, #expiry, #cvc').attr("required", true);
+        $('#paymentSubmit').removeAttr("disabled", "disabled");
       }
       // Fire Total Due
       addTotalDue(promoDiscount);
@@ -305,14 +301,14 @@ function addTotalDue(promoDiscount) {
     var donateAmount = 0;
   }
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
-// Determine total amount.
-  if (promoDiscount == 'YNPBFF') {
-    var total = (4 + donateAmount);
-  } else if (promoDiscount == 'YNPLOC') {
+  // Determine total amount.
+  var promo = $('#promo').val();
+  if (promo == 'YNPLOC') {
     var total = (0 + donateAmount);
   } else {
     var total = (totalPasses - promoDiscount) + donateAmount;
   }
+  console.log(total*100);
   // Send to hidden input field to send in form.
   $('#totalAmount').val(total*100);
   $('#price').val(total*100);
@@ -350,57 +346,57 @@ function roundTo(num, places) {
 /// http://formvalidation.io/settings/
 //////////
 
-$(function () {
-  $('#checkoutPayment').formValidation({
-    framework: 'bootstrap',
-    excluded: ':disabled',
-    fields: {
-      name: {
-        validators: {
-          notEmpty: {
-            message: 'What is the name on the card?'
-          }
-        }
-      },
-      zipcode: {
-        validators: {
-          notEmpty: {
-            message: 'How about a Zip Code?'
-          }
-        }
-      },
-      email: {
-        trigger: 'blur',
-        validators: {
-          notEmpty: {
-            message: 'Email is required.'
-          }
-        }
-      },
-      // number: {
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'What is the credit card number?'
-      //     }
-      //   }
-      // },
-      // expiry: {
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'Required'
-      //     }
-      //   }
-      // },
-      // cvc: {
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'Required'
-      //     }
-      //   }
-      // }
-    }
-  });
-});
+// $(function () {
+//   $('#checkoutPayment').formValidation({
+//     framework: 'bootstrap',
+//     excluded: ':disabled',
+//     fields: {
+//       name: {
+//         validators: {
+//           notEmpty: {
+//             message: 'What is the name on the card?'
+//           }
+//         }
+//       },
+//       zipcode: {
+//         validators: {
+//           notEmpty: {
+//             message: 'How about a Zip Code?'
+//           }
+//         }
+//       },
+//       email: {
+//         trigger: 'blur',
+//         validators: {
+//           notEmpty: {
+//             message: 'Email is required.'
+//           }
+//         }
+//       },
+//       // number: {
+//       //   validators: {
+//       //     notEmpty: {
+//       //       message: 'What is the credit card number?'
+//       //     }
+//       //   }
+//       // },
+//       // expiry: {
+//       //   validators: {
+//       //     notEmpty: {
+//       //       message: 'Required'
+//       //     }
+//       //   }
+//       // },
+//       // cvc: {
+//       //   validators: {
+//       //     notEmpty: {
+//       //       message: 'Required'
+//       //     }
+//       //   }
+//       // }
+//     }
+//   });
+// });
 
 </script>
 @stop
