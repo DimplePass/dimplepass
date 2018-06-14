@@ -61,6 +61,16 @@
 
       <hr>
 
+      <a href="https://www.citykidsdc.org" target="_blank">
+        <img class="d-block w-270 m-3 rounded mb-5 float-right" src="/img/foundation/citykids.png" alt="City Kids">
+      </a>
+      <h3>Providing enriching life experiences for children can enhance their lives, the lives of their families, and the greater community.</h3>
+      <p>City Kids is a non-profit organization that serves the youth of Washington DC by offering life changing opportunities that help them learn, grow, and work towards their dreams. In the summer, the organization focuses on experiential learning opportunities with wilderness-based summer camps in Jackson Hole and the Greater Yellowstone Ecosystem. During the school year, City Kids supports its participants with after-school programs, weekend excursions, as well as internship and job training opportunities.</p>
+      <p>City Kids is designed around core principles including long-term youth engagement, experiential education programming with a focus on overcoming challenges, and goal setting with a focus on future planning. We are excited to partner with City Kids and join the movement to enhance children’s lives through meaningful learning opportunities in the great outdoors!</p>
+      <h4><a href="http://www.citykidsdc.org" target="_blank">Learn more about City Kids <i class="fa fa-arrow-right"></i></a></h4>
+
+      <hr>
+
       <a href="https://www.nationalparks.org/our-work/campaigns-initiatives/open-outdoors-kids" target="_blank">
         <img class="d-block w-270 rounded m-3 float-right" src="/img/foundation/everykidinapark.png" alt="Ever Kid in a Park">
       </a>
