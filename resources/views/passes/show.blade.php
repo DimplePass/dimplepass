@@ -26,7 +26,7 @@
         <div class="hero-text">
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
-            <h3 class="white-color">Unlock <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> on {{ $pass->destinations->first()->short_name }}'s Top Activities.</h3>
+            <h3 class="text-warning"><strong>Unlock discounts on {{ $pass->destinations->first()->short_name }}'s Top Activities.</strong></h3>
           @else
             <h3 class="text-warning"><strong>Available <span class="dp-warning">June 15th.</span></strong></h3>
           @endif
@@ -43,20 +43,24 @@
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
-    {{-- Vendor Discounts --}}
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
+
       {{-- Get Outside Pass CTA Bar --}}
       <div class="shop-toolbar padding-bottom-1x mb-2">
         <div class="column">
-          <h2 class="mb-1"><strong>All Profits to Get Kids Outdoors</strong> <a href="/foundation"><i class="fa fa-question-circle fa-xs"></i></a></h2>
-          <h4 class="text-warning">Our <strong>${{ number_format($pass->price/100, 0, '.', ',') }} Pass</strong> unlocks the discounts below.</h4>
-          <h6 class="mb-0">{{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h6>
+          <h3 class="mb-1"><strong>All profits go to programs that Get Kids Outdoors!</strong></h3>
+          <h3 class="mb-1">Your <strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong>{{--  for up to <strong class="text-warning">5 people</strong> --}}.</h3>
+          <h6 class="mb-0">Valid {{ $pass->start->format('F jS, Y') }} - {{ $pass->end->format('F jS, Y') }} <small>Dates vary per vendor.</small></h6>
         </div>
         <div class="column">
             <h2 class="mb-1"><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-TopRight', '{{ Request::path() }}', '{{ $pass->id }}');">Buy the <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> pass</a></h2>
             <h6 class="mt-1 text-center">Good for up to 5 people</h6>
         </div>
       </div>
+
+     
+
+
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
         <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
@@ -77,9 +81,9 @@
                 <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
               @endif
               {!! $d->rates !!}
-              {{-- <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details</a></p> --}}
-              {{-- <div class="collapse" id="details_{{ $d->id }}"> --}}
-                {{-- <p class="hidden-xs-down">{{ $d->description }}</p> --}}
+              <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details <i class="fa fa-chevron-down"></i></a></p>
+              <div class="collapse" id="details_{{ $d->id }}">
+                <p class="hidden-xs-down">{{ $d->description }}</p>
                 <ul class="list-unstyled text-sm">
                   <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
                   {!! $d->hours !!}
@@ -96,7 +100,7 @@
                   @endif
                   <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
                 </ul>
-              {{-- </div> --}}
+              </div>
             </div>
           </div>
         </div>
@@ -104,11 +108,11 @@
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
-      <aside class="sidebar mb-5 text-center text-md-left">
-        {{-- <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5"> --}}
+     {{-- <aside class="sidebar mb-5 text-center text-md-left">
+        <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5">
         <h4><strong><a href="/how">How does it work?</a></strong></h4>
         <h5 class="gray">Buy. Redeem. Save.</h5>   
-      </aside>
+      </aside> --}}
       <div class="sticky">
         <aside class="sidebar">
           {{-- Filters --}}

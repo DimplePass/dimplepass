@@ -107,6 +107,13 @@ a.list-group-item, .list-group-item-action {
 .product-card {
 	background: #fafafa;
 }
+.product-card .product-title {
+	text-align: left;
+}
+.product-card .product-price {
+	text-align: left;
+	font-size: .85rem;
+}
 
 // Checkout Navigation
 .checkout-steps > a {
