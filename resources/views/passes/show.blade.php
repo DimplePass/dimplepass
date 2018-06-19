@@ -128,6 +128,35 @@
   </div>
 </div>
 
+{{-- Testimonials --}}
+<div class="bg-secondary">
+  <div class="container testimonials">
+   <h4 class="gray-darker">What you're saying...</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <blockquote class="margin-top-1x margin-bottom-1x">
+          <p><em>The pass is very reasonably priced! I ended up saving $32.50 over 6 days, so it more than paid for itself…</em></p>
+          <cite>Susan</cite>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote class="margin-top-1x margin-bottom-1x">
+          <p><em>Love this young company. Great value and getting new businesses hooked in all the time. Keep up the good work!</em></p>
+          <cite>Janet - Los Angeles, CA</cite>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote class="margin-top-1x margin-bottom-1x">
+          <p><em>100% of their profits go to helping kids get outdoors! Brilliant! So proud of them!!</em></p>
+          <cite>Kate - Oakland, CA</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="footerDrawer">
   <div class="open">
     <h3 class="white-color"><small><i class="fa fa-chevron-down white-color"></i></small> <strong>Buy Pass Now for $18!</strong></h3>

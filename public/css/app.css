@@ -13302,7 +13302,7 @@ blockquote::before {
   position: absolute;
   top: 24px;
   left: -17px;
-  color: #9da9b9;
+  color: #0F8B8D;
   font-size: 82px;
   font-style: italic;
   line-height: .8;
@@ -20239,6 +20239,20 @@ a.list-group-item,
   font-size: 1.2rem;
 }
 
+.blockquote {
+  border-top: none;
+  border-bottom: none;
+}
+
+.testimonials {
+  padding: 4rem;
+}
+
+.testimonials h4 {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
 .fa-xs {
   font-size: .750em;
 }
@@ -20439,6 +20453,15 @@ select.form-control:not([size]):not([multiple]) {
 
   .footerDrawer h4 {
     font-size: 18px;
+  }
+
+  .testimonials {
+    padding: 3rem;
+  }
+
+  .testimonials h4 {
+    text-align: left;
+    font-size: 2rem;
   }
 }
 

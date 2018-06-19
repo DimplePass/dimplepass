@@ -99,6 +99,21 @@ a.list-group-item, .list-group-item-action {
 	font-size: 1.2rem;
 }
 
+// Blockquote
+.blockquote {
+	border-top: none;
+	border-bottom: none;
+}
+
+// Testimonials
+.testimonials {
+	padding: 4rem;
+}
+.testimonials h4 {
+	text-align: center;
+	font-size: 2.6rem;
+}
+
 // Font Awesome
 .fa-xs { font-size: .750em; }
 .fa-sm { font-size: .875em; }
@@ -287,6 +302,15 @@ select.form-control:not([size]):not([multiple]) {
 	}
 	.footerDrawer h4 {
 	  font-size: 18px;
+	}
+
+	// Testimonials
+	.testimonials {
+		padding: 3rem;
+	}
+	.testimonials h4 {
+		text-align: left;
+		font-size: 2rem;
 	}
 
 }
