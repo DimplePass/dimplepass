@@ -81,7 +81,7 @@
                 <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
               @endif
               {!! $d->rates !!}
-              <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details <i class="fa fa-chevron-down"></i></a></p>
+              <p><a href="#details_{{ $d->id }}" data-toggle="collapse" onClick="ga('send', 'event', 'Expand-DiscountDetails', '{{ Request::path() }}', '{{ $d->id }}');">Details <i class="fa fa-chevron-down"></i></a></p>
               <div class="collapse" id="details_{{ $d->id }}">
                 <p class="hidden-xs-down">{{ $d->description }}</p>
                 <ul class="list-unstyled text-sm">
