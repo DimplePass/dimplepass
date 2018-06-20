@@ -65,6 +65,9 @@ a.list-group-item, .list-group-item-action {
 	h2 {
 		font-size: 3.1rem;
 	}
+	h3 {
+		font-size: 2.2rem;
+	}
 }
 
 // Login Banners
@@ -230,27 +233,21 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 // Pop Slide from Bottom
-.footerDrawer {
-  background-color: #eeeeee;
-  width: 360px;
+.stickyFooter {
+  background-color: #0F8B8D;
+	text-align: center;
+	padding: 10px;
+  width: 100%;
   position: fixed;
-  bottom: 0;
-  right: 1%;
+  left: 0;
+	bottom: 0;
 	z-index: 999999; // One more than ZenDesk
+	border-top: 1px solid #FFFFFF;
+	box-shadow: 0 -5px 25px 0 rgba(47, 56, 68, 0.22);
 }
-.footerDrawer .open {
-  background-color: #EC9A29;
-  padding: 20px 30px 10px;
-	cursor: pointer;
-	display: none;
-}
-.footerDrawer .content {
-  height: 250px;
-  background-color: #fafafa;
-	border-left: 1px solid #EC9A29;
-	border-right: 1px solid #EC9A29;
-  display: none;
-  padding: 30px;
+.stickyFooter h3 {
+	margin: 0;
+	padding: 0;
 }
 
 //////////
@@ -292,15 +289,12 @@ select.form-control:not([size]):not([multiple]) {
 	  margin-right: .3rem;
 	}
 
-	// Pop Slide from Bottom
-	.footerDrawer {
+	// Sticke
+	.stickyFooter {
 	  width: 100%;
 		right: 0;
 	}
-	.footerDrawer h3 {
-	  font-size: 18px;
-	}
-	.footerDrawer h4 {
+	.stickyFooter h3 {
 	  font-size: 18px;
 	}
 
