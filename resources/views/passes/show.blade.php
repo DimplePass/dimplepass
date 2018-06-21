@@ -18,8 +18,21 @@
 
 @section('content')
 
+
+
 {{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/{{ $pass->destinations->first()->slug }}-1920x580.jpg);">
+  {{-- <div class="header-profits">
+    <div class="container">
+      <div class="text-center float-right">
+        <a href="/foundation">
+          <img src="/img/foundation/headerkids.jpg" class="d-block mx-auto img-thumbnail rounded-circle mb-3" width="200" alt="">
+          <h5 class="white-color">Learn More <i class="fa fa-arrow-right"></i></h5>
+        </a>
+      </div>
+      <h1>All Profits to programs that Get Kids Outdoors.</h1>
+    </div>
+  </div> --}}
   <div class="container">
     <div class="row">
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
@@ -43,6 +56,10 @@
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
+
+{{--       <figure class="figure mb-3"><img src="/img/foundation/headerkids.jpg" alt="Image">
+        <figcaption class="figure-caption">Image caption</figcaption>
+      </figure> --}}
 
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)

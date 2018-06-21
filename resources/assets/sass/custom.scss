@@ -48,6 +48,20 @@ a.list-group-item, .list-group-item-action {
 	margin-left: -170px;
 }
 
+.header-profits {
+	width: 100%;
+	padding: 36px 0;
+	border-bottom: 1px solid #e1e7ec;
+	background: rgba(17, 83, 83, .80);
+	h1 {
+		margin: 0;
+		font-size: 24px;
+		font-weight: normal;
+		line-height: 1.25;
+		color: #ffffff;
+	}
+}
+
 // Hero Banners
 .hero-overlay {
 	position: relative;
@@ -58,7 +72,7 @@ a.list-group-item, .list-group-item-action {
 	background: rgba(55, 66, 80, .70);
 	border-radius: 10px;
 	position: absolute;
-	top: 10rem;
+	top: 4rem;
 	h1 {
 		font-size: 1.8rem;
 	}
@@ -68,6 +82,10 @@ a.list-group-item, .list-group-item-action {
 	h3 {
 		font-size: 2.2rem;
 	}
+}
+
+.header-profits a {
+	text-decoration: none;
 }
 
 // Login Banners
@@ -272,6 +290,9 @@ select.form-control:not([size]):not([multiple]) {
 				border-radius: 8px;
 			}
 		}
+		h3 {
+			font-size: 1.9rem;
+		}
 	}
 
 	// Login Banners
@@ -289,13 +310,13 @@ select.form-control:not([size]):not([multiple]) {
 	  margin-right: .3rem;
 	}
 
-	// Sticke
+	// Sticky Footer
 	.stickyFooter {
 	  width: 100%;
 		right: 0;
 	}
 	.stickyFooter h3 {
-	  font-size: 18px;
+	  font-size: 22px;
 	}
 
 	// Testimonials
@@ -321,6 +342,11 @@ select.form-control:not([size]):not([multiple]) {
 		position: -webkit-sticky;
 		position: sticky;
 		top: 140px;
+	}
+
+	// Hero Banner
+	.hero-text h3 {
+		font-size: 1.9rem;
 	}
 
 }
