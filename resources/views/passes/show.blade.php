@@ -41,7 +41,7 @@
           @if (count($pass->discounts))
             <h3 class="white-color">Your <strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong>{{--  for up to <strong class="text-warning">5 people</strong> --}}.</h3>
           @else
-            <h3 class="text-warning"><strong>Available <span class="dp-warning">June 15th.</span></strong></h3>
+            <h3 class="text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h3>
           @endif
         </div>
       </div>
