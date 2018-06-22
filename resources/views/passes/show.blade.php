@@ -56,7 +56,7 @@
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
 
-      {{-- Mobile CTA --}}
+      {{-- Mobile --}}
       <div class="hidden-lg-up mb-5">
         <h2 class="mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h2>  
         @if (count($pass->discounts))

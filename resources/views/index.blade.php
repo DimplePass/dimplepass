@@ -31,7 +31,7 @@
       <h1>All Profits to programs that Get Kids Outdoors.</h1>
     </div>
   </div>
-  <div class="container">
+  <div class="container hidden-lg-down">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
@@ -40,6 +40,12 @@
         </div>
     </div>
   </div>
+</section>
+
+{{-- Mobile --}}
+<section class="col-md-10 col-lg-8 text-md-left text-center hidden-lg-up mb-0">
+  <h1 class="mt-5 mb-1">Save money. Don't miss a thing.</h1>
+  <h2 class="mt-0 mb-0"><strong>National Park Discount Cards</strong></h2>   
 </section>
 
 {{-- Pass Cards --}}
