@@ -18,28 +18,27 @@
 
 @section('content')
 
-
-
 {{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/{{ $pass->destinations->first()->slug }}-1920x580.jpg);">
-  {{-- <div class="header-profits">
+  <div class="header-profits">
     <div class="container">
       <div class="text-center float-right">
         <a href="/foundation">
-          <img src="/img/foundation/headerkids.jpg" class="d-block mx-auto img-thumbnail rounded-circle mb-3" width="200" alt="">
-          <h5 class="white-color">Learn More <i class="fa fa-arrow-right"></i></h5>
+          <img src="/img/foundation/headerkids.jpg" class="d-block mx-auto img-thumbnail rounded-circle mb-1" alt="Get Kids Outdoors">
+          <h5 class="white-color hidden-xs-down btn btn-sm btn-primary">Learn More <i class="fa fa-arrow-right"></i></h5>
         </a>
       </div>
       <h1>All Profits to programs that Get Kids Outdoors.</h1>
     </div>
-  </div> --}}
-  <div class="container">
+  </div>
+  <div class="container hidden-lg-down">
     <div class="row">
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
           @if (count($pass->discounts))
-            <h3 class="white-color">Your <strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong>{{--  for up to <strong class="text-warning">5 people</strong> --}}.</h3>
+            <h3 class="text-warning">A <strong class="white-color">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="white-color">{{ count($pass->discounts) }} discounts</strong> for up to <strong class="white-color">5 people</strong>.</h3>
+            <h4 class="white-color">Discounts available immediately upon purchase!</h4>
           @else
             <h3 class="text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h3>
           @endif
@@ -57,9 +56,16 @@
   <div class="row">
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
 
-{{--       <figure class="figure mb-3"><img src="/img/foundation/headerkids.jpg" alt="Image">
-        <figcaption class="figure-caption">Image caption</figcaption>
-      </figure> --}}
+      {{-- Mobile CTA --}}
+      <div class="hidden-lg-up mb-5">
+        <h2 class="mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h2>  
+        @if (count($pass->discounts))
+          <h3 class="mt-2 mb-0">A <strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h3>
+        @else
+          <h3 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h3>
+        @endif
+        <h4 class="mt-2 mb-0"><strong>Discounts available immediately upon purchase!</strong></h4>  
+      </div>
 
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)

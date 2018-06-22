@@ -13,7 +13,7 @@
             @if (count($p->discounts))
               <a class="btn btn-primary" href="{{ route('destinations.passes.show', [$d->slug,$p->slug]) }}"><strong>{{ count($p->discounts) }}</strong> Discounts</a>
             @else
-              <a class="btn btn-primary" href="{{ route('destinations.passes.show', [$d->slug,$p->slug]) }}">Available Summer 2019</a>
+              <a class="btn btn-primary" href="{{ route('destinations.passes.show', [$d->slug,$p->slug]) }}">Summer 2019</a>
             @endif
           </div>
         </div>

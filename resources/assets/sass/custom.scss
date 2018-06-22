@@ -43,6 +43,13 @@ a.list-group-item, .list-group-item-action {
 	color: $brand-primary;
 }
 
+// Sticky
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 140px;
+}
+
 // Header
 .toolbar .account > .toolbar-dropdown {
 	margin-left: -170px;
@@ -60,6 +67,9 @@ a.list-group-item, .list-group-item-action {
 		line-height: 1.25;
 		color: #ffffff;
 	}
+	img {
+		width: 200px;
+	}
 }
 
 // Hero Banners
@@ -70,9 +80,13 @@ a.list-group-item, .list-group-item-action {
 .hero-text {
 	padding: 20px;
 	background: rgba(55, 66, 80, .70);
-	border-radius: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-top: 5px solid #FFF;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #FFF;
 	position: absolute;
-	top: 10rem;
+	top: 4rem;
 	h1 {
 		font-size: 1.8rem;
 	}
@@ -272,9 +286,14 @@ select.form-control:not([size]):not([multiple]) {
 /// Media Customizations
 //////////
 
+/// Phones
 @media (max-width: $screen-sm) {
 	
 	// Hero Banners
+	.hero-slider {
+		min-height: 280px;
+	}
+
 	.hero-text {
 		top: 3rem;
 		h1 {
@@ -290,9 +309,27 @@ select.form-control:not([size]):not([multiple]) {
 				border-radius: 8px;
 			}
 		}
-		h3 {
-			font-size: 1.9rem;
+	}
+
+	.header-profits {
+		width: 100%;
+		padding: 26px 0;
+		border-bottom: 1px solid #e1e7ec;
+		background: rgba(17, 83, 83, .80);
+		h1 {
+			margin: 0;
+			font-size: 16px;
+			font-weight: normal;
+			line-height: 1.25;
+			color: #ffffff;
 		}
+		img {
+			width: 100px;
+		}
+		.img-thumbnail {
+			padding: 2px !important;
+		}
+
 	}
 
 	// Login Banners
@@ -310,13 +347,13 @@ select.form-control:not([size]):not([multiple]) {
 	  margin-right: .3rem;
 	}
 
-	// Sticky Footer
+	// Sticke
 	.stickyFooter {
 	  width: 100%;
 		right: 0;
 	}
 	.stickyFooter h3 {
-	  font-size: 22px;
+	  font-size: 18px;
 	}
 
 	// Testimonials
@@ -328,25 +365,26 @@ select.form-control:not([size]):not([multiple]) {
 		font-size: 2rem;
 	}
 
-	// Button Font Size
-	// .btn-xl {
-	// 	font-size: inherit;
-	// }
-
 }
 
-@media (min-width: $screen-sm) {
+/// Tablets
+@media (min-width: $screen-md) {
 
-	// Sticky
-	.sticky {
-		position: -webkit-sticky;
-		position: sticky;
-		top: 140px;
-	}
-
-	// Hero Banner
-	.hero-text h3 {
-		font-size: 1.9rem;
+	.header-profits {
+		width: 100%;
+		padding: 26px 0;
+		border-bottom: 1px solid #e1e7ec;
+		background: rgba(17, 83, 83, .80);
+		h1 {
+			margin: 0;
+			font-size: 22px;
+			font-weight: normal;
+			line-height: 1.25;
+			color: #ffffff;
+		}
+		img {
+			width: 200px;
+		}
 	}
 
 }
