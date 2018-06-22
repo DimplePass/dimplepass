@@ -72,6 +72,10 @@ a.list-group-item, .list-group-item-action {
 	}
 }
 
+.img-thumbnail {
+	padding: 3px !important;
+}
+
 // Hero Banners
 .hero-overlay {
 	position: relative;
@@ -80,13 +84,10 @@ a.list-group-item, .list-group-item-action {
 .hero-text {
 	padding: 20px;
 	background: rgba(55, 66, 80, .70);
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-top: 5px solid #FFF;
-	border-left: 1px solid #FFF;
-	border-right: 1px solid #FFF;
+	border-radius: 20px;
+	border: 3px solid #FFF;
 	position: absolute;
-	top: 4rem;
+	top: 2.5rem;
 	h1 {
 		font-size: 1.8rem;
 	}

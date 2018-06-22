@@ -25,7 +25,7 @@
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h1 class="mb-2 white-color">It's pretty simple really.</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>Save Money.<br><span class="dp-warning">Have the Best Vacation Ever.</span></strong></h2>               
+          <h2 class="mt-0 mb-2 white-color"><strong>Save Money and have the Best Vacation Ever.</strong></h2>               
         </div>
     </div>
   </div>

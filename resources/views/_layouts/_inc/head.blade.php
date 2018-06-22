@@ -47,7 +47,7 @@
     @endif
 
     {{-- Start of getoutsidepass Zendesk Widget script --}}
-    <script type="text/javascript">
+{{--     <script type="text/javascript">
     var ua = navigator.userAgent.toLowerCase(),
     platform = navigator.platform.toLowerCase();
     platformName = ua.match(/ip(?:ad|od|hone)/) ? 'ios' : (ua.match(/(?:webos|android)/) || platform.match(/mac|win|linux/) || ['other'])[0],
@@ -65,6 +65,6 @@
         };
      
     }
-    </script>
+    </script> --}}
     
   </head>
