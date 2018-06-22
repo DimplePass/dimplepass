@@ -99,7 +99,7 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">12 Discounts</h4>
+                    <h4 class="text-light text-thin text-shadow">15 Discounts</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Glacier</h3>
                     </a>
@@ -128,7 +128,7 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/zion-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">Available June 15th</h4>
+                    <h4 class="text-light text-thin text-shadow">Available Summer 2019</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['zion','go-zion-summer-2018']) }}">
                       <h3 class="text-bold text-light text-shadow">Zion</h3>
                     </a>
