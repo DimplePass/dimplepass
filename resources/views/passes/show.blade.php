@@ -36,12 +36,6 @@
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>  
-          @if (count($pass->discounts))
-            <h3 class="text-warning">A <strong class="white-color">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="white-color">{{ count($pass->discounts) }} discounts</strong> for up to <strong class="white-color">5 people</strong>.</h3>
-            <h4 class="white-color">Discounts available immediately upon purchase!</h4>
-          @else
-            <h3 class="text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h3>
-          @endif
         </div>
       </div>
     </div>
@@ -57,14 +51,14 @@
     <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
 
       {{-- Mobile --}}
-      <div class="hidden-lg-up mb-5">
-        <h2 class="mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h2>  
+      <div class="mb-5">
+        <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>  
         @if (count($pass->discounts))
-          <h3 class="mt-2 mb-0">A <strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h3>
+          <h2 class="mt-2 mb-0">A <strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
         @else
-          <h3 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h3>
+          <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
         @endif
-        <h4 class="mt-2 mb-0"><strong>Discounts available immediately upon purchase!</strong></h4>  
+        <h3 class="mt-2 mb-0"><strong>Available immediately upon purchase!</strong></h3>  
       </div>
 
       {{-- Vendor Listing --}}
