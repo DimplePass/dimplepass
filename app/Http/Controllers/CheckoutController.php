@@ -209,7 +209,10 @@ class CheckoutController extends Controller
             $purchaseNotice = new NewPurchase($purchase);
             $purchaseNotice->subject('GO Pass Purchase');
             // dd($purchaseNotice);
-            \Mail::to($user)->send($purchaseNotice);
+            // \Mail::to($user)->send($purchaseNotice);
+            \Mail::to($user)
+                ->bcc('bj@getoutsidepass.com')
+                ->send($purchaseNotice);   
 
 
             // Slack Message

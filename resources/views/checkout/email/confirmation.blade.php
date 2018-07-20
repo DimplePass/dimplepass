@@ -176,7 +176,8 @@
                             <h3 style="margin-bottom: 12px"><a href="{{ route('member.show', $purchase->user_id) }}">Your Get Outside Pass is now available.</a></h3>
                             <p style="margin-bottom: 12px">You have unlocked great savings on the best activities and attractions for your upcoming national park vacation.  Be sure to book activities that require reservations early so that you can ensure availability.</p>
                             <h4 style="margin-bottom: 12px">Have an incredible vacation!</h4>
-                            <h4>The Get Outside Crew</h4>
+                            <h4 style="margin-bottom: 0px">BJ & Lisa Hansen</h4>
+                            <h5 style="margin-top: 0px">Get Outside Pass</h5>
                         </td>
                     </tr>
                     <tr>
