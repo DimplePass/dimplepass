@@ -37,7 +37,7 @@
 jQuery(function($) {
     // Asynchronously Load the map API 
     var script = document.createElement('script');
-    script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyAqb3fT3SbMSDMggMEK7fJOIkvamccLrjA&callback=initialize";
+    script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyCtqYOh4F3zeGI_Tf4nlXjNZ95j5J7Kdrg&callback=initialize";
     document.body.appendChild(script);
 });
 
