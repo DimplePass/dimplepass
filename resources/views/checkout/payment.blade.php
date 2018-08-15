@@ -218,7 +218,7 @@ function checkPromo(promo) {
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       // If Friends and Family promo code.
-      if (promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM18' && passid == 1) {
+      if (promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM18'  || promo == 'GFOR18' && passid == 1) {
         var promoDiscount = 12;
         $('#promoAmount').text(12);
         // Hide credit card entry fields.
@@ -303,7 +303,7 @@ function addTotalDue(promoDiscount) {
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
   // Determine total amount.
   var promo = $('#promo').val();
-  if (promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM18' ) {
+  if (promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM18' || promo == 'GFOR18') {
     var total = (0 + donateAmount);
   } else {
     var total = (totalPasses - promoDiscount) + donateAmount;
