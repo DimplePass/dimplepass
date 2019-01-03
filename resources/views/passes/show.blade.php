@@ -36,8 +36,10 @@
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>
-          <h4 class="white-color">Available April 15th for Summer 2019.</h4>
-          <h5 class="white-color">View a sample of the savings on last year's passes in <a class="white-color" href="/yellowstone/passes/go-yellowstone-summer-2018/">Yellowstone</a> and <a class="white-color" href="/glacier/passes/go-glacier-summer-2018/">Glacier</a>.</h5>
+          @if (count($pass->discounts) == 0)
+            <h4 class="white-color">Available April 15th for Summer 2019.</h4>
+            <h5 class="white-color">View a sample of the savings on last year's passes in <a class="white-color" href="/yellowstone/passes/go-yellowstone-summer-2018/">Yellowstone</a> and <a class="white-color" href="/glacier/passes/go-glacier-summer-2018/">Glacier</a>.</h5>
+          @endif
         </div>
       </div>
     </div>
