@@ -99,26 +99,26 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">15 Discounts</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-summer-2018']) }}">
+                    <h4 class="text-light text-thin text-shadow">Summer 2019</h4>
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-2019']) }}">
                       <h3 class="text-bold text-light text-shadow">Glacier</h3>
                     </a>
                   </div>
                 </section>
               </li>
-              <li><span class="mega-menu-title">Top National Parks</span>
+              <li><span class="mega-menu-title">Our National Parks</span>
                 <ul class="sub-menu">
                   @foreach ($activePasses->sortBy('name') as $ap)
                     <li><a href="{{ route('destinations.passes.show', [$ap->destinations->first()->slug,$ap->slug]) }}">{{ $ap->destinations->first()->name }}</a></li>
                   @endforeach
-                  <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  {{-- <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li> --}}
                 </ul>
               </li>
               <li>
                 <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">32 discounts</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-summer-2018']) }}">
+                    <h4 class="text-light text-thin text-shadow">Summer 2019</h4>
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-2019']) }}">
                       <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
                     </a>
                   </div>
@@ -129,7 +129,7 @@
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
                     <h4 class="text-light text-thin text-shadow">Summer 2019</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['zion','go-zion-summer-2018']) }}">
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['zion','go-zion-2019']) }}">
                       <h3 class="text-bold text-light text-shadow">Zion</h3>
                     </a>
                   </div>

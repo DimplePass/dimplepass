@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">Vendor Promise to Visitors</h1>
+          <h1 class="mb-2 white-color">Vendor <span class="dp-warning">/</span> The Vendor Promise</h1>
           <h2 class="mt-0 mb-2 white-color"><strong>Your commitment to the G.O. Pass traveler.</strong></h2>               
         </div>
     </div>
