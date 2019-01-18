@@ -109,6 +109,49 @@
           </div>
         </div>
       @endforeach
+      @if ($pass->id == 3)
+      <hr>
+      <div class="col-sm-12">
+        <h2>Thank you to our 2018 vendors.</h2>
+        <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
+        <ul>
+          <li>Wild West Yellowstone Rodeo</li>
+          <li>National Museum of Wildlife Art</li>
+          <li>Yellowstone Giant Screen Theatre</li>
+          <li>Dornan's</li>
+          <li>Fly Jackson Hole</li>
+          <li>Wilderness Trails, Inc.</li>
+          <li>Big Sky Resort</li>
+          <li>Jackson Hole Playhouse</li>
+          <li>Montana Whitewater</li>
+          <li>Yellowstone Aerial Adventures</li>
+          <li>Grand Targhee Resort</li>
+          <li>Jackson Hole Mountain Resort</li>
+          <li>Diamond P Ranch</li>
+          <li>Rocky Mountain Rotors</li>
+          <li>Barker-Ewing Scenic Float Trips</li>
+          <li>Yellowstone Historic Center</li>
+          <li>Grizzly & Wolf Discovery Center</li>
+        </ul>
+      </div> 
+      @endif
+      @if ($pass->id == 4)
+      <hr>
+      <div class="col-sm-12">
+        <h2>Thank you to our 2018 vendors.</h2>
+        <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
+        <ul>
+          <li>Swan Mountain Outfitters</li>
+          <li>Amazing Fun Center</li>
+          <li>Glacier Raft Company</li>
+          <li>The Museum at Central School</li>
+          <li>Conrad Mansion Museum</li>
+          <li>Glacier Raft Company</li>
+          <li>Glacier Highline</li>
+          <li>Great Northern Brewing</li>
+        </ul>
+      </div> 
+       @endif 
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
@@ -124,7 +167,14 @@
         </aside>
   			<hr class="mb-5 hidden-lg-down">
   			<aside class="text-center hidden-lg-down">
-            <h2><strong></strong><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+            <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+            <h2>Early Bird Rate</h2>
+            @if ($pass->id == 3)
+              <h6 class="text-center gray">$16 starting May 1st</h6>
+            @endif
+            @if ($pass->id == 4)
+              <h6 class="text-center gray">$12 starting May 1st</h6>
+            @endif
             <h6 class="mt-1 text-center">Good for up to 5 people</h6>
   			</aside> 
       </div>
