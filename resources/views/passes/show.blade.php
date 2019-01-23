@@ -118,7 +118,6 @@
           <li>Wild West Yellowstone Rodeo</li>
           <li>National Museum of Wildlife Art</li>
           <li>Yellowstone Giant Screen Theatre</li>
-          <li>Dornan's</li>
           <li>Fly Jackson Hole</li>
           <li>Wilderness Trails, Inc.</li>
           <li>Big Sky Resort</li>
