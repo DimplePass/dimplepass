@@ -83,7 +83,7 @@
             @foreach ($user->passes as $p)
               <tr>
                 <td>
-                  <h5 class="mb-0">{{ $p->name }} </h5>
+                  <h5 class="mb-0">{{ $p->name }} {{ $p->start->format('Y') }}</h5>
                   {{ count($p->discounts) }} discounts
                 </td>
                 <td>

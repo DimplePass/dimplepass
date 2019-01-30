@@ -155,7 +155,7 @@
   <img src="/img/destinations/{{ $pass->destinations->first()->slug }}-1920x580.jpg" alt="2018 {{ $pass->destinations->first()->name }} Summer" class="mb-1">
   <div class="row">
     <div class="column">
-      <h1 class="mx-0">{{ $pass->name }}</h1>
+      <h1 class="mx-0">{{ $pass->name }} {{ $pass->start->format('Y') }}</h1>
     </div>
     <div class="column">
       <h1 class="mx-0 text-right"> Code: <span class="go-primary">{{ $pass->code }}</span></h1>

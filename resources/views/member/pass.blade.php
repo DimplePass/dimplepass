@@ -48,15 +48,17 @@
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+
+      {{ $pass }}
       
       {{-- Pass Title --}}
-      <h2><strong>{{ $pass->first()->name }} Pass
-        @if (Carbon\Carbon::now() > (Carbon\Carbon::parse($pass->first()->end)))
+      <h2><strong>{{ $pass->name }} Pass
+        @if (Carbon\Carbon::now() > (Carbon\Carbon::parse($pass->end)))
           <small class="text-danger">Expired</small>
         @endif
       </strong></h2>
 
-      <h5 class="gray">{{ $pass->first()->start->format('F d, Y') }} - {{ $pass->first()->end->format('F d, Y') }} <small class="text-danger">Dates may vary per offer.</small></h5>
+      <h5 class="gray">{{ $pass->start->format('F d, Y') }} - {{ $pass->end->format('F d, Y') }} <small class="text-danger">Dates may vary per offer.</small></h5>
 
       <h6><strong class="text-danger">Important!</strong> - We recommend booking early for discounts that require a reservation as they can fill up during peak travel times.  We also suggest taking a printed pass with you during your travels as many attractions are located where there is no cell service. <a href="{{ route('member.passes.print', [Auth::user(), $pass]) }}" target="_blank">Print Your Pass</i></a></h6>
 
@@ -90,16 +92,16 @@
                 @endif
                 Redeem By: 
                 @if ($v->redeem_online == 1)
-                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Click on the link below to make an online booking. When prompted, enter the code {{ $pass->first()->code }}. The system will automatically apply our discount."><i class="fa fa-globe"></i> Online</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Click on the link below to make an online booking. When prompted, enter the code {{ $pass->code }}. The system will automatically apply our discount."><i class="fa fa-globe"></i> Online</span>
                 @endif
                 @if ($v->redeem_phone == 1)
-                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Call the number below to make a reservation over the phone. Let the reservationist know that you have a {{ $pass->first()->name }} Pass. You will be prompted to share the code {{ $pass->first()->code }} and your name."><i class="fa fa-phone"></i> Phone Call</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Call the number below to make a reservation over the phone. Let the reservationist know that you have a {{ $pass->name }} Pass. You will be prompted to share the code {{ $pass->code }} and your name."><i class="fa fa-phone"></i> Phone Call</span>
                 @endif
                 @if ($v->redeem_showphone == 1)
                   <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Simply view your pass on your phone internet browser. You’ll have a link to this pass in your confirmation email so just keep it handy OR, better yet, bookmark it. When you arrive at the attraction or activity, simply go to the ticket window and show them this screen on your phone. You may be required to show your ID as well."><i class="fa fa-mobile"></i> Show Pass on Phone</span>
                 @endif
                 @if ($v->redeem_showprint == 1)
-                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Print your pass using the button on the left. When you arrive at the attraction or activity, simply go to the ticket window and say you have a {{ $pass->first()->name }} Pass and show them the paper copy of your pass. You may be required to show your ID as well."><i class="fa fa-print"></i> Printed Pass</span>
+                  <span class="dp-success ml-1 pointer" data-toggle="tooltip" title="Print your pass using the button on the left. When you arrive at the attraction or activity, simply go to the ticket window and say you have a {{ $pass->name }} Pass and show them the paper copy of your pass. You may be required to show your ID as well."><i class="fa fa-print"></i> Printed Pass</span>
                 @endif
                 <small>(limit {{ $v->limit }})</small>
                 <br>
