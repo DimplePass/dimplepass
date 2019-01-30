@@ -47,7 +47,7 @@
       <div class="mt-30 hidden-md-up"></div>
 
       <h2>Get Outside Pass commits 100% of our profits to get kids outdoors.</h2>
-      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Get Outside Pass.  Children have less and less opportunity to get outside and experience the growth, independence and discovery that occurs in the great outdoors.  We've teamed up with the two organizations below in order to contribute to a future with more 'green time' and less 'screen time'.</p>
+      <p>Yes, we have to pay the bills, yet we do that modestly and then give 100% of our profits to get kids outdoors.  Our founders made a life change after the birth of their first child to start Get Outside Pass.  Children have less and less opportunity to get outside and experience the growth, independence and discovery that occurs in the great outdoors.  We've teamed up with the organizations below in order to contribute to a future with more 'green time' and less 'screen time'.</p>
       
       <hr>
 
