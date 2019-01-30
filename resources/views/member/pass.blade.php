@@ -48,8 +48,6 @@
     </div>
     <div class="col-lg-8">
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
-
-      {{ $pass }}
       
       {{-- Pass Title --}}
       <h2><strong>{{ $pass->name }} Pass
