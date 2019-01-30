@@ -166,15 +166,23 @@
         </aside>
   			<hr class="mb-5 hidden-lg-down">
   			<aside class="text-center hidden-lg-down">
-            <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
-            <h2>Early Bird Rate</h2>
-            @if ($pass->id == 3)
-              <h6 class="text-center gray">$16 starting May 1st</h6>
+            @if ($pass->id == 1)
+              <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
+              <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
+            @elseif ($pass->id == 2)
+              <h6 class="text-center text-warning">You are viewing last year's GO Glacier Summer Pass</h6>
+              <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
+            @else
+              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+              <h2>Early Bird Rate</h2>
+              @if ($pass->id == 3)
+                <h6 class="text-center gray">$16 starting May 1st</h6>
+              @endif
+              @if ($pass->id == 4)
+                <h6 class="text-center gray">$12 starting May 1st</h6>
+              @endif
+              <h6 class="mt-1 text-center">Good for up to 5 people</h6>
             @endif
-            @if ($pass->id == 4)
-              <h6 class="text-center gray">$12 starting May 1st</h6>
-            @endif
-            <h6 class="mt-1 text-center">Good for up to 5 people</h6>
   			</aside> 
       </div>
     </div>
