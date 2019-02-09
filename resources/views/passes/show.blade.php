@@ -116,7 +116,6 @@
         <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
         <ul>
           <li>Wild West Yellowstone Rodeo</li>
-          <li>National Museum of Wildlife Art</li>
           <li>Yellowstone Giant Screen Theatre</li>
           <li>Fly Jackson Hole</li>
           <li>Wilderness Trails, Inc.</li>
@@ -129,7 +128,6 @@
           <li>Diamond P Ranch</li>
           <li>Rocky Mountain Rotors</li>
           <li>Barker-Ewing Scenic Float Trips</li>
-          <li>Yellowstone Historic Center</li>
           <li>Grizzly & Wolf Discovery Center</li>
         </ul>
       </div> 
