@@ -179,6 +179,9 @@
               @if ($pass->id == 4)
                 <h6 class="text-center gray">$12 starting May 1st</h6>
               @endif
+              @if ($pass->id == 6)
+                <h6 class="text-center gray">$16 starting April 1st</h6>
+              @endif
               <h6 class="mt-1 text-center">Good for up to 5 people</h6>
             @endif
   			</aside> 
