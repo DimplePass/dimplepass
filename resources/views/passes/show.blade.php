@@ -109,6 +109,7 @@
           </div>
         </div>
       @endforeach
+      {{-- Yellowstone Vendor Outreach --}}
       @if ($pass->id == 3)
       <hr>
       <div class="col-sm-12">
@@ -132,6 +133,7 @@
         </ul>
       </div> 
       @endif
+      {{-- Glacier Vendor Outreach --}}
       @if ($pass->id == 4)
       <hr>
       <div class="col-sm-12">
@@ -148,7 +150,27 @@
           <li>Great Northern Brewing</li>
         </ul>
       </div> 
-       @endif 
+       @endif
+      {{-- Zion Vendor Outreach --}}
+       @if ($pass->id == 6)
+       <hr>
+       <div class="col-sm-12">
+        <h3 class="text-warning mb-0">More vendors coming soon.</h3>
+         <h4>We will be adding these adventures in the next few weeks.</h4>
+         <ul>
+           <li>Jeep Tours</li>
+           <li>Zip Lines</li>
+           <li>IMAX Theatre</li>
+           <li>UTV/ATV Rentals</li>
+           <li>Horseback Rides</li>
+           <li>Hiking Tours</li>
+           <li>Canyoneering Guides</li>
+           <li>Bike Rentals</li>
+           <li>Dining</li>
+           <li>and more...</li>
+         </ul>
+       </div> 
+        @endif 
     </div>
     {{-- Sidebar --}}
     <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
