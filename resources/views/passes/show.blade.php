@@ -122,12 +122,10 @@
           <li>Wilderness Trails, Inc.</li>
           <li>Big Sky Resort</li>
           <li>Jackson Hole Playhouse</li>
-          <li>Montana Whitewater</li>
           <li>Yellowstone Aerial Adventures</li>
           <li>Grand Targhee Resort</li>
           <li>Jackson Hole Mountain Resort</li>
           <li>Diamond P Ranch</li>
-          <li>Rocky Mountain Rotors</li>
           <li>Barker-Ewing Scenic Float Trips</li>
           <li>Grizzly & Wolf Discovery Center</li>
         </ul>
