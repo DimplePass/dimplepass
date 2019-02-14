@@ -149,7 +149,7 @@
           <li>Glacier Highline</li>
           <li>Great Northern Brewing</li>
         </ul>
-      </div> 
+      </div>
        @endif
       {{-- Zion Vendor Outreach --}}
        @if ($pass->id == 6)
