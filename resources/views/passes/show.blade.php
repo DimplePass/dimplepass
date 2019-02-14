@@ -158,9 +158,7 @@
         <h3 class="text-warning mb-0">More vendors coming soon.</h3>
          <h4>We will be adding these adventures in the next few weeks.</h4>
          <ul>
-           <li>Jeep Tours</li>
            <li>Zip Lines</li>
-           <li>IMAX Theatre</li>
            <li>UTV/ATV Rentals</li>
            <li>Horseback Rides</li>
            <li>Hiking Tours</li>
