@@ -138,14 +138,11 @@
         <h2>Thank you to our 2018 vendors.</h2>
         <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
         <ul>
-          <li>Swan Mountain Outfitters</li>
           <li>Amazing Fun Center</li>
           <li>Glacier Raft Company</li>
-          <li>The Museum at Central School</li>
           <li>Conrad Mansion Museum</li>
           <li>Glacier Raft Company</li>
           <li>Glacier Highline</li>
-          <li>Great Northern Brewing</li>
         </ul>
       </div>
        @endif
