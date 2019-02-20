@@ -163,6 +163,27 @@
            <li>and more...</li>
          </ul>
        </div> 
+        @endif
+      {{-- Great Smoky Mountains Vendor Outreach --}}
+       @if ($pass->id == 8)
+       <hr>
+       <div class="col-sm-12">
+        <h3 class="text-warning mb-0">More vendors coming soon.</h3>
+         <h4>We will be adding these adventures in the next few weeks.</h4>
+         <ul>
+           <li>Zip Lines</li>
+           <li>Whitewater Rafting</li>
+           <li>Mountan Coasters</li>
+           <li>Adventure Parks</li>
+           <li>Chairlift Rides</li>
+           <li>Tram Rides</li>
+           <li>Scenic Float Trips</li>
+           <li>Tubing</li>
+           <li>Bike Rentals</li>
+           <li>Dining</li>
+           <li>and more...</li>
+         </ul>
+       </div> 
         @endif 
     </div>
     {{-- Sidebar --}}
@@ -195,6 +216,9 @@
                 <h6 class="text-center gray">$12 starting May 1st</h6>
               @endif
               @if ($pass->id == 6)
+                <h6 class="text-center gray">$16 starting April 1st</h6>
+              @endif
+              @if ($pass->id == 8)
                 <h6 class="text-center gray">$16 starting April 1st</h6>
               @endif
               <h6 class="mt-1 text-center">Good for up to 5 people</h6>
