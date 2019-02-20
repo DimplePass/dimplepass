@@ -173,7 +173,7 @@
          <ul>
            <li>Zip Lines</li>
            <li>Whitewater Rafting</li>
-           <li>Mountan Coasters</li>
+           <li>Mountain Coasters</li>
            <li>Adventure Parks</li>
            <li>Chairlift Rides</li>
            <li>Tram Rides</li>
