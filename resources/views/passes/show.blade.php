@@ -58,7 +58,7 @@
       <div class="mb-5">
         <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>  
         @if (count($pass->discounts))
-          <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
+          <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
         @else
           <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
         @endif
