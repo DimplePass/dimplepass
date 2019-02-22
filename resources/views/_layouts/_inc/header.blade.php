@@ -99,9 +99,9 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">Summer 2019</h4>
+                    <h4 class="text-light text-thin text-shadow">{{ count($activePasses->where('id',4)->first()->discounts) }} Discounts</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-2019']) }}">
-                      <h3 class="text-bold text-light text-shadow">Glacier</h3>
+                      <h3 class="text-bold text-light text-shadow">{{ $activePasses->where('id',4)->first()->destinations->first()->short_name }}</h3>
                     </a>
                   </div>
                 </section>
@@ -115,11 +115,12 @@
                 </ul>
               </li>
               <li>
-                <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
+                <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);">
+                  <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">Summer 2019</h4>
+                    <h4 class="text-light text-thin text-shadow">{{ count($activePasses->where('id',3)->first()->discounts) }} Discounts</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-2019']) }}">
-                      <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
+                      <h3 class="text-bold text-light text-shadow">{{ $activePasses->where('id',3)->first()->destinations->first()->short_name }}</h3>
                     </a>
                   </div>
                 </section>
@@ -128,9 +129,9 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/zion-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">Summer 2019</h4>
+                    <h4 class="text-light text-thin text-shadow">{{ count($activePasses->where('id',6)->first()->discounts) }} Discounts</h4>
                      <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['zion','go-zion-2019']) }}">
-                      <h3 class="text-bold text-light text-shadow">Zion</h3>
+                      <h3 class="text-bold text-light text-shadow">{{ $activePasses->where('id',6)->first()->destinations->first()->short_name }}</h3>
                     </a>
                   </div>
                 </section>
