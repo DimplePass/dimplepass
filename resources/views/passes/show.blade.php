@@ -361,7 +361,8 @@ function initialize(newMarkers, newInfoWindowContent) {
     var bounds = new google.maps.LatLngBounds();
 
     var mapOptions = {
-        mapTypeId: 'roadmap'
+        mapTypeId: 'roadmap',
+        controlSize: 24,
     };
 
     // Create Markers
