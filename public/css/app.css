@@ -20181,13 +20181,6 @@ hr {
   text-decoration: none !important;
 }
 
-a.anchor {
-  display: block;
-  position: relative;
-  top: -250px;
-  visibility: hidden;
-}
-
 a.list-group-item,
 .list-group-item-action {
   color: #0F8B8D;
@@ -20299,19 +20292,22 @@ a.list-group-item,
   overflow: hidden;
 }
 
-.label-sleeps {
+.label-name {
   display: inline-block;
+  font-size: 1rem;
+  font-family: "Maven Pro", Helvetica, Arial, sans-serif;
   padding: 3px 12px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
 
-.label-price {
+.label-discount {
   display: inline-block;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
+  font-family: "Maven Pro", Helvetica, Arial, sans-serif;
   font-weight: 600;
   padding: 3px 12px;
   color: #000;
@@ -20442,6 +20438,10 @@ a.list-group-item,
 .product-card .product-price {
   text-align: left;
   font-size: .85rem;
+}
+
+.product-title {
+  font-family: "Maven Pro", Helvetica, Arial, sans-serif;
 }
 
 .product-title a {

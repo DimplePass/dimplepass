@@ -384,9 +384,9 @@ function initialize(newMarkers, newInfoWindowContent) {
       infoWindowContent = [
         @foreach ($pass->discounts->where('active', '=', 1) as $d)
           @if ($d->percent > .99)
-            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-price">${{ $d->percent }} Off</span></div></div><div class="property-detail"><h5 class="product-title"><a href="{{ $d->url }}">{{ $d->name }}</a></h5></div></div>'],
+            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}" target="_blank"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-name">{{ $d->name }}</span><span class="label-discount">${{ $d->percent }} Off</span></div></div></div>'],
           @else
-            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-price">{{ round($d->percent*100) }}% Off</span></div></div><div class="property-detail"><h5 class="product-title"><a href="{{ $d->url }}">{{ $d->name }}</a></h5></div></div>'],
+            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}" target="_blank"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-name">{{ $d->name }}</span><span class="label-discount">{{ round($d->percent*100) }}% Off</span></div></div></div>'],
           @endif
         @endforeach
       ];
