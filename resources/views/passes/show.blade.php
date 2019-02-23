@@ -52,58 +52,64 @@
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
-    <div class="col-xl-9 col-lg-9 col-md-9 order-md-2">
+
+    {{-- Right Listings  --}}
+    <div class="col-xl-8 col-lg-8 col-md-8 order-md-2" id="rightOffers">
 
       {{-- Mobile --}}
       <div class="mb-5">
-        <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>  
-        @if (count($pass->discounts))
-          <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
-        @else
-          <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
-        @endif
-        <h3 class="mt-2 mb-0"><strong>Available immediately upon purchase!</strong></h3>  
+        <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>
+        <div id="valueProp">
+          @if (count($pass->discounts))
+            <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
+          @else
+            <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
+          @endif
+          <h3 class="mt-2 mb-0"><strong>Available immediately upon purchase!</strong></h3>  
+        </div>
       </div>
 
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
-        <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
-          <a class="product-thumb" href="#">
-            {{-- <div class="product-badge text-danger">50% Off</div> --}}
-            <img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
-          </a>
-          <div class="product-info">
-            <h3 class="product-title">
-              {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
-            </h3>
-            <div class="product-buttons">
-              @if (is_null($d->percent))
-                <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong></h3>
-              @elseif ($d->percent > .99)
-                <h3><i class="icon-tag dp-success"></i> <strong>${{ $d->percent }} Off {{ $d->name }}</strong></h3>
-              @else
-                <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
-              @endif
-              {!! $d->rates !!}
-              <p><a href="#details_{{ $d->id }}" data-toggle="collapse" onClick="ga('send', 'event', 'Expand-DiscountDetails', '{{ Request::path() }}', '{{ $d->id }}');">Details <i class="fa fa-chevron-down"></i></a></p>
-              <div class="collapse" id="details_{{ $d->id }}">
-                <p class="hidden-xs-down">{{ $d->description }}</p>
-                <ul class="list-unstyled text-sm">
-                  <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
-                  {!! $d->hours !!}
-                  @if ($d->fine_print)
-                    <li>{{ $d->fine_print }}</li>
-                  @endif
-                    <li><span class="opacity-50">Limit:</span> {{ $d->limit }}</li>
-                  @if ($d->reservations_required == 1 && $d->limited_availability == 0)
-                    <li class="dp-danger">Reservations Required</li>
-                  @elseif ($d->reservations_required == 0 && $d->limited_availability == 1)
-                    <li class="dp-danger">Limited Availability - Book Early!</li>
-                  @elseif ($d->reservations_required == 1 && $d->limited_availability == 1)
-                    <li class="dp-danger">Reservations Required <span class="gray-darker">|</span> Limited Availability - Book Early!</li> 
-                  @endif
-                  <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
-                </ul>
+        <div class="col-sm-12" id="discount-{{ $d->id }}">
+          <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
+            <a class="product-thumb" href="#">
+              {{-- <div class="product-badge text-danger">50% Off</div> --}}
+              <img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
+            </a>
+            <div class="product-info">
+              <h3 class="product-title">
+                {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
+              </h3>
+              <div class="product-buttons">
+                @if (is_null($d->percent))
+                  <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong></h3>
+                @elseif ($d->percent > .99)
+                  <h3><i class="icon-tag dp-success"></i> <strong>${{ $d->percent }} Off {{ $d->name }}</strong></h3>
+                @else
+                  <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
+                @endif
+                {!! $d->rates !!}
+                <p><a href="#details_{{ $d->id }}" data-toggle="collapse" onClick="ga('send', 'event', 'Expand-DiscountDetails', '{{ Request::path() }}', '{{ $d->id }}');">Details <i class="fa fa-chevron-down"></i></a></p>
+                <div class="collapse" id="details_{{ $d->id }}">
+                  <p class="hidden-xs-down">{{ $d->description }}</p>
+                  <ul class="list-unstyled text-sm">
+                    <li><span class="opacity-50">Season:</span> {{ $d->start->format('F jS, Y') }} - {{ $d->end->format('F jS, Y') }}</li>
+                    {!! $d->hours !!}
+                    @if ($d->fine_print)
+                      <li>{{ $d->fine_print }}</li>
+                    @endif
+                      <li><span class="opacity-50">Limit:</span> {{ $d->limit }}</li>
+                    @if ($d->reservations_required == 1 && $d->limited_availability == 0)
+                      <li class="dp-danger">Reservations Required</li>
+                    @elseif ($d->reservations_required == 0 && $d->limited_availability == 1)
+                      <li class="dp-danger">Limited Availability - Book Early!</li>
+                    @elseif ($d->reservations_required == 1 && $d->limited_availability == 1)
+                      <li class="dp-danger">Reservations Required <span class="gray-darker">|</span> Limited Availability - Book Early!</li> 
+                    @endif
+                    <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -185,19 +191,31 @@
        </div> 
         @endif 
     </div>
-    {{-- Sidebar --}}
-    <div class="col-xl-3 col-lg-3 col-md-3 order-md-1">
+
+    {{-- Left Sidebar --}}
+    <div class="col-xl-4 col-lg-4 col-md-4 order-md-1" id="leftMap">
      {{-- <aside class="sidebar mb-5 text-center text-md-left">
         <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5">
         <h4><strong><a href="/how">How does it work?</a></strong></h4>
         <h5 class="gray">Buy. Redeem. Save.</h5>   
       </aside> --}}
+      
+      <aside class="sidebar">
+        <div id="destinationMap_wrapper">
+            <div id="destinationMap_canvas" class="mapping"></div>
+        </div>
+        <ul class="list-inline hidden-sm hidden-xs text-right" id="sizeMap">
+          <li><a href="" id="resetMap" class="nounderline">reset <i class="fa fa-refresh"></i></a></li>
+          <li><a href="" id="sizeMapSmall" class="nounderline">small map <i class="fa fa-search-minus"></i></a></li>
+          <li><a href="" id="sizeMapLarge" class="nounderline">large map <i class="fa fa-search-plus"></i></a></li>
+        </ul>
+      </aside>
       <div class="sticky">
         <aside class="sidebar">
           {{-- Filters --}}
           @include('/passes/_inc/filters')
         </aside>
-  			<hr class="mb-5 hidden-lg-down">
+  			<hr class="mb-5 hidden-lg-down hideLargeMap">
   			<aside class="text-center hidden-lg-down">
             @if ($pass->id == 1)
               <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
@@ -207,20 +225,22 @@
               <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
             @else
               <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
-              <h2>Early Bird Rate</h2>
-              @if ($pass->id == 3)
-                <h6 class="text-center gray">$16 starting May 1st</h6>
-              @endif
-              @if ($pass->id == 4)
-                <h6 class="text-center gray">$12 starting May 1st</h6>
-              @endif
-              @if ($pass->id == 6)
-                <h6 class="text-center gray">$16 starting April 1st</h6>
-              @endif
-              @if ($pass->id == 8)
-                <h6 class="text-center gray">$16 starting April 1st</h6>
-              @endif
-              <h6 class="mt-1 text-center">Good for up to 5 people</h6>
+              <div class="hideLargeMap">
+                <h2>Early Bird Rate</h2>
+                @if ($pass->id == 3)
+                  <h6 class="text-center gray">$16 starting May 1st</h6>
+                @endif
+                @if ($pass->id == 4)
+                  <h6 class="text-center gray">$12 starting May 1st</h6>
+                @endif
+                @if ($pass->id == 6)
+                  <h6 class="text-center gray">$16 starting April 1st</h6>
+                @endif
+                @if ($pass->id == 8)
+                  <h6 class="text-center gray">$16 starting April 1st</h6>
+                @endif
+                <h6 class="mt-1 text-center">Good for up to 5 people</h6>
+              </div>
             @endif
   			</aside> 
       </div>
@@ -273,13 +293,155 @@
 
 <script>
 
-// Checkbox towns filter.
+/////////
+/// Towns Filter
+/////////
+
 $("#filters :checkbox").click(function() {
   $(".product-card").fadeOut('fast');
   $("#filters :checkbox:checked").each(function() {
     $("." + $(this).val()).fadeIn('fast');
   });
 });
+
+/////////
+/// Expand Map
+/////////
+
+$('#sizeMapLarge').click(function (e) {
+  e.preventDefault();
+  $('#rightOffers').attr('class', 'col-sm-12 col-md-12 m-t-3 order-md-2');
+  // $('#rightOffers').children('div').attr('class', 'col-sm-6 col-md-6');
+  $('#leftMap').attr('class', 'col-sm-12 col-md-12 order-md-1');
+  $('#sizeMapSmall').show();
+  $('#sizeMapLarge').hide();
+  $('#filters').hide();
+  $('#resetMap').show();
+  $('.hideLargeMap').hide();
+  $('#valueProp').attr('class', 'text-center');
+  $('#destinationMap_wrapper').css({'height': '600px' });
+  initialize();
+});
+
+$('#sizeMapSmall').click(function (e) {
+  e.preventDefault();
+  $('#rightOffers').attr('class', 'col-sm-12 col-md-8 order-md-2');
+  // $('#rightOffers').children('div').attr('class', 'col-sm-12 col-md-12');
+  $('#leftMap').attr('class', 'col-sm-12 col-md-4 order-md-1');
+  $('#sizeMapSmall').hide();
+  $('#sizeMapLarge').show();
+  $('#filters').show();
+  $('#resetMap').hide();
+  $('#valueProp').attr('class', 'text-left');
+  $('#destinationMap_wrapper').css({'height': '400px' });
+  initialize();
+});
+
+/// Hide map specific items on Page Load.
+$('#sizeMapSmall').hide();
+$('#resetMap').hide();
+
+
+//////////
+/// Destination Map with Offers
+/// https://wrightshq.com/playground/placing-multiple-markers-on-a-google-map-using-api-3/
+//////////
+
+$(function($) {
+  // Asynchronously Load the map API 
+  var script = document.createElement('script');
+  script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyCtqYOh4F3zeGI_Tf4nlXjNZ95j5J7Kdrg&callback=initialize";
+  document.body.appendChild(script);
+});
+
+/// Initialize Map for initial load.
+function initialize(newMarkers, newInfoWindowContent) {
+
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+
+    var mapOptions = {
+        mapTypeId: 'roadmap'
+    };
+
+    // Create Markers
+    if(newMarkers) {
+      markers = [];
+      markers = newMarkers;
+    } else {
+      markers = [
+          @foreach ($pass->discounts->where('active', '=', 1) as $d)
+            ['{{ $d->name }}', {{ $d->latitude }}, {{ $d->longitude }}],
+          @endforeach
+      ];
+    }
+                    
+    // Info Window Content
+    if(newInfoWindowContent) {
+      infoWindowContent = [];
+      infoWindowContent = newInfoWindowContent;
+    } else {
+      infoWindowContent = [
+        @foreach ($pass->discounts->where('active', '=', 1) as $d)
+          @if ($d->percent > .99)
+            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-price">${{ $d->percent }} Off</span></div></div><div class="property-detail"><h5 class="product-title"><a href="{{ $d->url }}">{{ $d->name }}</a></h5></div></div>'],
+          @else
+            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-price">{{ round($d->percent*100) }}% Off</span></div></div><div class="property-detail"><h5 class="product-title"><a href="{{ $d->url }}">{{ $d->name }}</a></h5></div></div>'],
+          @endif
+        @endforeach
+      ];
+    }
+                    
+    // Display the map on the page
+    map = new google.maps.Map(document.getElementById("destinationMap_canvas"), mapOptions);
+        
+    // Display markers on the map
+    var infoWindow = new google.maps.InfoWindow({
+      maxWidth: 340
+    }), marker, i;
+    
+    // Loop through the array of markers & place each one on the map  
+    for( i = 0; i < markers.length; i++ ) {
+        // Set the position and bounds for zoom level and placement
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        // Create the marker
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
+        
+        // Create an infoWindow for each marker  
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                // map.setCenter(marker.getPosition());
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+        // Close the infoWindow when clicking elsewhere on the map
+        google.maps.event.addListener(map, "click", function(){
+          infoWindow.close();
+        });
+
+        // Automatically center the map and zoom to fit all markers
+        map.fitBounds(bounds);
+    }
+
+    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        // this.setZoom(9);
+        google.maps.event.removeListener(boundsListener);
+    });
+
+    $("#resetMap").click(function(e) {
+        e.preventDefault();
+        infoWindow.close();
+        map.fitBounds(bounds);
+    })
+    
+}
 
 </script>
 @stop
