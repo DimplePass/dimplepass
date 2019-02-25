@@ -65,7 +65,7 @@
           @else
             <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
           @endif
-          <h3 class="mt-2 mb-0"><strong>Available immediately upon purchase!</strong></h3>  
+          <h4 class="mt-2 mb-0"><strong>Available immediately so you can start booking today!</strong></h4>  
         </div>
       </div>
 
@@ -290,6 +290,8 @@
 
 {{-- MailChimp Popup --}}
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us18.list-manage.com","uuid":"5e0fce7e4132ef1c8a2a97272","lid":"008eacf5d6"}) })</script>
+{{-- Google Maps Marker Clusterer --}}
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
 <script>
 
@@ -396,11 +398,22 @@ function initialize(newMarkers, newInfoWindowContent) {
     // Display the map on the page
     map = new google.maps.Map(document.getElementById("destinationMap_canvas"), mapOptions);
         
-    // Display markers on the map
+    // Display infowindow on the map
     var infoWindow = new google.maps.InfoWindow({
       maxWidth: 340
     }), marker, i;
     
+    var image = {
+      // url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+      // url: 'https://www.getoutsidepass.com/img/map/pin.png',
+      // This marker is 20 pixels wide by 32 pixels high.
+      size: new google.maps.Size(20, 32),
+      // The origin for this image is (0, 0).
+      // origin: new google.maps.Point(0, 0),
+      // The anchor for this image is the base of the flagpole at (0, 32).
+      // anchor: new google.maps.Point(0, 32)
+    };
+
     // Loop through the array of markers & place each one on the map  
     for( i = 0; i < markers.length; i++ ) {
         // Set the position and bounds for zoom level and placement
@@ -410,6 +423,7 @@ function initialize(newMarkers, newInfoWindowContent) {
         marker = new google.maps.Marker({
             position: position,
             map: map,
+            icon: image,
             title: markers[i][0]
         });
         
@@ -428,13 +442,13 @@ function initialize(newMarkers, newInfoWindowContent) {
 
         // Automatically center the map and zoom to fit all markers
         map.fitBounds(bounds);
-    }
+    }    // Add a marker clusterer to manage the markers.
 
     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
         // this.setZoom(9);
         google.maps.event.removeListener(boundsListener);
-    });
+    });;
 
     $("#resetMap").click(function(e) {
         e.preventDefault();
