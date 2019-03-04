@@ -59,13 +59,36 @@
       {{-- Mobile --}}
       <div class="mb-5">
         <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>
-        <div id="valueProp">
+        <div id="valuePropLargeMap">
           @if (count($pass->discounts))
             <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
           @else
             <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
           @endif
           <h4 class="mt-2 mb-0"><strong>Available immediately so you can start booking today!</strong></h4>  
+        </div>
+      </div>
+
+      <div class="well">
+        <div class="col-md-4">
+          <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
+              {!! Form::label('numAdults', '# Adults') !!}
+              {!! Form::text('numAdults', null, ['class' => 'form-control']) !!}
+              <small class="text-danger">{{ $errors->first('numAdults') }}</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group{{ $errors->has('numChildren') ? ' has-error' : '' }}">
+              {!! Form::label('numChildren', '# Children') !!}
+              {!! Form::text('numChildren', null, ['class' => 'form-control']) !!}
+              <small class="text-danger">{{ $errors->first('numChildren') }}</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3><small># discounts</small> <span id="numDiscounts">-</span></h3>
+          <h3><small>Regular Price</small> <span id="regularPrice">-</span></h3>
+          <h3><small>Your Price</small> <span id="yourPrice"></span></h3>
+          <h3><small>Total Savings</small>  <span id="totalSavings"></span></h3>
         </div>
       </div>
 
@@ -194,11 +217,15 @@
 
     {{-- Left Sidebar --}}
     <div class="col-xl-4 col-lg-4 col-md-4 order-md-1" id="leftMap">
-     {{-- <aside class="sidebar mb-5 text-center text-md-left">
-        <img src="/img/phonePass.png" alt="Get Outside Pass on Phone" class="mb-5">
-        <h4><strong><a href="/how">How does it work?</a></strong></h4>
-        <h5 class="gray">Buy. Redeem. Save.</h5>   
-      </aside> --}}
+
+      <div id="valuePropSmallMap" class="text-center mb-4">
+        @if (count($pass->discounts))
+          <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
+        @else
+          <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
+        @endif
+        <h4 class="mt-2 mb-0"><strong>Available immediately so you can start booking today!</strong></h4>  
+      </div>
       
       <aside class="sidebar">
         <div id="destinationMap_wrapper">
@@ -293,6 +320,11 @@
 {{-- Google Maps Marker Clusterer --}}
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
+{{-- Multiple Markets Test --}}
+{{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="../../maptest.json"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> --}}
+
 <script>
 
 /////////
@@ -320,7 +352,8 @@ $('#sizeMapLarge').click(function (e) {
   $('#filters').hide();
   $('#resetMap').show();
   $('.hideLargeMap').hide();
-  $('#valueProp').attr('class', 'text-center');
+  $('#valuePropLargeMap').hide();
+  $('#valuePropSmallMap').show();
   $('#destinationMap_wrapper').css({'height': '600px' });
   initialize();
 });
@@ -334,13 +367,15 @@ $('#sizeMapSmall').click(function (e) {
   $('#sizeMapLarge').show();
   $('#filters').show();
   $('#resetMap').hide();
-  $('#valueProp').attr('class', 'text-left');
+  $('#valuePropLargeMap').show();
+  $('#valuePropSmallMap').hide();
   $('#destinationMap_wrapper').css({'height': '400px' });
   initialize();
 });
 
 /// Hide map specific items on Page Load.
 $('#sizeMapSmall').hide();
+$('#valuePropSmallMap').hide();
 $('#resetMap').hide();
 
 
@@ -407,7 +442,7 @@ function initialize(newMarkers, newInfoWindowContent) {
       // url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
       // url: 'https://www.getoutsidepass.com/img/map/pin.png',
       // This marker is 20 pixels wide by 32 pixels high.
-      size: new google.maps.Size(20, 32),
+      size: new google.maps.Size(parseFloat(20), parseFloat(32)),
       // The origin for this image is (0, 0).
       // origin: new google.maps.Point(0, 0),
       // The anchor for this image is the base of the flagpole at (0, 32).
@@ -442,7 +477,10 @@ function initialize(newMarkers, newInfoWindowContent) {
 
         // Automatically center the map and zoom to fit all markers
         map.fitBounds(bounds);
-    }    // Add a marker clusterer to manage the markers.
+    }
+
+    // Add a marker clusterer to manage the markers.
+    var markerCluster = new MarkerClusterer(map, markers);
 
     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
@@ -457,6 +495,30 @@ function initialize(newMarkers, newInfoWindowContent) {
     })
     
 }
+
+// Multiple Markets Test that Works
+
+// function initialize() {
+//   var center = new google.maps.LatLng(37.4419, -122.1419);
+//   var map = new google.maps.Map(document.getElementById('destinationMap_canvas'), {
+//     zoom: 3,
+//     center: center,
+//     mapTypeId: google.maps.MapTypeId.ROADMAP
+//   });
+//   var markers = [];
+//   for (var i = 0; i < 100; i++) {
+//     var dataPhoto = data.photos[i];
+//     var latLng = new google.maps.LatLng(dataPhoto.latitude,
+//         dataPhoto.longitude);
+//     var marker = new google.maps.Marker({
+//       position: latLng
+//     });
+//     markers.push(marker);
+//     console.log(markers);
+//   }
+//   var markerCluster = new MarkerClusterer(map, markers);
+// }
+// google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 @stop
