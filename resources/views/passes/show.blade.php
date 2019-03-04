@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="well">
+{{--       <div class="well">
         <div class="col-md-4">
           <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
               {!! Form::label('numAdults', '# Adults') !!}
@@ -89,7 +89,7 @@
           <h3><small>Your Price</small> <span id="yourPrice"></span></h3>
           <h3><small>Total Savings</small>  <span id="totalSavings"></span></h3>
         </div>
-      </div>
+      </div> --}}
 
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
