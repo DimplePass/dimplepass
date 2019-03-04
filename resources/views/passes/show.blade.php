@@ -37,8 +37,7 @@
         <div class="hero-text">
           <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>
           @if (count($pass->discounts) == 0)
-            <h4 class="white-color">Available April 15th for Summer 2019.</h4>
-            <h5 class="white-color">View a sample of the savings on last year's passes in <a class="white-color" href="/yellowstone/passes/go-yellowstone-summer-2018/">Yellowstone</a> and <a class="white-color" href="/glacier/passes/go-glacier-summer-2018/">Glacier</a>.</h5>
+            <h4 class="white-color">Available soon for Summer 2019.</h4>
           @endif
         </div>
       </div>
@@ -151,11 +150,9 @@
           <li>Big Sky Resort</li>
           <li>Jackson Hole Playhouse</li>
           <li>Yellowstone Aerial Adventures</li>
-          <li>Grand Targhee Resort</li>
           <li>Jackson Hole Mountain Resort</li>
           <li>Diamond P Ranch</li>
           <li>Barker-Ewing Scenic Float Trips</li>
-          <li>Grizzly & Wolf Discovery Center</li>
         </ul>
       </div> 
       @endif
