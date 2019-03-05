@@ -113,7 +113,7 @@
                   <div class="form-group">
                       <div class="checkbox{{ $errors->has('addToTrip[]') ? ' has-error' : '' }}">
                           <label for="addToTrip[]">
-                              {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'data-rate-regular-adult' => '100', 'data-rate-regular-child' => '50', 'data-rate-gopass-adult' => '80', 'data-rate-gopass-child' => '40']) !!} Add To Trip
+                              {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'checked' => 'checked', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_adult, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!} Add To Trip
                           </label>
                       </div>
                       <small class="text-danger">{{ $errors->first('addToTrip[]') }}</small>
@@ -237,7 +237,7 @@
             </div>
             <div class="card">
               <div class="card-header" role="tab">
-                <h6><a href="#tripBuilder" data-toggle="collapse" aria-expanded="true">Build Your Trip</a></h6>
+                <h6><a href="#tripBuilder" data-toggle="collapse" aria-expanded="true">See Your Savings</a></h6>
               </div>
               <div class="collapse show" id="tripBuilder" data-parent="#sideBarAccordion" role="tabpanel">
                 <div class="card-body">
@@ -259,7 +259,7 @@
                   </div>
                   <div class="row text-center">
                     <div class="col-sm-12">
-                      <h1 class="my-0"><small>Save</small> <strong class="dp-success">$<span id="totalSavings"></span></strong></h1>
+                      <h1 class="my-0"><small>You Save</small> <strong class="dp-success">$<span id="totalSavings"></span></strong></h1>
                       <h6 class="my-0"><small>on</small> <strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small>Activities</small></h6>
                       <h6 class="my-0"><small>Regular Price</small> $<span id="regularPrice"></span> <small> With GO Pass</small> $<span id="goPrice"></span></h6>
                     </div>
@@ -408,10 +408,19 @@ $('#resetMap').hide();
 /// Trip Builder
 //////////
 
+// Calculate on Page Load
 $(function() {
   var numAdults = $('#numAdults').val();
   var numChildren = $('#numChildren').val();
-  regularPrice(numAdults,numChildren);
+  totalRegularPrice(numAdults,numChildren);
+});
+
+// On checkbox selection fo offer, hit all other functions to calculate.
+$('.addToTrip').on('change', function() {
+  var numAdults = $('#numAdults').val();
+  var numChildren = $('#numChildren').val();
+  // Fire Regular Price Function
+  totalRegularPrice(numAdults, numChildren);
 });
 
 // On # of Adults or # of Children Keyup, hit all other functions to calculate.
@@ -419,46 +428,50 @@ $('#numAdults,#numChildren').on('keyup', function() {
   var numAdults = $('#numAdults').val();
   var numChildren = $('#numChildren').val();
   // Fire Regular Price Function
-  regularPrice(numAdults, numChildren);
+  totalRegularPrice(numAdults, numChildren);
 });
 
-// @TODO - Only first fire of regularPrice function is working - on page load - keyups not working.
-// @TODO - Only calculate values for selected activities.
+// @TODO - Default Savings when no discounts are selected.
+// @TODO - Populate database.
 // @TODO - Deal with activities that are not a discount percentage.
 // @TODO - Add Disclaimer that this is only an estimate.
 
 // Calculate & Display Regular Price
-function regularPrice(numAdults,numChildren){
+function totalRegularPrice(numAdults,numChildren){
     var regularPriceAdult = 0;
     var regularPriceChild = 0;
     // Get Regular Price of both Adult and Child for each Activity Selected
-    $("input[name^='addToTrip']").each(function(index) {
+    $(".addToTrip").each(function(index) {
+      if(this.checked) {
         regularPriceAdult = regularPriceAdult + Number($(this).data('rate-regular-adult'));
         regularPriceChild = regularPriceChild + Number($(this).data('rate-regular-child'));
+      }
     });
     // Multiply by the number of adults and children
     regularPriceAdult = numAdults * regularPriceAdult;
     regularPriceChild = numChildren * regularPriceChild;    
     regularPrice = regularPriceAdult + regularPriceChild;
-    $('#regularPrice').text(addCommas(regularPrice));
+    $('#regularPrice').text(addCommas(roundTo(regularPrice, 0)));
     // Fire GO Price Function
-    goPrice(numAdults, numChildren, regularPrice);
+    totalGoPrice(numAdults, numChildren, regularPrice);
 }
 
 // Calculate & Display the GO Pass Price
-function goPrice(numAdults,numChildren,regularPrice){
+function totalGoPrice(numAdults,numChildren,regularPrice){
     var goPriceAdult = 0;
     var goPriceChild = 0;
     // Get Go Pass Price of both Adult and Child for each Activity Selected
-    $("input[name^='addToTrip']").each(function(index) {
+    $(".addToTrip").each(function(index) {
+      if(this.checked) {
         goPriceAdult = goPriceAdult + Number($(this).data('rate-gopass-adult'));
         goPriceChild = goPriceChild + Number($(this).data('rate-gopass-child'));
+      }      
     });
     // Multiply by the number of adults and children
     goPriceAdult = numAdults * goPriceAdult;
     goPriceChild = numChildren * goPriceChild;    
     goPrice = goPriceAdult + goPriceChild;
-    $('#goPrice').text(addCommas(goPrice));
+    $('#goPrice').text(addCommas(roundTo(goPrice, 0)));
     // Fire Total Savings Function
     totalSavings(regularPrice, goPrice);
 }
@@ -467,7 +480,7 @@ function goPrice(numAdults,numChildren,regularPrice){
 function totalSavings(regularPrice,goPrice){
     var totalSavings = 0;
     totalSavings = regularPrice - goPrice;
-    $('#totalSavings').text(addCommas(totalSavings));
+    $('#totalSavings').text(addCommas(roundTo(totalSavings, 0)));
     // Fire Total Discounts Function
     totalDiscounts();
 }
@@ -475,8 +488,10 @@ function totalSavings(regularPrice,goPrice){
 // Calculate & Display the # of Discounts Selected
 function totalDiscounts(numAdults,numChildren){
     var totalDiscounts = 0;
-    $("input[name^='addToTrip[']").each(function(index) {
+    $(".addToTrip").each(function(index) {
+      if(this.checked) {
         totalDiscounts = totalDiscounts + Number($(this).val());
+      }      
     });
     $('#totalDiscounts').text(addCommas(totalDiscounts));
 }
@@ -492,6 +507,11 @@ function addCommas(nStr) {
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
+}
+// Round for display
+function roundTo(num,places) {
+    var calc = (Math.round(num*(Math.pow(10,places)))/(Math.pow(10,places)));
+    return calc.toFixed(0);
 }
 
 
