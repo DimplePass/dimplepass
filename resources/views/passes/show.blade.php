@@ -75,7 +75,9 @@
           <div class="product-info">
             <h3 class="product-title">
               {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
+            <a href="#" id="addDiscount-{{ $d->id }}" class="btn btn-default btn-outline">Add To Trip</a>
             </h3>
+
             <div class="product-buttons">
               @if (is_null($d->percent))
                 <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong></h3>
