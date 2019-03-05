@@ -30,6 +30,7 @@
         "pe7-icon": "^1.0.4",
         "photoswipe": "^4.1.2",
         "popper.js": "^1.14.3",
+        "pretty-checkbox": "^3.0.3",
         "socicon": "^3.0.5"
     }
 }

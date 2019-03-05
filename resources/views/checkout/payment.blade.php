@@ -123,7 +123,8 @@
               <td>
                 <h6 class="mb-0">{{ $pass->name }} Pass</h6>
                 <p class="mt-0 mb-0">{{ $pass->start->format('M d, Y') }} - {{ $pass->end->format('M d, Y') }}</p>
-                <p class="mt-0">{{ count($pass->discounts) }} Discounts</p>
+                <p class="mt-0 mb-0">{{ count($pass->discounts) }} Total Discounts</p>
+                <p class="mt-0">Good for up to 5 people.</p>
               </td>
               <td class="text-medium">$<span class="passFee">{{ number_format(($pass->price-Request::get('discount'))/100, 2, '.', ',') }}</span></td>
             </tr>
@@ -135,7 +136,7 @@
                   @else
                     {!! Form::text('promo', Cookie::get('promo') ? Cookie::get('promo') : null, ['class' => 'form-control form-control-rounded', 'id' => 'promo']) !!}
                   @endif
-                  {!! Form::label('promo', 'Promo Code') !!}
+                  {!! Form::label('promo', 'Do you have a promo code?') !!}
                   <small class="text-danger" id="promoMessage">{{ $errors->first('promo') }}</small>
                   <span id="promoAmount" style="visibility: hidden;">0</span>
                 </div>
@@ -145,7 +146,7 @@
             <tr>
               <td>
                 <div class="custom-control custom-checkbox">
-                  {!! Form::checkbox('donate4', '1', null, ['id' => 'donate4', 'class' => 'custom-control-input pointer donate4']) !!} 
+                  {!! Form::checkbox('donate4', '1', null, ['id' => 'donate4', 'class' => 'custom-control-input pointer donate4', 'checked' => 'checked']) !!} 
                   <label class="custom-control-label dp-warning pointer" for="donate4">Add $4 to get kids outdoors.</label>
                   <p><a href="#" data-toggle="modal" data-target="#modalDonate" id="whatIsThis">What is this?</a></p> 
                 </div>

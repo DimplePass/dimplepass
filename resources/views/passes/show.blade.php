@@ -35,7 +35,7 @@
     <div class="row">
       <div class="col-md-10 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h2 class="mt-0 mb-2 white-color"><strong>{{ $pass->name }} Pass</strong></h2>
+          <h2 class="mt-0 mb-0 white-color"><strong>{{ $pass->name }} Pass</strong></h2>
           @if (count($pass->discounts) == 0)
             <h4 class="white-color">Available soon for Summer 2019.</h4>
           @endif
@@ -60,22 +60,35 @@
         <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>
         <div id="valuePropLargeMap">
           @if (count($pass->discounts))
-            <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
+            <h2 class="mb-0"><strong>The Best of {{ $pass->destinations->first()->name }} for Less.</strong></h2>
           @else
-            <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
+            <h2 class="mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
           @endif
-          <h4 class="mt-2 mb-0"><strong>Available immediately so you can start booking today!</strong></h4>  
         </div>
       </div>
 
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
         <div class="col-sm-12" id="discount-{{ $d->id }}">
-          <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
-            <a class="product-thumb" href="#">
-              {{-- <div class="product-badge text-danger">50% Off</div> --}}
+          <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }} @if ($d->featured == 1)
+              product-card-featured
+            @endif">
+            <span class="product-thumb">
+              <div class="product-badge dp-success hidden-xs-down">
+                <div class="pretty p-icon p-smooth p-pulse">
+                      @if ($d->featured)
+                        {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'checked' => 'checked', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_adult, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!}
+                      @else
+                        {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_adult, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!}
+                      @endif
+                      <div class="state p-success">
+                        <i class="icon fa fa-check"></i>
+                        <label>Let's Do This</label>
+                    </div>
+                </div>
+              </div>
               <img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="">
-            </a>
+            </span>
             <div class="product-info">
               <h3 class="product-title">
                 {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
@@ -109,16 +122,6 @@
                     <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
                   </ul>
                 </div>
-                <h6>
-                  <div class="form-group">
-                      <div class="checkbox{{ $errors->has('addToTrip[]') ? ' has-error' : '' }}">
-                          <label for="addToTrip[]">
-                              {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'checked' => 'checked', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_adult, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!} Add To Trip
-                          </label>
-                      </div>
-                      <small class="text-danger">{{ $errors->first('addToTrip[]') }}</small>
-                  </div>
-                </h6>
               </div>
             </div>
           </div>
@@ -202,16 +205,13 @@
     {{-- Left Sidebar --}}
     <div class="col-xl-4 col-lg-4 col-md-4 order-md-1" id="leftMap">
 
-      <div id="valuePropSmallMap" class="text-center mb-4">
-        @if (count($pass->discounts))
-          <h2 class="mt-2 mb-0"><strong class="text-warning">${{ number_format($pass->price/100, 0, '.', ',') }} pass</strong> unlocks <strong class="text-warning">{{ count($pass->discounts->where('active',1)) }} discounts</strong> for up to <strong class="text-warning">5 people</strong>.</h2>
-        @else
-          <h2 class="mt-2 mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
-        @endif
-        <h4 class="mt-2 mb-0"><strong>Available immediately so you can start booking today!</strong></h4>  
-      </div>
-      
-      <aside class="sidebar">
+      {{-- Value Proposition for Map --}}
+      {{-- <div id="valuePropSmallMap" class="text-center mb-4">
+          <h2 class="mb-0"><strong>The Best {{ $pass->destinations->first()->name }} Activities for Less.</strong></h2>
+      </div> --}}
+    
+      {{-- Map --}}  
+      {{-- <aside class="sidebar">
         <div id="destinationMap_wrapper">
             <div id="destinationMap_canvas" class="mapping"></div>
         </div>
@@ -220,56 +220,65 @@
           <li><a href="" id="sizeMapSmall" class="nounderline">small map <i class="fa fa-search-minus"></i></a></li>
           <li><a href="" id="sizeMapLarge" class="nounderline">large map <i class="fa fa-search-plus"></i></a></li>
         </ul>
+      </aside> --}}
+
+      {{-- Town Filter --}}
+      <aside class="sidebar">
+        <div class="accordion" id="sideBarAccordion" role="tablist">
+          <div class="card">
+            <div class="card-header" role="tab">
+              <h6><a class="collapsed" href="#filterTown" data-toggle="collapse" aria-expanded="true">Filter by Town</a></h6>
+            </div>
+            <div class="collapse" id="filterTown" role="tabpanel" style="">
+              <div class="card-body">
+                {{-- Filters --}}
+                @include('/passes/_inc/filters')
+              </div>
+            </div>
+          </div>
+        </div>
       </aside>
+
+      {{-- Pass Savings and Purchse --}}
       <div class="sticky">
         <aside class="sidebar">
           <div class="accordion" id="sideBarAccordion" role="tablist">
-            <div class="card">
+            <div class="card card-featured">
               <div class="card-header" role="tab">
-                <h6><a class="collapsed" href="#filterTown" data-toggle="collapse" aria-expanded="true">Filter by Town</a></h6>
+                <h6><a href="#tripBuilder" data-toggle="collapse" aria-expanded="true">{{ $pass->name }} Savings</a></h6>
               </div>
-              <div class="collapse" id="filterTown" data-parent="#sideBarAccordion" role="tabpanel" style="">
-                <div class="card-body">
-                  {{-- Filters --}}
-                  @include('/passes/_inc/filters')
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" role="tab">
-                <h6><a href="#tripBuilder" data-toggle="collapse" aria-expanded="true">See Your Savings</a></h6>
-              </div>
-              <div class="collapse show" id="tripBuilder" data-parent="#sideBarAccordion" role="tabpanel">
-                <div class="card-body">
+              <div class="collapse show" id="tripBuilder" role="tabpanel">
+                <div class="card-body card-body-featured">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
                           {!! Form::label('numAdults', '# Adults') !!}
-                          {!! Form::text('numAdults', 2, ['class' => 'form-control form-control-sm text-center text-bold']) !!}
+                          {!! Form::number('numAdults', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
                           <small class="text-danger">{{ $errors->first('numAdults') }}</small>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numChildren') ? ' has-error' : '' }}">
                           {!! Form::label('numChildren', '# Children') !!}
-                          {!! Form::text('numChildren', 0, ['class' => 'form-control form-control-sm text-center text-bold']) !!}
+                          {!! Form::number('numChildren', 0, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
                           <small class="text-danger">{{ $errors->first('numChildren') }}</small>
                       </div>
                     </div>
                   </div>
                   <div class="row text-center">
                     <div class="col-sm-12">
-                      <h1 class="my-0"><small>You Save</small> <strong class="dp-success">$<span id="totalSavings"></span></strong></h1>
-                      <h6 class="my-0"><small>on</small> <strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small>Activities</small></h6>
-                      <h6 class="my-0"><small>Regular Price</small> $<span id="regularPrice"></span> <small> With GO Pass</small> $<span id="goPrice"></span></h6>
+                      <h6 class="my-0"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> selected activities</small></h6>
+                      <h1 class="my-0"><strong>Save <span class="dp-success">$<span id="totalSavings"></span></span></strong></h1>
+                      {{-- <h6 class="my-0"><small>Regular Price</small> $<span id="regularPrice"></span> <small> With GO Pass</small> $<span id="goPrice"></span></h6> --}}
+                      <hr class="my-2">
+                      <h6 class="my-0"><small class="text-warning"> Your ${{ number_format($pass->price/100, 0, '.', ',') }} pass helps fund programs<br> that get kids outdoors!</small></h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </aside>
-  			<aside class="mt-5 text-center hidden-lg-down">
+          <div class="mt-3">
             @if ($pass->id == 1)
               <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
               <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
@@ -278,23 +287,9 @@
               <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
             @else
               <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
-              <div class="hideLargeMap">
-                <h2>Early Bird Rate</h2>
-                @if ($pass->id == 3)
-                  <h6 class="text-center gray">$16 starting May 1st</h6>
-                @endif
-                @if ($pass->id == 4)
-                  <h6 class="text-center gray">$12 starting May 1st</h6>
-                @endif
-                @if ($pass->id == 6)
-                  <h6 class="text-center gray">$16 starting April 1st</h6>
-                @endif
-                @if ($pass->id == 8)
-                  <h6 class="text-center gray">$16 starting April 1st</h6>
-                @endif
-                <h6 class="mt-1 text-center">Good for up to 5 people</h6>
-              </div>
             @endif
+            <h5 class="text-center"><strong>Available immediately.<br>Start booking today!</strong></h5>
+          </div> 
   			</aside> 
       </div>
     </div>
@@ -417,6 +412,13 @@ $(function() {
 
 // On checkbox selection fo offer, hit all other functions to calculate.
 $('.addToTrip').on('change', function() {
+  // Toggle on the Featured Class for the Discount
+  if(this.checked) {
+    $(this).closest('.product-card').addClass('product-card-featured');
+  } else {
+    $(this).closest('.product-card').removeClass('product-card-featured');
+  }
+  // Find # Adults and Children
   var numAdults = $('#numAdults').val();
   var numChildren = $('#numChildren').val();
   // Fire Regular Price Function
@@ -430,11 +432,20 @@ $('#numAdults,#numChildren').on('keyup', function() {
   // Fire Regular Price Function
   totalRegularPrice(numAdults, numChildren);
 });
+// Must have this to trigger calculation if they use the increase/decrease numbers.
+$('#numAdults,#numChildren').on('change', function() {
+  var numAdults = $('#numAdults').val();
+  var numChildren = $('#numChildren').val();
+  // Fire Regular Price Function
+  totalRegularPrice(numAdults, numChildren);
+});
 
-// @TODO - Default Savings when no discounts are selected.
 // @TODO - Populate database.
 // @TODO - Deal with activities that are not a discount percentage.
 // @TODO - Add Disclaimer that this is only an estimate.
+// @TODO - Add warning if total # of people is over 5.
+// @TODO - Pulse savings total when changing numAdults, numChildren or activities.
+// @TODO - Find a way to add the map view back with "Let's Do This" checkboxes.
 
 // Calculate & Display Regular Price
 function totalRegularPrice(numAdults,numChildren){
