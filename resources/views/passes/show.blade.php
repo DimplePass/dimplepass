@@ -70,9 +70,7 @@
       {{-- Vendor Listing --}}
       @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
         <div class="col-sm-12" id="discount-{{ $d->id }}">
-          <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }} @if ($d->featured == 1)
-              product-card-featured
-            @endif">
+          <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
             <span class="product-thumb">
               <div class="product-badge dp-success hidden-xs-down">
                 <div class="pretty p-icon p-smooth p-pulse">
@@ -223,7 +221,7 @@
       </aside> --}}
 
       {{-- Town Filter --}}
-      <aside class="sidebar">
+      {{-- <aside class="sidebar">
         <div class="accordion" id="sideBarAccordion" role="tablist">
           <div class="card">
             <div class="card-header" role="tab">
@@ -231,29 +229,43 @@
             </div>
             <div class="collapse" id="filterTown" role="tabpanel" style="">
               <div class="card-body">
-                {{-- Filters --}}
                 @include('/passes/_inc/filters')
               </div>
             </div>
           </div>
         </div>
-      </aside>
+      </aside> --}}
 
       {{-- Pass Savings and Purchse --}}
       <div class="sticky">
         <aside class="sidebar">
-          <div class="accordion" id="sideBarAccordion" role="tablist">
-            <div class="card card-featured">
-              <div class="card-header" role="tab">
-                <h6><a href="#tripBuilder" data-toggle="collapse" aria-expanded="true">{{ $pass->name }} Savings</a></h6>
-              </div>
-              <div class="collapse show" id="tripBuilder" role="tabpanel">
+          <div class="mb-2 text-center">
+            <h6 class="my-0"><a href="/foundation">Your purchase helps fund programs<br> that get kids outdoors!</a></h6>
+            @if ($pass->id == 1)
+              <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
+              <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
+            @elseif ($pass->id == 2)
+              <h6 class="text-center text-warning">You are viewing last year's GO Glacier Summer Pass</h6>
+              <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
+            @else
+              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+            @endif
+            <p class="my-0">Good for up to 5 people</p>
+            <h5 class="my-0"><strong>Available immediately</strong></h5>
+          </div> 
+          <div class="mt-0 text-center" id="saveUpTo">
+            <hr>
+            <h1 class="my-0 totalSavingsDisplay"><strong>Save up to <span class="dp-success">$<span class="totalSavings"></span></span></strong></h1>
+            <h6><a href="#" id="customizeSavingsLink">Customize Your Savings</a></h6>
+          </div>
+            <div class="card card-featured mt-3" id="customizeSavingsCard">
+              <div id="tripBuilder">
                 <div class="card-body card-body-featured">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
                           {!! Form::label('numAdults', '# Adults') !!}
-                          {!! Form::number('numAdults', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
+                          {!! Form::number('numAdults', 5, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
                           <small class="text-danger">{{ $errors->first('numAdults') }}</small>
                       </div>
                     </div>
@@ -267,29 +279,19 @@
                   </div>
                   <div class="row text-center">
                     <div class="col-sm-12">
-                      <h6 class="my-0"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> selected activities</small></h6>
-                      <h1 class="my-0"><strong>Save <span class="dp-success">$<span id="totalSavings"></span></span></strong></h1>
-                      {{-- <h6 class="my-0"><small>Regular Price</small> $<span id="regularPrice"></span> <small> With GO Pass</small> $<span id="goPrice"></span></h6> --}}
+                      <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> selected activities</small></h6>
+                      <h6 class="my-0" id="noSelectedActivities"><small><strong class="dp-success" style="text-transform: uppercase;">Let's Do This <i class="fa fa-arrow-right"></i></strong></small></h6>
                       <hr class="my-2">
-                      <h6 class="my-0"><small class="text-warning"> Your ${{ number_format($pass->price/100, 0, '.', ',') }} pass helps fund programs<br> that get kids outdoors!</small></h6>
+                      <h1 class="my-0 totalSavingsDisplay"><strong>You Save <span class="dp-success">$<span class="totalSavings"></span></span></strong></h1>
+                          <h6 class="my-0">With the {{ $pass->name }} Pass</h6>
+                      {{-- <h6 class="my-0"><small>Regular Price</small> $<span id="regularPrice"></span> <small> With GO Pass</small> $<span id="goPrice"></span></h6> --}}
+                      {{-- <h6><a href="" id="resetSavings">Reset</a></p> --}}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="mt-3">
-            @if ($pass->id == 1)
-              <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
-              <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
-            @elseif ($pass->id == 2)
-              <h6 class="text-center text-warning">You are viewing last year's GO Glacier Summer Pass</h6>
-              <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
-            @else
-              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
-            @endif
-            <h5 class="text-center"><strong>Available immediately.<br>Start booking today!</strong></h5>
-          </div> 
+          
   			</aside> 
       </div>
     </div>
@@ -403,12 +405,44 @@ $('#resetMap').hide();
 /// Trip Builder
 //////////
 
-// Calculate on Page Load
+// On Page Load
 $(function() {
+  // Hide on initial page load
+  $("#customizeSavingsCard").hide();
+  $(".product-badge").hide();
+  // Calculate Savings of All Discounts
   var numAdults = $('#numAdults').val();
   var numChildren = $('#numChildren').val();
   totalRegularPrice(numAdults,numChildren);
 });
+
+// Display Savings Calculator
+$("#customizeSavingsLink").on('click', function(e) {
+  e.preventDefault();
+  $("#saveUpTo").hide();
+  $("#customizeSavingsCard").fadeIn();
+  $(".product-badge").fadeIn();
+  $(".addToTrip").prop('checked', false);
+  $("#numAdults").val(2);
+  // Find # Adults and Children
+  var numAdults = $('#numAdults').val();
+  var numChildren = $('#numChildren').val();
+  // Fire Regular Price Function
+  totalRegularPrice(numAdults, numChildren);
+});
+
+// $("#resetSavings").on('click', function(e) {
+//   e.preventDefault();
+//   $("#customizeSavingsCard").fadeOut();
+//   $(".product-badge").fadeOut();
+//   $("#saveUpTo").fadeIn();
+//   $(".addToTrip").prop('checked', true);
+//   // Find # Adults and Children
+//   var numAdults = $('#numAdults').val();
+//   var numChildren = $('#numChildren').val();
+//   // Fire Regular Price Function
+//   totalRegularPrice(numAdults, numChildren);
+// });
 
 // On checkbox selection fo offer, hit all other functions to calculate.
 $('.addToTrip').on('change', function() {
@@ -418,6 +452,8 @@ $('.addToTrip').on('change', function() {
   } else {
     $(this).closest('.product-card').removeClass('product-card-featured');
   }
+  // Hide CTA to Choose Activities
+  // $("#noSelectedActivities").fadeOut();
   // Find # Adults and Children
   var numAdults = $('#numAdults').val();
   var numChildren = $('#numChildren').val();
@@ -442,6 +478,7 @@ $('#numAdults,#numChildren').on('change', function() {
 
 // @TODO - Populate database.
 // @TODO - Deal with activities that are not a discount percentage.
+// @TODO - Clear featured and build your own.
 // @TODO - Add Disclaimer that this is only an estimate.
 // @TODO - Add warning if total # of people is over 5.
 // @TODO - Pulse savings total when changing numAdults, numChildren or activities.
@@ -491,7 +528,9 @@ function totalGoPrice(numAdults,numChildren,regularPrice){
 function totalSavings(regularPrice,goPrice){
     var totalSavings = 0;
     totalSavings = regularPrice - goPrice;
-    $('#totalSavings').text(addCommas(roundTo(totalSavings, 0)));
+    $('.totalSavingsDisplay').hide();
+    $('.totalSavings').text(addCommas(roundTo(totalSavings, 0)));
+    $('.totalSavingsDisplay').slideDown();
     // Fire Total Discounts Function
     totalDiscounts();
 }
@@ -524,7 +563,6 @@ function roundTo(num,places) {
     var calc = (Math.round(num*(Math.pow(10,places)))/(Math.pow(10,places)));
     return calc.toFixed(0);
 }
-
 
 //////////
 /// Destination Map with Offers
