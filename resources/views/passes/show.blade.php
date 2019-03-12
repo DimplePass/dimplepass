@@ -75,9 +75,9 @@
               <div class="product-badge dp-success hidden-xs-down">
                 <div class="pretty p-icon p-smooth p-pulse">
                       @if ($d->featured)
-                        {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'checked' => 'checked', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_adult, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!}
+                        {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'checked' => 'checked', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_child, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!}
                       @else
-                        {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_adult, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!}
+                        {!! Form::checkbox('addToTrip[]', '1', null, ['id' => 'addToTrip[]', 'class' => 'addToTrip', 'data-rate-regular-adult' => $d->regular_price_adult, 'data-rate-regular-child' => $d->regular_price_child, 'data-rate-gopass-adult' => ($d->regular_price_adult * ((100 - ($d->percent*100))*.01)), 'data-rate-gopass-child' => ($d->regular_price_child * ((100 - ($d->percent*100))*.01))]) !!}
                       @endif
                       <div class="state p-success">
                         <i class="icon fa fa-check"></i>
@@ -517,7 +517,7 @@ function totalGoPrice(numAdults,numChildren,regularPrice){
     });
     // Multiply by the number of adults and children
     goPriceAdult = numAdults * goPriceAdult;
-    goPriceChild = numChildren * goPriceChild;    
+    goPriceChild = numChildren * goPriceChild;
     goPrice = goPriceAdult + goPriceChild;
     $('#goPrice').text(addCommas(roundTo(goPrice, 0)));
     // Fire Total Savings Function
