@@ -100,7 +100,7 @@
                   <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
                 @endif
                 {!! $d->rates !!}
-                <p><a href="#details_{{ $d->id }}" data-toggle="collapse" onClick="ga('send', 'event', 'Expand-DiscountDetails', '{{ Request::path() }}', '{{ $d->id }}');">Details <i class="fa fa-chevron-down"></i></a></p>
+                <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details <i class="fa fa-chevron-down"></i></a></p>
                 <div class="collapse" id="details_{{ $d->id }}">
                   <p class="hidden-xs-down">{{ $d->description }}</p>
                   <ul class="list-unstyled text-sm">
@@ -117,7 +117,7 @@
                     @elseif ($d->reservations_required == 1 && $d->limited_availability == 1)
                       <li class="dp-danger">Reservations Required <span class="gray-darker">|</span> Limited Availability - Book Early!</li> 
                     @endif
-                    <li><a href="{{ $d->url }}" target="_blank" onClick="ga('send', 'event', 'ToSite-VisitWebsite', '{{ Request::path() }}', '{{ $d->id }}');">Visit Website</a></li>
+                    <li><a href="{{ $d->url }}" target="_blank">Visit Website</a></li>
                   </ul>
                 </div>
               </div>
@@ -243,12 +243,12 @@
             <h6 class="my-0"><a href="/foundation">Your purchase helps fund programs<br> that get kids outdoors!</a></h6>
             @if ($pass->id == 1)
               <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
-              <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
+              <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block">View the 2019 Pass</a></h2>
             @elseif ($pass->id == 2)
               <h6 class="text-center text-warning">You are viewing last year's GO Glacier Summer Pass</h6>
-              <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '3');">View the 2019 Pass</a></h2>
+              <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block">View the 2019 Pass</a></h2>
             @else
-              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block" onClick="ga('send', 'event', 'BuyPass-LeftSticky', '{{ Request::path() }}', '{{ $pass->id }}');">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
             @endif
             <p class="my-0">Good for up to 5 people</p>
             <h5 class="my-0"><strong>Available immediately</strong></h5>
@@ -326,7 +326,7 @@
 </div>
 
 <div class="stickyFooter hidden-xl-up">
-    <a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" onClick="ga('send', 'event', 'BuyPass-StickyFooter', '{{ Request::path() }}', '{{ $pass->id }}');">
+    <a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}">
       <h3 class="white-color"><strong>Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass <i class="fa fa-arrow-right"></i></strong></h3>
       <h6 class="mt-1 text-center dp-info">Good for up to 5 people.</h6>
     </a>
