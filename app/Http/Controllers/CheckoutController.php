@@ -211,7 +211,7 @@ class CheckoutController extends Controller
             // dd($purchaseNotice);
             // \Mail::to($user)->send($purchaseNotice);
             \Mail::to($user)
-                ->bcc('bj@getoutsidepass.com')
+                // ->bcc('bj@getoutsidepass.com')
                 ->send($purchaseNotice);   
 
 
@@ -219,8 +219,17 @@ class CheckoutController extends Controller
             $slackMessage = "Pass Sold to " . $user->firstname . " " . $user->lastname . "\n";
             $slackMessage .= "Email: " . $user->email . "\n";
             $slackMessage .= "Pass: " . $pass->name . "\n";
+            $slackMessage .= "Referrer: " . $referer . "\n";
+            $slackMessage .= "Campaign: " . $ga_campaign . "\n";
+            $slackMessage .= "Visits: " . $visit_count . "\n";
             $slackMessage .= "Code: " . $request->promo . "\n";
-            $slackMessage .= "Total: $" . number_format($request->total/100, 0, '.', ',') . "";
+            $slackMessage .= "Total: $" . number_format($request->total/100, 0, '.', ',') . "\n";
+            if ($request->donate4 == 1) {
+                $slackMessage .= "Donation: Yes";
+            } else {
+                $slackMessage .= "Donation: No";
+            }
+            
             if(\App::environment() == 'production')
             {
                 \Slack::to('#pass-sold')->send($slackMessage);
