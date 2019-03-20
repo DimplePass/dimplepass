@@ -18,24 +18,24 @@ class CheckReferral
 
         // Check that there is not already a cookie set
         if (! $request->hasCookie('go_referer')) {
-          // Add a cookie to the response that lasts 60 days (in minutes)
-          \Cookie::queue('go_referer',$request->server('HTTP_REFERER'), 86400);
+          // Add a cookie to the response that lasts 30 Days (in minutes)
+          \Cookie::queue('go_referer',$request->server('HTTP_REFERER'), 43200);
         }
         // Check that there is not already a cookie set
         if (! $request->hasCookie('go_promo') && $request->query('promo')) {
-          // Add a cookie to the response that lasts 60 days (in minutes)
-          \Cookie::queue('go_promo',$request->query('promo'), 86400);
+          // Add a cookie to the response that lasts 30 Days (in minutes)
+          \Cookie::queue('go_promo',$request->query('promo'), 43200);
         }
         // Check that there is not already a cookie set
         if (! $request->hasCookie('go_ga_campaign') && $request->query('utm_campaign')) {
-          // Add a cookie to the response that lasts 60 days (in minutes)
-          \Cookie::queue('go_ga_campaign',$request->query('utm_campaign'), 86400);
+          // Add a cookie to the response that lasts 30 Days (in minutes)
+          \Cookie::queue('go_ga_campaign',$request->query('utm_campaign'), 43200);
         }
         // Check that there is not already a cookie set
 
         if (! $request->hasCookie('go_visit_count')) {
-          // Add a cookie to the response that lasts 60 days (in minutes)
-          \Cookie::queue('go_visit_count',1, 86400);
+          // Add a cookie to the response that lasts 30 Days (in minutes)
+          \Cookie::queue('go_visit_count',1, 43200);
           session(['visit_count' => 1]);
         } else {
             // dd($request);
@@ -47,7 +47,7 @@ class CheckReferral
             if(!session()->has('visit_count'))
             {
                 // Increment the visit count and set the session
-                \Cookie::queue('visit_count',$visits+1, 86400);
+                \Cookie::queue('visit_count',$visits+1, 43200);
                 session(['visit_count' => $visits+1]);
             }            
         }
