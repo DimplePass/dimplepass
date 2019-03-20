@@ -309,7 +309,7 @@ function addTotalDue(promoDiscount) {
   } else {
     var total = (totalPasses - promoDiscount) + donateAmount;
   }
-  console.log(total*100);
+  // console.log(total*100);
   // Send to hidden input field to send in form.
   $('#totalAmount').val(total*100);
   $('#price').val(total*100);
