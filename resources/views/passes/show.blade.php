@@ -569,117 +569,117 @@ function roundTo(num,places) {
 /// https://wrightshq.com/playground/placing-multiple-markers-on-a-google-map-using-api-3/
 //////////
 
-$(function($) {
-  // Asynchronously Load the map API 
-  var script = document.createElement('script');
-  script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyCtqYOh4F3zeGI_Tf4nlXjNZ95j5J7Kdrg&callback=initialize";
-  document.body.appendChild(script);
-});
+// $(function($) {
+//   // Asynchronously Load the map API 
+//   var script = document.createElement('script');
+//   script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyCtqYOh4F3zeGI_Tf4nlXjNZ95j5J7Kdrg&callback=initialize";
+//   document.body.appendChild(script);
+// });
 
 /// Initialize Map for initial load.
-function initialize(newMarkers, newInfoWindowContent) {
+// function initialize(newMarkers, newInfoWindowContent) {
 
-    var map;
-    var bounds = new google.maps.LatLngBounds();
+//     var map;
+//     var bounds = new google.maps.LatLngBounds();
 
-    var mapOptions = {
-        mapTypeId: 'roadmap',
-        controlSize: 24,
-    };
+//     var mapOptions = {
+//         mapTypeId: 'roadmap',
+//         controlSize: 24,
+//     };
 
-    // Create Markers
-    if(newMarkers) {
-      markers = [];
-      markers = newMarkers;
-    } else {
-      markers = [
-          @foreach ($pass->discounts->where('active', '=', 1) as $d)
-            ['{{ $d->name }}', {{ $d->latitude }}, {{ $d->longitude }}],
-          @endforeach
-      ];
-    }
+//     // Create Markers
+//     if(newMarkers) {
+//       markers = [];
+//       markers = newMarkers;
+//     } else {
+//       markers = [
+//           @foreach ($pass->discounts->where('active', '=', 1) as $d)
+//             ['{{ $d->name }}', {{ $d->latitude }}, {{ $d->longitude }}],
+//           @endforeach
+//       ];
+//     }
                     
-    // Info Window Content
-    if(newInfoWindowContent) {
-      infoWindowContent = [];
-      infoWindowContent = newInfoWindowContent;
-    } else {
-      infoWindowContent = [
-        @foreach ($pass->discounts->where('active', '=', 1) as $d)
-          @if ($d->percent > .99)
-            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}" target="_blank"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-name">{{ $d->name }}</span><span class="label-discount">${{ $d->percent }} Off</span></div></div></div>'],
-          @else
-            ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}" target="_blank"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-name">{{ $d->name }}</span><span class="label-discount">{{ round($d->percent*100) }}% Off</span></div></div></div>'],
-          @endif
-        @endforeach
-      ];
-    }
+//     // Info Window Content
+//     if(newInfoWindowContent) {
+//       infoWindowContent = [];
+//       infoWindowContent = newInfoWindowContent;
+//     } else {
+//       infoWindowContent = [
+//         @foreach ($pass->discounts->where('active', '=', 1) as $d)
+//           @if ($d->percent > .99)
+//             ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}" target="_blank"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-name">{{ $d->name }}</span><span class="label-discount">${{ $d->percent }} Off</span></div></div></div>'],
+//           @else
+//             ['<div class="property clearfix"><div class="image"><div class="content"><a href="{{ $d->url }}" target="_blank"><i class="fa fa-external-link"></i></a><img src="/img/discounts/{{ $pass->destinations->first()->slug }}/{{ $d->vendor->id }}-{{ $d->id }}-450x290.jpg" alt="{{ $d->name }}" width="300" class="img-responsive"><span class="label-name">{{ $d->name }}</span><span class="label-discount">{{ round($d->percent*100) }}% Off</span></div></div></div>'],
+//           @endif
+//         @endforeach
+//       ];
+//     }
                     
-    // Display the map on the page
-    map = new google.maps.Map(document.getElementById("destinationMap_canvas"), mapOptions);
+//     // Display the map on the page
+//     map = new google.maps.Map(document.getElementById("destinationMap_canvas"), mapOptions);
         
-    // Display infowindow on the map
-    var infoWindow = new google.maps.InfoWindow({
-      maxWidth: 340
-    }), marker, i;
+//     // Display infowindow on the map
+//     var infoWindow = new google.maps.InfoWindow({
+//       maxWidth: 340
+//     }), marker, i;
     
-    var image = {
-      // url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-      // url: 'https://www.getoutsidepass.com/img/map/pin.png',
-      // This marker is 20 pixels wide by 32 pixels high.
-      size: new google.maps.Size(parseFloat(20), parseFloat(32)),
-      // The origin for this image is (0, 0).
-      // origin: new google.maps.Point(0, 0),
-      // The anchor for this image is the base of the flagpole at (0, 32).
-      // anchor: new google.maps.Point(0, 32)
-    };
+//     var image = {
+//       // url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+//       // url: 'https://www.getoutsidepass.com/img/map/pin.png',
+//       // This marker is 20 pixels wide by 32 pixels high.
+//       size: new google.maps.Size(parseFloat(20), parseFloat(32)),
+//       // The origin for this image is (0, 0).
+//       // origin: new google.maps.Point(0, 0),
+//       // The anchor for this image is the base of the flagpole at (0, 32).
+//       // anchor: new google.maps.Point(0, 32)
+//     };
 
-    // Loop through the array of markers & place each one on the map  
-    for( i = 0; i < markers.length; i++ ) {
-        // Set the position and bounds for zoom level and placement
-        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-        bounds.extend(position);
-        // Create the marker
-        marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            icon: image,
-            title: markers[i][0]
-        });
+//     // Loop through the array of markers & place each one on the map  
+//     for( i = 0; i < markers.length; i++ ) {
+//         // Set the position and bounds for zoom level and placement
+//         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+//         bounds.extend(position);
+//         // Create the marker
+//         marker = new google.maps.Marker({
+//             position: position,
+//             map: map,
+//             icon: image,
+//             title: markers[i][0]
+//         });
         
-        // Create an infoWindow for each marker  
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infoWindow.setContent(infoWindowContent[i][0]);
-                // map.setCenter(marker.getPosition());
-                infoWindow.open(map, marker);
-            }
-        })(marker, i));
-        // Close the infoWindow when clicking elsewhere on the map
-        google.maps.event.addListener(map, "click", function(){
-          infoWindow.close();
-        });
+//         // Create an infoWindow for each marker  
+//         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+//             return function() {
+//                 infoWindow.setContent(infoWindowContent[i][0]);
+//                 // map.setCenter(marker.getPosition());
+//                 infoWindow.open(map, marker);
+//             }
+//         })(marker, i));
+//         // Close the infoWindow when clicking elsewhere on the map
+//         google.maps.event.addListener(map, "click", function(){
+//           infoWindow.close();
+//         });
 
-        // Automatically center the map and zoom to fit all markers
-        map.fitBounds(bounds);
-    }
+//         // Automatically center the map and zoom to fit all markers
+//         map.fitBounds(bounds);
+//     }
 
-    // Add a marker clusterer to manage the markers.
-    var markerCluster = new MarkerClusterer(map, markers);
+//     // Add a marker clusterer to manage the markers.
+//     var markerCluster = new MarkerClusterer(map, markers);
 
-    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        // this.setZoom(9);
-        google.maps.event.removeListener(boundsListener);
-    });;
+//     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+//     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+//         // this.setZoom(9);
+//         google.maps.event.removeListener(boundsListener);
+//     });;
 
-    $("#resetMap").click(function(e) {
-        e.preventDefault();
-        infoWindow.close();
-        map.fitBounds(bounds);
-    })
+//     $("#resetMap").click(function(e) {
+//         e.preventDefault();
+//         infoWindow.close();
+//         map.fitBounds(bounds);
+//     })
     
-}
+// }
 
 // Multiple Markets Test that Works
 
