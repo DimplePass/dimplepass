@@ -140,7 +140,6 @@
           <li>Yellowstone Aerial Adventures</li>
           <li>Jackson Hole Mountain Resort</li>
           <li>Diamond P Ranch</li>
-          <li>Barker-Ewing Scenic Float Trips</li>
         </ul>
       </div> 
       @endif
@@ -152,9 +151,7 @@
         <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
         <ul>
           <li>Amazing Fun Center</li>
-          <li>Glacier Raft Company</li>
           <li>Conrad Mansion Museum</li>
-          <li>Glacier Raft Company</li>
           <li>Glacier Highline</li>
         </ul>
       </div>
