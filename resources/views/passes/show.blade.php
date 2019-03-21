@@ -143,19 +143,6 @@
         </ul>
       </div> 
       @endif
-      {{-- Glacier Vendor Outreach --}}
-      @if ($pass->id == 4)
-      <hr>
-      <div class="col-sm-12">
-        <h2>Thank you to our 2018 vendors.</h2>
-        <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
-        <ul>
-          <li>Amazing Fun Center</li>
-          <li>Conrad Mansion Museum</li>
-          <li>Glacier Highline</li>
-        </ul>
-      </div>
-       @endif
       {{-- Zion Vendor Outreach --}}
        @if ($pass->id == 6)
        <hr>
