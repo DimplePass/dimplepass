@@ -211,7 +211,7 @@ class CheckoutController extends Controller
             // dd($purchaseNotice);
             // \Mail::to($user)->send($purchaseNotice);
             \Mail::to($user)
-                // ->bcc('bj@getoutsidepass.com')
+                ->bcc('bj@getoutsidepass.com')
                 ->send($purchaseNotice);   
 
 
