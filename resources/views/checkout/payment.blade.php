@@ -304,7 +304,7 @@ function addTotalDue(promoDiscount) {
   $('.donateAmount').text(addCommas(roundTo(donateAmount, 0)));
   // Determine total amount.
   var promo = $('#promo').val();
-  if (promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM19' || promo == 'TOMMFF' || promo == 'GFOR18' || promo == 'GOBUCK') {
+  if (promo == 'YNPLOC' || promo == 'GO4YOU' || promo == 'COTW18' || promo == 'TOMM19' || promo == 'TOMMFF' || promo == 'GFOR18' || promo == 'GOBUCK') {
     var total = (0 + donateAmount);
   } else {
     var total = (totalPasses - promoDiscount) + donateAmount;
