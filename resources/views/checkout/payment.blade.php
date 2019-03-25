@@ -219,7 +219,7 @@ function checkPromo(promo) {
       $('#promoDiscountDisplay').show();
       $('#paymentSubmit').removeAttr("disabled", "disabled");
       // If Friends and Family promo code.
-      if (promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM19' || promo == 'TOMMFF' || promo == 'GFOR18' || promo == 'GOBUCK' && passid == 1) {
+      if (promo == 'GOFREE' || promo == 'YNPLOC' || promo == 'COTW18' || promo == 'TOMM19' || promo == 'TOMMFF' || promo == 'GFOR18' || promo == 'GOBUCK' && passid == 1) {
         var promoDiscount = 12;
         $('#promoAmount').text(12);
         // Hide credit card entry fields.
