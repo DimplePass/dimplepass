@@ -69,7 +69,7 @@
       </div>
 
       {{-- Vendor Listing --}}
-      @foreach ($pass->discounts->where('active', '=', 1)->sortByDesc('featured') as $d)
+      @foreach ($pass->discounts->where('active', '=', 1)->shuffle()->sortByDesc('featured') as $d)
         <div class="col-sm-12" id="discount-{{ $d->id }}">
           @if ($d->featured == 1)
             <div class="product-card product-card-featured product-list {{ str_slug("$d->city, $d->state", "-") }}">
