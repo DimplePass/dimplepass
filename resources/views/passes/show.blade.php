@@ -61,6 +61,7 @@
         <div id="valuePropLargeMap">
           @if (count($pass->discounts))
             <h2 class="mb-0"><strong>The Best of {{ $pass->destinations->first()->name }} for Less.</strong></h2>
+            <h4>Unlock the savings below. <a href="/how">How it works</a></h4>
           @else
             <h2 class="mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
           @endif
@@ -68,9 +69,13 @@
       </div>
 
       {{-- Vendor Listing --}}
-      @foreach ($pass->discounts->where('active', '=', 1)->shuffle() as $d)
+      @foreach ($pass->discounts->where('active', '=', 1)->sortByDesc('featured') as $d)
         <div class="col-sm-12" id="discount-{{ $d->id }}">
-          <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">
+          @if ($d->featured == 1)
+            <div class="product-card product-card-featured product-list {{ str_slug("$d->city, $d->state", "-") }}">
+          @else
+            <div class="product-card product-list {{ str_slug("$d->city, $d->state", "-") }}">          
+          @endif
             <span class="product-thumb">
               <div class="product-badge dp-success hidden-xs-down">
                 <div class="pretty p-icon p-smooth p-pulse">
@@ -129,18 +134,7 @@
       @if ($pass->id == 3)
       <hr>
       <div class="col-sm-12">
-        <h2>Thank you to our 2018 vendors.</h2>
-        <h4>We expect to see them again in 2019 and will be adding them in the week's ahead.</h4>
-        <ul>
-          <li>Wild West Yellowstone Rodeo</li>
-          <li>Yellowstone Giant Screen Theatre</li>
-          <li>Wilderness Trails, Inc.</li>
-          <li>Big Sky Resort</li>
-          <li>Jackson Hole Playhouse</li>
-          <li>Yellowstone Aerial Adventures</li>
-          <li>Jackson Hole Mountain Resort</li>
-          <li>Diamond P Ranch</li>
-        </ul>
+        <h2>More vendors continue to be added for the 2019 summer season.</h2>
       </div> 
       @endif
       {{-- Zion Vendor Outreach --}}
@@ -220,7 +214,7 @@
         </div>
       </aside> --}}
 
-      {{-- Pass Savings and Purchse --}}
+      {{-- Pass Savings and Purchase --}}
       <div class="sticky">
         <aside class="sidebar">
           <div class="mb-2 text-center">
@@ -240,7 +234,7 @@
           <div class="mt-0 text-center" id="saveUpTo">
             <hr>
             <h1 class="my-0 totalSavingsDisplay"><strong>Save up to <span class="dp-success">$<span class="totalSavings"></span></span></strong></h1>
-            <h6><a href="#" id="customizeSavingsLink">Customize Your Savings</a></h6>
+            {{-- <h6><a href="#" id="customizeSavingsLink">Customize Your Savings</a></h6> --}}
           </div>
             <div class="card card-featured mt-3" id="customizeSavingsCard">
               <div id="tripBuilder">
@@ -249,21 +243,22 @@
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
                           {!! Form::label('numAdults', '# Adults') !!}
-                          {!! Form::number('numAdults', 5, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
+                          {!! Form::number('numAdults', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
                           <small class="text-danger">{{ $errors->first('numAdults') }}</small>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numChildren') ? ' has-error' : '' }}">
                           {!! Form::label('numChildren', '# Children') !!}
-                          {!! Form::number('numChildren', 0, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
+                          {!! Form::number('numChildren', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off']) !!}
                           <small class="text-danger">{{ $errors->first('numChildren') }}</small>
                       </div>
                     </div>
                   </div>
                   <div class="row text-center">
                     <div class="col-sm-12">
-                      <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> selected activities</small></h6>
+                      <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> activities selected</small></h6>
+                      <h6><a href="#" id="customizeSavingsLink">Customize My Savings</a></h6>
                       <h6 class="my-0" id="noSelectedActivities"><small><strong class="dp-success" style="text-transform: uppercase;">Let's Do This <i class="fa fa-arrow-right"></i></strong></small></h6>
                       <hr class="my-2">
                       <h1 class="my-0 totalSavingsDisplay"><strong>You Save <span class="dp-success">$<span class="totalSavings"></span></span></strong></h1>
@@ -392,8 +387,9 @@ $('#resetMap').hide();
 // On Page Load
 $(function() {
   // Hide on initial page load
-  $("#customizeSavingsCard").hide();
-  $(".product-badge").hide();
+  // $("#customizeSavingsCard").hide();
+  // $(".product-badge").hide();
+  $("#saveUpTo").hide();
   // Calculate Savings of All Discounts
   var numAdults = $('#numAdults').val();
   var numChildren = $('#numChildren').val();
@@ -403,9 +399,11 @@ $(function() {
 // Display Savings Calculator
 $("#customizeSavingsLink").on('click', function(e) {
   e.preventDefault();
-  $("#saveUpTo").hide();
-  $("#customizeSavingsCard").fadeIn();
-  $(".product-badge").fadeIn();
+  $(this).hide();
+  // $("#saveUpTo").hide();
+  // $("#customizeSavingsCard").fadeIn();
+  $('.product-card').removeClass('product-card-featured');
+  // $(".product-badge").fadeIn();
   $(".addToTrip").prop('checked', false);
   $("#numAdults").val(2);
   // Find # Adults and Children
