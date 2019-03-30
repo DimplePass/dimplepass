@@ -226,7 +226,7 @@
               <h6 class="text-center text-warning">You are viewing last year's GO Glacier Summer Pass</h6>
               <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block">View the 2019 Pass</a></h2>
             @else
-              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-primary btn-xl btn-block">Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-warning btn-xl btn-block">Buy your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
             @endif
             <p class="my-0">Good for up to 5 people</p>
             <h5 class="my-0"><strong>Available immediately</strong></h5>

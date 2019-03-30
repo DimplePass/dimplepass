@@ -427,7 +427,7 @@ select.form-control:not([size]):not([multiple]) {
 
 // Pop Slide from Bottom
 .stickyFooter {
-  background-color: #0F8B8D;
+  background-color: #EC9A29;
 	text-align: center;
 	padding: 10px;
   width: 100%;
@@ -441,6 +441,9 @@ select.form-control:not([size]):not([multiple]) {
 .stickyFooter h3 {
 	margin: 0;
 	padding: 0;
+}
+.stickyFooter a {
+	text-decoration: none;
 }
 
 //////////
