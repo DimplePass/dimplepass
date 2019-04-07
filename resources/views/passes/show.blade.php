@@ -68,7 +68,7 @@
         <h1 class="hidden-xl-up mt-0 mb-0"><strong>{{ $pass->name }} Pass</strong></h1>
         <div id="valuePropLargeMap">
           @if (count($pass->discounts))
-            <h2 class="mb-0"><strong>The Best of {{ $pass->destinations->first()->name }} for Less.</strong></h2>
+            <h2 class="mb-0"><strong>The BEST {{ $pass->destinations->first()->short_name }} activities for LESS.</strong></h2>
             <h4>Unlock the savings below. <span class="hidden-md-up"><br></span><a href="/how">How it works</a></h4>
           @else
             <h2 class="mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
