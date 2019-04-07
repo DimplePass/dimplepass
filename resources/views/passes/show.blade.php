@@ -48,6 +48,14 @@
 {{-- Show Pass if actively selling. --}}
 @if (count($pass->discounts))
 
+<section id="promotion">
+  <div class="row">
+    <div class="col-sm-12 text-center mt-2">
+      <h5 class="dp-white"><small>7 Day Special - 50% Off - </small><strong>$14</strong> <strike>$28</strike> | <strong id="countdown"></strong> <small>until it ends</small></h5>
+    </div>
+  </div>
+</section>
+
 {{-- Page Content --}}
 <div class="container padding-bottom-3x mb-1 mt-5">
   <div class="row">
@@ -61,7 +69,7 @@
         <div id="valuePropLargeMap">
           @if (count($pass->discounts))
             <h2 class="mb-0"><strong>The Best of {{ $pass->destinations->first()->name }} for Less.</strong></h2>
-            <h4>Unlock the savings below. <a href="/how">How it works</a></h4>
+            <h4>Unlock the savings below. <span class="hidden-md-up"><br></span><a href="/how">How it works</a></h4>
           @else
             <h2 class="mb-0 text-warning"><strong>Available <span class="dp-warning">Summer 2019.</span></strong></h2>
           @endif
@@ -211,7 +219,7 @@
       <div class="sticky">
         <aside class="sidebar">
           <div class="mb-2 text-center">
-            <h6 class="my-0"><a href="/foundation">Your purchase helps fund programs<br> that get kids outdoors!</a></h6>
+            <h6 class="my-0"><a href="/foundation">Help fund programs that get kids outdoors!</a></h6>
             @if ($pass->id == 1)
               <h6 class="text-center text-warning">You are viewing last year's GO Yellowstone Summer Pass</h6>
               <h2><a href="/yellowstone/passes/go-yellowstone-2019" class="btn btn-primary btn-xl btn-block">View the 2019 Pass</a></h2>
@@ -219,7 +227,7 @@
               <h6 class="text-center text-warning">You are viewing last year's GO Glacier Summer Pass</h6>
               <h2><a href="/glacier/passes/go-glacier-2019" class="btn btn-primary btn-xl btn-block">View the 2019 Pass</a></h2>
             @else
-              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-warning btn-xl btn-block">Buy your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass</a></h2>
+              <h2><a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}" class="btn btn-warning btn-xl btn-block">Get Your Pass <i class="fa fa-arrow-right"></i></a></h2>
             @endif
             <p class="my-0">Good for up to 5 people</p>
             <h5 class="my-0"><strong>Available immediately</strong></h5>
@@ -297,9 +305,9 @@
   </div>
 </div>
 
-<div class="stickyFooter hidden-xl-up">
+<div class="stickyFooter hidden-md-up">
     <a href="{{ route('checkout.payment', ['pass_id' => $pass->id]) }}">
-      <h3 class="white-color"><strong>Get your <strong>${{ number_format($pass->price/100, 0, '.', ',') }}</strong> Pass <i class="fa fa-arrow-right"></i></strong></h3>
+      <h3 class="white-color"><strong>Get Your Pass <i class="fa fa-arrow-right"></i></strong></h3>
       <h6 class="mt-1 text-center dp-info">Good for up to 5 people.</h6>
     </a>
 </div>
@@ -538,6 +546,36 @@ function roundTo(num,places) {
     var calc = (Math.round(num*(Math.pow(10,places)))/(Math.pow(10,places)));
     return calc.toFixed(0);
 }
+
+// Countdown Timer
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 13, 2019 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("countdown").innerHTML = days + "days " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
 
 //////////
 /// Destination Map with Offers

@@ -80,6 +80,14 @@ a.list-group-item, .list-group-item-action {
 	}
 }
 
+#promotion {
+	background: rgba(18,83,84,1.0);
+	h5 small {
+		color: #EC9A29;
+	}
+}
+
+
 .img-thumbnail {
 	padding: 3px !important;
 }
@@ -496,6 +504,10 @@ select.form-control:not([size]):not([multiple]) {
 
 	}
 
+	#rightOffers h2 {
+		font-size: 20px;
+	}
+
 	// Login Banners
 	.login-overlay {
 		padding: 16px;
@@ -511,7 +523,7 @@ select.form-control:not([size]):not([multiple]) {
 	  margin-right: .3rem;
 	}
 
-	// Sticke
+	// Sticky
 	.stickyFooter {
 	  width: 100%;
 		right: 0;

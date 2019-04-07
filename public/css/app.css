@@ -21203,6 +21203,14 @@ a.list-group-item,
   width: 200px;
 }
 
+#promotion {
+  background: #125354;
+}
+
+#promotion h5 small {
+  color: #EC9A29;
+}
+
 .img-thumbnail {
   padding: 3px !important;
 }
@@ -21650,6 +21658,10 @@ select.form-control:not([size]):not([multiple]) {
 
   .header-profits .img-thumbnail {
     padding: 2px !important;
+  }
+
+  #rightOffers h2 {
+    font-size: 20px;
   }
 
   .login-overlay {
