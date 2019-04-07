@@ -48,7 +48,7 @@
 {{-- Show Pass if actively selling. --}}
 @if (count($pass->discounts))
 
-<section id="promotion">
+<section id="promotion" class="stickyPromo">
   <div class="row">
     <div class="col-sm-12 text-center mt-2">
       <h5 class="dp-white"><small>7 Day Special - 50% Off - </small><strong>$14</strong> <strike>$28</strike> | <strong id="countdown"></strong> <small>until it ends</small></h5>

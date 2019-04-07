@@ -86,6 +86,12 @@ a.list-group-item, .list-group-item-action {
 		color: #EC9A29;
 	}
 }
+// Pop Slide from Bottom
+.stickyPromo {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 80px;
+}
 
 
 .img-thumbnail {
