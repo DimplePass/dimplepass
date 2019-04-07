@@ -130,13 +130,6 @@
           </div>
         </div>
       @endforeach
-      {{-- Yellowstone Vendor Outreach --}}
-      @if ($pass->id == 3)
-      <hr>
-      <div class="col-sm-12">
-        <h2>More vendors continue to be added for the 2019 summer season.</h2>
-      </div> 
-      @endif
       {{-- Zion Vendor Outreach --}}
        @if ($pass->id == 6)
        <hr>
