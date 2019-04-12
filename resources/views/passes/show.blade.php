@@ -241,6 +241,7 @@
             <div class="card card-featured mt-3" id="customizeSavingsCard">
               <div id="tripBuilder">
                 <div class="card-body card-body-featured">
+                  <h3 class="text-center dp-success"><strong>Savings Calculator</strong></h3>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
@@ -260,7 +261,7 @@
                   <div class="row text-center">
                     <div class="col-sm-12">
                       <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> activities selected</small></h6>
-                      <h6><a href="#" id="customizeSavingsLink">Customize My Savings</a></h6>
+                      {{-- <h6><a href="#" id="customizeSavingsLink">Customize My Savings</a></h6> --}}
                       <h6 class="my-0" id="noSelectedActivities"><small><strong class="dp-success" style="text-transform: uppercase;">Let's Do This <i class="fa fa-arrow-right"></i></strong></small></h6>
                       <hr class="my-2">
                       <h1 class="my-0 totalSavingsDisplay"><strong>You Save <span class="dp-success">$<span class="totalSavings"></span></span></strong></h1>
