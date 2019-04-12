@@ -245,14 +245,14 @@
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numAdults') ? ' has-error' : '' }}">
                           {!! Form::label('numAdults', '# Adults') !!}
-                          {!! Form::number('numAdults', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off', "onChange" => "gtag('event', '# People Changed', {'event-category': 'Customize' ,'event_label': 'numAdults-Changed', 'event_value': '1' });"]) !!}
+                          {!! Form::number('numAdults', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off', "onChange" => "gtag('event', '# People Changed', {'event_category': 'Customize' ,'event_label': '# Adults', 'event_value': '1' });"]) !!}
                           <small class="text-danger">{{ $errors->first('numAdults') }}</small>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group{{ $errors->has('numChildren') ? ' has-error' : '' }}">
                           {!! Form::label('numChildren', '# Children') !!}
-                          {!! Form::number('numChildren', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off', "onChange" => "gtag('event', '# People Changed', {'event-category': 'Customize' ,'event_label': 'numChildren-Changed', 'event_value': '1' });"]) !!}
+                          {!! Form::number('numChildren', 2, ['class' => 'form-control form-control-sm text-center text-bold', 'autocomplete' => 'off', "onChange" => "gtag('event', '# People Changed', {'event_category': 'Customize' ,'event_label': '# Children', 'event_value': '1' });"]) !!}
                           <small class="text-danger">{{ $errors->first('numChildren') }}</small>
                       </div>
                     </div>
