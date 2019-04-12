@@ -105,13 +105,14 @@
                 {{ $d->vendor->name }} <small>{{ $d->city }}, {{ $d->state }}</small>
               </h3>
               <div class="product-buttons">
-                @if (is_null($d->percent))
+                {{-- @if (is_null($d->percent))
                   <h3><i class="icon-tag dp-success"></i> <strong>{{ $d->name }}</strong></h3>
                 @elseif ($d->percent > .99)
                   <h3><i class="icon-tag dp-success"></i> <strong>${{ $d->percent }} Off {{ $d->name }}</strong></h3>
                 @else
                   <h3><i class="icon-tag dp-success"></i> <strong>{{ round($d->percent*100) }}% Off {{ $d->name }}</strong></h3>
-                @endif
+                @endif --}}
+                <h3><strong>{{ $d->name }}</strong></h3>
                 {!! $d->rates !!}
                 <p><a href="#details_{{ $d->id }}" data-toggle="collapse">Details <i class="fa fa-chevron-down"></i></a></p>
                 <div class="collapse" id="details_{{ $d->id }}">
