@@ -260,7 +260,7 @@
                   </div>
                   <div class="row text-center">
                     <div class="col-sm-12">
-                      <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> activities selected</small></h6>
+                      <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> popular activities selected</small></h6>
                       {{-- <h6><a href="#" id="customizeSavingsLink">Customize My Savings</a></h6> --}}
                       <h6 class="my-0" id="noSelectedActivities"><small><strong class="dp-success" style="text-transform: uppercase;">Let's Do This <i class="fa fa-arrow-right"></i></strong></small></h6>
                       <hr class="my-2">
