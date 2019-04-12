@@ -515,6 +515,11 @@ select.form-control:not([size]):not([multiple]) {
 		font-size: 20px;
 	}
 
+	// Product Card
+	.product-card .product-buttons {
+		text-align: left;
+	}
+
 	// Login Banners
 	.login-overlay {
 		padding: 16px;

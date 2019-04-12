@@ -51,7 +51,7 @@
 <section id="promotion" class="stickyPromo">
   <div class="row">
     <div class="col-sm-12 text-center mt-2">
-      <h5 class="dp-white"><small>7 Day Special - 50% Off - </small><strong>$14</strong> <strike>$28</strike> | <strong id="countdown"></strong> <small>until it ends</small></h5>
+      <h5 class="dp-white"><small>7 Day Special - 50% Off - </small><strong>$14</strong> <strike>$28</strike><br class="hidden-sm-up"><span class="hidden-xs-down"> | </span><strong id="countdown"></strong> <small>until it ends</small></h5>
     </div>
   </div>
 </section>
@@ -568,8 +568,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML = days + "days " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  // document.getElementById("countdown").innerHTML = days + "days " + hours + "h " + minutes + "m " + seconds + "s ";
+  document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text 
   if (distance < 0) {
