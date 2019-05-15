@@ -94,7 +94,7 @@
                       @endif
                       <div class="state p-success">
                         <i class="icon fa fa-check"></i>
-                        <label>Let's Do This</label>
+                        <label>Add to Savings</label>
                     </div>
                 </div>
               </div>
@@ -263,14 +263,14 @@
                       <h6 class="my-0" id="selectedActivities"><strong id="totalDiscounts">{{ count($pass->discounts->where('active',1)) }}</strong> <small> activities selected</small></h6>
                       {{-- <h5 class="mt-1"><a href="#" id="customizeSavingsLink">Customize My Savings</a></h5> --}}
                       {{-- <h5>See what you can save!</h5> --}}
-                      <h5 class="my-0" id="noSelectedActivities"><strong class="dp-success" style="text-transform: uppercase;">Let's Do This <i class="fa fa-arrow-right"></i></strong></h5>
+                      <h5 class="my-0" id="noSelectedActivities"><strong class="dp-success" style="text-transform: uppercase;">Add to Savings <i class="fa fa-arrow-right"></i></strong></h5>
                       <hr class="my-2">
                       <h1 class="my-0 totalSavingsDisplay"><strong>You Save <span class="dp-success">$<span class="totalSavings"></span></span></strong></h1>
                           <h6 class="my-0">With the {{ $pass->name }} Pass</h6>
                       {{-- <h6 class="my-0"><small>Regular Price</small> $<span id="regularPrice"></span> <small> With GO Pass</small> $<span id="goPrice"></span></h6> --}}
                       {{-- <h6><a href="" id="resetSavings">Reset</a></p> --}}
                         <hr class="my-2">
-                      <h6 class="my-0"><small>All {{ count($pass->discounts->where('active', '=', 1)) }} activities are included with each pass in case you find other activities after your purchase.</small></h6>
+                      <h6 class="my-0"><small>All {{ count($pass->discounts->where('active', '=', 1)) }} activities are included with each pass in case you find other activities later.</small></h6>
                     </div>
                   </div>
                 </div>
