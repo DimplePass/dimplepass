@@ -88,6 +88,7 @@ class CheckoutController extends Controller
         }
 
         $pass = Pass::findOrFail($request->pass_id);
+        // dd($pass);
         // Check if Free Pass
         if ($request->total > 0) {
             $exp_month = trim(substr($request->expiry, 0,strpos($request->expiry, '/')));
@@ -192,7 +193,7 @@ class CheckoutController extends Controller
                 'qty' => $request->qty,
                 'price' => $request->price
             ]);
-
+            // dd($purchase->user);
             if($request->donate4) {
                 $purchase->items()->create([
                     // 'pass_id' => $pass->id,
@@ -232,12 +233,17 @@ class CheckoutController extends Controller
             
             if(\App::environment() == 'production')
             {
-                \Slack::to('#pass-sold')->send($slackMessage);
+                try {
+                    \Slack::to('#pass-sold')->send($slackMessage);
+                } catch(\Exception $e){
+                    
+                }
+                
             }
             
 
         } catch (PaymentFailedException $e){
-            // return $e;
+            return $e;
             // return response()->json(['Payment Failed'],422);
             
             return redirect()->back()->withInput()->with('error','Oops, this credit card payment failed. ' . $e->getMessage());
