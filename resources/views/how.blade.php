@@ -24,8 +24,8 @@
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
-          <h1 class="mb-2 white-color">How does it work?</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>Discounted. Simple. <span class="dp-warning">Best Vacation Ever.</span></strong></h2>               
+          <h1 class="mb-2 white-color">It's pretty simple really.</h1>
+          <h2 class="mt-0 mb-2 white-color"><strong>Save Money and have the Best Vacation Ever.</strong></h2>               
         </div>
     </div>
   </div>
@@ -40,26 +40,26 @@
       <h4 class="hidden-sm-down"><strong><a href="{{ route('foundation') }}">100% Profits to<br>Get Kids Outdoors</a></strong></h4>
     </div>
     <div class="col-md-8 text-md-left text-center">
-      <h2 class="mb-5">You <strong class="dp-warning">save money</strong> on <strong class="dp-warning">the best</strong> attractions and activities for your <strong class="dp-warning">vacation</strong>.</h2>
       <div class="mt-30 hidden-md-up"></div>
-      <hr>
+      <h2>We don't like to complicate things, especially when we travel.  So, we've kept this as simple as we can.</h2>
+      <hr >
       <h3 class="mb-30"><strong class="text-black">1.)</strong> Purchase the Get Outside Pass</h3>
       <i class="pe-7s-credit float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  
-      <p>If you like the discounts in a Pass, click "Buy the Pass".  You will be taken to a simple and secure checkout page to create a basic profile and pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
+      <p>If you like the discounts on a Pass, click "Buy the Pass".  You will be taken to a secure checkout page to pay for the Pass.  You will then be immediately taken to your purchased pass so that you can start to make reservations today!</p>
       <hr >
       <h3 class="mb-30"><strong class="text-black">2.)</strong> Present to Vendor</h3>
       <i class="pe-7s-mouse float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Book Online</h5>
-      <p>Many Get Outside Pass vendors are capable of taking bookings online and redeeming the discount via a code in their online reservation system.  Simply place use the Get Outside Pass code into your booking and save!</p>   
+      <p>Many Get Outside Pass vendors are capable of taking bookings online and redeeming the discount via a code in their online reservation system.  Simply place the Get Outside Pass code while booking and save!</p>   
       <i class="pe-7s-call float-md-left gray-light mr-4" style="font-size: 5rem;"></i>      
       <h5>Book by Phone</h5>
-      <p>When booking by phone, simply let the vendor know that you have a Get Outside Pass.  They'll ask you for the redemption code while placing your reservation into their system.  Bam, it's that easy - you just saved!</p> 
+      <p>When booking by phone, simply let the vendor know that you have a Get Outside Pass.  They'll ask you for the redemption code while placing your reservation into their system.  Bam, it's that easy - you just saved money!</p> 
       <i class="pe-7s-phone float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Show Pass on Phone</h5>
-      <p>You will be able to login using your phone or iPad and view your active passes.  You can then show the active to the vendor at their place of business during ticket purchasing or booking.  <strong>NOTE: Many places may not have phone service, we suggest printing a copy of the pass to take with you.</strong></p>
+      <p>You will be able to login using your phone or iPad and view your active passes.  You can then show the pass to the vendor at their place of business.  <strong>NOTE: Many places may not have phone service, we suggest printing a copy of the pass to take with you.</strong></p>
       <i class="pe-7s-print float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
       <h5>Print It</h5>
-      <p>For the larger vendors that may not be restricted by availaiblity (resorts, museums, restaurants, etc.), you can present the printed pass at the vendor's place of business.  The pass will have your full name and contact info and you may be asked to show ID to confirm your identity.</p>
+      <p>For the larger vendors (resorts, museums, restaurants, etc.), you can usually present the printed pass at the vendor's place of business.  The pass will have your full name and contact info and you may be asked to show ID to confirm your identity.</p>
       <hr>
       <h3 class="mb-30"><strong class="text-black">3.)</strong> Save Money</h3>
       <i class="pe-7s-piggy float-md-left gray-light mr-4" style="font-size: 6rem;"></i>  

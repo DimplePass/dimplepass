@@ -21,9 +21,15 @@ Route::group(['middleware' => 'web'], function () {
 	///// Home
 	Route::get('/', ['as' => 'home','uses' => 'UtilityController@home']);
 
+	// Alias
+	Route::redirect('/goyellowstone', '/yellowstone/passes/go-yellowstone-summer-2018', 301);
+	Route::redirect('/goglacier', '/glacier/passes/go-glacier-summer-2018', 301);
+
 	///// Checkout
+	Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@payment']);
+	Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@paymentStore']);
 	Route::get('/checkout/register', ['as' => 'checkout.register', 'uses' => 'CheckoutController@register']);
-	Route::post('/checkout/register', ['as' => 'checkout.register_user', 'uses' => 'CheckoutController@registerUser']);
+	Route::post('/checkout/register', ['as' => 'checkout.register.store', 'uses' => 'CheckoutController@registerStore']);
 
 	///// Members
 	Route::get('/member/terms', ['as' => 'member.terms', 'uses' => 'UserController@terms']);
@@ -55,8 +61,7 @@ Route::group(['middleware' => 'web'], function () {
 
 	Route::group(['middleware' => 'auth'], function () {
 
-		Route::get('/checkout/payment', ['as' => 'checkout.payment', 'uses' => 'CheckoutController@checkoutPayment']);
-		Route::post('/checkout/payment', ['as' => 'checkout.payment.store', 'uses' => 'CheckoutController@checkoutPaymentStore']);
+
 		Route::get('/member/{member}/passes/{pass}',['as' => 'member.passes','uses' => 'UserPassesController@show']);
 		Route::get('/member/{member}/passes/{pass}/print',['as' => 'member.passes.print','uses' => 'UserPassesController@print']);		
 		Route::resource('member', 'UserController')->middleware('member');
@@ -73,7 +78,7 @@ Route::group(['middleware' => 'web'], function () {
 	// Route::resource('destinations','DestinationController',['only' => ['index', 'show']]);
 	Route::resource('/{destination}/passes','PassController',[
 		'as' => 'destinations',
-		'only' => ['index', 'show'],
+		'only' => ['show'],
 		// 'parameters' => ['' => 'pass'],
 	]);
 	// Route::resource('checkout', 'CheckoutController',['only' => ['index', 'create', 'store','show']]);

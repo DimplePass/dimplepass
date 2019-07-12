@@ -28,7 +28,8 @@
               <div class="row login-overlay">
                 <div class="col-sm-12">
 
-                  <h1><strong class="dp-white">Login</strong></h1>
+                  <h1 class="mb-0"><strong class="dp-white">Passholder Login</strong></h1>
+                  <h4 class="white-color mt-0">You must have purchased a pass to login.</h4>
 
                   {!! Form::open(['method' => 'POST', 'route' => 'login', 'class' => 'form-horizontal', 'id' => 'loginForm']) !!}
           

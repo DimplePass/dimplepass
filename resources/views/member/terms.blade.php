@@ -42,15 +42,31 @@
     <div class="col-md-8 text-md-left text-center">
       <div class="mt-30 hidden-md-up"></div>
       <h1>The Small Print <small>But, not much of it.</small></h1>
-      <h3>These are some things to be aware of about your Get Outside Pass.</h3>
+      <h3>A few things to be aware of about your Get Outside Pass.</h3>
       <hr>
-      <h3>Vendors May Not Have Availability <small>Book Early.</small></h3>
-      <i class="pe-7s-ticket float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>It is possible that vendors simply have no availablity during your travel dates.  This will more likely happen with smaller vendors during peak travel times.  Be sure to book early for any vendors that require a reservations.  Another way to ensure your booking is to look either before or after peak travel times.</p>
+      <h3>Not a Park Entrance Pass <small>Purchase at Park Gates.</small></h3>
+      <i class="pe-7s-car float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
+      <p>The GO Pass is not a Park Entrance pass.  Park entrance fees are paid to the National Park Service and can be purchased at the gates to the Park as you enter.  If visiting more than one Park, be sure to get the Annual Pass.</p>
       <hr>
-      <h3>Changes Can Happen <small>Be flexible.</small></h3>
-      <i class="pe-7s-way float-md-left gray-light mr-4" style="font-size: 6rem;"></i>
-      <p>We do our best to lock in vendors before we release each Pass.  Yet, sometimes changes will happen and it is possible that a discount may no longer be offerred.  We hope that you can find another great attraction or activity on the Pass to take the place of any that are no longer available.  Yet, if you possibly bought the pass for one particular offer and it is no longer valid, please remember our <a href="{{ route('utility.guarantee') }}">money back guarantee</a>.</p>
+      <h3>Not valid with any other offer <small>It stands alone.</small></h3>
+      <i class="pe-7s-close-circle float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
+      <p>The GO Pass can not be used with any other offer.  If there is another offer out there for one of the activities, you are not able to use the GO Pass in conjunction with the other offer.  The GO Pass can only be used on its own.</p>
+      <hr>
+      <h3>One Time Only <small>At each vendor.</small></h3>
+      <i class="pe-7s-wristwatch float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
+      <p>The GO Pass can be used one time at each vendor.  Pass holders are not able to use the GO Pass multiple times for one vendor.  Although, be on the lookout as many vendors have their own specials if you are returning for a second or third time during your vacation.</p>
+      <hr>
+      <h3>Booking must be made by Pass Holder <small>No third parties.</small></h3>
+      <i class="pe-7s-comment float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
+      <p>The GO Pass must be used by the original purchaser.  All bookings and reservations are to be booked directly and not through a third party agent or concierge.  Reservations will not be accepted from travel agents or hotel concierges.</p>
+      <hr>
+      <h3>Vendors may not have availability <small>Book early.</small></h3>
+      <i class="pe-7s-ticket float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
+      <p>It is possible that vendors simply have no availablity during your travel dates.  This will more likely happen with smaller vendors during peak travel times.  Be sure to book early for vendors that require a reservation.  You may also want to travel either before or after peak seasons.</p>
+      <hr>
+      <h3>Changes can happen <small>Be flexible.</small></h3>
+      <i class="pe-7s-way float-md-left gray-light mr-4" style="font-size: 5rem;"></i>
+      <p>We do our best to lock in vendors before we release each Pass.  Yet, sometimes changes will happen and it is possible that a discount may no longer be offerred.  If you possibly bought the pass for one particular offer and it is no longer valid, please remember our <a href="{{ route('utility.guarantee') }}">money back guarantee</a>.</p>
     </div>
   </div>
 </div>

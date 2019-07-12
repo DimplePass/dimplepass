@@ -37,7 +37,7 @@
 jQuery(function($) {
     // Asynchronously Load the map API 
     var script = document.createElement('script');
-    script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyAqb3fT3SbMSDMggMEK7fJOIkvamccLrjA&callback=initialize";
+    script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyCtqYOh4F3zeGI_Tf4nlXjNZ95j5J7Kdrg&callback=initialize";
     document.body.appendChild(script);
 });
 
@@ -67,9 +67,9 @@ function initialize() {
 		@foreach ($destinations as $d)
             @foreach ($d->passes as $p)
                 @if(count($p->discounts) == 0)
-				    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$d->slug, $p->slug]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $d->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $d->name }}</strong></h5><a href="{{ route('destinations.passes.show',[$d->slug,$p->slug]) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">Available May 15th <i class="icon-arrow-right"></i></a></div>'],
+				    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$d->slug, $p->slug]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $d->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $d->name }}</strong></h5><a href="{{ route('destinations.passes.show',[$d->slug,$p->slug]) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">Available Summer 2019 <i class="icon-arrow-right"></i></a></div>'],
 			    @else
-                    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$d->slug, $p->slug]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $d->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $d->name }}</strong></h5><a href="{{ route('destinations.passes.show',[$d->slug,$p->slug]) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">View {{ count($p->discounts) }} Discounts <i class="icon-arrow-right"></i></a></div>'],
+                    ['<div class="info-box"><a href="{{ route('destinations.passes.show', [$d->slug, $p->slug]) }}" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'Image\', \'glacier\', 1);"><img src="/img/destinations/{{ $d->slug }}-315x278.jpg" style="max-width:260px; margin-bottom:16px;" alt="" /></a><h5><strong>{{ $d->name }}</strong></h5><a href="{{ route('destinations.passes.show',[$d->slug,$p->slug]) }}" class="btn btn-primary btn-sm" onclick="ga(\'send\', \'event\', \'Destinations-Map\', \'View Discounts\', \'{{ $p->slug }}\', 1);">View {{ count($p->discounts->where('active',1)) }} Discounts <i class="icon-arrow-right"></i></a></div>'],
                 @endif
             @endforeach
         @endforeach

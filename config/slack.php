@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'endpoint' => 'https://hooks.slack.com/services/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',
+    'endpoint' => 'https://hooks.slack.com/services/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',
 
     /*
     |-------------------------------------------------------------

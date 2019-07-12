@@ -30,7 +30,7 @@
               @endforeach
             </ul>
           </li>
-          <li><span><a href="/how">How does it Work?</a></span></li>
+          <li><span><a href="/how">How it Works</a></span></li>
           <li><span><a href="/foundation">100% to Kids</a></span></li>
           <li><span><a href="/faqs">FAQs</a></span></li>
         </ul>
@@ -68,7 +68,7 @@
               @endforeach
             </ul>
           </li>
-          <li><span><a href="/how">How does it Work?</a></span></li>
+          <li><span><a href="/how">How it Works</a></span></li>
           <li><span><a href="/foundation">100% to Kids</a></span></li>
           <li><span><a href="/faqs">FAQs</a></span></li>
         </ul>
@@ -99,45 +99,46 @@
                 <section class="promo-box" style="background-image: url(/img/destinations/glacier-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">Available May 15th</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-summer-2018']) }}">
-                      <h3 class="text-bold text-light text-shadow">Glacier</h3>
+                    <h4 class="text-light text-thin text-shadow">{{ count($activePasses->where('id',4)->first()->discounts->where('active',1)) }} Discounts</h4>
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['glacier','go-glacier-2019']) }}">
+                      <h3 class="text-bold text-light text-shadow">{{ $activePasses->where('id',4)->first()->destinations->first()->short_name }}</h3>
                     </a>
                   </div>
                 </section>
               </li>
-              <li><span class="mega-menu-title">Top National Parks</span>
+              <li><span class="mega-menu-title">Our National Parks</span>
                 <ul class="sub-menu">
                   @foreach ($activePasses->sortBy('name') as $ap)
                     <li><a href="{{ route('destinations.passes.show', [$ap->destinations->first()->slug,$ap->slug]) }}">{{ $ap->destinations->first()->name }}</a></li>
                   @endforeach
-                  <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li>
+                  {{-- <li><a href="/destinations"><span class="dp-primary"><strong>VIEW ALL</strong> <i class="icon-arrow-right"></i></span></a></li> --}}
                 </ul>
               </li>
               <li>
-                <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);"><span class="overlay-dark" style="opacity: .4;"></span>
+                <section class="promo-box" style="background-image: url(/img/destinations/yellowstone-300x300.jpg);">
+                  <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">14 discounts</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-summer-2018']) }}">
-                      <h3 class="text-bold text-light text-shadow">Yellowstone</h3>
+                    <h4 class="text-light text-thin text-shadow">{{ count($activePasses->where('id',3)->first()->discounts->where('active',1)) }} Discounts</h4>
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yellowstone','go-yellowstone-2019']) }}">
+                      <h3 class="text-bold text-light text-shadow">{{ $activePasses->where('id',3)->first()->destinations->first()->short_name }}</h3>
                     </a>
                   </div>
                 </section>
               </li>
               <li>
-                <section class="promo-box" style="background-image: url(/img/destinations/yosemite-300x300.jpg);">
+                <section class="promo-box" style="background-image: url(/img/destinations/zion-300x300.jpg);">
                   <span class="overlay-dark" style="opacity: .45;"></span>
                   <div class="promo-box-content text-center padding-top-3x padding-bottom-3x">
-                    <h4 class="text-light text-thin text-shadow">Available May 15th</h4>
-                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['yosemite','go-yosemite-summer-2018']) }}">
-                      <h3 class="text-bold text-light text-shadow">Yosemite</h3>
+                    <h4 class="text-light text-thin text-shadow">{{ count($activePasses->where('id',6)->first()->discounts->where('active',1)) }} Discounts</h4>
+                     <a class="btn btn-sm btn-primary" href="{{ route('destinations.passes.show', ['zion','go-zion-2019']) }}">
+                      <h3 class="text-bold text-light text-shadow">{{ $activePasses->where('id',6)->first()->destinations->first()->short_name }}</h3>
                     </a>
                   </div>
                 </section>
               </li>
             </ul>
           </li>
-          <li class="{{ Request::is('how*') ? 'active' : '' }}"><a href="/how"><span>How does it work?</span></a></li>
+          <li class="{{ Request::is('how*') ? 'active' : '' }}"><a href="/how"><span>How it Works</span></a></li>
           <li class="{{ Request::is('foundation*') ? 'active' : '' }}"><a href="/foundation"><span>100% to Kids</span></a></li>
         </ul>
       </nav>

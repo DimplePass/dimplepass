@@ -72,18 +72,22 @@
         <div class="col-md-5 padding-bottom-1x">
           <div class="margin-top-1x hidden-md-up"></div>
           {{-- Subscription --}}
-          <form class="subscribe-form" action="" method="post" target="_blank" novalidate>
-            <div class="clearfix">
-              <div class="input-group input-light">
-                <input class="form-control" type="email" name="EMAIL" placeholder="Your e-mail"><span class="input-group-addon"><i class="icon-mail"></i></span>
+          <div id="mc_embed_signup">
+            <form action="https://getoutsidepass.us18.list-manage.com/subscribe/post?u=5e0fce7e4132ef1c8a2a97272&amp;id=008eacf5d6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll clearfix">
+                  <div class="mc-field-group input-group input-light">
+                    <input type="email" value="" name="EMAIL" class="form-control required email" id="mce-EMAIL" placeholder="Your email" tabindex="-1"><span class="input-group-addon"><i class="icon-mail"></i></span>
+                  </div>
+                  <span class="form-text text-sm text-white opacity-50">Subscribe to receive new Get Outside Pass offers and the latest news.</span>
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5e0fce7e4132ef1c8a2a97272_008eacf5d6" tabindex="-1" value=""></div>
+                  <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Subscribe <i class="icon-check"></i></button>
+                  <div id="mce-responses">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               </div>
-              {{-- real people should not fill this in and expect good things - do not remove this or risk form bot signups --}}
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
-              </div>
-              <button class="btn btn-primary" type="submit"><i class="icon-check"></i></button>
-            </div><span class="form-text text-sm text-white opacity-50">Subscribe to receive new Get Outside Pass offers and the latest news.</span>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
       {{-- Copyright --}}

@@ -64,14 +64,11 @@
       <div class="padding-top-2x mt-2 hidden-lg-up"></div>
 
       {{-- Payment Confirmation --}}
-      @if(Session::has('status'))
+{{--       @if(Session::has('status'))
       <div class="col-sm-12 mb-5" id="success">
-        <div class="alert alert-success alert-dismissable" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <i class="fa fa-smile"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{ session('status') }}
-        </div>
+        <h3>Welcome to Get Outside Pass.  <small>Your pass will appear below.</small></h3>
       </div>
-      @endif
+      @endif --}}
 
       <div class="table-responsive">
         <table class="table table-hover margin-bottom-none">
@@ -86,7 +83,7 @@
             @foreach ($user->passes as $p)
               <tr>
                 <td>
-                  <h5 class="mb-0">{{ $p->name }} </h5>
+                  <h5 class="mb-0">{{ $p->name }} {{ $p->start->format('Y') }}</h5>
                   {{ count($p->discounts) }} discounts
                 </td>
                 <td>

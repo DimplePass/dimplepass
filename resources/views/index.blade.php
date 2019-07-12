@@ -20,15 +20,32 @@
 
 {{-- Hero Slider --}}
 <section class="hero-slider" style="background-image: url(/img/destinations/yellowstone-1920x580.jpg);">
-  <div class="container">
+  <div class="header-profits">
+    <div class="container">
+      <div class="text-center float-right">
+        <a href="/foundation">
+          <img src="/img/foundation/headerkids.jpg" class="d-block mx-auto img-thumbnail rounded-circle mb-1" alt="Get Kids Outdoors">
+          <h5 class="white-color hidden-xs-down btn btn-sm btn-primary">Learn More <i class="fa fa-arrow-right"></i></h5>
+        </a>
+      </div>
+      <h1>All Profits to programs that Get Kids Outdoors.</h1>
+    </div>
+  </div>
+  <div class="container hidden-lg-down">
     <div class="row">
       <div class="col-md-10 col-lg-8 padding-bottom-2x text-md-left text-center hero-overlay">
         <div class="hero-text">
           <h1 class="mb-2 white-color">Save money. Don't miss a thing.</h1>
-          <h2 class="mt-0 mb-2 white-color"><strong>National Park <span class="dp-warning">Discount Cards</span></strong></h2>               
+          <h2 class="mt-0 mb-2 white-color"><strong>National Park Discount Cards</strong></h2>               
         </div>
     </div>
   </div>
+</section>
+
+{{-- Mobile --}}
+<section class="col-md-10 col-lg-8 text-md-left text-center hidden-lg-up mb-0">
+  <h1 class="mt-5 mb-1">Save money. Don't miss a thing.</h1>
+  <h2 class="mt-0 mb-0"><strong>National Park Discount Cards</strong></h2>   
 </section>
 
 {{-- Pass Cards --}}

@@ -44,8 +44,9 @@
       <h3>Phone</h3>
       <p>(307) 690-9788</p>
       <h3>Email Us</h3>
-      <p class="text-muted mb-30">We normally respond within 1 business day.<br>Most popular questions appear on our <a href="/faqs">Frequestly Asked Questions</a> page.</p>
-      <form class="row" method="post">
+      <p class="text-muted">We normally respond within 1 business day.<br>Most popular questions appear on our <a href="/faqs">Frequestly Asked Questions</a> page.</p>
+      <h4><a href="mailto:info@getoutsidepass.com" class="m-t-0">info@getoutsidepass.com</a></h4>
+{{--       <form class="row" method="post">
         <div class="col-sm-6">
           <div class="form-group">
             <label for="help_name">Your Name</label>
@@ -80,7 +81,7 @@
         <div class="col-12 text-right">
           <button class="btn btn-primary btn-rounded" type="submit">Submit Your Question <i class="icon-arrow-right"></i></button>
         </div>
-      </form>
+      </form> --}}
     </div>
   </div>
 </div>
